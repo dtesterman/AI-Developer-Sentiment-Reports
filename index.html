@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coding Tools — Developer Sentiment Intelligence</title>
+  <meta property="og:title" content="AI Coding Tools — Developer Sentiment Intelligence">
+  <meta property="og:description" content="Structured analysis of developer discourse about AI coding tools. Sentiment trends, incident tracking, emerging patterns, and actionable intelligence.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2330;
+      --border:   #2a3441;
+      --text:     #d1cec9;
+      --text-dim: #7a8694;
+      --head:     #f0ede8;
+      --amber:    #f0a832;
+      --amber-dim:#7a5318;
+      --red:      #e05252;
+      --red-dim:  #5c1f1f;
+      --green:    #4caf7d;
+      --green-dim:#1a3d2b;
+      --blue:     #5c9eed;
+      --blue-dim: #1a2f4a;
+      --mono:     'JetBrains Mono', monospace;
+      --serif:    'Source Serif 4', Georgia, serif;
+      --display:  'DM Serif Display', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.7;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--head); }
+
+    /* Masthead */
+    .masthead { padding: 80px 0 48px; }
+    .masthead-tag {
+      font-family: var(--mono); font-size: 10px; color: var(--amber);
+      text-transform: uppercase; letter-spacing: 0.16em;
+      padding-left: 16px; position: relative; margin-bottom: 20px;
+    }
+    .masthead-tag::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--amber);
+    }
+    h1 {
+      font-family: var(--display); font-size: clamp(2.4rem, 6vw, 3.8rem);
+      color: var(--head); font-weight: 400; line-height: 1.1;
+    }
+    h1 em { color: var(--amber); font-style: italic; }
+    .masthead-sub {
+      font-family: var(--serif); font-size: 17px; color: var(--text-dim);
+      margin-top: 16px; margin-bottom: 24px; max-width: 640px;
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: var(--mono); font-size: 10px; color: var(--amber);
+      text-transform: uppercase; letter-spacing: 0.16em;
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+      padding-top: 48px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    h2 {
+      font-family: var(--display); font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--head); font-weight: 400; line-height: 1.2; margin-bottom: 24px;
+    }
+
+    /* Report Cards */
+    .report-list { display: flex; flex-direction: column; gap: 2px; }
+    .report-card {
+      display: grid; grid-template-columns: 1fr auto;
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--amber);
+      padding: 24px 28px; gap: 16px; align-items: center;
+      transition: background 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .report-card:hover {
+      background: var(--surface2); border-color: var(--amber);
+      text-decoration: none;
+    }
+    .report-title {
+      font-family: var(--display); font-size: 1.25rem;
+      color: var(--head); font-weight: 400; line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .report-meta {
+      font-family: var(--mono); font-size: 12px; color: var(--text-dim);
+      line-height: 1.8;
+    }
+    .report-summary {
+      font-family: var(--serif); font-size: 15px; color: var(--text);
+      margin-top: 8px; max-width: 640px;
+    }
+    .report-arrow {
+      font-family: var(--mono); font-size: 20px; color: var(--amber);
+      opacity: 0.4; transition: opacity 0.2s;
+    }
+    .report-card:hover .report-arrow { opacity: 1; }
+
+    /* Stat pills */
+    .stat-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .stat-pill {
+      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+      background: var(--surface2); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 14px;
+    }
+    .stat-pill strong { color: var(--head); }
+    .stat-pill.neg strong { color: var(--red); }
+    .stat-pill.pos strong { color: var(--green); }
+
+    /* Empty state */
+    .empty-state {
+      background: var(--surface); border: 1px dashed var(--border);
+      padding: 40px 28px; text-align: center;
+      font-family: var(--mono); font-size: 13px; color: var(--text-dim);
+    }
+
+    /* Footer */
+    footer {
+      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+      text-align: center; padding: 40px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 640px) {
+      .report-card { grid-template-columns: 1fr; }
+      .report-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header class="masthead">
+    <div class="masthead-tag">Sentiment Analysis System</div>
+    <h1>Developer Sentiment <em>Intelligence</em></h1>
+    <p class="masthead-sub">Structured analysis of online developer discourse about AI coding tools &mdash; sentiment trends, incident tracking, emerging patterns, and actionable intelligence.</p>
+  </header>
+
+  <!-- ============================================================
+       REPORT INDEX
+       To add a new report:
+       1. Copy one <a class="report-card"> block
+       2. Update the href, title, meta, summary, and stat-pills
+       3. Place newest reports at the top
+       ============================================================ -->
+
+  <div class="section-label">Reports</div>
+  <h2>Analysis Reports</h2>
+
+  <div class="report-list">
+
+    <a class="report-card" href="analysis-report-2026-03-25.html">
+      <div>
+        <div class="report-title">2026-03-20 &ndash; 2026-03-25 &mdash; Extraction 1</div>
+        <div class="report-meta">
+          Analysis Prompt v1.13 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6)
+        </div>
+        <div class="report-summary">
+          Autonomous agent destruction pattern dominates &mdash; Amazon Q outages (6.3M lost orders), Replit agent data deletion, MCP vulnerability wave (30+ CVEs). Junior pipeline crisis deepens (hiring down 73%). Enterprise governance proliferating but reactive.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>50</strong> items</div>
+          <div class="stat-pill"><strong>10</strong> incidents</div>
+          <div class="stat-pill"><strong>11</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>46%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow">&rarr;</div>
+    </a>
+
+    <!-- TEMPLATE: Copy this block for future reports
+    <a class="report-card" href="analysis-report-YYYY-MM-DD.html">
+      <div>
+        <div class="report-title">YYYY-MM-DD &ndash; YYYY-MM-DD &mdash; Extraction N</div>
+        <div class="report-meta">
+          Analysis Prompt vX.Y &nbsp;&middot;&nbsp; Domain Config vX.Y &nbsp;&middot;&nbsp; Extractor: [LLM] ([model])
+        </div>
+        <div class="report-summary">
+          [2-3 sentence summary of key findings]
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>N</strong> items</div>
+          <div class="stat-pill"><strong>N</strong> incidents</div>
+          <div class="stat-pill"><strong>N</strong> patterns</div>
+          <div class="stat-pill"><strong>N/N</strong> batches</div>
+          <div class="stat-pill neg"><strong>N%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow">&rarr;</div>
+    </a>
+    -->
+
+  </div>
+
+  <footer>
+    AI Coding Tools Sentiment Analysis System &nbsp;&middot;&nbsp; Bootloader v1.7 &nbsp;&middot;&nbsp; Analysis Prompt v1.13 &nbsp;&middot;&nbsp; Domain Config v1.2
+  </footer>
+
+</div>
+
+</body>
+</html>
