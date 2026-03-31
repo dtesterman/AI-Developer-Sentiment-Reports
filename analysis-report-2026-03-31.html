@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sentiment Analysis Report: AI Developer Discourse (2026-03-28 to 2026-03-31)">
+  <meta property="og:description" content="AI coding discourse has shifted to structural pessimism with Strongly Negative sentiment surging to 63%, driven by burnout paradoxes, code quality concerns, and production incidents.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Developer Sentiment Analysis">
+
+  <title>Sentiment Analysis Report: AI Developer Discourse (2026-03-28 to 2026-03-31)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Design System Variables */
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #2a3441;
+      --text: #d1cec9;
+      --text-dim: #7a8694;
+      --head: #f0ede8;
+      --amber: #f0a832;
+      --amber-dim: #7a5318;
+      --red: #e05252;
+      --red-dim: #5c1f1f;
+      --green: #4caf7d;
+      --green-dim: #1a3d2b;
+      --blue: #5c9eed;
+      --blue-dim: #1a2f4a;
+      --display: 'DM Serif Display', serif;
+      --serif: 'Source Serif 4', serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 12px 20px;
+    }
+
+    nav li {
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: var(--mono);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--amber);
+    }
+
+    /* Main Wrapper */
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Masthead */
+    .masthead {
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 40px;
+    }
+
+    .masthead h1 {
+      font-family: var(--display);
+      font-size: 48px;
+      color: var(--head);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .masthead .subtitle {
+      font-size: 18px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    .masthead .date-range {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-top: 16px;
+      font-family: var(--mono);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 80px;
+      scroll-margin-top: 80px;
+    }
+
+    section h2 {
+      font-family: var(--display);
+      font-size: 36px;
+      color: var(--head);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    section h2 .number {
+      font-family: var(--mono);
+      font-size: 24px;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    section h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      color: var(--head);
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    section h4 {
+      font-family: var(--display);
+      font-size: 18px;
+      color: var(--amber);
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    section p {
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    section ul, section ol {
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    section li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    /* Links */
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--amber);
+      text-decoration: underline;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    table th {
+      background-color: var(--surface2);
+      color: var(--head);
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      font-size: 13px;
+      font-family: var(--mono);
+    }
+
+    table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table tr:hover {
+      background-color: var(--surface2);
+    }
+
+    /* Callout */
+    .callout {
+      background-color: var(--surface2);
+      border-left: 4px solid var(--amber);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 4px;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    /* Sentiment Distribution Bars */
+    .sentiment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .sentiment-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    .sentiment-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-family: var(--mono);
+    }
+
+    .sentiment-label .name {
+      color: var(--head);
+      font-weight: 500;
+    }
+
+    .sentiment-label .value {
+      color: var(--text-dim);
+    }
+
+    .sentiment-bar {
+      width: 100%;
+      height: 24px;
+      background-color: var(--surface2);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentiment-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--amber), var(--amber-dim));
+      border-radius: 2px;
+      animation: expand 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      width: 0%;
+    }
+
+    @keyframes expand {
+      to {
+        width: var(--percentage, 100%);
+      }
+    }
+
+    /* Topic Cluster Grid */
+    .cluster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .cluster-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .cluster-card h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .cluster-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 12px;
+      font-family: var(--mono);
+    }
+
+    .cluster-meta .mentions {
+      color: var(--blue);
+    }
+
+    .cluster-meta .sentiment {
+      color: var(--amber);
+    }
+
+    .cluster-meta .change {
+      color: var(--text-dim);
+    }
+
+    /* Pattern Cards */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .pattern-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .pattern-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .pattern-header h4 {
+      margin: 0;
+      flex: 1;
+      font-size: 16px;
+    }
+
+    .pattern-confidence {
+      display: inline-block;
+      background-color: var(--blue-dim);
+      color: var(--blue);
+      padding: 4px 8px;
+      border-radius: 2px;
+      font-size: 11px;
+      font-family: var(--mono);
+      font-weight: 500;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .pattern-description {
+      font-size: 14px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .pattern-evidence {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .pattern-implication {
+      background-color: var(--green-dim);
+      color: var(--green);
+      padding: 12px;
+      border-radius: 2px;
+      font-size: 13px;
+      line-height: 1.5;
+      border-left: 3px solid var(--green);
+    }
+
+    /* Contradictions Grid */
+    .contradictions-grid {
+      display: grid;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .contradiction-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .contradiction-item .claim {
+      font-weight: 600;
+      color: var(--head);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .contradiction-item .evidence-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .contradiction-item .evidence-block {
+      padding: 12px;
+      background-color: var(--surface2);
+      border-radius: 2px;
+      border-left: 3px solid var(--text-dim);
+    }
+
+    .contradiction-item .evidence-block.supporting {
+      border-left-color: var(--green);
+    }
+
+    .contradiction-item .evidence-block.contradicting {
+      border-left-color: var(--red);
+    }
+
+    .contradiction-item .evidence-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contradiction-item .assessment {
+      padding: 12px;
+      background-color: var(--amber-dim);
+      border-radius: 2px;
+      border-left: 3px solid var(--amber);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .contradiction-item .assessment-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--amber);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Incidents Log */
+    .incidents-table {
+      width: 100%;
+      margin: 32px 0;
+    }
+
+    .incidents-table td {
+      font-size: 13px;
+    }
+
+    /* Metadata Grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .metadata-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    .metadata-item .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .metadata-item .value {
+      color: var(--head);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .wrapper {
+        padding: 24px 16px;
+      }
+
+      .masthead h1 {
+        font-size: 32px;
+      }
+
+      section h2 {
+        font-size: 26px;
+      }
+
+      section h3 {
+        font-size: 20px;
+      }
+
+      nav ul {
+        padding: 10px 16px;
+      }
+
+      nav li {
+        margin-right: 12px;
+        font-size: 12px;
+      }
+
+      .contradiction-item .evidence-row {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      table th, table td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#summary">01 Summary</a></li>
+      <li><a href="#quant">02 Quantitative</a></li>
+      <li><a href="#deep">03 Deep Analysis</a></li>
+      <li><a href="#patterns">04 Patterns</a></li>
+      <li><a href="#contradictions">05 Contradictions</a></li>
+      <li><a href="#gaps">06 Gaps</a></li>
+      <li><a href="#recommendations">07 Recommendations</a></li>
+      <li><a href="#incidents">08 Incidents</a></li>
+      <li><a href="#metadata">09 Metadata</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrapper">
+    <!-- Masthead -->
+    <header class="masthead">
+      <h1>Sentiment Analysis Report</h1>
+      <p class="subtitle">AI Developer Discourse: Extraction 3</p>
+      <p class="date-range">2026-03-28 – 2026-03-31 | Analysis Run: 2026-03-31 20:30 UTC</p>
+    </header>
+
+    <!-- Section 01: Executive Summary -->
+    <section id="summary">
+      <h2><span class="number">01</span>Executive Summary</h2>
+
+      <p>AI coding discourse has lurched further into structural pessimism, with Strongly Negative sentiment surging from 30% in Extraction 2 to 63% in this 3-day window — the sharpest single-extraction shift recorded. The dominant narrative is no longer cautious skepticism but active alarm, driven by three converging forces: HBR and Scientific American documenting an "AI burnout paradox" where AI intensifies rather than relieves developer fatigue, a Palo Alto Unit 42 report revealing 30+ MCP CVEs in 60 days (43% exec/shell injection), and a CodeRabbit study finding AI-generated code introduces 1.7x more bugs than human-written code. Meanwhile, the Pragmatic Engineer survey confirms Claude Code's market dominance (46% "most loved") while the Fortune compilation of agent-caused production disasters — database wipes, terraform destroys, millions of lost orders — demonstrates that dominance and reliability remain decoupled.</p>
+    </section>
+
+    <!-- Section 02: Quantitative Overview -->
+    <section id="quant">
+      <h2><span class="number">02</span>Quantitative Overview</h2>
+
+      <h3>Sentiment Distribution</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sentiment</th>
+            <th>Count</th>
+            <th>% of Sample</th>
+            <th>Trend vs. E2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strongly Positive</td>
+            <td>0</td>
+            <td>0%</td>
+            <td>↓ from 4%</td>
+          </tr>
+          <tr>
+            <td>Cautiously Positive</td>
+            <td>3</td>
+            <td>16%</td>
+            <td>↑ from 15%</td>
+          </tr>
+          <tr>
+            <td>Mixed/Ambivalent</td>
+            <td>1</td>
+            <td>5%</td>
+            <td>↓ from 19%</td>
+          </tr>
+          <tr>
+            <td>Cautiously Negative</td>
+            <td>3</td>
+            <td>16%</td>
+            <td>↓ from 28%</td>
+          </tr>
+          <tr>
+            <td>Strongly Negative</td>
+            <td>12</td>
+            <td>63%</td>
+            <td>↑ from 30%</td>
+          </tr>
+          <tr>
+            <td>Nuanced/Analytical</td>
+            <td>0</td>
+            <td>0%</td>
+            <td>↓ from 4%</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td><strong>19</strong></td>
+            <td><strong>100%</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p><strong>Shift Note:</strong> The collapse of Mixed/Ambivalent (-14pp) and Cautiously Negative (-12pp) into Strongly Negative (+33pp) represents discourse polarization. The moderate middle has largely evaporated — sources are either documenting concrete harms or highlighting adoption metrics, with very few attempting balanced evaluation. The smaller sample size (19 vs. 53 in E2) reflects the 3-day extraction window and Chrome-based retrieval constraints, but the directional signal is unambiguous.</p>
+      </div>
+
+      <h3>Topic Cluster Frequency</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cluster</th>
+            <th>Mentions</th>
+            <th>Dominant Sentiment</th>
+            <th>Change from E2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Incidents / System Failures</td>
+            <td>7</td>
+            <td>Strongly Negative</td>
+            <td>↑</td>
+          </tr>
+          <tr>
+            <td>Code Quality / Security</td>
+            <td>6</td>
+            <td>Strongly Negative</td>
+            <td>Stable</td>
+          </tr>
+          <tr>
+            <td>Productivity Reality</td>
+            <td>6</td>
+            <td>Mixed</td>
+            <td>↓</td>
+          </tr>
+          <tr>
+            <td>Burnout / Cognitive Load</td>
+            <td>5</td>
+            <td>Strongly Negative</td>
+            <td>↑</td>
+          </tr>
+          <tr>
+            <td>Architectural Philosophy</td>
+            <td>4</td>
+            <td>Cautiously Negative</td>
+            <td>↑</td>
+          </tr>
+          <tr>
+            <td>Enterprise / Policy</td>
+            <td>3</td>
+            <td>Strongly Negative</td>
+            <td>Stable</td>
+          </tr>
+          <tr>
+            <td>Tool-Specific Issues</td>
+            <td>3</td>
+            <td>Cautiously Positive</td>
+            <td>Stable</td>
+          </tr>
+          <tr>
+            <td>Hype vs Reality</td>
+            <td>2</td>
+            <td>Strongly Negative</td>
+            <td>Stable</td>
+          </tr>
+          <tr>
+            <td>Trust / Verification</td>
+            <td>2</td>
+            <td>Strongly Negative</td>
+            <td>Stable</td>
+          </tr>
+          <tr>
+            <td>Pricing / Cost</td>
+            <td>1</td>
+            <td>Strongly Negative</td>
+            <td>↓</td>
+          </tr>
+          <tr>
+            <td>Learning & Skill Development</td>
+            <td>1</td>
+            <td>Strongly Negative</td>
+            <td>↓</td>
+          </tr>
+          <tr>
+            <td>Junior vs Senior Impact</td>
+            <td>1</td>
+            <td>Strongly Negative</td>
+            <td>↓</td>
+          </tr>
+          <tr>
+            <td>Dependency / Resilience</td>
+            <td>1</td>
+            <td>Strongly Negative</td>
+            <td>NEW</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Tool-Specific Mentions</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Positive</th>
+            <th>Negative</th>
+            <th>Mixed</th>
+            <th>Key Themes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Claude Code</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>Market dominance (46% most loved), terraform destroy incident, prompt injection risk</td>
+          </tr>
+          <tr>
+            <td>Amazon Q Developer</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>March outages (6.3M + 120K lost orders), 90-day safety reset</td>
+          </tr>
+          <tr>
+            <td>Replit Agent</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Production database wipe</td>
+          </tr>
+          <tr>
+            <td>Copilot</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Security study — 40% AI snippets have vulnerabilities</td>
+          </tr>
+          <tr>
+            <td>General AI / Agents</td>
+            <td>1</td>
+            <td>5</td>
+            <td>1</td>
+            <td>Burnout paradox, 1.7x bug rate, MCP CVE surge, longer hours</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 03: Deep Analysis by Cluster -->
+    <section id="deep">
+      <h2><span class="number">03</span>Deep Analysis by Cluster</h2>
+
+      <h3>Incidents / System Failures</h3>
+
+      <p><strong>Current State:</strong> This extraction is saturated with incident reporting. The Fortune compilation alone documents four separate agent-caused production disasters — from Replit wiping SaaStr's database to Claude Code running terraform destroy on 2.5 years of production data — while Amazon's dual March outages (120K and 6.3M lost orders) represent the largest quantified AI-coding damages to date. The MCP CVE surge adds a protocol-level dimension: the infrastructure connecting AI agents to systems is itself riddled with injection vulnerabilities.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune: AI agent horror stories</a>: Compilation of production disasters — Replit database wipe, Claude Code terraform destroy, Moltbook 1.5M token exposure, Amazon Q incidents</li>
+        <li><a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/">The Register: Amazon AI coding outages</a>: 6-hour outage, junior/mid engineers now need senior approval for AI-assisted deployments</li>
+        <li><a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">Palo Alto Unit 42: MCP Attack Vectors</a>: 30+ CVEs in 60 days; 43% exec/shell injection; CVSS 9.6 RCE</li>
+      </ul>
+
+      <h4>Representative Quote</h4>
+      <blockquote style="border-left: 3px solid var(--amber); padding-left: 16px; margin: 16px 0; color: var(--text-dim); font-style: italic;">
+        "An AI agent destroyed this coder's entire database. He's not the only one with a horror story." — <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a>
+      </blockquote>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--amber); font-weight: 600;">Emerging Consensus</span></p>
+
+      <p><strong>Trajectory:</strong> Incident volume and severity are accelerating. The shift from isolated tool bugs to agent-caused production destruction and protocol-level vulnerabilities suggests the failure surface is expanding faster than governance can contain it.</p>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 40px 0;">
+
+      <h3>Code Quality / Security</h3>
+
+      <p><strong>Current State:</strong> Evidence continues to accumulate that AI-generated code is measurably less secure than human-written code. The CodeRabbit study (470 GitHub repos) finds 1.7x more issues, with 1.5-2x greater rates of improper password handling and insecure object references. The Register reports 40% of AI-generated snippets contain security vulnerabilities. These are not anecdotal claims — they are quantified, replicated findings.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report">CodeRabbit: AI vs human code generation</a>: 1.7x more bugs, 1.3-1.7x increase in critical/major issues, 1.5-2x greater rate of security-specific flaws</li>
+        <li><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/">The Register: AI coding not more secure</a>: 40% vulnerability rate in AI-generated snippets</li>
+        <li><a href="https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/">Stack Overflow Blog: Bugs inevitable?</a>: Examines whether incidents are feature or bug of the technology</li>
+        <li><a href="https://towardsdatascience.com/the-reality-of-vibe-coding-ai-agents-and-the-security-debt-crisis/">TDS: Vibe Coding Security Debt Crisis</a>: Security debt accumulation from velocity-first development</li>
+      </ul>
+
+      <h4>Representative Quote</h4>
+      <blockquote style="border-left: 3px solid var(--amber); padding-left: 16px; margin: 16px 0; color: var(--text-dim); font-style: italic;">
+        "AI code creates 1.7x more issues" — <a href="https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report">CodeRabbit</a>
+      </blockquote>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--amber); font-weight: 600;">Emerging Consensus</span></p>
+
+      <p><strong>Trajectory:</strong> The code quality narrative has matured from anecdotal concern to empirical measurement. Expect mandatory AI code audit requirements in regulated industries within 2 quarters.</p>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 40px 0;">
+
+      <h3>Burnout / Cognitive Load</h3>
+
+      <p><strong>Current State:</strong> The AI burnout paradox has reached mainstream academic visibility. HBR published two separate pieces documenting how AI removes natural speed limits, organizations treat freed time as capacity for more work, and developers experience a different, arguably worse form of burnout — "brain fry" from constant output evaluation rather than production fatigue. Scientific American corroborates with evidence that AI-using developers work longer hours under greater pressure.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry">HBR: When Using AI Leads to Brain Fry</a>: 14% of workers experienced mental fog; context-switching between AI-accelerated tasks is "brutally expensive for the human brain"</li>
+        <li><a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">HBR: AI Doesn't Reduce Work—It Intensifies It</a>: AI removed the governor that previously limited daily output; burnout hitting hardest among those who embraced AI most</li>
+        <li><a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/">Scientific American: Developers working longer hours</a>: AI removes natural speed limits; businesses expect greater productivity</li>
+        <li><a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3">Medium: AI Burnout — Marco Kotrotsos</a>: AI amplifies rather than reduces burnout</li>
+      </ul>
+
+      <h4>Representative Quote</h4>
+      <blockquote style="border-left: 3px solid var(--amber); padding-left: 16px; margin: 16px 0; color: var(--text-dim); font-style: italic;">
+        "AI removed the governor that previously limited daily output, leaving only cognitive endurance as constraint." — <a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">HBR</a>
+      </blockquote>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--amber); font-weight: 600;">Emerging Consensus</span></p>
+
+      <p><strong>Trajectory:</strong> With HBR and Scientific American both publishing on this theme, the burnout paradox has crossed from developer blogs into mainstream business and science media. Expect HR and people-ops frameworks to incorporate AI-specific burnout metrics within 2026.</p>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 40px 0;">
+
+      <h3>Architectural Philosophy</h3>
+
+      <p><strong>Current State:</strong> A philosophical fault line is emerging in how the industry should respond to cheap, abundant AI-generated code. One camp advocates "disposable code" — generate, use, throw away, regenerate — while the other calls for a "2026 reset" toward architecture, governance, and maintainability. Addy Osmani frames the core tension: AI gets 80% right, but the last 20% is where real engineering happens.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://addyo.substack.com/p/the-80-problem-in-agentic-coding">Addy Osmani: 80% Problem in Agentic Coding</a>: AI handles 80% of work but the remaining 20% requires deep engineering judgment</li>
+        <li><a href="https://medium.com/google-cloud/software-becomes-disposable-how-ai-is-changing-the-way-we-architect-code-1bfb50356b98">Medium/Google Cloud: Disposable code architecture</a>: Advocates component-level disposability connected via APIs</li>
+        <li><a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture">IT Brief: AI coding tools 2026 reset</a>: Industry moving from velocity-first to architecture-first</li>
+        <li><a href="https://news.ycombinator.com/item?id=47545748">HN: Uncomfortable truths</a>: Prompt injection as foundational vulnerability amplified by agentic architecture</li>
+      </ul>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--blue); font-weight: 600;">Growing Trend</span></p>
+
+      <p><strong>Trajectory:</strong> This cluster is accelerating from Isolated Signal (E2) to Growing Trend. The disposable-vs-durable tension will likely define the next 6 months of tooling philosophy.</p>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 40px 0;">
+
+      <h3>Productivity Reality</h3>
+
+      <p><strong>Current State:</strong> The productivity narrative has fractured. On one side, the Pragmatic Engineer survey documents near-universal adoption (95% weekly usage, 55% using agents) and strong satisfaction metrics. On the other, the emerging Productivity Paradox pattern — METR showing experienced devs 19% slower, Google showing 3% gain with 9% bug increase — suggests measured outcomes diverge sharply from perceived gains.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer: AI Tooling 2026</a>: 906 engineers surveyed; 95% use AI weekly; Claude Code 46% most loved</li>
+        <li><a href="https://x.com/Pragmatic_Eng/status/1945173527578956176">X/Twitter: @Pragmatic_Eng survey</a>: 3,000 respondent broader survey — Copilot, ChatGPT, Cursor most-mentioned</li>
+        <li><a href="https://bsky.app/profile/did:plc:aq4dap3jdzt3scjjfvsj674d/post/3lkjzunkhyk27">Bluesky: JD Long on Claude Code</a>: Positive practitioner experience with debugging workflows</li>
+        <li><a href="https://standupforme.app/blog/some-uncomfortable-truths-about-ai-coding-agents/">Standup for Me Blog</a>: Artificially low inference costs masking unsustainable economics</li>
+      </ul>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--text-dim); font-weight: 600;">Active Debate</span></p>
+
+      <p><strong>Trajectory:</strong> The perception-measurement gap is the defining tension. Expect more RCTs and longitudinal studies to settle this; vendor-sponsored surveys and practitioner studies will increasingly diverge.</p>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 40px 0;">
+
+      <h3>Enterprise / Policy</h3>
+
+      <p><strong>Current State:</strong> Amazon's 90-day code safety reset represents the highest-profile enterprise governance action to date. Combined with Fortune's incident compilation, the message to enterprises is clear: AI agent adoption requires structured guardrails. The MCP CVE surge adds urgency — the protocol layer connecting agents to enterprise systems is itself a vulnerability surface.</p>
+
+      <h4>Key Evidence</h4>
+      <ul>
+        <li><a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/">The Register: Amazon AI coding outages</a>: Senior approval now required for AI-assisted deployments</li>
+        <li><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune: AI agent horror stories</a>: Multiple enterprises affected; database wipes, data loss</li>
+        <li><a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture">IT Brief: 2026 reset toward architecture</a>: Industry-wide governance recalibration</li>
+      </ul>
+
+      <p><strong>Signal Strength:</strong> <span style="color: var(--blue); font-weight: 600;">Growing Trend</span></p>
+
+      <p><strong>Trajectory:</strong> Amazon's policy will likely become the template. Expect "senior approval for AI-assisted deployments" to become a de facto enterprise standard within Q3 2026.</p>
+    </section>
+
+    <!-- Section 04: Emerging Patterns & Weak Signals -->
+    <section id="patterns">
+      <h2><span class="number">04</span>Emerging Patterns & Weak Signals</h2>
+
+      <div class="pattern-grid">
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>AI Burnout Paradox</h4>
+            <div class="pattern-confidence">High</div>
+          </div>
+          <p class="pattern-description">AI was marketed as a burnout solution but produces a different, potentially worse form of cognitive exhaustion. HBR and Scientific American have now independently validated what practitioner blogs flagged in E1-E2.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry">HBR: Brain Fry</a>, <a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">HBR: AI Intensifies Work</a>, <a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/">Scientific American</a>, <a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3">Medium: Kotrotsos</a></p>
+          <div class="pattern-implication">
+            Enterprise workforce planning must account for AI-specific burnout as a distinct risk category; tooling for output validation and review becomes a critical product category.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>Productivity Paradox</h4>
+            <div class="pattern-confidence">High</div>
+          </div>
+          <p class="pattern-description">Multiple independent studies show experienced developers are slower, not faster, with AI tools, while bug rates increase. The gap between perceived and measured productivity is widening.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://dev.to/increase123/the-ai-productivity-paradox-why-developers-are-19-slower-and-what-this-means-for-2026-a14">DEV: 19% slower</a>, <a href="https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/">ShiftMag: 93% use AI, 10% gain</a>, <a href="https://www.faros.ai/blog/ai-software-engineering">Faros AI</a></p>
+          <div class="pattern-implication">
+            ROI models for AI coding tool investment need fundamental recalibration; vendor productivity claims face credibility erosion.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>MCP Security Crisis</h4>
+            <div class="pattern-confidence">High</div>
+          </div>
+          <p class="pattern-description">30+ CVEs filed in 60 days targeting MCP servers and clients. 43% are exec/shell injection, including a CVSS 9.6 RCE. The protocol connecting AI agents to systems is itself a major attack surface.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">Palo Alto Unit 42</a>, <a href="https://www.practical-devsecops.com/mcp-security-vulnerabilities/">Practical DevSecOps</a>, <a href="https://vulnerablemcp.info/">VulnerableMCP.info</a>, <a href="https://marmelab.com/blog/2026/02/16/mcp-security-vulnerabilities.html">Marmelab</a></p>
+          <div class="pattern-implication">
+            MCP adoption in enterprise environments will require allow-lists, sandboxing, and security audits; current open MCP deployments are actively dangerous.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>Amazon Policy Reset</h4>
+            <div class="pattern-confidence">High</div>
+          </div>
+          <p class="pattern-description">Amazon's 90-day code safety reset (senior approval for all AI-assisted deployments) is the highest-profile enterprise governance action in AI coding to date. Multiple outlets covered it, establishing a public precedent.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/">The Register</a>, <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/amazon-calls-engineers-to-address-issues-caused-by-use-of-ai-tools-report-claims-company-says-recent-incidents-had-high-blast-radius-and-were-allegedly-related-to-gen-ai-assisted-changes">Tom's Hardware</a>, <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a></p>
+          <div class="pattern-implication">
+            Senior-approval gates for AI-generated code deployments become industry standard within 6 months.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>Claude Code Market Dominance</h4>
+            <div class="pattern-confidence">High</div>
+          </div>
+          <p class="pattern-description">Pragmatic Engineer survey (906 respondents, median 11-15 years experience) confirms Claude Code as the #1 AI coding tool in developer preference. 46% "most loved" vs Cursor 19% vs Copilot 9%.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer</a>, <a href="https://aiproductivity.ai/news/pragmatic-engineer-survey-ai-tooling-2026/">AI Productivity</a>, <a href="https://dev.to/alexcloudstar/claude-code-vs-cursor-vs-github-copilot-the-2026-ai-coding-tool-showdown-53n4">DEV: Tool showdown</a></p>
+          <div class="pattern-implication">
+            Copilot's dominance era has ended; Claude Code's terminal-native, agentic approach has become the reference architecture for AI coding tools.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>Copyright Vulnerability</h4>
+            <div class="pattern-confidence" style="background-color: var(--amber-dim); color: var(--amber);">Medium</div>
+          </div>
+          <p class="pattern-description">US Copyright Office ruling (upheld through Supreme Court non-intervention) that AI-generated code is not copyrightable creates legal exposure for businesses building on AI-generated codebases.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://standupforme.app/blog/some-uncomfortable-truths-about-ai-coding-agents/">Standup for Me Blog</a>, <a href="https://news.ycombinator.com/item?id=47545748">HN discussion</a></p>
+          <div class="pattern-implication">
+            Enterprises must evaluate IP exposure of AI-generated codebases; open-source licensing strategies may need revision.
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-header">
+            <h4>Disposable Code Philosophy</h4>
+            <div class="pattern-confidence" style="background-color: var(--amber-dim); color: var(--amber);">Medium</div>
+          </div>
+          <p class="pattern-description">When AI makes code generation cheap, some advocate treating code as disposable — generate, use, throw away, regenerate. But pushback from architects who see "temporary" software persisting indefinitely.</p>
+          <p class="pattern-evidence"><strong>Evidence:</strong> <a href="https://medium.com/google-cloud/software-becomes-disposable-how-ai-is-changing-the-way-we-architect-code-1bfb50356b98">Medium/Google Cloud</a>, <a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture">IT Brief</a></p>
+          <div class="pattern-implication">
+            Software architecture principles will bifurcate into "disposable layer" (AI-generated, replaceable) and "durable layer" (human-designed, maintained).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Contradictions & Contested Claims -->
+    <section id="contradictions">
+      <h2><span class="number">05</span>Contradictions & Contested Claims</h2>
+
+      <div class="contradictions-grid">
+        <div class="contradiction-item">
+          <div class="claim">AI coding improves productivity</div>
+          <div class="evidence-row">
+            <div class="evidence-block supporting">
+              <div class="evidence-label">Supporting</div>
+              <div><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer</a>: 95% use weekly, 55% use agents</div>
+            </div>
+            <div class="evidence-block contradicting">
+              <div class="evidence-label">Contradicting</div>
+              <div><a href="https://dev.to/increase123/the-ai-productivity-paradox-why-developers-are-19-slower-and-what-this-means-for-2026-a14">DEV: 19% slower</a>; <a href="https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/">ShiftMag: only 10% gain</a></div>
+            </div>
+          </div>
+          <div class="assessment">
+            <div class="assessment-label">Assessment</div>
+            <div>Contested — adoption ≠ productivity; perception-measurement gap widening</div>
+          </div>
+        </div>
+
+        <div class="contradiction-item">
+          <div class="claim">AI coding reduces developer burden</div>
+          <div class="evidence-row">
+            <div class="evidence-block supporting">
+              <div class="evidence-label">Supporting</div>
+              <div><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer</a>: high satisfaction</div>
+            </div>
+            <div class="evidence-block contradicting">
+              <div class="evidence-label">Contradicting</div>
+              <div><a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry">HBR: Brain Fry</a>: 14% mental fog; <a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">HBR: Intensifies</a>: removes output governor</div>
+            </div>
+          </div>
+          <div class="assessment">
+            <div class="assessment-label">Assessment</div>
+            <div>Contested — AI shifts burden from production to evaluation/review</div>
+          </div>
+        </div>
+
+        <div class="contradiction-item">
+          <div class="claim">AI inference costs are sustainable</div>
+          <div class="evidence-row">
+            <div class="evidence-block supporting">
+              <div class="evidence-label">Supporting</div>
+              <div>Vendor pricing models assume scale economics</div>
+            </div>
+            <div class="evidence-block contradicting">
+              <div class="evidence-label">Contradicting</div>
+              <div><a href="https://standupforme.app/blog/some-uncomfortable-truths-about-ai-coding-agents/">Standup for Me</a>: costs artificially low, "order-of-magnitude price hikes" predicted</div>
+            </div>
+          </div>
+          <div class="assessment">
+            <div class="assessment-label">Assessment</div>
+            <div>Trending toward unsustainability thesis — needs vendor data to resolve</div>
+          </div>
+        </div>
+
+        <div class="contradiction-item">
+          <div class="claim">Claude Code is most reliable tool</div>
+          <div class="evidence-row">
+            <div class="evidence-block supporting">
+              <div class="evidence-label">Supporting</div>
+              <div><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer</a>: 46% most loved</div>
+            </div>
+            <div class="evidence-block contradicting">
+              <div class="evidence-label">Contradicting</div>
+              <div><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a>: terraform destroy incident; E2 CVE data: 27/35 March CVEs attributed to Claude Code</div>
+            </div>
+          </div>
+          <div class="assessment">
+            <div class="assessment-label">Assessment</div>
+            <div>Unresolved — market leadership ≠ reliability; larger user base = more incident surface</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06: Gaps & Uncertainties -->
+    <section id="gaps">
+      <h2><span class="number">06</span>Gaps & Uncertainties</h2>
+
+      <ul>
+        <li><strong>Reddit retrieval remains structurally broken:</strong> Zero direct Reddit posts retrieved across all three extractions. This systematically excludes the highest-volume developer discussion platform. Sentiment distribution may differ significantly on Reddit vs. the blog/publication sources that dominate this extraction.</li>
+
+        <li><strong>YouTube retrieval failure:</strong> Zero direct video URLs retrieved. ThePrimeagen and Fireship coverage of AI coding tools is known to exist but could not be captured. Video-format discourse may carry different sentiment signals than text.</li>
+
+        <li><strong>Mastodon/Bluesky near-zero retrieval:</strong> Only 1 Bluesky item retrieved; Mastodon returned zero. Non-US and open-source community perspectives remain systematically undersampled.</li>
+
+        <li><strong>Smaller sample size (19 items vs. 53 in E2):</strong> The 3-day extraction window and Chrome-based method produced fewer items. Percentage-based sentiment distribution is directionally valid but absolute counts should be interpreted cautiously.</li>
+
+        <li><strong>METR RCT (19% slower) cited in emerging patterns but not directly retrieved:</strong> The study (arXiv 2507.09089) was referenced in secondary sources but not directly extracted. Manual retrieval recommended for E4.</li>
+
+        <li><strong>Copyright ruling — single-source analysis:</strong> The non-copyrightability claim relies primarily on one blog post's legal analysis. While it cites authoritative rulings, independent legal analysis is needed to reach High confidence.</li>
+
+        <li><strong>Causal attribution for burnout paradox:</strong> HBR and Scientific American document the phenomenon but do not establish whether AI <em>causes</em> the burnout shift or merely correlates with broader workplace intensification trends.</li>
+      </ul>
+    </section>
+
+    <!-- Section 07: Recommended Actions & Potential Interventions -->
+    <section id="recommendations">
+      <h2><span class="number">07</span>Recommended Actions & Potential Interventions</h2>
+
+      <h3>For Tool Vendors</h3>
+
+      <h4>1. MCP Security Crisis</h4>
+      <p><strong>Issue:</strong> MCP protocol is an active vulnerability surface (30+ CVEs in 60 days, 43% exec/shell injection)</p>
+      <p><strong>Potential Fix:</strong> Ship MCP implementations with mandatory sandboxing, allow-lists, and audit logging by default. Publish a security hardening guide.</p>
+      <p><strong>Rationale:</strong> Unit 42 research and VulnerableMCP.info have established MCP as a known attack vector; proactive hardening converts incident risk into trust-building.</p>
+
+      <h4>2. Code Quality & Security</h4>
+      <p><strong>Issue:</strong> AI-generated code introduces 1.7x more bugs (CodeRabbit) with 40% vulnerability rate (The Register)</p>
+      <p><strong>Potential Fix:</strong> Integrate static analysis and security scanning into the generation pipeline — flag vulnerabilities before output, not after deployment.</p>
+      <p><strong>Rationale:</strong> Post-generation scanning is too late for velocity-first workflows; in-pipeline scanning catches defects at the point of creation.</p>
+
+      <h3>For Engineering Leaders</h3>
+
+      <h4>1. Production Safety & Governance</h4>
+      <p><strong>Issue:</strong> Amazon's 90-day safety reset demonstrates that uncontrolled AI agent deployments cause production disasters</p>
+      <p><strong>Potential Fix:</strong> Implement tiered deployment approval: AI-generated code for non-critical paths auto-approved; critical infrastructure requires senior review. Establish an AI code audit function.</p>
+      <p><strong>Rationale:</strong> Amazon's policy change is a leading indicator — proactive governance avoids reactive crisis management.</p>
+
+      <h4>2. Burnout & Cognitive Load</h4>
+      <p><strong>Issue:</strong> AI burnout paradox — developers working longer hours with greater cognitive load despite AI "productivity" gains</p>
+      <p><strong>Potential Fix:</strong> Set explicit output caps (e.g., max PRs per day with AI); mandate AI-free focus blocks; measure cognitive load alongside velocity.</p>
+      <p><strong>Rationale:</strong> HBR evidence shows organizations treating saved time as capacity for more work; without explicit limits, AI accelerates burnout rather than relieving it.</p>
+
+      <h3>For Individual Developers</h3>
+
+      <h4>1. Skill Preservation</h4>
+      <p><strong>Issue:</strong> Skill atrophy risk from over-reliance on AI code generation</p>
+      <p><strong>Potential Fix:</strong> Maintain deliberate practice: write non-trivial code without AI assistance at least weekly; review AI-generated code line-by-line rather than accepting wholesale.</p>
+      <p><strong>Rationale:</strong> The "uncomfortable truths" analysis and cognitive debt research both identify atrophy as the primary individual-level risk.</p>
+
+      <h4>2. Prompt Injection & Agent Safety</h4>
+      <p><strong>Issue:</strong> Prompt injection is a foundational, unfixable vulnerability class now amplified by agentic coding</p>
+      <p><strong>Potential Fix:</strong> Treat AI agent actions as untrusted — use confirmation gates for destructive operations; never grant agents write access to production data without review.</p>
+      <p><strong>Rationale:</strong> The Fortune incident compilation (terraform destroy, database wipes) and Unit 42 MCP research both demonstrate that agent autonomy + production access = disaster surface.</p>
+
+      <h3>For Educators / Bootcamps</h3>
+
+      <h4>1. Curriculum Redesign for AI Era</h4>
+      <p><strong>Issue:</strong> Junior developers "can't debug" due to AI-dependency — <a href="https://dev.to/rakshath/the-junior-developer-crisis-of-2026-ai-is-creating-developers-who-cant-debug-33od">DEV: Junior Developer Crisis of 2026</a></p>
+      <p><strong>Potential Fix:</strong> Restructure curricula to front-load debugging, reading existing code, and security auditing before introducing AI assistance. AI tools introduced in later modules as productivity amplifiers, not foundations.</p>
+      <p><strong>Rationale:</strong> The "Junior Developer Crisis of 2026" framing is gaining traction; graduates who can debug and audit AI output are more employable than those who can only prompt.</p>
+    </section>
+
+    <!-- Section 08: Incidents Log -->
+    <section id="incidents">
+      <h2><span class="number">08</span>Incidents Log</h2>
+
+      <table class="incidents-table">
+        <thead>
+          <tr>
+            <th>Incident</th>
+            <th>Date</th>
+            <th>Tool(s)</th>
+            <th>Impact</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Amazon shopping outage — AI-assisted code</td>
+            <td>2026-03-05</td>
+            <td>Amazon Q Developer</td>
+            <td>6-hour outage; checkout/login/pricing down; 6.3M lost orders reported</td>
+            <td><a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/">The Register</a></td>
+          </tr>
+          <tr>
+            <td>Amazon AI coding incident — earlier event</td>
+            <td>2026-03-02</td>
+            <td>Amazon Q Developer</td>
+            <td>1.6M website errors; 120K lost orders reported</td>
+            <td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a></td>
+          </tr>
+          <tr>
+            <td>Claude Code terraform destroy</td>
+            <td>2026 (unconfirmed)</td>
+            <td>Claude Code</td>
+            <td>2.5 years of production data destroyed</td>
+            <td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a></td>
+          </tr>
+          <tr>
+            <td>Replit Agent SaaStr database wipe</td>
+            <td>2026 (unconfirmed)</td>
+            <td>Replit Agent</td>
+            <td>Production database deleted</td>
+            <td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a></td>
+          </tr>
+          <tr>
+            <td>Moltbook authentication token exposure</td>
+            <td>2026 (unconfirmed)</td>
+            <td>General AI</td>
+            <td>1.5M authentication tokens exposed</td>
+            <td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">Fortune</a></td>
+          </tr>
+          <tr>
+            <td>MCP CVE surge</td>
+            <td>2026-01 to 2026-03</td>
+            <td>MCP protocol</td>
+            <td>30+ CVEs; 43% exec/shell injection; CVSS 9.6 RCE (CVE-2025-6514)</td>
+            <td><a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">Unit 42</a></td>
+          </tr>
+          <tr>
+            <td>Firetiger ingest degradation</td>
+            <td>2026-03-01</td>
+            <td>General AI (unconfirmed)</td>
+            <td>8-hour degraded state; OpenTelemetry and GitHub webhooks failed</td>
+            <td><a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/">Firetiger</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 09: Report Metadata -->
+    <section id="metadata">
+      <h2><span class="number">09</span>Report Metadata</h2>
+
+      <div class="metadata-grid">
+        <div class="metadata-item">
+          <div class="label">Analysis Prompt</div>
+          <div class="value">v1.15</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Domain Config</div>
+          <div class="value">v1.2</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Bootloader</div>
+          <div class="value">v1.9</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Analysis Run (Date/Time)</div>
+          <div class="value">2026-03-31 20:30 UTC</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Extraction Sequence</div>
+          <div class="value">3 of ongoing</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Extraction Sequence Source</div>
+          <div class="value">Inferred: incremented from prior extraction 2</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Extraction Files Merged</div>
+          <div class="value">1</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Extractor(s)</div>
+          <div class="value">Claude (claude-opus-4-6) via Chrome browser automation</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Extraction Date Window</div>
+          <div class="value">2026-03-28 – 2026-03-31</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Deduplication Applied</div>
+          <div class="value">Yes</div>
+        </div>
+        <div class="metadata-item">
+          <div class="label">Items Deduplicated</div>
+          <div class="value">1 URL merged (Standup for Me blog = HN source article); 0 flagged as potential duplicates</div>
+        </div>
+      </div>
+
+      <h3>Citation Reference Table</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Source Name</th>
+            <th>URL</th>
+            <th>Section</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>HN: Uncomfortable truths about AI coding agents</td>
+            <td><a href="https://news.ycombinator.com/item?id=47545748">news.ycombinator.com</a></td>
+            <td>tier1.hacker_news</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Standup for Me Blog: Uncomfortable truths</td>
+            <td><a href="https://standupforme.app/blog/some-uncomfortable-truths-about-ai-coding-agents/">standupforme.app</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>The Register: AI coding not more secure</td>
+            <td><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/">theregister.com</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>HBR: When Using AI Leads to Brain Fry</td>
+            <td><a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry">hbr.org</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>HBR: AI Doesn't Reduce Work—It Intensifies It</td>
+            <td><a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">hbr.org</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Pragmatic Engineer: AI Tooling 2026</td>
+            <td><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">newsletter.pragmaticengineer.com</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>The Register: Amazon AI coding outages</td>
+            <td><a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/">theregister.com</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Fortune: AI agent horror stories</td>
+            <td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/">fortune.com</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Scientific American: Developers working longer hours</td>
+            <td><a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/">scientificamerican.com</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Stack Overflow Blog: Bugs inevitable with AI agents?</td>
+            <td><a href="https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/">stackoverflow.blog</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>CodeRabbit: AI vs human code generation report</td>
+            <td><a href="https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report">coderabbit.ai</a></td>
+            <td>tier1.blogs</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Bluesky: JD Long on Claude Code</td>
+            <td><a href="https://bsky.app/profile/did:plc:aq4dap3jdzt3scjjfvsj674d/post/3lkjzunkhyk27">bsky.app</a></td>
+            <td>tier1.bluesky</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>X/Twitter: @Pragmatic_Eng survey</td>
+            <td><a href="https://x.com/Pragmatic_Eng/status/1945173527578956176">x.com</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Medium: AI Burnout — Marco Kotrotsos</td>
+            <td><a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3">kotrotsos.medium.com</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>DEV: Junior Developer Crisis of 2026</td>
+            <td><a href="https://dev.to/rakshath/the-junior-developer-crisis-of-2026-ai-is-creating-developers-who-cant-debug-33od">dev.to</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Medium/Google Cloud: Disposable code architecture</td>
+            <td><a href="https://medium.com/google-cloud/software-becomes-disposable-how-ai-is-changing-the-way-we-architect-code-1bfb50356b98">medium.com/google-cloud</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Addy Osmani: 80% Problem in Agentic Coding</td>
+            <td><a href="https://addyo.substack.com/p/the-80-problem-in-agentic-coding">addyo.substack.com</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>TDS: Vibe Coding Security Debt Crisis</td>
+            <td><a href="https://towardsdatascience.com/the-reality-of-vibe-coding-ai-agents-and-the-security-debt-crisis/">towardsdatascience.com</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Palo Alto Unit 42: MCP Attack Vectors</td>
+            <td><a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">unit42.paloaltonetworks.com</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>IT Brief: AI coding tools 2026 reset</td>
+            <td><a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture">itbrief.news</a></td>
+            <td>tier2</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Firetiger: March 1 ingest incident postmortem</td>
+            <td><a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/">blog.firetiger.com</a></td>
+            <td>incidents</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Practical DevSecOps: MCP vulnerabilities</td>
+            <td><a href="https://www.practical-devsecops.com/mcp-security-vulnerabilities/">practical-devsecops.com</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>VulnerableMCP.info</td>
+            <td><a href="https://vulnerablemcp.info/">vulnerablemcp.info</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Marmelab: MCP security vulnerabilities</td>
+            <td><a href="https://marmelab.com/blog/2026/02/16/mcp-security-vulnerabilities.html">marmelab.com</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Tom's Hardware: Amazon AI tool incidents</td>
+            <td><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/amazon-calls-engineers-to-address-issues-caused-by-use-of-ai-tools-report-claims-company-says-recent-incidents-had-high-blast-radius-and-were-allegedly-related-to-gen-ai-assisted-changes">tomshardware.com</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>AI Productivity: Pragmatic Engineer survey coverage</td>
+            <td><a href="https://aiproductivity.ai/news/pragmatic-engineer-survey-ai-tooling-2026/">aiproductivity.ai</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>DEV: Claude Code vs Cursor vs Copilot showdown</td>
+            <td><a href="https://dev.to/alexcloudstar/claude-code-vs-cursor-vs-github-copilot-the-2026-ai-coding-tool-showdown-53n4">dev.to</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>DEV: AI Productivity Paradox — 19% slower</td>
+            <td><a href="https://dev.to/increase123/the-ai-productivity-paradox-why-developers-are-19-slower-and-what-this-means-for-2026-a14">dev.to</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>ShiftMag: 93% use AI but productivity only 10%</td>
+            <td><a href="https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/">shiftmag.dev</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>Faros AI: AI software engineering</td>
+            <td><a href="https://www.faros.ai/blog/ai-software-engineering">faros.ai</a></td>
+            <td>emerging_patterns</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Sentiment Analysis Report: Extraction 3 | 2026-03-31</p>
+      <p>HTML Rendering Engine v1.1 | Self-contained, single-file format for social media sharing and direct viewing</p>
+    </footer>
+  </div>
+
+  <script>
+    // Sentiment bar animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const bars = document.querySelectorAll('.sentiment-bar-fill');
+      bars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        if (percentage) {
+          bar.style.setProperty('--percentage', percentage + '%');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
