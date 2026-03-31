@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analysis Report: 2026-03-23 – 2026-03-30</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #2a3441;
+      --text: #d1cec9;
+      --text-dim: #7a8694;
+      --head: #f0ede8;
+      --amber: #f0a832;
+      --amber-dim: #7a5318;
+      --red: #e05252;
+      --red-dim: #5c1f1f;
+      --green: #4caf7d;
+      --green-dim: #1a3d2b;
+      --blue: #5c9eed;
+      --blue-dim: #1a2f4a;
+      --mono: 'JetBrains Mono', monospace;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --display: 'DM Serif Display', Georgia, serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/></filter><rect width="100" height="100" fill="%230d1117" filter="url(%23noise)" opacity="0.02"/></svg>');
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: var(--amber);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: var(--amber);
+    }
+
+    /* Sticky Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+    }
+
+    nav a {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 2rem;
+      color: var(--text-dim);
+    }
+
+    nav a:hover {
+      color: var(--amber);
+    }
+
+    /* Main container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Masthead */
+    .masthead {
+      margin-bottom: 3rem;
+      border-left: 3px solid var(--amber);
+      padding-left: 1.5rem;
+    }
+
+    .masthead tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--amber);
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead h1 {
+      font-family: var(--display);
+      font-size: 2.5rem;
+      color: var(--head);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .stat-pills {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      font-size: 12px;
+      font-family: var(--mono);
+      color: var(--text-dim);
+    }
+
+    .pill strong {
+      color: var(--head);
+      font-weight: 500;
+    }
+
+    /* Section wrapper */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--amber);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-right: 3px solid var(--amber);
+      display: inline-block;
+      padding-right: 1rem;
+    }
+
+    section h2 {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--head);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    section h3 {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      color: var(--head);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    /* Executive Summary callout */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--amber);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0;
+    }
+
+    .callout p {
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    thead {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--amber);
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+    }
+
+    th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:hover {
+      background: rgba(240, 173, 50, 0.05);
+    }
+
+    /* Sentiment bars */
+    .sentiment-container {
+      margin: 1rem 0;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .sentiment-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      min-width: 150px;
+      text-align: right;
+      color: var(--text-dim);
+    }
+
+    .sentiment-bar {
+      height: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      position: relative;
+      overflow: hidden;
+      flex-grow: 1;
+      animation: slideIn 0.6s ease-out forwards;
+      animation-delay: calc(var(--delay, 0) * 50ms);
+    }
+
+    @keyframes slideIn {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: var(--width, 100%);
+        opacity: 1;
+      }
+    }
+
+    .sentiment-bar.positive {
+      background-color: var(--green);
+    }
+
+    .sentiment-bar.positive-dim {
+      background-color: rgba(76, 175, 125, 0.6);
+    }
+
+    .sentiment-bar.mixed {
+      background-color: var(--amber);
+    }
+
+    .sentiment-bar.negative-dim {
+      background-color: rgba(224, 82, 82, 0.7);
+    }
+
+    .sentiment-bar.negative {
+      background-color: var(--red);
+    }
+
+    .sentiment-bar.nuanced {
+      background-color: var(--text-dim);
+    }
+
+    .sentiment-value {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--head);
+      margin-left: 0.5rem;
+      min-width: 50px;
+    }
+
+    /* Cluster grid */
+    .cluster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .cluster-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .cluster-count {
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    .cluster-name {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    /* Deep analysis blocks */
+    .analysis-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--amber);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .signal-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.3rem 0.6rem;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .signal-consensus {
+      background: rgba(76, 175, 125, 0.2);
+      color: var(--green);
+    }
+
+    .signal-growing {
+      background: rgba(240, 173, 50, 0.2);
+      color: var(--amber);
+    }
+
+    .signal-debate {
+      background: rgba(92, 158, 237, 0.2);
+      color: var(--blue);
+    }
+
+    .signal-isolated {
+      background: rgba(122, 134, 148, 0.2);
+      color: var(--text-dim);
+    }
+
+    /* Pattern cards */
+    .pattern-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pattern-card::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--display);
+      font-size: 5rem;
+      color: var(--amber);
+      opacity: 0.06;
+      line-height: 1;
+    }
+
+    .pattern-title {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+    }
+
+    .confidence-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.3rem 0.6rem;
+      background: rgba(76, 175, 125, 0.2);
+      color: var(--green);
+      border-radius: 2px;
+      margin-right: 0.5rem;
+    }
+
+    /* Contradictions grid */
+    .contradictions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 80px;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .contradiction-row {
+      display: contents;
+    }
+
+    .contradiction-cell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .contradiction-header {
+      background: var(--surface2);
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      color: var(--amber);
+    }
+
+    .status-badge {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-both {
+      background: rgba(92, 158, 237, 0.2);
+      color: var(--blue);
+    }
+
+    /* Gaps list */
+    .gaps-list {
+      margin: 1.5rem 0;
+    }
+
+    .gap-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gap-item:last-child {
+      border-bottom: none;
+    }
+
+    .gap-icon {
+      color: var(--red);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .gap-content h4 {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+    }
+
+    .gap-content p {
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Recommendation blocks */
+    .recommendation-group {
+      margin: 2rem 0;
+    }
+
+    .recommendation-group h4 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      color: var(--head);
+      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .recommendation {
+      background: var(--surface);
+      border-left: 3px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .recommendation.priority-high {
+      border-left-color: var(--red);
+    }
+
+    .recommendation.priority-med {
+      border-left-color: var(--amber);
+    }
+
+    .recommendation h5 {
+      font-family: var(--display);
+      font-size: 1rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+    }
+
+    .recommendation p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .recommendation ol, .recommendation ul {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .recommendation li {
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+
+    /* Incident cards */
+    .incident-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .incident-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .incident-title {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+    }
+
+    .incident-date {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .incident-detail {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .cvss-badge {
+      font-family: var(--mono);
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .cvss-critical {
+      background: var(--red);
+      color: var(--head);
+    }
+
+    .cvss-high {
+      background: var(--amber);
+      color: var(--bg);
+    }
+
+    .cvss-significant {
+      background: var(--text-dim);
+      color: var(--head);
+    }
+
+    /* Metadata grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .metadata-key {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    .metadata-value {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .masthead h1 {
+        font-size: 1.8rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      section h3 {
+        font-size: 1.2rem;
+      }
+
+      .contradictions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contradiction-row {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .cluster-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#overview">Overview</a>
+    <a href="#clusters">Clusters</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#incidents">Incidents</a>
+  </nav>
+
+  <div class="container">
+    <div class="masthead">
+      <tag>Sentiment Analysis</tag>
+      <h1>AI-Assisted Coding Discourse<br>2026-03-23 – 2026-03-30</h1>
+      <div class="stat-pills">
+        <div class="pill"><strong>53</strong> Items Analyzed</div>
+        <div class="pill"><strong>62%</strong> Negative Sentiment</div>
+        <div class="pill"><strong>8</strong> Major Clusters</div>
+        <div class="pill"><strong>5</strong> High-Signal Patterns</div>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <section id="summary">
+      <h2>Executive Summary</h2>
+      <div class="callout">
+        <p>The discourse around AI-assisted coding has shifted markedly toward structural skepticism, with negative sentiment climbing from 46% in Extraction 1 to 62% in this period. While productivity gains remain acknowledged, concern has crystallized around three focal points: cognitive debt and deskilling risks, accelerating security vulnerabilities in AI-generated code, and emerging labor market disruption particularly affecting junior developers. Trust in tool reliability has eroded following high-profile incidents (Amazon environment destruction, Claude Code rate-limit failures), and enterprise adoption continues despite mounting governance concerns. The narrative has matured from hype-cycle enthusiasm to pragmatic wariness.</p>
+      </div>
+    </section>
+
+    <!-- Quantitative Overview -->
+    <section id="overview">
+      <h2>Quantitative Overview</h2>
+
+      <div class="section-label">Sentiment Distribution</div>
+      <h3>Extraction 2: 2026-03-23 to 2026-03-30</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sentiment</th>
+            <th>Count</th>
+            <th>% of Sample</th>
+            <th>Trend vs E1</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strongly Positive</td>
+            <td>2</td>
+            <td>4%</td>
+            <td>↑ +2%</td>
+          </tr>
+          <tr>
+            <td>Cautiously Positive</td>
+            <td>8</td>
+            <td>15%</td>
+            <td>↓ -3%</td>
+          </tr>
+          <tr>
+            <td>Mixed/Ambivalent</td>
+            <td>10</td>
+            <td>19%</td>
+            <td>↑ +1%</td>
+          </tr>
+          <tr>
+            <td>Cautiously Negative</td>
+            <td>15</td>
+            <td>28%</td>
+            <td>↑ +2%</td>
+          </tr>
+          <tr>
+            <td>Strongly Negative</td>
+            <td>16</td>
+            <td>30%</td>
+            <td>↑ +10%</td>
+          </tr>
+          <tr>
+            <td>Nuanced/Analytical</td>
+            <td>2</td>
+            <td>4%</td>
+            <td>↓ -12%</td>
+          </tr>
+          <tr style="font-weight: 600; background: rgba(240, 173, 50, 0.1);">
+            <td>TOTAL ITEMS</td>
+            <td>53</td>
+            <td>100%</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin: 1rem 0; color: var(--text-dim); font-size: 13px;"><strong>Key Trend:</strong> Strongly Negative sentiment surged 10 percentage points (from 20% to 30%), driven by incident reports and security research. Nuanced/Analytical discourse contracted sharply (-12%), suggesting polarization around concrete concerns rather than exploratory evaluation.</p>
+
+      <div class="section-label">Topic Clusters</div>
+      <h3>Extraction 2</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cluster</th>
+            <th>Mentions</th>
+            <th>Dominant Sentiment</th>
+            <th>Signal Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Code Quality / Security</td>
+            <td>14</td>
+            <td>Strongly Negative</td>
+            <td>Emerging Consensus</td>
+          </tr>
+          <tr>
+            <td>Job Security / Hiring Impact</td>
+            <td>10</td>
+            <td>Strongly Negative</td>
+            <td>Growing Trend</td>
+          </tr>
+          <tr>
+            <td>Cognitive Debt / Deskilling</td>
+            <td>9</td>
+            <td>Strongly Negative</td>
+            <td>Emerging Consensus</td>
+          </tr>
+          <tr>
+            <td>Incidents / System Failures</td>
+            <td>8</td>
+            <td>Strongly Negative</td>
+            <td>Emerging Consensus</td>
+          </tr>
+          <tr>
+            <td>Productivity Gains</td>
+            <td>8</td>
+            <td>Cautiously Positive</td>
+            <td>Active Debate</td>
+          </tr>
+          <tr>
+            <td>Pricing / Cost / Capacity</td>
+            <td>6</td>
+            <td>Cautiously Negative</td>
+            <td>Growing Trend</td>
+          </tr>
+          <tr>
+            <td>Enterprise Policy / Governance</td>
+            <td>5</td>
+            <td>Nuanced/Analytical</td>
+            <td>Growing Trend</td>
+          </tr>
+          <tr>
+            <td>Burnout / Cognitive Load</td>
+            <td>5</td>
+            <td>Cautiously Negative</td>
+            <td>Active Debate</td>
+          </tr>
+          <tr>
+            <td>Tool-Specific Issues</td>
+            <td>4</td>
+            <td>Strongly Negative</td>
+            <td>Growing Trend</td>
+          </tr>
+          <tr>
+            <td>Learning & Skill Development</td>
+            <td>4</td>
+            <td>Strongly Negative</td>
+            <td>Emerging Consensus</td>
+          </tr>
+          <tr>
+            <td>Trust / Verification</td>
+            <td>4</td>
+            <td>Cautiously Negative</td>
+            <td>Growing Trend</td>
+          </tr>
+          <tr>
+            <td>Hype vs Reality</td>
+            <td>3</td>
+            <td>Cautiously Negative</td>
+            <td>Active Debate</td>
+          </tr>
+          <tr>
+            <td>Architecture & Design Philosophy</td>
+            <td>2</td>
+            <td>Mixed/Ambivalent</td>
+            <td>Isolated Signal</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin: 1rem 0; color: var(--text-dim); font-size: 13px;"><strong>Emerging Clusters</strong> (2+ mentions, previously absent):<br>
+      • Cognitive Debt Discourse (5 high-credibility sources)<br>
+      • AI Burnout Paradox (3 sources)<br>
+      • Disposable Code Architecture (2 sources)</p>
+
+      <div class="section-label">Tool Mentions</div>
+      <h3>Positive, Negative, and Mixed Signals</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Positive</th>
+            <th>Negative</th>
+            <th>Mixed</th>
+            <th>Key Themes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Claude Code</td>
+            <td>4</td>
+            <td>8</td>
+            <td>0</td>
+            <td>Rate limits, dominance, security vulnerabilities</td>
+          </tr>
+          <tr>
+            <td>Cursor</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Stable alternative, feature parity</td>
+          </tr>
+          <tr>
+            <td>Lovable RLS</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>Critical security flaws, vibe coding risks</td>
+          </tr>
+          <tr>
+            <td>Vibe Coding (generic)</td>
+            <td>0</td>
+            <td>3</td>
+            <td>0</td>
+            <td>Security reckoning, vulnerability accumulation</td>
+          </tr>
+          <tr>
+            <td>GitHub Copilot</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Absent from current discourse</td>
+          </tr>
+          <tr>
+            <td>ChatGPT Code</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>Mixed signals, limited adoption discussion</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin: 1rem 0; color: var(--text-dim); font-size: 13px;"><strong>Claude Code dominance</strong> is pronounced, with 12 direct mentions tracking both adoption leadership and concentrated criticism around rate limits, security, and dependency.</p>
+    </section>
+
+    <!-- Deep Analysis by Cluster -->
+    <section id="clusters">
+      <h2>Deep Analysis by Cluster</h2>
+
+      <div class="analysis-block">
+        <h3>Cluster 1: Code Quality & Security</h3>
+        <span class="signal-badge signal-consensus">Emerging Consensus</span>
+        <span class="signal-badge signal-growing">14 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> Security vulnerabilities in AI-generated code are accelerating at alarming rates.</p>
+
+        <p style="margin-top: 1rem;"><strong>High-Credibility Sources:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register (AI coding CVEs)</a>: 35 CVEs in March 2026 (vs. 6 in Jan, 15 in Feb) — 27/35 attributed to Claude Code; represents 450% month-over-month increase</li>
+          <li>Georgia Tech CVE Tracking: Validates acceleration curve across multiple tools</li>
+          <li><a href="https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding/" target="_blank" rel="noopener">Escape.tech audit</a>: 69 vulnerabilities across 15 applications, 5 tools tested</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Specific Concerns:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+          <li><a href="https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/" target="_blank" rel="noopener">Lovable vulnerabilities</a>: Supabase vibe coding crisis (10.3% critical RLS flaws, 1.5M tokens exposed)</li>
+          <li><a href="https://awesomeagents.ai/news/vibe-coding-security-69-vulnerabilities/" target="_blank" rel="noopener">Vibe Coding Wall of Shame</a>: 2K+ vulnerabilities across 5,600 applications</li>
+          <li>Vulnerability type patterns suggest AI struggles with authorization, input validation, cryptographic practices</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Pattern:</strong> 13/14 mentions Strongly Negative; 1 Mixed (acknowledging productivity while noting security tradeoff)</p>
+      </div>
+
+      <div class="analysis-block">
+        <h3>Cluster 2: Job Security & Hiring Impact</h3>
+        <span class="signal-badge signal-consensus">Growing Trend</span>
+        <span class="signal-badge signal-growing">10 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> Entry-level and junior developer hiring is contracting measurably, with structural disruption feared.</p>
+
+        <p style="margin-top: 1rem;"><strong>High-Credibility Sources:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>: Entry-level tech jobs down 67% year-over-year; UK market down 46%; top 15 firms down 25%</li>
+          <li><a href="https://news.ycombinator.com/item?id=46617456" target="_blank" rel="noopener">HN: Junior Developers in the Age of AI</a>: Barbell economy formation (top 1% benefiting, junior tier collapsing)</li>
+          <li><a href="https://www.theregister.com/2026/02/23/microsoft_ai_entry_level_russinovich_hanselman/" target="_blank" rel="noopener">Microsoft Executive Concern</a>: Internal worry about entry-level job destruction</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Secondary Patterns:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+          <li><a href="https://news.ycombinator.com/item?id=47420767" target="_blank" rel="noopener">HN: Is vibe coding a mandatory job requirement?</a>: Signals potential gatekeeping of junior positions</li>
+          <li><a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>: Career pathway anxiety across Reddit communities</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Distribution:</strong> 9/10 Strongly Negative; 1 Mixed (acknowledging adaptation potential)</p>
+      </div>
+
+      <div class="analysis-block">
+        <h3>Cluster 3: Cognitive Debt & Deskilling</h3>
+        <span class="signal-badge signal-consensus">Emerging Consensus</span>
+        <span class="signal-badge signal-growing">9 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> Frictionless AI acceleration may atrophy developer comprehension and judgment skills, creating long-term technical debt.</p>
+
+        <p style="margin-top: 1rem;"><strong>High-Credibility Sources:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Addy Osmani</a>: Comprehension debt framing; prioritizes understanding over velocity</li>
+          <li><a href="https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/" target="_blank" rel="noopener">Margaret Storey</a>: Cognitive debt scholarship; entry-level developer vulnerability</li>
+          <li><a href="https://simonwillison.net/2026/Feb/15/cognitive-debt/" target="_blank" rel="noopener">Simon Willison</a>: Technical debt → cognitive debt reframing</li>
+          <li><a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World</a>: "Frictionless AI accelerates skill atrophy"</li>
+          <li>Anthropic Internal Study (reported by Addy Osmani): 17% lower comprehension among AI users; frames "cognitive debt" concept</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Specific Concerns:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+          <li>Developers outsourcing understanding to AI rather than building mental models</li>
+          <li>Code review burden increases as reviewers must comprehend AI-generated code without having written it</li>
+          <li>Junior developers particularly vulnerable to skipping foundational skills</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Pattern:</strong> 8/9 Strongly Negative (framed as existential risk); 1 Cautiously Positive (opportunity to specialize in high-level design)</p>
+
+        <p style="margin-top: 1rem;"><strong>Signal Strength:</strong> <strong>Emerging Consensus</strong> — concept appeared in 5 independent high-credibility sources; represents new framing (absent in E1).</p>
+      </div>
+
+      <div class="analysis-block">
+        <h3>Cluster 4: Incidents & System Failures</h3>
+        <span class="signal-badge signal-consensus">Emerging Consensus</span>
+        <span class="signal-badge signal-growing">8 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> High-profile operational failures (environment destruction, rate-limit drain) eroding user confidence.</p>
+
+        <p style="margin-top: 1rem;"><strong>Incidents Documented:</strong></p>
+        <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><strong>Amazon AI-Assisted Code Outage (2026-03-10, Critical):</strong> <a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/" target="_blank" rel="noopener">The Register</a>: AI tool deleted production environment, 6-hour ecommerce crash</li>
+          <li><strong>Claude Code Rate Limit Drain (2026-03-23, Operational):</strong> <a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">MacRumors</a>: Multiple reports of limits depleting in minutes; second incident in one month</li>
+          <li><strong>Lovable/Supabase RLS Crisis (2026-02-27, Critical):</strong> <a href="https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/" target="_blank" rel="noopener">The Register</a>: 10.3% critical vulnerabilities, token exposure</li>
+        </ol>
+
+        <p style="margin-top: 1rem;"><strong>Secondary Signals:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+          <li><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune</a>: "Multiple horror stories" of environment destruction</li>
+          <li><a href="https://github.com/anthropics/claude-code/issues/38335" target="_blank" rel="noopener">GitHub Issue #38335</a>: Claude Max plan limits exhausted abnormally</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Distribution:</strong> 7/8 Strongly Negative; 1 Mixed (technical interest in failure modes)</p>
+
+        <p style="margin-top: 1rem;"><strong>Trust Erosion:</strong> Incidents directly mentioned in pricing/cost, dependency/resilience, and trust clusters — cascading impact.</p>
+      </div>
+
+      <div class="analysis-block">
+        <h3>Cluster 5: Productivity Gains</h3>
+        <span class="signal-badge signal-debate">Active Debate</span>
+        <span class="signal-badge signal-growing">8 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> AI-assisted coding continues to deliver measurable velocity increases, though framed with increasing caveats.</p>
+
+        <p style="margin-top: 1rem;"><strong>High-Credibility Sources:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer</a>: 95% use AI weekly; 75% say half+ of work AI-assisted; 55% use agents</li>
+          <li><a href="https://www.geekwire.com/2026/a-new-era-of-software-development-claude-code-has-seattle-engineers-buzzing-as-ai-coding-hits-new-phase/" target="_blank" rel="noopener">GeekWire</a>: Claude Code 46% most loved tool (but declining from prior extraction)</li>
+          <li><a href="https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/" target="_blank" rel="noopener">TechCrunch</a>: Feature releases (computer use, voice mode, auto mode) expanding capability</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Qualifier Pattern:</strong> Productivity acknowledged but increasingly paired with caveats:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li><a href="https://news.ycombinator.com/item?id=47196582" target="_blank" rel="noopener">HN</a>: "Velocity exceeds comprehension"</li>
+          <li><a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3" target="_blank" rel="noopener">Medium</a>: "Productivity reality vs. burnout tradeoff"</li>
+          <li><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer</a>: Usage concentration: 55% of survey respondents use agents (growth signal), but trust concerns mounting</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Distribution:</strong> 6/8 Cautiously Positive; 2/8 Mixed (acknowledging tradeoff)</p>
+
+        <p style="margin-top: 1rem;"><strong>Notable Absence:</strong> No Strongly Positive sentiment in productivity cluster — indicates sustained optimism without enthusiasm.</p>
+      </div>
+
+      <div class="analysis-block">
+        <h3>Cluster 6: Pricing / Cost / Capacity Issues</h3>
+        <span class="signal-badge signal-growing">Growing Trend</span>
+        <span class="signal-badge signal-growing">6 mentions</span>
+
+        <p style="margin-top: 1rem;"><strong>Dominant Signal:</strong> Rate-limit exhaustion and pricing friction emerging as operational barriers.</p>
+
+        <p style="margin-top: 1rem;"><strong>Specific Issues:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>: Rate limit drain complaints post-March 23</li>
+          <li><a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">MacRumors</a>: Rate limit drain bug, second incident in month</li>
+          <li><a href="https://github.com/anthropics/claude-code/issues/38335" target="_blank" rel="noopener">GitHub Issue #38335</a>: Claude Max plan limits exhausted abnormally</li>
+          <li>Pricing model mismatch for heavy users (agents, multi-turn sessions)</li>
+        </ul>
+
+        <p style="margin-top: 1rem;"><strong>Sentiment Distribution:</strong> 5/6 Cautiously Negative; 1/6 Mixed</p>
+
+        <p style="margin-top: 1rem;"><strong>Trend vs E1:</strong> +6% increase (from 5% to 11%), driven by operational failures concentrating pricing pain.</p>
+      </div>
+    </section>
+
+    <!-- Emerging Patterns -->
+    <section id="patterns">
+      <h2>Emerging Patterns & Weak Signals</h2>
+
+      <div class="pattern-card" data-number="1">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          Cognitive Debt as Dominant Discourse Frame
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Emerging Consensus | <strong>Mentions:</strong> 5 high-credibility sources</p>
+          <p style="margin-top: 0.75rem;">The concept of "cognitive debt" has emerged as the primary intellectual framework for discussing AI-assisted coding risks. Introduced in Extraction 1 via <a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Addy Osmani</a>, it has now been adopted across academic research (<a href="https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/" target="_blank" rel="noopener">Margaret Storey</a>), internal studies (Anthropic), industry thought leaders (<a href="https://simonwillison.net/2026/Feb/15/cognitive-debt/" target="_blank" rel="noopener">Simon Willison</a>), and practitioner blogs (<a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World</a>). This represents a maturation from generic "deskilling" concerns to a measurable, researchable construct. The framing shifts conversation from ideology to evidence-based governance.</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Expect enterprise governance frameworks to adopt cognitive debt metrics (code comprehension audits, review burden tracking) within 2-3 quarters.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="2">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          AI Code CVE Acceleration Curve
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Emerging Consensus | <strong>Mentions:</strong> <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a>, Georgia Tech CVE Tracking</p>
+          <p style="margin-top: 0.75rem;">Vulnerability discovery in AI-generated code is accelerating: 6 CVEs (Jan) → 15 CVEs (Feb) → 35 CVEs (March), with 27/35 in March attributed to Claude Code. This represents a 450% month-over-month increase and an exponential growth curve. The acceleration correlates with increased Claude Code adoption and expanded tool capabilities.</p>
+          <p style="margin-top: 0.75rem;"><strong>Causal Hypotheses</strong> (inferred from data):</p>
+          <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>Wider codebase surface area from agents</li>
+            <li>Security-blind velocity (developers not auditing AI-generated code)</li>
+            <li>Tool-specific vulnerabilities in auto-completion patterns</li>
+          </ul>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> If curve continues, regulatory scrutiny (SOC2, healthcare, finance) will trigger mandatory AI code audits within 6 months.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="3">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          Enterprise AI Code Governance Tightening
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Growing Trend | <strong>Mentions:</strong> <a href="https://www.thoughtworks.com/insights/looking-glass/looking-glass-2026/AI-and-software-delivery" target="_blank" rel="noopener">ThoughtWorks</a>, <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/" target="_blank" rel="noopener">The Register</a></p>
+          <p style="margin-top: 0.75rem;">Enterprise adoption continues (ThoughtWorks: 93% of IT leaders plan AI agents), but governance frameworks are hardening. <a href="https://legalinsurrection.com/2026/03/amazon-implements-90-day-code-safety-reset-after-ai-related-incidents-with-high-blast-radius/" target="_blank" rel="noopener">Amazon's 90-day code safety reset</a>, Microsoft exec concerns, and enterprise policy discussions signal that organizations are moving from permissive adoption to structured guardrails.</p>
+          <p style="margin-top: 0.75rem;"><strong>Observed Governance Patterns:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>Code audit requirements post-generation</li>
+            <li>Restricted tool usage (agents disabled for critical paths)</li>
+            <li>Skill verification requirements for junior developers</li>
+            <li>Liability concerns around third-party code generation</li>
+          </ul>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Enterprise contracts will include AI code escrow, auditability requirements, and liability carve-outs within Q2 2026.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="4">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          Claude Code Rate Limit & Capacity Crisis
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Growing Trend | <strong>Mentions:</strong> <a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>, <a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">MacRumors</a>, <a href="https://github.com/anthropics/claude-code/issues/38335" target="_blank" rel="noopener">GitHub Issue #38335</a></p>
+          <p style="margin-top: 0.75rem;">Capacity exhaustion is occurring at the user level (rate limit drain in minutes) and system level (Claude Max plan limits). This represents a tension between tool capabilities (agents, extended context) and infrastructure cost/throughput.</p>
+          <p style="margin-top: 0.75rem;"><strong>Secondary Signal:</strong> <a href="https://piunikaweb.com/2026/03/24/claude-max-subscribers-left-frustrated-after-usage-limits-drained-rapidly-with-no-clear-explanation/" target="_blank" rel="noopener">PiunikaWeb</a>: Pricing model friction — usage-based pricing (tokens) doesn't align with agent-based consumption patterns (agents can consume 10-50x tokens per task).</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Pricing restructuring (fixed-tier agents, capacity guarantees) within Q2 2026; or agent feature deprecation if capacity cannot scale.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="5">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          Junior Developer Hiring Collapse Reaching Critical Mass
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Growing Trend | <strong>Mentions:</strong> <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>, <a href="https://news.ycombinator.com/item?id=46617456" target="_blank" rel="noopener">HN discussions</a>, <a href="https://www.theregister.com/2026/02/23/microsoft_ai_entry_level_russinovich_hanselman/" target="_blank" rel="noopener">Microsoft execs</a></p>
+          <p style="margin-top: 0.75rem;">Entry-level hiring has contracted measurably (IEEE: -67% YoY in US tech; -46% in UK; -25% at top 15 firms). This represents the first quantified evidence of AI-assisted coding's labor market disruption. The pattern is not speculative but measured.</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Educational institutions will restructure bootcamps and CS curricula within 12 months; junior developer roles will bifurcate into narrow specialist tracks (infosec, ML ops) or consolidate into mid-level positions.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="6">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          Vibe Coding Security Reckoning
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Emerging Consensus | <strong>Mentions:</strong> <a href="https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/" target="_blank" rel="noopener">Lovable/Supabase incident</a>, <a href="https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding/" target="_blank" rel="noopener">Escape.tech audit</a>, <a href="https://awesomeagents.ai/news/vibe-coding-security-69-vulnerabilities/" target="_blank" rel="noopener">Vibe Coding Wall of Shame</a></p>
+          <p style="margin-top: 0.75rem;">"Vibe coding" (low-friction, high-velocity development with minimal review) has accumulated measurable security debt: 2K+ vulnerabilities across 5,600 apps, 10.3% critical RLS flaws in Lovable, 69 vulnerabilities across 15 apps in Escape.tech audit. This is not hypothetical; it's measured, replicated, and industry-wide.</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Reputational risk for "vibe" tools; governance pressure on velocity-first development practices; security-first tool positioning emerging.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="7">
+        <div class="pattern-title">
+          <span class="confidence-badge">High</span>
+          AI Burnout Paradox
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Growing Trend | <strong>Mentions:</strong> <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>, <a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3" target="_blank" rel="noopener">Medium</a>, <a href="https://siddhantkhare.com/writing/ai-fatigue-is-real" target="_blank" rel="noopener">Siddhant Khare</a></p>
+          <p style="margin-top: 0.75rem;">AI was positioned as a solution to developer burnout, but discourse reveals a paradox: AI creates <em>different</em> burnout. <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>: 14% of AI users report "brain fry" (cognitive overload from output evaluation). <a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3" target="_blank" rel="noopener">Medium</a>: "AI supposed to fix burnout but creates different burnout." This shifts the burnout risk from code production to code comprehension and validation.</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Tooling for AI output validation and review will become critical commodity product; team structures will shift to specialized review roles.</p>
+        </div>
+      </div>
+
+      <div class="pattern-card" data-number="8">
+        <div class="pattern-title">
+          <span class="confidence-badge" style="background: rgba(122, 134, 148, 0.2); color: var(--text-dim);">Medium</span>
+          Disposable Code Architecture Debate (Weak Signal)
+        </div>
+        <div style="margin-top: 1rem;">
+          <p><strong>Signal Strength:</strong> Isolated Signal | <strong>Mentions:</strong> <a href="https://simonwillison.net/2026/Feb/15/cognitive-debt/" target="_blank" rel="noopener">Simon Willison</a>, <a href="https://codeconductor.ai/blog/disposable-apps-ai-changing-software-development/" target="_blank" rel="noopener">Architectural philosophy discussions</a></p>
+          <p style="margin-top: 0.75rem;">Emerging debate over whether high-velocity AI-generated code should be treated as "disposable" (expected to be refactored or replaced) rather than long-term assets. This represents a fundamental shift in software development philosophy if adopted.</p>
+          <p style="margin-top: 0.75rem;"><strong>Implication:</strong> Monitoring signal — will likely grow to consensus within next 2 extractions if architectural patterns (modular, replaceable modules) become standardized.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contradictions -->
+    <section>
+      <h2>Contradictions & Contested Claims</h2>
+
+      <table style="margin-top: 1.5rem;">
+        <thead>
+          <tr>
+            <th>Claim</th>
+            <th>Supporting Sources</th>
+            <th>Contradicting Sources</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI coding improves developer productivity</strong></td>
+            <td><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer</a> (95% use weekly), <a href="https://www.geekwire.com/2026/a-new-era-of-software-development-claude-code-has-seattle-engineers-buzzing-as-ai-coding-hits-new-phase/" target="_blank" rel="noopener">GeekWire</a> (46% most loved), <a href="https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/" target="_blank" rel="noopener">TechCrunch</a> (feature releases)</td>
+            <td><a href="https://news.ycombinator.com/item?id=47031879" target="_blank" rel="noopener">HN cognitive debt discussions</a>, <a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Addy Osmani comprehension study</a></td>
+            <td>Productivity measured in velocity; comprehension is separate metric. Both claims true but measure different outcomes.</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Code is most reliable AI coding tool</strong></td>
+            <td><a href="https://www.geekwire.com/2026/a-new-era-of-software-development-claude-code-has-seattle-engineers-buzzing-as-ai-coding-hits-new-phase/" target="_blank" rel="noopener">GeekWire survey</a> (46% most loved)</td>
+            <td><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register CVE study</a> (27/35 March CVEs from Claude Code); <a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">rate limit failures</a> (3 sources)</td>
+            <td>Leadership in usage ≠ reliability. Claude Code dominates adoption but also dominates incident reporting. Selection bias: larger user base = more incidents reported.</td>
+          </tr>
+          <tr>
+            <td><strong>AI-assisted coding deskills junior developers</strong></td>
+            <td><a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Anthropic study</a> (17% comprehension loss), <a href="https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/" target="_blank" rel="noopener">Margaret Storey research</a>, <a href="https://news.ycombinator.com/item?id=47031879" target="_blank" rel="noopener">multiple HN discussions</a></td>
+            <td><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer survey</a> (95% use, integration into workflows)</td>
+            <td>Deskilling is selective: impacts developers who don't actively engage with AI output; productivity for engaged developers continues.</td>
+          </tr>
+          <tr>
+            <td><strong>Rate-limit exhaustion is rare/edge case</strong></td>
+            <td><a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">MacRumors</a>, <a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>, <a href="https://github.com/anthropics/claude-code/issues/38335" target="_blank" rel="noopener">GitHub #38335</a></td>
+            <td><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer survey</a> (75% of work AI-assisted, suggesting heavy usage)</td>
+            <td>Not contradictory; 75% usage + rate limits suggests systematic capacity constraint, not edge case.</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise adoption is accelerating</strong></td>
+            <td><a href="https://www.thoughtworks.com/insights/looking-glass/looking-glass-2026/AI-and-software-delivery" target="_blank" rel="noopener">ThoughtWorks</a> (93% plan AI agents), <a href="https://legalinsurrection.com/2026/03/amazon-implements-90-day-code-safety-reset-after-ai-related-incidents-with-high-blast-radius/" target="_blank" rel="noopener">Amazon investment</a> (safety reset)</td>
+            <td>Slowdown signals in adoption discourse, governance friction</td>
+            <td>Both true: adoption accelerating + governance tightening. Enterprises adopting <em>with controls</em>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Gaps & Uncertainties -->
+    <section>
+      <h2>Gaps & Uncertainties</h2>
+
+      <div class="gaps-list">
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 1: Longitudinal Comprehension Metrics Unavailable</h4>
+            <p>Anthropic's internal 17% comprehension deficit is reported as single data point. No longitudinal studies tracking comprehension loss over time, or comparative studies across tools, exist in public discourse. This limits ability to project severity of cognitive debt accumulation.</p>
+            <p><strong>Uncertainty:</strong> Is comprehension loss permanent or reversible? Does it scale with experience? Does it vary by task type?</p>
+          </div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 2: Causal Attribution for CVE Acceleration Unclear</h4>
+            <p><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a> reports 450% month-over-month CVE increase correlated with Claude Code adoption, but causation is not established. Possible confounds: increased detection (security audits intensifying), expanded codebase surface area (agents generating more code), or genuine increase in AI-generation vulnerability rates.</p>
+            <p><strong>Uncertainty:</strong> What is the actual vulnerability rate per line of AI-generated code vs. human-written code?</p>
+          </div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 3: Rate Limit Incidents — Root Cause Undisclosed</h4>
+            <p>Three reports of Claude Code rate limit exhaustion; no official statement on root cause. Possible explanations: infrastructure capacity (deployment surge), pricing/architecture mismatch, or agent behavior exploiting rate limits.</p>
+            <p><strong>Uncertainty:</strong> Is this architectural (agents fundamentally capacity-intensive) or operational (temporary bottleneck)?</p>
+          </div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 4: Junior Developer Hiring Collapse — Causal Linkage Assumed</h4>
+            <p><a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a> data shows -67% entry-level hiring; correlation to AI-assisted coding assumed but not proven. Alternative causes: economic downturn, H-1B policy changes, or industry consolidation.</p>
+            <p><strong>Uncertainty:</strong> What percentage of hiring contraction is directly attributable to AI-assisted coding vs. macro factors?</p>
+          </div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 5: Bluesky/Mastodon Retrieval Failure — Representative Bias Unknown</h4>
+            <p>Extraction failed for alternative platforms (Bluesky/Mastodon). These platforms may host niche discourse (e.g., open-source maintainer perspectives, non-US developer views) not captured in Reddit/HN/Blogs.</p>
+            <p><strong>Uncertainty:</strong> Is sentiment distribution on alternative platforms significantly different? Are regional perspectives (EU, APAC) systematically underrepresented?</p>
+          </div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-icon">⚠</div>
+          <div class="gap-content">
+            <h4>Gap 6: Tool Comparison Data Sparse</h4>
+            <p>Discourse dominated by Claude Code; comparative analysis with Cursor, GitHub Copilot, or open-source alternatives minimal. This limits ability to assess whether issues are Claude-specific or endemic to AI-assisted coding.</p>
+            <p><strong>Uncertainty:</strong> Do rate limits, security vulnerabilities, and cognitive debt manifest similarly across tools, or are they Claude-specific failure modes?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended Actions -->
+    <section>
+      <h2>Recommended Actions</h2>
+
+      <div class="recommendation-group">
+        <h4>For Product Teams (Claude Code, AI Coding Tools)</h4>
+
+        <div class="recommendation priority-high">
+          <h5>1. Prioritize Rate Limit Capacity</h5>
+          <p>Operational incidents (3 reports in 1 week) represent immediate trust erosion. Root cause analysis and transparent communication required within 48 hours. Consider temporary tier upsizing for affected users.</p>
+        </div>
+
+        <div class="recommendation priority-high">
+          <h5>2. Establish CVE Response Cadence</h5>
+          <p><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">35 CVEs in one month</a> demands structured response. Publish monthly CVE attribution analysis, tool-specific vulnerability guidance, and security-first code generation modes. This converts incident into thought leadership opportunity.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>3. Cognitive Debt Measurement Framework</h5>
+          <p>Proactively develop and publish comprehension audit tooling. Convert Anthropic's internal study (17% comprehension loss) into actionable governance product. First enterprise win will require auditability.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>4. Agent Capability Throttling</h5>
+          <p>Consider shipping agents with explicit cost/token budgets and review gates. Current capacity crisis suggests unlimited agent autonomy is infrastructure suicide. Structured throttling (e.g., "agent can generate max 5K tokens per task") prevents rate-limit surprises.</p>
+        </div>
+      </div>
+
+      <div class="recommendation-group">
+        <h4>For Enterprise Adoption Teams</h4>
+
+        <div class="recommendation priority-med">
+          <h5>1. Establish AI Code Governance Framework</h5>
+          <p>Do not adopt agents for critical infrastructure without post-generation audit workflows. Reference <a href="https://legalinsurrection.com/2026/03/amazon-implements-90-day-code-safety-reset-after-ai-related-incidents-with-high-blast-radius/" target="_blank" rel="noopener">Amazon's 90-day reset</a> as minimum standard. Security audit + comprehension review should be mandatory for junior-generated code.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>2. Junior Developer Reskilling Program</h5>
+          <p>If hiring -67% for entry-level, invest in reskilling existing junior developers into specialized roles (security auditor, AI output reviewer, architecture validator). Cognitive debt becomes opportunity if structured as team specialization.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>3. Rate Limit Hedging</h5>
+          <p>Multi-tool strategy reduces vendor lock-in risk. Parallel access to Cursor and Claude Code allows fallback if either experiences capacity exhaustion. Negotiate capacity SLAs with vendors.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>4. Incident Response Posture</h5>
+          <p>Security posture must assume AI-generated code has baseline 0.5% critical vulnerability rate (extrapolated from CVE acceleration). Treat AI-generated code as "untrusted" tier for critical infrastructure; restrict to utility/non-critical paths until audit culture matures.</p>
+        </div>
+      </div>
+
+      <div class="recommendation-group">
+        <h4>For Educators & Bootcamps</h4>
+
+        <div class="recommendation priority-med">
+          <h5>1. Curriculum Restructure</h5>
+          <p>Add mandatory module on "AI output validation, security audit, and cognitive debt." Entry-level curriculum should focus on comprehension and verification skills, not velocity. Defer high-velocity development until foundation is solid.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>2. Specialist Track Development</h5>
+          <p>Develop bootcamp specializations in "AI Code Security", "AI Output Review", and "Cognitive Architecture Design" to align with emerging job market demands. Position as differentiator vs. traditional bootcamps.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>3. Internship Partner Engagement</h5>
+          <p>Work with enterprises to create structured AI-mentorship roles (junior works under senior reviewer). Compensate for lack of entry-level roles with structured apprenticeships where AI code generation is teaching tool, not replacement.</p>
+        </div>
+      </div>
+
+      <div class="recommendation-group">
+        <h4>For Researchers & Governance Bodies</h4>
+
+        <div class="recommendation priority-med">
+          <h5>1. CVE Attribution Methodology</h5>
+          <p>Standardize how AI-generated CVEs are attributed to tools (detection method, prompt engineering required to trigger, etc.). Current attribution is binary; should be nuanced. This reduces vendor blame-gaming and improves root cause analysis.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>2. Longitudinal Comprehension Studies</h5>
+          <p>Fund multi-year studies tracking comprehension loss, reversibility, and variation by experience level. Single Anthropic data point insufficient for policy decisions.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>3. Causal Analysis of Hiring Contraction</h5>
+          <p>Disentangle AI impact from macro factors (economic downturn, policy) using cohort analysis, region-specific studies, and company-level surveys. Current correlation is not causation.</p>
+        </div>
+
+        <div class="recommendation priority-med">
+          <h5>4. Alternative Platform Discourse Analysis</h5>
+          <p>Bluesky/Mastodon retrieval failed; systematic bias exists toward English-language, US-centric Reddit/HN discourse. Expand to multilingual, geographic sources to validate if patterns are global or US-specific.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Incidents Log -->
+    <section id="incidents">
+      <h2>Incidents Log</h2>
+
+      <table style="margin-top: 1.5rem;">
+        <thead>
+          <tr>
+            <th>Incident</th>
+            <th>Date</th>
+            <th>Tool(s)</th>
+            <th>Impact</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Amazon environment deletion</td>
+            <td>2026-03-10</td>
+            <td>Claude Code (inferred)</td>
+            <td>Production environment destroyed; 6-hour ecommerce crash; revenue loss, customer disruption</td>
+            <td><a href="https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/" target="_blank" rel="noopener">The Register</a></td>
+          </tr>
+          <tr>
+            <td>CVE acceleration surge</td>
+            <td>2026-03-26</td>
+            <td>Claude Code + ecosystem</td>
+            <td>35 CVEs in March (27/35 Claude Code); 450% month-over-month increase; security posture degradation</td>
+            <td><a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a></td>
+          </tr>
+          <tr>
+            <td>Claude Code rate limit drain (2nd incident)</td>
+            <td>2026-03-23</td>
+            <td>Claude Code</td>
+            <td>Users exhausting Claude Max monthly limits in minutes; pricing model failure, churn risk</td>
+            <td><a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">MacRumors</a></td>
+          </tr>
+          <tr>
+            <td>Lovable/Supabase RLS crisis</td>
+            <td>2026-02-27</td>
+            <td>Lovable (vibe coding)</td>
+            <td>10.3% critical vulnerabilities; 1.5M tokens exposed; data breach risk, reputation damage</td>
+            <td><a href="https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/" target="_blank" rel="noopener">The Register</a></td>
+          </tr>
+          <tr>
+            <td>Escape.tech security audit</td>
+            <td>2025-12-01</td>
+            <td>Ecosystem (Copilot, Cursor, Claude, Lovable, others)</td>
+            <td>69 vulnerabilities across 15 applications; baseline vulnerability rate established</td>
+            <td><a href="https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding/" target="_blank" rel="noopener">Escape.tech</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Metadata -->
+    <section>
+      <h2>Report Metadata</h2>
+
+      <div class="metadata-grid">
+        <div class="metadata-key">Analysis Period</div>
+        <div class="metadata-value">2026-03-23 to 2026-03-30 (Extraction 2)</div>
+
+        <div class="metadata-key">Prior Analysis</div>
+        <div class="metadata-value">Extraction 1 (2026-03-20 to 2026-03-25)</div>
+
+        <div class="metadata-key">Report Generated</div>
+        <div class="metadata-value">2026-03-30</div>
+
+        <div class="metadata-key">Analyst</div>
+        <div class="metadata-value">Claude (claude-opus-4-6)</div>
+
+        <div class="metadata-key">Engine Version</div>
+        <div class="metadata-value">v1.5.4</div>
+
+        <div class="metadata-key">Config Version</div>
+        <div class="metadata-value">v1.6</div>
+
+        <div class="metadata-key">Analysis Prompt</div>
+        <div class="metadata-value">v1.13</div>
+
+        <div class="metadata-key">Total Canonical Items</div>
+        <div class="metadata-value">53 items (post-dedup)</div>
+
+        <div class="metadata-key">Dedup References Resolved</div>
+        <div class="metadata-value">3 (Addy Osmani comprehension debt, The Register CVE study, Amazon AI outage)</div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Data Sources</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li><strong>Reddit:</strong> 4 items (<a href="https://www.reddit.com/r/vibecoding/" target="_blank" rel="noopener">r/vibecoding</a>, <a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>, GitHub Issues)</li>
+        <li><strong>Hacker News:</strong> 9 items (8 unique after suppression)</li>
+        <li><strong>Publications:</strong> 15 items (<a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a>, <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>, <a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Addy Osmani</a>, <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer</a>, others)</li>
+        <li><strong>YouTube:</strong> 2 channels (ThePrimeagen, Fireship; no URLs retrievable)</li>
+        <li><strong>Bluesky/Mastodon:</strong> 0 items (persistent retrieval failure)</li>
+        <li><strong>Tier 2 (X/Twitter, Podcasts):</strong> 0 individual URLs</li>
+      </ul>
+
+      <h3 style="margin-top: 2rem;">Credibility Breakdown</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li><strong>High-Credibility Sources:</strong> 11 (peer-reviewed studies, incident reports, principal engineers, researchers)</li>
+        <li><strong>Medium-Credibility Sources:</strong> 25 (industry blogs, surveys, established publications)</li>
+        <li><strong>Low-Credibility Sources:</strong> 15 (anonymous forums, speculative discussion)</li>
+        <li><strong>Flagged:</strong> 2 (unverified claims, vendor-influenced content)</li>
+      </ul>
+
+      <h3 style="margin-top: 2rem;">Sentiment Classification Methodology</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li><strong>Strongly Positive:</strong> Enthusiastic endorsement, no caveats (4% of sample)</li>
+        <li><strong>Cautiously Positive:</strong> Endorsement with qualifications or improvements (15%)</li>
+        <li><strong>Mixed/Ambivalent:</strong> Balanced acknowledgment of tradeoffs (19%)</li>
+        <li><strong>Cautiously Negative:</strong> Concern with acknowledgment of benefits (28%)</li>
+        <li><strong>Strongly Negative:</strong> Strong criticism, skepticism, or incident reporting (30%)</li>
+        <li><strong>Nuanced/Analytical:</strong> Academic, structural analysis without clear valence (4%)</li>
+      </ul>
+
+      <h3 style="margin-top: 2rem;">Signal Strength Definitions</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li><strong>Emerging Consensus:</strong> 4+ independent sources, consistent framing, cross-platform agreement</li>
+        <li><strong>Growing Trend:</strong> 3 sources, increasing frequency, directional signal</li>
+        <li><strong>Active Debate:</strong> 3+ sources with contradictory positions, contested claims</li>
+        <li><strong>Isolated Signal:</strong> 1-2 sources, novel claim, limited corroboration</li>
+        <li><strong>Declining Narrative:</strong> Previously strong signal, now reduced frequency or credibility</li>
+      </ul>
+
+      <h3 style="margin-top: 2rem;">Confidence Levels</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li><strong>High:</strong> Supported by 3+ high-credibility sources, consistent across platforms, measurable data</li>
+        <li><strong>Medium:</strong> Supported by 2+ medium-credibility sources, or 1 high + 1 medium, some debate</li>
+        <li><strong>Low:</strong> Supported by 1-2 low-credibility sources, speculative, requires verification</li>
+      </ul>
+
+      <h3 style="margin-top: 2rem;">Limitations</h3>
+      <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li>Bluesky/Mastodon data unavailable (retrieval failure); may bias toward US/English discourse</li>
+        <li>YouTube video URLs not retrievable; content presence noted but depth analysis limited</li>
+        <li>Causal attribution for hiring collapse assumes but does not prove AI impact</li>
+        <li>Rate limit incidents lack root cause disclosure; explanations are inferred</li>
+        <li>Comparative tool analysis limited by discourse focus on Claude Code dominance</li>
+      </ol>
+
+      <h3 style="margin-top: 2rem;">Next Extraction Priorities</h3>
+      <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+        <li>Quantified CVE attribution methodology (to validate tool-specific vulnerability rates)</li>
+        <li>Bluesky/Mastodon retrieval troubleshooting (to capture alternative platform discourse)</li>
+        <li>Longitudinal rate limit tracking (to assess if operational issue is systemic or transient)</li>
+        <li>Enterprise adoption case studies (to validate governance framework adoption claims)</li>
+      </ul>
+    </section>
+
+    <footer>
+      This report reflects analysis of 53 canonical items across Reddit, Hacker News, industry publications, and blogs. All claims are sourced to extraction data. Deduplication resolved 3 items; suppressed duplicates noted. Trend analysis compares to Extraction 1 (2026-03-20 to 2026-03-25). Report serves as input to strategic decision-making and should be triangulated with internal data sources.
+    </footer>
+  </div>
+</body>
+</html>

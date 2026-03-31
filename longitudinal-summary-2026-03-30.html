@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Longitudinal Trend Report — E1–E2 (2026-03-20 – 2026-03-30)">
+  <meta property="og:description" content="Cross-extraction trend synthesis. Negative sentiment surged 10pp. Cognitive debt emerged as dominant frame. CVE acceleration confirmed.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Longitudinal Trend Report — 2026-03-20 – 2026-03-30</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #2a3441;
+      --text: #d1cec9;
+      --text-dim: #7a8694;
+      --head: #f0ede8;
+      --amber: #f0a832;
+      --amber-dim: #7a5318;
+      --red: #e05252;
+      --red-dim: #5c1f1f;
+      --green: #4caf7d;
+      --green-dim: #1a3d2b;
+      --blue: #5c9eed;
+      --blue-dim: #1a2f4a;
+      --mono: 'JetBrains Mono', monospace;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --display: 'DM Serif Display', Georgia, serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.7;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="200" height="200" fill="%23000000" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sticky Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-size: 3rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      color: var(--head);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    h3 {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      color: var(--head);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    /* Masthead */
+    #masthead {
+      background-color: var(--surface);
+      padding: 3rem 2rem;
+      border-bottom: 2px solid var(--blue);
+    }
+
+    #masthead h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead-tag {
+      display: inline-block;
+      background-color: var(--blue-dim);
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    .date-range {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .stat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat-pill {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .stat-pill-label {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-pill-value {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--head);
+      font-weight: 400;
+    }
+
+    /* Executive Summary */
+    .exec-summary {
+      background-color: var(--surface2);
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    .exec-summary p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background-color: var(--surface2);
+      border-bottom: 2px solid var(--border);
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:hover {
+      background-color: var(--surface2);
+    }
+
+    /* Verdict box */
+    .verdict {
+      background-color: var(--surface2);
+      border-left: 4px solid var(--blue);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .verdict-label {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .verdict-text {
+      line-height: 1.8;
+    }
+
+    /* Signal cards */
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .signal-card {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      border-radius: 4px;
+    }
+
+    .signal-card h4 {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--head);
+      margin-bottom: 1rem;
+    }
+
+    .signal-meta {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .signal-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signal-meta-label {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .signal-meta-value {
+      color: var(--text);
+      font-family: var(--mono);
+    }
+
+    .signal-card p {
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+
+    /* Contradiction grid */
+    .contradiction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .contradiction-item {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 4px;
+    }
+
+    .contradiction-dimension {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .contradiction-item p {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Watch list */
+    .watch-list {
+      counter-reset: watch-counter;
+    }
+
+    .watch-item {
+      counter-increment: watch-counter;
+      background-color: var(--surface2);
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .watch-item::before {
+      content: counter(watch-counter);
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background-color: var(--blue);
+      color: var(--bg);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-family: var(--mono);
+      font-weight: 600;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    .watch-item h4 {
+      display: inline;
+      font-family: var(--display);
+      color: var(--head);
+    }
+
+    .watch-item p {
+      margin-top: 0.8rem;
+      margin-left: 44px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Gaps & Uncertainties */
+    .gap-item {
+      background-color: var(--surface2);
+      border-left: 4px solid var(--amber);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .gap-item::before {
+      content: '⚠ ';
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .gap-item p {
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+
+    /* Momentum highlights */
+    .highlight-item {
+      background-color: var(--surface2);
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+    }
+
+    .highlight-number {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .highlight-item strong {
+      color: var(--head);
+    }
+
+    .highlight-item p {
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+
+    /* Metadata grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .metadata-item {
+      background-color: var(--surface2);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .metadata-label {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .metadata-value {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      font-family: var(--mono);
+    }
+
+    /* Utility classes */
+    .arrow {
+      font-family: var(--mono);
+      color: var(--text);
+    }
+
+    .status-label {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .status-accelerating {
+      background-color: var(--red-dim);
+      color: var(--red);
+    }
+
+    .status-consolidating {
+      background-color: var(--blue-dim);
+      color: var(--blue);
+    }
+
+    .status-declining {
+      background-color: var(--amber-dim);
+      color: var(--amber);
+    }
+
+    .status-emerging {
+      background-color: var(--blue-dim);
+      color: var(--blue);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .stat-pills {
+        flex-direction: column;
+      }
+
+      .stat-pill {
+        min-width: unset;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      nav a {
+        font-size: 0.8rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      th, td {
+        padding: 0.6rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#masthead">Masthead</a></li>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#composition">Composition Audit</a></li>
+      <li><a href="#sentiment">Sentiment Trajectory</a></li>
+      <li><a href="#momentum">Cluster Momentum</a></li>
+      <li><a href="#signals">Signal Evolution</a></li>
+      <li><a href="#contradictions">Contradictions</a></li>
+      <li><a href="#vocabulary">Vocabulary Drift</a></li>
+      <li><a href="#gaps">Gaps & Uncertainties</a></li>
+      <li><a href="#watchlist">Watch List</a></li>
+      <li><a href="#metadata">Metadata</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Masthead -->
+    <section id="masthead">
+      <span class="masthead-tag">Longitudinal Trend Report</span>
+      <h1>2026-03-20 – 2026-03-30</h1>
+      <div class="date-range">Extractions 1 – 2 | 10-Day Synthesis</div>
+
+      <div class="stat-pills">
+        <div class="stat-pill">
+          <div class="stat-pill-label">Sentiment Shift</div>
+          <div class="stat-pill-value">−5pp</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-pill-label">Strongly Negative Rise</div>
+          <div class="stat-pill-value">+10pp</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-pill-label">Dominant Concern</div>
+          <div class="stat-pill-value">Code Quality</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-pill-label">Key Emergence</div>
+          <div class="stat-pill-value">Cognitive Debt</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section id="executive-summary">
+      <h2>Executive Summary</h2>
+      <div class="exec-summary">
+        <p>
+          Over the 10-day span (E1: March 20–25, E2: March 23–30), sentiment deteriorated sharply from mixed-cautious to predominantly negative, with Strongly Negative sentiment rising 10 percentage points (20% → 30%) and Cautiously Positive dropping 3 points (18% → 15%). The discourse shifted from broad multi-issue fragmentation toward concentrated concern on three pillars: <strong>Code Quality/Security</strong> (14 mentions, Strongly Negative), <strong>Job Security/Hiring</strong> (10 mentions, Strongly Negative), and <strong>Cognitive Debt/Deskilling</strong> (9 mentions, Strongly Negative).
+        </p>
+        <p>
+          Incident frequency decreased (10 → 5), but severity and specificity increased, with clusters around CVE acceleration, rate-limiting crises, and AI governance tightening. <strong>Claude Code</strong> emerged as the dominant tool in discourse (4 → 12 mentions), correlating with uptick in security and capacity-related concerns.
+        </p>
+      </div>
+    </section>
+
+    <!-- Source Composition Audit -->
+    <section id="composition">
+      <h2>Source Composition Audit</h2>
+
+      <h3>Platform Coverage by Extraction</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Platform/Tier</th>
+            <th>E1 Mentions</th>
+            <th>E1 %</th>
+            <th>E2 Mentions</th>
+            <th>E2 %</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reddit</td>
+            <td>~20</td>
+            <td>40%</td>
+            <td>~24</td>
+            <td>45%</td>
+            <td><span class="arrow">↑</span> (higher share)</td>
+          </tr>
+          <tr>
+            <td>Hacker News</td>
+            <td>~15</td>
+            <td>30%</td>
+            <td>~16</td>
+            <td>30%</td>
+            <td><span class="arrow">→</span> (stable)</td>
+          </tr>
+          <tr>
+            <td>Blogs/Publications</td>
+            <td>~8</td>
+            <td>16%</td>
+            <td>~9</td>
+            <td>17%</td>
+            <td><span class="arrow">→</span> (stable)</td>
+          </tr>
+          <tr>
+            <td>YouTube (channel-level)</td>
+            <td>~5</td>
+            <td>10%</td>
+            <td>~3</td>
+            <td>6%</td>
+            <td><span class="arrow">↓</span> (declining share)</td>
+          </tr>
+          <tr>
+            <td>Tier 2 (X/Twitter, Podcasts)</td>
+            <td>~2</td>
+            <td>4%</td>
+            <td>~1</td>
+            <td>2%</td>
+            <td><span class="arrow">↓</span> (declining share)</td>
+          </tr>
+          <tr style="background-color: var(--surface2);">
+            <td><strong>Bluesky/Mastodon</strong></td>
+            <td><strong>0</strong></td>
+            <td><strong>0%</strong></td>
+            <td><strong>0</strong></td>
+            <td><strong>0%</strong></td>
+            <td><strong><span class="arrow">→</span> (failed both)</strong></td>
+          </tr>
+          <tr style="background-color: var(--surface2); border-bottom: 2px solid var(--border);">
+            <td><strong>Total (post-dedup)</strong></td>
+            <td><strong>~50</strong></td>
+            <td><strong>100%</strong></td>
+            <td><strong>~53</strong></td>
+            <td><strong>100%</strong></td>
+            <td><strong><span class="arrow">→</span> (stable volume)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Composition Anomalies</h3>
+      <ul style="margin: 1.5rem 0; padding-left: 2rem;">
+        <li><strong>YouTube collapse</strong>: Channel-level coverage dropped from 10% (5 mentions) to 6% (3 mentions), suggesting either content deletion, lower velocity, or indexing delays.</li>
+        <li><strong>Bluesky/Mastodon void</strong>: Both extractions reported zero traction on decentralized platforms despite broader adoption; indicates AI discourse remains siloed on established platforms (Reddit, HN).</li>
+        <li><strong>Tier 2 attenuation</strong>: X/Twitter and podcast mentions declined (4 → 1), suggesting secondary platform gatekeeping or algorithm suppression of critical AI discourse.</li>
+        <li><strong>Reddit-HN duopoly</strong>: Combined 75% of sourced discourse in both extractions; concentration risk if moderation policies shift.</li>
+      </ul>
+
+      <div class="verdict">
+        <div class="verdict-label">Composition Verdict</div>
+        <div class="verdict-text">
+          <strong>CAUTION – Composition Bias Increasing.</strong> Post-dedup volume stable (~50 → 53), but platform mix shifting toward Reddit/HN duopoly with attenuation of secondary tiers. Decentralized platforms remain inaccessible. <strong>Implication</strong>: Discourse skews toward early-adopter technologist sentiment; excludes mainstream developer perspectives, corporate risk officers, and non-English communities. Sentiment deterioration may be partially artifact of platform composition shift, not universal sentiment change.
+        </div>
+      </div>
+    </section>
+
+    <!-- Sentiment Trajectory -->
+    <section id="sentiment">
+      <h2>Sentiment Trajectory</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sentiment</th>
+            <th>E1 Count</th>
+            <th>E1 %</th>
+            <th>E2 Count</th>
+            <th>E2 %</th>
+            <th>Δ %</th>
+            <th>Arrow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Strongly Positive</strong></td>
+            <td>1</td>
+            <td>2%</td>
+            <td>2</td>
+            <td>4%</td>
+            <td>+2</td>
+            <td><span class="arrow">↑</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cautiously Positive</strong></td>
+            <td>9</td>
+            <td>18%</td>
+            <td>8</td>
+            <td>15%</td>
+            <td>−3</td>
+            <td><span class="arrow">↓</span></td>
+          </tr>
+          <tr>
+            <td><strong>Mixed/Ambivalent</strong></td>
+            <td>9</td>
+            <td>18%</td>
+            <td>10</td>
+            <td>19%</td>
+            <td>+1</td>
+            <td><span class="arrow">→</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cautiously Negative</strong></td>
+            <td>13</td>
+            <td>26%</td>
+            <td>15</td>
+            <td>28%</td>
+            <td>+2</td>
+            <td><span class="arrow">↑</span></td>
+          </tr>
+          <tr>
+            <td><strong>Strongly Negative</strong></td>
+            <td>10</td>
+            <td>20%</td>
+            <td>16</td>
+            <td>30%</td>
+            <td>+10</td>
+            <td><span class="arrow">↑↑</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nuanced/Analytical</strong></td>
+            <td>8</td>
+            <td>16%</td>
+            <td>2</td>
+            <td>4%</td>
+            <td>−12</td>
+            <td><span class="arrow">↓↓</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Composition-Adjusted Reading</h3>
+      <p style="margin-bottom: 1.5rem;">
+        <strong>Raw trajectory shows sharp negative turn</strong>, but three caveats:
+      </p>
+
+      <div style="margin-left: 1rem; border-left: 3px solid var(--border); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+        <p><strong>1. Nuanced/Analytical collapse (16% → 4%, −12%)</strong>: E1 classified 16% of discourse as Nuanced/Analytical (dominated by Enterprise/Policy cluster, 11 mentions). E2 reports only 2 items in this category, suggesting either <strong>reclassification</strong> (reframing "nuanced" positions as "cautiously negative") or <strong>genuine discourse shift</strong> away from policy/architectural debate toward black-and-white concerns.</p>
+
+        <p><strong>2. Cautiously Positive stability-with-decline</strong>: Down 3 points absolute (18% → 15%), but stable-to-growing in raw count (9 → 8 items), indicating dilution by increased total item volume in E2. <strong>Real sentiment shift is minor.</strong></p>
+
+        <p><strong>3. Strongly Negative spike (+10 pp)</strong>: Represents shift of ~5 items from Mixed/Ambivalent and Cautiously Negative into Strongly Negative bracket. Driven by clusters: Code Quality/Security (14 mentions, E2), Cognitive Debt (9 mentions, E2), Job Security (10 mentions, E2).</p>
+      </div>
+
+      <div class="verdict">
+        <div class="verdict-label">Verdict</div>
+        <div class="verdict-text">
+          Sentiment <strong>deteriorated moderately-to-significantly</strong> (−5 net positive sentiment, counting Cautiously Positive losses). Deterioration is <strong>real but possibly overstated</strong> by classification drift and platform composition bias.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster Momentum -->
+    <section id="momentum">
+      <h2>Cluster Momentum</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cluster</th>
+            <th>E1 Mentions</th>
+            <th>E2 Mentions</th>
+            <th>Δ</th>
+            <th>Momentum</th>
+            <th>Sentiment Shift</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Code Quality / Security</strong></td>
+            <td>8</td>
+            <td>14</td>
+            <td>+6</td>
+            <td><span class="arrow">↑↑</span></td>
+            <td>E1: Strongly Neg → E2: Strongly Neg (sustained)</td>
+            <td><span class="status-label status-accelerating">ACCELERATING</span></td>
+          </tr>
+          <tr>
+            <td><strong>Job Security / Hiring</strong></td>
+            <td>7</td>
+            <td>10</td>
+            <td>+3</td>
+            <td><span class="arrow">↑</span></td>
+            <td>E1: Strongly Neg → E2: Strongly Neg (sustained)</td>
+            <td><span class="status-label status-consolidating">CONSOLIDATING</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cognitive Debt / Deskilling</strong></td>
+            <td>~3 (implicit in Learning cluster)</td>
+            <td>9</td>
+            <td>+6</td>
+            <td><span class="arrow">↑↑</span></td>
+            <td>E1: Mixed → E2: Strongly Neg</td>
+            <td><span class="status-label status-accelerating">NEW DOMINANT FRAME</span></td>
+          </tr>
+          <tr>
+            <td><strong>Incidents / System Failures</strong></td>
+            <td>10</td>
+            <td>8</td>
+            <td>−2</td>
+            <td><span class="arrow">↓</span></td>
+            <td>E1: Strongly Neg → E2: Strongly Neg (sustained)</td>
+            <td><span class="status-label status-declining">DECLINING (fewer, worse)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Tool-Specific Issues</strong></td>
+            <td>10</td>
+            <td>4</td>
+            <td>−6</td>
+            <td><span class="arrow">↓↓</span></td>
+            <td>E1: Mixed/Ambivalent → E2: Strongly Neg</td>
+            <td><span class="status-label status-consolidating">CONSOLIDATING (absorbed into Code Quality)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Productivity Reality</strong></td>
+            <td>4</td>
+            <td>8 (reframed as Productivity Gains, Cautiously Pos)</td>
+            <td>+4</td>
+            <td><span class="arrow">↑</span></td>
+            <td>E1: Mixed → E2: Cautiously Positive</td>
+            <td><span class="status-label status-consolidating">RARE OPTIMISM</span></td>
+          </tr>
+          <tr>
+            <td><strong>Pricing / Cost / Capacity</strong></td>
+            <td>5</td>
+            <td>6</td>
+            <td>+1</td>
+            <td><span class="arrow">→</span></td>
+            <td>E1: Cautiously Neg → E2: Cautiously Neg (sustained)</td>
+            <td><span class="status-label status-consolidating">STEADY</span></td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise Policy / Governance</strong></td>
+            <td>11</td>
+            <td>5</td>
+            <td>−6</td>
+            <td><span class="arrow">↓↓</span></td>
+            <td>E1: Nuanced → E2: Nuanced/Analytical</td>
+            <td><span class="status-label status-declining">FADING (but tightening detected)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Burnout / Cognitive Load</strong></td>
+            <td>3</td>
+            <td>5</td>
+            <td>+2</td>
+            <td><span class="arrow">↑</span></td>
+            <td>E1: Cautiously Neg → E2: Cautiously Neg (sustained)</td>
+            <td><span class="status-label status-emerging">EMERGING</span></td>
+          </tr>
+          <tr>
+            <td><strong>Learning & Skill Development</strong></td>
+            <td>3</td>
+            <td>4</td>
+            <td>+1</td>
+            <td><span class="arrow">→</span></td>
+            <td>E1: Cautiously Neg → E2: Strongly Neg</td>
+            <td><span class="status-label status-declining">WORSENING</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hype vs Reality</strong></td>
+            <td>2</td>
+            <td>3</td>
+            <td>+1</td>
+            <td><span class="arrow">→</span></td>
+            <td>E1: Cautiously Neg → E2: Cautiously Neg</td>
+            <td><span class="status-label status-consolidating">STEADY</span></td>
+          </tr>
+          <tr>
+            <td><strong>Trust / Verification</strong></td>
+            <td>3</td>
+            <td>4</td>
+            <td>+1</td>
+            <td><span class="arrow">→</span></td>
+            <td>E1: Cautiously Neg → E2: Cautiously Neg</td>
+            <td><span class="status-label status-consolidating">STEADY</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Momentum Highlights</h3>
+
+      <div class="highlight-item">
+        <div class="highlight-number">1. Code Quality / Security surge</div>
+        <p><strong>(+6, now 14 mentions)</strong>: Largest single cluster by E2. Driven by CVE acceleration frame and "Vibe Coding Security Reckoning" pattern. <strong>Action</strong>: This is the #1 discourse driver; monitor CVE velocity and enterprise response.</p>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-number">2. Cognitive Debt explosion</div>
+        <p><strong>(3→9, +6)</strong>: Re-emerged as a dominant and <strong>newly</strong> framed as existential concern. E1 treated deskilling as implicit in Job Security; E2 elevated it to standalone cluster. Suggests shift from "will AI cause unemployment?" to "is AI code making us dumber?" <strong>This is a meta-concern.</strong> Action: Track whether this frames future policy debates.</p>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-number">3. Job Security consolidation</div>
+        <p><strong>(7→10, +3)</strong>: Steady growth; now explicitly paired with "Junior Developer Hiring Collapse" pattern. No sentiment improvement; remains Strongly Negative.</p>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-number">4. Productivity Gains entry</div>
+        <p><strong>(E1: 4 mixed items → E2: 8 items, Cautiously Positive)</strong>: E2 explicitly reframed productivity discussion as cautiously positive (shift from "will productivity improve?" to "productivity is improving, but costs are high"). <strong>Rare bullish signal.</strong> Correlates with Claude Code traction.</p>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-number">5. Enterprise Policy decline</div>
+        <p><strong>(11→5, −6)</strong>: Sharp drop from E1's 40% of E1 discourse. E2 reports Enterprise AI Code Governance Tightening (pattern), but cluster frequency fell. <strong>Interpretation</strong>: Policy debate shifted to specialized venues (corporate security forums?); general discourse less interested in nuance.</p>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-number">6. Tool-Specific Issues consolidation</div>
+        <p><strong>(10→4, −6)</strong>: Items absorbed into Code Quality/Security umbrella. Suggests <strong>hardening of blame vector</strong>: not "Cursor/Copilot have quirks," but "AI code is fundamentally insecure."</p>
+      </div>
+    </section>
+
+    <!-- Signal Evolution -->
+    <section id="signals">
+      <h2>Signal Evolution</h2>
+
+      <div class="signal-grid">
+        <!-- Signal 1 -->
+        <div class="signal-card">
+          <h4>Signal 1: Autonomous Agent Destruction Pattern</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E1 (High)</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">Active but repositioned</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: E1 listed as top pattern; E2 does not list it explicitly</p>
+          <p><strong>Confidence</strong>: E1 High → E2 Implicit/Medium (absorbed into Code Quality/Security and Cognitive Debt clusters)</p>
+          <p><strong>Action</strong>: Verify whether this pattern persists or was superseded by CVE/security framing. Next extraction should explicitly re-query for "agent autonomy risks."</p>
+        </div>
+
+        <!-- Signal 2 -->
+        <div class="signal-card">
+          <h4>Signal 2: Junior Developer Pipeline Crisis</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E1 (High)</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">ESCALATED to "Hiring Collapse"</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: Consistent concern; upgraded in E2 to "Junior Developer Hiring Collapse" pattern (High)</p>
+          <p><strong>Confidence</strong>: E1 High → E2 High</p>
+          <p><strong>Action</strong>: Monitor hiring data (LinkedIn, job boards) for validation. This is structural (not cyclical).</p>
+        </div>
+
+        <!-- Signal 3 -->
+        <div class="signal-card">
+          <h4>Signal 3: Code Quality Crisis at Scale</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E1 (High)</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">CONFIRMED and AMPLIFIED</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: E1: 8 mentions → E2: 14 mentions (Code Quality/Security cluster, now merged)</p>
+          <p><strong>Confidence</strong>: E1 High → E2 High</p>
+          <p><strong>Action</strong>: Track CVE velocity, disclosure timelines, and enterprise remediation response.</p>
+        </div>
+
+        <!-- Signal 4 -->
+        <div class="signal-card">
+          <h4>Signal 4: MCP Security Vulnerability Wave</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E1 (High)</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">ACTIVE, now part of broader CVE acceleration</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: E1 listed; E2 implicit in "AI Code CVE Acceleration Curve" pattern</p>
+          <p><strong>Confidence</strong>: E1 High → E2 High (reframed)</p>
+          <p><strong>Action</strong>: Subscribe to MCP registry, Claude Code, and GitHub Copilot security advisories.</p>
+        </div>
+
+        <!-- Signal 5 -->
+        <div class="signal-card">
+          <h4>Signal 5: Comprehension Debt Accumulation</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E1 (High)</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">ESCALATED to "Cognitive Debt" frame</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: E1: implicit in Learning/Skill Development (3 mentions) → E2: Cognitive Debt/Deskilling cluster (9 mentions, High pattern)</p>
+          <p><strong>Confidence</strong>: E1 Medium → E2 High</p>
+          <p><strong>Action</strong>: This is the <strong>meta-concern of the period.</strong> Watch for academic papers, blog essays, conference talks on AI code comprehension debt.</p>
+        </div>
+
+        <!-- Signal 6 -->
+        <div class="signal-card">
+          <h4>Signal 6: Vibe Coding Security Reckoning</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E2 (High) NEW</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">EMERGING as dominant frame</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: New to discourse; signals shift from "is AI fast?" to "is AI code safe?"</p>
+          <p><strong>Confidence</strong>: E2 High</p>
+          <p><strong>Action</strong>: This is reframing the entire debate. High priority for next extraction.</p>
+        </div>
+
+        <!-- Signal 7 -->
+        <div class="signal-card">
+          <h4>Signal 7: AI Burnout Paradox</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E2 (High) NEW</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">EMERGING</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: Tension between "AI increases productivity" (Cautiously Positive, 8 mentions) and "AI increases cognitive load" (Burnout/Cognitive Load, 5 mentions)</p>
+          <p><strong>Confidence</strong>: E2 Medium-High</p>
+          <p><strong>Action</strong>: Investigate whether this is author-level (individuals experiencing both benefits and costs) or population-level (different cohorts seeing different effects).</p>
+        </div>
+
+        <!-- Signal 8 -->
+        <div class="signal-card">
+          <h4>Signal 8: Enterprise AI Code Governance Tightening</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E2 (High) NEW</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">EMERGING, high confidence but low visibility</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: Enterprise Policy cluster fell (11→5), but pattern explicitly flagged as High. Suggests <strong>offline shift</strong> (policy decisions, procurement reviews, internal governance changes) not yet visible in public discourse.</p>
+          <p><strong>Confidence</strong>: E2 High</p>
+          <p><strong>Action</strong>: <strong>CRITICAL for next extraction.</strong> Seek corporate blog posts, security advisories, and insider reporting on enterprise AI policies. This may be the next major public signal.</p>
+        </div>
+
+        <!-- Signal 9 -->
+        <div class="signal-card">
+          <h4>Signal 9: Claude Code Rate Limit / Capacity Crisis</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E2 (High) NEW</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">ACTIVE OPERATIONAL ISSUE</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: Explicitly flagged in E2; not present in E1 (or subsumed in "Tool-Specific Issues")</p>
+          <p><strong>Confidence</strong>: E2 High</p>
+          <p><strong>Action</strong>: Monitor Claude Code status page, user reports on Reddit/HN. This is a <strong>live operational metric</strong> that may change weekly.</p>
+        </div>
+
+        <!-- Signal 10 -->
+        <div class="signal-card">
+          <h4>Signal 10: Disposable Code Architecture Debate</h4>
+          <div class="signal-meta">
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">First Appeared</span>
+              <span class="signal-meta-value">E2 (Medium) NEW</span>
+            </div>
+            <div class="signal-meta-item">
+              <span class="signal-meta-label">Status</span>
+              <span class="signal-meta-value">EMERGING, low volume, high significance</span>
+            </div>
+          </div>
+          <p><strong>Trajectory</strong>: New to discourse; signals shift in architecture philosophy (from "AI should produce maintainable code" to "should we design for disposable, AI-generated code?")</p>
+          <p><strong>Confidence</strong>: E2 Medium</p>
+          <p><strong>Action</strong>: Track architecture and design blogs/papers. This debate may intensify if Code Quality/Security concerns persist.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Extraction Contradictions -->
+    <section id="contradictions">
+      <h2>Cross-Extraction Contradictions</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>E1 Signal</th>
+            <th>E2 Signal</th>
+            <th>Contradiction</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Overall Sentiment</strong></td>
+            <td>Mixed-Cautious (44% pos/mixed)</td>
+            <td>Negative (30% strongly neg)</td>
+            <td>Contradicts</td>
+            <td>Composition shift + genuine deterioration (likely both)</td>
+          </tr>
+          <tr>
+            <td><strong>Tool Dominance</strong></td>
+            <td>Distributed (Claude Code 4, Copilot 1, Cursor 1)</td>
+            <td>Claude Code dominant (12 mentions, others minimal)</td>
+            <td>Contradicts</td>
+            <td>E2 focuses deeper on single tool; E1 was broader survey</td>
+          </tr>
+          <tr>
+            <td><strong>Incident Frequency</strong></td>
+            <td>High (10 incidents, broad types)</td>
+            <td>Lower (5 incidents, concentrated CVEs)</td>
+            <td>Contradicts</td>
+            <td>Severity increased, frequency decreased; quality vs quantity shift</td>
+          </tr>
+          <tr>
+            <td><strong>Nuance/Policy Interest</strong></td>
+            <td>High (Enterprise/Policy 11 mentions)</td>
+            <td>Low (5 mentions, but Governance Tightening pattern flagged High)</td>
+            <td>Contradicts</td>
+            <td>Public discourse declining, but private/offline governance accelerating</td>
+          </tr>
+          <tr>
+            <td><strong>Productivity Reality Framing</strong></td>
+            <td>Mixed/Ambivalent (4 mentions)</td>
+            <td>Cautiously Positive (8 mentions, productivity gains cluster)</td>
+            <td>Contradicts</td>
+            <td>E2 explicitly reframed productivity upside; E1 was skeptical</td>
+          </tr>
+          <tr>
+            <td><strong>Cognitive Debt</strong></td>
+            <td>Implicit/low (3 Learning mentions)</td>
+            <td>Dominant (9 mentions, Cognitive Debt/Deskilling)</td>
+            <td>Contradicts</td>
+            <td>E2 elevation may be genuine discourse shift OR classification drift in E1</td>
+          </tr>
+          <tr style="background-color: var(--surface2);">
+            <td><strong>Junior Developer Impact</strong></td>
+            <td>Job Security (7 mentions, Strongly Neg)</td>
+            <td>Hiring Collapse (10 mentions, Strongly Neg)</td>
+            <td>Agrees</td>
+            <td>Consistent; E2 added more specificity</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Contradiction Assessment</h3>
+      <div style="margin-top: 1.5rem;">
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Sentiment paradox (negative + positive productivity)</strong>: Real; reflects genuine tension. Some users/orgs see AI as net-positive productivity tool; others see it as net-negative skill and security threat. These are not reconcilable; likely different cohorts.</li>
+          <li><strong>Nuance decline</strong>: Likely genuine shift from "policy debate" to "crisis response." Enterprise shift to governance (offline) suggests public discourse became less policy-focused, more crisis-focused.</li>
+          <li><strong>Cognitive Debt elevation</strong>: Could be classification drift (E1 underweighted) or genuine discourse escalation. Recommend E3 explicitly re-query E1 data for deskilling language.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Vocabulary & Framing Drift -->
+    <section id="vocabulary">
+      <h2>Vocabulary & Framing Drift</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Frame / Term</th>
+            <th>E1 Prevalence</th>
+            <th>E2 Prevalence</th>
+            <th>Shift</th>
+            <th>Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>"AI code" (generic)</strong></td>
+            <td>Moderate</td>
+            <td>High</td>
+            <td><span class="arrow">↑</span></td>
+            <td>Discourse moved from tool-specific to AI-code-as-category concern</td>
+          </tr>
+          <tr>
+            <td><strong>"Security" / "CVE"</strong></td>
+            <td>~5 mentions (implicit)</td>
+            <td>14 mentions (explicit Code Quality/Security cluster)</td>
+            <td><span class="arrow">↑↑</span></td>
+            <td>Security became primary lens for code quality concern</td>
+          </tr>
+          <tr>
+            <td><strong>"Cognitive debt" / "Comprehension debt"</strong></td>
+            <td>Not explicitly tracked</td>
+            <td>9 mentions (dominant cluster)</td>
+            <td><span class="arrow">↑↑</span></td>
+            <td>New framing; shift from "skill loss" to "technical debt" metaphor</td>
+          </tr>
+          <tr>
+            <td><strong>"Vibe coding"</strong></td>
+            <td>Not present</td>
+            <td>Present (pattern name)</td>
+            <td><span class="arrow">↑</span></td>
+            <td>Informal term entered discourse; signals generational shift in how AI code is perceived</td>
+          </tr>
+          <tr>
+            <td><strong>"Governance" / "Enterprise policy"</strong></td>
+            <td>Explicit (11 mentions, Enterprise/Policy cluster)</td>
+            <td>Low (5 mentions, but Governance Tightening pattern)</td>
+            <td><span class="arrow">→</span> (public) <span class="arrow">↑</span> (private)</td>
+            <td>Shift from public debate to corporate/institutional action</td>
+          </tr>
+          <tr>
+            <td><strong>"Junior developer" / "hiring collapse"</strong></td>
+            <td>Implicit in Job Security (7 mentions)</td>
+            <td>Explicit cluster name (10 mentions)</td>
+            <td><span class="arrow">↑</span></td>
+            <td>Specificity increased; concern crystallized</td>
+          </tr>
+          <tr>
+            <td><strong>"Burnout" / "cognitive load"</strong></td>
+            <td>3 mentions</td>
+            <td>5 mentions</td>
+            <td><span class="arrow">↑</span></td>
+            <td>Emerging; signals shift from productivity debate to sustainability</td>
+          </tr>
+          <tr>
+            <td><strong>"Disposable code"</strong></td>
+            <td>Not present</td>
+            <td>Present (pattern)</td>
+            <td><span class="arrow">↑</span></td>
+            <td>Architecture philosophy challenge introduced</td>
+          </tr>
+          <tr>
+            <td><strong>"Productivity gains"</strong></td>
+            <td>Mixed language</td>
+            <td>Explicit cluster (8 mentions, Cautiously Positive)</td>
+            <td><span class="arrow">→</span> (reframing)</td>
+            <td>Shift from questioning "will AI improve productivity?" to "how do we maximize gains while mitigating costs?"</td>
+          </tr>
+          <tr>
+            <td><strong>"Trust" / "verification"</strong></td>
+            <td>3 mentions</td>
+            <td>4 mentions</td>
+            <td><span class="arrow">→</span> (stable)</td>
+            <td>Persistent but not accelerating; foundational concern, not new</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Vocabulary Drift Summary</h3>
+      <div class="exec-summary">
+        <p>
+          <strong>Language professionalized and differentiated.</strong> E1 was broad, tool-centric, and mixed in tone (mixing enthusiasm with concern). E2 split into two camps with distinct vocabularies:
+        </p>
+        <ul style="margin: 1rem 0 1rem 1.5rem;">
+          <li><strong>Security/Governance camp</strong>: "CVE," "vulnerability," "governance," "tightening" → institutional framing</li>
+          <li><strong>Impact/Existential camp</strong>: "cognitive debt," "deskilling," "hiring collapse," "vibe coding" → philosophical/sociological framing</li>
+        </ul>
+        <p>
+          This suggests <strong>bifurcation in discourse communities</strong>: early-adopter technologists (E2 productivity optimists) vs. risk officers/researchers/educators (E2 governance/impact pessimists).
+        </p>
+      </div>
+    </section>
+
+    <!-- Gaps & Uncertainties -->
+    <section id="gaps">
+      <h2>Gaps & Uncertainties</h2>
+
+      <div class="gap-item">
+        <p><strong>Decentralized platform silence</strong>: Bluesky and Mastodon reported zero traction in both extractions despite platform growth. Either AI discourse is algorithmically suppressed on these platforms, communities haven't converged there, or search methodology missed them. <strong>Uncertainty</strong>: Are we missing an entire discourse layer (e.g., academic institutions, non-English communities)?</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>YouTube channel-level collapse</strong>: Dropped from 10% to 6% share. Unknown whether this reflects content deletion, algorithm changes, or analysis artifact. <strong>Risk</strong>: If major YouTubers are being suppressed, we're losing visibility into creator sentiment.</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Cognitive debt classification drift</strong>: E1 treated "deskilling" and "comprehension" as part of Learning/Skill cluster (3 mentions). E2 elevated to Cognitive Debt/Deskilling (9 mentions). Unclear if this is <strong>genuine escalation</strong> or <strong>re-classification</strong>. <strong>Uncertainty</strong>: Is the concern new, or was E1 underweighting it?</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Enterprise governance opacity</strong>: E1 recorded Enterprise/Policy cluster (11 mentions, public discourse). E2 reports Governance Tightening pattern (High) but cluster declined to 5 mentions. Suggests <strong>policy shift is happening offline</strong> (corporate boards, procurement committees, security teams). <strong>Risk</strong>: Public discourse no longer reflects actual decision-making.</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Incident severity vs. frequency trade-off</strong>: E1: 10 incidents (broader, lower-severity mix). E2: 5 incidents (narrower, higher-severity mix with CVE focus). <strong>Unclear</strong> if this represents real shift in incident landscape or analysis focus.</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Tool dominance shift (Claude Code 4→12)</strong>: Large increase in mentions. Unclear if this reflects <strong>actual market dominance shift</strong> or <strong>analysis focus narrowing</strong>. Did analysis parameters change? Did analyst selection bias shift?</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Productivity Gains reframing</strong>: E1 had 4 "Productivity Reality" items (Mixed/Ambivalent). E2 reports 8 "Productivity Gains" items (Cautiously Positive). Are these the <strong>same items reclassified</strong>, or <strong>new data</strong>? If reclassified, this is a major sentiment-inflation artifact.</p>
+      </div>
+
+      <div class="gap-item">
+        <p><strong>Missing comparator</strong>: No baseline for "normal" discourse sentiment. Is 30% Strongly Negative high, low, or expected for a 10-day window? Need historical baseline or peer comparison.</p>
+      </div>
+    </section>
+
+    <!-- Watch List for Next Extraction -->
+    <section id="watchlist">
+      <h2>Watch List for Next Extraction</h2>
+
+      <div class="watch-list">
+        <div class="watch-item">
+          <h4>CVE acceleration curve trajectory</h4>
+          <p>Did CVE volume (absolute, by tool/framework) continue accelerating in March 26–31? Validate pattern with NVD/security database.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Claude Code rate-limit resolution</h4>
+          <p>Is capacity crisis ongoing, resolved, or morphed? Monitor Claude Code status page and Reddit reports daily.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Enterprise governance tightening specifics</h4>
+          <p>Search explicitly for corporate policy announcements, procurement blocks, or internal governance changes (via LinkedIn, corporate security blogs, insider reports).</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Cognitive debt legitimacy</h4>
+          <p>Is this a sustained intellectual/sociological shift, or a temporary frame? Monitor academic discussions, developer essays, and institutional adoption of the term.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Junior developer hiring data validation</h4>
+          <p>Cross-reference discourse claims against LinkedIn hiring trends, startup talent reports, and HH job posting volume. Quantify the "collapse."</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Decentralized platform reentry</h4>
+          <p>Retry Bluesky, Mastodon, and Fediverse instances with refined search operators. If zero traction persists, treat as confirmed platform isolation.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>YouTube creator sentiment depth</h4>
+          <p>Identify top 5–10 creators discussing AI code tools (Cursor, Claude Code, Copilot) and classify their latest video sentiment. May reveal suppression or genuine content decline.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Productivity gains robustness</h4>
+          <p>Investigate whether E2's Cautiously Positive productivity cluster represents <strong>genuine new optimism</strong> or <strong>reclassification of ambivalent E1 items</strong>. Verify with sentiment re-analysis of overlapping time period (March 23–25 in both E1 and E2).</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Vibe Coding Security Reckoning depth</h4>
+          <p>Track how widely the phrase "vibe coding" or related concepts (e.g., "AI-generated code trustworthiness") penetrate mainstream developer discourse. Identify if this is fringe concern or consolidating consensus.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Disposable Code Architecture debate timeline</h4>
+          <p>Monitor architecture and design communities (DDD, architecture mailing lists, conference talks) for uptick in "disposable code" or "ephemeral architecture" discussions. This may become 2026's major architectural philosophy debate.</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>AI Burnout Paradox resolution</h4>
+          <p>Explicitly sample authors who report both productivity gains and cognitive load increases. Investigate whether this is <strong>same-person paradox</strong> (individual experiencing tension) or <strong>population split</strong> (different cohorts with different experiences).</p>
+        </div>
+
+        <div class="watch-item">
+          <h4>Enterprise policy lag measurement</h4>
+          <p>Track time-to-public-discourse for corporate governance changes. If patterns are detected offshore 4–6 weeks before appearing in public forums, we can use pattern detection to forecast public backlash.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metadata -->
+    <section id="metadata">
+      <h2>Longitudinal Report Metadata</h2>
+
+      <div class="metadata-grid">
+        <div class="metadata-item">
+          <div class="metadata-label">Report Type</div>
+          <div class="metadata-value">Longitudinal Trend Summary (Extractions 1–2)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Period Covered</div>
+          <div class="metadata-value">2026-03-20 to 2026-03-30 (10 days)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Extraction 1</div>
+          <div class="metadata-value">2026-03-20 to 2026-03-25 (6 days, ~50 items post-dedup)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Extraction 2</div>
+          <div class="metadata-value">2026-03-23 to 2026-03-30 (8 days, ~53 items post-dedup)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Overlap Period</div>
+          <div class="metadata-value">2026-03-23 to 2026-03-25 (3 days, composition check)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Analysis Prompt Version</div>
+          <div class="metadata-value">v1.13 (both extractions)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Domain Config Version</div>
+          <div class="metadata-value">v1.2</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Longitudinal Summary Prompt</div>
+          <div class="metadata-value">v1.0 (LOCKED FORMAT)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Bootloader</div>
+          <div class="metadata-value">v1.7</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Report Generated</div>
+          <div class="metadata-value">2026-03-30</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Primary Platforms</div>
+          <div class="metadata-value">Reddit, Hacker News (75% combined), Blogs/Publications, YouTube</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Excluded Platforms</div>
+          <div class="metadata-value">Bluesky, Mastodon (zero traction both extractions)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Total Unique Sources</div>
+          <div class="metadata-value">~103 items (post-dedup across both extractions)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Sentiment Polarity</div>
+          <div class="metadata-value">Net negative (−5 pp aggregate positive sentiment)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Dominant Clusters (E2)</div>
+          <div class="metadata-value">Code Quality/Security (14), Job Security/Hiring (10), Cognitive Debt (9)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Emerging Patterns Count</div>
+          <div class="metadata-value">10 total (5 E1, 5 E2 new)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Incidents E1</div>
+          <div class="metadata-value">10 (broad portfolio: outages, deletions, CVEs, abuse, attacks)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Incidents E2</div>
+          <div class="metadata-value">5 (concentrated: CVE velocity, rate limits, audits)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Confidence Level (Overall)</div>
+          <div class="metadata-value">Medium-High (composition bias, classification drift possible)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Recommended Next Extraction</div>
+          <div class="metadata-value">2026-03-31 to 2026-04-06 (weekly cadence)</div>
+        </div>
+
+        <div class="metadata-item">
+          <div class="metadata-label">Critical Action Items</div>
+          <div class="metadata-value">CVE tracking (automated), Enterprise policy monitoring, Cognitive debt discourse tracking, Hiring data validation</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Longitudinal Trend Report — 2026-03-20 to 2026-03-30</p>
+    <p style="margin-top: 0.5rem; color: var(--text-dim); font-size: 0.85rem;">Generated 2026-03-30 | Cross-Extraction Synthesis E1–E2 | Blue accent indicates longitudinal-specific elements</p>
+  </footer>
+</body>
+</html>

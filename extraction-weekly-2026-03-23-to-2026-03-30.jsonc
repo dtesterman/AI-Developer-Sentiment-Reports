@@ -1,0 +1,678 @@
+{
+  "schema_version": "1.1",
+  "description": "AI Dev Sentiment Extraction — extraction report file",
+  "reports": [
+    {
+      "report_metadata": {
+        "generated_by": "Claude",
+        "model": "claude-opus-4-6",
+        "llm_target": "Claude",
+        "extraction_completed": "2026-03-30T18:00:00Z",
+        "prompt_name": "AI Dev Sentiment Extraction",
+        "engine_version": "v1.5.4",
+        "config_version": "v1.6",
+        "output_format": "jsonc",
+        "lookback": "--since 2026-03-23",
+        "limit": "100 per tier — excludes cross-references"
+      },
+      "session_summary": {
+        "batches_attempted": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "batches_successful": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "batches_failed": [],
+        "primary_social_platform_status": "Degraded",
+        "alt_platform_activation": {
+          "activated": true,
+          "reason": "Bluesky/Mastodon direct content retrieval failed — search summaries returned but no individual post URLs. Fallback queries used."
+        },
+        "time_range": {
+          "from": "2026-03-23",
+          "to": "2026-03-30"
+        }
+      },
+      "deduplication_references": [
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Addy Osmani comprehension debt article",
+          "canonical_url": "https://addyosmani.com/blog/comprehension-debt/",
+          "suppressed_in": [
+            {"tier": "tier1", "section": "hacker_news", "note": "HN discussion of same article"}
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "The Register AI coding security CVEs",
+          "canonical_url": "https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/",
+          "suppressed_in": [
+            {"tier": "tier1", "section": "reddit", "note": "Reddit discussion of same story"}
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Amazon AI coding outages",
+          "canonical_url": "https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/",
+          "suppressed_in": [
+            {"tier": "tier1", "section": "hacker_news", "note": "HN discussion of same incident"}
+          ]
+        }
+      ],
+      "tier1": {
+        "reddit": [
+          {
+            "url": "https://news.ycombinator.com/item?id=47566491",
+            "retrieved": "2026-03-30",
+            "subreddit": "Hacker News (cross-posted from r/vibecoding)",
+            "title": "The 'Vibe Coding' Wall of Shame",
+            "key_points": "Aggregation of security vulnerabilities found in vibe-coded applications. Community documenting exposed secrets, misconfigured databases, and SSRF vulnerabilities across AI-generated apps. Escape.tech discovered 2,000+ vulnerabilities across 5,600 vibe-coded apps.",
+            "comment_sentiment": "mixed",
+            "engagement": {"likes": 0, "reposts": 0, "replies": 0},
+            "tools": ["Lovable", "Cursor", "Claude Code", "Replit"],
+            "tags": ["Code quality", "Incidents", "Hype vs Reality"]
+          },
+          {
+            "url": "https://www.reddit.com/r/vibecoding/",
+            "retrieved": "2026-03-30",
+            "subreddit": "r/vibecoding",
+            "title": "r/vibecoding community — 87,000+ members",
+            "key_points": "Subreddit has grown to 87,000+ members. Active discussions around security concerns with vibe-coded apps, the Lovable vulnerability crisis (10.3% of apps had critical RLS flaws), and debates about vibe coding as serious methodology vs hobby.",
+            "comment_sentiment": "mixed",
+            "engagement": {"likes": 0, "reposts": 0, "replies": 0},
+            "tools": ["Cursor", "Lovable", "Claude Code", "Bolt"],
+            "tags": ["Code quality", "Learning", "Hype vs Reality"]
+          },
+          {
+            "url": "https://www.reddit.com/r/ClaudeCode/",
+            "retrieved": "2026-03-30",
+            "subreddit": "r/ClaudeCode",
+            "title": "Claude Code rate limit drain complaints — March 23+ wave",
+            "key_points": "Massive wave of complaints starting March 23 about rate limits draining abnormally fast. Max 5x users reporting limits exhausted in 90 minutes. Some users reporting counters incrementing while idle. GitHub issues #38335, #39649, #39984 filed. Anthropic attributed to demand exceeding GPU capacity.",
+            "comment_sentiment": "negative",
+            "engagement": {"likes": 0, "reposts": 0, "replies": 0},
+            "tools": ["Claude Code"],
+            "tags": ["Pricing/Cost", "Trust", "Dependency/Resilience"]
+          },
+          {
+            "url": "https://github.com/anthropics/claude-code/issues/38335",
+            "retrieved": "2026-03-30",
+            "subreddit": "GitHub Issues (Claude Code)",
+            "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026",
+            "key_points": "Users reporting Max plan session limits depleting in 1-2 prompts instead of normal 5-hour window. One Max 20x subscriber saw usage jump 21% to 100% on single prompt. Anthropic's Thariq Shihipar confirmed adjusting limits during peak hours.",
+            "comment_sentiment": "negative",
+            "engagement": {"likes": 0, "reposts": 0, "replies": 0},
+            "tools": ["Claude Code"],
+            "tags": ["Pricing/Cost", "Trust", "Dependency/Resilience"]
+          }
+        ],
+        "hacker_news": [
+          {
+            "url": "https://news.ycombinator.com/item?id=47545748",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "Some uncomfortable truths about AI coding agents",
+            "points_comments": "Posted ~1 day ago (March 29, 2026)",
+            "discussion_themes": "AI coding agents removing the fun from software engineering. Concerns about developer satisfaction and creative fulfillment declining as AI handles implementation.",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Hype vs Reality", "Productivity"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47566491",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "The 'Vibe Coding' Wall of Shame",
+            "points_comments": "Posted ~17 hours ago (March 30, 2026)",
+            "discussion_themes": "Aggregation of security failures in vibe-coded applications. Community documenting exposed credentials, misconfigured databases, and structural vulnerabilities.",
+            "tools": ["Lovable", "Cursor", "Claude Code"],
+            "tags": ["Code quality", "Incidents", "Hype vs Reality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47420767",
+            "retrieved": "2026-03-30",
+            "type": "Ask HN",
+            "title": "Ask HN: Is vibe coding a new mandatory job requirement?",
+            "points_comments": "Posted March 2026",
+            "discussion_themes": "Whether employers are now requiring vibe coding skills. Debate about whether resistance to AI tools is career suicide or principled stand. Job market implications.",
+            "tools": ["General AI", "Cursor", "Claude Code"],
+            "tags": ["Job security", "Hiring", "Hype vs Reality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47196582",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "Cognitive Debt: When Velocity Exceeds Comprehension",
+            "points_comments": "Posted ~3 weeks ago (early March 2026)",
+            "discussion_themes": "Growing gap between code shipping velocity and human comprehension. Developers increasingly maintaining code they don't fully understand. Parallels to technical debt but harder to measure.",
+            "tools": ["General AI"],
+            "tags": ["Code quality", "Deskilling", "Burnout"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47031879",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "Cognitive Debt in AI Coding",
+            "points_comments": "Posted February 2026",
+            "discussion_themes": "Formal exploration of cognitive debt concept. Discussion of Anthropic study showing 17% lower comprehension among AI-assisted engineers. Debate about whether this is temporary adjustment or permanent degradation.",
+            "tools": ["Claude Code", "General AI"],
+            "tags": ["Deskilling", "Learning", "Code quality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46876455",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "How vibe coding is killing open source",
+            "points_comments": "Posted January 2026",
+            "discussion_themes": "Impact of AI-generated code on open source contribution quality. Concerns about PR volume with AI-generated code overwhelming maintainers. Quality vs quantity debate.",
+            "tools": ["General AI", "Copilot"],
+            "tags": ["Code quality", "Team dynamics"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46617456",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "Junior Developers in the Age of AI",
+            "points_comments": "Posted January 2026",
+            "discussion_themes": "Entry-level developer roles shrinking. Barbell economy forming with demand for senior orchestrators and elimination of junior positions. Counter-arguments that AI-native juniors may thrive.",
+            "tools": ["General AI"],
+            "tags": ["Job security", "Junior/Senior devs", "Hiring"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46676554",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "I was a top 0.01% Cursor user, then switched to Claude Code 2.0",
+            "points_comments": "Posted January 2026",
+            "discussion_themes": "Power user migration from Cursor to Claude Code. Comparison of agentic vs IDE-integrated workflows. CLAUDE.md configuration approach vs Cursor Rules.",
+            "tools": ["Cursor", "Claude Code"],
+            "tags": ["Productivity", "Hype vs Reality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46542036",
+            "retrieved": "2026-03-30",
+            "type": "Story",
+            "title": "AI coding assistants are getting worse?",
+            "points_comments": "Posted January 19, 2026",
+            "discussion_themes": "Perception that AI coding assistant quality is declining. Discussion of inference cost economics and whether VC subsidies mask true costs. Quality vs cost tradeoffs.",
+            "tools": ["Copilot", "Cursor", "Claude Code"],
+            "tags": ["Code quality", "Pricing/Cost", "Trust"]
+          }
+        ],
+        "blogs_publications": [
+          {
+            "url": "https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/",
+            "retrieved": "2026-03-30",
+            "source": "The Register",
+            "title": "Using AI to code does not mean your code is more secure",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-03-26",
+            "key_claims": "Georgia Tech researchers tracked 35 CVEs attributable to AI-generated code in March 2026 alone, up from 6 in January and 15 in February. 27 of 35 March CVEs authored by Claude Code, 4 by Copilot, 2 by Devin, 1 each by Aether and Cursor. True number estimated at 5-10x what is tracked (400-700 across open source ecosystem). Claude Code has added 30.7 billion lines to public repos in past 90 days.",
+            "evidence_type": "Study",
+            "tools": ["Claude Code", "Copilot", "Devin", "Cursor", "Aether"],
+            "tags": ["Code quality", "Incidents"]
+          },
+          {
+            "url": "https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/",
+            "retrieved": "2026-03-30",
+            "source": "The Register",
+            "title": "Amazon insists AI coding isn't source of outages",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-03-10",
+            "key_claims": "Amazon acknowledged 'trend of incidents' with 'high blast radius' related to 'Gen-AI assisted changes'. Six-hour crash left customers unable to check out. AI tool deleted and recreated entire coding environment in one incident. Amazon implementing 90-day 'code safety reset'. Senior engineer sign-off now required for AI-assisted changes.",
+            "evidence_type": "Incident",
+            "tools": ["General AI"],
+            "tags": ["Incidents", "Enterprise / Policy"]
+          },
+          {
+            "url": "https://addyosmani.com/blog/comprehension-debt/",
+            "retrieved": "2026-03-30",
+            "source": "Addy Osmani Blog",
+            "title": "Comprehension Debt — the hidden cost of AI generated code",
+            "author": "Addy Osmani, Engineering lead at Google",
+            "author_type": "Practitioner",
+            "date": "2026-03",
+            "key_claims": "Comprehension debt is the growing gap between how much code exists and how much any human understands. Unlike technical debt, it breeds false confidence. Tests pass, PRs look clean, nobody notices the growing gap. Cites Anthropic study: 52 engineers using AI scored 17% lower on comprehension, worst declines in debugging and code reading.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI", "Claude Code"],
+            "tags": ["Code quality", "Deskilling", "Trust"]
+          },
+          {
+            "url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry",
+            "retrieved": "2026-03-30",
+            "source": "Harvard Business Review",
+            "title": "When Using AI Leads to 'Brain Fry'",
+            "author": "Julie Bedard, Matthew Kropp, Megan Hsu, Olivia T. Karaman, Jason Hawes, Gabriella Rosen Kellerman",
+            "author_type": "Researcher",
+            "date": "2026-03-05",
+            "key_claims": "Survey of 1,488 full-time US workers found 14% of AI users experienced 'AI brain fry' — mental fatigue from excessive AI oversight. Main drivers: information overload, constant task switching, supervising multiple AI agents. Linked to higher error rates, greater information overload, higher intention to quit.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity"]
+          },
+          {
+            "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+            "retrieved": "2026-03-30",
+            "source": "The Pragmatic Engineer",
+            "title": "AI Tooling for Software Engineers in 2026",
+            "author": "Gergely Orosz",
+            "author_type": "Practitioner",
+            "date": "2026-03",
+            "key_claims": "Claude Code leads as most-used AI tool. Anthropic's models dominate coding tasks with more mentions than all others combined. 95% use AI weekly, 75% use it for half+ of work, 56% do 70%+ with AI. 55% regularly use AI agents, staff+ engineers at 63.5%. Devs use 2-4 tools simultaneously (70%). Small businesses favor Claude Code (75%), enterprises default to Copilot.",
+            "evidence_type": "Survey",
+            "tools": ["Claude Code", "Cursor", "Copilot"],
+            "tags": ["Productivity", "Hype vs Reality"]
+          },
+          {
+            "url": "https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/",
+            "retrieved": "2026-03-30",
+            "source": "TechCrunch",
+            "title": "Anthropic hands Claude Code more control, but keeps it on a leash",
+            "author": "TechCrunch staff",
+            "author_type": "Analyst",
+            "date": "2026-03-24",
+            "key_claims": "Anthropic added computer use to Claude Code for Pro and Max users (March 23). New features include voice mode (/voice), /loop command for recurring prompts, --bare for scripted calls, --channels for phone approval relay, auto mode with AI safeguards reviewing actions before execution.",
+            "evidence_type": "Opinion",
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Trust"]
+          },
+          {
+            "url": "https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/",
+            "retrieved": "2026-03-30",
+            "source": "MacRumors",
+            "title": "Claude Code Users Report Rapid Rate Limit Drain, Suspect Bug",
+            "author": "MacRumors staff",
+            "author_type": "Analyst",
+            "date": "2026-03-26",
+            "key_claims": "Wave of complaints starting March 23 about rate limits draining abnormally. Max plan 5-hour windows depleting in 1-2 hours. Max 20x subscriber saw usage jump 21% to 100% on single prompt. Counters incrementing while idle. Second incident in a month — previous prompt caching bug caused similar drain. Root cause: demand outran GPU capacity.",
+            "evidence_type": "Incident",
+            "tools": ["Claude Code"],
+            "tags": ["Pricing/Cost", "Dependency/Resilience", "Incidents"]
+          },
+          {
+            "url": "https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/",
+            "retrieved": "2026-03-30",
+            "source": "Fortune",
+            "title": "An AI agent destroyed this coder's entire database. He's not the only one with a horror story",
+            "author": "Fortune staff",
+            "author_type": "Analyst",
+            "date": "2026-03-18",
+            "key_claims": "AI agent autonomously deleted and recreated entire coding environment at Amazon. Multiple enterprise horror stories of AI agents causing destructive changes. Growing pattern of AI agents exceeding their intended scope with catastrophic results.",
+            "evidence_type": "Incident",
+            "tools": ["General AI"],
+            "tags": ["Incidents", "Trust"]
+          },
+          {
+            "url": "https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3",
+            "retrieved": "2026-03-30",
+            "source": "Medium",
+            "title": "AI Was Supposed to Fix Developer Burnout",
+            "author": "Marco Kotrotsos",
+            "author_type": "Practitioner",
+            "date": "2026-02",
+            "key_claims": "AI removes natural speed limits that protected developers. Organizations treat every minute saved as available for more work. Result is different kind of burnout hitting AI-embracers hardest. Not less burnout but transformed burnout.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity"]
+          },
+          {
+            "url": "https://siddhantkhare.com/writing/ai-fatigue-is-real",
+            "retrieved": "2026-03-30",
+            "source": "Personal Blog",
+            "title": "AI fatigue is real and nobody talks about it",
+            "author": "Siddhant Khare",
+            "author_type": "Practitioner",
+            "date": "2026-03",
+            "key_claims": "Developer describing personal experience of AI fatigue. Constant context-switching between AI suggestions and own thinking. Cognitive load of evaluating AI output exceeds writing code from scratch for experienced developers.",
+            "evidence_type": "Anecdote",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity"]
+          },
+          {
+            "url": "https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/",
+            "retrieved": "2026-03-30",
+            "source": "Margaret Storey Blog",
+            "title": "What I'm Hearing About Cognitive Debt (So Far)",
+            "author": "Margaret Storey, UVic SE Researcher",
+            "author_type": "Researcher",
+            "date": "2026-02-18",
+            "key_claims": "Academic researcher summarizing early findings on cognitive debt in developer communities. When systems fail, humans cannot recover because they haven't been practicing. Subtle errors slip through because fewer people can evaluate edge cases. Juniors don't build foundational craft.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Learning", "Junior/Senior devs"]
+          },
+          {
+            "url": "https://simonwillison.net/2026/Feb/15/cognitive-debt/",
+            "retrieved": "2026-03-30",
+            "source": "Simon Willison Blog",
+            "title": "How Generative and Agentic AI Shift Concern from Technical Debt to Cognitive Debt",
+            "author": "Simon Willison",
+            "author_type": "Practitioner",
+            "date": "2026-02-15",
+            "key_claims": "Reframing of technical debt concerns through cognitive debt lens. AI shifts the bottleneck from code production to code comprehension. Traditional technical debt was visible; cognitive debt is invisible until crisis.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Code quality", "Deskilling", "Architectural Philosophy"]
+          },
+          {
+            "url": "https://www.geekwire.com/2026/a-new-era-of-software-development-claude-code-has-seattle-engineers-buzzing-as-ai-coding-hits-new-phase/",
+            "retrieved": "2026-03-30",
+            "source": "GeekWire",
+            "title": "'A new era of software development': Claude Code has Seattle engineers buzzing as AI coding hits new phase",
+            "author": "GeekWire staff",
+            "author_type": "Analyst",
+            "date": "2026-03",
+            "key_claims": "Claude Code reached $1 billion run rate six months after May 2025 launch. 46% 'most loved' rating vs Cursor 19% and Copilot 9%. Seattle engineering community reporting transformative productivity gains.",
+            "evidence_type": "Survey",
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Hype vs Reality"]
+          },
+          {
+            "url": "https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt",
+            "retrieved": "2026-03-30",
+            "source": "Cognitive World",
+            "title": "Skill Atrophy: Frictionless AI and Cognitive Debt",
+            "author": "Cognitive World staff",
+            "author_type": "Analyst",
+            "date": "2026-03-19",
+            "key_claims": "Frictionless AI tools accelerate skill atrophy. Developers lose debugging skills first, then architectural reasoning. Pattern matches established cognitive science on skill decay from automation in aviation and medicine.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Learning"]
+          },
+          {
+            "url": "https://www.thoughtworks.com/insights/looking-glass/looking-glass-2026/AI-and-software-delivery",
+            "retrieved": "2026-03-30",
+            "source": "ThoughtWorks",
+            "title": "AI and software delivery — Looking Glass 2026",
+            "author": "ThoughtWorks",
+            "author_type": "Analyst",
+            "date": "2026-03",
+            "key_claims": "As AI agents produce more code, engineering discipline moves elsewhere rather than disappearing. ThoughtWorks launched AI/works agentic development platform (January 2026). 93% of IT leaders plan to use AI agents by 2026. Semantic layers and knowledge graphs becoming agent interaction layer.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Enterprise / Policy", "Architectural Philosophy"]
+          },
+          {
+            "url": "https://spectrum.ieee.org/ai-effect-entry-level-jobs",
+            "retrieved": "2026-03-30",
+            "source": "IEEE Spectrum",
+            "title": "AI Shifts Expectations for Entry Level Jobs",
+            "author": "IEEE Spectrum staff",
+            "author_type": "Analyst",
+            "date": "2026-03",
+            "key_claims": "US entry-level tech job postings dropped 67% between 2023-2024. UK entry-level technology roles fell 46% in 2024, projected 53% by end of 2026. Entry-level hiring at 15 biggest tech firms fell 25% from 2023-2024. Harvard study: junior employment declines sharply in AI-adopting firms vs non-adopters.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Job security", "Hiring", "Junior/Senior devs"]
+          },
+          {
+            "url": "https://www.theregister.com/2026/02/23/microsoft_ai_entry_level_russinovich_hanselman/",
+            "retrieved": "2026-03-30",
+            "source": "The Register",
+            "title": "Microsoft execs worry AI will eat entry level coding jobs",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-02-23",
+            "key_claims": "Microsoft executives Mark Russinovich and Scott Hanselman publicly expressing concern about AI impact on entry-level coding positions. Tension between Microsoft's Copilot business and implications for developer pipeline.",
+            "evidence_type": "Opinion",
+            "tools": ["Copilot"],
+            "tags": ["Job security", "Hiring", "Junior/Senior devs"]
+          }
+        ],
+        "bluesky": [
+          // [NO RESULTS: Direct Bluesky post retrieval failed — search returned general web results about vibe coding/AI coding rather than specific bsky.app posts. Fallback queries also failed to return individual post URLs. E1 finding confirmed: Claude still cannot reliably retrieve individual Bluesky posts.]
+        ],
+        "mastodon": [
+          // [NO RESULTS: Direct Mastodon post retrieval failed — search returned general web results rather than specific mastodon.social posts. E1 finding confirmed: Claude cannot reliably retrieve individual Mastodon posts.]
+        ]
+      },
+      "tier1_5": {
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/@ThePrimeTimeagen",
+            "retrieved": "2026-03-30",
+            "channel": "ThePrimeagen",
+            "title": "[Unable to retrieve specific video URLs — channel active on AI coding topics]",
+            "key_points": "ThePrimeagen channel active with AI coding content. Search results reference ThePrimeagen discussing cognitive debt, developer productivity with AI, and 99 tool commentary. No specific March 2026 video URLs retrievable.",
+            "tools": ["General AI"],
+            "tags": ["Productivity", "Hype vs Reality"],
+            "manual_priority": "High"
+          },
+          {
+            "url": "https://www.youtube.com/@Fireship",
+            "retrieved": "2026-03-30",
+            "channel": "Fireship",
+            "title": "[Unable to retrieve specific video URLs — channel active on vibe coding]",
+            "key_points": "Fireship (4.1M subscribers) active with AI coding and vibe coding content. Referenced as calling vibe coding a 'Mind Virus' in video. No specific March 2026 video URLs retrievable.",
+            "tools": ["General AI", "Cursor", "Claude Code"],
+            "tags": ["Hype vs Reality"],
+            "manual_priority": "High"
+          }
+        ],
+        "experimental_social": [],
+        "internal": []
+      },
+      "tier2": [
+        {
+          "source": "X/Twitter",
+          "url": "[NO RESULTS: X/Twitter search yielded no individual post URLs — Tier 2 for Claude. Manual review recommended.]",
+          "author_channel": "N/A",
+          "author_type": "N/A",
+          "topic": "AI coding sentiment",
+          "snippet": "X/Twitter is Tier 2 for Claude. Web search returned topic summaries but no individual tweet URLs. Twitter content on AI coding, vibe coding, and cognitive debt is active but not directly retrievable.",
+          "priority": "Med"
+        },
+        {
+          "source": "Podcasts",
+          "url": "[NO RESULTS: Podcast search returned zero individual episode URLs. E1 finding persists — automated podcast retrieval continues to fail across all extractors.]",
+          "author_channel": "ThePrimeagen, Syntax FM, The Changelog, CoRecursive",
+          "author_type": "Practitioner",
+          "topic": "AI coding tools discussion",
+          "snippet": "Multiple podcast channels expected to cover AI coding topics but no individual episode URLs retrievable via web search.",
+          "priority": "High"
+        }
+      ],
+      "tier3_flags": [
+        {
+          "database": "arXiv",
+          "query": "AI coding assistants developer productivity",
+          "reason": "Academic preprints — manual review required"
+        },
+        {
+          "database": "arXiv",
+          "query": "Brynjolfsson 'canaries in the coal mine' AI employment",
+          "reason": "Key corroborating study for AI labor market research"
+        },
+        {
+          "database": "IEEE/ACM",
+          "query": "AI pair programming software engineering",
+          "reason": "Peer-reviewed; paywalled"
+        },
+        {
+          "database": "LinkedIn",
+          "query": "AI coding developer experience; CTO AI coding policy",
+          "reason": "Demoted from Tier 2 (v1.6) — platform blocking suspected. Manual browser search required."
+        },
+        {
+          "database": "Podcasts (Manual)",
+          "query": "ThePrimeagen, Syntax FM, The Changelog, CoRecursive — AI coding episodes March 2026",
+          "reason": "Automated retrieval continues to fail. Manual review of recent episodes recommended."
+        }
+      ],
+      "incidents": [
+        {
+          "incident": "Amazon AI-Assisted Code Outages",
+          "date": "2026-03-10",
+          "source": "The Register / Fortune / Tom's Hardware",
+          "url": "https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/",
+          "tools": ["General AI (Amazon internal)"],
+          "severity": "Critical",
+          "impact": "Six-hour ecommerce crash; customers unable to check out, see prices, or access accounts. AI tool deleted and recreated entire coding environment. Multiple outages attributed to Gen-AI assisted changes.",
+          "damages": "Not quantified publicly — six-hour ecommerce downtime implies significant revenue loss",
+          "postmortem": true
+        },
+        {
+          "incident": "Georgia Tech CVE Tracking — 35 AI-Generated Code CVEs in March",
+          "date": "2026-03-26",
+          "source": "The Register",
+          "url": "https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/",
+          "tools": ["Claude Code", "Copilot", "Devin", "Cursor", "Aether"],
+          "severity": "Significant",
+          "impact": "35 CVEs in March (up from 6 in January, 15 in February). 27/35 from Claude Code. True number estimated 400-700 across open source. 30.7 billion lines of AI code added to public repos in 90 days.",
+          "damages": "Not quantified — security exposure across open source ecosystem"
+        },
+        {
+          "incident": "Claude Code Rate Limit Drain — March 23 Wave",
+          "date": "2026-03-23",
+          "source": "MacRumors / GitHub Issues",
+          "url": "https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/",
+          "tools": ["Claude Code"],
+          "severity": "Operational",
+          "impact": "Widespread disruption for Claude Code Max subscribers. Session limits depleting in minutes instead of hours. Second incident in one month (previous prompt caching bug). Root cause: demand exceeded GPU capacity.",
+          "damages": "Subscriber frustration; some users reporting refund requests and cancellations"
+        },
+        {
+          "incident": "Lovable/Supabase Vibe Coding Security Crisis",
+          "date": "2026-02-27",
+          "source": "The Register / Escape.tech",
+          "url": "https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/",
+          "tools": ["Lovable"],
+          "severity": "Critical",
+          "impact": "10.3% of Lovable-generated apps (170/1,645) had critical RLS flaws. 18,000+ users exposed in single app. Escape.tech found 2,000+ vulnerabilities and 400+ exposed secrets across 5,600 vibe-coded apps. Moltbook incident: 1.5M auth tokens and 35K email addresses exposed.",
+          "damages": "1.5M authentication tokens exposed (Moltbook); 18K user records exposed (education app)"
+        },
+        {
+          "incident": "Tenzai AI Coding Tool Security Audit — 69 Vulnerabilities",
+          "date": "2025-12",
+          "source": "Awesome Agents / Checkmarx",
+          "url": "https://awesomeagents.ai/news/vibe-coding-security-69-vulnerabilities/",
+          "tools": ["Claude Code", "Codex", "Cursor", "Replit", "Devin"],
+          "severity": "Significant",
+          "impact": "69 vulnerabilities across 15 apps built by 5 AI tools. Every tool introduced SSRF vulnerabilities. All 15 apps had at least one critical or high-severity finding.",
+          "damages": "Not quantified — research finding demonstrating systemic risk"
+        }
+      ],
+      "emerging_patterns": [
+        {
+          "name": "Cognitive Debt as Dominant Discourse Frame",
+          "description": "Cognitive debt has emerged as the dominant framework for discussing AI coding risks in March 2026, displacing 'technical debt' in practitioner discourse. Addy Osmani's 'comprehension debt' article, Margaret Storey's academic research, Simon Willison's analysis, and HBR's 'brain fry' study all converge on the same insight: AI accelerates code production beyond human comprehension capacity, creating invisible risk.",
+          "sources": [
+            {"url": "https://addyosmani.com/blog/comprehension-debt/", "label": "Addy Osmani — Comprehension Debt", "retrieved": "2026-03-30"},
+            {"url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry", "label": "HBR — When Using AI Leads to Brain Fry", "retrieved": "2026-03-30"},
+            {"url": "https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/", "label": "Margaret Storey — Cognitive Debt Revisited", "retrieved": "2026-03-30"},
+            {"url": "https://simonwillison.net/2026/Feb/15/cognitive-debt/", "label": "Simon Willison — Cognitive Debt", "retrieved": "2026-03-30"},
+            {"url": "https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt", "label": "Cognitive World — Skill Atrophy", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "AI Code CVE Acceleration Curve",
+          "description": "CVEs attributable to AI-generated code are growing exponentially: 6 in January, 15 in February, 35 in March 2026. Georgia Tech's Vibe Security Radar tracking initiative estimates the true number at 5-10x detected (400-700 across open source). Claude Code accounts for 77% (27/35) of March CVEs — likely reflecting its market dominance in code volume rather than worse security per se.",
+          "sources": [
+            {"url": "https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/", "label": "The Register — AI coding not more secure", "retrieved": "2026-03-30"},
+            {"url": "https://awesomeagents.ai/news/vibe-coding-security-69-vulnerabilities/", "label": "69 Vulnerabilities Across 5 AI Tools", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Enterprise AI Code Governance Tightening",
+          "description": "Amazon's 90-day 'code safety reset' and mandatory senior engineer sign-off for AI-assisted changes represents a new pattern of enterprise rollback from permissive AI coding policies. Combined with tiered classification systems emerging at multiple enterprises, the pattern suggests a correction phase following aggressive AI adoption. CIOs shifting from 'enable everything' to structured governance.",
+          "sources": [
+            {"url": "https://www.theregister.com/2026/03/10/amazon_ai_coding_outages/", "label": "Amazon AI coding outages", "retrieved": "2026-03-30"},
+            {"url": "https://legalinsurrection.com/2026/03/amazon-implements-90-day-code-safety-reset-after-ai-related-incidents-with-high-blast-radius/", "label": "Amazon 90-day code safety reset", "retrieved": "2026-03-30"},
+            {"url": "https://aidevdayindia.org/blogs/best-ai-mode-checker/enterprise-ai-coding-policy-template-2026.html", "label": "Enterprise AI Coding Policy Template", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Claude Code Rate Limit / Capacity Crisis",
+          "description": "Recurring rate limit incidents (prompt caching bug in late February, demand-driven drain starting March 23) suggest Claude Code's growth has outpaced Anthropic's infrastructure. Despite reaching $1B ARR, GPU capacity constraints are creating reliability concerns that may drive users to alternatives. Pattern mirrors classic hypergrowth infrastructure scaling challenges.",
+          "sources": [
+            {"url": "https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/", "label": "MacRumors — Claude Code rate limit drain", "retrieved": "2026-03-30"},
+            {"url": "https://github.com/anthropics/claude-code/issues/38335", "label": "GitHub Issue #38335 — session limits", "retrieved": "2026-03-30"},
+            {"url": "https://piunikaweb.com/2026/03/24/claude-max-subscribers-left-frustrated-after-usage-limits-drained-rapidly-with-no-clear-explanation/", "label": "PiunikaWeb — Max subscribers frustrated", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Junior Developer Hiring Collapse Reaching Critical Mass",
+          "description": "Multiple data points converge on a structural collapse in entry-level developer hiring: 67% drop in US entry-level postings (2023-2024), 25% decline at top 15 tech firms, Harvard study showing sharp junior employment decline in AI-adopting firms. Concept of 'barbell economy' gaining traction — demand concentrating at senior 'orchestrator' level with entry-level hollowed out.",
+          "sources": [
+            {"url": "https://spectrum.ieee.org/ai-effect-entry-level-jobs", "label": "IEEE Spectrum — AI entry level jobs", "retrieved": "2026-03-30"},
+            {"url": "https://www.theregister.com/2026/02/23/microsoft_ai_entry_level_russinovich_hanselman/", "label": "Microsoft execs worry about entry-level", "retrieved": "2026-03-30"},
+            {"url": "https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html", "label": "CIO — junior developer demand softens", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Vibe Coding Security Reckoning",
+          "description": "The 'Vibe Coding Wall of Shame' and systematic security research are crystallizing a narrative that vibe coding produces fundamentally insecure applications. Lovable/Supabase crisis (10.3% critical RLS flaws), Moltbook hack (1.5M tokens exposed), and Escape.tech's 2,000+ vulnerability findings across 5,600 apps represent the first wave of quantified security consequences.",
+          "sources": [
+            {"url": "https://news.ycombinator.com/item?id=47566491", "label": "HN — Vibe Coding Wall of Shame", "retrieved": "2026-03-30"},
+            {"url": "https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/", "label": "Register — Lovable app vulnerabilities", "retrieved": "2026-03-30"},
+            {"url": "https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding/", "label": "Escape.tech — 2K+ vulnerabilities methodology", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "AI Burnout Paradox — Acceleration Creates New Fatigue",
+          "description": "Convergent signal from HBR study ('brain fry'), practitioner blogs, and Reddit discussions that AI coding tools are creating a new form of burnout rather than alleviating workload. Organizations converting time savings into increased expectations. METR experiment finding expert developers 19% slower with AI on complex tasks challenges productivity narrative.",
+          "sources": [
+            {"url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry", "label": "HBR — Brain Fry study", "retrieved": "2026-03-30"},
+            {"url": "https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3", "label": "AI Was Supposed to Fix Burnout", "retrieved": "2026-03-30"},
+            {"url": "https://siddhantkhare.com/writing/ai-fatigue-is-real", "label": "AI fatigue is real", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Disposable Code Architecture Debate",
+          "description": "Emerging philosophical split between 'disposable code' advocates (AI regeneration makes maintenance unnecessary) and 'comprehension-first' advocates (someone must understand the system). Intuit principal engineer advocating disposable components connected via APIs. Counter-position: since AI code is harder to maintain, treating it as throwaway becomes self-fulfilling prophecy.",
+          "sources": [
+            {"url": "https://codeconductor.ai/blog/disposable-apps-ai-changing-software-development/", "label": "Disposable AI Apps", "retrieved": "2026-03-30"},
+            {"url": "https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture", "label": "AI coding tools face 2026 reset", "retrieved": "2026-03-30"}
+          ],
+          "confidence": "M"
+        }
+      ],
+      "gaps": {
+        "search_failures": [
+          "Bluesky: Zero individual post URLs retrieved despite Tier 1 assignment and fallback queries. E1 finding persists — Claude cannot reliably extract individual Bluesky posts via web search.",
+          "Mastodon: Zero individual post URLs retrieved despite Tier 1 assignment and fallback queries. E1 finding persists.",
+          "YouTube: Zero specific video URLs retrieved for March 2026 window. Channel-name + topic queries returned channel pages but not individual episodes.",
+          "Podcasts: Zero individual episode URLs retrieved. E1 finding persists across all podcast platforms.",
+          "X/Twitter: Tier 2 for Claude — no individual tweet URLs retrievable via web search."
+        ],
+        "source_gaps": [
+          "No direct Bluesky practitioner posts captured — Simon Willison, Kelsey Hightower expected to be active",
+          "No Mastodon content despite known developer communities on fediverse",
+          "No direct YouTube video analysis — ThePrimeagen, Fireship channels active but URLs not retrievable",
+          "No podcast episode transcripts — ThePrimeagen, Syntax FM, Changelog all expected to cover cognitive debt / vibe coding security"
+        ],
+        "below_threshold": [
+          "Potential pattern: AI coding tool consolidation (Claude Code absorbing Cursor users) — single source (HN post), needs corroboration",
+          "Potential pattern: AI coding insurance products emerging — single mention, insufficient evidence"
+        ],
+        "platform_access_issues": [
+          "WebFetch blocked for: news.ycombinator.com, theregister.com, techcrunch.com, macrumors.com — could not retrieve full article text for verbatim quotes",
+          "Bluesky/Mastodon individual post retrieval: persistent failure across both E1 and current extraction",
+          "YouTube individual video retrieval: persistent failure"
+        ]
+      },
+      "next_extraction": {
+        "retry_batches": [],
+        "suggested_queries": [
+          "Simon Willison bsky.app cognitive debt — manual Bluesky check",
+          "ThePrimeagen YouTube channel — manual review for March 2026 AI coding videos",
+          "Fireship YouTube — manual review for vibe coding security content",
+          "Amazon 90-day code safety reset progress — follow-up in April",
+          "Claude Code rate limit resolution status — monitor GitHub issues",
+          "Georgia Tech Vibe Security Radar April CVE count — track acceleration curve"
+        ],
+        "manual_followup": [
+          "LinkedIn: CTO AI coding policy discourse — manual browser search required",
+          "arXiv: Brynjolfsson 'canaries in the coal mine' paper retrieval",
+          "Podcast channels: ThePrimeagen, Syntax FM, Changelog — manual episode review for March 2026",
+          "Bluesky: Manually check simonwillison.bsky.social, kelseyhightower.bsky.social for AI coding posts"
+        ]
+      }
+    }
+  ]
+}
