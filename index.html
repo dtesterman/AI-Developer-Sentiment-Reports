@@ -102,17 +102,49 @@
       border-left: 3px solid var(--amber);
       padding: 24px 28px; gap: 16px; align-items: center;
       transition: background 0.2s, border-color 0.2s;
-      text-decoration: none;
     }
     .report-card:hover {
       background: var(--surface2); border-color: var(--amber);
-      text-decoration: none;
     }
     .report-title {
       font-family: var(--display); font-size: 1.25rem;
-      color: var(--head); font-weight: 400; line-height: 1.3;
+      font-weight: 400; line-height: 1.3;
       margin-bottom: 6px;
     }
+    .report-title a {
+      color: var(--head);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .report-title a:hover {
+      border-bottom-color: var(--amber);
+      text-decoration: none;
+    }
+    .report-summary a {
+      color: var(--text);
+      border-bottom: 1px dotted var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .report-summary a:hover {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+    }
+    .longi-summary a {
+      color: var(--text);
+      border-bottom: 1px dotted var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .longi-summary a:hover { color: var(--blue); }
+    .longi-title a {
+      color: var(--head);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .longi-title a:hover { border-bottom-color: var(--blue); }
     .report-meta {
       font-family: var(--mono); font-size: 12px; color: var(--text-dim);
       line-height: 1.8;
@@ -147,11 +179,9 @@
       border-top: 3px solid var(--blue);
       padding: 32px 32px 28px;
       transition: background 0.2s, border-color 0.2s;
-      text-decoration: none;
     }
     .longi-card:hover {
       background: var(--surface2); border-color: var(--blue);
-      text-decoration: none;
     }
     .longi-badge {
       display: inline-block;
@@ -231,23 +261,24 @@
     <div class="section-label">Trend Analysis</div>
     <h2>Longitudinal Summary</h2>
 
-    <a class="longi-card" href="longitudinal-summary-2026-03-31.html">
+    <div class="longi-card">
       <div class="longi-badge">Cross-Extraction Trends</div>
-      <div class="longi-title">Trend Report &mdash; 2026-03-20 through 2026-03-31</div>
+      <div class="longi-title"><a href="longitudinal-summary-2026-04-06.html">Trend Report &mdash; 2026-03-20 through 2026-04-06</a></div>
       <div class="longi-meta">
-        Longitudinal Engine v1.1 &nbsp;&middot;&nbsp; 3 extractions analyzed &nbsp;&middot;&nbsp; 11-day window
+        Longitudinal Engine v1.1 &nbsp;&middot;&nbsp; 4 extractions analyzed &nbsp;&middot;&nbsp; 18-day window
       </div>
       <div class="longi-summary">
-        Sentiment deterioration sustained across three extractions: negative share 46%&rarr;62%&rarr;79%. Moderate center collapsed (Mixed/Ambivalent 18%&rarr;5%). AI burnout paradox validated by HBR and Scientific American. MCP CVE surge confirmed at protocol level (43% exec/shell injection). Productivity paradox emerges as new high-priority signal &mdash; METR shows experienced devs 19% slower with AI.
+        First full cycle complete: deterioration through E1&rarr;E3 (46%&rarr;62%&rarr;79% negative) followed by composition-driven correction in E4 (59% negative). Negative weight has migrated from "AI coding generally" to a single vendor (Anthropic / Claude Code) following an unprecedented compound-incident week &mdash; <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">rate-limit regression</a>, <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">~500K-LOC source-code leak</a>, and <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">OpenClaw subscription block</a>. Three new signals: Vendor Operational Maturity, Agent-Orchestration IDE Philosophy, and <a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/" target="_blank" rel="noopener">Compound Incident Windows</a>. <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR pins productivity peak at 3 concurrent tools</a>.
       </div>
       <div class="stat-row">
-        <div class="stat-pill"><strong>3</strong> extractions</div>
-        <div class="stat-pill"><strong>122</strong> total items</div>
-        <div class="stat-pill"><strong>10</strong> tracked signals</div>
-        <div class="stat-pill"><strong>6</strong> confirmed trends</div>
+        <div class="stat-pill"><strong>4</strong> extractions</div>
+        <div class="stat-pill"><strong>166</strong> total items</div>
+        <div class="stat-pill"><strong>11</strong> tracked signals</div>
+        <div class="stat-pill"><strong>7</strong> confirmed trends</div>
+        <div class="stat-pill"><strong>3</strong> new signals</div>
       </div>
-      <div class="longi-arrow">&rarr; View full trend analysis</div>
-    </a>
+      <div class="longi-arrow"><a href="longitudinal-summary-2026-04-06.html" style="color:inherit;text-decoration:none;">&rarr; View full trend analysis</a></div>
+    </div>
   </div>
   <!-- LONGITUDINAL_END -->
 
@@ -264,14 +295,34 @@
 
   <div class="report-list">
 
-    <a class="report-card" href="analysis-report-2026-03-31.html">
+    <div class="report-card">
       <div>
-        <div class="report-title">2026-03-28 &ndash; 2026-03-31 &mdash; Extraction 3</div>
+        <div class="report-title"><a href="analysis-report-2026-04-06.html">2026-03-30 &ndash; 2026-04-06 &mdash; Extraction 4</a></div>
         <div class="report-meta">
           Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via Chrome
         </div>
         <div class="report-summary">
-          Strongly Negative surges to 63% as discourse polarizes &mdash; moderate center collapses. AI burnout paradox reaches mainstream academic validation (HBR, Scientific American). MCP protocol vulnerabilities documented by Palo Alto Unit 42 (30+ CVEs, 43% exec/shell injection). CodeRabbit confirms 1.7x bug rate. Productivity Paradox emerges as new signal.
+          Anthropic compound-incident week dominates discourse: <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">rate-limit/cache regression</a>, accidental <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">~500K-LOC Claude Code source leak</a>, and <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">OpenClaw subscription block</a> in one 7-day window. Trust / Vendor Relationship surges from 2 to 11 mentions. <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3</a> reframes the IDE around an <a href="https://medium.com/@han.heloir/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code-0d2bc51f0dcb" target="_blank" rel="noopener">"Agents Window"</a> (35% of Cursor's own merged PRs from autonomous cloud agents). <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR pegs productivity peak at 3 concurrent tools</a>, drops at 4+. ThoughtWorks Radar Vol. 32 places <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">"complacency with AI-generated code"</a> on Hold and <a href="https://www.thoughtworks.com/radar/techniques/agents-md" target="_blank" rel="noopener">AGENTS.md</a> on Trial. Claude Code v2.1.88 release window overlapped <a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/" target="_blank" rel="noopener">axios npm supply-chain compromise</a>.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>44</strong> items</div>
+          <div class="stat-pill"><strong>5</strong> incidents</div>
+          <div class="stat-pill"><strong>7</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>59%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-04-06.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-03-31.html">2026-03-28 &ndash; 2026-03-31 &mdash; Extraction 3</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via Chrome
+        </div>
+        <div class="report-summary">
+          Strongly Negative surges to 63% as discourse polarizes &mdash; moderate center collapses. AI burnout paradox reaches mainstream academic validation (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>, <a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/" target="_blank" rel="noopener">Scientific American</a>). MCP protocol vulnerabilities <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">documented by Palo Alto Unit 42</a> (30+ CVEs, 43% exec/shell injection). <a href="https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report" target="_blank" rel="noopener">CodeRabbit confirms 1.7x bug rate</a>. <a href="https://dev.to/increase123/the-ai-productivity-paradox-why-developers-are-19-slower-and-what-this-means-for-2026-a14" target="_blank" rel="noopener">Productivity Paradox</a> emerges as new signal.
         </div>
         <div class="stat-row">
           <div class="stat-pill"><strong>19</strong> items</div>
@@ -281,17 +332,17 @@
           <div class="stat-pill neg"><strong>79%</strong> negative</div>
         </div>
       </div>
-      <div class="report-arrow">&rarr;</div>
-    </a>
+      <div class="report-arrow"><a href="analysis-report-2026-03-31.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
 
-    <a class="report-card" href="analysis-report-2026-03-30.html">
+    <div class="report-card">
       <div>
-        <div class="report-title">2026-03-23 &ndash; 2026-03-30 &mdash; Extraction 2</div>
+        <div class="report-title"><a href="analysis-report-2026-03-30.html">2026-03-23 &ndash; 2026-03-30 &mdash; Extraction 2</a></div>
         <div class="report-meta">
           Analysis Prompt v1.13 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6)
         </div>
         <div class="report-summary">
-          Negative sentiment surges to 62% as CVE acceleration curve steepens (35 in March, up from 6 in January). Cognitive debt emerges as dominant discourse frame with 5 high-credibility sources. Claude Code rate limit crisis marks second operational incident in one month. Junior hiring collapse quantified at -67% entry-level.
+          Negative sentiment surges to 62% as <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">CVE acceleration curve steepens</a> (35 in March, up from 6 in January). <a href="https://addyosmani.com/blog/comprehension-debt/" target="_blank" rel="noopener">Cognitive debt</a> emerges as dominant discourse frame with 5 high-credibility sources (<a href="https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/" target="_blank" rel="noopener">Margaret Storey</a>, <a href="https://simonwillison.net/2026/Feb/15/cognitive-debt/" target="_blank" rel="noopener">Simon Willison</a>, <a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3" target="_blank" rel="noopener">Kotrotsos</a>). <a href="https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" target="_blank" rel="noopener">Claude Code rate limit crisis</a> marks second operational incident in one month. <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">Junior hiring collapse</a> quantified at -67% entry-level.
         </div>
         <div class="stat-row">
           <div class="stat-pill"><strong>53</strong> items</div>
@@ -301,17 +352,17 @@
           <div class="stat-pill neg"><strong>58%</strong> negative</div>
         </div>
       </div>
-      <div class="report-arrow">&rarr;</div>
-    </a>
+      <div class="report-arrow"><a href="analysis-report-2026-03-30.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
 
-    <a class="report-card" href="analysis-report-2026-03-25.html">
+    <div class="report-card">
       <div>
-        <div class="report-title">2026-03-20 &ndash; 2026-03-25 &mdash; Extraction 1</div>
+        <div class="report-title"><a href="analysis-report-2026-03-25.html">2026-03-20 &ndash; 2026-03-25 &mdash; Extraction 1</a></div>
         <div class="report-meta">
           Analysis Prompt v1.13 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6)
         </div>
         <div class="report-summary">
-          Autonomous agent destruction pattern dominates &mdash; Amazon Q outages (6.3M lost orders), Replit agent data deletion, MCP vulnerability wave (30+ CVEs). Junior pipeline crisis deepens (hiring down 73%). Enterprise governance proliferating but reactive.
+          Autonomous agent destruction pattern dominates &mdash; <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Amazon Q outages (6.3M lost orders)</a>, <a href="https://news.northeastern.edu/2026/03/09/autonomous-ai-agents-of-chaos/" target="_blank" rel="noopener">Replit agent data deletion</a>, <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">MCP vulnerability wave (30+ CVEs)</a>. <a href="https://byteiota.com/developer-hiring-crisis-2026-40-worse-junior-drops-73/" target="_blank" rel="noopener">Junior pipeline crisis deepens (hiring down 73%)</a>. Enterprise governance proliferating but reactive.
         </div>
         <div class="stat-row">
           <div class="stat-pill"><strong>50</strong> items</div>
@@ -321,8 +372,8 @@
           <div class="stat-pill neg"><strong>46%</strong> negative</div>
         </div>
       </div>
-      <div class="report-arrow">&rarr;</div>
-    </a>
+      <div class="report-arrow"><a href="analysis-report-2026-03-25.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
 
     <!-- TEMPLATE: Copy this block for future reports
     <a class="report-card" href="analysis-report-YYYY-MM-DD.html">

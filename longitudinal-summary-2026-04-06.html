@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Longitudinal Trend Report: 2026-03-20 – 2026-04-06">
+  <meta property="og:description" content="Across four extractions and 18 days, sentiment completed its first full cycle: deterioration through E1-E3 followed by composition-driven correction in E4. Negative weight has migrated from the industry generally to a single vendor (Anthropic) following an unprecedented compound-incident week.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect fill='%230d1117' width='1200' height='630'/%3E%3Ctext x='50' y='100' font-size='48' font-weight='bold' fill='%235c9eed' font-family='serif'%3ELongitudinal Trend Report%3C/text%3E%3Ctext x='50' y='180' font-size='32' fill='%23d1cec9' font-family='serif'%3E2026-03-20 – 2026-04-06%3C/text%3E%3C/svg%3E">
+  <title>Longitudinal Trend Report: 2026-03-20 – 2026-04-06</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #2a3441;
+      --text: #d1cec9;
+      --text-dim: #7a8694;
+      --head: #f0ede8;
+      --amber: #f0a832;
+      --amber-dim: #7a5318;
+      --red: #e05252;
+      --red-dim: #5c1f1f;
+      --green: #4caf7d;
+      --green-dim: #1a3d2b;
+      --blue: #5c9eed;
+      --blue-dim: #1a2f4a;
+      --display: 'DM Serif Display', serif;
+      --serif: 'Source Serif 4', serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      z-index: 1000;
+      font-family: var(--mono);
+      font-size: 12px;
+      overflow-x: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      white-space: nowrap;
+    }
+
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* Wrapper & Layout */
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Masthead */
+    .masthead {
+      margin-bottom: 4rem;
+      border-bottom: 2px solid var(--blue-dim);
+      padding-bottom: 2rem;
+    }
+
+    .masthead h1 {
+      font-family: var(--display);
+      font-size: 3rem;
+      color: var(--head);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .masthead .subtitle {
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .masthead p {
+      color: var(--text-dim);
+      margin-top: 1.5rem;
+      max-width: 700px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 5rem;
+    }
+
+    section h2 {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--head);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    section h2::before {
+      content: attr(data-num);
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    section h3 {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      color: var(--head);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    section h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--head);
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    strong {
+      color: var(--head);
+      font-weight: 600;
+    }
+
+    em {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface);
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Sentiment bars */
+    .sentiment-bar {
+      display: flex;
+      height: 32px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 0.5rem 0;
+    }
+
+    .sentiment-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      transition: flex 0.4s ease;
+    }
+
+    .sentiment-positive {
+      background: var(--green);
+    }
+
+    .sentiment-mixed {
+      background: var(--amber);
+    }
+
+    .sentiment-negative {
+      background: var(--red);
+    }
+
+    .sentiment-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Callouts */
+    .callout {
+      background: var(--surface2);
+      border-left: 3px solid var(--blue);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+    }
+
+    .callout em {
+      color: var(--text-dim);
+    }
+
+    /* Highlights */
+    .highlight {
+      background: var(--blue-dim);
+      padding: 0.2em 0.4em;
+      border-radius: 2px;
+      color: var(--blue);
+    }
+
+    /* Inline article links */
+    section a, .masthead p a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--blue);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    section a:hover, .masthead p a:hover {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+      border-bottom-style: solid;
+    }
+    table a { color: var(--text); }
+    table a:hover { color: var(--blue); }
+
+    /* Status labels */
+    .status {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .status-confirmed {
+      background: var(--green-dim);
+      color: var(--green);
+    }
+
+    .status-trending {
+      background: var(--blue-dim);
+      color: var(--blue);
+    }
+
+    .status-active {
+      background: var(--amber-dim);
+      color: var(--amber);
+    }
+
+    .status-isolated {
+      background: var(--red-dim);
+      color: var(--red);
+    }
+
+    /* Metadata grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .metadata-item {
+      background: var(--surface2);
+      padding: 1rem;
+      border-left: 2px solid var(--blue);
+      border-radius: 2px;
+    }
+
+    .metadata-item .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .metadata-item .value {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    /* Signal card */
+    .signal-card {
+      background: var(--surface2);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    .signal-card h4 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    .signal-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0.8rem 0 1.2rem 0;
+      font-size: 13px;
+    }
+
+    .signal-meta-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .signal-meta label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .signal-meta value {
+      font-family: var(--mono);
+      color: var(--head);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .wrapper {
+        padding: 2rem 1rem;
+      }
+
+      .masthead h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 10px;
+      }
+
+      .metadata-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sentiment-bar {
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .masthead h1 {
+        font-size: 1.5rem;
+      }
+
+      section h2 {
+        font-size: 1.2rem;
+      }
+
+      section h2::before {
+        display: none;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      td, th {
+        padding: 0.6rem 0.8rem;
+      }
+
+      nav {
+        padding: 0.6rem 0.8rem;
+      }
+
+      nav ul {
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#summary">01 Summary</a></li>
+    <li><a href="#composition">02 Composition</a></li>
+    <li><a href="#sentiment">03 Sentiment</a></li>
+    <li><a href="#momentum">04 Momentum</a></li>
+    <li><a href="#signals">05 Signals</a></li>
+    <li><a href="#contradictions">06 Contradictions</a></li>
+    <li><a href="#vocabulary">07 Vocabulary</a></li>
+    <li><a href="#gaps">08 Gaps</a></li>
+    <li><a href="#watchlist">09 Watch List</a></li>
+    <li><a href="#metadata">10 Metadata</a></li>
+  </ul>
+</nav>
+
+<div class="wrapper">
+
+<header class="masthead">
+  <div class="subtitle">Longitudinal Trend Report — Extractions 1–4</div>
+  <h1>2026-03-20 – 2026-04-06</h1>
+  <p>Across four extractions spanning 18 days, AI-coding sentiment has completed its first full cycle: a steep deterioration through E1→E3 (46% → 62% → 79% negative) followed by a partial composition-driven correction in E4 (back to 59% negative). The headline number is misleading: the <em>concentration</em> of negative weight has migrated from "AI coding generally" to a single vendor (Anthropic / Claude Code) following an unprecedented compound-incident week.</p>
+</header>
+
+<section id="summary">
+  <h2 data-num="01">Executive Summary</h2>
+  <p>Across four extractions spanning 18 days, AI-coding sentiment has completed its first full cycle: a steep deterioration through E1→E3 (46% → 62% → 79% negative) followed by a partial composition-driven correction in E4 (back to 59% negative — the sum of Cautiously and Strongly Negative). The headline number is misleading, however: the <em>concentration</em> of negative weight in E4 has migrated from "AI coding generally" to a single vendor (Anthropic / Claude Code) following an unprecedented compound-incident week — <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">rate-limit/cache regression</a>, accidental <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">~500K-LOC source-code leak</a>, and <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">OpenClaw subscription block</a>, all in one 7-day window.</p>
+  <p>Three signals matured this cycle: the AI burnout paradox now has its first quantitative ceiling (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's</a> <span class="highlight">3 concurrent tools</span> cap), architecture-aware AI coding crossed from practitioner blogs into formal analyst recommendation (<a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">ThoughtWorks Radar Vol. 32</a> placing "<a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">complacency</a>" on Hold and <a href="https://www.thoughtworks.com/radar/techniques/agents-md" target="_blank" rel="noopener">AGENTS.md</a> on Trial), and vendor operational maturity emerged as a distinct trust dimension separate from product quality. Two new signals appeared in E4: agent-orchestration as the dominant IDE design philosophy (<a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3</a>) and compound supply-chain incidents (Claude Code release window overlapping the <a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/" target="_blank" rel="noopener">axios npm compromise</a> window).</p>
+</section>
+
+<section id="composition">
+  <h2 data-num="02">Source Composition Audit</h2>
+  <table>
+    <thead>
+      <tr><th>Platform</th><th>E1</th><th>E2</th><th>E3</th><th>E4</th><th>Trend</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Reddit</td><td>4 (8%)</td><td>4 (8%)</td><td>0 (0%)</td><td>1 (2%, HN proxy)</td><td>↓ Still structurally broken</td></tr>
+      <tr><td>Hacker News</td><td>8 (16%)</td><td>9 (17%)</td><td>1 (5%)</td><td>5 (11%)</td><td>↑ Recovering — direct retrieval improved</td></tr>
+      <tr><td>Blogs / Publications</td><td>15 (30%)</td><td>15 (28%)</td><td>10 (53%)</td><td>27 (61%)</td><td>↑ Dominant — composition skew worsening</td></tr>
+      <tr><td>YouTube / Podcast</td><td>2 (4%)</td><td>2 (4%)</td><td>0 (0%)</td><td>2 (5%)</td><td>Marginal — first podcast retrieval in E4</td></tr>
+      <tr><td>Bluesky / Mastodon</td><td>0 (0%)</td><td>0 (0%)</td><td>1 (5%)</td><td>0 (0%)</td><td>Regressed to zero</td></tr>
+      <tr><td>Tier 2 (X, Medium, DEV)</td><td>15 (30%)</td><td>18 (34%)</td><td>8 (42%)</td><td>9 (20%)</td><td>↓ Share dropped as blogs grew</td></tr>
+      <tr><td>Academic / Research</td><td>6 (12%)</td><td>5 (9%)</td><td>4 (21%)</td><td>0 (0%)</td><td>↓ HBR / IEEE rolled into blogs in E4</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>50</strong></td><td><strong>53</strong></td><td><strong>19</strong></td><td><strong>44</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Composition Anomalies</h3>
+  <ul style="margin: 1.5rem 0 1.5rem 2rem; line-height: 1.8;">
+    <li><strong>E4's sample size (44) is roughly double E3 (19)</strong> but still below the E1-E2 baseline (~50), indicating the extraction tooling is recovering from the E3 dip but has not returned to full coverage.</li>
+    <li><strong>Blog/publication share is now 61%</strong> — the highest in the series — meaning sentiment is increasingly shaped by professional outlets (<a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">Register</a>, <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">BleepingComputer</a>, <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent" target="_blank" rel="noopener">Bloomberg</a>) rather than community discourse. Publications skew toward incident reporting, which is itself negatively framed but more concrete than community alarm.</li>
+    <li><strong>Reddit retrieval has stayed structurally broken across all four extractions.</strong> r/ClaudeCode and r/Anthropic were clearly the originators of the rate-limit complaint wave but were only reachable via aggregator citations.</li>
+    <li><strong>YouTube returned to non-zero retrieval</strong> for the first time since E1 via The Standup with ThePrimeagen podcast — a real but narrow improvement.</li>
+  </ul>
+
+  <h3>Composition Verdict</h3>
+  <div class="callout">
+    <p>E4 is a partial recovery from E3's degraded sample but the dataset is still publication-dominated. The "Strongly Negative dropped from 63% to 41%" headline is genuine but should be read as composition-driven re-balancing (broader sample re-introduces moderate voices) rather than a sentiment reversal. The concentration shift (Anthropic-specific complaints replacing industry-wide alarm) is the more important structural change.</p>
+  </div>
+</section>
+
+<section id="sentiment">
+  <h2 data-num="03">Sentiment Trajectory</h2>
+  <table>
+    <thead>
+      <tr><th>Sentiment</th><th>E1 (%)</th><th>E2 (%)</th><th>E3 (%)</th><th>E4 (%)</th><th>Δ E1→E4</th><th>Direction</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Strongly Positive</td><td>2%</td><td>4%</td><td>0%</td><td>2%</td><td>0pp</td><td>Flat</td></tr>
+      <tr><td>Cautiously Positive</td><td>18%</td><td>15%</td><td>16%</td><td>20%</td><td>+2pp</td><td>↑ Slight rebound</td></tr>
+      <tr><td>Mixed/Ambivalent</td><td>18%</td><td>19%</td><td>5%</td><td>14%</td><td>-4pp</td><td>↓ Recovering from E3 collapse</td></tr>
+      <tr><td>Cautiously Negative</td><td>26%</td><td>28%</td><td>16%</td><td>18%</td><td>-8pp</td><td>↓</td></tr>
+      <tr><td>Strongly Negative</td><td>20%</td><td>30%</td><td>63%</td><td>41%</td><td>+21pp</td><td>↑ Elevated, retreating from E3 peak</td></tr>
+      <tr><td>Nuanced/Analytical</td><td>16%</td><td>4%</td><td>0%</td><td>5%</td><td>-11pp</td><td>↓ Partial revival via ThoughtWorks</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Composition-Adjusted Reading</h3>
+  <p>The retreat from 63% to 41% Strongly Negative is real but is better understood as the lost weight redistributing into Mixed/Ambivalent (+9pp) and Nuanced/Analytical (+5pp) — both clusters that re-emerged in E4 because the broader sample re-introduced architecture-aware analyst voices (<a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">ThoughtWorks</a>, <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief</a>, <a href="https://markheath.net/post/2026/3/30/does-code-quality-still-matter" target="_blank" rel="noopener">Mark Heath</a>). The E1→E4 trajectory shows a permanent +21pp Strongly Negative shift from the E1 baseline, meaning the "AI coding is in trouble" thesis has not reverted — it has matured. The Nuanced/Analytical revival from 0% to 5% is the most encouraging structural signal: the analytical middle has begun to re-form around concrete questions (concurrency caps, AGENTS.md adoption) rather than abstract concerns.</p>
+</section>
+
+<section id="momentum">
+  <h2 data-num="04">Cluster Momentum</h2>
+  <table>
+    <thead>
+      <tr><th>Cluster</th><th>E1</th><th>E2</th><th>E3</th><th>E4</th><th>Trajectory</th><th>Signal Strength</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Incidents / System Failures</td><td>10</td><td>8</td><td>7</td><td>12</td><td>↑ New peak</td><td><span class="status status-confirmed">Emerging Consensus</span></td></tr>
+      <tr><td>Trust / Vendor Relationship</td><td>3</td><td>4</td><td>2</td><td>11</td><td>↑↑ Anthropic-specific surge</td><td><span class="status status-confirmed">Emerging Consensus</span></td></tr>
+      <tr><td>Pricing / Cost</td><td>5</td><td>6</td><td>1</td><td>8</td><td>↑ Returned to prominence</td><td><span class="status status-trending">Growing Trend</span></td></tr>
+      <tr><td>Architectural Philosophy</td><td>2</td><td>2</td><td>4</td><td>9</td><td>↑↑ Fastest sustained rise</td><td><span class="status status-trending">Growing Trend</span></td></tr>
+      <tr><td>Code Quality / Security</td><td>8</td><td>14</td><td>6</td><td>7</td><td>Stable / declining</td><td><span class="status status-confirmed">Emerging Consensus</span></td></tr>
+      <tr><td>Productivity Reality</td><td>4</td><td>8</td><td>6</td><td>7</td><td>↑ Sustained debate</td><td><span class="status status-active">Active Debate</span></td></tr>
+      <tr><td>Burnout / Cognitive Load</td><td>3</td><td>5</td><td>5</td><td>5</td><td>Stable at elevated level</td><td><span class="status status-confirmed">Emerging Consensus</span></td></tr>
+      <tr><td>Dependency / Resilience</td><td>3</td><td>—</td><td>1</td><td>4</td><td>↑ Reactivated by axios↔Claude Code overlap</td><td><span class="status status-trending">Growing Trend</span></td></tr>
+      <tr><td>Team Dynamics</td><td>—</td><td>—</td><td>—</td><td>4</td><td>NEW in E4 — Cursor 3 catalyst</td><td><span class="status status-isolated">Isolated Signal</span></td></tr>
+      <tr><td>Enterprise / Policy</td><td>11</td><td>5</td><td>3</td><td>3</td><td>↓ Settled to background</td><td><span class="status status-trending">Growing Trend</span></td></tr>
+      <tr><td>Hype vs Reality</td><td>2</td><td>3</td><td>2</td><td>3</td><td>Stable</td><td><span class="status status-active">Active Debate</span></td></tr>
+      <tr><td>Junior vs Senior</td><td>7</td><td>10</td><td>1</td><td>1</td><td>↓ Faded after E2 peak</td><td><span class="status status-trending">Growing Trend</span></td></tr>
+      <tr><td>Tool-Specific Issues</td><td>10</td><td>4</td><td>3</td><td>—</td><td>↓ Absorbed into Trust cluster</td><td><span class="status status-active">Active Debate</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Momentum Highlights</h3>
+
+  <h4>Fastest rising: Trust / Vendor Relationship</h4>
+  <p>From 2 mentions (E3) to 11 (E4). This is the single biggest cluster shift in the series. The Anthropic compound-incident week is the catalyst; expect this cluster to remain elevated in E5.</p>
+
+  <h4>Fastest sustained rise: Architectural Philosophy</h4>
+  <p>2 → 2 → 4 → 9 across E1-E4. This is the only cluster that has risen monotonically across all four extractions and now sits at the threshold between Growing Trend and Emerging Consensus.</p>
+
+  <h4>Sharpest reactivation: Dependency / Resilience</h4>
+  <p>From 1 mention in E3 to 4 in E4, driven by the axios npm supply-chain compromise overlapping the Claude Code v2.1.88 release window.</p>
+
+  <h4>New cluster: Team Dynamics</h4>
+  <p>Appears for the first time in E4 as a distinct cluster, driven by Cursor 3's "Agents Window" repositioning the developer role from author to orchestrator. Watch for this to mature in E5-E6.</p>
+
+  <h4>Most contested: Productivity Reality</h4>
+  <p>Remains Active Debate across all four extractions. The <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer survey</a> (95% adoption, Claude Code #1) and <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's 3-concurrent-tool ceiling</a> are converging on a new framing: adoption is settled; concurrency-bound productivity ceilings are the new debate axis.</p>
+</section>
+
+<section id="signals">
+  <h2 data-num="05">Signal Evolution</h2>
+
+  <div class="signal-card">
+    <h4>Signal 1: Autonomous Agent Destruction Pattern</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Confirmed — historical baseline</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E1</p>
+    <p><strong>Trajectory:</strong> E1 (Amazon Q, Replit, OpenClaw) → E2 (Claude Code rate-limits) → E3 (Fortune compilation) → E4 (<a href="https://securityboulevard.com/2026/03/amazon-lost-6-3-million-orders-to-vibe-coding-your-soc-is-next/" target="_blank" rel="noopener">Amazon Kiro retrospective recirculation</a>, <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">Claude Code source leak</a> as derivative).</p>
+    <p><strong>Recommended Action:</strong> Mature from tracking to historical baseline; new incidents now feed Trust / Vendor Relationship rather than this signal directly.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 2: Code Quality Deficit / Attack-Surface Inflation</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Reframed in E4</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E1</p>
+    <p><strong>Trajectory:</strong> E1-E3 framing was code-quality-per-line. E4 reframed via <a href="https://thehackernews.com/expert-insights/2026/03/the-real-problem-isnt-that-ai-cant.html" target="_blank" rel="noopener">The Hacker News expert insights piece</a>: <span class="highlight">35 March CVEs attributed to AI-authored code</span> (27 Claude Code, 4 Copilot, 2 Devin, 1 Aether, 1 Cursor), monotone increase from January (6) and February (15). <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register's 2.74x figure</a> is now the standard empirical anchor.</p>
+    <p><strong>Recommended Action:</strong> Track CVE attribution by tool as a quarterly KPI; expect vendor security reports to adopt this metric.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 3: AI Burnout Paradox / Cognitive Overload</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Confirmed with quantitative ceiling</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E2 (practitioner blogs)</p>
+    <p><strong>Trajectory:</strong> E2 (<a href="https://kotrotsos.medium.com/ai-was-supposed-to-fix-developer-burnout-b3f04ca31ee3" target="_blank" rel="noopener">Kotrotsos blog</a>) → E3 (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a> + <a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/" target="_blank" rel="noopener">Scientific American</a> mainstreaming) → E4 (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR "brain fry" study</a> with concrete 3-concurrent-tool productivity peak; <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios reframes as compulsive behavior</a>). This is the fastest-maturing signal in the dataset.</p>
+    <p><strong>Recommended Action:</strong> Watch for IDE-side concurrency-throttling features in Q2 2026; track HR adoption of cognitive-load metrics.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 4: MCP Security Vulnerability Wave</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-active">Confirmed but slipped</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High (E4 silence anomalous)</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E1</p>
+    <p><strong>Trajectory:</strong> E1-E3 saw <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">30+ CVEs and CVSS 9.6 RCE coverage</a>. E4 has zero new MCP coverage — likely a composition gap rather than signal decay. Flag for E5 to verify.</p>
+    <p><strong>Recommended Action:</strong> Targeted retrieval in E5 to confirm whether MCP signal has actually plateaued or simply fell out of the publication-heavy E4 sample.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 5: Claude Code Market Dominance</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Confirmed at peak — decoupled from trust</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E1</p>
+    <p><strong>Trajectory:</strong> E1 (46% most loved) → E3 (Pragmatic Engineer 906-respondent confirmation) → E4 (<a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer 2026 survey</a>: 95% weekly usage, Claude Code #1, overtook Copilot in 8 months). Adoption peak coincides with first sustained vendor-trust regression.</p>
+    <p><strong>Recommended Action:</strong> Track procurement language for "dual-harness" or "multi-vendor hedging" as the leading indicator of trust regression spreading from individual practitioners to enterprise buyers.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 6: Architecture-Aware Coding / 80% Problem</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Confirmed — formal analyst recommendation</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E3 (<a href="https://addyo.substack.com/p/the-80-problem-in-agentic-coding" target="_blank" rel="noopener">Addy Osmani</a>)</p>
+    <p><strong>Trajectory:</strong> E3 introduced framing → E4 ThoughtWorks Radar Vol. 32 places "Complacency with AI-generated code" on Hold, AGENTS.md on Trial, "team of coding agents" on Assess. <a href="https://markheath.net/post/2026/3/30/does-code-quality-still-matter" target="_blank" rel="noopener">Mark Heath's 1-prompt vs 14-prompt experiment</a> provides quantitative anchor. This is the second-fastest signal maturation after burnout.</p>
+    <p><strong>Recommended Action:</strong> Watch for AGENTS.md as a standard repo file by end of 2026; track first major AI-coding vendor to ship a "repository contract" feature.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 7: Productivity Paradox (Reframed)</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-confirmed">Reframed in E4</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E3 (<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">METR</a>, Google)</p>
+    <p><strong>Trajectory:</strong> E3 framing was binary (<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">METR 19% slower</a> vs adoption surveys). E4 <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR Brain Fry study</a> introduces a <em>quantitative ceiling</em>: productivity peaks at 3 concurrent tools, drops at 4+. This resolves the perception-measurement contradiction by introducing a hidden variable (concurrency).</p>
+    <p><strong>Recommended Action:</strong> Track explicit per-developer concurrent-agent caps in enterprise governance documents.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 8: Vendor Operational Maturity as a Trust Dimension [NEW E4]</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-trending">NEW</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>High (within E4)</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E4</p>
+    <p><strong>Trajectory:</strong> Three Anthropic incidents (rate-limits, source leak, OpenClaw block) in one 7-day window. Practitioners are reading them as one coherent operational-maturity story, not three coincidences. <a href="https://piunikaweb.com/2026/04/03/anthropic-claude-usage-limits-apology-backlash/" target="_blank" rel="noopener">PiunikaWeb's apology-backlash piece</a> characterizes it as the largest coordinated trust hit Anthropic has taken from its developer base.</p>
+    <p><strong>Recommended Action:</strong> Watch for explicit operational SLA publication from Anthropic; watch for procurement reviews adding multi-vendor language. <strong>This is the highest-leverage watch item for E5.</strong></p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 9: Agent-Orchestration as IDE Philosophy [NEW E4]</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-trending">NEW</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>Medium</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E4 (<a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3.0 release</a>)</p>
+    <p><strong>Trajectory:</strong> Cursor 3 explicitly demotes the editor to second-class citizen; 35% of Cursor's own merged PRs come from autonomous cloud agents. <a href="https://medium.com/@han.heloir/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code-0d2bc51f0dcb" target="_blank" rel="noopener">Han HELOIR YAN's essay</a> names the underlying thesis ("manage agents, not write code"); <a href="https://nicholasrhodes.substack.com/p/cursor-3-agents-window-review" target="_blank" rel="noopener">Nicholas Rhodes</a> confirms hands-on after 48 hours.</p>
+    <p><strong>Recommended Action:</strong> Watch for Copilot Workspace, Codex CLI, or VS Code shipping comparable agent-queue UIs in Q2 2026.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 10: Compound Incident Windows [NEW E4]</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-trending">NEW</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>Medium</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E4</p>
+    <p><strong>Trajectory:</strong> Claude Code v2.1.88 release window (00:21–03:29 UTC) overlapped almost perfectly with the <a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/" target="_blank" rel="noopener">axios supply-chain compromise</a> window (00:21–03:15 UTC). Any developer who installed Claude Code in that 3-hour window may have pulled a trojanized axios. The actual affected-population is not yet enumerated.</p>
+    <p><strong>Recommended Action:</strong> Watch for first SBOM tool to add "release-window crossreference" features. Watch for published affected-installation counts.</p>
+  </div>
+
+  <div class="signal-card">
+    <h4>Signal 11: Junior Developer Pipeline Crisis</h4>
+    <div class="signal-meta">
+      <div class="signal-meta-item"><label>Status:</label><value><span class="status status-isolated">Faded — composition artifact?</span></value></div>
+      <div class="signal-meta-item"><label>Confidence:</label><value>Medium</value></div>
+    </div>
+    <p><strong>First appeared:</strong> E1</p>
+    <p><strong>Trajectory:</strong> Peaked in E2 (10 mentions) and has steadily declined. E4 has only one passing reference. Likely composition artifact; signal may still be live in Reddit and YouTube which remain undersampled.</p>
+    <p><strong>Recommended Action:</strong> Targeted retrieval for E5; do not drop from tracker yet.</p>
+  </div>
+
+</section>
+
+<section id="contradictions">
+  <h2 data-num="06">Cross-Extraction Contradictions</h2>
+  <table>
+    <thead>
+      <tr><th>Claim</th><th>E1 Position</th><th>E4 Position</th><th>Evolution</th><th>Assessment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>AI coding improves developer productivity</strong></td><td>Contested — task-level gains, overhead-level losses</td><td>Reframed — adoption settled, concurrency-bound ceiling discovered (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>: peaks at 3 tools, drops at 4+)</td><td>Hidden variable revealed</td><td>Approaching resolution: productivity gains are concurrency-bounded, not unbounded</td></tr>
+      <tr><td><strong>Claude Code is the most reliable AI coding tool</strong></td><td>Trending positive — 46% most loved</td><td>Decoupled — <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">95% weekly usage</a> AND first sustained vendor-trust regression in series</td><td>Adoption ≠ trust</td><td>Contested — market leadership and operational reputation have visibly diverged</td></tr>
+      <tr><td><strong>AI-generated code is secure enough for production</strong></td><td>Contested — 62% design flaws</td><td>Reframed — focus moved from per-line security to <a href="https://thehackernews.com/expert-insights/2026/03/the-real-problem-isnt-that-ai-cant.html" target="_blank" rel="noopener">attack-surface inflation</a> (4-10x LOC growth)</td><td>Frame shifted</td><td>Approaching resolution: security KPI is now LOC delta, not vulnerability rate</td></tr>
+      <tr><td><strong>AI reduces developer burden</strong></td><td>Mixed</td><td>Contradicted with mechanism — burden shifted from production to review/orchestration; <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR cap at 3 concurrent agents</a></td><td>Mechanism named</td><td>Settled: AI shifts cognitive load from authoring to supervision</td></tr>
+      <tr><td><strong>The IDE remains central to AI-coding workflows</strong></td><td>Implicit assumption</td><td>Contested — <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3</a> explicitly demotes the editor; <a href="https://medium.com/@han.heloir/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code-0d2bc51f0dcb" target="_blank" rel="noopener">Han HELOIR YAN</a> names the shift</td><td>New contradiction emerged</td><td>Trending toward agent-orchestration primacy</td></tr>
+      <tr><td><strong>Single-vendor lock-in is acceptable for AI coding</strong></td><td>Implicit assumption — most teams standardized on one tool</td><td>Contradicted — <a href="https://piunikaweb.com/2026/04/03/anthropic-claude-usage-limits-apology-backlash/" target="_blank" rel="noopener">Anthropic compound-incident week</a> makes dual-harness architecture a procurement default</td><td>Reversed in E4</td><td>Approaching resolution: multi-vendor hedging will be standard by Q3 2026</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="vocabulary">
+  <h2 data-num="07">Vocabulary &amp; Framing Drift</h2>
+  <table>
+    <thead>
+      <tr><th>Term</th><th>First Appeared</th><th>Frequency Trend</th><th>Significance</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Cognitive debt / Comprehension debt</strong></td><td>E1</td><td>Stable, plateaued</td><td>Foundation framing for the deskilling concern; no longer actively introduced — assumed</td></tr>
+      <tr><td><strong>Brain fry</strong></td><td>E3</td><td>↑ Rising — anchored by HBR study in E4</td><td>Now the dominant burnout symptom term; quantified to a 3-tool concurrency cap</td></tr>
+      <tr><td><strong>Vibe coding</strong></td><td>E1</td><td>Stable as pejorative</td><td>Still the standard label for unscoped agent use</td></tr>
+      <tr><td><strong>80% Problem</strong></td><td>E3</td><td>Stable</td><td>Established framing for the AI-handles-most-but-not-the-hard-part argument</td></tr>
+      <tr><td><strong>Productivity paradox</strong></td><td>E3</td><td>Reframed in E4 to "concurrency ceiling"</td><td>Previous paradox dissolved into a hidden-variable explanation</td></tr>
+      <tr><td><strong>Agent queue</strong></td><td>E4</td><td>NEW</td><td>Replaces "code editor" as the developer's center-of-work in Cursor 3 framing</td></tr>
+      <tr><td><strong>Slot machines</strong></td><td>E4</td><td>NEW</td><td>Axios coinage for compulsive agent-checking behavior; extends burnout vocabulary into addiction framing</td></tr>
+      <tr><td><strong>Compound incident window</strong></td><td>E4</td><td>NEW</td><td>First applied to the Claude Code ↔ axios temporal overlap; expect SBOM-tooling adoption</td></tr>
+      <tr><td><strong>Operational maturity</strong></td><td>E4</td><td>NEW (vendor-applied)</td><td>Distinguishes vendor reliability from product quality; new dimension in trust evaluation</td></tr>
+      <tr><td><strong>AGENTS.md</strong></td><td>E3 (informal) → E4 (formal)</td><td>↑ Rising — ThoughtWorks Trial elevation</td><td>First formally-recommended "repository contract" pattern</td></tr>
+      <tr><td><strong>Repository contract</strong></td><td>E4</td><td>NEW (predicted term)</td><td>Forecast from architecture cluster — expect a vendor to ship a feature with this label</td></tr>
+      <tr><td><strong>Dual-harness architecture</strong></td><td>E4</td><td>NEW</td><td>Multi-vendor hedging pattern emerging from the Anthropic operational-trust regression</td></tr>
+      <tr><td><strong>Attack-surface inflation</strong></td><td>E4</td><td>NEW</td><td>Reframes security narrative from per-line vulnerability to LOC growth multiplier</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="gaps">
+  <h2 data-num="08">Gaps &amp; Uncertainties</h2>
+
+  <h3>Reddit retrieval failure persists across all four extractions</h3>
+  <p>Zero direct posts in E3-E4; aggregator-only access in E1-E2. r/ClaudeCode and r/Anthropic clearly drove the rate-limit complaint wave but are reachable only via citations. This is the most significant methodological gap and is structural, not transient.</p>
+
+  <h3>MCP security signal absence in E4 is anomalous</h3>
+  <p>The signal was on a clear maturation curve in E1-E3 then disappeared from E4. This is more likely a sampling gap than signal decay; targeted retrieval in E5 is needed to confirm.</p>
+
+  <h3>Bluesky and Mastodon native retrieval has degraded</h3>
+  <p>From a marginal presence (1 item in E3) back to zero in E4. Open-source / non-US perspectives remain systematically undersampled.</p>
+
+  <h3>Affected-population for the axios↔Claude Code overlap is unknown</h3>
+  <p>Temporal overlap is documented but the count of developers who pulled the trojanized axios via a Claude Code install in the 3h window has not been enumerated by any source.</p>
+
+  <h3>YouTube video retrieval remains ~zero</h3>
+  <p>ThePrimeagen / Fireship coverage is captured only via secondary podcast/blog references.</p>
+
+  <h3>Composition-driven sentiment correction is plausible but unconfirmed</h3>
+  <p>The E3→E4 retreat from 63% to 41% Strongly Negative may be a real sentiment shift, a composition artifact, or both. The prior longitudinal report's ±10% confidence band still applies.</p>
+
+  <h3>The Cursor 3 "35% of merged PRs from autonomous cloud agents" stat is self-reported</h3>
+  <p>The most-cited statistic of E4 has no methodology link and remains unverified.</p>
+
+  <h3>No counter-narrative voices in E4 sample</h3>
+  <p>The Anthropic compound-incident framing is unanimous across the sample. This is likely real (the events are concrete) but the absence of any "this is overblown" counter-voice should be treated as a potential blind spot.</p>
+</section>
+
+<section id="watchlist">
+  <h2 data-num="09">Watch List for Next Extraction</h2>
+
+  <h3>1. Anthropic operational SLA publication &amp; dual-harness adoption</h3>
+  <p>The single highest-leverage watch item. Watch for: explicit operational SLA from Anthropic addressing session-window guarantees and 30-day notice on subscription changes; procurement reviews adding multi-vendor language; Codex CLI / OpenCode mindshare gains among teams that had standardized on Claude Code; first published "we migrated off Claude Code" case study.</p>
+
+  <h3>2. AGENTS.md adoption velocity &amp; first "repository contract" feature</h3>
+  <p>Architecture-aware coding has crossed into formal analyst recommendation. Watch for: AGENTS.md commit-rate growth on GitHub trending repos; first major AI-coding vendor to ship a "repository contract" or "repo charter" feature; bootcamp curriculum updates referencing AGENTS.md.</p>
+
+  <h3>3. Concurrency-cap tooling &amp; burnout governance</h3>
+  <p>HBR's 3-concurrent-tool ceiling is the first quantitative cap. Watch for: IDE-side concurrency throttling (especially in Cursor's Agents Window or Claude Code Web); HR policies referencing AI-specific cognitive-load metrics; counter-studies from vendors disputing the 3-tool ceiling.</p>
+
+  <h3>4. Compound incident window enumeration &amp; SBOM tooling response</h3>
+  <p>Watch for: published affected-installation counts for the Claude Code ↔ axios overlap; first SBOM tool to add release-window crossreference features; second instance of a documented vendor-release / supply-chain temporal overlap.</p>
+
+  <h3>5. MCP signal verification</h3>
+  <p>MCP security coverage was prominent in E1-E3 then absent in E4. Targeted retrieval in E5 to determine whether the signal has plateaued or simply fell out of E4's publication-heavy sample. Watch for: new CVE filings; first documented MCP-based production exploit; enterprise MCP allow-list adoptions.</p>
+</section>
+
+<section id="metadata">
+  <h2 data-num="10">Longitudinal Report Metadata</h2>
+  <div class="metadata-grid">
+    <div class="metadata-item"><div class="label">Longitudinal Prompt</div><div class="value">v1.1</div></div>
+    <div class="metadata-item"><div class="label">Domain Config</div><div class="value">v1.2</div></div>
+    <div class="metadata-item"><div class="label">Bootloader</div><div class="value">v1.9</div></div>
+    <div class="metadata-item"><div class="label">Report Generated</div><div class="value">2026-04-06 12:30 UTC</div></div>
+    <div class="metadata-item"><div class="label">Reports Synthesized</div><div class="value">4</div></div>
+    <div class="metadata-item"><div class="label">Extraction Window</div><div class="value">2026-03-20 – 2026-04-06</div></div>
+    <div class="metadata-item"><div class="label">Days Covered</div><div class="value">18</div></div>
+    <div class="metadata-item"><div class="label">Analysis Prompt Versions</div><div class="value">E1-E2: v1.13, E3-E4: v1.15</div></div>
+    <div class="metadata-item"><div class="label">Total Items</div><div class="value">166</div></div>
+    <div class="metadata-item"><div class="label">E1 Items</div><div class="value">50</div></div>
+    <div class="metadata-item"><div class="label">E2 Items</div><div class="value">53</div></div>
+    <div class="metadata-item"><div class="label">E3 Items</div><div class="value">19</div></div>
+    <div class="metadata-item"><div class="label">E4 Items</div><div class="value">44</div></div>
+    <div class="metadata-item"><div class="label">Tracked Signals</div><div class="value">11</div></div>
+    <div class="metadata-item"><div class="label">Confirmed Trends</div><div class="value">7</div></div>
+    <div class="metadata-item"><div class="label">Active Debates</div><div class="value">2</div></div>
+    <div class="metadata-item"><div class="label">New Signals This Cycle</div><div class="value">3</div></div>
+  </div>
+
+  <h3>Confirmed Trends</h3>
+  <p>Agent Destruction, Code Quality / Attack Surface, Burnout, MCP Security, Claude Code Dominance, Architecture-Aware Coding, Productivity Concurrency Ceiling</p>
+
+  <h3>Active Debates</h3>
+  <p>Productivity Reality reframing, Tool-Specific Trust vs Adoption</p>
+
+  <h3>New Signals (E4)</h3>
+  <p>Vendor Operational Maturity, Agent-Orchestration IDE Philosophy, Compound Incident Windows</p>
+</section>
+
+<footer>
+  <p>Longitudinal Trend Report v1.1 • Rendered 2026-04-06 • 166 items across 4 extractions</p>
+  <p>This report is a presentation layer. It does not rephrase, summarize, or re-derive content from the source analysis reports.</p>
+</footer>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const bars = document.querySelectorAll('.sentiment-bar');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const segments = entry.target.querySelectorAll('.sentiment-segment');
+        segments.forEach((seg, idx) => {
+          setTimeout(() => { seg.style.flex = seg.dataset.width; }, idx * 100);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(bar => observer.observe(bar));
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
