@@ -1,0 +1,890 @@
+<\!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Dev Sentiment Analysis — April 6–13, 2026 (E5) reveals a marked shift toward burnout and cognitive addiction as dominant narratives, with emerging security and junior pipeline crises.">
+    <meta property="og:title" content="AI Dev Sentiment Analysis — April 6–13, 2026 (E5)">
+    <meta property="og:description" content="Comprehensive sentiment analysis of AI coding tools discourse, tracking developer perspectives on code quality, burnout, security, and job impact.">
+    <meta property="og:type" content="article">
+    
+    <title>AI Dev Sentiment Analysis — E5 (April 2026)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --display: 'DM Serif Display', serif;
+            --serif: 'Source Serif 4', serif;
+            --mono: 'JetBrains Mono', monospace;
+            
+            --bg: #0d1117;
+            --surface: #161b22;
+            --surface2: #1c2330;
+            --border: #2a3441;
+            --text: #d1cec9;
+            --text-dim: #7a8694;
+            --head: #f0ede8;
+            --amber: #f0a832;
+            --amber-dim: #7a5318;
+            --red: #e05252;
+            --red-dim: #5c1f1f;
+            --green: #4caf7d;
+            --green-dim: #1a3d2b;
+            --blue: #5c9eed;
+            --blue-dim: #1a2f4a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--serif);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            font-size: 0.9rem;
+            font-family: var(--mono);
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        nav a:hover {
+            color: var(--amber);
+            background-color: var(--surface2);
+        }
+        
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header.masthead {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h1 {
+            font-family: var(--display);
+            font-size: 3.5rem;
+            color: var(--head);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+        
+        .masthead-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            background-color: var(--surface2);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--amber);
+        }
+        
+        .stat-label {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            color: var(--amber);
+            font-weight: 600;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+        
+        h2 {
+            font-family: var(--display);
+            font-size: 2.2rem;
+            color: var(--head);
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        h2::before {
+            content: attr(data-section);
+            position: absolute;
+            left: 0;
+            color: var(--amber);
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: var(--mono);
+        }
+        
+        h3 {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 2rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        
+        a {
+            color: var(--blue);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(92, 158, 237, 0.3);
+            transition: all 0.2s;
+        }
+        
+        a:hover {
+            color: var(--amber);
+            border-bottom-color: var(--amber);
+        }
+        
+        code {
+            font-family: var(--mono);
+            background-color: var(--surface2);
+            padding: 0.2em 0.5em;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: var(--amber);
+        }
+        
+        strong {
+            color: var(--head);
+            font-weight: 600;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background-color: var(--surface2);
+        }
+        
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--head);
+            border-bottom: 2px solid var(--border);
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            word-break: break-word;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: rgba(28, 35, 48, 0.5);
+        }
+        
+        tbody tr:hover {
+            background-color: var(--surface2);
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sentiment-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sentiment-label {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            min-width: 150px;
+        }
+        
+        .sentiment-container {
+            flex: 1;
+            background-color: var(--surface2);
+            border-radius: 4px;
+            height: 28px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sentiment-fill {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+            color: var(--bg);
+            font-weight: 600;
+            font-size: 0.8rem;
+            font-family: var(--mono);
+            animation: growBar 1.2s ease-out forwards;
+        }
+        
+        @keyframes growBar {
+            from { width: 0; }
+            to { width: var(--width); }
+        }
+        
+        .sentiment-fill.positive {
+            background-color: var(--green);
+        }
+        
+        .sentiment-fill.mixed {
+            background-color: var(--amber);
+        }
+        
+        .sentiment-fill.negative {
+            background-color: var(--red);
+        }
+        
+        .sentiment-fill.analytical {
+            background-color: var(--blue);
+        }
+        
+        .sentiment-percentage {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            min-width: 50px;
+            text-align: right;
+        }
+        
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card h4 {
+            color: var(--head);
+            margin-bottom: 0.5rem;
+            font-family: var(--display);
+            font-size: 1.2rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: var(--mono);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 0.5rem;
+            background-color: var(--amber-dim);
+            color: var(--amber);
+        }
+        
+        .collapsible {
+            background-color: var(--surface2);
+            color: var(--head);
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            font-family: var(--display);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+        
+        .collapsible:hover {
+            background-color: var(--surface);
+            border-color: var(--amber);
+        }
+        
+        .collapsible::after {
+            content: ' ▼';
+            float: right;
+            color: var(--amber);
+            transition: transform 0.2s;
+        }
+        
+        .collapsible.active::after {
+            transform: rotate(-180deg);
+        }
+        
+        .collapsible-content {
+            padding: 0 1rem 1rem 1rem;
+            display: none;
+            background-color: var(--surface2);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .collapsible-content.active {
+            display: block;
+        }
+        
+        .collapsible-content table {
+            margin: 1rem 0;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+            text-align: center;
+            color: var(--text-dim);
+            font-family: var(--mono);
+            font-size: 0.9rem;
+        }
+        
+        .ghost-number {
+            position: absolute;
+            font-size: 8rem;
+            font-family: var(--display);
+            color: rgba(240, 173, 50, 0.08);
+            line-height: 1;
+            z-index: 0;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .pattern-card {
+            position: relative;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pattern-title {
+            position: relative;
+            z-index: 1;
+            font-family: var(--display);
+            font-size: 1.3rem;
+            color: var(--head);
+            margin-bottom: 0.75rem;
+        }
+        
+        .pattern-description {
+            position: relative;
+            z-index: 1;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+        
+        .pattern-meta {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        
+        .pattern-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dim);
+            font-family: var(--mono);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .wrapper { padding: 1rem; }
+            nav ul { padding: 0 1rem; gap: 0.25rem; }
+            nav a { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 0.6rem 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#summary">01 Summary</a></li>
+            <li><a href="#quant">02 Quantitative</a></li>
+            <li><a href="#deep">03 Deep Analysis</a></li>
+            <li><a href="#patterns">04 Patterns</a></li>
+            <li><a href="#contradictions">05 Contradictions</a></li>
+            <li><a href="#gaps">06 Gaps</a></li>
+            <li><a href="#recommendations">07 Actions</a></li>
+            <li><a href="#incidents">08 Incidents</a></li>
+            <li><a href="#metadata">09 Metadata</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <header class="masthead">
+            <h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+            <div class="subtitle">
+                Extraction 5 &nbsp;&nbsp;April 6–13, 2026<br>
+                Analysis executed 2026-04-16
+            </div>
+            <div class="masthead-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Total Sources</div>
+                    <div class="stat-value">53</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Strongly Negative</div>
+                    <div class="stat-value">43%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Primary Cluster</div>
+                    <div class="stat-value">Burnout</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Critical Issues</div>
+                    <div class="stat-value">7</div>
+                </div>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2 data-section="01">Executive Summary</h2>
+            <p>Extraction 5 (April 6–13, 2026) reveals a marked shift in developer sentiment from code quality regression and trust issues toward <strong>burnout and cognitive addiction as the dominant narrative</strong>. The cohort expresses severe concern over AI tools operating like "slot machines"—creating compulsive feedback loops that drive extended work hours, comprehension loss, and mental fatigue. Simultaneously, a <strong>junior developer employment crisis</strong> contradicts optimistic job-growth messaging, while a <strong>surge in AI-generated security vulnerabilities</strong> (35 CVEs in March alone) and emerging <strong>MCP attack surfaces</strong> signal that speed-to-market has outpaced security hardening. The "vibe coding" narrative has evolved into a more nuanced discussion of <strong>cognitive debt and skill atrophy</strong>, suggesting developers now understand the hidden cost of frictionless code generation. A critical tension persists: vendor claims of job creation versus hard employment data showing junior roles down 46% and entry-level hiring down 25% YoY.</p>
+        </section>
+
+        <section id="quant">
+            <h2 data-section="02">Quantitative Overview</h2>
+            
+            <h3>Sentiment Distribution (Extraction 5)</h3>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Strongly Positive</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill positive" style="--width: 4%;">4%</div>
+                </div>
+                <div class="sentiment-percentage">2 items</div>
+            </div>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Cautiously Positive</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill positive" style="--width: 13%;">13%</div>
+                </div>
+                <div class="sentiment-percentage">7 items</div>
+            </div>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Mixed/Ambivalent</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill mixed" style="--width: 17%;">17%</div>
+                </div>
+                <div class="sentiment-percentage">9 items</div>
+            </div>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Cautiously Negative</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill negative" style="--width: 11%;">11%</div>
+                </div>
+                <div class="sentiment-percentage">6 items</div>
+            </div>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Strongly Negative</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill negative" style="--width: 43%;">43%</div>
+                </div>
+                <div class="sentiment-percentage">23 items</div>
+            </div>
+            <div class="sentiment-bar">
+                <div class="sentiment-label">Nuanced/Analytical</div>
+                <div class="sentiment-container">
+                    <div class="sentiment-fill analytical" style="--width: 11%;">11%</div>
+                </div>
+                <div class="sentiment-percentage">6 items</div>
+            </div>
+            
+            <p style="margin-top: 2rem;"><strong>Key Observation:</strong> Strongly Negative sentiment remains dominant (43%). The most significant shift is the rise of <strong>Nuanced/Analytical content</strong> (+6pp), reflecting maturation in discourse as developers examine systemic causes like cognitive debt and MCP attack surfaces.</p>
+
+            <h3>Topic Cluster Frequency (E5)</h3>
+<table><thead><tr><th>Cluster</th><th>Count</th><th>Primary Sentiment</th><th>Trend</th></tr></thead><tbody><tr><td>Burnout / Cognitive Load / Addiction</td><td>12</td><td>Strongly Negative</td><td>+7 PRIMARY</td></tr><tr><td>Code Quality / Security Debt</td><td>10</td><td>Strongly Negative</td><td>+3</td></tr><tr><td>Deskilling / Comprehension Debt</td><td>9</td><td>Cautiously Negative</td><td>+2 EMERGING</td></tr><tr><td>Job Security / Hiring Pipeline</td><td>9</td><td>Mixed/Contested</td><td>NEW FOCAL</td></tr><tr><td>Productivity Reality / Tool Convergence</td><td>8</td><td>Mixed</td><td>+1</td></tr><tr><td>Trust / Vendor Relationship</td><td>7</td><td>Strongly Negative</td><td>-4</td></tr><tr><td>Architectural Philosophy / Governance</td><td>6</td><td>Mixed</td><td>+0</td></tr><tr><td>Hype vs Reality</td><td>5</td><td>Mixed</td><td>-4</td></tr><tr><td>MCP / Attack Surface</td><td>4</td><td>Strongly Negative</td><td>NEW CRITICAL</td></tr><tr><td>Team Dynamics</td><td>2</td><td>Mixed</td><td>-2</td></tr><tr><td>Dependency / Resilience</td><td>2</td><td>Strongly Negative</td><td>-2</td></tr><tr><td>Learning / Skill Maintenance</td><td>1</td><td>Cautiously Negative</td><td>-1</td></tr></tbody></table>
+            
+            <p style="margin-top: 1.5rem;"><strong>Standout Shift:</strong> Burnout/Addiction moves to <strong>#1 cluster</strong> with 12 dedicated sources, driven by Axios, LeadDev, and HBR studies framing AI coding as compulsive feedback loops akin to gambling.</p>
+
+            <h3>Tool-Specific Sentiment</h3>
+<table><thead><tr><th>Tool</th><th>Mentions</th><th>Primary Sentiment</th><th>Notes</th></tr></thead><tbody><tr><td>Claude Code</td><td>18</td><td>Strongly Negative</td><td>1,060+ upvotes on regression; usage limit crisis; "best tool if limits were higher"</td></tr><tr><td>General AI / Agentic Tools</td><td>15</td><td>Mixed</td><td>Burnout/addiction studies span all tools; tool convergence narrative</td></tr><tr><td>Cursor</td><td>8</td><td>Mixed</td><td>Silent reversion bug documented; parallel agents praised</td></tr><tr><td>OpenAI Codex / ChatGPT</td><td>5</td><td>Cautiously Negative</td><td>Mentioned in convergence context</td></tr><tr><td>GitHub Copilot</td><td>3</td><td>Mixed</td><td>Minimal coverage this extraction</td></tr><tr><td>MCP Servers</td><td>4</td><td>Strongly Negative</td><td>Critical security incidents; emerging attack surface</td></tr></tbody></table>
+            
+            <p style="margin-top: 1.5rem;"><strong>Claude Code carries concentrated criticism:</strong> The most upvoted Reddit post (#1 source) is a 1,060-upvote denunciation of Claude Code's regression, making it the focal point of both quality and trust concerns.</p>
+        </section>
+
+        <section id="deep">
+            <h2 data-section="03">Deep Analysis by Cluster</h2>
+
+            <h3>1. Burnout / Cognitive Load / Addiction (12 sources) — Primary Narrative</h3>
+            <p>E5 data presents <strong>compulsive feedback loops and dopamine-driven usage as systemic issues affecting developer psychology and work-life boundaries.</strong></p>
+            
+            <p><strong>Evidence:</strong> <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios</a> describes AI agents as "slot machines," with Karpathy citing "AI psychosis" and 16-hour agent marathons. <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a> found 14% experience "brain fry" with increased mental fatigue. <a href="https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep" target="_blank" rel="noopener">LeadDev</a> corroborates slot machine framing with developer testimonies. <a href="https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/" target="_blank" rel="noopener">Quentin Rousseau</a> compares dopamine loops to gambling. <a href="https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/" target="_blank" rel="noopener">Ivan Turkovic</a> introduces "vibing fatigue"—cognitive cost of AI output without comprehension. <a href="https://news.ycombinator.com/item?id=46934404" target="_blank" rel="noopener">HN</a> notes cognitive fatigue from output evaluation.</p>
+
+            <p><strong>Interpretation:</strong> A <strong>dual mechanism</strong>: (1) technical addiction—agent autonomy creates compulsive loops, and (2) cognitive addiction—managers incentivize speed, rewarding developers who delegate more. This is a <strong>structural feature of agentic tools themselves</strong>.</p>
+
+            <h3>2. Code Quality / Security Debt (10 sources) — Persistent Crisis</h3>
+            <p>Code quality concerns remained strong with concrete incident documentation.</p>
+
+            <p><strong>Evidence:</strong> <a href="https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/" target="_blank" rel="noopener">Trend Hulryung</a> reports 1,060+ upvotes on Claude Code regression. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA</a> documents <strong>35 CVEs in March 2026</strong> (up from 6 in Jan, 15 in Feb). <a href="https://www.nbcnews.com/tech/security/ai-code-vibe-claude-openai-chatgpt-rcna258807" target="_blank" rel="noopener">NBC News</a>: AI commits expose secrets at 2x rate; Fortune 50 companies report 10x security finding rate. <a href="https://news.ycombinator.com/item?id=47240279" target="_blank" rel="noopener">HN</a> notes "Claude Code is vibe-coded. It's terrible software" following source leak analysis. <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben</a>: vibe-coded projects accumulate debt 3x faster.</p>
+
+            <p><strong>Interpretation:</strong> The CVE surge reflects <strong>scale and velocity</strong>—rapid code generation without proportional review capacity. Cognitive load undermines review quality. The source leak incident adds suspicion that vendor code exhibits quality issues.</p>
+
+            <h3>3. Deskilling / Comprehension Debt (9 sources) — Emerging Structural Concern</h3>
+            <p><strong>Capability loss and knowledge gaps</strong> created by AI delegation, with quantified evidence of comprehension decline.</p>
+
+            <p><strong>Evidence:</strong> <a href="https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age" target="_blank" rel="noopener">Addy Osmani</a>: Developers fail conceptual quizzes; cannot debug AI-generated code; 5-7x gap between generation velocity and understanding. <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Margaret Storey</a>: <strong>AI participants scored 17% lower on comprehension</strong> (50% vs 67%); delegation below 40% and inquiry above 65% maintain comprehension. <a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World</a>: Younger workers face "foreclosure" due to pipeline collapse. <a href="https://allwork.space/2026/01/workers-gain-hours-with-ai-but-risk-losing-skills-according-to-microsofts-new-future-of-work-report/" target="_blank" rel="noopener">Microsoft</a> warned AI gains risk deskilling.</p>
+
+            <p><strong>Interpretation:</strong> Deskilling accumulates silently. The 17% gap means developers are systematically losing problem-solving ability. "Foreclosure" means juniors may never develop architectural judgment seniors possess.</p>
+
+            <h3>4. Job Security / Hiring Pipeline (9 sources) — Contested & Bifurcated</h3>
+            <p><strong>Optimistic:</strong> <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN</a> reports Indeed listings up 11%; IBM tripling entry-level hires; BLS projects 15% growth.</p>
+
+            <p><strong>Pessimistic:</strong> <a href="https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/" target="_blank" rel="noopener">ThinkPol</a> shows junior roles down 46%; entry-level hiring down 25% YoY. <a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/" target="_blank" rel="noopener">Stanford</a>: Ages 22–25 in AI-exposed jobs down 16%.</p>
+
+            <p><strong>Interpretation:</strong> Aggregate hiring up masks composition shifts (senior up, junior down). The junior pipeline crisis is acute and unaddressed in vendor messaging.</p>
+
+            <h3>5. Productivity Reality / Tool Convergence (8 sources)</h3>
+            <p>Genuine productivity gains but with sustainability concerns. <a href="https://www.morphllm.com/claude-code-reddit" target="_blank" rel="noopener">MorphLLM</a>: 67% win rate; 4,200+ weekly contributors. <a href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener">The New Stack</a>: Developers running Cursor + Claude Code + Copilot simultaneously, suggesting single-tool strategy fails.</p>
+
+            <p><strong>Interpretation:</strong> Productivity is real but bounded by constraints (usage limits, tool instability). Tool convergence indicates developers hedge against gaps and vendor lock-in.</p>
+
+            <h3>6. MCP / Attack Surface (4 sources) — Critical Emerging Threat</h3>
+            <p><a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">AuthZed</a>: GitHub MCP prompt injection exfiltrated repo data; Asana MCP cross-org visibility bug. <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">The Hacker News</a>: mcp-server-git triple vulnerability via prompt injection. <a href="https://www.helpnetsecurity.com/2026/04/09/apache-activemq-rce-vulnerability-cve-2026-34197-claude/" target="_blank" rel="noopener">Help Net Security</a>: Claude discovered decade-old RCE (dual-use: finds AND introduces vulnerabilities).</p>
+
+            <p><strong>Interpretation:</strong> MCP represents <strong>new trust boundary failure</strong>. Traditional tools isolated; MCP grants bidirectional AI access. Elementary prompt injection bypassed controls. This is a 2026-Q2 inflection point for MCP hardening.</p>
+        </section>
+
+        <section id="patterns">
+            <h2 data-section="04">Emerging Patterns</h2>
+
+            <div class="pattern-card">
+                <div class="ghost-number">1</div>
+                <div class="pattern-title">The Great Productivity Panic</div>
+                <div class="pattern-description">Organizational urgency to deploy AI outpaces developer readiness. Productivity gains are real but generate unsustainable organizational pressure. Karpathy's "AI psychosis" signals awareness among senior technologists of unsustainable pace.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">2</div>
+                <div class="pattern-title">AI Coding Addiction and Slot Machine Mechanics</div>
+                <div class="pattern-description">Behavioral parallels to gambling: instantaneous feedback, variable reward, escalating investment. Distinct from normal work motivation and traceable to agentic tool design.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">3</div>
+                <div class="pattern-title">Comprehension Debt Replaces Technical Debt</div>
+                <div class="pattern-description">Developers fear knowledge loss more than code quality. Storey's 17% comprehension gap quantifies deskilling. Personal and organizational risk both elevated.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">4</div>
+                <div class="pattern-title">AI-Generated CVE Acceleration Curve</div>
+                <div class="pattern-description">35 CVEs in March (5x from January). Lag between code generation and security review creates accumulating vulnerability debt at exponential pace.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">5</div>
+                <div class="pattern-title">Junior Developer Pipeline Crisis</div>
+                <div class="pattern-description">Junior roles down 46% YoY (AI-driven, not recession-driven). 2024–2026 junior gap forecasts 2031–2036 senior shortage. Acute and unaddressed.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">6</div>
+                <div class="pattern-title">MCP as Emerging Attack Surface</div>
+                <div class="pattern-description">Elementary prompt injection exploits bypass controls. Active incidents documented one year into MCP adoption. Not theoretical but present-tense risk.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> High</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">7</div>
+                <div class="pattern-title">Vibing Fatigue as Distinct Burnout Category</div>
+                <div class="pattern-description">Cognitive cost of rapid AI output without comprehension. Distinct measurement category. Resonates with developer commentary and HBR data.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> Medium</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">8</div>
+                <div class="pattern-title">Tool Convergence — Unplanned Unified Stack</div>
+                <div class="pattern-description">Developers running Cursor + Claude Code + Copilot simultaneously. Era of single-tool loyalty ending. Multi-tool hedging against gaps and vendor lock-in.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> Medium</div>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <div class="ghost-number">9</div>
+                <div class="pattern-title">Architecture Reset — From Speed to Governance</div>
+                <div class="pattern-description">2026 reset from speed-first to architecture-first. Every AI-generated project is a snowflake; maintaining ten snowflakes eliminates speed advantage. Governance becomes default.</div>
+                <div class="pattern-meta">
+                    <div class="pattern-meta-item"><span class="badge">Confidence</span> Medium</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contradictions">
+            <h2 data-section="05">Contradictions & Contested Claims</h2>
+<table><thead><tr><th>Claim</th><th>Pro</th><th>Con</th><th>Assessment</th></tr></thead><tbody><tr><td>Jobs growing</td><td>CNN: +11% listings; IBM +entry level</td><td>ThinkPol: junior -46%; Stanford: 22-25 cohort -16%</td><td>Coexistent; composition shifted (senior up, junior down)</td></tr><tr><td>Claude Code is best tool</td><td>MorphLLM: 67% win rate; 4,200 contributors</td><td>1,060 upvotes on regression; vibe-coded</td><td>Contested; high capability + acute regression coexist</td></tr><tr><td>AI boosts productivity</td><td>Speed gains documented</td><td>14% brain fry; slot machine mechanics; burnout</td><td>Causal not contradictory; real gains, real unsustainability</td></tr><tr><td>AI finds vulnerabilities</td><td>Apache RCE discovered</td><td>35 CVEs/month vs 1 discovered</td><td>Coexistent; net throughput imbalance negative</td></tr><tr><td>Vibe coding viable</td><td>Builders ship faster</td><td>Debt 3x faster; over as strategy by Feb 2026</td><td>Trending resolved; dead without review</td></tr></tbody></table>
+        </section>
+
+        <section id="gaps">
+            <h2 data-section="06">Gaps & Uncertainties</h2>
+
+            <h3>Critical Information Gaps</h3>
+            <ol>
+                <li><strong>CVE Severity Distribution:</strong> 35 CVEs in March but no severity breakdown. Are these RCEs or info disclosures?</li>
+                <li><strong>Cognitive Debt Standardization:</strong> Storey's 17% comprehension gap is strongest data, but sample size and generalizability unclear.</li>
+                <li><strong>Claude Code Regression Causation:</strong> Symptoms identified (failed edits) but cause unknown. Model degradation vs UI changes vs expectations?</li>
+                <li><strong>Usage Limit Exhaustion:</strong> No data on original projections, usage distribution, or throttle vs capacity ceiling.</li>
+                <li><strong>MCP Adoption Rate:</strong> 4 incidents documented, but unknown how many developers use MCP. Risk quantification impossible (1% vs 50%?).</li>
+            </ol>
+
+            <h3>Methodological Uncertainties</h3>
+            <ol>
+                <li><strong>Deduplication Efficacy:</strong> 3 sources deduplicated. Did this collapse legitimately distinct versions?</li>
+                <li><strong>Tier Weighting:</strong> Tier1 given 3x weight. Is this proportional to developer influence or methodology bias?</li>
+                <li><strong>Sentiment Intercoder Reliability:</strong> Nuanced/Analytical +6pp. True shift or coding definition change?</li>
+            </ol>
+
+            <h3>Developer Psychology Unknowns</h3>
+            <ol>
+                <li><strong>Addiction Causality:</strong> Individual susceptibility or universal response to variable rewards at scale?</li>
+                <li><strong>Deskilling Reversibility:</strong> Is 17% gap permanent, recoverable, or masked?</li>
+                <li><strong>Manager-Developer Misalignment:</strong> Design problem or fundamental conflict?</li>
+            </ol>
+        </section>
+
+        <section id="recommendations">
+            <h2 data-section="07">Recommended Actions</h2>
+
+            <h3>For Developers (Immediate)</h3>
+            
+            <div class="card">
+                <h4>Implement Friction Barriers</h4>
+                <p>Enforce code review before merge. <a href="https://news.ycombinator.com/item?id=46749534" target="_blank" rel="noopener">HN #46749534</a> documents plugins forcing human code writing; normalize friction.</p>
+            </div>
+
+            <div class="card">
+                <h4>Cognitive Debt Audits</h4>
+                <p>Use <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Storey's framework</a>: measure comprehension, debugging, inquiry vs delegation. Target 40% delegation ceiling, 65% inquiry minimum.</p>
+            </div>
+
+            <div class="card">
+                <h4>Burnout Screening</h4>
+                <p><a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's 14% "brain fry" prevalence</a> suggests 1-in-7 developers at risk. Adopt AI-specific fatigue screening.</p>
+            </div>
+
+            <div class="card">
+                <h4>Usage Limits as Protective Features</h4>
+                <p>Reframe rate limits as addiction mitigation rather than constraints. Forced disengagement may prevent escalation.</p>
+            </div>
+
+            <h3>For Organizations (Strategic)</h3>
+            
+            <div class="card">
+                <h4>Dual-Track Hiring</h4>
+                <p>Reverse junior pipeline collapse with intentional entry-level hiring + mentorship. <a href="https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/" target="_blank" rel="noopener">2031–2036 senior shortage</a> is addressable if action begins now.</p>
+            </div>
+
+            <div class="card">
+                <h4>Governance-First Tooling</h4>
+                <p>Pivot from speed metrics to governance. <a href="https://itbrief.co.nz/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">2026 reset toward architecture</a> requires measuring coherence, not velocity.</p>
+            </div>
+
+            <div class="card">
+                <h4>MCP Security Hardening</h4>
+                <p><a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">Elementary prompt injection</a> exploits. Audit MCP usage, sandbox execution, require approval for sensitive operations.</p>
+            </div>
+
+            <div class="card">
+                <h4>Productivity Metrics Recalibration</h4>
+                <p><a href="https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/" target="_blank" rel="noopener">Speed is misleading KPI</a>. Substitute comprehension checks, architectural review, fatigue scoring.</p>
+            </div>
+
+            <h3>For Vendors</h3>
+            
+            <div class="card">
+                <h4>Regression & Transparency</h4>
+                <p><a href="https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/" target="_blank" rel="noopener">1,060-upvote regression post</a> lists failures with no vendor response. Publish changelogs with quality metrics; commit to regression testing.</p>
+            </div>
+
+            <div class="card">
+                <h4>Usage Limit Transparency</h4>
+                <p><a href="https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575" target="_blank" rel="noopener">Limits hit faster than expected</a>. Provide ETA, interim tiers, honest capacity planning.</p>
+            </div>
+
+            <div class="card">
+                <h4>Security-First Release Cycle</h4>
+                <p><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">35 CVE surge</a> + <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">MCP vulnerabilities</a>. Implement pre-release audits; publish CVE bulletins; offer bounties.</p>
+            </div>
+
+            <div class="card">
+                <h4>Addiction/Burnout Acknowledgment</h4>
+                <p><a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios</a>, <a href="https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep" target="_blank" rel="noopener">LeadDev</a>, <a href="https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/" target="_blank" rel="noopener">Rousseau</a> frame tools as addictive. Acknowledge in docs; offer break reminders, daily caps, dev-care resources.</p>
+            </div>
+
+            <h3>For Research</h3>
+            
+            <div class="card">
+                <h4>Longitudinal Deskilling Studies</h4>
+                <p>Replicate <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Storey's work</a> with larger samples and longer follow-up to determine reversibility.</p>
+            </div>
+
+            <div class="card">
+                <h4>Junior Pipeline Recovery Model</h4>
+                <p><a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/" target="_blank" rel="noopener">Stanford's data</a> + <a href="https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/" target="_blank" rel="noopener">ThinkPol's framework</a> = design and pilot interventions.</p>
+            </div>
+
+            <div class="card">
+                <h4>MCP Threat Model Formalization</h4>
+                <p><a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">AuthZed incidents</a> documented; formalize threat model for bidirectional AI-to-system integration.</p>
+            </div>
+
+            <div class="card">
+                <h4>Behavioral Economics of AI Tool Addiction</h4>
+                <p>Model slot-machine loops quantitatively. Design RCTs testing friction vs frictionless; measure productivity vs burnout trade-off.</p>
+            </div>
+        </section>
+
+        <section id="incidents">
+            <h2 data-section="08">Incidents Log</h2>
+<table><thead><tr><th>Date</th><th>Tool</th><th>Incident</th><th>Severity</th><th>Impact</th></tr></thead><tbody><tr><td>2026-03</td><td>Cursor</td><td>Silent code reversion</td><td>Significant</td><td>Agent Review Tab lost changes silently</td></tr><tr><td>2026-01–03</td><td>Various</td><td>CVE acceleration: 6 Jan → 15 Feb → 35 Mar</td><td>Critical</td><td>Exponential AI-sourced vulnerabilities; Claude Code most cited</td></tr><tr><td>2026-04-09</td><td>GitHub MCP</td><td>Prompt injection exfiltration</td><td>Critical</td><td>Malicious issue hijacked AI; sensitive code leaked</td></tr><tr><td>2026-01</td><td>mcp-server-git</td><td>Triple vulnerability (RW/RX via prompt injection)</td><td>Significant</td><td>All exploitable through same vector</td></tr><tr><td>2026-04</td><td>Asana MCP</td><td>Cross-org data visibility</td><td>Significant</td><td>Unauthorized cross-org access</td></tr><tr><td>2026-04-01</td><td>Claude Code</td><td>Source code leak (512K)</td><td>Significant</td><td>Codebase exposed; quality concerns amplified</td></tr><tr><td>2026-04-09</td><td>Apache ActiveMQ</td><td>RCE discovered via Claude</td><td>Positive/Dual-Use</td><td>Decade-old CVE rediscovered; dual-use risk</td></tr></tbody></table>
+        </section>
+
+        <section id="metadata">
+            <h2 data-section="09">Report Metadata</h2>
+            
+            <div class="card">
+                <h4>Analysis Configuration</h4>
+                <ul>
+                    <li><strong>Analysis Prompt Version:</strong> v1.15</li>
+                    <li><strong>Domain Config Version:</strong> v1.2</li>
+                    <li><strong>Bootloader Version:</strong> v1.9</li>
+                    <li><strong>Analysis Execution:</strong> 2026-04-16 12:00 UTC</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>Extraction Sequence</h4>
+                <ul>
+                    <li><strong>Sequence Number:</strong> 5 of ongoing</li>
+                    <li><strong>Inference:</strong> Incremented from E4 (2026-03-30 to 2026-04-06)</li>
+                    <li><strong>Extraction Files:</strong> 1 (extraction-weekly-2026-04-06-to-2026-04-13.jsonc)</li>
+                    <li><strong>Date Window:</strong> April 6–13, 2026 (7 days)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>Methodology</h4>
+                <ul>
+                    <li><strong>Extractor:</strong> Claude (claude-opus-4-6) via scheduled headless run</li>
+                    <li><strong>Sources Analyzed:</strong> 53 unique sources across 4 tiers</li>
+                    <li><strong>Tier Weighting:</strong> tier1 (3x), tier1_5 (1.5x), tier2 (1x), incidents (weighted by severity)</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Expand: Citation Reference Table (40 sources)</button>
+            <div class="collapsible-content">
+<table><thead><tr><th>#</th><th>Source</th><th>URL</th></tr></thead><tbody><tr><td>1</td><td>Trend Hulryung: "1,060 Upvotes of Rage"</td><td>https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/</td></tr><tr><td>2</td><td>DevClass: Usage limits</td><td>https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575</td></tr><tr><td>3</td><td>AppBuilder Guides: "Vibe Coding Disillusionment"</td><td>https://appbuilderguides.com/news/vibe-coding-disillusionment-2026/</td></tr><tr><td>4</td><td>Ahmed Hafdi: "Vibe Coding Is Over"</td><td>https://medium.com/@ahmed.hafdi.contact/vibe-coding-is-over-what-comes-next-is-much-harder-9fe95b509850</td></tr><tr><td>5</td><td>MorphLLM: Claude Code Reddit</td><td>https://www.morphllm.com/claude-code-reddit</td></tr><tr><td>6</td><td>HN #47467922: Productivity Panic</td><td>https://news.ycombinator.com/item?id=47467922</td></tr><tr><td>7</td><td>HN #47240279: Vibe Coding</td><td>https://news.ycombinator.com/item?id=47240279</td></tr><tr><td>8</td><td>HN #43791474: Skill Atrophy</td><td>https://news.ycombinator.com/item?id=43791474</td></tr><tr><td>9</td><td>HN #46934404: AI Fatigue</td><td>https://news.ycombinator.com/item?id=46934404</td></tr><tr><td>10</td><td>HN #46749534: Force Human Code</td><td>https://news.ycombinator.com/item?id=46749534</td></tr><tr><td>11</td><td>CNN Business: Job Growth</td><td>https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs</td></tr><tr><td>12</td><td>Axios: "Slot Machines"</td><td>https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw</td></tr><tr><td>13</td><td>Ivan Turkovic: "Vibing Fatigue"</td><td>https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/</td></tr><tr><td>14</td><td>HBR: "Brain Fry"</td><td>https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry</td></tr><tr><td>15</td><td>LeadDev: Addictive Coding</td><td>https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep</td></tr><tr><td>16</td><td>CNBC: Claude Mania</td><td>https://www.cnbc.com/2026/04/11/vibe-check-from-ai-industry-humanx-anthropic-is-talk-of-the-town.html</td></tr><tr><td>17</td><td>The New Stack: Tool Convergence</td><td>https://thenewstack.io/ai-coding-tool-stack/</td></tr><tr><td>18</td><td>CSA: CVE Surge</td><td>https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/</td></tr><tr><td>19</td><td>NBC News: Hidden Cost</td><td>https://www.nbcnews.com/tech/security/ai-code-vibe-claude-openai-chatgpt-rcna258807</td></tr><tr><td>20</td><td>Addy Osmani: Skill Atrophy</td><td>https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age</td></tr><tr><td>21</td><td>Cognitive World: Debt</td><td>https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt</td></tr><tr><td>22</td><td>AllWork.Space/Microsoft: Skills</td><td>https://allwork.space/2026/01/workers-gain-hours-with-ai-but-risk-losing-skills-according-to-microsofts-new-future-of-work-report/</td></tr><tr><td>23</td><td>ThinkPol: Pipeline Broken</td><td>https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/</td></tr><tr><td>24</td><td>Stanford: Canaries</td><td>https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/</td></tr><tr><td>25</td><td>Margaret Storey: Cognitive Debt</td><td>https://margaretstorey.com/blog/2026/02/09/cognitive-debt/</td></tr><tr><td>26</td><td>Salesforce Ben: Technical Debt</td><td>https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/</td></tr><tr><td>27</td><td>IT Brief: Architecture Reset</td><td>https://itbrief.co.nz/story/ai-coding-tools-face-2026-reset-towards-architecture</td></tr><tr><td>28</td><td>ThoughtWorks: AGENTS.md</td><td>https://www.thoughtworks.com/en-us/radar/techniques/agents-md</td></tr><tr><td>29</td><td>Quentin Rousseau: Dopamine Trap</td><td>https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/</td></tr><tr><td>30</td><td>Bloomberg: Productivity Panic</td><td>https://www.bloomberg.com/news/articles/2026-02-26/ai-coding-agents-like-claude-code-are-fueling-a-productivity-panic-in-tech</td></tr><tr><td>31</td><td>ThePrimeagen: Harsh Reality</td><td>https://www.tiktok.com/@theprimeagen/video/7384483503712324895</td></tr><tr><td>32</td><td>Simon Willison: Agentic</td><td>https://simonwillison.net/2026/Mar/21/profiling-hacker-news-users/</td></tr><tr><td>33</td><td>Axios X: Burnout</td><td>https://x.com/axios/status/2040363574464229858</td></tr><tr><td>34</td><td>Bloomberg X: Panic</td><td>https://x.com/business/status/2026976790007238748</td></tr><tr><td>35</td><td>ThoughtWorks Podcast</td><td>https://www.thoughtworks.com/en-us/insights/podcasts/technology-podcasts/inside-ai-works-agentic-development-platform</td></tr><tr><td>36</td><td>Cursor Forum: Reversion</td><td>https://forum.cursor.com/t/changes-being-reverted/145225</td></tr><tr><td>37</td><td>AuthZed: MCP Timeline</td><td>https://authzed.com/blog/timeline-mcp-breaches</td></tr><tr><td>38</td><td>The Hacker News: MCP Git</td><td>https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html</td></tr><tr><td>39</td><td>Bloomberg: Source Leak</td><td>https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent</td></tr><tr><td>40</td><td>Help Net Security: ActiveMQ</td><td>https://www.helpnetsecurity.com/2026/04/09/apache-activemq-rce-vulnerability-cve-2026-34197-claude/</td></tr></tbody></table>
+            </div>
+        </section>
+
+        <footer>
+            <p>AI Developer Sentiment Analysis — Extraction 5 (April 6–13, 2026)</p>
+            <p>Analysis Date: 2026-04-16 | Report Generated: 2026-04-16</p>
+            <p>For methodology questions, refer to Report Metadata section.</p>
+        </footer>
+    </div>
+
+    <script>
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content && content.classList.contains('collapsible-content')) {
+                    content.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

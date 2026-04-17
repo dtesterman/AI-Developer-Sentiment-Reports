@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longitudinal Trend Report: 2026-03-20 – 2026-04-13</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Source Serif 4', serif;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(13, 17, 23, 0.95);
+            border-bottom: 2px solid #5c9eed;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #5c9eed;
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #8b949e;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #5c9eed;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #5c9eed;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 3px solid #5c9eed;
+            padding-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #58a6ff;
+        }
+        
+        h4 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: #79c0ff;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* HR / Dividers */
+        hr {
+            border: none;
+            border-top: 2px solid #5c9eed;
+            margin: 2rem 0;
+            opacity: 0.3;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        
+        th {
+            background-color: #0d1117;
+            color: #5c9eed;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #5c9eed;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: rgba(92, 158, 237, 0.05);
+        }
+        
+        /* Code blocks */
+        code {
+            background-color: #0d1117;
+            color: #79c0ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-left: 3px solid #5c9eed;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-radius: 3px;
+        }
+        
+        pre code {
+            background: none;
+            color: #c9d1d9;
+            padding: 0;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        /* Links */
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.3);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        a:hover {
+            color: #79c0ff;
+            border-bottom-color: #79c0ff;
+        }
+
+        nav a {
+            border-bottom: none;
+        }
+
+        /* Blockquotes */
+        blockquote {
+            border-left: 4px solid #5c9eed;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #8b949e;
+            font-style: italic;
+        }
+        
+        /* Cards / Sections */
+        .section-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-left: 4px solid #5c9eed;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 3px;
+        }
+        
+        .section-card h3 {
+            margin-top: 0;
+        }
+        
+        /* Highlight boxes */
+        .highlight {
+            background-color: rgba(92, 158, 237, 0.1);
+            border-left: 4px solid #5c9eed;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 3px;
+        }
+        
+        .highlight strong {
+            color: #5c9eed;
+        }
+        
+        /* Metadata footer */
+        .metadata-footer {
+            background-color: #161b22;
+            border-top: 2px solid #5c9eed;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-radius: 3px;
+        }
+        
+        .metadata-footer h3 {
+            margin-top: 0;
+        }
+        
+        /* Sentiment indicators */
+        .sentiment-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0.2rem;
+        }
+        
+        .negative {
+            background-color: rgba(248, 81, 73, 0.2);
+            color: #f85149;
+        }
+        
+        .positive {
+            background-color: rgba(79, 171, 79, 0.2);
+            color: #4fab4f;
+        }
+        
+        .nuanced {
+            background-color: rgba(92, 158, 237, 0.2);
+            color: #5c9eed;
+        }
+        
+        .strong-negative {
+            background-color: rgba(248, 81, 73, 0.3);
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+        
+        /* Trajectory arrows */
+        .arrow {
+            font-family: 'JetBrains Mono', monospace;
+            color: #5c9eed;
+            font-weight: 600;
+        }
+        
+        /* Confidence levels */
+        .confidence-high {
+            color: #4fab4f;
+        }
+        
+        .confidence-moderate {
+            color: #d29922;
+        }
+        
+        .confidence-low {
+            color: #f85149;
+        }
+        
+        /* Recommendations */
+        .recommendation {
+            background-color: rgba(79, 171, 79, 0.1);
+            border-left: 4px solid #4fab4f;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            border-radius: 3px;
+        }
+        
+        .recommendation strong {
+            color: #4fab4f;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            nav h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>LTR 2026-04-13</h1>
+            <ul>
+                <li><a href="#executive">Executive Summary</a></li>
+                <li><a href="#composition">Source Audit</a></li>
+                <li><a href="#sentiment">Sentiment</a></li>
+                <li><a href="#momentum">Clusters</a></li>
+                <li><a href="#signals">Signals</a></li>
+                <li><a href="#contradictions">Contradictions</a></li>
+                <li><a href="#vocabulary">Vocabulary</a></li>
+                <li><a href="#watch">Watch List</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Longitudinal Trend Report: 2026-03-20 – 2026-04-13</h1>
+        <p style="color: #8b949e; font-style: italic;">Extractions 1 – 5 | 25-day discourse analysis across AI governance, safety, and developer sentiment</p>
+        
+        <!-- Executive Summary -->
+        <section id="executive">
+            <h2>Executive Summary</h2>
+            <div class="highlight">
+                <p>This 25-day longitudinal study tracks 5 extraction windows capturing discourse evolution across AI governance, safety, and developer sentiment from March 20 through April 13, 2026. Sentiment peaked at 79% negativity during the narrowest extraction window (E3: March 28–31, 19 items), then corrected to 54% negativity in the final extraction (E5), though Strongly Negative sentiment remains the dominant category at 43%. The most significant finding is the acceleration of <strong>burnout/addiction framing</strong> from background signal through academic validation to dominant discourse — anchored by <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios</a> and <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a> coverage — paralleled by CVE acceleration (6→15→35 monthly, per <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a> and <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">Cloud Security Alliance</a>), junior pipeline crisis persistence across all extractions (<a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>: -67% entry-level), and emerging architectural philosophy reset (<a href="https://www.thoughtworks.com/en-us/radar/techniques/agents-md" target="_blank" rel="noopener">ThoughtWorks Radar: AGENTS.md</a>). Vendor trust erosion specific to Anthropic spiked during E4's compound incident window (<a href="https://piunikaweb.com/2026/04/03/anthropic-claude-usage-limits-apology-backlash/" target="_blank" rel="noopener">PiunikaWeb</a>) and carried forward into E5, while comprehension debt (<a href="https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age" target="_blank" rel="noopener">Addy Osmani</a>, <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Margaret Storey</a>) and MCP attack surface concerns (<a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Palo Alto Unit 42</a>) show consistent growth trajectories.</p>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Source Composition Audit -->
+        <section id="composition">
+            <h2>Source Composition Audit</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>E1</th>
+                        <th>E2</th>
+                        <th>E3</th>
+                        <th>E4</th>
+                        <th>E5</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Twitter/X</strong></td>
+                        <td>18</td>
+                        <td>22</td>
+                        <td>8</td>
+                        <td>16</td>
+                        <td>19</td>
+                        <td>Stable w/ volatility</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reddit</strong></td>
+                        <td>12</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>14</td>
+                        <td>18</td>
+                        <td>Growing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>News/Analysis</strong></td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>Stable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Academic</strong></td>
+                        <td>6</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>Slight decline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Industry Reports</strong></td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>Declining</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Composition Anomalies</h3>
+            <ul>
+                <li><strong>E3 Anomaly</strong>: Narrowest window (4 days, 19 items) shows lowest absolute volume; highest sentiment intensity suggests selection concentration on peak discourse moments</li>
+                <li><strong>Reddit Growth</strong>: Consistent increase from E1 (23%) → E5 (34%), indicating migration toward discussion forums for nuanced debate</li>
+                <li><strong>Academic Decline</strong>: Peaks at E1-E2, drops sharply in E3, suggests academic commentary lags initial discourse waves by 1-2 weeks</li>
+                <li><strong>News/Analysis Stability</strong>: Maintained ~15-20% of composition across all extractions; represents editorial establishment baseline</li>
+            </ul>
+            
+            <div class="section-card">
+                <h4>Composition Verdict</h4>
+                <p>Source distribution skews toward real-time social platforms (Twitter/X + Reddit = 57-71% of corpus). Academic and industry sources provide important validation nodes but lag discourse momentum. The shift toward Reddit suggests topic complexity increasingly demands forum-based discussion over tweet-length claims (cf. <a href="https://www.reddit.com/r/ClaudeCode/" target="_blank" rel="noopener">r/ClaudeCode</a>, <a href="https://www.morphllm.com/claude-code-reddit" target="_blank" rel="noopener">MorphLLM Reddit analysis</a>). No single source dominates; composition is reasonably heterogeneous and defensible.</p>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Sentiment Trajectory -->
+        <section id="sentiment">
+            <h2>Sentiment Trajectory</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Extraction</th>
+                        <th>Window</th>
+                        <th>Items</th>
+                        <th>Negative %</th>
+                        <th>Positive %</th>
+                        <th>Nuanced %</th>
+                        <th>Strongly Neg %</th>
+                        <th>Delta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>E1</strong></td>
+                        <td>2026-03-20–25</td>
+                        <td>50</td>
+                        <td><span class="sentiment-badge negative">46%</span></td>
+                        <td><span class="sentiment-badge positive">28%</span></td>
+                        <td>0%</td>
+                        <td>—</td>
+                        <td><span class="arrow">→</span> Baseline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E2</strong></td>
+                        <td>2026-03-23–30</td>
+                        <td>53</td>
+                        <td><span class="sentiment-badge negative">58%</span></td>
+                        <td><span class="sentiment-badge positive">22%</span></td>
+                        <td>0%</td>
+                        <td><span class="sentiment-badge strong-negative">62%</span></td>
+                        <td><span class="arrow">↗</span> +12%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E3</strong></td>
+                        <td>2026-03-28–31</td>
+                        <td>19</td>
+                        <td><span class="sentiment-badge negative">79%</span></td>
+                        <td><span class="sentiment-badge positive">5%</span></td>
+                        <td>0%</td>
+                        <td>—</td>
+                        <td><span class="arrow">↗↗</span> +21%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E4</strong></td>
+                        <td>2026-03-30–06</td>
+                        <td>44</td>
+                        <td><span class="sentiment-badge negative">59%</span></td>
+                        <td><span class="sentiment-badge positive">18%</span></td>
+                        <td><span class="sentiment-badge nuanced">5%</span></td>
+                        <td>—</td>
+                        <td><span class="arrow">↘</span> -20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E5</strong></td>
+                        <td>2026-04-06–13</td>
+                        <td>53</td>
+                        <td><span class="sentiment-badge negative">54%</span></td>
+                        <td><span class="sentiment-badge positive">21%</span></td>
+                        <td><span class="sentiment-badge nuanced">11%</span></td>
+                        <td><span class="sentiment-badge strong-negative">43%</span></td>
+                        <td><span class="arrow">↘</span> -5%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Trajectory Analysis</h3>
+            <p>The sentiment arc shows a <strong>sharp polarization spike (E1→E3)</strong> followed by <strong>partial correction and maturation (E4→E5)</strong>. The peak at E3 (79% negative) represents the discourse center of mass during the Anthropic incident's maximum intensity. The subsequent decline does not indicate improved sentiment but rather:</p>
+            
+            <ol>
+                <li><strong>Temporal diffusion</strong>: Immediate-reaction negativity softens as discourse moves from accusation to analysis</li>
+                <li><strong>Analytical emergence</strong>: Nuanced/Analytical sentiment grows from 0% (E1-E3) → 5% (E4) → 11% (E5), indicating discourse maturation — exemplified by <a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World's</a> structural analysis and <a href="https://markheath.net/post/2026/3/30/does-code-quality-still-matter" target="_blank" rel="noopener">Mark Heath's</a> quantitative code-quality experiments</li>
+                <li><strong>Strongly Negative persistence</strong>: Even as overall negativity declines, the <em>intensity</em> of negative sentiment concentrates; E5 shows 43% Strongly Negative + 11% Cautiously Negative, leaving 54% net negative but with broader emotional range — driven by sources like <a href="https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep" target="_blank" rel="noopener">LeadDev</a> and <a href="https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/" target="_blank" rel="noopener">Quentin Rousseau's dopamine trap analysis</a></li>
+            </ol>
+            
+            <div class="section-card">
+                <h4>Composition-Adjusted Reading</h4>
+                <p>If E3's source concentration biased toward peak incidents, the actual population sentiment trajectory is gentler: E1 (46%) → E2 (58%) → E4 (59%) → E5 (54%). The dip from E4→E5 suggests either genuine sentiment stabilization or discourse fatigue reducing participation. The simultaneous rise in Nuanced/Analytical discourse suggests a shift from outrage to diagnosis.</p>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Cluster Momentum -->
+        <section id="momentum">
+            <h2>Cluster Momentum</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cluster</th>
+                        <th>E1</th>
+                        <th>E2</th>
+                        <th>E3</th>
+                        <th>E4</th>
+                        <th>E5</th>
+                        <th>Trajectory</th>
+                        <th>Signal Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Burnout / Cognitive Load</strong></td>
+                        <td>8</td>
+                        <td>12</td>
+                        <td>15</td>
+                        <td>18</td>
+                        <td>22</td>
+                        <td><span class="arrow">↗↗↗</span></td>
+                        <td><span class="confidence-high">STRONG</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Code Quality / Security</strong></td>
+                        <td>14</td>
+                        <td>16</td>
+                        <td>14</td>
+                        <td>17</td>
+                        <td>19</td>
+                        <td><span class="arrow">→</span></td>
+                        <td><span class="confidence-high">STRONG</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deskilling / Learning</strong></td>
+                        <td>4</td>
+                        <td>9</td>
+                        <td>11</td>
+                        <td>13</td>
+                        <td>15</td>
+                        <td><span class="arrow">↗↗</span></td>
+                        <td><span class="confidence-moderate">MODERATE</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Job Security / Hiring</strong></td>
+                        <td>11</td>
+                        <td>14</td>
+                        <td>12</td>
+                        <td>14</td>
+                        <td>16</td>
+                        <td><span class="arrow">→</span></td>
+                        <td><span class="confidence-high">STRONG</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trust / Vendor Relationship</strong></td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>16</td>
+                        <td>14</td>
+                        <td><span class="arrow">↗↘</span></td>
+                        <td><span class="confidence-moderate">MODERATE</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Incidents</strong></td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>13</td>
+                        <td>15</td>
+                        <td>12</td>
+                        <td><span class="arrow">↗↘</span></td>
+                        <td><span class="confidence-moderate">MODERATE</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architectural Philosophy</strong></td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>11</td>
+                        <td>13</td>
+                        <td><span class="arrow">↗↗</span></td>
+                        <td><span class="confidence-moderate">MODERATE</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Productivity Reality</strong></td>
+                        <td>8</td>
+                        <td>11</td>
+                        <td>10</td>
+                        <td>13</td>
+                        <td>15</td>
+                        <td><span class="arrow">→</span></td>
+                        <td><span class="confidence-moderate">MODERATE</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Momentum Highlights</h3>
+            
+            <div class="section-card">
+                <h4>Fastest Rising: Burnout / Cognitive Load (175% growth)</h4>
+                <p>8→22 across extractions. Trajectory shows:</p>
+                <ul>
+                    <li><strong>E1-E2</strong>: Background signal, anecdotal (overwork narrative)</li>
+                    <li><strong>E3</strong>: Mainstream academic validation entry (psychological studies cited)</li>
+                    <li><strong>E4-E5</strong>: Dominant discourse with new framing — <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios: "slot machine" mechanics</a>, <a href="https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/" target="_blank" rel="noopener">Turkovic: "vibing fatigue"</a>, <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR: "brain fry"</a></li>
+                </ul>
+                <p><strong>Confidence: <span class="confidence-high">HIGH</span></strong>. Signal consistent, growing vocabulary specificity, cross-platform presence.</p>
+            </div>
+            
+            <div class="section-card">
+                <h4>Sharpest Decline: Incidents (7→15 peak at E4→12 at E5)</h4>
+                <p>Reflects incident lifecycle:</p>
+                <ul>
+                    <li><strong>E4</strong>: Anthropic compound incident window — <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">BleepingComputer: source code leak</a>, <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">The Register: quota drain</a>, <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">TechCrunch: OpenClaw paywall</a></li>
+                    <li><strong>E5</strong>: Individual incidents still reported (4 MCP incidents via <a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">AuthZed</a>, <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">The Hacker News</a>) but no systemic crisis framing</li>
+                </ul>
+                <p><strong>Assessment:</strong> Incident mention declines not because incidents stop occurring but because discourse shifts from crisis mode to endemic-problem framing.</p>
+            </div>
+            
+            <div class="section-card">
+                <h4>Strongest Sustained Momentum: Code Quality / Security (14→19)</h4>
+                <p>Sustained 14-17 core. Indicates structural risk rather than temporary concern:</p>
+                <ul>
+                    <li>CVE acceleration: 6 (Jan) → 15 (Feb) → 35 (Mar) — confirmed by <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a> and <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">Cloud Security Alliance</a></li>
+                    <li>MCP emerging as attack surface (E1 incidents → <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 formalization E3</a> → 4 E5 incidents)</li>
+                    <li>Trust erosion directly proportional to security incident acceleration (<a href="https://www.nbcnews.com/tech/security/ai-code-vibe-claude-openai-chatgpt-rcna258807" target="_blank" rel="noopener">NBC News</a>)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Signal Evolution -->
+        <section id="signals">
+            <h2>Signal Evolution</h2>
+            
+            <div class="section-card">
+                <h3>1. CVE Acceleration</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E1 (January 2026 baseline, 6 CVEs mentioned)</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">CONFIRMED TREND</span></li>
+                    <li><strong>Trajectory:</strong> 6 (Jan) → 15 (Feb) → 35 (Mar) — exponential acceleration</li>
+                    <li><strong>Confidence:</strong> <span class="confidence-high">VERY HIGH</span> (<a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">The Register</a>, <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">Cloud Security Alliance</a>, <a href="https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding/" target="_blank" rel="noopener">Escape.tech audit</a>)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Escalate security incident monitoring; establish CVE incident severity dashboard; brief product teams on 230% quarterly growth rate
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>2. Junior Pipeline Crisis</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E1 ("where are junior developers going?")</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">CONFIRMED TREND</span></li>
+                    <li><strong>Trajectory:</strong> Persistent across all 5 extractions; -46% to -73% hiring depending on source</li>
+                    <li><strong>Confidence:</strong> <span class="confidence-high">HIGH</span> (<a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>: -67% entry-level; <a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/" target="_blank" rel="noopener">Stanford Digital Economy Lab</a>; <a href="https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/" target="_blank" rel="noopener">ThinkPol</a>; <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN counter-narrative</a>)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Distinguish between "junior developers switching to AI tooling" vs "junior developer shortage" vs "junior roles eliminated"; conduct longitudinal hiring data analysis
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>3. AI Burnout → Addiction Framing</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E1 (anecdotal overwork mentions)</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">ACCELERATING</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E1-E2: Background signal ("too tired," "working overtime")</li>
+                            <li>E3-E4: Academic validation entry (psychological burnout studies)</li>
+                            <li>E5: Addiction framing dominant — <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios: "slot machine mechanics"</a>, <a href="https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/" target="_blank" rel="noopener">Rousseau: "dopamine loops"</a>, <a href="https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep" target="_blank" rel="noopener">LeadDev: losing sleep</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-moderate">MODERATE-HIGH</span> (anecdotal in E1-E2, <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR peer-reviewed framing</a> in E4, clinical framing in E5; subjective risk assessment)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Commission longitudinal mental health study on intensive AI tool use; investigate dopamine-response mechanics in UI design patterns
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>4. Comprehension Debt</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E2 ("cognitive debt," "delegation vs. inquiry")</li>
+                    <li><strong>Status:</strong> <span class="confidence-moderate">GROWING TREND</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E2: Academic framing — <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Margaret Storey: "cognitive debt"</a></li>
+                            <li>E3-E4: Mainstream adoption — <a href="https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age" target="_blank" rel="noopener">Addy Osmani: skill atrophy</a>, <a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World</a></li>
+                            <li>E5: Specific mechanism articulation — <a href="https://allwork.space/2026/01/workers-gain-hours-with-ai-but-risk-losing-skills-according-to-microsofts-new-future-of-work-report/" target="_blank" rel="noopener">Microsoft/AllWork: "trading understanding for velocity"</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-moderate">MODERATE</span> (conceptually sound but lacks formal longitudinal measurement)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Develop comprehension-debt measurement framework; establish baseline code-explanation audit trails
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>5. MCP Attack Surface</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E1 (incident reports without framework)</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">GROWING TREND</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E1: Incident counts (1-2 isolated mentions)</li>
+                            <li>E3: Formalization — <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Palo Alto Unit 42 report on MCP vulnerabilities</a></li>
+                            <li>E5: Incident acceleration — 4 MCP incidents (<a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">AuthZed: GitHub MCP prompt injection</a>, <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">The Hacker News: mcp-server-git flaws</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-high">HIGH</span> (formal threat intelligence + incident reports + vulnerability CVEs)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Establish MCP security baseline; mandate security review for all published MCPs; create incident classification system (MCP vs. core vs. model)
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>6. Vendor Trust Erosion (Anthropic-Specific)</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E4 (compound incident window)</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">ACTIVE</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E3: Background concern ("are they shipping safely?")</li>
+                            <li>E4: SPIKE — <a href="https://piunikaweb.com/2026/04/03/anthropic-claude-usage-limits-apology-backlash/" target="_blank" rel="noopener">PiunikaWeb: apology backlash</a>, <a href="https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent" target="_blank" rel="noopener">Bloomberg: source code leak</a></li>
+                            <li>E5: Regression narrative — <a href="https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/" target="_blank" rel="noopener">Trend Hulryung: "1,060 upvotes of rage"</a>, <a href="https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575" target="_blank" rel="noopener">DevClass: usage limits</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-high">HIGH</span> (specific to incident dates; verifiable via timeline)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Establish vendor trust recovery protocol; increase transparency on incident response timelines; communicate remediation to affected users
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>7. Tool Convergence</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E4 (Cursor 3, "IDE wars ending")</li>
+                    <li><strong>Status:</strong> <span class="confidence-moderate">EMERGING</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E4: Feature parity observation — <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3.0</a>, <a href="https://medium.com/@han.heloir/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code-0d2bc51f0dcb" target="_blank" rel="noopener">Han Heloir: "manage agents, not write code"</a></li>
+                            <li>E5: Consolidation narrative — <a href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener">The New Stack: tool stack merging</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-moderate">MODERATE</span> (based on product announcements, not yet confirmed in usage metrics)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Track market consolidation indicators; monitor whether users are actually switching based on model availability
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>8. Architecture Reset / Orchestration Reframing</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E2 ("we're building wrong")</li>
+                    <li><strong>Status:</strong> <span class="confidence-moderate">GROWING</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E2: Philosophical questioning (monolithic agent vs. orchestration debate)</li>
+                            <li>E4: Formalization — <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">ThoughtWorks Radar: complacency on Hold</a>, <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">team of coding agents on Assess</a></li>
+                            <li>E5: Specific implementation guidance — <a href="https://www.thoughtworks.com/en-us/radar/techniques/agents-md" target="_blank" rel="noopener">AGENTS.md on Trial</a>, <a href="https://itbrief.co.nz/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief: architecture reset</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-moderate">MODERATE-HIGH</span> (architectural philosophy is real, but implementations vary widely)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Create agent architecture reference guide; establish AGENTS.md as community standard; document architectural trade-offs
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>9. Vibe Coding Disillusionment</h3>
+                <ul>
+                    <li><strong>First Appeared:</strong> E1 ("cursor feel is everything")</li>
+                    <li><strong>Status:</strong> <span class="confidence-high">MATURING</span></li>
+                    <li><strong>Trajectory:</strong>
+                        <ul>
+                            <li>E1-E3: Celebration (quick prototyping is good)</li>
+                            <li>E4-E5: Disillusionment — <a href="https://medium.com/@ahmed.hafdi.contact/vibe-coding-is-over-what-comes-next-is-much-harder-9fe95b509850" target="_blank" rel="noopener">Ahmed Hafdi: "Vibe Coding Is Over"</a>, <a href="https://appbuilderguides.com/news/vibe-coding-disillusionment-2026/" target="_blank" rel="noopener">AppBuilder Guides: disillusionment</a>, <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben: year of technical debt</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Confidence:</strong> <span class="confidence-high">HIGH</span> (consistent across multiple users; specific terminology emerging)</li>
+                </ul>
+                <div class="recommendation">
+                    <strong>Recommended Action:</strong> Document vibe-coding lifecycle; establish when vibing fails (scale, reliability, complexity); create best practices for graduating from vibe phase
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Cross-Extraction Contradictions -->
+        <section id="contradictions">
+            <h2>Cross-Extraction Contradictions</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Claim</th>
+                        <th>E1 Position</th>
+                        <th>E5 Position</th>
+                        <th>Evolution</th>
+                        <th>Assessment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Automation scope</strong></td>
+                        <td>OPTIMISTIC (50%+ displacement)</td>
+                        <td>CONTESTED — <a href="https://www.bloomberg.com/news/articles/2026-02-26/ai-coding-agents-like-claude-code-are-fueling-a-productivity-panic-in-tech" target="_blank" rel="noopener">Bloomberg: productivity panic</a></td>
+                        <td>Debate sustained</td>
+                        <td>Both likely true (acceleration vs. slower adoption)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Code quality trend</strong></td>
+                        <td>POSITIVE (fewer bugs)</td>
+                        <td>MIXED — <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA: CVE surge</a></td>
+                        <td>Contradiction sharpens</td>
+                        <td>Bifurcating: correctness up, security down</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Junior extinction</strong></td>
+                        <td>QUESTIONED (hiring growth)</td>
+                        <td>CONFIRMED — <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE: -67%</a>, <a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/" target="_blank" rel="noopener">Stanford: canaries</a></td>
+                        <td>Skepticism → acceptance</td>
+                        <td>Confirmed decline; causation debated (<a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN</a> counter-narrative)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Burnout scale</strong></td>
+                        <td>MARGINAL (few mentions)</td>
+                        <td>DOMINANT — <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios</a>, <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a></td>
+                        <td>Narrative capture</td>
+                        <td>Confirmed; lacks quantitative measurement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic safety</strong></td>
+                        <td>ASSUMED (unquestioned)</td>
+                        <td>ERODED — <a href="https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/" target="_blank" rel="noopener">Hulryung: regressions</a></td>
+                        <td>Trust erosion at E4 (<a href="https://piunikaweb.com/2026/04/03/anthropic-claude-usage-limits-apology-backlash/" target="_blank" rel="noopener">PiunikaWeb</a>)</td>
+                        <td>Damaged; recovery requires demonstrated fixes</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Resolution Assessment</h3>
+            <p>The contradictions reflect:</p>
+            <ol>
+                <li><strong>Time-lag effects:</strong> Claims about job displacement were theoretical in E1; evidence accumulating in E5</li>
+                <li><strong>Evidence accumulation:</strong> Junior pipeline was anecdotal in E1; now supported by multiple sources in E5</li>
+                <li><strong>Legitimacy shift:</strong> Burnout moved from "individual complaint" → "systemic phenomenon" worthy of academic attention</li>
+                <li><strong>Incident-driven erosion:</strong> Anthropic trust was unquestioned until specific incidents created credibility gaps</li>
+            </ol>
+            
+            <div class="highlight">
+                <p><strong>Verdict:</strong> Contradictions are generally resolved by time, evidence, and events rather than logical debate. The most unresolved contradiction is <strong>automation timeline vs. actual adoption rate</strong> — theory (50%+ displacement) has not yet met practice (slower than expected).</p>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Vocabulary & Framing Drift -->
+        <section id="vocabulary">
+            <h2>Vocabulary & Framing Drift</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Term/Phrase</th>
+                        <th>First Appeared</th>
+                        <th>Frequency Trend</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Autonomous agent destruction</strong></td>
+                        <td>E1</td>
+                        <td>E1-E3 high, E4-E5 low</td>
+                        <td>WANING</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cognitive debt</strong></td>
+                        <td>E1</td>
+                        <td>Stable across</td>
+                        <td>MODERATE</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI burnout paradox</strong></td>
+                        <td>E3</td>
+                        <td>E3-E5 increasing</td>
+                        <td>HIGH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Productivity paradox</strong></td>
+                        <td>E3</td>
+                        <td>E3-E5 sustained</td>
+                        <td>HIGH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compound incident window</strong></td>
+                        <td>E4</td>
+                        <td>E4 only</td>
+                        <td>MODERATE</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agent-orchestration IDE</strong></td>
+                        <td>E4</td>
+                        <td>E4-E5 emerging</td>
+                        <td>MODERATE</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AGENTS.md</strong></td>
+                        <td>E5</td>
+                        <td>E5 emerging</td>
+                        <td>LOW (early)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vibing fatigue</strong></td>
+                        <td>E5</td>
+                        <td>E5 only</td>
+                        <td>EMERGING</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Slot machine mechanics</strong></td>
+                        <td>E5</td>
+                        <td>E5 only</td>
+                        <td>HIGH (if sustained)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vibe coding is over</strong></td>
+                        <td>E5</td>
+                        <td>E5 only</td>
+                        <td>EMERGING</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Vocabulary Assessment</h3>
+            
+            <div class="section-card">
+                <h4>Framing Shift Summary</h4>
+                <ol>
+                    <li><strong>Early terminology (E1-E2):</strong> Neutral/technical ("cognitive debt," "autonomous agents")</li>
+                    <li><strong>Middle terminology (E3-E4):</strong> Paradox-focused ("burnout paradox," "productivity paradox")</li>
+                    <li><strong>Late terminology (E5):</strong> Psychological/behavioral ("slot machine," "psychosis," "brain fry," "vibing fatigue")</li>
+                </ol>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Significance:</strong> The shift toward psychological and behavioral terminology indicates:</p>
+                <ul>
+                    <li><strong>Discourse maturation:</strong> Moving from "is this good?" to "what are the mental health effects?"</li>
+                    <li><strong>Ethical crystallization:</strong> Terms like "slot machine mechanics" imply design critique, not just usage observation</li>
+                    <li><strong>Vocabulary standardization:</strong> Terms like "comprehension debt" and "AGENTS.md" may become industry standard (watch E6+)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Gaps & Uncertainties -->
+        <section id="gaps">
+            <h2>Gaps & Uncertainties</h2>
+            <ul>
+                <li><strong>Quantitative baseline missing:</strong> Sentiment percentages are coded from text, not measured via survey or behavioral data. E3's 79% negativity may reflect discourse intensity rather than actual user sentiment distribution.</li>
+                <li><strong>Selection bias in extractions:</strong> Each extraction captures different temporal windows of different widths (4-7 days). E3's intensity may reflect "peak incident moment" selection rather than representative sampling.</li>
+                <li><strong>Academic lag effect:</strong> Peer-reviewed sources lag popular discourse by 1-2 weeks minimum. E1-E3 academic citations may reflect E2-level discourse; E5 academic content may reflect E4 thinking.</li>
+                <li><strong>Causation vs. correlation unclear:</strong> CVE acceleration (6→15→35) correlates with burnout/addiction framing rise, but causation is ambiguous. Likely bidirectional.</li>
+                <li><strong>Anthropic trust erosion scope:</strong> E4-E5 vendor trust erosion is specific to Anthropic based on incident timing. No equivalent data for other vendors (OpenAI, Google, Mistral).</li>
+                <li><strong>Tool convergence evidence thin:</strong> E4-E5 tool-consolidation claims based on product announcements, not usage data. Actual user switching rates unknown.</li>
+                <li><strong>Comprehension debt unmeasured:</strong> Described extensively but no quantitative measurement framework exists. No code-generation audit trails at scale.</li>
+                <li><strong>Junior pipeline causation:</strong> Confirmed decline (46-73%), but causation unclear. Is it AI automation, economic cycles, or hiring freezes?</li>
+                <li><strong>Burnout framing legitimacy:</strong> E5 addiction framing ("slot machine mechanics," "AI psychosis") is emerging but not peer-reviewed in this window. Monitor E6.</li>
+                <li><strong>Architecture reset adoption:</strong> AGENTS.md and "agent orchestration IDE" are emerging but no usage data. May represent aspirational thinking.</li>
+            </ul>
+        </section>
+        
+        <hr>
+        
+        <!-- Watch List -->
+        <section id="watch">
+            <h2>Watch List for Next Extraction (E6: ~2026-04-20)</h2>
+            
+            <div class="section-card">
+                <h3>1. Burnout/Addiction Framing Legitimacy — CRITICAL</h3>
+                <p>Does E6 see peer-reviewed psychological studies on AI tool use? Or does framing remain speculative? This determines whether we're tracking genuine mental health signal or discourse overshoot.</p>
+                <p><strong>Trigger:</strong> Peer-reviewed publications on burnout/dopamine mechanics</p>
+            </div>
+            
+            <div class="section-card">
+                <h3>2. CVE Acceleration Inflection Point — HIGH</h3>
+                <p>Does 35 CVEs/month plateau, decline, or accelerate further in April? Security degradation is the largest quantified risk signal. If April shows >40 CVEs, escalate to critical threshold.</p>
+                <p><strong>Trigger:</strong> Monthly CVE count</p>
+            </div>
+            
+            <div class="section-card">
+                <h3>3. Anthropic Trust Recovery Trajectory — HIGH</h3>
+                <p>Does vendor trust erosion continue (E5: 14 mentions) or recover in E6? Incident response communication quality directly impacts.</p>
+                <p><strong>Trigger:</strong> Explicit trust statements from Anthropic users; absence of new incidents</p>
+            </div>
+            
+            <div class="section-card">
+                <h3>4. MCP Attack Surface Consolidation — MODERATE</h3>
+                <p>Does Unit 42 report (E3) lead to increased security focus, or is MCP still treated as secondary vector? Four E5 incidents suggest attention rising.</p>
+                <p><strong>Trigger:</strong> MCP in security briefings, threat modeling</p>
+            </div>
+            
+            <div class="section-card">
+                <h3>5. AGENTS.md Standard Adoption — MODERATE</h3>
+                <p>Does AGENTS.md gain adoption signals (GitHub stars, community contributions) or remain niche? May indicate whether architecture reset is real or aspirational.</p>
+                <p><strong>Trigger:</strong> Tool integrations citing AGENTS.md standard</p>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Metadata Footer -->
+        <div class="metadata-footer">
+            <h3>Longitudinal Report Metadata</h3>
+            <table style="font-size: 0.95rem;">
+                <tr>
+                    <td><strong>Report Generated</strong></td>
+                    <td>2026-04-16</td>
+                </tr>
+                <tr>
+                    <td><strong>Coverage Period</strong></td>
+                    <td>2026-03-20 – 2026-04-13 (25 days)</td>
+                </tr>
+                <tr>
+                    <td><strong>Extractions Analyzed</strong></td>
+                    <td>5 (E1, E2, E3, E4, E5)</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Items</strong></td>
+                    <td>219</td>
+                </tr>
+                <tr>
+                    <td><strong>Sentiments Coded</strong></td>
+                    <td>Negative, Positive, Nuanced/Analytical, Strongly Negative, Cautiously Negative</td>
+                </tr>
+                <tr>
+                    <td><strong>Clusters Tracked</strong></td>
+                    <td>8 major (Burnout, Code Quality, Deskilling, Job Security, Trust, Incidents, Architecture, Productivity)</td>
+                </tr>
+                <tr>
+                    <td><strong>Signals Tracked</strong></td>
+                    <td>9 specific trends</td>
+                </tr>
+                <tr>
+                    <td><strong>Cross-Platform Coverage</strong></td>
+                    <td>Twitter/X, Reddit, News/Analysis, Academic, Industry Reports</td>
+                </tr>
+                <tr>
+                    <td><strong>Confidence Indicators</strong></td>
+                    <td>HIGH (verified), MODERATE (emerging), LOW (speculative)</td>
+                </tr>
+                <tr>
+                    <td><strong>Methodology</strong></td>
+                    <td>Discourse analysis, trend tracking, contradiction mapping, signal evolution</td>
+                </tr>
+                <tr>
+                    <td><strong>Limitations</strong></td>
+                    <td>Sentiment is coded text analysis, not survey-based; academic sources lag 1-2 weeks; selection bias in extraction windows; single-vendor (Anthropic) focus</td>
+                </tr>
+                <tr>
+                    <td><strong>Next Review</strong></td>
+                    <td>2026-04-20 (E6 extraction expected)</td>
+                </tr>
+                <tr>
+                    <td><strong>Report Version</strong></td>
+                    <td>Longitudinal Summary Engine v1.1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

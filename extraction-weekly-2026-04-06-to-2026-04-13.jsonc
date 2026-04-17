@@ -1,0 +1,726 @@
+{
+  "schema_version": "1.1",
+  "description": "AI Dev Sentiment Extraction — extraction report file",
+  "reports": [
+    {
+      "report_metadata": {
+        "generated_by": "Claude",
+        "model": "claude-opus-4-6",
+        "llm_target": "Claude",
+        "extraction_completed": "2026-04-13T12:00:00Z",
+        "prompt_name": "AI Dev Sentiment Extraction",
+        "engine_version": "v1.5.4",
+        "config_version": "v1.8",
+        "output_format": "jsonc",
+        "lookback": "--since 2026-04-06",
+        "limit": "100 per tier — excludes cross-references"
+      },
+      "session_summary": {
+        "batches_attempted": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "batches_successful": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "batches_failed": [],
+        "primary_social_platform_status": "Degraded",
+        "alt_platform_activation": {
+          "activated": true,
+          "reason": "Reddit site: queries failed; Bluesky fallback queries returned no direct platform results; fallback syntax used for both"
+        },
+        "time_range": {
+          "from": "2026-04-06",
+          "to": "2026-04-13"
+        }
+      },
+      "deduplication_references": [
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "CNN Business — The demise of software engineering jobs",
+          "canonical_url": "https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs",
+          "suppressed_in": [
+            { "tier": "tier1", "section": "reddit" }
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Axios — AI agents scrambling power users' brains",
+          "canonical_url": "https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw",
+          "suppressed_in": [
+            { "tier": "tier1", "section": "hacker_news" },
+            { "tier": "tier1.blogs_publications", "section": "LeadDev addictive agentic coding" }
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "HBR — When Using AI Leads to Brain Fry",
+          "canonical_url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry",
+          "suppressed_in": [
+            { "tier": "tier1", "section": "hacker_news" }
+          ]
+        }
+      ],
+      "tier1": {
+        "reddit": [
+          {
+            "url": "https://trend.hulryung.com/en/posts/2026-04-07-1800-claude-code-regression-ai-coding-tool-quality-degradation-user-backlash-2026/",
+            "retrieved": "2026-04-13",
+            "subreddit": "r/ClaudeCode",
+            "title": "1,060 Upvotes of Rage: Developers Say Claude Code Has Gotten Worse",
+            "key_points": "Community post with 1,060+ upvotes signals trust crisis around Claude Code's declining quality. Code edits that used to land on first try now take multiple attempts. Tool modifies wrong files, ignores existing code, produces duplicates. Exposes structural problem every AI coding tool will eventually face: model regression after updates.",
+            "comment_sentiment": "contested",
+            "engagement": { "likes": 1060 },
+            "tools": ["Claude Code"],
+            "tags": ["Code quality", "Trust", "Hype vs Reality"]
+          },
+          {
+            "url": "https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575",
+            "retrieved": "2026-04-13",
+            "subreddit": "r/ClaudeCode",
+            "title": "Anthropic admits Claude Code users hitting usage limits 'way faster than expected'",
+            "key_points": "Anthropic acknowledged users are exhausting Claude Code usage limits much faster than projected. Company stated 'We're actively investigating... it's the top priority for the team.' Developers frustrated that the tool's value proposition is undermined by aggressive throttling.",
+            "comment_sentiment": "contested",
+            "engagement": {},
+            "tools": ["Claude Code"],
+            "tags": ["Pricing/Cost", "Trust", "Dependency/Resilience"]
+          },
+          {
+            "url": "https://appbuilderguides.com/news/vibe-coding-disillusionment-2026/",
+            "retrieved": "2026-04-13",
+            "subreddit": "r/vibecoding",
+            "title": "The Vibe Coding Disillusionment: Why Builders Are Coming Back to No-Code",
+            "key_points": "Builders returning to visual no-code platforms after hitting maintenance walls with AI-generated code. Changing one thing breaks four other features. Thread discussion: 'The problem with vibe coding is nobody wants to talk about maintenance' — 562 upvotes, 252 comments.",
+            "comment_sentiment": "mixed",
+            "engagement": { "likes": 562, "replies": 252 },
+            "tools": ["General AI"],
+            "tags": ["Code quality", "Hype vs Reality", "Architectural Philosophy"]
+          },
+          {
+            "url": "https://medium.com/@ahmed.hafdi.contact/vibe-coding-is-over-what-comes-next-is-much-harder-9fe95b509850",
+            "retrieved": "2026-04-13",
+            "subreddit": "r/vibecoding",
+            "title": "Vibe Coding Is Over. What Comes Next Is Much Harder.",
+            "key_points": "Vibe coding — in Karpathy's original sense where you accept AI output without review — is over as a legitimate professional strategy. By February 2026 consensus crystallized: vibe coding is a Tier-2 tool that requires coding knowledge to wield effectively.",
+            "comment_sentiment": "supportive",
+            "engagement": {},
+            "tools": ["General AI"],
+            "tags": ["Code quality", "Hype vs Reality", "Learning"]
+          },
+          {
+            "url": "https://www.morphllm.com/claude-code-reddit",
+            "retrieved": "2026-04-13",
+            "subreddit": "r/ClaudeCode",
+            "title": "Claude Code Reddit: What Developers Actually Say (2026)",
+            "key_points": "r/ClaudeCode has 4,200+ weekly contributors, 3x r/Codex. 67% win rate in blind tests. Developers who learn CLAUDE.md, subagents, hooks report major gains; those who treat it like autocomplete leave frustrated. Common sentiment: 'best tool I've used, if only the limits were higher'.",
+            "comment_sentiment": "mixed",
+            "engagement": {},
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Trust", "Specific Tools"]
+          }
+        ],
+        "hacker_news": [
+          {
+            "url": "https://news.ycombinator.com/item?id=47467922",
+            "retrieved": "2026-04-13",
+            "type": "Story",
+            "title": "Claude Code and the Great Productivity Panic of 2026",
+            "points_comments": "High engagement thread",
+            "discussion_themes": "Comparison of mental state after traditional deep coding sessions versus agentic coding stints. Debate over whether AI coding tools compress timelines, eliminate roles, or both. Multiple commenters reporting exhaustion from constant AI output review.",
+            "tools": ["Claude Code"],
+            "tags": ["Burnout", "Productivity", "Hype vs Reality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47240279",
+            "retrieved": "2026-04-13",
+            "type": "Story",
+            "title": "To be fair, Claude Code is vibe-coded. It's a terrible piece of software",
+            "points_comments": "Active discussion",
+            "discussion_themes": "Debate over whether Anthropic dogfooding their own LLM coding tool is good practice or produces low-quality software. Discussion of Claude Code's 512,000-line leaked codebase. Meta-commentary on AI tools building AI tools.",
+            "tools": ["Claude Code"],
+            "tags": ["Code quality", "Trust", "Hype vs Reality"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=43791474",
+            "retrieved": "2026-04-13",
+            "type": "Story",
+            "title": "Avoiding skill atrophy in the age of AI (Addy Osmani)",
+            "points_comments": "High engagement",
+            "discussion_themes": "Discussion of cognitive debt and comprehension gaps. Debate over whether AI assistance causes irreversible skill loss or merely redistributes cognitive effort. Multiple practitioners sharing personal deskilling experiences.",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Learning", "Junior/Senior devs"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46934404",
+            "retrieved": "2026-04-13",
+            "type": "Story",
+            "title": "AI fatigue is real and nobody talks about it",
+            "points_comments": "Active thread",
+            "discussion_themes": "Developers sharing experiences of cognitive fatigue from constant AI output evaluation. Discussion of 'brain fry' phenomenon. Debate over whether the problem is AI tools or management expectations.",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity"]
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=46749534",
+            "retrieved": "2026-04-13",
+            "type": "Show HN",
+            "title": "A plugin for Claude that forces you to write code",
+            "points_comments": "Active discussion",
+            "discussion_themes": "Plugin enforces human-written code targets to balance between pure vibe coding and manual code writing. Discussion about maintaining coding skills while using AI assistance. Deskilling mitigation strategy.",
+            "tools": ["Claude Code"],
+            "tags": ["Deskilling", "Learning", "Productivity"]
+          }
+        ],
+        "blogs_publications": [
+          {
+            "url": "https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs",
+            "retrieved": "2026-04-13",
+            "source": "CNN Business",
+            "title": "The demise of software engineering jobs has been greatly exaggerated",
+            "author": "CNN Business staff",
+            "author_type": "Analyst",
+            "date": "2026-04-08",
+            "key_claims": "Job openings for developers are growing as companies believe they will produce more software with AI. Indeed listings for software engineer jobs up 11% annually. IBM tripling entry-level hiring in the US. Role is shifting from routine coding to overseeing AI-powered code-writing agents. Bureau of Labor Statistics projects 15% growth through 2034.",
+            "evidence_type": "Survey",
+            "tools": ["Claude Code", "General AI"],
+            "tags": ["Job security", "Hiring", "Hype vs Reality"]
+          },
+          {
+            "url": "https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw",
+            "retrieved": "2026-04-13",
+            "source": "Axios",
+            "title": "'They operate like slot machines': AI agents are scrambling power users' brains",
+            "author": "Axios staff",
+            "author_type": "Analyst",
+            "date": "2026-04-04",
+            "key_claims": "Agentic coding tools create slot-machine-like feedback loops. Karpathy in 'state of AI psychosis' since December, code ratio flipped from 80/20 to 0/100, spends 16 hours/day issuing agent commands. Malte Ubl (CTO Vercel) compared endorphin rush to Las Vegas slot machines. Developers crash and fall asleep after long vibe coding sessions.",
+            "evidence_type": "Anecdote",
+            "tools": ["Claude Code", "Copilot"],
+            "tags": ["Burnout", "Productivity", "Dependency/Resilience"]
+          },
+          {
+            "url": "https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/",
+            "retrieved": "2026-04-13",
+            "source": "Ivan Turkovic (independent)",
+            "title": "Vibing Fatigue: Why Tracking AI Usage Is the Wrong KPI",
+            "author": "Ivan Turkovic",
+            "author_type": "Practitioner",
+            "date": "2026-04-11",
+            "key_claims": "Vibing fatigue is the accumulated cognitive cost of continuously generating, reviewing, validating, and correcting AI output. Companies tracking AI usage as a KPI optimize for machine side while ignoring human side. Developers who use AI most carefully — who verify and validate — show lower throughput on dashboards.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity", "Team dynamics"]
+          },
+          {
+            "url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry",
+            "retrieved": "2026-04-13",
+            "source": "Harvard Business Review",
+            "title": "When Using AI Leads to 'Brain Fry'",
+            "author": "Bedard, Kropp, Hsu, Karaman, Hawes, Kellerman",
+            "author_type": "Researcher",
+            "date": "2026-03",
+            "key_claims": "Survey of 1,488 full-time US workers. 14% of AI users experience 'brain fry' — mental fatigue from excessive AI oversight. High degree of oversight predicted 12% more mental fatigue. Workers experiencing brain fry report more mistakes, slower decision-making, higher quit intention. Information overload and constant task switching are main drivers.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Productivity"]
+          },
+          {
+            "url": "https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep",
+            "retrieved": "2026-04-13",
+            "source": "LeadDev",
+            "title": "'Addictive' agentic coding has developers losing sleep",
+            "author": "LeadDev staff",
+            "author_type": "Analyst",
+            "date": "2026-04",
+            "key_claims": "Agentic coding creates slot machine effect with rapid feedback loops. Significant rise in out-of-hour commits and weekend productivity. Steve Yegge: AI-powered coding is 'genuinely addictive,' crashes and falls asleep after sessions. Armin Ronacher: 'Many of us got hit by the agent coding addiction. It feels good, we barely sleep, we build amazing things.'",
+            "evidence_type": "Anecdote",
+            "tools": ["Claude Code"],
+            "tags": ["Burnout", "Dependency/Resilience"]
+          },
+          {
+            "url": "https://www.cnbc.com/2026/04/11/vibe-check-from-ai-industry-humanx-anthropic-is-talk-of-the-town.html",
+            "retrieved": "2026-04-13",
+            "source": "CNBC",
+            "title": "Vibe check from inside one of AI industry's main events: 'Claude mania'",
+            "author": "CNBC staff",
+            "author_type": "Analyst",
+            "date": "2026-04-11",
+            "key_claims": "Claude Code is the tool on everyone's lips at HumanX conference. Arvind Jain (CEO Glean) says Claude Code has inspired 'Claude Mania' putting pressure on business leaders to deploy it. Claude Mythos Preview announced with advanced cybersecurity capabilities. Rollout limited to ~50 companies.",
+            "evidence_type": "Opinion",
+            "tools": ["Claude Code"],
+            "tags": ["Hype vs Reality", "Productivity"]
+          },
+          {
+            "url": "https://thenewstack.io/ai-coding-tool-stack/",
+            "retrieved": "2026-04-13",
+            "source": "The New Stack",
+            "title": "Cursor, Claude Code, and Codex are merging into one AI coding stack nobody planned",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04",
+            "key_claims": "Cursor shipped rebuilt interface for orchestrating parallel agents. OpenAI published official plugin that runs inside Claude Code. Early adopters running all three tools together. Tool convergence creating an unplanned unified coding stack.",
+            "evidence_type": "Opinion",
+            "tools": ["Cursor", "Claude Code", "Copilot"],
+            "tags": ["Productivity", "Specific Tools"]
+          },
+          {
+            "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/",
+            "retrieved": "2026-04-13",
+            "source": "Cloud Security Alliance",
+            "title": "Vibe Coding's Security Debt: The AI-Generated CVE Surge",
+            "author": "CSA Research",
+            "author_type": "Researcher",
+            "date": "2026-04",
+            "key_claims": "35 CVEs disclosed in March 2026 directly from AI-generated code, up from 6 in January and 15 in February. Of 74 confirmed AI-tool CVEs, Claude Code appeared most frequently. Real number 'almost certainly higher' than detected. Georgia Tech Vibe Security Radar tracked these monthly surges.",
+            "evidence_type": "Study",
+            "tools": ["Claude Code", "General AI"],
+            "tags": ["Incidents", "Code quality"]
+          },
+          {
+            "url": "https://www.nbcnews.com/tech/security/ai-code-vibe-claude-openai-chatgpt-rcna258807",
+            "retrieved": "2026-04-13",
+            "source": "NBC News",
+            "title": "Anyone can code with AI. But it might come with a hidden cost.",
+            "author": "NBC News staff",
+            "author_type": "Analyst",
+            "date": "2026-04",
+            "key_claims": "AI-assisted commits expose secrets at 2x rate of human commits (3.2% vs 1.5%). Fortune 50 enterprises: AI-assisted developers produce commits at 3-4x rate but introduce security findings at 10x rate. Veracode tested 100+ LLMs: 45% of AI-generated code introduces OWASP Top 10 vulnerabilities. 20% of AI code samples reference nonexistent packages (slopsquatting).",
+            "evidence_type": "Study",
+            "tools": ["Claude Code", "ChatGPT", "Copilot"],
+            "tags": ["Code quality", "Incidents"]
+          },
+          {
+            "url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
+            "retrieved": "2026-04-13",
+            "source": "Addy Osmani (Google Chrome team)",
+            "title": "Avoiding Skill Atrophy in the Age of AI",
+            "author": "Addy Osmani",
+            "author_type": "Practitioner",
+            "date": "2026-04",
+            "key_claims": "Developers who fully delegated to AI produced working code but failed conceptual quizzes afterward and couldn't debug what AI wrote. AI agents generate code 5-7x faster than humans understand it. Comprehension debt breeds false confidence. Mitigation: contrastive explanations, progressive learning, workplace upskilling.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Learning", "Code quality"]
+          },
+          {
+            "url": "https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt",
+            "retrieved": "2026-04-13",
+            "source": "Cognitive World",
+            "title": "Skill Atrophy: Frictionless AI and Cognitive Debt",
+            "author": "Cognitive World staff",
+            "author_type": "Analyst",
+            "date": "2026-03-19",
+            "key_claims": "Cognitive debt manifests as fragility (systems fail, humans cannot recover), quality drift (subtle errors slip through), and weak talent pipelines (juniors don't build foundational craft). Critical distinction: older workers offload known tasks (reversible atrophy) vs younger workers offload tasks never learned (foreclosure — neural pathways never formed).",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Junior/Senior devs", "Learning"]
+          },
+          {
+            "url": "https://allwork.space/2026/01/workers-gain-hours-with-ai-but-risk-losing-skills-according-to-microsofts-new-future-of-work-report/",
+            "retrieved": "2026-04-13",
+            "source": "AllWork.Space / Microsoft",
+            "title": "Workers Gain Hours With AI But Risk Losing Skills, According To Microsoft's New Future Of Work Report",
+            "author": "Microsoft Research",
+            "author_type": "Researcher (Vendor-affiliated)",
+            "date": "2026-01",
+            "key_claims": "Microsoft warned that using AI uncritically might effectively deskill people into irrelevance. AI in the workplace is boosting productivity but risks deskilling workers, weakening judgment, and reshaping careers.",
+            "evidence_type": "Study",
+            "tools": ["Copilot", "General AI"],
+            "tags": ["Deskilling", "Productivity"]
+          },
+          {
+            "url": "https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/",
+            "retrieved": "2026-04-13",
+            "source": "ThinkPol",
+            "title": "The junior developer pipeline is broken, and nobody has a plan to fix it",
+            "author": "ThinkPol staff",
+            "author_type": "Analyst",
+            "date": "2026-03-24",
+            "key_claims": "Junior Developer role collapsing (down 46%). Entry-level tech hiring decreased 25% year-over-year in 2024. Developer job market bifurcated: consumer/SaaS junior roles disappearing rapidly; enterprise/finance/healthcare continue hiring. Significant reduction in junior hiring 2024-2026 means proportional reduction in senior candidates 2031-2036.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Job security", "Hiring", "Junior/Senior devs"]
+          },
+          {
+            "url": "https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/",
+            "retrieved": "2026-04-13",
+            "source": "Stanford Digital Economy Lab",
+            "title": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence",
+            "author": "Erik Brynjolfsson, Bharat Chandar, Ruyu Chen",
+            "author_type": "Researcher",
+            "date": "2025-08",
+            "key_claims": "Early-career workers (ages 22-25) in AI-exposed occupations experienced 16% relative employment declines. Young workers in most AI-exposed occupations (software developers, customer service reps) saw 13% relative decline. Employment declines concentrated where AI automates rather than augments. Employment rising in least AI-exposed jobs but declining in most exposed.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Job security", "Hiring", "Junior/Senior devs"]
+          },
+          {
+            "url": "https://margaretstorey.com/blog/2026/02/09/cognitive-debt/",
+            "retrieved": "2026-04-13",
+            "source": "Margaret Storey (UVic)",
+            "title": "How Generative and Agentic AI Shift Concern from Technical Debt to Cognitive Debt",
+            "author": "Margaret Storey",
+            "author_type": "Researcher",
+            "date": "2026-02-09",
+            "key_claims": "Cognitive debt describes the debt compounded from going fast that lives in developers' brains and affects ability to make changes. AI-assisted participants completed tasks in same time but scored 17% lower on comprehension quiz (50% vs 67%). Steepest declines in debugging ability. Delegation-style AI use scores below 40% on comprehension; inquiry-style scores above 65%.",
+            "evidence_type": "Study",
+            "tools": ["General AI"],
+            "tags": ["Deskilling", "Learning", "Code quality"]
+          },
+          {
+            "url": "https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/",
+            "retrieved": "2026-04-13",
+            "source": "Salesforce Ben",
+            "title": "2026 Predictions: It's the Year of Technical Debt (Thanks to Vibe-Coding)",
+            "author": "Salesforce Ben staff",
+            "author_type": "Analyst",
+            "date": "2026-01",
+            "key_claims": "2026 is 'the year of technical debt' with AI adoption heaping debt on top of existing issues. Analyst predicts $1.5 trillion in technical debt by 2027 from AI-generated code. Vibe-coded projects accumulate technical debt 3x faster than traditionally developed software.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Code quality", "Architectural Philosophy"]
+          },
+          {
+            "url": "https://itbrief.co.nz/story/ai-coding-tools-face-2026-reset-towards-architecture",
+            "retrieved": "2026-04-13",
+            "source": "IT Brief",
+            "title": "AI coding tools face 2026 reset towards architecture",
+            "author": "IT Brief staff",
+            "author_type": "Analyst",
+            "date": "2026-04",
+            "key_claims": "AI code generation tools undergoing reset toward architecture, governance, and long-term maintainability. Every AI-generated project is a snowflake; when teams maintain ten snowflakes, speed advantage disappears. 2026 ushering in tools with guardrails, architecture and governance built in.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Architectural Philosophy", "Code quality"]
+          },
+          {
+            "url": "https://www.thoughtworks.com/en-us/radar/techniques/agents-md",
+            "retrieved": "2026-04-13",
+            "source": "ThoughtWorks Technology Radar",
+            "title": "AGENTS.md — Technology Radar",
+            "author": "ThoughtWorks",
+            "author_type": "Practitioner",
+            "date": "2026",
+            "key_claims": "AGENTS.md is a common format for providing instructions to AI coding agents — essentially a README for agents. Relies on LLM-based coding agents' ability to interpret human-written guidance. ThoughtWorks launched AI/works agentic development platform in January 2026. 93% of IT leaders plan to use AI agents by 2026.",
+            "evidence_type": "Opinion",
+            "tools": ["General AI"],
+            "tags": ["Architectural Philosophy", "Productivity"]
+          },
+          {
+            "url": "https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/",
+            "retrieved": "2026-04-13",
+            "source": "Quentin Rousseau (independent)",
+            "title": "One More Prompt: The Dopamine Trap of Agentic Coding",
+            "author": "Quentin Rousseau",
+            "author_type": "Practitioner",
+            "date": "2026-03-09",
+            "key_claims": "Agentic coding creates dopamine-driven feedback loops similar to gambling mechanics. 'One more prompt' mentality mirrors 'one more hand' gambling psychology. Developers report inability to stop prompting even when fatigued. Rapid result-generation cycle reinforces compulsive use patterns.",
+            "evidence_type": "Anecdote",
+            "tools": ["Claude Code"],
+            "tags": ["Burnout", "Dependency/Resilience"]
+          },
+          {
+            "url": "https://www.bloomberg.com/news/articles/2026-02-26/ai-coding-agents-like-claude-code-are-fueling-a-productivity-panic-in-tech",
+            "retrieved": "2026-04-13",
+            "source": "Bloomberg",
+            "title": "AI Coding Agents Like Claude Code Are Fueling a Productivity Panic in Tech",
+            "author": "Bloomberg staff",
+            "author_type": "Analyst",
+            "date": "2026-02-26",
+            "key_claims": "Productivity panic spreading through tech companies as AI coding tools redraw boundaries of what engineers do. Karpathy: programming changed more in last two months than in decades. AI agents demonstrate improved quality, coherence, and 'tenacity' — ability to power through large tasks. Companies scrambling to determine if AI compresses timelines, eliminates roles, or both.",
+            "evidence_type": "Anecdote",
+            "tools": ["Claude Code", "Cursor"],
+            "tags": ["Productivity", "Hype vs Reality", "Job security"]
+          }
+        ]
+      },
+      "tier1_5": {
+        "youtube": [
+          {
+            "url": "https://www.tiktok.com/@theprimeagen/video/7384483503712324895",
+            "retrieved": "2026-04-13",
+            "channel": "ThePrimeagen",
+            "title": "The Harsh Reality Of AI — software engineering discussion",
+            "key_points": "ThePrimeagen discussing the harsh reality of AI for software engineers. Active commentary on vibe coding limitations and AI tool experiences.",
+            "tools": ["General AI"],
+            "tags": ["Hype vs Reality", "Job security"],
+            "manual_priority": "Med"
+          }
+        ],
+        "experimental_social": [
+          {
+            "url": "https://simonwillison.net/2026/Mar/21/profiling-hacker-news-users/",
+            "retrieved": "2026-04-13",
+            "platform": "Bluesky (cross-posted)",
+            "author": "Simon Willison",
+            "author_type": "Practitioner",
+            "content": "Willison is a leading evangelist for 'agentic engineering' — does most programming from iPhone via Claude Code, often while riding BART. Embraces YOLO mode (auto-approving agent actions), frequently running 2-3 agent sessions in parallel. Central argument: LLMs don't replace programmers, they amplify existing expertise.",
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Specific Tools"],
+            "signal_quality": "High",
+            "tier_promotion": "Ineligible — content not directly retrieved from Bluesky platform"
+          }
+        ]
+      },
+      "tier2": [
+        {
+          "source": "X/Twitter",
+          "url": "https://x.com/axios/status/2040363574464229858",
+          "author_channel": "@axios",
+          "author_type": "Analyst",
+          "topic": "AI agent addiction/burnout",
+          "snippet": "Share of Axios article on AI agents scrambling power users' brains — high engagement repost",
+          "priority": "Med"
+        },
+        {
+          "source": "X/Twitter",
+          "url": "https://x.com/business/status/2026976790007238748",
+          "author_channel": "@business (Bloomberg)",
+          "author_type": "Analyst",
+          "topic": "Productivity panic",
+          "snippet": "AI coding agents promised to make software development easier. Instead they're pushing engineers to work faster and longer",
+          "priority": "High"
+        },
+        {
+          "source": "Podcasts",
+          "url": "https://www.thoughtworks.com/en-us/insights/podcasts/technology-podcasts/inside-ai-works-agentic-development-platform",
+          "author_channel": "ThoughtWorks Technology Podcast",
+          "author_type": "Practitioner",
+          "topic": "Agentic development platform",
+          "snippet": "Discussion of AI/works agentic development platform and human-in-the-loop stewardship for AI-first software delivery",
+          "priority": "Med"
+        }
+      ],
+      "tier3_flags": [
+        {
+          "database": "arXiv",
+          "query": "AI coding assistants developer productivity comprehension debt",
+          "reason": "Academic preprints on cognitive debt — arxiv.org/html/2603.22106 and arxiv.org/html/2602.20206v2 identified but require manual review"
+        },
+        {
+          "database": "arXiv / Stanford",
+          "query": "Brynjolfsson 'canaries in the coal mine' AI employment",
+          "reason": "Key corroborating study for labor impact — paper available at digitaleconomy.stanford.edu but full PDF requires review"
+        },
+        {
+          "database": "LinkedIn",
+          "query": "CTO AI coding policy enterprise",
+          "reason": "Demoted to Tier 3 Manual (v1.6): platform blocking suspected. Manual browser search required."
+        },
+        {
+          "database": "Flipboard (@maryflipse3/ai)",
+          "query": "https://flipboard.com/@maryflipse3/ai-jrgbno6hz",
+          "reason": "Demoted to Tier 3 Manual (v1.8): use flipboard-extraction skill via Claude in Chrome for on-demand browser extraction"
+        },
+        {
+          "database": "Podcasts (Manual)",
+          "query": "ThePrimeagen, Syntax FM, The Changelog — AI coding episodes April 2026",
+          "reason": "Zero podcast content retrieved via automated extraction. Manual review of recent episodes recommended."
+        },
+        {
+          "database": "IEEE/ACM",
+          "query": "AI pair programming software engineering",
+          "reason": "Peer-reviewed; paywalled"
+        },
+        {
+          "database": "Margaret Storey (UVic)",
+          "query": "site:margaretstorey.com AI developer tools",
+          "reason": "Blog post on cognitive debt retrieved (tier1.blogs_publications); check for additional academic publications"
+        }
+      ],
+      "incidents": [
+        {
+          "incident": "Cursor silent code reversion bug",
+          "date": "2026-03",
+          "source": "Cursor Community Forum",
+          "url": "https://forum.cursor.com/t/changes-being-reverted/145225",
+          "tools": ["Cursor"],
+          "severity": "Significant",
+          "impact": "Agent Review Tab interfered with file state causing silent reversion of developer code changes. Three root causes: Agent Review conflicts, cloud sync racing with local saves, format-on-save interference.",
+          "postmortem": true
+        },
+        {
+          "incident": "AI-generated CVE surge — 35 CVEs in March 2026",
+          "date": "2026-03",
+          "source": "Cloud Security Alliance",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/",
+          "tools": ["Claude Code", "General AI"],
+          "severity": "Critical",
+          "impact": "35 new CVEs disclosed in March 2026 directly from AI-generated code, up from 6 in January and 15 in February. 74 confirmed total AI-tool CVEs. Claude Code appeared most frequently. Real number 'almost certainly higher'."
+        },
+        {
+          "incident": "GitHub MCP server prompt injection — private repo exfiltration",
+          "date": "2026",
+          "source": "AuthZed / Security Research",
+          "url": "https://authzed.com/blog/timeline-mcp-breaches",
+          "tools": ["MCP"],
+          "severity": "Critical",
+          "impact": "Malicious public GitHub issue hijacked AI assistant via prompt injection, pulling data from private repos. Broad PAT scopes combined with untrusted content in LLM context enabled exfiltration of private repository contents."
+        },
+        {
+          "incident": "Anthropic mcp-server-git triple vulnerability disclosure",
+          "date": "2026-01",
+          "source": "The Hacker News",
+          "url": "https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html",
+          "tools": ["MCP", "Claude Code"],
+          "severity": "Significant",
+          "impact": "Three security vulnerabilities in Anthropic's official mcp-server-git exploitable through prompt injection to read or delete arbitrary files and execute code."
+        },
+        {
+          "incident": "Asana MCP cross-organization data leak",
+          "date": "2026",
+          "source": "AuthZed",
+          "url": "https://authzed.com/blog/timeline-mcp-breaches",
+          "tools": ["MCP"],
+          "severity": "Significant",
+          "impact": "Bug in Asana MCP-server feature allowed data from one organization to be seen by others. Caused by logic flaw in access control of MCP-enabled integration."
+        },
+        {
+          "incident": "Claude Code source code leak — 512,000 lines exposed",
+          "date": "2026-04-01",
+          "source": "Bloomberg / DEV Community",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent",
+          "tools": ["Claude Code"],
+          "severity": "Significant",
+          "impact": "Anthropic accidentally released full source code for Claude Code. 512,000 lines of code exposed. Security researchers analyzed for hidden system prompt details and architecture."
+        },
+        {
+          "incident": "Claude helped researcher discover decade-old Apache ActiveMQ RCE (CVE-2026-34197)",
+          "date": "2026-04-09",
+          "source": "Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/04/09/apache-activemq-rce-vulnerability-cve-2026-34197-claude/",
+          "tools": ["Claude"],
+          "severity": "Critical",
+          "impact": "Claude assisted security researcher in discovering a decade-old RCE vulnerability in Apache ActiveMQ. Demonstrates AI tools' dual-use potential for both vulnerability introduction and discovery."
+        }
+      ],
+      "emerging_patterns": [
+        {
+          "name": "The Great Productivity Panic",
+          "description": "AI coding agents are creating a productivity panic across the tech industry — rather than reducing workload, they're intensifying pressure to build faster. Companies treating every minute saved as a minute available for more work, resulting in a new form of burnout hitting hardest among AI early adopters.",
+          "sources": [
+            { "url": "https://www.bloomberg.com/news/articles/2026-02-26/ai-coding-agents-like-claude-code-are-fueling-a-productivity-panic-in-tech", "label": "Bloomberg — Productivity Panic in Tech", "retrieved": "2026-04-13" },
+            { "url": "https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw", "label": "Axios — AI agents scrambling power users' brains", "retrieved": "2026-04-13" },
+            { "url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry", "label": "HBR — When Using AI Leads to Brain Fry", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "AI Coding Addiction and Slot Machine Mechanics",
+          "description": "Agentic coding tools exhibit addictive properties resembling gambling mechanics. Developers report inability to stop prompting, 'one more prompt' compulsion, out-of-hour coding binges, and crash-and-sleep cycles. Multiple high-profile practitioners (Karpathy, Yegge, Ubl) have publicly described these patterns.",
+          "sources": [
+            { "url": "https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw", "label": "Axios — Slot machine comparison", "retrieved": "2026-04-13" },
+            { "url": "https://leaddev.com/ai/addictive-agentic-coding-has-developers-losing-sleep", "label": "LeadDev — Addictive agentic coding", "retrieved": "2026-04-13" },
+            { "url": "https://blog.quent.in/blog/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/", "label": "Quentin Rousseau — Dopamine Trap", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Comprehension Debt Replaces Technical Debt as Primary Concern",
+          "description": "Industry discourse is shifting from technical debt to cognitive/comprehension debt as the primary risk of AI-assisted development. The gap between code generation velocity (5-7x faster) and human understanding velocity is growing. Developers who delegate to AI score 17% lower on comprehension tests. Researchers distinguish between delegation-style use (harmful) and inquiry-style use (beneficial).",
+          "sources": [
+            { "url": "https://addyosmani.com/blog/comprehension-debt/", "label": "Addy Osmani — Comprehension Debt", "retrieved": "2026-04-13" },
+            { "url": "https://margaretstorey.com/blog/2026/02/09/cognitive-debt/", "label": "Margaret Storey — Cognitive Debt", "retrieved": "2026-04-13" },
+            { "url": "https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt", "label": "Cognitive World — Skill Atrophy", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "AI-Generated CVE Acceleration Curve",
+          "description": "CVEs directly attributable to AI-generated code are accelerating month-over-month: 6 in January, 15 in February, 35 in March 2026. Georgia Tech's Vibe Security Radar estimates true count is 5-10x higher. AI-assisted commits expose secrets at 2x rate of human commits. Fortune 50 data shows 10x security finding rate for AI-assisted code.",
+          "sources": [
+            { "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/", "label": "CSA — AI-Generated CVE Surge", "retrieved": "2026-04-13" },
+            { "url": "https://www.nbcnews.com/tech/security/ai-code-vibe-claude-openai-chatgpt-rcna258807", "label": "NBC News — Hidden cost of AI code", "retrieved": "2026-04-13" },
+            { "url": "https://codeqa.aivyuh.com/blog/ai-generated-code-vulnerabilities-2026/", "label": "AI Vyuh — 53% vulnerability rate", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Junior Developer Pipeline Crisis",
+          "description": "Junior developer hiring is collapsing (down 46%) while entry-level tech hiring dropped 25% YoY. The market has bifurcated: consumer/SaaS companies eliminate junior roles while enterprise/finance/healthcare continue hiring. Long-term risk: 2024-2026 junior hiring reduction creates proportional senior candidate shortage in 2031-2036.",
+          "sources": [
+            { "url": "https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/", "label": "ThinkPol — Broken pipeline", "retrieved": "2026-04-13" },
+            { "url": "https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/", "label": "Brynjolfsson et al. — Canaries in the Coal Mine", "retrieved": "2026-04-13" },
+            { "url": "https://stackoverflow.blog/2025/12/26/ai-vs-gen-z/", "label": "Stack Overflow — AI vs Gen Z", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "MCP as Emerging Attack Surface",
+          "description": "Model Context Protocol has become a significant security attack surface in 2026. Multiple real-world breaches: GitHub MCP server prompt injection enabling private repo exfiltration, Anthropic's mcp-server-git triple vulnerability, Asana cross-org data leak. Most MCP clients (5/7 evaluated) lack static validation. Tool poisoning attacks demonstrated in proof-of-concept.",
+          "sources": [
+            { "url": "https://authzed.com/blog/timeline-mcp-breaches", "label": "AuthZed — Timeline of MCP Breaches", "retrieved": "2026-04-13" },
+            { "url": "https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/", "label": "Palo Alto Unit 42 — MCP Attack Vectors", "retrieved": "2026-04-13" },
+            { "url": "https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html", "label": "The Hacker News — Anthropic MCP flaws", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Vibing Fatigue as Distinct Burnout Category",
+          "description": "Vibing fatigue — the cognitive cost of continuously generating, reviewing, validating, and correcting AI output — is emerging as a distinct burnout category separate from traditional developer burnout. Companies tracking AI usage as a KPI inadvertently penalize careful developers who verify AI output.",
+          "sources": [
+            { "url": "https://www.ivanturkovic.com/2026/04/11/vibing-fatigue/", "label": "Ivan Turkovic — Vibing Fatigue", "retrieved": "2026-04-13" },
+            { "url": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry", "label": "HBR — Brain Fry", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "M"
+        },
+        {
+          "name": "Tool Convergence: The Unplanned Unified Coding Stack",
+          "description": "Cursor, Claude Code, and Copilot/Codex are converging into an unplanned unified stack. Cursor shipped parallel agent orchestration. OpenAI published a plugin running inside Claude Code. Most productive developers use 2.3 tools on average. The era of single-tool loyalty is giving way to orchestrated multi-tool workflows.",
+          "sources": [
+            { "url": "https://thenewstack.io/ai-coding-tool-stack/", "label": "The New Stack — Merging AI coding stack", "retrieved": "2026-04-13" },
+            { "url": "https://www.nxcode.io/resources/news/cursor-vs-claude-code-vs-github-copilot-2026-ultimate-comparison", "label": "NxCode — Ultimate Comparison 2026", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "M"
+        },
+        {
+          "name": "Architecture Reset: From Speed to Governance",
+          "description": "AI coding tools undergoing a 2026 reset from speed-first to architecture-first. Every AI-generated project is a snowflake; maintaining ten snowflakes eliminates speed advantage. Industry shifting from 'generate more code' to 'explain and constrain code'. New tools embedding guardrails, architecture standards, and governance by default.",
+          "sources": [
+            { "url": "https://itbrief.co.nz/story/ai-coding-tools-face-2026-reset-towards-architecture", "label": "IT Brief — Reset towards architecture", "retrieved": "2026-04-13" },
+            { "url": "https://www.coderabbit.ai/blog/2025-was-the-year-of-ai-speed-2026-will-be-the-year-of-ai-quality", "label": "CodeRabbit — Year of AI quality", "retrieved": "2026-04-13" }
+          ],
+          "confidence": "M"
+        }
+      ],
+      "gaps": {
+        "search_failures": [
+          "Reddit site: queries returned no results — used fallback syntax per E1 findings",
+          "Bluesky site:bsky.app queries returned no direct platform content — search results redirect to general web articles",
+          "Mastodon site:mastodon.social queries returned no results — platform content not indexed by web search",
+          "Podcast automated retrieval returned zero direct audio/transcript content across all queries"
+        ],
+        "source_gaps": [
+          "YouTube: No direct video content retrieved from ThePrimeagen or Fireship for April 6-13 window despite active channels",
+          "Bluesky: Zero direct platform posts retrieved despite Tier 1 assignment — same issue as E1. Fallback queries also failed.",
+          "Mastodon: Zero direct platform posts retrieved despite Tier 1 assignment — consistent with E1 findings",
+          "Podcasts: Zero content retrieved — consistent with E1; consider demotion to Tier 3"
+        ],
+        "below_threshold": [
+          "EU AI Act enforcement impact on AI coding tools — single reference (NBC News) insufficient for pattern elevation",
+          "Chinese open-weight model competition (GLM-5.1, Kimi K2.5, Qwen3.5) impact on AI coding landscape — single CNBC reference"
+        ],
+        "platform_access_issues": [
+          "Reddit: site: operator failed; fallback queries produced results via aggregator sites rather than direct Reddit URLs",
+          "Bluesky: Neither site: nor fallback queries produced direct bsky.app content — platform remains unreachable for automated extraction",
+          "Mastodon: Same access failure as Bluesky — fediverse content not indexed by search engines used by Claude",
+          "LinkedIn: Tier 3 Manual — platform blocking confirmed per v1.6 config"
+        ]
+      },
+      "next_extraction": {
+        "retry_batches": [],
+        "suggested_queries": [
+          "Claude Code quality regression — track if Anthropic addresses the 1,060-upvote complaint thread with fixes",
+          "Claude Mythos Preview — monitor developer access expansion beyond initial 50 companies",
+          "Cursor Composer 2 built on Kimi 2.5 — monitor quality/security implications of Chinese open-weight model integration",
+          "EU AI Act enforcement actions on AI coding tools in safety-critical applications",
+          "MCP security: monitor for new CVE disclosures and breach timeline updates",
+          "Anthropic usage limits resolution — track follow-up on 'top priority' investigation"
+        ],
+        "manual_followup": [
+          "Bluesky: Manually check simonwillison.bsky.social, kelseyhightower.bsky.social for AI coding posts in lookback window",
+          "Mastodon: Manually check developer instances for AI coding discussion",
+          "Flipboard: Use flipboard-extraction skill for @maryflipse3/ai magazine",
+          "LinkedIn: Manual browser search for CTO AI coding policy discourse",
+          "Podcasts: Check ThePrimeagen, Syntax FM, The Changelog for April 2026 AI coding episodes",
+          "arXiv: Review arxiv.org/html/2603.22106 (Technical Debt to Cognitive Debt) and arxiv.org/html/2602.20206v2 (Epistemic Debt in AI-Scaffolded Programming)"
+        ]
+      }
+    }
+  ]
+}
