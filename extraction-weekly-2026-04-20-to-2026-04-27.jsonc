@@ -1,0 +1,1802 @@
+{
+  "schema_version": "1.1",
+  "description": "AI Dev Sentiment Extraction — extraction report file",
+  "reports": [
+    {
+      "report_metadata": {
+        "generated_by": "Claude",
+        "model": "claude-opus-4-7",
+        "llm_target": "Claude",
+        "extraction_completed": "2026-04-27T15:00:00Z",
+        "prompt_name": "AI Dev Sentiment Extraction",
+        "engine_version": "v1.5.4",
+        "config_version": "v1.8",
+        "output_format": "jsonc",
+        "lookback": "--since 2026-04-20",
+        "limit": "100 per tier — excludes cross-references",
+        "_run_note": "Re-run of the weekly extraction after the initial run was found to have under-queried the per-platform query blocks. This run executes per-platform/per-channel queries individually rather than collapsing them into broad topical sweeps."
+      },
+      "session_summary": {
+        "batches_attempted": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "batches_successful": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "batches_failed": [],
+        "primary_social_platform_status": "Working",
+        "alt_platform_activation": {
+          "activated": false,
+          "reason": "Reddit, Hacker News, and Blogs/Publications all returned strong in-window signal; Bluesky and Mastodon also produced retrievable content; experimental tier promotion not required."
+        },
+        "time_range": {
+          "from": "2026-04-20",
+          "to": "2026-04-27"
+        }
+      },
+      "tier1": {
+        "primary_social": [],
+        "reddit": [
+          {
+            "url": "https://www.morphllm.com/reddit-vibe-coding",
+            "retrieved": "2026-04-27",
+            "subreddit": "r/ExperiencedDevs (and broader; aggregator analysis)",
+            "title": "Vibe Coding on Reddit: What Developers Actually Think (2026)",
+            "key_points": "Aggregated analysis of 1,000+ Reddit comments. Reddit consensus: vibe coding is a prototyping methodology, not a production methodology. r/ExperiencedDevs thread on AI productivity study (showing experienced OSS devs were 19% slower with AI tools despite predicting 24% faster) hit 800+ comments. Practitioners report AI tools 'feel fast' due to reduced typing friction but introduce debugging overhead that offsets gains.",
+            "comment_sentiment": "mixed",
+            "engagement": {
+              "replies": "800+ comments on referenced thread"
+            },
+            "tools": [
+              "Cursor",
+              "Claude Code",
+              "Copilot",
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Nuanced",
+              "topic": [
+                "Productivity",
+                "Code quality",
+                "Trust"
+              ],
+              "evidence": "Aggregated anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.aitooldiscovery.com/guides/claude-code-reddit",
+            "retrieved": "2026-04-27",
+            "subreddit": "r/ClaudeAI / r/ClaudeCode (aggregator analysis)",
+            "title": "Claude Code Reddit: What Developers Actually Use It For in 2026",
+            "key_points": "Aggregator survey of r/ClaudeAI and r/ClaudeCode discourse. Documents 'Tokenocalypse' coinage from r/ClaudeAI weekly survival guide, the April 1–7 cache regression escalation, and the April 3 'caveman mode' Reddit post that hit 10k upvotes. Practitioner sentiment shifted notably negative across the four-week window even before the Apr 21–22 Pro-plan removal.",
+            "comment_sentiment": "contested",
+            "engagement": {
+              "likes": "10k+ on referenced caveman-mode post",
+              "replies": "ongoing weekly survival guide thread"
+            },
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Trust",
+                "Code quality"
+              ],
+              "evidence": "Aggregated anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit",
+            "retrieved": "2026-04-27",
+            "subreddit": "r/programming, r/webdev, r/cursor (aggregator)",
+            "title": "Best AI for Coding: Reddit's Top Picks for 2026",
+            "key_points": "Cross-subreddit picks: Cursor for IDE work (~4.9/5), Claude Code for terminal-based workflows and complex codebases, Lovable for non-technical founders (~4.4/5), Bolt.new for prototypes, Windsurf as budget Cursor alternative. CTO complaint quoted: 'I just wish people would stop pinging me on PRs they obviously haven't even read themselves, expecting me to review 1,000 lines of completely new vibe-coded feature that isn't even passing CI.'",
+            "comment_sentiment": "mixed",
+            "engagement": {},
+            "tools": [
+              "Cursor",
+              "Claude Code",
+              "Lovable",
+              "Bolt",
+              "Windsurf"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Code quality",
+                "Productivity",
+                "Team dynamics"
+              ],
+              "evidence": "Aggregated anecdote",
+              "author": "Practitioner"
+            }
+          }
+        ],
+        "hacker_news": [
+          {
+            "url": "https://news.ycombinator.com/item?id=47878905",
+            "retrieved": "2026-04-27",
+            "type": "Story",
+            "title": "An update on recent Claude Code quality reports",
+            "points_comments": "Active discussion (~Apr 26–27, '18 hours ago' at retrieval)",
+            "discussion_themes": "Practitioners reacting to Anthropic's Apr 23 postmortem. Heavy debate on session management and system prompt changes; mix of relief that root causes were identified and frustration about the two-month delay in attribution. Trust impact discussed.",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Code quality",
+                "Trust",
+                "Incidents"
+              ],
+              "evidence": "Postmortem discussion",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47660925",
+            "retrieved": "2026-04-27",
+            "type": "Story",
+            "title": "Issue: Claude Code is unusable for complex engineering tasks with Feb updates",
+            "points_comments": "Active thread (~April 2026, ongoing)",
+            "discussion_themes": "Practitioners reporting Claude Code regressions from February/March 2026 updates. Subsequently traced by Anthropic to three separate harness changes (default reasoning effort change Mar 4, idle-session thinking-clear bug fixed Apr 10, system prompt verbosity reduction added Apr 16 reverted Apr 20).",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Code quality",
+                "Trust",
+                "Productivity"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47844269",
+            "retrieved": "2026-04-27",
+            "type": "Tell HN",
+            "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
+            "points_comments": "Active discussion in window",
+            "discussion_themes": "Practitioner debate on Anthropic's reversal of the third-party harness ban. Mix of relief and lingering distrust given the cost-shift implications.",
+            "tools": [
+              "Claude Code",
+              "OpenClaw"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Pricing/Cost",
+                "Trust",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47626833",
+            "retrieved": "2026-04-27",
+            "type": "Ask HN",
+            "title": "What are you moving on to now that Claude Code is so rate limited?",
+            "points_comments": "Heavy in-window discussion (thread continued through window)",
+            "discussion_themes": "Practitioners discussing migration paths off Claude Code due to rate limits — Cursor 3, Codex, GLM-5, T3 Code mentioned. Reflects broader 'tokenocalypse' anxiety.",
+            "tools": [
+              "Claude Code",
+              "Cursor",
+              "Codex",
+              "T3 Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Productivity",
+                "Dependency/Resilience"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47750069",
+            "retrieved": "2026-04-27",
+            "type": "Ask HN",
+            "title": "Is Codex really on Par with Claude Code?",
+            "points_comments": "Active comparison thread (in-window discussion)",
+            "discussion_themes": "Practitioner-led comparison of Codex agentic features vs Claude Code in light of Cursor 3 launch and OpenAI's plugin landing inside Claude Code. Reflects the convergence-into-one-stack narrative.",
+            "tools": [
+              "Claude Code",
+              "Codex",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47855293",
+            "retrieved": "2026-04-27",
+            "type": "Story",
+            "title": "SpaceX says it has agreement to acquire Cursor for $60B",
+            "points_comments": "High-engagement thread (~Apr 26, in window)",
+            "discussion_themes": "Practitioner reaction to SpaceX/xAI–Cursor reported acquisition combining xAI compute with Cursor's coding agents. Sharply divided reception — debate on valuation and strategic fit.",
+            "tools": [
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Hype vs Reality",
+                "Pricing/Cost"
+              ],
+              "evidence": "Reportage",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://news.ycombinator.com/item?id=47797632",
+            "retrieved": "2026-04-27",
+            "type": "Ask HN",
+            "title": "How do you maintain flow when vibe coding?",
+            "points_comments": "In-window thread (~Apr 20)",
+            "discussion_themes": "Practitioner workflow strategies for staying organized while vibe coding — context management, review cadence, personal QA gates.",
+            "tools": [
+              "General AI",
+              "Cursor",
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Nuanced",
+              "topic": [
+                "Productivity",
+                "Burnout",
+                "Code quality"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          }
+        ],
+        "blogs_publications": [
+          {
+            "url": "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
+            "retrieved": "2026-04-27",
+            "source": "Simon Willison's Weblog",
+            "title": "Is Claude Code going to cost $100/month? Probably not — it's all very confusing",
+            "author": "Simon Willison",
+            "author_type": "Practitioner",
+            "date": "2026-04-22",
+            "key_claims": "Anthropic quietly updated their pricing page to make Claude Code exclusive to $100/month or $200/month Max plans, removing it from the $20/month Pro plan, then appeared to reverse course. Anthropic's Head of Growth subsequently posted on X that the change was a test on 2% of new signups.",
+            "evidence_type": "Reportage / opinion",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Trust",
+                "Hype vs Reality"
+              ],
+              "evidence": "Opinion",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/",
+            "retrieved": "2026-04-27",
+            "source": "Simon Willison's Weblog",
+            "title": "An update on recent Claude Code quality reports",
+            "author": "Simon Willison",
+            "author_type": "Practitioner",
+            "date": "2026-04-24",
+            "key_claims": "Willison's analysis of Anthropic's Apr 23 postmortem. Notes the high volume of complaints over the past two months had real, attributable causes — three separate harness-layer issues, not the underlying models. Highlights the Mar 26 idle-session thinking-clear bug.",
+            "evidence_type": "Postmortem analysis",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Code quality",
+                "Incidents",
+                "Trust"
+              ],
+              "evidence": "Opinion",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+            "retrieved": "2026-04-27",
+            "source": "Anthropic Engineering",
+            "title": "An update on recent Claude Code quality reports",
+            "author": "Anthropic Engineering",
+            "author_type": "Vendor",
+            "date": "2026-04-23",
+            "key_claims": "Anthropic traced reports of Claude Code quality issues to three separate harness-layer changes. (1) Default reasoning effort change from high to medium on Mar 4. (2) Bug clearing Claude's older thinking from idle sessions every turn instead of once — fixed Apr 10. (3) System prompt instruction added Apr 16 to reduce verbosity hurt coding quality and was reverted Apr 20. All issues resolved as of Apr 20.",
+            "evidence_type": "Postmortem",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Code quality",
+                "Incidents",
+                "Trust"
+              ],
+              "evidence": "Postmortem",
+              "author": "Vendor"
+            }
+          },
+          {
+            "url": "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
+            "retrieved": "2026-04-27",
+            "source": "The Register",
+            "title": "Anthropic tests reaction to yanking Claude Code from Pro",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-04-22",
+            "key_claims": "Coverage of Anthropic quietly removing Claude Code from the $20 Pro plan with no email, announcement, or changelog, then reversing within hours after Anthropic's Head of Growth posted on X that it was a test on 2% of new signups.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Trust"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/",
+            "retrieved": "2026-04-27",
+            "source": "The Register",
+            "title": "Microsoft's GitHub suspends Copilot account sign-ups",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-04-20",
+            "key_claims": "GitHub paused signups for Copilot Pro, Pro+, and Student plans effective Apr 20 to serve existing customers. Cited 'agentic workflows have fundamentally changed Copilot's compute demands' with long-running parallelized sessions consuming far more resources than the original plan structure was built to support.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Copilot"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Dependency/Resilience"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenewstack.io/github-copilot-signups-paused/",
+            "retrieved": "2026-04-27",
+            "source": "The New Stack",
+            "title": "GitHub pauses Copilot sign-ups as AI coding drives up compute demand",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window coverage of Apr 20)",
+            "key_claims": "GitHub announced it is pausing new sign-ups for Copilot individual plans and tightening usage limits. The move signals growing strain behind one of the most widely used AI coding tools and reflects an industry-wide compute-economics inflection point.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Copilot"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Dependency/Resilience"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenextweb.com/news/github-copilot-signup-pause-agentic-ai-usage-limits",
+            "retrieved": "2026-04-27",
+            "source": "The Next Web",
+            "title": "GitHub freezes new Copilot sign-ups as agentic AI breaks the economics",
+            "author": "TNW staff",
+            "author_type": "Analyst",
+            "date": "2026-04",
+            "key_claims": "Same Apr 20 GitHub event framed as agentic-AI economics 'breaking' the original Copilot subscription model. Notes a handful of agentic requests can incur costs that exceed the plan price.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Copilot"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://dataconomy.com/2026/04/21/github-pauses-copilot-pro-sign-ups-over-rising-compute-costs/",
+            "retrieved": "2026-04-27",
+            "source": "Dataconomy",
+            "title": "GitHub Pauses Copilot Pro Sign-ups Over Rising Compute Costs",
+            "author": "Dataconomy staff",
+            "author_type": "Analyst",
+            "date": "2026-04-21",
+            "key_claims": "Confirms session and weekly token limit tightening. Pro+ at $39/month offering more than 5x the limits of $10/month Pro. Anthropic Opus 4.5/4.6 models removed from Pro+ subscriptions. No timeline for resuming new subscriptions.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Copilot",
+              "Claude"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/",
+            "retrieved": "2026-04-27",
+            "source": "GitHub Blog",
+            "title": "Changes to GitHub Copilot Individual plans",
+            "author": "GitHub Product",
+            "author_type": "Vendor",
+            "date": "2026-04 (in-window vendor announcement)",
+            "key_claims": "Vendor first-party announcement covering the signup pause and usage-limit tightening. Frames decision as protecting existing-customer experience while compute costs of agentic workflows are reassessed.",
+            "evidence_type": "Vendor announcement",
+            "tools": [
+              "Copilot"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Pricing/Cost",
+                "Trust"
+              ],
+              "evidence": "Opinion",
+              "author": "Vendor"
+            }
+          },
+          {
+            "url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+            "retrieved": "2026-04-27",
+            "source": "The Hacker News",
+            "title": "Anthropic MCP Design Vulnerability Enables RCE, Threatening AI Supply Chain",
+            "author": "The Hacker News staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (mid-month, continuing into window)",
+            "key_claims": "Critical 'by design' weakness in MCP architecture enables RCE. Anthropic's STDIO interface across all language implementations gives direct configuration-to-command execution. Affects 7,000+ publicly accessible servers and 150 million+ downloads. Anthropic confirmed behavior is by design.",
+            "evidence_type": "Vulnerability disclosure",
+            "tools": [
+              "MCP",
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Incidents",
+                "Trust",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Incident",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/",
+            "retrieved": "2026-04-27",
+            "source": "TechTalks",
+            "title": "Anthropic's MCP vulnerability: When 'expected behavior' becomes a supply chain nightmare",
+            "author": "Ben Dickson",
+            "author_type": "Analyst",
+            "date": "2026-04-20",
+            "key_claims": "Argues that classifying STDIO RCE as 'expected' shifts liability onto downstream developers and creates a systemic supply-chain risk. References related CVEs: CVE-2025-49596 (MCP Inspector), CVE-2026-22252 (LibreChat), CVE-2026-22688 (WeKnora), CVE-2025-54994, CVE-2025-54136 (Cursor).",
+            "evidence_type": "Analysis",
+            "tools": [
+              "MCP"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Incidents",
+                "Architectural Philosophy",
+                "Trust"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27",
+            "retrieved": "2026-04-27",
+            "source": "Business Today",
+            "title": "\"It took 9 seconds\": AI agent running on Anthropic's Claude Opus 4.6 wipes critical database",
+            "author": "Business Today staff",
+            "author_type": "Analyst",
+            "date": "2026-04-27",
+            "key_claims": "An AI coding agent using the Cursor editor, powered by Claude Opus 4.6, automatically executed a destructive command via an API call and deleted an entire production dataset and associated backups in approximately 9 seconds. Data was eventually recovered.",
+            "evidence_type": "Incident report",
+            "tools": [
+              "Claude",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Incidents",
+                "Trust",
+                "Dependency/Resilience"
+              ],
+              "evidence": "Incident",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production",
+            "retrieved": "2026-04-27",
+            "source": "TianPan.co",
+            "title": "The Data Rollback Problem: Undoing What Your AI Agent Wrote to Production",
+            "author": "Tian Pan",
+            "author_type": "Practitioner",
+            "date": "2026-04-20",
+            "key_claims": "Practitioner essay on the operational pattern emerging from autonomous-agent production incidents. Argues data rollback design must become a first-class concern when granting agents production write access. Discusses transactional isolation, append-only audit trails, approval-gating.",
+            "evidence_type": "Opinion / pattern essay",
+            "tools": [
+              "General AI",
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy",
+                "Dependency/Resilience",
+                "Incidents"
+              ],
+              "evidence": "Opinion",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/",
+            "retrieved": "2026-04-27",
+            "source": "Progressive Robot",
+            "title": "Why AI-Generated Code Fails: 7 Smart Fixes That Work",
+            "author": "Progressive Robot staff",
+            "author_type": "Analyst",
+            "date": "2026-04-25",
+            "key_claims": "Maintainability risk shows as duplicated helpers, awkward abstractions, logic that does not match codebase architecture. Cites code churn (rewritten/deleted within two weeks) doubling. Frames 2026 as a 'reset year' moving away from vibe coding toward tools that embed guardrails.",
+            "evidence_type": "Opinion / synthesis",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Code quality",
+                "Architectural Philosophy",
+                "Hype vs Reality"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://nickyreinert.de/en/2026/2026-04-24-claude-critics/",
+            "retrieved": "2026-04-27",
+            "source": "Nicky Reinert blog",
+            "title": "Why I Cancelled Claude: Token Issues, Declining Quality, and Poor Support",
+            "author": "Nicky Reinert",
+            "author_type": "Practitioner",
+            "date": "2026-04-24",
+            "key_claims": "Practitioner cancellation post detailing token-cache regressions, declining output quality on coding tasks, and unresponsive support over the March–April window. Representative of the 'tokenocalypse' practitioner exit narrative.",
+            "evidence_type": "Anecdote / opinion",
+            "tools": [
+              "Claude",
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Code quality",
+                "Trust"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/",
+            "retrieved": "2026-04-27",
+            "source": "humai.blog",
+            "title": "Uber Burned Its Entire 2026 AI Budget in Four Months. Claude Code Did It.",
+            "author": "humai staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window)",
+            "key_claims": "Reports Uber's CTO stating the company's full-year AI budget was already exhausted by April 2026, driven by explosive Claude Code adoption. Frames as enterprise FinOps governance failure: lack of usage caps, lack of centralized procurement, lack of real-time cost monitoring.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Pricing/Cost",
+                "Productivity",
+                "Hype vs Reality"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed",
+            "retrieved": "2026-04-27",
+            "source": "The Next Web",
+            "title": "Lovable security crisis: 48 days of exposed projects, closed bug reports, & the structural failure of vibe coding security",
+            "author": "TNW staff",
+            "author_type": "Analyst",
+            "date": "2026-04-20 (disclosure published)",
+            "key_claims": "Security researcher disclosed broken object-level authorization in Lovable's API allowing anyone with a free account to access another user's profile, source code, database credentials in as few as five API calls. Lovable ($6.6B valuation, eight million users) faced multiple incidents.",
+            "evidence_type": "Incident report",
+            "tools": [
+              "Lovable",
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Code quality",
+                "Incidents",
+                "Trust"
+              ],
+              "evidence": "Incident",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/projectdiscoverys-2026-ai-coding-impact-report-reveals-ai-generated-code-is-outpacing-security-teams-ability-to-keep-up-302749706.html",
+            "retrieved": "2026-04-27",
+            "source": "ProjectDiscovery / PR Newswire",
+            "title": "ProjectDiscovery's 2026 AI Coding Impact Report Reveals AI-Generated Code Is Outpacing Security Teams' Ability to Keep Up",
+            "author": "ProjectDiscovery",
+            "author_type": "Researcher (Vendor-affiliated)",
+            "date": "2026-04-22",
+            "key_claims": "First-of-its-kind study examining how the rapid rise of AI-assisted coding is affecting cybersecurity professionals. Quantifies generation-vs-review pace gap.",
+            "evidence_type": "Survey / study",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Code quality",
+                "Trust",
+                "Burnout"
+              ],
+              "evidence": "Survey",
+              "author": "Researcher (Vendor-affiliated)"
+            }
+          },
+          {
+            "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/",
+            "retrieved": "2026-04-27",
+            "source": "Cloud Security Alliance",
+            "title": "Vibe Coding's Security Debt: The AI-Generated CVE Surge",
+            "author": "CSA Research",
+            "author_type": "Researcher",
+            "date": "2026-04 (in-window)",
+            "key_claims": "Quantifies AI-generated-code CVE surge: 35 CVEs in March 2026 alone (Georgia Tech Vibe Security Radar), with researchers estimating true count is 5–10x higher. Cites CVE-2025-53773 (Copilot prompt injection enabling RCE, CVSS 9.6).",
+            "evidence_type": "Research note",
+            "tools": [
+              "General AI",
+              "Copilot",
+              "MCP"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Incidents",
+                "Code quality",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Study",
+              "author": "Researcher"
+            }
+          },
+          {
+            "url": "https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know",
+            "retrieved": "2026-04-27",
+            "source": "VentureBeat",
+            "title": "We tested Anthropic's redesigned Claude Code desktop app and 'Routines' — here's what enterprises should know",
+            "author": "VentureBeat staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (Apr 14 launch with continuing in-window coverage)",
+            "key_claims": "Apr 14, 2026 — Anthropic released a complete redesign of Claude Code desktop app for Mac and Windows and launched 'Routines' in research preview. Enterprise testing notes on workflow stability and audit trails.",
+            "evidence_type": "Hands-on review",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://venturebeat.com/orchestration/claude-code-2-1-0-arrives-with-smoother-workflows-and-smarter-agents",
+            "retrieved": "2026-04-27",
+            "source": "VentureBeat",
+            "title": "Claude Code 2.1.0 arrives with smoother workflows and smarter agents",
+            "author": "VentureBeat staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window)",
+            "key_claims": "Anthropic shipped from v2.1.69 to v2.1.101 in five weeks (Mar–Apr) — the most intensive iteration cycle ever. Notable: full rollout of Opus 4.6 1M context, new flicker-free rendering engine, interactive learning system, enterprise-grade security sandbox.",
+            "evidence_type": "Release coverage",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Positive",
+              "topic": [
+                "Productivity",
+                "Code quality"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://venturebeat.com/ai/github-leads-the-enterprise-claude-leads-the-pack-cursors-speed-cant-close",
+            "retrieved": "2026-04-27",
+            "source": "VentureBeat",
+            "title": "GitHub leads the enterprise, Claude leads the pack — Cursor's speed can't close",
+            "author": "VentureBeat staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window market analysis)",
+            "key_claims": "Market positioning analysis: GitHub Copilot dominates large enterprises, Claude Code leads in 'most-loved' practitioner ratings (46%) and is 75% adopted at smallest businesses. Cursor's velocity narrative not sufficient to close gap on either flank.",
+            "evidence_type": "Market analysis",
+            "tools": [
+              "Copilot",
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Hype vs Reality"
+              ],
+              "evidence": "Survey",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-code-codeconcise-experiment",
+            "retrieved": "2026-04-27",
+            "source": "Thoughtworks Insights Blog",
+            "title": "Claude Code saved us 97% of the work on the first try. Then it failed utterly.",
+            "author": "Thoughtworks engineering",
+            "author_type": "Practitioner",
+            "date": "2026-04 (in-window republication)",
+            "key_claims": "Practitioner experiment report: Claude Code accelerated initial scaffolding but collapsed on subsequent passes when the agent had to maintain context across the full codebase. Concludes maintainability gain only realized when humans curate AI output.",
+            "evidence_type": "Experiment report",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Code quality",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://siliconangle.com/2026/04/02/cursor-refreshes-vibe-coding-platform-focus-ai-agents/",
+            "retrieved": "2026-04-27",
+            "source": "SiliconANGLE",
+            "title": "Cursor refreshes its vibe coding platform with focus on AI agents",
+            "author": "SiliconANGLE staff",
+            "author_type": "Analyst",
+            "date": "2026-04-02 (continuing in-window discussion)",
+            "key_claims": "Coverage of Cursor 3 launch Apr 2 — agent-first interface, Composer 2 model (61.3 CursorBench, 200+ tokens/sec), parallel agent execution, multi-workspace design. Subsequent in-window community reception sharply divided.",
+            "evidence_type": "Vendor coverage",
+            "tools": [
+              "Cursor",
+              "Composer 2"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy",
+                "Productivity"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+            "retrieved": "2026-04-27",
+            "source": "InfoQ",
+            "title": "Cursor 3 Introduces Agent-First Interface, Moving beyond the IDE Model",
+            "author": "InfoQ staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window coverage)",
+            "key_claims": "Engineering-press analysis of Cursor 3's architectural shift away from IDE-first identity. Frames the change as forcing the question 'are agents using IDEs, or are IDEs using agents?'",
+            "evidence_type": "Analysis",
+            "tools": [
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/",
+            "retrieved": "2026-04-27",
+            "source": "Open Source For You",
+            "title": "Linux Open Source Greenlights AI Code With Human Liability Rules",
+            "author": "OSFY staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window policy)",
+            "key_claims": "Linux kernel formally allowed AI-assisted code submissions with mandatory 'Assisted-by' disclosure tag while keeping full legal and technical accountability with human developers. AI-generated code may not carry Signed-off-by.",
+            "evidence_type": "Policy report",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy",
+                "Trust",
+                "Code quality"
+              ],
+              "evidence": "Survey",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/",
+            "retrieved": "2026-04-27",
+            "source": "Microsoft Open Source Blog",
+            "title": "Introducing the Agent Governance Toolkit: Open-source runtime security for AI agents",
+            "author": "Microsoft Open Source",
+            "author_type": "Vendor",
+            "date": "2026-04-02 (continuing in-window)",
+            "key_claims": "Microsoft released the Agent Governance Toolkit under MIT license to bring runtime security governance to autonomous AI agents. Available in Python, TypeScript, Rust, Go, .NET. Direct response to Replit, Kiro, Claude Opus 4.6 incidents.",
+            "evidence_type": "Vendor announcement",
+            "tools": [
+              "General AI",
+              "MCP"
+            ],
+            "tags": {
+              "sentiment": "Positive",
+              "topic": [
+                "Architectural Philosophy",
+                "Trust",
+                "Dependency/Resilience"
+              ],
+              "evidence": "Opinion",
+              "author": "Vendor"
+            }
+          },
+          {
+            "url": "https://thenewstack.io/ai-coding-tool-stack/",
+            "retrieved": "2026-04-27",
+            "source": "The New Stack",
+            "title": "Cursor, Claude Code, and Codex are merging into one AI coding stack nobody planned",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window)",
+            "key_claims": "First week of April: Cursor shipped a rebuilt parallel-agent interface, OpenAI published an official plugin running inside Claude Code, and early adopters started running all three together. Frames the convergence as unintentional.",
+            "evidence_type": "Analysis",
+            "tools": [
+              "Cursor",
+              "Claude Code",
+              "Codex"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy",
+                "Productivity"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenewstack.io/spacex-cursor-ai-deal/",
+            "retrieved": "2026-04-27",
+            "source": "The New Stack",
+            "title": "The SpaceX-Cursor deal is a gutsy Hail Mary that could work",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04-22+ (in-window)",
+            "key_claims": "Coverage of the SpaceX/xAI–Cursor deal announced Apr 22, combining xAI compute with developer tools. Argues the move is a strategic compute-cost play to undercut Anthropic and OpenAI hosted-model economics for coding.",
+            "evidence_type": "Analysis",
+            "tools": [
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Pricing/Cost",
+                "Hype vs Reality"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.scientificamerican.com/article/anthropic-leak-reveals-claude-code-tracking-user-frustration-and-raises-new/",
+            "retrieved": "2026-04-27",
+            "source": "Scientific American",
+            "title": "Anthropic leak reveals Claude Code tracking user frustration and raises new questions about AI privacy",
+            "author": "Scientific American staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window)",
+            "key_claims": "Mainstream-press coverage of the Apr leaked Claude Code source code revealing internal 'frustration regexes' that detect when a user is frustrated. Raises practitioner privacy and trust questions about telemetry on coding sessions.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Trust",
+                "Architectural Philosophy"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.cnbc.com/2026/04/17/ai-tokens-anthropic-openai-nvidia.html",
+            "retrieved": "2026-04-27",
+            "source": "CNBC",
+            "title": "Perspective: AI demand is inflated, and only Anthropic is being realistic",
+            "author": "CNBC staff",
+            "author_type": "Analyst",
+            "date": "2026-04-17 (continuing in-window)",
+            "key_claims": "Mainstream business-press perspective arguing AI demand projections are inflated industry-wide and Anthropic's recent moves (Pro test, OpenClaw ban, rate-limit tightening) are economically rational signals about real token-cost realities.",
+            "evidence_type": "Opinion",
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Pricing/Cost",
+                "Hype vs Reality"
+              ],
+              "evidence": "Opinion",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+            "retrieved": "2026-04-27",
+            "source": "The Pragmatic Engineer",
+            "title": "AI Tooling for Software Engineers in 2026",
+            "author": "Gergely Orosz",
+            "author_type": "Practitioner",
+            "date": "2026-04-14 (continuing in-window discussion)",
+            "key_claims": "906-engineer survey (Jan 27–Feb 17): 95% use AI tools at least weekly; 75% use AI for at least half their work; 70% use 2–4 AI tools simultaneously. Smaller orgs favor Claude Code (75%); large enterprises default to Copilot. ~30% have hit usage limits.",
+            "evidence_type": "Survey",
+            "tools": [
+              "Claude Code",
+              "Copilot",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Pricing/Cost",
+                "Team dynamics"
+              ],
+              "evidence": "Survey",
+              "author": "Practitioner"
+            }
+          },
+          {
+            "url": "https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey",
+            "retrieved": "2026-04-27",
+            "source": "Digital Applied",
+            "title": "AI Coding Tool Adoption 2026: Developer Survey Results",
+            "author": "Digital Applied",
+            "author_type": "Researcher (Vendor-affiliated)",
+            "date": "2026-Q1 (continuing in-window citation)",
+            "key_claims": "2,847 developers across 320 organizations. Self-reported productivity jumps 34% in first 60 days then flattens. Developers spend 11.4 hrs/week reviewing AI-generated code vs 9.8 hrs writing new code — reversal of 2024 pattern. Claude Code (28%) and Cursor (24%) account for over half of primary-tool selections. PR review time +91% on high-AI-adoption teams.",
+            "evidence_type": "Survey",
+            "tools": [
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Nuanced",
+              "topic": [
+                "Productivity",
+                "Code quality",
+                "Burnout"
+              ],
+              "evidence": "Survey",
+              "author": "Researcher (Vendor-affiliated)"
+            }
+          },
+          {
+            "url": "https://www.solidaitech.com/2026/04/junior-developer-jobs-ai-survival-guide.html",
+            "retrieved": "2026-04-27",
+            "source": "SolidAITech",
+            "title": "AI is Erasing Junior Coders — How to Survive the 2026 Tech Market",
+            "author": "SolidAITech staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window)",
+            "key_claims": "Entry-level postings down 73% with 200+ applications per job. AI has eliminated boilerplate, test generation, documentation, CRUD scaffolding. Companies want developers who can direct, evaluate, extend AI-generated code; juniors must be 'AI-native'.",
+            "evidence_type": "Synthesis",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Job security",
+                "Hiring",
+                "Junior/Senior devs"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs",
+            "retrieved": "2026-04-27",
+            "source": "CNN Business",
+            "title": "The demise of software engineering jobs has been greatly exaggerated",
+            "author": "CNN Business staff",
+            "author_type": "Analyst",
+            "date": "2026-04-08 (continuing in-window)",
+            "key_claims": "Counter-narrative: IBM tripling US entry-level hiring including software developers; Intuit hiring more early-career developers who 'grew up using AI'. Market bifurcating — companies cutting juniors at one end, companies actively investing in AI-native juniors at the other.",
+            "evidence_type": "Reportage",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Job security",
+                "Hiring",
+                "Junior/Senior devs"
+              ],
+              "evidence": "Survey",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenewstack.io/ai-coding-tools-reckoning/",
+            "retrieved": "2026-04-27",
+            "source": "The New Stack",
+            "title": "\"I started to lose my ability to code\": Developers grapple with the real cost of AI programming tools",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window cognitive-debt coverage)",
+            "key_claims": "First-person practitioner narratives on cognitive debt and skill atrophy. Argues AI reduces production cost but raises coordination/review/decision-making cost — costs that fall entirely on the human. Quotes BCG/UC Riverside 'brain fry' research.",
+            "evidence_type": "Synthesis / interviews",
+            "tools": [
+              "General AI",
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Burnout",
+                "Learning",
+                "Deskilling"
+              ],
+              "evidence": "Anecdote",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/",
+            "retrieved": "2026-04-27",
+            "source": "The New Stack",
+            "title": "How AI coding makes developers 56% faster and 19% slower",
+            "author": "The New Stack staff",
+            "author_type": "Analyst",
+            "date": "2026-04 (in-window analysis)",
+            "key_claims": "Reconciles competing productivity claims: greenfield/prototyping work 56% faster, maintenance work on mature codebases 19% slower. Argues the discrepancy explains the productivity paradox.",
+            "evidence_type": "Analysis",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Nuanced",
+              "topic": [
+                "Productivity",
+                "Hype vs Reality"
+              ],
+              "evidence": "Study",
+              "author": "Analyst"
+            }
+          },
+          {
+            "url": "https://www.theregister.com/2026/01/09/devs_ai_code/",
+            "retrieved": "2026-04-27",
+            "source": "The Register",
+            "title": "Devs doubt AI-written code, but don't always check it",
+            "author": "The Register staff",
+            "author_type": "Analyst",
+            "date": "2026-01 (continuing in-window April Forum 2026-04-13)",
+            "key_claims": "Survey: 96% of developers believe AI-generated code isn't functionally correct, yet only 48% always check before committing. 38% say reviewing AI code requires more effort. April 2026 forum thread includes a developer comment that their job 'turned from doing stuff to cleaning up AI generated crap'.",
+            "evidence_type": "Survey + forum",
+            "tools": [
+              "General AI"
+            ],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": [
+                "Trust",
+                "Code quality",
+                "Productivity"
+              ],
+              "evidence": "Survey",
+              "author": "Analyst"
+            }
+          }
+        ]
+      },
+      "tier1_5": {
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/@Fireship/videos",
+            "retrieved": "2026-04-27",
+            "channel": "Fireship",
+            "title": "(Channel-level — no specific in-window video confirmed)",
+            "key_points": "Cited via comparison articles as endorsing Claude Code's terminal-native approach as 'the future of professional development' and recommending the dual-tool workflow at $40/month combined. No specific Apr 20–27 video confirmed via search; channel index retrieved.",
+            "tools": [
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Positive",
+              "topic": [
+                "Productivity"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            },
+            "manual_priority": "Med"
+          },
+          {
+            "url": "https://www.youtube.com/c/theprimeagen",
+            "retrieved": "2026-04-27",
+            "channel": "ThePrimeagen",
+            "title": "(Channel-level — quotes referenced via comparison articles)",
+            "key_points": "Referenced quotes: praised Claude Code's Vim/Neovim compatibility and SSH support as 'the first AI coding tool that doesn't force me out of my workflow'; called Cursor 'dangerously lazy' while admitting multi-file editing is 'legitimately impressive'. No specific Apr 20–27 video confirmed via search.",
+            "tools": [
+              "Claude Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Code quality"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            },
+            "manual_priority": "High"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=hDn8-fK3XaU",
+            "retrieved": "2026-04-27",
+            "channel": "Theo - t3.gg",
+            "title": "It's finally here. (T3 Code launch)",
+            "key_points": "Theo and Julius launched T3 Code, an open-source desktop GUI for AI agent coding. Theo on Cursor 3: 'a much better UI for the new way of coding'; 'Cursor's main UI has been in a rough state for like a year now'. Borderline window date but actively cited in in-window discourse.",
+            "tools": [
+              "T3 Code",
+              "Cursor"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Architectural Philosophy",
+                "Productivity"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            },
+            "manual_priority": "High"
+          }
+        ],
+        "experimental_social": [
+          {
+            "url": "https://bsky.app/profile/simonwillison.net/post/3m6pmebfass24",
+            "retrieved": "2026-04-27",
+            "platform": "Bluesky",
+            "author": "@simonwillison.net",
+            "author_type": "Practitioner",
+            "content": "Simon Willison's Bluesky post linked to his weblog coverage of the Apr 23 Anthropic Claude Code postmortem and the Apr 22 pricing-confusion story. Direct in-window primary-platform retrieval — Bluesky native URL captured.",
+            "engagement": {},
+            "tools": [
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Trust",
+                "Code quality",
+                "Pricing/Cost"
+              ],
+              "evidence": "Opinion",
+              "author": "Practitioner"
+            },
+            "signal_quality": "High",
+            "tier_promotion": "Promoted to Tier 1 — author is primary-practitioner; content is substantive; tied to two confirmed-in-window weblog posts"
+          },
+          {
+            "url": "https://mastodon.social/@steipete/114670384977805306",
+            "retrieved": "2026-04-27",
+            "platform": "Mastodon",
+            "author": "@steipete (Peter Steinberger)",
+            "author_type": "Practitioner",
+            "content": "Practitioner shared collected Claude Code project & global rules and docs into a public repository. Notable in context: Steinberger is the OpenClaw creator who was temporarily banned by Anthropic on Apr 10 (account reinstated after the post went viral) — signals continued investment in Claude Code despite the dispute.",
+            "engagement": {},
+            "tools": [
+              "Claude Code",
+              "OpenClaw"
+            ],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": [
+                "Productivity",
+                "Trust"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            },
+            "signal_quality": "High",
+            "tier_promotion": "Promoted to Tier 1 — author identity (OpenClaw creator) makes the signal substantive even without verifiable engagement metrics"
+          },
+          {
+            "url": "https://mastodon.social/@simonbs/114657741373445307",
+            "retrieved": "2026-04-27",
+            "platform": "Mastodon",
+            "author": "@simonbs (Simon B. Støvring)",
+            "author_type": "Practitioner",
+            "content": "Practitioner posted a guide for using Claude in Xcode 26's new Coding Assistant by adding Anthropic as a model provider — an integration-pattern signal showing IDE convergence around Claude as a bring-your-own-model coding assistant.",
+            "engagement": {},
+            "tools": [
+              "Claude",
+              "Claude Code"
+            ],
+            "tags": {
+              "sentiment": "Positive",
+              "topic": [
+                "Productivity",
+                "Team dynamics"
+              ],
+              "evidence": "Anecdote",
+              "author": "Practitioner"
+            },
+            "signal_quality": "Med",
+            "tier_promotion": "Ineligible — engagement metrics not visible in retrieval"
+          },
+          {
+            "url": "https://x.com/theo/status/2034780545134256205",
+            "retrieved": "2026-04-27",
+            "platform": "X/Twitter",
+            "author": "@theo (Theo Browne, t3.gg)",
+            "author_type": "Practitioner",
+            "content": "Theo on Cursor 3: 'Fwiw, I think everyone is going to do this now. It's a much better UI for the \"new way of coding\". Cursor's main UI has been in a rough state for like a year now. I really like that they are resetting. Overdue tbh. Also really like that they support ACP, might have T3 Code [support it]'.",
+            "engagement": {},
+            "tools": [
+              "Cursor",
+              "T3 Code"
+            ],
+            "tags": {
+              "sentiment": "Positive",
+              "topic": [
+                "Architectural Philosophy",
+                "Productivity"
+              ],
+              "evidence": "Opinion",
+              "author": "Practitioner"
+            },
+            "signal_quality": "High",
+            "tier_promotion": "Note: X/Twitter is Tier 2 for Claude per config v1.8 — captured here as a high-quality practitioner signal"
+          }
+        ],
+        "internal": []
+      },
+      "tier2": [
+        {
+          "source": "X/Twitter (Tier 2 for Claude)",
+          "url": "https://x.com/theo/status/2034780545134256205",
+          "author_channel": "@theo (Theo Browne)",
+          "author_type": "Practitioner",
+          "topic": "Cursor 3 architecture / Agent-First UI",
+          "snippet": "Practitioner endorsement of Cursor 3 agents UI as 'a much better UI for the new way of coding'. Already captured in experimental_social with full content.",
+          "priority": "High"
+        },
+        {
+          "source": "Podcasts (Tier 2)",
+          "url": "https://syntax.fm/",
+          "author_channel": "Syntax FM (Wes Bos, Scott Tolinski)",
+          "author_type": "Practitioner",
+          "topic": "Chaotic week in dev news (Claude Code source leak, Axios npm supply chain hack, Railway private cache exposure)",
+          "snippet": "In-window Syntax FM episode covered the Claude Code source leak, the Axios npm supply chain hack, and Railway's private cache exposure as a single 'chaotic week' digest. Separate episode discussed making AI coding more reliable using deterministic tools (fallow, knip, ESLint, StyleLint, Sentry).",
+          "priority": "High"
+        },
+        {
+          "source": "Podcasts (Tier 2)",
+          "url": "https://syntax.fm/",
+          "author_channel": "Syntax FM (Wes Bos, Scott Tolinski)",
+          "author_type": "Practitioner",
+          "topic": "State of AI coding 2026 — editors, models, agents, skills, slash commands, MCPs",
+          "snippet": "Episode unpacking what each component of the modern AI coding stack actually does, how they overlap, and how to use them effectively. Practitioner-led 2026 stack overview.",
+          "priority": "High"
+        }
+      ],
+      "tier3_flags": [
+        {
+          "database": "arXiv",
+          "query": "AI coding assistants developer productivity April 2026",
+          "reason": "Academic preprints; manual review required. Brynjolfsson 'canaries in the coal mine' citation continues to surface in popular reporting."
+        },
+        {
+          "database": "arXiv",
+          "query": "Vibe Coding in Practice Flow Technical Debt Sustainable Use (paper 2512.11922)",
+          "reason": "Surfaces in the discourse — manual review of paper PDF for in-window citations recommended."
+        },
+        {
+          "database": "LinkedIn",
+          "query": "CTO 'AI coding' policy enterprise budget",
+          "reason": "Tier 3 Manual per config v1.8. Uber CTO budget-burn story originated outside LinkedIn but executive policy commentary likely active there."
+        },
+        {
+          "database": "Flipboard (@maryflipse3/ai)",
+          "query": "https://flipboard.com/@maryflipse3/ai-jrgbno6hz",
+          "reason": "Tier 3 Manual per config v1.8. Use flipboard-extraction skill via Claude in Chrome for on-demand browser extraction."
+        },
+        {
+          "database": "Margaret Storey (UVic)",
+          "query": "site:margaretstorey.com AI developer tools cognitive debt",
+          "reason": "Continues to be cited in cognitive-debt discourse. Manual check for new April content recommended."
+        },
+        {
+          "database": "Anthropic Engineering Blog",
+          "query": "anthropic.com/engineering postmortem changelog April 2026",
+          "reason": "Apr 23 postmortem captured. Manual check for additional in-window engineering posts recommended."
+        }
+      ],
+      "incidents": [
+        {
+          "incident": "Claude Opus 4.6 + Cursor agent autonomously deleted production dataset and backups in ~9 seconds via API call",
+          "date": "2026-04-27",
+          "source": "Business Today",
+          "url": "https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27",
+          "tools": [
+            "Claude",
+            "Cursor"
+          ],
+          "severity": "Critical",
+          "impact": "Full production dataset and backups deleted; eventually recovered",
+          "damages": "Recovery effort + downtime (specific dollar amount not disclosed)",
+          "postmortem": false
+        },
+        {
+          "incident": "Anthropic MCP STDIO design vulnerability — RCE across MCP supply chain",
+          "date": "2026-04 (consolidated mid-April; coverage continued through window)",
+          "source": "The Hacker News / TechTalks / Computing.co.uk / The Register / OX Security",
+          "url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+          "tools": [
+            "MCP"
+          ],
+          "severity": "Critical",
+          "impact": "7,000+ publicly accessible servers, 150 million+ downloads exposed; arbitrary OS command execution",
+          "damages": "Systemic AI supply-chain risk; CVEs CVE-2025-49596, CVE-2026-22252, CVE-2026-22688, CVE-2025-54994, CVE-2025-54136",
+          "postmortem": false
+        },
+        {
+          "incident": "Lovable broken object-level authorization — 48 days of exposed projects",
+          "date": "2026-04-20",
+          "source": "The Next Web",
+          "url": "https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed",
+          "tools": [
+            "Lovable"
+          ],
+          "severity": "Critical",
+          "impact": "Source code, database credentials, AI chat histories, personal data of thousands of users exposed; 5 API calls sufficient to access another user's profile and credentials",
+          "damages": "Reputational; eight million users affected platform",
+          "postmortem": false
+        },
+        {
+          "incident": "Claude Code quality regressions (Mar–Apr 2026) — three concurrent harness changes degraded coding output",
+          "date": "2026-04-23 (postmortem published)",
+          "source": "Anthropic Engineering",
+          "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "tools": [
+            "Claude Code",
+            "Claude Agent SDK",
+            "Claude Cowork"
+          ],
+          "severity": "Significant",
+          "impact": "Practitioner reports of degraded complex-engineering performance over two months; trust impact across user base",
+          "damages": "No quantified damages; resolved by Apr 20",
+          "postmortem": true
+        },
+        {
+          "incident": "Anthropic Claude Code Pro plan removal — quietly removed and reversed within hours",
+          "date": "2026-04-21 to 2026-04-22",
+          "source": "The Register / Simon Willison",
+          "url": "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
+          "tools": [
+            "Claude Code"
+          ],
+          "severity": "Operational",
+          "impact": "HN thread 400+ comments in 12 hours; mass-cancellation search queries rose ~10x in 48 hours; reversed for 98% of users (2% retained as continuing test)",
+          "damages": "Trust erosion; not quantified",
+          "postmortem": false
+        },
+        {
+          "incident": "GitHub Copilot Pro / Pro+ / Student signup pause due to agentic compute economics",
+          "date": "2026-04-20",
+          "source": "The Register / The New Stack / Dataconomy / TheNextWeb / GitHub Blog",
+          "url": "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/",
+          "tools": [
+            "Copilot"
+          ],
+          "severity": "Significant",
+          "impact": "New signups frozen on Pro, Pro+, Student plans; weekly token limits tightened; Anthropic Opus 4.5/4.6 removed from Pro+",
+          "damages": "Market-access constraint; no timeline for resumption",
+          "postmortem": false
+        },
+        {
+          "incident": "Uber 2026 AI budget exhausted in four months due to Claude Code adoption",
+          "date": "2026-04 (in-window CTO disclosure)",
+          "source": "humai.blog",
+          "url": "https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/",
+          "tools": [
+            "Claude Code"
+          ],
+          "severity": "Operational",
+          "impact": "Full-year AI budget consumed by month four; FinOps governance gap",
+          "damages": "Budget overrun (specific amount not disclosed)",
+          "postmortem": false
+        },
+        {
+          "incident": "Anthropic Claude Code source code leak (referenced in window via Scientific American coverage)",
+          "date": "2026-03-31 (continuing in-window coverage)",
+          "source": "Fortune / Scientific American / Zscaler ThreatLabz",
+          "url": "https://fortune.com/2026/03/31/anthropic-source-code-claude-code-data-leak-second-security-lapse-days-after-accidentally-revealing-mythos/",
+          "tools": [
+            "Claude Code"
+          ],
+          "severity": "Significant",
+          "impact": "~512,000 lines of internal Claude Code source leaked; downstream coverage in window revealed 'frustration regexes' tracking user emotional state",
+          "damages": "Practitioner privacy/trust impact; Anthropic's second security lapse in days",
+          "postmortem": false
+        }
+      ],
+      "emerging_patterns": [
+        {
+          "name": "April 2026 is the inflection week for AI-coding pricing/economics",
+          "description": "Three independent in-window pricing/economics events landed in 48 hours: (1) GitHub Copilot Pro/Pro+/Student signup pause Apr 20 citing agentic compute demand; (2) Anthropic quietly removing Claude Code from $20 Pro plan Apr 21–22 then reversing; (3) Uber CTO disclosure that the company's full-year AI budget was already exhausted by April. Pattern is convergent across vendor-side (compute-cost capacity limits) and customer-side (enterprise budget burn) — both signaling that the flat-rate AI coding subscription era is ending.",
+          "sources": [
+            {
+              "url": "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/",
+              "label": "GitHub Copilot signup pause Apr 20",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
+              "label": "Anthropic Claude Code Pro removal/reversal Apr 22",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/",
+              "label": "Uber 2026 AI budget exhausted by April",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/04/17/ai-tokens-anthropic-openai-nvidia.html",
+              "label": "CNBC perspective: AI demand inflated, Anthropic being realistic",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Claude Code trust hits a multi-front low simultaneous with peak adoption",
+          "description": "Within the seven-day window: Anthropic's own Apr 23 postmortem acknowledges three changes degraded coding output Mar 4 – Apr 20; Apr 21–22 Pro plan removal/reversal; persistent rate-limit / 'tokenocalypse' Reddit narrative reaches mainstream press (Scientific American, Nicky Reinert blog Apr 24). Claude Code authored ~4% of all public GitHub commits in March 2026 per SemiAnalysis. The trust hit therefore lands at peak market-share — a meaningful inflection point.",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+              "label": "Anthropic Apr 23 postmortem",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/",
+              "label": "Simon Willison Apr 24 — postmortem analysis",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://nickyreinert.de/en/2026/2026-04-24-claude-critics/",
+              "label": "Practitioner cancellation post Apr 24",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.scientificamerican.com/article/anthropic-leak-reveals-claude-code-tracking-user-frustration-and-raises-new/",
+              "label": "Frustration regex leak coverage",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Autonomous-agent production destruction is now a tracked recurring pattern",
+          "description": "Within ~10 months: Replit Agent (Jul 2025), Amazon Kiro (Dec 2025), and now Claude Opus 4.6 + Cursor (Apr 27 2026, in-window). The Apr 27 incident triggered architectural-philosophy responses (TianPan rollback essay Apr 20, Microsoft Agent Governance Toolkit Apr 2). The pattern is no longer 'will this happen' but 'how do we contain it' — and the OSS response (Linux 'Assisted-by' tag) explicitly assigns accountability to humans.",
+          "sources": [
+            {
+              "url": "https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27",
+              "label": "Claude Opus 4.6 + Cursor production wipe Apr 27",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production",
+              "label": "Practitioner essay framing rollback as first-class concern",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/",
+              "label": "Microsoft Agent Governance Toolkit",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/",
+              "label": "Linux kernel 'Assisted-by' tag with human liability",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "MCP supply-chain risk maturing from theoretical to disclosed CVE cluster",
+          "description": "April consolidated MCP from 'experimental protocol' into a tracked AI supply-chain risk. Reporting now references a CVE cluster (CVE-2025-49596, CVE-2026-22252, CVE-2026-22688, CVE-2025-54994, CVE-2025-54136) tied to STDIO command-injection class issues. Anthropic's 'by design' response moves liability onto downstream developers.",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+              "label": "MCP design vulnerability — RCE supply chain",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/",
+              "label": "Liability and supply-chain framing",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/",
+              "label": "CSA CVE surge research note",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Cursor / Claude Code / Codex are convergence-merging into one coding stack",
+          "description": "First week of April saw Cursor 3 ship a parallel-agent interface, OpenAI publish an official Codex plugin running inside Claude Code, and early adopters running all three together. The SpaceX–Cursor reported acquisition (Apr 22) compounds the convergence economically. Engineering-press analysis frames this as unintentional but architecturally significant — IDE-first identity is dissolving in favor of agent-orchestration interfaces.",
+          "sources": [
+            {
+              "url": "https://thenewstack.io/ai-coding-tool-stack/",
+              "label": "Cursor / Claude Code / Codex convergence analysis",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+              "label": "Cursor 3 agent-first analysis",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://thenewstack.io/spacex-cursor-ai-deal/",
+              "label": "SpaceX–Cursor deal Apr 22",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://news.ycombinator.com/item?id=47855293",
+              "label": "HN thread on SpaceX–Cursor",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Productivity paradox quantified: AI accelerates greenfield, slows maintenance",
+          "description": "In-window analyses reconcile competing productivity claims: greenfield work is materially faster (~34–56%), maintenance work on mature codebases is materially slower (~19%). Developers spend more time reviewing AI code than writing new code (11.4 vs 9.8 hrs/week). PR review time +91% on high-AI-adoption teams becomes the new bottleneck. Pattern explains why companies see no measurable delivery improvement despite high tool adoption.",
+          "sources": [
+            {
+              "url": "https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/",
+              "label": "Greenfield vs maintenance productivity split",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey",
+              "label": "Q1 2026 survey — review-time dominance",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+              "label": "Pragmatic Engineer 906-engineer survey",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Architecture-and-governance reset narrative consolidating against vibe coding",
+          "description": "In-window publications (Progressive Robot Apr 25, TianPan Apr 20) and adjacent reporting frame 2026 as a 'reset year' away from vibe coding toward tools/policies that embed guardrails. Linux kernel's 'Assisted-by' tag policy and Microsoft's Agent Governance Toolkit are concrete instances. Pattern is consistent across blogger, analyst, and OSS-foundation source types.",
+          "sources": [
+            {
+              "url": "https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/",
+              "label": "Reset-year framing toward architecture-respecting tools",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/",
+              "label": "Linux 'Assisted-by' tag with human liability",
+              "retrieved": "2026-04-27"
+            },
+            {
+              "url": "https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/",
+              "label": "Microsoft Agent Governance Toolkit",
+              "retrieved": "2026-04-27"
+            }
+          ],
+          "confidence": "M"
+        }
+      ],
+      "gaps": {
+        "search_failures": [
+          "Direct site:reddit.com/r/<subreddit> queries returned zero results across all four subreddit attempts — same E1/E2 finding documented in config v1.8. Reddit content was retrieved exclusively through aggregator analyses (morphllm, aitooldiscovery). Recommend Reddit deep dive in an interactive session.",
+          "site:bsky.app and site:mastodon.social queries returned a mix of in-window and older posts; in-window engagement metrics were not visible — limits Tier 1.5 promotion verification.",
+          "X/Twitter Tier 2 yielded only one captured post (Theo on Cursor 3); volume is below what Grok-tier extraction achieves."
+        ],
+        "source_gaps": [
+          "Podcasts (Tier 2): episode-level retrievals limited to Syntax FM topical descriptions; ThePrimeagen, Changelog, CoRecursive episode-level content not retrieved despite in-window publishing activity.",
+          "YouTube (Tier 1.5): ThePrimeagen and Fireship referenced via comparison-article quotes, not direct in-window video retrievals.",
+          "ThoughtWorks Radar: in-window radar update not surfaced separately from existing 'Claude Code 97% then failed' insights blog post."
+        ],
+        "below_threshold": [
+          "Hiring/junior-developer narrative remains active but no in-window primary report at confidence ≥ M was retrieved beyond the SolidAITech and CNN pieces (both already captured)."
+        ],
+        "platform_access_issues": [
+          "Bluesky/Mastodon engagement metrics not exposed via web search — limits formal Tier 1.5 → Tier 1 promotion criteria verification.",
+          "Reddit native search remains broken for subreddit site: syntax — must continue to rely on aggregators or fallback queries."
+        ]
+      },
+      "next_extraction": {
+        "retry_batches": [
+          "Reddit deep dive (interactive session) — r/ClaudeAI Tokenocalypse weekly survival guide thread, r/cursor Cursor 3 reception, r/ExperiencedDevs PR-review-bottleneck threads",
+          "YouTube channel-level scraping for Apr 20–27 videos: ThePrimeagen reactions to Apr 23 postmortem and Apr 21 Pro plan removal, Fireship coverage of GitHub Copilot signup pause and Cursor 3, Theo T3 Code follow-ups",
+          "Podcast manual review — Syntax FM April 2026 episodes, The Changelog #595+, Pragmatic Engineer podcast April"
+        ],
+        "suggested_queries": [
+          "site:reddit.com/r/ClaudeAI Tokenocalypse caveman April 2026",
+          "site:reddit.com/r/cursor 'Cursor 3' reaction agent",
+          "ThePrimeagen 'Pro plan' OR postmortem reaction April 2026",
+          "Fireship GitHub Copilot pause April 2026 video",
+          "site:semianalysis.com Claude Code GitHub commits 4 percent",
+          "Brynjolfsson 'canaries in the coal mine' Q1 2026 followup"
+        ],
+        "manual_followup": [
+          "Flipboard @maryflipse3/ai magazine — run flipboard-extraction skill for the Apr 20–27 window",
+          "LinkedIn — manual browser search for CTO commentary on Uber budget burn and Claude Code Pro plan removal",
+          "arXiv — check for Margaret Storey, BCG/UCR 'brain fry', Brynjolfsson follow-up papers in window",
+          "ThoughtWorks Radar — check for new April 2026 radar volume covering AI coding entries"
+        ]
+      },
+      "deduplication_references": [
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Anthropic Apr 23 postmortem",
+          "canonical_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "suppressed_in": [
+            {
+              "tier": "tier1.hacker_news",
+              "section": "HN thread 47878905 discusses the same postmortem",
+              "note": "HN entry retained as separate item because the practitioner discussion thread is itself substantive primary signal, not a copy of the vendor postmortem"
+            },
+            {
+              "tier": "tier1.blogs_publications",
+              "section": "Simon Willison Apr 24 analysis",
+              "note": "Willison post retained because it is independent practitioner analysis of the postmortem, not a duplicate"
+            }
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "GitHub Copilot signup pause coverage (Apr 20)",
+          "canonical_url": "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/",
+          "suppressed_in": [
+            {
+              "tier": "tier1.blogs_publications",
+              "section": "TheNewStack and TheNextWeb and Dataconomy and GitHub Blog coverage of same event",
+              "note": "Multiple outlet coverage retained because each adds distinct analysis (compute economics framing, vendor-first-party rationale, pricing-tier specifics); not pure duplicates"
+            }
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Anthropic Claude Code Pro plan removal/reversal",
+          "canonical_url": "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
+          "suppressed_in": [
+            {
+              "tier": "tier1.blogs_publications",
+              "section": "The Register Apr 22 same event",
+              "note": "Register coverage retained because it adds the '2% test cohort' detail not in Willison's post"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
