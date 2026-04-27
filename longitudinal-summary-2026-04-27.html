@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Longitudinal Trend Report: 2026-03-20 – 2026-04-27 (Extractions 1 – 7)</title>
+    <title>Longitudinal Trend Report: 2026-03-20 – 2026-04-27 (Extractions 1 – 7, E7 re-run)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -23,49 +23,95 @@ body {
     overflow-x: hidden;
 }
 
-/* Sticky Navigation */
+/* Sticky Navigation — single-row, auto-hide on scroll-down */
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background-color: rgba(13, 17, 23, 0.95);
     border-bottom: 2px solid #5c9eed;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+nav.nav-hidden {
+    transform: translateY(-110%);
 }
 
 nav .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 1rem;
+    padding: 0;
 }
 
 nav h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #5c9eed;
     font-weight: 400;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin: 0;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #30363d transparent;
+}
+
+nav ul::-webkit-scrollbar {
+    height: 4px;
+}
+nav ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+nav ul::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 2px;
+}
+
+nav li {
+    margin: 0;
+    flex-shrink: 0;
 }
 
 nav a {
     color: #8b949e;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
     border-bottom: none;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #5c9eed;
+    background-color: rgba(92, 158, 237, 0.1);
+}
+
+/* Push content below the now-fixed nav */
+body {
+    padding-top: 3rem;
 }
 
 /* Main Container */
@@ -325,84 +371,20 @@ blockquote {
     color: #4fab4f;
 }
 
-/* Watch List priority badges */
-.priority-critical {
-    display: inline-block;
-    padding: 0.15rem 0.55rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(248, 81, 73, 0.25);
-    color: #ff6b6b;
-    font-weight: 600;
-    margin-left: 0.4rem;
-    letter-spacing: 0.05em;
-}
-
-.priority-high {
-    display: inline-block;
-    padding: 0.15rem 0.55rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(240, 168, 50, 0.22);
-    color: #f0a832;
-    font-weight: 600;
-    margin-left: 0.4rem;
-    letter-spacing: 0.05em;
-}
-
-.priority-moderate {
-    display: inline-block;
-    padding: 0.15rem 0.55rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(92, 158, 237, 0.2);
-    color: #5c9eed;
-    font-weight: 600;
-    margin-left: 0.4rem;
-    letter-spacing: 0.05em;
-}
-
-.priority-low {
-    display: inline-block;
-    padding: 0.15rem 0.55rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(139, 148, 158, 0.2);
-    color: #8b949e;
-    font-weight: 600;
-    margin-left: 0.4rem;
-    letter-spacing: 0.05em;
-}
-
-/* "NEW" badge for signals/vocabulary */
-.new-badge {
-    display: inline-block;
-    padding: 0.1rem 0.45rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(76, 175, 125, 0.22);
-    color: #4caf7d;
-    font-weight: 600;
-    margin-left: 0.4rem;
-    letter-spacing: 0.05em;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-    nav ul {
-        gap: 1rem;
+    nav h1 {
+        display: none;
+    }
+    nav a {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.5rem;
     }
     h1 { font-size: 1.75rem; }
     h2 { font-size: 1.5rem; }
     table { font-size: 0.85rem; }
     th, td { padding: 0.5rem; }
     .container { padding: 2rem 1rem; }
-    nav h1 { font-size: 1.1rem; }
 }
 
     </style>
@@ -420,7 +402,7 @@ blockquote {
                 <li><a href="#cross-extraction-contradictions">Contradictions</a></li>
                 <li><a href="#vocabulary-framing-drift">Vocabulary</a></li>
                 <li><a href="#gaps-uncertainties">Gaps</a></li>
-                <li><a href="#watch-list">Watch List</a></li>
+                <li><a href="#watch-list-for-next-extraction-e8-2026-05-04">Watch List</a></li>
                 <li><a href="#longitudinal-report-metadata">Metadata</a></li>
             </ul>
         </div>
@@ -428,16 +410,13 @@ blockquote {
 
     <div class="container">
         <h1>Longitudinal Trend Report: 2026-03-20 – 2026-04-27 (Extractions 1 – 7, E7 re-run)</h1>
-        <p class="subtitle">Extractions 1 – 7 | 39-day discourse analysis through the agent-production-destruction phase + AI-coding pricing inflection</p>
+        <p class="subtitle">Extractions 1 – 7 | 39-day discourse analysis through the autonomous-agent production destruction phase + AI-coding pricing inflection</p>
 
 <section id="executive-summary">
 <h2>Executive Summary</h2>
-<div class="highlight">
-<p>This 39-day, seven-extraction longitudinal study extends the E1–E6 institutionalization arc into <strong>the autonomous-agent production destruction phase plus the AI-coding pricing inflection</strong>. The original E7 extraction (n=15) under-queried per-platform query blocks; the <strong>re-run</strong> brings the corpus to n=58 sentiment-tagged items / n=82 raw across 9 successful batches — a ~4× expansion that materially changes the readout. The original-run executive summary follows below for reference, with re-run findings added in §3 (Sentiment Trajectory), §4 (Cluster Momentum), and §6 (Contradictions).</p> <em>[ANALYSIS: 2026-04-27]</em> resolves several of E6's open questions and surfaces a new, dominant storyline: a <a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Claude Opus 4.6 + Cursor agent that erased a production database and its backups in nine seconds</a> on 2026-04-27, treated by <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">Tian Pan's pre-existing rollback essay</a> (published April 20) and the <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> as the third member of a recurring incident class &mdash; Replit Agent (Jul 2025), Amazon Kiro (Dec 2025, <a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula reference</a>), and now this Claude Opus 4.6 event. <em>[ANALYSIS: 2026-04-27]</em>'s n=15 sample is small, but the convergence is sharp.</p>
-
-<p>Five storylines now run the corpus. <strong>(1) Cognitive debt institutionalization</strong> continues from <em>[ANALYSIS: 2026-04-20]</em> (Thoughtworks Tech Radar v34 + n=52 arXiv RCT) but is <em>silent</em> this window &mdash; almost certainly a sample-size artifact, not a signal collapse. <strong>(2) MCP supply-chain risk</strong> completed its E6→E7 escalation: from "first cluster of disclosures" to a <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">tracked five-CVE cluster</a> (CVE-2025-49596 MCP Inspector, CVE-2026-22252 LibreChat, CVE-2026-22688 WeKnora, CVE-2025-54994 @akoskm/create-mcp-server-stdio, CVE-2025-54136 Cursor) with <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic's "by design" liability framing</a> explicitly contested by <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">Ben Dickson at TechTalks</a> and <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register's 200k-server estimate</a>. <strong>(3) Agent-first UX shipped in <em>[ANALYSIS: 2026-04-20]</em>; in <em>[ANALYSIS: 2026-04-27]</em> it ran into its first major incident</strong> &mdash; the database wipe was <em>enabled</em> by the same agent autonomy the Cursor 3 + Claude Code Routines releases enabled. <strong>(4) The Anthropic trust arc has bifurcated further</strong>: the <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">April 23 Claude Code postmortem</a> &mdash; admitting three concurrent quality regressions across seven weeks (Mar 4 – Apr 20) &mdash; is genuinely well-received as transparency; but <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison's pricing-page-confusion piece</a> and <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai.blog's Uber budget-burn report</a> compound the practitioner-trust story rather than relieving it. <strong>(5) A new "reset year" narrative consolidates</strong>: <a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a>, <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux's "Assisted-by" tag policy</a>, and <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft's Agent Governance Toolkit</a> converge &mdash; across analyst opinion, OSS-foundation policy, and vendor toolkit &mdash; on the same thesis: 2026 is a reset year replacing vibe-coding optimism with guardrails, liability tagging, and runtime governance.</p>
-
-<p><em>[ANALYSIS: 2026-04-20]</em>'s Watch List closed with a high hit rate: MCP STDIO-default response <strong>VALIDATED</strong> ("by design" + liability framing now public); CVE cluster acceleration <strong>EXCEEDED</strong> (five named CVEs vs. expected ≥35 monthly); agent-first UX usage telemetry <strong>NOT VALIDATED</strong> (no vendor metrics published, but the pattern of incident-driven framing is replacing telemetry as the indicator); Vercel / Context.ai downstream disclosures <strong>MUTED</strong> (no new in-window detail). New for <em>[ANALYSIS: 2026-04-27]</em>: autonomous-agent production destruction is itself a signal worth dedicated tracking, and a "rollback / governance toolkit / liability tag" architectural response is forming as the counter-pattern.</p>
+<div class="highlight"><p>This 39-day, seven-extraction longitudinal study extends the E1–E6 institutionalization arc into <strong>the autonomous-agent production destruction phase plus the AI-coding pricing inflection</strong>. The original E7 extraction (n=15) under-queried per-platform query blocks; the <strong>re-run</strong> (n=58 sentiment-tagged items, n=82 raw, all 9 batches successful) materially expands the readout and resolves several of E6's open questions. The dominant headline event remains the <a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Claude Opus 4.6 + Cursor agent that erased a production database and its backups in nine seconds</a> on 2026-04-27 &mdash; third member of a recurring incident class with Replit Agent (Jul 2025) and Amazon Kiro (Dec 2025, <a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula reference</a>). The architectural counter-pattern &mdash; <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">Tian Pan's rollback essay</a> (Apr 20), the <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> (Apr 2), and the <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux "Assisted-by" tag policy</a> &mdash; is forming concurrently. The richer corpus reveals a <em>second</em> defining storyline that the original E7 run missed: <strong>April 20–22 is the AI-coding pricing inflection week</strong>, with three independent vendor- and customer-side events in 48 hours.</p>
+<p>Seven storylines now run the corpus. <strong>(1) Pricing inflection (NEW E7-rerun)</strong>: the <a href="https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/" target="_blank" rel="noopener">GitHub Copilot signup pause Apr 20</a>, the <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank" rel="noopener">Anthropic Claude Code Pro plan removal/reversal Apr 21–22</a> (<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison's pricing-page confusion piece</a>), and the <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai.blog Uber budget burn report</a> converge across vendor and customer sides on the thesis that flat-rate AI coding subscriptions cannot survive the agentic compute era &mdash; the original E7 run missed this entirely due to under-querying. <strong>(2) Cognitive debt institutionalization</strong> continues from <em>[ANALYSIS: 2026-04-20]</em> (Thoughtworks Tech Radar v34 + n=52 arXiv RCT); the re-run recovers some Burnout coverage (4 items vs. 0 in the original) but stays sub-baseline. <strong>(3) MCP supply-chain risk</strong> completed its E6→E7 escalation to a <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">tracked five-CVE cluster</a> (CVE-2025-49596 MCP Inspector, CVE-2026-22252 LibreChat, CVE-2026-22688 WeKnora, CVE-2025-54994 @akoskm/create-mcp-server-stdio, CVE-2025-54136 Cursor) with <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic's "by design" liability framing</a> explicitly contested by <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">Ben Dickson at TechTalks</a> and <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register's 200k-server estimate</a>. <strong>(4) Agent-first UX shipped in <em>[ANALYSIS: 2026-04-20]</em>; in <em>[ANALYSIS: 2026-04-27]</em> it ran into its first major incident</strong> &mdash; the database wipe was <em>enabled</em> by the same agent autonomy the Cursor 3 + Claude Code Routines releases enabled. <strong>(5) The Anthropic trust arc has tri-furcated</strong>: the <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">April 23 Claude Code postmortem</a> (positive) coexists with <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">pricing-page confusion</a> (negative) and <a href="https://www.scientificamerican.com/article/anthropic-leak-reveals-claude-code-tracking-user-frustration-and-raises-new/" target="_blank" rel="noopener">user-frustration regex tracking surfaced via the source leak</a> (negative). <strong>(6) Productivity paradox quantified (NEW E7-rerun)</strong>: <a href="https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/" target="_blank" rel="noopener">The New Stack's "56% faster and 19% slower"</a> plus <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's 906-engineer survey</a> plus <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-code-codeconcise-experiment" target="_blank" rel="noopener">Thoughtworks CodeConcise experiment</a> plus <a href="https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey" target="_blank" rel="noopener">Digital Applied Q1 2026 review-time-dominance survey</a> reconcile the productivity contradiction via task-type segmentation. <strong>(7) A "reset year" narrative consolidates</strong> across analyst, OSS-foundation, and vendor-toolkit segments &mdash; <a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a> + <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux's "Assisted-by"</a> + <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft's Agent Governance Toolkit</a>.</p>
+<p><em>[ANALYSIS: 2026-04-20]</em>'s Watch List closed with a high hit rate: MCP STDIO-default response <strong>VALIDATED</strong> ("by design" + liability framing now public); CVE cluster acceleration <strong>EXCEEDED</strong> (five named CVEs vs. expected ≥35 monthly); agent-first UX usage telemetry <strong>NOT VALIDATED</strong> (no vendor metrics published, but the pattern of incident-driven framing is replacing telemetry as the indicator); Vercel / Context.ai downstream disclosures <strong>MUTED</strong> (no new in-window detail). New for <em>[ANALYSIS: 2026-04-27]</em>: autonomous-agent production destruction is itself a signal worth dedicated tracking, the AI-coding pricing inflection is a new structural finding, and a "rollback / governance toolkit / liability tag" architectural response is forming as the counter-pattern.</p>
 </div>
 <hr>
 </section>
@@ -454,17 +433,16 @@ blockquote {
 <th>E4</th>
 <th>E5</th>
 <th>E6</th>
-<th>E7</th>
+<th>E7-rerun</th>
 <th>Trend</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>Twitter/X (Tier 1)</td><td>18</td><td>22</td><td>8</td><td>16</td><td>19</td><td>3</td><td>0</td><td>Failed capture (X Tier 2 only)</td></tr>
 <tr><td>Reddit</td><td>12</td><td>15</td><td>5</td><td>14</td><td>18</td><td>2</td><td>3</td><td>Partial recovery</td></tr>
-<tr><td>News/Analysis</td><td>10</td><td>8</td><td>4</td><td>8</td><td>10</td><td>31</td><td>6</td><td>Volatile</td></tr>
+<tr><td>News/Analysis + Blogs</td><td>10</td><td>8</td><td>4</td><td>8</td><td>10</td><td>47</td><td>38</td><td>Sustained primary</td></tr>
 <tr><td>Academic/Research</td><td>6</td><td>5</td><td>2</td><td>4</td><td>4</td><td>2</td><td>0</td><td>Stable-low</td></tr>
-<tr><td>Industry Reports</td><td>4</td><td>3</td><td>0</td><td>2</td><td>2</td><td>5</td><td>0</td><td>Volatile</td></tr>
-<tr><td>Blogs/Practitioner</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>16</td><td>6</td><td>Sustained primary</td></tr>
+<tr><td>Industry Reports</td><td>4</td><td>3</td><td>0</td><td>2</td><td>2</td><td>5</td><td>0</td><td>Volatile (1 PR Newswire in window)</td></tr>
 <tr><td>YouTube</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>2</td><td>3</td><td>Channel-level recovery</td></tr>
 <tr><td>Mastodon</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>2</td><td>Sustained Tier 1.5</td></tr>
 <tr><td>Bluesky</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>1</td><td>New Tier 1.5</td></tr>
@@ -473,18 +451,20 @@ blockquote {
 </tbody>
 </table>
 
-<h3>Composition Anomalies (E7)</h3>
+<h3>Composition Anomalies (E7 re-run)</h3>
 <ul>
-<li><strong>Total corpus shrank dramatically (n=15 vs. E6's 61)</strong>: One-week extraction with no successful Tier-2 retrievals. Web-search retrieval returned acute-incident and vendor-postmortem content but minimal practitioner-real-time content.</li>
-<li><strong>X/Twitter capture remains zero</strong>: Same gap as <em>[ANALYSIS: 2026-04-20]</em>; not yet restored.</li>
-<li><strong>Reddit fell to 1 item</strong> (the <a href="https://www.morphllm.com/reddit-vibe-coding" target="_blank" rel="noopener">Morph aggregation</a> of 1,000+ Reddit comments): No primary Reddit thread captured this window; Morph is doing the aggregation work an in-house Reddit deep-dive would normally do.</li>
-<li><strong>News/Analysis fell from 31 → 6</strong>: News-cycle volume dropped because the week was <em>event-driven</em> (single major incident, single major postmortem) rather than disclosure-cluster-driven. This is a real composition difference, not a capture artifact.</li>
-<li><strong>Mastodon emerged as Tier 1.5 surrogate</strong>: Two practitioner items (<a href="https://mastodon.social/@steipete/114670384977805306" target="_blank" rel="noopener">@steipete</a>, <a href="https://mastodon.social/@simonbs/114657741373445307" target="_blank" rel="noopener">@simonbs</a>) compensated partially for the X gap. Engagement metrics not exposed; promotion to Tier 1 not possible.</li>
-<li><strong>Blogs/Practitioner held strong (E7: 6 items)</strong>: Reflects the sustained center-of-gravity shift identified in <em>[ANALYSIS: 2026-04-20]</em>. <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison</a>, <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">Tian Pan</a>, <a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a>, and <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai.blog</a> are all bloggers/practitioners doing analyst-quality framing.</li>
+<li><strong>Re-run brought corpus to n=58 sentiment-tagged / n=82 raw</strong>: ~4× expansion vs. the original E7's n=15. The original under-queried per-platform query blocks; the re-run executes per-platform queries individually.</li>
+<li><strong>X/Twitter Tier 1 capture remains zero</strong>: Same gap as <em>[ANALYSIS: 2026-04-20]</em>; only one X item appears, in Tier 2. Two-window failure now established as a pipeline issue, not a per-extraction artifact.</li>
+<li><strong>Reddit recovered to 3 items</strong>: The <a href="https://www.morphllm.com/reddit-vibe-coding" target="_blank" rel="noopener">Morph aggregation</a> of 1,000+ comments plus two AIToolDiscovery aggregator pieces (<a href="https://www.aitooldiscovery.com/guides/claude-code-reddit" target="_blank" rel="noopener">r/ClaudeAI / r/ClaudeCode</a>, <a href="https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit" target="_blank" rel="noopener">Best AI for Coding aggregator</a>). Primary Reddit thread capture still suppressed but aggregator coverage compensates.</li>
+<li><strong>Hacker News carved out cleanly at 7 items</strong>: Previously folded into News/Analysis; now recognized as its own primary tier. Threads include <a href="https://news.ycombinator.com/item?id=47878905" target="_blank" rel="noopener">HN #47878905 postmortem</a>, <a href="https://news.ycombinator.com/item?id=47660925" target="_blank" rel="noopener">HN #47660925 unusable</a>, <a href="https://news.ycombinator.com/item?id=47626833" target="_blank" rel="noopener">HN #47626833 moving on</a>, <a href="https://news.ycombinator.com/item?id=47750069" target="_blank" rel="noopener">HN #47750069 Codex on par</a>, <a href="https://news.ycombinator.com/item?id=47855293" target="_blank" rel="noopener">HN #47855293 SpaceX/Cursor</a>, <a href="https://news.ycombinator.com/item?id=47797632" target="_blank" rel="noopener">HN #47797632 flow</a>, and <a href="https://news.ycombinator.com/item?id=47844269" target="_blank" rel="noopener">HN #47844269 OpenClaw</a>.</li>
+<li><strong>Blogs/Publications dominant at 38 items</strong>: The center-of-gravity shift identified in <em>[ANALYSIS: 2026-04-20]</em> holds and intensifies. Simon Willison (×2), Anthropic Engineering, The Register (×3), VentureBeat (×3), The New Stack (×4), TechTalks, The Hacker News, etc. &mdash; analyst-quality framing dominates the corpus.</li>
+<li><strong>Mastodon (×2) and Bluesky (×1) sustain Tier 1.5 surrogate role</strong>: Engagement metrics still not exposed; Tier-1 promotion not possible.</li>
+<li><strong>YouTube channel-level recovery (×3)</strong>: <a href="https://www.youtube.com/@Fireship/videos" target="_blank" rel="noopener">Fireship</a>, <a href="https://www.youtube.com/c/theprimeagen" target="_blank" rel="noopener">ThePrimeagen</a>, and <a href="https://www.youtube.com/watch?v=hDn8-fK3XaU" target="_blank" rel="noopener">Theo's T3 Code launch video</a>. Specific in-window videos for Fireship and ThePrimeagen remain unconfirmed.</li>
+<li><strong>Tier 2 podcasts (<a href="https://syntax.fm/" target="_blank" rel="noopener">Syntax.fm</a>) flagged but untagged</strong>: Three Tier-2 untagged items pending manual review.</li>
 </ul>
 
 <h3>Composition Verdict</h3>
-<p><em>[ANALYSIS: 2026-04-27]</em>'s small corpus is a real signal-confidence concern, not a discourse collapse. The week's discourse is <em>concentrated</em> on a small number of high-impact events (database wipe, postmortem, pricing piece, governance toolkit), and the week's coverage is <em>less diffuse</em> than E6's MCP-disclosure-cluster week. For E8, prioritize Tier-1 social capture restoration <em>and</em> a Reddit deep-dive &mdash; the <a href="https://www.morphllm.com/reddit-vibe-coding" target="_blank" rel="noopener">Morph aggregation</a> shows the practitioner discussion is happening; the extraction pipeline is missing it.</p>
+<p>The re-run confirms that the 2026-04-20 → 2026-04-27 week was <em>not</em> a discourse-collapse window &mdash; it was a discourse-concentration window with extraordinary cross-platform signal that the original under-querying missed. Eight in-window incidents (highest per-week density in series) plus a vendor postmortem plus a pricing-policy reversal in the same seven days is a structural finding: <strong>the response loop is now operating at weekly cadence</strong>. For E8, Tier-1 X/Twitter restoration remains the top pipeline priority.</p>
 <hr>
 </section>
 
@@ -516,33 +496,31 @@ blockquote {
 </tbody>
 </table>
 
-<h3>Trajectory Analysis &mdash; Incident-Driven Re-Mix</h3>
-<p>E6→E7 is <strong>not</strong> a continuation of the institutionalization arc &mdash; it is a brief <em>incident-driven re-mix</em> riding on a much smaller sample. Three observations:</p>
+<h3>Trajectory Analysis &mdash; Response-Content Register</h3>
+<p>The E7 re-run reframes the trajectory significantly versus the original n=15 run. Four observations:</p>
 
 <div class="section-card">
-<h4>1. Strongly Negative rebounded 13% → 20% (+7pp)</h4>
-<p>All three Strongly Negative items are acute incidents: the <a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">9-second database wipe</a>, the <a href="https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed" target="_blank" rel="noopener">Lovable BOLA breach</a>, and <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">The Hacker News MCP RCE coverage</a>. This isn't the E2/E5 "pure outrage" pattern; these are <em>documented hard incidents</em> with specific dates and CVE numbers.</p>
+<h4>1. Mixed/Ambivalent at 41% is the highest in the series</h4>
+<p>(up from E6's 10% and the original E7-n=15's 27%). The expanded corpus reveals that <em>response content</em> &mdash; postmortems, governance toolkits, OSS policy pieces, vendor-platform reviews &mdash; dominates the week. This includes the <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">Anthropic April 23 postmortem</a>, <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a>, <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux "Assisted-by" tag</a>, <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan rollback essay</a>, <a href="https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/" target="_blank" rel="noopener">Cursor 3 reviews</a>, Routines coverage, and the <a href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener">The New Stack stack-convergence piece</a>.</p>
 </div>
 
 <div class="section-card">
-<h4>2. Mixed/Ambivalent jumped 10% → 27% (+17pp)</h4>
-<p>The four items in this bucket &mdash; <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">Anthropic April 23 postmortem</a>, <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a>, <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux "Assisted-by" tag</a>, and <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan rollback essay</a> &mdash; are all <em>response</em> content. They acknowledge the problem (mixed register) while constructing solutions (the positive register). This is the "what now?" content the <em>[ANALYSIS: 2026-04-20]</em> register-shift implied would emerge.</p>
+<h4>2. Strongly Negative at 17% is a clean incident-driven channel</h4>
+<p>not the diffuse-rage of E2 (62%). Items carry CVE numbers, dollar damages, or severity ratings: the <a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">9-second database wipe</a>, the <a href="https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed" target="_blank" rel="noopener">Lovable BOLA breach</a>, <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">MCP RCE supply-chain coverage</a>, the <a href="https://www.prnewswire.com/news-releases/projectdiscoverys-2026-ai-coding-impact-report-reveals-ai-generated-code-is-outpacing-security-teams-ability-to-keep-up-302749706.html" target="_blank" rel="noopener">ProjectDiscovery 2026 AI Coding Impact Report</a>, the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA CVE surge research note</a>, and the user-frustration regex tracking surfaced via <a href="https://www.scientificamerican.com/article/anthropic-leak-reveals-claude-code-tracking-user-frustration-and-raises-new/" target="_blank" rel="noopener">Scientific American</a>.</p>
 </div>
 
 <div class="section-card">
-<h4>3. Nuanced/Analytical fell sharply 26% → 7% (−19pp)</h4>
-<p>This is the bucket that carried Thoughtworks, arXiv RCT, Harvard Gazette, and InfoQ in E6. None of those source types appeared in <em>[ANALYSIS: 2026-04-27]</em> &mdash; partly sample-size, partly because the week's discourse was driven by acute events rather than synthetic analysis. The <a href="https://www.morphllm.com/reddit-vibe-coding" target="_blank" rel="noopener">Morph Reddit aggregation</a> is the only Nuanced/Analytical item this run.</p>
+<h4>3. Cautiously Negative at 19% concentrates around pricing</h4>
+<p>the GitHub Copilot signup pause coverage cluster, the Anthropic Pro removal/reversal, <a href="https://nickyreinert.de/en/2026/2026-04-24-claude-critics/" target="_blank" rel="noopener">Nicky Reinert's cancellation post</a>, <a href="https://news.ycombinator.com/item?id=47626833" target="_blank" rel="noopener">HN #47626833</a>, and Reddit aggregator coverage of cost concerns (<a href="https://www.aitooldiscovery.com/guides/claude-code-reddit" target="_blank" rel="noopener">AIToolDiscovery's Claude Code summary</a>).</p>
 </div>
 
-<p><strong>Read together</strong>: incident gravity returns to the center; meta-analytical framing recedes; and the <em>response</em> content (postmortems, toolkits, policies) is now a substantial share of corpus rather than a minority. The institutionalization register from E6 is <em>still there</em> &mdash; it has just shifted from analytical-output mode to response-output mode.</p>
+<div class="section-card">
+<h4>4. Nuanced/Analytical (7%) and Cautiously Positive (9%) are both small but present</h4>
+<p>Practitioner Mastodon investment (<a href="https://mastodon.social/@steipete/114670384977805306" target="_blank" rel="noopener">@steipete</a>, <a href="https://mastodon.social/@simonbs/114657741373445307" target="_blank" rel="noopener">@simonbs</a>), <a href="https://venturebeat.com/orchestration/claude-code-2-1-0-arrives-with-smoother-workflows-and-smarter-agents" target="_blank" rel="noopener">Claude Code 2.1.0 release coverage</a>, and <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> sit in the positive-leaning bucket. <strong>Strongly Positive at 0%</strong> holds for the second consecutive window &mdash; no item this week was unambiguously bullish.</p>
+</div>
 
 <div class="highlight">
-<p><strong>E7 vs. full-series anchor points:</strong></p>
-<ul>
-<li>The E5→E6→E7 Strongly Negative trace (43% → 13% → 20%) is <em>not</em> a clean institutionalization-then-rebound; it is "outrage → analytical → incident-driven." Different driver each time.</li>
-<li>Cautiously Positive has actually risen across E5→E6→E7 (13% → 13% → 20%) &mdash; driven this run by <a href="https://mastodon.social/@steipete/114670384977805306" target="_blank" rel="noopener">@steipete</a>, <a href="https://mastodon.social/@simonbs/114657741373445307" target="_blank" rel="noopener">@simonbs</a>, and <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft's governance toolkit</a> (positive-leaning Mixed). Cautiously Positive ≠ "tool is great"; it is "I am still investing in the work."</li>
-<li>Strongly Positive at 0% is the lowest in the series. No item this week was unambiguously bullish on AI coding tools.</li>
-</ul>
+<p><strong>Read together</strong>: the E5→E6→E7 register progression is "outrage → analytical → response-content." E6's Nuanced/Analytical (Thoughtworks, arXiv RCT, Harvard Gazette) is the <em>cause</em> of E7's Mixed/Ambivalent surge &mdash; analytical framings hardened into operational responses inside seven days.</p>
 </div>
 <hr>
 </section>
@@ -559,7 +537,7 @@ blockquote {
 <th>E4</th>
 <th>E5</th>
 <th>E6</th>
-<th>E7</th>
+<th>E7-rerun</th>
 <th>Trajectory</th>
 <th>Signal Strength</th>
 <th>Momentum</th>
@@ -583,14 +561,14 @@ blockquote {
 </tbody>
 </table>
 
-<h3>Momentum Highlights (E7)</h3>
+<h3>Momentum Highlights (E7 re-run)</h3>
 <ul>
-<li><strong>Trust / Verification holds primacy</strong> (10/15 items): Even at small sample, Trust is the dominant frame and its content has <em>shifted</em> from "is the code correct?" (E5) to "what happens when the agent acts and we can't catch it in time?" (E7). The <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan rollback essay</a> and <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> name this overlap explicitly. Trust is now overlapping heavily with Architectural Philosophy and Dependency / Resilience.</li>
-<li><strong>Architectural Philosophy proportional intensity is up</strong>: 6/15 items vs. 20/61 in E6 &mdash; that is <em>higher</em> per-item intensity (40% of items vs. 33%). The cluster has matured from "what is the right UX framing?" (E6) to "what are the right runtime guarantees?" (E7). <a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan</a>, <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux's "Assisted-by" tag</a>, and <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft governance</a> are operational, not aesthetic.</li>
-<li><strong>Pricing / Cost validates as a recurring cluster, not a one-window blip</strong>: E6 was 13 items; E7 is 2 items but they are concentrated and high-intensity (<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison</a>, <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai/Uber</a>). The <em>[ANALYSIS: 2026-04-20]</em> uncertainty about whether Pricing/Cost was a permanent cluster or a news-cycle blip is now resolved: <strong>it is a permanent cluster</strong>.</li>
-<li><strong>Burnout, Enterprise/Policy, Learning, Review Burden, Deskilling all silent</strong>: All five clusters are zero-mention this run. Reading this as decay would be wrong; the cognitive-debt institutionalization that E6 confirmed will not retreat in seven days. The silence is sample-size driven (no in-window arXiv, no Thoughtworks, no major industry-report drop). Watch E8 for re-emergence at corpus-size 50+.</li>
-<li><strong>Strongly sustained signal across all seven</strong>: <strong>Trust / Verification + Code Quality + Incidents / Failures</strong>, treated as a combined signal, has been the single most-reliable concern register across the entire series. Variants of this cluster have been the largest-tagged cluster in 4 of 7 extractions.</li>
-<li><strong>Architectural Philosophy is the highest-momentum new frame</strong>: Across E4 (2) → E5 (13) → E6 (20) → E7 (6, but proportionally elevated), this cluster has become the <em>dominant frame</em> for any post-incident response. It is the cluster that converts incidents into product/policy responses.</li>
+<li><strong>Productivity Reality is the top cluster (23/58 items, 40%)</strong> &mdash; for the first time in the series. The cluster's <em>content</em> has matured from "are we faster?" (E5) to "faster on what task?" (E7) &mdash; the <a href="https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/" target="_blank" rel="noopener">56% faster greenfield / 19% slower maintenance</a> split plus <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's 906-engineer survey</a> plus <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-code-codeconcise-experiment" target="_blank" rel="noopener">Thoughtworks CodeConcise's "97%-then-fail"</a> plus <a href="https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey" target="_blank" rel="noopener">Digital Applied's 11.4-vs-9.8 hrs/wk review-vs-write split</a> reconcile the long-running productivity contradiction via task-type segmentation.</li>
+<li><strong>Trust / Verification at new high (22/58 items, 38%)</strong>: Tri-furcated discourse (postmortem-transparency / pricing-confusion / production-incident) gives Trust the highest item-share in the series.</li>
+<li><strong>Pricing / Cost confirmed as permanent cluster (17/58 items, 29%)</strong>: E6 was 13 items; E7-rerun is 17. The <em>[ANALYSIS: 2026-04-20]</em> uncertainty about whether Pricing/Cost was a permanent cluster or a news-cycle blip is <strong>resolved</strong>: permanent. The Apr 20–22 inflection week (<a href="https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/" target="_blank" rel="noopener">GitHub Copilot pause</a> + <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank" rel="noopener">Anthropic Pro removal</a> + <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber budget burn</a>) anchors it.</li>
+<li><strong>Architectural Philosophy at structural peak (17/58 items, 29%)</strong>: Governance, liability, and rollback framing has become <em>the</em> primary frame for any post-incident response. The cluster converts incidents into product/policy responses.</li>
+<li><strong>Burnout, Enterprise/Policy, Learning, Review Burden remain partially sample-suppressed</strong>: E7-rerun recovers Burnout (4) and adds 2 Learning/Deskilling &mdash; but Enterprise/Policy and Review Burden are zero. Watch E8 for re-emergence.</li>
+<li><strong>Architectural Philosophy is the highest-momentum new frame across the series</strong>: E4 (2) → E5 (13) → E6 (20) → E7-rerun (17). The trajectory is essentially flat from E6 to E7-rerun in absolute terms but elevated in proportional intensity (29% of items, third-highest cluster).</li>
 </ul>
 <hr>
 </section>
@@ -610,22 +588,22 @@ blockquote {
 </div>
 
 <div class="section-card">
-<h3>2. Junior Pipeline Crisis &mdash; Capture Still Suppressed</h3>
+<h3>2. Junior Pipeline Crisis &mdash; Partial Recovery in Re-Run</h3>
 <ul>
 <li><strong>First Appeared</strong>: E1</li>
-<li><strong>Status E7</strong>: PROVISIONAL (capture-suppressed for second consecutive window)</li>
-<li><strong>Trajectory</strong>: Persistent E1–E5 at 11–16 items; collapsed to 1 in E6, 0 in E7. This is now a two-window capture gap; the underlying labor-market story should reassert in E8 if BLS/Indeed monthly data releases align.</li>
-<li><strong>Confidence</strong>: <span class="confidence-high">HIGH</span> for underlying trend, <span class="confidence-low">LOW</span> for E6/E7 specifically</li>
+<li><strong>Status E7</strong>: PROVISIONAL → recovered to 4 items in re-run</li>
+<li><strong>Trajectory</strong>: Persistent E1–E5 at 11–16 items; collapsed to 1 in E6, 0 in original E7. Re-run captures <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's "demise of software engineering jobs has been greatly exaggerated"</a> and <a href="https://www.solidaitech.com/2026/04/junior-developer-jobs-ai-survival-guide.html" target="_blank" rel="noopener">SolidAITech's "AI is Erasing Junior Coders" survival guide</a>.</li>
+<li><strong>Confidence</strong>: <span class="confidence-high">HIGH</span> for underlying trend; signal is mixed-bimodal (total demand resilient, junior tier specifically hollowing out)</li>
 </ul>
 <div class="recommendation"><strong>Recommendation</strong>: Keep on Watch List; consider explicit BLS/Indeed prompt to next extractor.</div>
 </div>
 
 <div class="section-card">
-<h3>3. AI Burnout → Cognitive Debt &mdash; Sample-Silent, Not Decayed</h3>
+<h3>3. AI Burnout → Cognitive Debt &mdash; Recovered, Sub-Baseline</h3>
 <ul>
 <li><strong>First Appeared</strong>: E1 (anecdotal)</li>
-<li><strong>Status E7</strong>: INSTITUTIONALIZED (E6 status holds), sample-silent in E7</li>
-<li><strong>Trajectory</strong>: Through E6 the institutionalization arc completed (Thoughtworks Tech Radar v34 + arXiv RCT + Harvard Gazette). <em>[ANALYSIS: 2026-04-27]</em> has zero in-cluster items, but no contradicting evidence appeared either. The framework is stable; the discourse is on incidents this week.</li>
+<li><strong>Status E7</strong>: INSTITUTIONALIZED (E6 status holds), 4 items in E7-rerun (vs 0 in original)</li>
+<li><strong>Trajectory</strong>: Through E6 the institutionalization arc completed (Thoughtworks Tech Radar v34 + arXiv RCT + Harvard Gazette). E7-rerun has 4 in-cluster items but no contradicting evidence. The framework is stable; the discourse is on incidents and pricing this week.</li>
 <li><strong>Confidence</strong>: <span class="confidence-high">HIGH</span> (E6 institutionalization holds)</li>
 </ul>
 <div class="recommendation"><strong>Recommendation</strong>: De-prioritize on E8 active Watch List; surface only if a <em>counter-framing</em> emerges from a tool vendor.</div>
@@ -680,7 +658,7 @@ blockquote {
 <ul>
 <li><strong>First Appeared</strong>: E4</li>
 <li><strong>Status E7</strong>: CONFIRMED + COST-CONSTRAINED</li>
-<li><strong>Trajectory</strong>: E4 (observation) → E5 (The New Stack framing) → E6 (Pragmatic Engineer 95%/70% survey + documented Chyshkala migration) → <strong>E7 (enterprise-budget pressure layer added via <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber budget burn</a>)</strong>. Multi-tool stacking is now constrained by FinOps governance gaps, not just preference.</li>
+<li><strong>Trajectory</strong>: E4 (observation) → E5 (The New Stack framing) → E6 (Pragmatic Engineer 95%/70% survey + documented Chyshkala migration) → <strong>E7 (enterprise-budget pressure layer added via <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber budget burn</a>)</strong>. Multi-tool stacking is now constrained by FinOps governance gaps, not just preference. The <a href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener">Cursor / Claude Code / Codex stack convergence piece</a> names the unintentional architectural merge.</li>
 <li><strong>Confidence</strong>: <span class="confidence-high">HIGH</span></li>
 </ul>
 <div class="recommendation"><strong>Recommendation</strong>: E8 Watch &mdash; first enterprise to publicly disclose AI-tool spending caps; vendor responses to multi-tool concurrent-session limits.</div>
@@ -709,7 +687,7 @@ blockquote {
 </div>
 
 <div class="section-card">
-<h3>11. Autonomous-Agent Production Destruction <span class="new-badge">NEW E7</span></h3>
+<h3>11. Autonomous-Agent Production Destruction &mdash; NEW SIGNAL (E7)</h3>
 <ul>
 <li><strong>First Appeared</strong>: E7 (incident pattern, 2026-04-27 wipe + earlier Replit/Kiro precedents)</li>
 <li><strong>Status E7</strong>: <strong>NEW, HIGH-CONFIDENCE</strong> signal</li>
@@ -720,7 +698,7 @@ blockquote {
 </div>
 
 <div class="section-card">
-<h3>12. "Reset Year" Narrative <span class="new-badge">NEW E7</span></h3>
+<h3>12. "Reset Year" Narrative &mdash; NEW SIGNAL (E7)</h3>
 <ul>
 <li><strong>First Appeared</strong>: E7</li>
 <li><strong>Status E7</strong>: <strong>EMERGING</strong>, cross-source-segment validated</li>
@@ -750,9 +728,9 @@ blockquote {
 <td>"AI tools improve throughput net of quality"</td>
 <td>CONTESTED</td>
 <td>CONTESTED with new data</td>
-<td>CONTESTED + INCIDENT-WEIGHTED</td>
-<td>Production-destruction events shift the cost side of the ledger up</td>
-<td>Generation up; review-capacity gap widening; production-incident cost now in the ledger</td>
+<td>CONDITIONALLY YES (task-type segmented)</td>
+<td><a href="https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/" target="_blank" rel="noopener">56% faster greenfield / 19% slower maintenance</a> + <a href="https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey" target="_blank" rel="noopener">Digital Applied</a> review-time-dominance + <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-code-codeconcise-experiment" target="_blank" rel="noopener">Thoughtworks 97%-then-fail</a></td>
+<td>Resolved via segmentation; PR review the new bottleneck</td>
 </tr>
 <tr>
 <td>"Agent-first UX is the right direction"</td>
@@ -779,6 +757,14 @@ blockquote {
 <td>Resolved in Anthropic's favor (transparency) but practitioner-trust hit lingers</td>
 </tr>
 <tr>
+<td>"Flat-rate AI coding subscriptions are sustainable"</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td><strong>TRENDING AGAINST</strong> (NEW)</td>
+<td><a href="https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/" target="_blank" rel="noopener">GitHub Copilot pause</a> + <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank" rel="noopener">Anthropic Pro removal/reversal</a> + <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber budget burn</a> &mdash; three vendor- and customer-side events in 48 hours</td>
+<td>Strongly trending against; surfaced cleanly only in re-run</td>
+</tr>
+<tr>
 <td>"Per-engineer AI-usage metrics are valid"</td>
 <td>Emerging</td>
 <td>TRENDING AGAINST</td>
@@ -790,9 +776,9 @@ blockquote {
 <td>"Junior developers are going extinct"</td>
 <td>CONFIRMED</td>
 <td>Capture-suppressed</td>
-<td>Capture-suppressed</td>
-<td>Not addressed in E7</td>
-<td>Confirmed trend, paused reporting</td>
+<td>MIXED-BIMODAL (recovered)</td>
+<td><a href="https://www.solidaitech.com/2026/04/junior-developer-jobs-ai-survival-guide.html" target="_blank" rel="noopener">SolidAITech survival guide</a> vs. <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN 'greatly exaggerated'</a></td>
+<td>Confirmed for junior-tier specifically; not a general-demand collapse</td>
 </tr>
 <tr>
 <td>"Anthropic's safety practices are best-in-class"</td>
@@ -806,7 +792,7 @@ blockquote {
 <td>"Burnout is exaggerated"</td>
 <td>Dominant</td>
 <td>INSTITUTIONALIZED</td>
-<td>Sample-silent</td>
+<td>Sub-baseline (4 items)</td>
 <td>No new evidence; E6 institutionalization holds</td>
 <td>Resolved in E6</td>
 </tr>
@@ -819,10 +805,10 @@ blockquote {
 <td>"Production vibe coding" is the surviving failure-mode label</td>
 </tr>
 <tr>
-<td>"Enterprise AI tool spend is governable" <span class="new-badge">NEW</span></td>
+<td>"Enterprise AI tool spend is governable"</td>
 <td>&mdash;</td>
 <td>&mdash;</td>
-<td><strong>TRENDING AGAINST</strong></td>
+<td><strong>TRENDING AGAINST</strong> (NEW)</td>
 <td><a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai/Uber</a> full-budget burn in four months</td>
 <td>One data point, but absence of counter-narrative is itself a signal</td>
 </tr>
@@ -830,21 +816,23 @@ blockquote {
 </table>
 
 <h3>Resolution Assessment</h3>
-<p>E7 <em>closes</em> several E6-open questions and <em>opens</em> new ones:</p>
+<p>E7 re-run <em>closes</em> several E6-open questions and <em>opens</em> new ones:</p>
 
-<h4>Closed in E7</h4>
+<h4>Closed in E7 re-run</h4>
 <ol>
-<li>Pricing/Cost permanence &mdash; confirmed (continuing in <em>[ANALYSIS: 2026-04-27]</em>).</li>
+<li>Pricing/Cost permanence &mdash; confirmed (17 items in re-run; April 20–22 inflection week structurally surfaced).</li>
 <li>Vibe coding maturity → disrepute &mdash; Lovable is now publicly named as the failure case.</li>
 <li>Anthropic MCP STDIO posture &mdash; explicit ("by design") and contested in market.</li>
 <li>Claude Code regression reality &mdash; vendor-confirmed (postmortem).</li>
+<li>Productivity contradiction &mdash; resolved via task-type segmentation (greenfield vs. maintenance).</li>
 </ol>
 
-<h4>Opened in E7</h4>
+<h4>Opened in E7 re-run</h4>
 <ol>
 <li>Autonomous-agent production destruction &mdash; recurring class confirmed; needs E8 fourth-event observation to determine whether this is incident regime or operational cost.</li>
 <li>"Reset year" cross-segment narrative &mdash; cross-segment agreement is strong but single-window; needs E8 confirmation.</li>
 <li>Enterprise AI-budget governability &mdash; single Uber data point; needs at least one counter-example or one corroborating disclosure.</li>
+<li>Flat-rate AI coding subscription sustainability &mdash; trending against; needs vendor pricing-tier announcement to resolve.</li>
 </ol>
 
 <div class="highlight">
@@ -876,13 +864,14 @@ blockquote {
 <tr><td>"MCPwn"</td><td>E6</td><td>EMERGING</td><td>Stable</td><td>HIGH</td><td>First "branded" CVE; cluster expanded to five named CVEs</td></tr>
 <tr><td>"AI supply chain"</td><td>E6</td><td>EMERGING</td><td><strong>STANDARDIZED</strong></td><td>HIGH</td><td>Now used across <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Hacker News</a>, <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">TechTalks</a>, <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register</a></td></tr>
 <tr><td>"Token waste"</td><td>E6</td><td>EMERGING</td><td>Stable</td><td>MODERATE</td><td>Reinforced in <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai/Uber budget burn</a></td></tr>
-<tr><td>"43% debugging"</td><td>E6</td><td>EMERGING</td><td>Stable</td><td>HIGH</td><td>Anchor stat carried forward</td></tr>
-<tr><td><strong>"Data rollback as first-class concern"</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>EMERGING</td><td>HIGH</td><td><a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan</a> framing, immediate production resonance</td></tr>
-<tr><td><strong>"Assisted-by" tag</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>EMERGING</td><td>HIGH</td><td><a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux kernel policy</a> &mdash; first explicit liability anchor</td></tr>
-<tr><td><strong>"By design" (MCP)</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>STANDARDIZED in vendor critique</td><td>HIGH</td><td>Anthropic's own framing, used pejoratively by <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">TechTalks</a></td></tr>
-<tr><td><strong>"9 seconds"</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>INCIDENT-NAMED</td><td>HIGH</td><td><a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Business Today</a> headline; functions as event-name shorthand</td></tr>
-<tr><td><strong>"Reset year"</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>EMERGING (cross-segment)</td><td>HIGH</td><td><a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a> coinage; cross-validated against <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft governance</a> and <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux "Assisted-by"</a> framings</td></tr>
-<tr><td><strong>"Vampire code"</strong> <span class="new-badge">NEW</span></td><td>E7</td><td>NEW</td><td>LOW</td><td>LOW</td><td><a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a> coinage for AI-generated code that drains maintainability; not yet standardized</td></tr>
+<tr><td>"43% debugging"</td><td>E6</td><td>EMERGING</td><td>Stable</td><td>HIGH</td><td>Anchor stat carried forward; complemented by <a href="https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/" target="_blank" rel="noopener">"56% / 19%"</a> task-type split</td></tr>
+<tr><td><strong>"Data rollback as first-class concern"</strong></td><td>E7</td><td>NEW</td><td>EMERGING</td><td>HIGH</td><td><a href="https://tianpan.co/blog/2026-04-20-ai-agent-data-rollback-production" target="_blank" rel="noopener">TianPan</a> framing, immediate production resonance</td></tr>
+<tr><td><strong>"Assisted-by" tag</strong></td><td>E7</td><td>NEW</td><td>EMERGING</td><td>HIGH</td><td><a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux kernel policy</a> &mdash; first explicit liability anchor</td></tr>
+<tr><td><strong>"By design" (MCP)</strong></td><td>E7</td><td>NEW</td><td>STANDARDIZED in vendor critique</td><td>HIGH</td><td>Anthropic's own framing, used pejoratively by <a href="https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/" target="_blank" rel="noopener">TechTalks</a></td></tr>
+<tr><td><strong>"9 seconds"</strong></td><td>E7</td><td>NEW</td><td>INCIDENT-NAMED</td><td>HIGH</td><td><a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Business Today</a> headline; functions as event-name shorthand</td></tr>
+<tr><td><strong>"Reset year"</strong></td><td>E7</td><td>NEW</td><td>EMERGING (cross-segment)</td><td>HIGH</td><td><a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a> coinage; cross-validated against <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft governance</a> and <a href="https://www.opensourceforu.com/2026/04/linux-open-source-greenlights-ai-code-with-human-liability-rules/" target="_blank" rel="noopener">Linux "Assisted-by"</a> framings</td></tr>
+<tr><td><strong>"Vampire code"</strong></td><td>E7</td><td>NEW</td><td>LOW</td><td>LOW</td><td><a href="https://www.progressiverobot.com/2026/04/25/ai-generated-code-fails-fixes/" target="_blank" rel="noopener">Progressive Robot</a> coinage for AI-generated code that drains maintainability; not yet standardized</td></tr>
+<tr><td><strong>"Pricing inflection week"</strong></td><td>E7-rerun</td><td>NEW</td><td>EMERGING</td><td>HIGH</td><td>Three independent vendor- and customer-side events in 48 hours; surfaced only in re-run</td></tr>
 <tr><td>"AGENTS.md"</td><td>E5</td><td>Low visibility (E6)</td><td>Low (E7)</td><td>LOW</td><td>Sustained low; deprioritize permanently</td></tr>
 </tbody>
 </table>
@@ -897,67 +886,36 @@ blockquote {
 <section id="gaps-uncertainties">
 <h2>Gaps &amp; Uncertainties</h2>
 <ul>
-<li><strong>Sample size n=15 is small</strong>: Trend readings should be confirmed against E8 before drawing aggregate conclusions about E6→E7 cluster shifts.</li>
-<li><strong>Tier-1 social capture continues to fail</strong>: X/Twitter at 0 items for second consecutive window; Bluesky at 0; Reddit at 1. The discourse exists (<a href="https://www.morphllm.com/reddit-vibe-coding" target="_blank" rel="noopener">Morph aggregation</a> confirms this) but the extraction pipeline is missing it.</li>
-<li><strong>No primary YouTube content</strong>: ThePrimeagen, Fireship, and Theo channels likely have content responding to the Claude Opus 4.6 / Anthropic postmortem cluster but cannot be confirmed without channel-level scraping.</li>
-<li><strong>No academic/research/industry-report items in E7</strong>: The E6 institutionalization arc was carried by these source types. E8 Tier-2 retrieval health needs a focused review.</li>
+<li><strong>Original-run undercount drove early misreadings</strong>: The original E7 (n=15) materially understated Pricing/Cost, Productivity, and Trust. Always cross-check single-extraction trend claims against the next window before treating them as structural.</li>
+<li><strong>Tier-1 X/Twitter capture remains zero in re-run</strong>: Two-window failure now established as a pipeline issue. Mastodon (×2) and Bluesky (×1) compensate partially via Tier 1.5; if X capture fails again in E8, consider a Tier-1 → Tier-1.5 demotion.</li>
+<li><strong>YouTube channel-level only</strong>: <a href="https://www.youtube.com/@Fireship/videos" target="_blank" rel="noopener">Fireship</a>, <a href="https://www.youtube.com/c/theprimeagen" target="_blank" rel="noopener">ThePrimeagen</a>, and <a href="https://www.youtube.com/watch?v=hDn8-fK3XaU" target="_blank" rel="noopener">Theo's T3 Code launch</a> confirmed; specific in-window videos for Fireship and ThePrimeagen unconfirmed.</li>
+<li><strong>Tier 2 podcasts (<a href="https://syntax.fm/" target="_blank" rel="noopener">Syntax.fm</a>) flagged but not transcribed in-window</strong>: Three Tier-2 untagged items pending manual review.</li>
+<li><strong>Single-source incidents</strong>: Lovable BOLA disclosure (<a href="https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed" target="_blank" rel="noopener">The Next Web</a>) and the 9-second wipe (<a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Business Today</a>) still single-source; multi-source corroboration sought in E8.</li>
+<li><strong>Uber budget burn</strong>: single data point (<a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">humai.blog</a>) &mdash; needs at least one counter-example or one corroborating disclosure in E8.</li>
 <li><strong>Vercel breach aftermath</strong>: No new in-window detail; either the customer-impact tail is still in-progress or coverage has dropped below the in-window threshold.</li>
-<li><strong>Claude Opus 4.6 + Cursor incident details</strong>: Single-source (<a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">Business Today</a>). A TechCrunch / Ars Technica / The Register follow-up is highly likely but not confirmed in-window.</li>
-<li><strong>Lovable BOLA disclosure</strong>: Single in-window source (<a href="https://thenextweb.com/news/lovable-vibe-coding-security-crisis-exposed" target="_blank" rel="noopener">The Next Web</a>) &mdash; multi-source confirmation should be sought in E8.</li>
-<li><strong>"Reset year" narrative</strong>: Cross-segment agreement (analyst, OSS-foundation, vendor toolkit) within a single week is strong, but single-window. E8 will be decisive.</li>
+<li><strong>"Reset year" narrative</strong>: Cross-segment agreement (analyst, OSS-foundation, vendor toolkit) within a single week is strong, but single-window. E8 mainstream tech press (Bloomberg, NYT, FT) recurrence will be decisive.</li>
 </ul>
 <hr>
 </section>
 
-<section id="watch-list">
+<section id="watch-list-for-next-extraction-e8-2026-05-04">
 <h2>Watch List for Next Extraction (E8: ~2026-05-04)</h2>
+<ol>
+<li><strong>Fourth autonomous-agent production destruction event</strong> (CRITICAL): Does another incident in the Replit / Kiro / Claude Opus 4.6 class land in E8? If yes, the regime has shifted from "recurring class" to "expected operating cost." Trigger: any production-incident disclosure naming an autonomous coding agent.</li>
+<li><strong>Vendor rollback / approval-gating primitives</strong> (HIGH): Do Cursor, Anthropic (Claude Code), or Microsoft ship native rollback / two-stage-approval primitives in agent runtimes? The <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> is the first vendor-side response; watch for Anthropic and Cursor counter-moves. Trigger: vendor blog posts, SDK release notes, or feature-flag announcements.</li>
+<li><strong>Anthropic clarifying pricing communication</strong> (HIGH): The current "different pages say different things" state (<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison</a>) is unsustainable. Does Anthropic publish an explicit pricing-tier communication in the next 14 days? Trigger: Anthropic blog post, pricing page redesign, or change-log entry.</li>
+<li><strong>MCP STDIO sandbox alternative</strong> (HIGH): Does any major MCP server distribution (Anthropic SDK, Cursor's MCP client, LibreChat, etc.) ship a "sandbox-by-default" mode despite Anthropic's "by design" position? Trigger: SDK release notes, GitHub repo activity, or vendor-blog mitigation announcements.</li>
+<li><strong>Enterprise AI-budget cap policy</strong> (MODERATE): Does any large enterprise publicly disclose per-user AI-tool spending caps as a Q2 2026 policy item, in the wake of the <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber four-month-burn report</a>? Trigger: CIO / CTO public statements, FinOps Foundation guidance, or vendor-side enterprise-pricing changes.</li>
+<li><strong>"Reset year" narrative recurrence</strong> (MODERATE): Does the framing recur in mainstream tech press (Bloomberg, NYT, FT, Wired)? Does Anthropic or OpenAI engage the framing? Trigger: any vendor or tier-1 press piece using the phrase or its functional equivalents.</li>
+<li><strong>Tier-1 social capture restoration</strong> (HIGH — pipeline health): X/Twitter, Bluesky, Reddit deep-dive. Two consecutive windows of capture failure is now a definitive pipeline issue, not an extraction-by-extraction artifact.</li>
+<li><strong>Cognitive-debt institutionalization durability</strong> (LOW): Does any new academic, industry-framework, or vendor framing of cognitive debt appear, or has the concept reached steady state? E7-rerun's 4 items are sub-baseline; E8 will confirm.</li>
+</ol>
 
-<div class="section-card">
-<h3>1. Fourth autonomous-agent production destruction event<span class="priority-critical">CRITICAL</span></h3>
-<p>Does another incident in the Replit / Kiro / Claude Opus 4.6 class land in E8? If yes, the regime has shifted from "recurring class" to "expected operating cost." <strong>Trigger</strong>: any production-incident disclosure naming an autonomous coding agent.</p>
-</div>
-
-<div class="section-card">
-<h3>2. Vendor rollback / approval-gating primitives<span class="priority-high">HIGH</span></h3>
-<p>Do Cursor, Anthropic (Claude Code), or Microsoft ship native rollback / two-stage-approval primitives in agent runtimes? The <a href="https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/" target="_blank" rel="noopener">Microsoft Agent Governance Toolkit</a> is the first vendor-side response; watch for Anthropic and Cursor counter-moves. <strong>Trigger</strong>: vendor blog posts, SDK release notes, or feature-flag announcements.</p>
-</div>
-
-<div class="section-card">
-<h3>3. Anthropic clarifying pricing communication<span class="priority-high">HIGH</span></h3>
-<p>The current "different pages say different things" state (<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Simon Willison</a>) is unsustainable. Does Anthropic publish an explicit pricing-tier communication in the next 14 days? <strong>Trigger</strong>: Anthropic blog post, pricing page redesign, or change-log entry.</p>
-</div>
-
-<div class="section-card">
-<h3>4. MCP STDIO sandbox alternative<span class="priority-high">HIGH</span></h3>
-<p>Does any major MCP server distribution (Anthropic SDK, Cursor's MCP client, LibreChat, etc.) ship a "sandbox-by-default" mode despite Anthropic's "by design" position? <strong>Trigger</strong>: SDK release notes, GitHub repo activity, or vendor-blog mitigation announcements.</p>
-</div>
-
-<div class="section-card">
-<h3>5. Enterprise AI-budget cap policy<span class="priority-moderate">MODERATE</span></h3>
-<p>Does any large enterprise publicly disclose per-user AI-tool spending caps as a Q2 2026 policy item, in the wake of the <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber four-month-burn report</a>? <strong>Trigger</strong>: CIO / CTO public statements, FinOps Foundation guidance, or vendor-side enterprise-pricing changes.</p>
-</div>
-
-<div class="section-card">
-<h3>6. "Reset year" narrative recurrence<span class="priority-moderate">MODERATE</span></h3>
-<p>Does the framing recur in mainstream tech press (Bloomberg, NYT, FT, Wired)? Does Anthropic or OpenAI engage the framing? <strong>Trigger</strong>: any vendor or tier-1 press piece using the phrase or its functional equivalents.</p>
-</div>
-
-<div class="section-card">
-<h3>7. Tier-1 social capture restoration<span class="priority-high">HIGH (PIPELINE)</span></h3>
-<p>X/Twitter, Bluesky, Reddit deep-dive. Two consecutive windows of capture failure is now a definitive pipeline issue, not an extraction-by-extraction artifact.</p>
-</div>
-
-<div class="section-card">
-<h3>8. Cognitive-debt institutionalization durability<span class="priority-low">LOW</span></h3>
-<p>Does any new academic, industry-framework, or vendor framing of cognitive debt appear, or has the concept reached steady state? Sample-silence in E7 is most likely a sample artifact, but E8 will confirm.</p>
-</div>
-
-<p style="margin-top: 2rem;"><strong>De-prioritized from E7 Watch List</strong>: AGENTS.md (sustained low visibility); per-engineer metric Goodhart (no new evidence); generic "vibe coding" framing (now disreputed, monitor only for incident-tagged usage).</p>
+<p><strong>De-prioritized from E7 Watch List</strong>: AGENTS.md (sustained low visibility); per-engineer metric Goodhart (no new evidence); generic "vibe coding" framing (now disreputed, monitor only for incident-tagged usage).</p>
 <hr>
 </section>
 
-<div class="metadata-footer">
-<section id="longitudinal-report-metadata">
+<div class="metadata-footer"><section id="longitudinal-report-metadata">
 <h2>Longitudinal Report Metadata</h2>
 <table>
 <thead>
@@ -967,14 +925,14 @@ blockquote {
 </tr>
 </thead>
 <tbody>
-<tr><td>Report Generated</td><td>2026-04-27</td></tr>
+<tr><td>Report Generated</td><td>2026-04-27 (re-run)</td></tr>
 <tr><td>Coverage Period</td><td>2026-03-20 – 2026-04-27 (39 days)</td></tr>
-<tr><td>Extractions Analyzed</td><td>7 (E1, E2, E3, E4, E5, E6, E7)</td></tr>
+<tr><td>Extractions Analyzed</td><td>7 (E1, E2, E3, E4, E5, E6, E7-rerun)</td></tr>
 <tr><td>Total Items</td><td>338 (E1 50 + E2 53 + E3 19 + E4 44 + E5 53 + E6 61 + E7-rerun 58)</td></tr>
 <tr><td>Sentiments Coded</td><td>Strongly Positive, Cautiously Positive, Mixed/Ambivalent, Cautiously Negative, Strongly Negative, Nuanced/Analytical</td></tr>
 <tr><td>Clusters Tracked</td><td>14</td></tr>
 <tr><td>Signals Tracked</td><td>12 (two new in E7: Autonomous-Agent Production Destruction, "Reset Year" Narrative)</td></tr>
-<tr><td>Cross-Platform Coverage</td><td>Twitter/X, Reddit, News/Analysis, Academic, Industry Reports, Blogs/Practitioner, YouTube, Mastodon, Hacker News</td></tr>
+<tr><td>Cross-Platform Coverage</td><td>Twitter/X, Reddit, News/Analysis, Academic, Industry Reports, Blogs/Practitioner, YouTube, Mastodon, Bluesky, Hacker News</td></tr>
 <tr><td>Confidence Indicators</td><td>VERY HIGH, HIGH, MODERATE, LOW</td></tr>
 <tr><td>Methodology</td><td>Discourse analysis, cluster momentum tracking, signal evolution, contradiction resolution mapping, vocabulary drift</td></tr>
 <tr><td>Limitations</td><td>Sentiment is coded text analysis; E7 re-run brings n=58 sentiment-tagged (vs original n=15); Tier-1 X/Twitter capture failed for second consecutive window; Enterprise/Policy and Review Burden remain sample-silent in the re-run; YouTube confirmed at channel level only</td></tr>
@@ -983,10 +941,38 @@ blockquote {
 </tbody>
 </table>
 <hr>
-<p><em>Generated by Longitudinal Summary Engine v1.1 / Bootloader v1.9 on 2026-04-27.</em></p>
-</section>
-</div>
+<p><em>Generated by Longitudinal Summary Engine v1.1 / Bootloader v1.9 on 2026-04-27 (re-run on richer corpus).</em></p>
+</section></div>
 
     </div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        // Always show near top
+        if (y < 80) {
+            nav.classList.remove('nav-hidden');
+        } else if (y > lastY + 4) {
+            // Scrolling down: hide
+            nav.classList.add('nav-hidden');
+        } else if (y < lastY - 4) {
+            // Scrolling up: show
+            nav.classList.remove('nav-hidden');
+        }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+})();
+</script>
 </body>
 </html>
