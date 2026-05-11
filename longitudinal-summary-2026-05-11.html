@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Longitudinal Trend Report 2026-03-20 to 2026-05-04 (Extractions 1-8). Vendor-trust crisis, agentic blast-radius, cost-runaway-meets-trust-failure.">
+<meta property="og:title" content="Longitudinal Trend Report E1-E8 (Mar 20 - May 11, 2026)">
+<meta property="og:description" content="46 days, 8 extractions, ~390 tagged items: vendor-trust crisis at Anthropic; agentic blast-radius dominates 'AI quality'; pricing cluster acquires trust-failure dimension.">
+<title>Longitudinal Trend Report: 2026-03-20 – 2026-05-04 (Extractions 1 – 8)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #c9d1d9;
+    font-family: 'Source Serif 4', serif; font-size: 16px; line-height: 1.6;
+    overflow-x: hidden; padding-top: 3rem;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 2px solid #5c9eed;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav .container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: flex-start; align-items: center;
+    gap: 1rem; padding: 0;
+}
+nav h1 {
+    font-family: 'DM Serif Display', serif; font-size: 1rem;
+    color: #5c9eed; font-weight: 400;
+    flex-shrink: 0; white-space: nowrap; margin: 0;
+}
+nav ul {
+    display: flex; list-style: none; gap: 0.25rem;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    margin: 0; padding: 0;
+    scrollbar-width: thin; scrollbar-color: #30363d transparent;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+nav li { margin: 0; flex-shrink: 0; }
+nav a {
+    color: #8b949e; text-decoration: none;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    white-space: nowrap; display: inline-block;
+}
+nav a:hover { color: #5c9eed; background-color: rgba(92, 158, 237, 0.1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 2px solid #5c9eed; }
+h1.title {
+    font-family: 'DM Serif Display', serif; font-size: 3rem;
+    color: #f0f6fc; line-height: 1.15; margin-bottom: 1rem;
+}
+.subtitle {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: #8b949e; margin-bottom: 1rem;
+}
+.masthead-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+}
+.stat-item {
+    background-color: #161b22; padding: 1rem; border-radius: 6px;
+    border-left: 3px solid #5c9eed;
+}
+.stat-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.6rem; color: #5c9eed; font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+    color: #f0f6fc; margin: 2.5rem 0 1.5rem 0;
+    padding-left: 2rem; position: relative;
+}
+h2::before {
+    content: attr(data-section); position: absolute; left: 0;
+    color: #5c9eed; font-size: 0.85rem; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; top: 0.6em;
+}
+h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: #c9d1d9; margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    color: #f0f6fc; margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; }
+a {
+    color: #5c9eed; text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+strong { color: #f0f6fc; font-weight: 600; }
+em { font-style: italic; color: #c9d1d9; }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #161b22; padding: 0.15em 0.4em;
+    border-radius: 3px; font-size: 0.9em; color: #79b8ff;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: #161b22; border: 1px solid #30363d;
+    border-radius: 6px; overflow: hidden; font-size: 0.92rem;
+}
+thead { background-color: #1c2330; }
+th {
+    padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+    color: #f0f6fc; border-bottom: 2px solid #30363d;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td {
+    padding: 0.6rem 1rem; border-bottom: 1px solid #30363d;
+    word-break: break-word; vertical-align: top;
+}
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: #1c2330; }
+ul, ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+.signal-card {
+    background-color: #161b22; border: 1px solid #30363d;
+    border-left: 3px solid #5c9eed;
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.signal-card h4 {
+    margin-top: 0; font-family: 'DM Serif Display', serif;
+    color: #f0f6fc; font-size: 1.1rem;
+}
+.signal-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.4rem; background-color: rgba(92, 158, 237, 0.15);
+    color: #5c9eed;
+}
+.badge.escalated {
+    background-color: rgba(224, 82, 82, 0.15); color: #e05252;
+}
+.badge.new { background-color: rgba(76, 175, 125, 0.15); color: #4caf7d; }
+.badge.continues { background-color: rgba(240, 168, 50, 0.15); color: #f0a832; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid #30363d; text-align: center;
+    color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    nav h1 { display: none; }
+    nav a { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+    .container { padding: 2rem 1rem; }
+    h1.title { font-size: 2rem; }
+    h2 { font-size: 1.5rem; padding-left: 1.5rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+}
+</style>
+</head>
+<body>
+<nav><div class="container"><h1>LTR 2026-05-11</h1><ul><li><a href="#summary">01 Summary</a></li><li><a href="#composition">02 Composition</a></li><li><a href="#sentiment">03 Sentiment</a></li><li><a href="#clusters">04 Clusters</a></li><li><a href="#signals">05 Signals</a></li><li><a href="#contradictions">06 Contradictions</a></li><li><a href="#vocabulary">07 Vocabulary</a></li><li><a href="#gaps">08 Gaps</a></li><li><a href="#watchlist">09 Watch List</a></li><li><a href="#metadata">10 Metadata</a></li></ul></div></nav>
+<div class="wrapper">
+<header>
+<div class="container">
+<h1 class="report-title">Longitudinal Trend Report</h1>
+<div class="subtitle">AI Coding Tools Developer Sentiment &middot; Extractions 1 &ndash; 9 &middot; 2026-03-20 to 2026-05-11</div>
+<div class="masthead-stats">
+<div class="stat"><div class="stat-label">Extractions</div><div class="stat-value">9</div></div>
+<div class="stat"><div class="stat-label">Days Covered</div><div class="stat-value">52</div></div>
+<div class="stat"><div class="stat-label">Total Items</div><div class="stat-value">436</div></div>
+<div class="stat"><div class="stat-label">Tracked Signals</div><div class="stat-value">19</div></div>
+<div class="stat"><div class="stat-label">NEW This Window</div><div class="stat-value">2</div></div>
+<div class="stat"><div class="stat-label">Confirmed Trends</div><div class="stat-value">5</div></div>
+</div>
+</div>
+</header>
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Across nine consecutive weekly extractions spanning 52 days (436 sentiment-tagged items), the AI coding tools discourse has executed a clear regime shift: from <em>"is the code any good?"</em> (E1&ndash;E3, dominated by <code>cve-acceleration</code> and <code>mcp-attack-surface</code> technical-risk signals) through <em>"is the agent safe?"</em> (E4&ndash;E7, <code>agent-production-destruction</code> and <code>cost-runaway</code> become structural) into <em>"is the harness right?"</em> (E8&ndash;E9, <code>quality-as-infrastructure</code> and <code>claude-code-automation-platform</code> crystallize as architectural prescriptions).</p>
+<p>The most recent window (E9, May 4&ndash;11) is the calmest discourse-affect reading since E6 &mdash; Cautiously Negative retreats from E8's series-high 44% to 30% on the strength of Anthropic's Code w/ Claude 2026 announcement bundle &mdash; but the structural-risk layer (incident class, MCP CVE class, cost-saturation arithmetic) is unchanged. Two new signals appeared this window: <code>claude-code-automation-platform</code> (Routines + Dreaming + Multiagent reframe) and <code>quality-as-infrastructure</code> (verification-bottleneck consensus across five independent sources). Strongly Positive ticked off the floor (6%) for the first time in four windows. Three durable cross-window arcs continue to compound: the <code>anthropic-trust-arc</code> (6 of 6 windows since E4), the <code>agent-production-destruction</code> blast-radius pattern (5 windows), and <code>stack-composition</code> (6 windows; dual-tool default solidifying).</p>
+</section>
+<section id="composition"><h2 data-section="02">Source Composition Audit</h2>
+<table class="data-table">
+<thead><tr><th>Window</th><th>Items</th><th>Reddit</th><th>HN</th><th>Blogs</th><th>Bluesky</th><th>Mastodon</th><th>YouTube</th><th>X</th><th>Incidents</th></tr></thead>
+<tbody>
+<tr><td>E1 (3/20&ndash;25)</td><td>50</td><td>yes</td><td>yes</td><td>yes</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>6</td></tr>
+<tr><td>E2 (3/23&ndash;30)</td><td>53</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>&mdash;</td><td>yes</td><td>&mdash;</td><td>4</td></tr>
+<tr><td>E3 (3/28&ndash;31)</td><td>19</td><td>partial</td><td>yes</td><td>yes</td><td>&mdash;</td><td>&mdash;</td><td>yes</td><td>&mdash;</td><td>7</td></tr>
+<tr><td>E4 (3/30&ndash;4/6)</td><td>44</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>&mdash;</td><td>yes</td><td>yes</td><td>5</td></tr>
+<tr><td>E5 (4/6&ndash;13)</td><td>53</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>&mdash;</td><td>yes</td><td>yes</td><td>5</td></tr>
+<tr><td>E6 (4/13&ndash;20)</td><td>61</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>5</td></tr>
+<tr><td>E7 (4/20&ndash;27)</td><td>58</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>8</td></tr>
+<tr><td>E8 (4/27&ndash;5/4)</td><td>48</td><td>yes (browser)</td><td>yes</td><td>yes</td><td>partial</td><td>zero</td><td>yes</td><td>yes</td><td>10</td></tr>
+<tr><td>E9 (5/4&ndash;11)</td><td>50</td><td>yes (Grok proxy)</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>Tier 2 only</td><td>yes</td><td>7</td></tr>
+</tbody>
+</table>
+<p class="meta-note"><strong>Anomalies.</strong> E3 small-corpus (n=19); E8 zero Mastodon; E9 Reddit via Grok proxy (single-LLM provenance). Curated Tier-1.5 YouTube channels silent in E9 for first time in 5 windows. Podcast retrieval at zero for 3 consecutive windows &mdash; recommend Tier 3 demotion.</p>
+<p><strong>Composition verdict</strong>: Mid-window composition is stable enough for trend reads from E4 onward. E1&ndash;E3 baselines are noisier; report direction-only comparisons against E1&ndash;E3 and quantified comparisons against E4&ndash;E9.</p>
+</section>
+<section id="sentiment"><h2 data-section="03">Sentiment Trajectory</h2>
+<table class="data-table">
+<thead><tr><th>Window</th><th>SP</th><th>CP</th><th>MA</th><th>CN</th><th>SN</th><th>Nu</th><th>Direction</th></tr></thead>
+<tbody>
+<tr><td>E1</td><td>2%</td><td>18%</td><td>18%</td><td>26%</td><td>20%</td><td>16%</td><td>&mdash;</td></tr>
+<tr><td>E2</td><td>4%</td><td>15%</td><td>19%</td><td>28%</td><td>30%</td><td>4%</td><td>SN&uarr; technical-risk surge</td></tr>
+<tr><td>E3</td><td>0%</td><td>16%</td><td>5%</td><td>16%</td><td>63%</td><td>0%</td><td>SN&uarr;&uarr; small-corpus, incident-heavy</td></tr>
+<tr><td>E4</td><td>2%</td><td>20%</td><td>14%</td><td>18%</td><td>41%</td><td>5%</td><td>SN&darr; discourse broadens</td></tr>
+<tr><td>E5</td><td>4%</td><td>13%</td><td>17%</td><td>11%</td><td>43%</td><td>11%</td><td>SN stable; Nu rising</td></tr>
+<tr><td>E6</td><td>3%</td><td>13%</td><td>10%</td><td>34%</td><td>13%</td><td>26%</td><td><strong>Major shift</strong>: SN&rarr;CN; Nu doubles</td></tr>
+<tr><td>E7</td><td>0%</td><td>9%</td><td>41%</td><td>19%</td><td>17%</td><td>7%</td><td>MA peak (postmortem season)</td></tr>
+<tr><td>E8</td><td>0%</td><td>6%</td><td>19%</td><td><strong>44%</strong></td><td>17%</td><td>15%</td><td>CN series high (vendor-trust collapse)</td></tr>
+<tr><td>E9</td><td>6%</td><td>8%</td><td>18%</td><td>30%</td><td>16%</td><td>22%</td><td><strong>CN retreat</strong>; SP off the floor</td></tr>
+</tbody>
+</table>
+<p class="meta-note"><strong>Composition-adjusted reading</strong>: E9's retreat is announcement-driven, not a structural shift &mdash; the underlying risk layer (E9 SN 16% is in line with E7&ndash;E8) is unchanged.</p>
+</section>
+<section id="clusters"><h2 data-section="04">Cluster Momentum</h2>
+<table class="data-table">
+<thead><tr><th>Cluster</th><th>E5</th><th>E6</th><th>E7</th><th>E8</th><th>E9</th><th>Trajectory</th><th>Signal Strength</th></tr></thead>
+<tbody>
+<tr><td>Architectural Philosophy</td><td>&mdash;</td><td>17</td><td>17</td><td>18</td><td>17</td><td>Stable at top</td><td>Emerging Consensus</td></tr>
+<tr><td>Trust / Verification</td><td>&mdash;</td><td>22</td><td>22</td><td>17</td><td>13</td><td>Cooling (&minus;)</td><td>Active Debate</td></tr>
+<tr><td>Pricing / Cost</td><td>&mdash;</td><td>14</td><td>17</td><td>19</td><td>13</td><td>Up-then-cooling</td><td>Growing Trend</td></tr>
+<tr><td>Productivity Reality</td><td>&mdash;</td><td>23</td><td>23</td><td>9</td><td>10</td><td>Sharp decline E7&rarr;E8</td><td>Active Debate</td></tr>
+<tr><td>Code Quality</td><td>&mdash;</td><td>20</td><td>20</td><td>8</td><td>9</td><td>Down then steady</td><td>Active Debate</td></tr>
+<tr><td>Incidents / Failures</td><td>&mdash;</td><td>9</td><td>9</td><td>11</td><td>10</td><td>Stable-elevated</td><td>Emerging Consensus</td></tr>
+<tr><td>Dependency / Resilience</td><td>&mdash;</td><td>6</td><td>6</td><td>7</td><td>5</td><td>Slight cooling</td><td>Growing Trend</td></tr>
+<tr><td>Deskilling / Learning</td><td>&mdash;</td><td>2</td><td>2</td><td>5</td><td>7</td><td><strong>Rising</strong> (+)</td><td>Growing Trend</td></tr>
+<tr><td>Burnout / Cognitive Load</td><td>&mdash;</td><td>4</td><td>4</td><td>4</td><td>4</td><td>Stable</td><td>Active Debate</td></tr>
+<tr><td>Hype vs Reality</td><td>&mdash;</td><td>8</td><td>8</td><td>5</td><td>4</td><td>Cooling</td><td>Declining Narrative</td></tr>
+<tr><td>Hiring / Junior Pipeline</td><td>&mdash;</td><td>4</td><td>4</td><td>2</td><td>1</td><td><strong>Declining</strong> (&minus;)</td><td>Active Debate (intensity)</td></tr>
+</tbody>
+</table>
+<p class="meta-note"><strong>Momentum highlights.</strong> Fastest rising: <em>Deskilling/Learning</em> (2 &rarr; 5 &rarr; 7). Sharpest decline (volume): <em>Productivity Reality</em>. Most contested: <em>Trust/Verification</em> (now absorbed into specific sub-clusters).</p>
+</section>
+<section id="signals"><h2 data-section="05">Signal Evolution</h2>
+<table class="data-table">
+<thead><tr><th>Signal ID</th><th>First</th><th>Last</th><th>Obs</th><th>Status</th><th>Confidence</th><th>Recommended Action</th></tr></thead>
+<tbody>
+<tr><td><code>cve-acceleration</code></td><td>E1</td><td>E7</td><td>7</td><td>Promoted</td><td>H</td><td>Watch for re-surfacing &mdash; class absorbed into MCP and agent-destruction patterns</td></tr>
+<tr><td><code>mcp-attack-surface</code></td><td>E1</td><td>E7</td><td>6</td><td>Promoted</td><td>H</td><td>~200k vulnerable, no public mitigation; class persists</td></tr>
+<tr><td><code>vibe-coding-disreputed</code></td><td>E1</td><td>E9</td><td>5</td><td>Promoted (Evolving)</td><td>H</td><td>Re-title in next consolidation; signal becomes successor framing "agentic engineering"</td></tr>
+<tr><td><code>cognitive-debt-deskilling</code></td><td>E2</td><td>E6</td><td>3</td><td>Promoted</td><td>H</td><td>Vocabulary merger watch with "comprehension debt"</td></tr>
+<tr><td><code>junior-pipeline-collapse</code></td><td>E2</td><td>E5</td><td>2</td><td>Tracking</td><td>H</td><td>Volume-light; retire candidate or wait for Q2 employment data</td></tr>
+<tr><td><code>ai-burnout-paradox</code></td><td>E3</td><td>E9</td><td>4</td><td>Promoted</td><td>H</td><td>Re-surfaced E9; institutional consolidation likely</td></tr>
+<tr><td><code>productivity-paradox</code></td><td>E3</td><td>E7</td><td>4</td><td>Promoted</td><td>H</td><td>Absent E8&ndash;E9; watch Q2 enterprise surveys</td></tr>
+<tr><td><code>anthropic-trust-arc</code></td><td>E4</td><td>E9</td><td>6</td><td>Promoted</td><td>H</td><td><strong>Highest-priority arc</strong>; vendor response decides next stage</td></tr>
+<tr><td><code>agent-production-destruction</code></td><td>E4</td><td>E9</td><td>5</td><td>Promoted</td><td>H</td><td>Continue tracking; enterprise governance response expected within 2 windows</td></tr>
+<tr><td><code>stack-composition</code></td><td>E4</td><td>E9</td><td>6</td><td>Promoted</td><td>M</td><td>Stable across 6 windows; M because preference is feature-volatile</td></tr>
+<tr><td><code>thoughtworks-radar-formalization</code></td><td>E4</td><td>E4</td><td>1</td><td>Tracking</td><td>H</td><td><strong>Retire candidate</strong></td></tr>
+<tr><td><code>cost-runaway</code></td><td>E6</td><td>E9</td><td>4</td><td>Promoted</td><td>H</td><td>Watch June 1 Copilot AI Credits forcing function</td></tr>
+<tr><td><code>cursor-xai-acquisition</code></td><td>E6</td><td>E7</td><td>2</td><td>Tracking</td><td>M</td><td><strong>Retire candidate</strong> &mdash; narrative folded</td></tr>
+<tr><td><code>enterprise-ai-controls</code></td><td>E6</td><td>E6</td><td>1</td><td>Tracking</td><td>M</td><td><strong>Retire candidate</strong> or merge</td></tr>
+<tr><td><code>reset-year-narrative</code></td><td>E7</td><td>E7</td><td>1</td><td>Tracking</td><td>M</td><td>Watch for cross-segment reuse</td></tr>
+<tr><td><code>senior-deskilling</code></td><td>E7</td><td>E8</td><td>2</td><td>Tracking</td><td>H</td><td>Continue; likely promotion path</td></tr>
+<tr><td><code>oss-maintainer-pushback</code></td><td>E8</td><td>E8</td><td>1</td><td>Tracking</td><td>M</td><td>Watch for Zig-policy spread</td></tr>
+<tr><td><code>claude-code-automation-platform</code></td><td>E9</td><td>E9</td><td>1</td><td><strong>Tracking (NEW)</strong></td><td>H</td><td>Promote to Tracking; first production-experience reports are decisive</td></tr>
+<tr><td><code>quality-as-infrastructure</code></td><td>E9</td><td>E9</td><td>1</td><td><strong>Tracking (NEW)</strong></td><td>H</td><td>Promote to Tracking; watch for first CI/CD vendor productization</td></tr>
+</tbody>
+</table>
+<p class="meta-note"><strong>NEW signals this window</strong>: <code>claude-code-automation-platform</code>, <code>quality-as-infrastructure</code>. <strong>Escalated</strong>: <code>vibe-coding-disreputed</code> (Promoted &rarr; Evolving &mdash; definitional collapse).</p>
+</section>
+<section id="contradictions"><h2 data-section="06">Cross-Extraction Contradictions</h2>
+<table class="data-table">
+<thead><tr><th>Claim</th><th>First Position</th><th>Current Position (E9)</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td>"Vibe coding is a distinct, defensible practice"</td><td>E1&ndash;E7 used the distinction as load-bearing</td><td>E9: originator and steward both retire the framing</td><td><strong>Resolved</strong></td></tr>
+<tr><td>"AI-generated code is reliable enough to ship without infra-level quality gates"</td><td>Pre-2026 vendor default</td><td>E9: 5 independent sources converge on infra-gates required</td><td><strong>Trending Negative</strong></td></tr>
+<tr><td>"AI coding tools deliver 5x&ndash;100x productivity gains"</td><td>E5&ndash;E6 management-level claim</td><td>E7&ndash;E9 bimodal practitioner counter-narrative</td><td><strong>Trending Negative</strong></td></tr>
+<tr><td>"Doubled rate limits resolve cost-runaway grievance"</td><td>E9 vendor announcement</td><td>E9 practitioner counter-data (25%-quota; dual-tool default)</td><td><strong>Trending Negative</strong></td></tr>
+<tr><td>"MCP STDIO RCE class is being mitigated quickly"</td><td>E7 disclosure framing</td><td>E8&ndash;E9: coverage continues; vendor "expected behavior"</td><td><strong>Trending Negative</strong></td></tr>
+<tr><td>"OSS projects should reject AI-assisted contributions on quality grounds"</td><td>E8 Zig anti-AI policy</td><td>E9 absent from patterns</td><td><strong>Contested &rarr; Isolated</strong></td></tr>
+<tr><td>"Anthropic / SpaceX Colossus 1 deal is straightforwardly good for Anthropic"</td><td>E9 Inc. framing</td><td>E9 Willison: env record + reclaim clause</td><td><strong>Contested</strong></td></tr>
+<tr><td>"Claude Code's quality has regressed in recent weeks"</td><td>E8 scattered reports</td><td>E9: 971-up "complete garbage" vs 950-up power-user defense</td><td><strong>Contested</strong></td></tr>
+</tbody>
+</table>
+</section>
+<section id="vocabulary"><h2 data-section="07">Vocabulary &amp; Framing Drift</h2>
+<table class="data-table">
+<thead><tr><th>Term</th><th>First Appeared</th><th>Frequency Trend</th><th>Significance</th></tr></thead>
+<tbody>
+<tr><td>"Vibe coding"</td><td>Pre-E1</td><td>Peaked E4&ndash;E7; <strong>retired by originator E9</strong></td><td>Origin marker only</td></tr>
+<tr><td>"Agentic engineering"</td><td>E4 (Willison)</td><td>Adopted by Karpathy E9</td><td>Successor framing</td></tr>
+<tr><td>"Cognitive debt"</td><td>E2 (Thoughtworks)</td><td>E2&ndash;E6 institutional</td><td>Institutional vocabulary</td></tr>
+<tr><td>"Comprehension debt"</td><td>E8/E9 (Osmani canonical E9)</td><td>First major practitioner reference E9</td><td><strong>Practitioner-side substitute</strong> for cognitive debt</td></tr>
+<tr><td>"Harness engineering"</td><td>E9 (Thoughtworks)</td><td>First appearance</td><td><strong>NEW</strong> &mdash; discipline-level vocabulary</td></tr>
+<tr><td>"Quality as infrastructure"</td><td>E9 (d4b)</td><td>First appearance</td><td><strong>NEW</strong> &mdash; prescription-level vocabulary</td></tr>
+<tr><td>"Routines" (Claude Code)</td><td>E9</td><td>First appearance</td><td><strong>NEW</strong> &mdash; Anthropic feature</td></tr>
+<tr><td>"Dreaming" (Managed Agents)</td><td>E9</td><td>First appearance</td><td><strong>NEW</strong> &mdash; Anthropic feature</td></tr>
+<tr><td>"Ghosts vs animals" (LLM)</td><td>E9 (Karpathy)</td><td>First appearance</td><td><strong>NEW</strong> &mdash; conceptual framing</td></tr>
+<tr><td>"Blast radius"</td><td>E8</td><td>E8&ndash;E9 stable</td><td>Established</td></tr>
+<tr><td>"Vendor-trust crisis"</td><td>E8</td><td>E8&ndash;E9 stable</td><td>Established</td></tr>
+<tr><td>"Builders / Shippers / Coasters"</td><td>E9 (Pragmatic Engineer)</td><td>First appearance</td><td><strong>NEW</strong> &mdash; engineer-segmentation</td></tr>
+<tr><td>"Patch tsunami"</td><td>E9 (Register/NCSC)</td><td>First appearance</td><td><strong>NEW</strong> &mdash; security-defender</td></tr>
+</tbody>
+</table>
+<p class="meta-note"><strong>Drift verdict</strong>: E9 is the highest vocabulary-introduction window in the series (7 new terms) &mdash; consistent with a regime-transition moment.</p>
+</section>
+<section id="gaps"><h2 data-section="08">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Reddit retrieval path remains fragile.</strong> E9 used Grok-as-proxy (single-LLM-mediated provenance). Recommend a second-source cross-check before Reddit Tier-1 is treated as stable.</li>
+<li><strong>Mastodon engagement metrics still require login</strong> &mdash; captured for platform coverage only.</li>
+<li><strong>Curated YouTube channels silent in E9</strong> for the first time in 5 windows.</li>
+<li><strong>Podcast retrieval at zero for 3 consecutive windows</strong> &mdash; formal Tier 3 demotion recommended.</li>
+<li><strong>No CTO-level Big-Tech recantation of 5x/10x productivity claims</strong> across 9 windows. Q2 earnings cycle is the next forcing function.</li>
+<li><strong><code>mcp-attack-surface</code> and <code>cve-acceleration</code> last observed in patterns at E7</strong>; underlying threat class remains active.</li>
+<li><strong>Confidence-attribution between <code>cognitive-debt-deskilling</code> and <code>quality-as-infrastructure</code></strong> &mdash; overlap in evidence base needs consolidation pass.</li>
+</ul>
+</section>
+<section id="watchlist"><h2 data-section="09">Watch List for E10</h2>
+<ol>
+<li><strong>First production-experience reports on Routines / Dreaming / Multiagent.</strong> Decisive for promotion of <code>claude-code-automation-platform</code>. <em>(Highest priority.)</em></li>
+<li><strong>First major CI/CD vendor "AI-generated code gate" announcement.</strong> Productization of <code>quality-as-infrastructure</code>. <em>(Highest priority.)</em></li>
+<li><strong>June 1 Copilot AI Credits transition reception.</strong> Cross-vendor confirmation of <code>cost-runaway</code> structural reading. <em>(High priority.)</em></li>
+<li><strong>First public MCP STDIO mitigation by a major client</strong> (Cursor, Claude Code, VS Code, Gemini-CLI). <em>(High priority.)</em></li>
+<li><strong>"Comprehension debt" vs "cognitive debt" vocabulary winner</strong> in next major industry report. <em>(Medium priority.)</em></li>
+</ol>
+</section>
+<section id="metadata"><h2 data-section="10">Longitudinal Report Metadata</h2>
+<table class="data-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Longitudinal prompt</td><td>v1.3</td></tr>
+<tr><td>Domain config</td><td>v1.2</td></tr>
+<tr><td>Bootloader</td><td>v1.9</td></tr>
+<tr><td>Report generated</td><td>2026-05-11 14:45 UTC</td></tr>
+<tr><td>Input mode</td><td>summaries (<code>--from-summaries</code>)</td></tr>
+<tr><td>Extractions covered</td><td>E1 through E9</td></tr>
+<tr><td>Date range</td><td>2026-03-20 &ndash; 2026-05-11 (52 days)</td></tr>
+<tr><td>Total tagged items</td><td>436 (sum across 9 summaries)</td></tr>
+<tr><td>Tracked signals</td><td>19 unique signal IDs across all windows</td></tr>
+<tr><td>NEW signals this window</td><td><code>claude-code-automation-platform</code>, <code>quality-as-infrastructure</code></td></tr>
+<tr><td>Escalated signals this window</td><td><code>vibe-coding-disreputed</code> (Promoted &rarr; Evolving)</td></tr>
+<tr><td>Confirmed trends</td><td><code>anthropic-trust-arc</code>, <code>agent-production-destruction</code>, <code>stack-composition</code>, <code>cost-runaway</code>, <code>vibe-coding-disreputed</code></td></tr>
+<tr><td>Resolved contradictions</td><td>"Vibe coding is a distinct, defensible practice"</td></tr>
+<tr><td>Newly contested claims</td><td>"Doubled rate limits resolve cost-runaway"; "Anthropic/SpaceX Colossus 1 deal is good for Anthropic"; "Claude Code's quality has regressed"</td></tr>
+</tbody>
+</table>
+</section>
+
+<footer>AI Coding Tools Sentiment Analysis &middot; Longitudinal Report E1&ndash;E9 &middot; 2026-03-20 to 2026-05-11 &middot; Generated 2026-05-11</footer>
+
+</div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+</body>
+</html>
