@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Dev Sentiment Analysis — May 11 to May 18, 2026 (E10, n=70 after 2026-05-20 supplemental pass). Bluesky activated; Anthropic vendor PDF integrated; Reddit-via-Grok-relay metadata; 4 new signals minted.">
+<meta property="og:title" content="AI Dev Sentiment Analysis — E10 (May 11 – May 18, 2026, +suppl 2026-05-20)">
+<meta property="og:description" content="Structural risk reasserts; CSA Labs 35-CVE; MCP 200k-server; Amazon 90-day reset; Anthropic vendor 60/0-20 delegation paradox; 4 new signals (vendor-consolidation, labor-market-bifurcation, practitioner-skepticism-cluster, delegation-gap-paradox).">
+<meta property="og:type" content="article">
+<title>AI Dev Sentiment Analysis — E10 (May 11 – May 18, 2026, +suppl 2026-05-20)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --display: 'DM Serif Display', serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3441;
+    --text: #d1cec9;
+    --text-dim: #7a8694;
+    --head: #f0ede8;
+    --amber: #f0a832;
+    --amber-dim: #7a5318;
+    --red: #e05252;
+    --red-dim: #5c1f1f;
+    --green: #4caf7d;
+    --green-dim: #1a3d2b;
+    --blue: #5c9eed;
+    --blue-dim: #1a2f4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--serif);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav ul {
+    list-style: none; display: flex; gap: 0.25rem;
+    padding: 0 1rem; font-size: 0.78rem;
+    font-family: var(--mono);
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    margin: 0;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-track { background: transparent; }
+nav ul::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+nav li { flex-shrink: 0; margin: 0; }
+nav a {
+    color: var(--text-dim); text-decoration: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s; white-space: nowrap;
+    display: inline-block;
+}
+nav a:hover { color: var(--amber); background-color: var(--surface2); }
+body { padding-top: 2.6rem; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 2rem; }
+header.masthead {
+    margin-bottom: 4rem; padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+h1 {
+    font-family: var(--display); font-size: 3.5rem;
+    color: var(--head); margin-bottom: 0.5rem; line-height: 1.1;
+}
+.subtitle {
+    font-family: var(--mono); font-size: 0.95rem;
+    color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.masthead-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.stat-item {
+    background-color: var(--surface2); padding: 1rem;
+    border-radius: 6px; border-left: 3px solid var(--amber);
+}
+.stat-label {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.8rem; color: var(--amber); font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: var(--display); font-size: 2.2rem; color: var(--head);
+    margin-bottom: 1.5rem; margin-top: 2rem;
+    position: relative; padding-left: 2rem;
+}
+h2::before {
+    content: attr(data-section);
+    position: absolute; left: 0; color: var(--amber);
+    font-size: 0.9rem; font-weight: 700; font-family: var(--mono);
+}
+h3 {
+    font-family: var(--display); font-size: 1.5rem; color: var(--text);
+    margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: var(--display); font-size: 1.15rem; color: var(--head);
+    margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; text-align: justify; }
+a {
+    color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+code {
+    font-family: var(--mono); background-color: var(--surface2);
+    padding: 0.2em 0.5em; border-radius: 3px;
+    font-size: 0.9em; color: var(--amber);
+}
+strong { color: var(--head); font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin: 1.25rem 0; color: var(--text-dim);
+    font-style: italic; background-color: var(--surface2);
+    border-radius: 0 4px 4px 0;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+}
+thead { background-color: var(--surface2); }
+th {
+    padding: 1rem; text-align: left; font-weight: 600;
+    color: var(--head); border-bottom: 2px solid var(--border);
+    font-family: var(--mono); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); word-break: break-word; }
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: var(--surface2); }
+ul, ol { margin-left: 2rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.5rem; }
+.sentiment-bar {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.sentiment-label { font-family: var(--mono); font-size: 0.9rem; min-width: 170px; }
+.sentiment-container {
+    flex: 1; background-color: var(--surface2);
+    border-radius: 4px; height: 28px; overflow: hidden; position: relative;
+}
+.sentiment-fill {
+    height: 100%; border-radius: 4px; display: flex;
+    align-items: center; justify-content: flex-end;
+    padding-right: 0.5rem; color: var(--bg);
+    font-weight: 600; font-size: 0.8rem; font-family: var(--mono);
+    animation: growBar 1.2s ease-out forwards;
+}
+@keyframes growBar { from { width: 0; } to { width: var(--width); } }
+.sentiment-fill.positive { background-color: var(--green); }
+.sentiment-fill.mixed { background-color: var(--amber); }
+.sentiment-fill.negative { background-color: var(--red); }
+.sentiment-fill.analytical { background-color: var(--blue); }
+.sentiment-percentage {
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text-dim); min-width: 60px; text-align: right;
+}
+.card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h4 {
+    color: var(--head); margin-bottom: 0.5rem;
+    font-family: var(--display); font-size: 1.2rem;
+}
+.incident-card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 6px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+}
+.incident-card.severity-high { border-left-color: var(--red); }
+.incident-card.severity-medium { border-left-color: var(--amber); }
+.incident-card .incident-title {
+    font-family: var(--display); font-size: 1.15rem;
+    color: var(--head); margin-bottom: 0.4rem;
+}
+.incident-card .incident-meta {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); margin-bottom: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-size: 0.75rem; font-family: var(--mono); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    background-color: var(--amber-dim); color: var(--amber);
+}
+.badge.red { background-color: var(--red-dim); color: var(--red); }
+.badge.green { background-color: var(--green-dim); color: var(--green); }
+.badge.blue { background-color: var(--blue-dim); color: var(--blue); }
+.collapsible {
+    background-color: var(--surface2); color: var(--head);
+    cursor: pointer; padding: 1rem; width: 100%;
+    border: 1px solid var(--border); text-align: left;
+    outline: none; font-size: 1rem; font-family: var(--display);
+    border-radius: 6px; transition: all 0.2s; margin-bottom: 1rem;
+}
+.collapsible:hover { background-color: var(--surface); border-color: var(--amber); }
+.collapsible::after {
+    content: ' \25BC'; float: right; color: var(--amber);
+    transition: transform 0.2s;
+}
+.collapsible.active::after { transform: rotate(-180deg); }
+.collapsible-content {
+    padding: 0 1rem 1rem 1rem; display: none;
+    background-color: var(--surface2); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 1rem;
+}
+.collapsible-content.active { display: block; }
+.collapsible-content table { margin: 1rem 0; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid var(--border); text-align: center;
+    color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem;
+}
+.pattern-card {
+    position: relative; background-color: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 1.5rem 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.ghost-number {
+    position: absolute; font-size: 8rem; font-family: var(--display);
+    color: rgba(240, 168, 50, 0.08); line-height: 1;
+    z-index: 0; right: 1rem; top: 50%; transform: translateY(-50%);
+}
+.pattern-title {
+    position: relative; z-index: 1; font-family: var(--display);
+    font-size: 1.3rem; color: var(--head); margin-bottom: 0.75rem;
+}
+.pattern-description { position: relative; z-index: 1; color: var(--text); margin-bottom: 1rem; }
+.pattern-meta {
+    position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem;
+}
+.pattern-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-dim); font-family: var(--mono);
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .wrapper { padding: 1rem; padding-top: 0; }
+    nav ul { padding: 0 0.75rem; }
+    nav a { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+    table { font-size: 0.9rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+    .sentiment-label { min-width: 130px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<nav><ul><li><a href="#summary">01 Summary</a></li><li><a href="#quant">02 Quantitative</a></li><li><a href="#deep">03 Deep Analysis</a></li><li><a href="#patterns">04 Patterns</a></li><li><a href="#contradictions">05 Contradictions</a></li><li><a href="#gaps">06 Gaps</a></li><li><a href="#recommendations">07 Actions</a></li><li><a href="#incidents">08 Incidents</a></li><li><a href="#supplemental">09 Suppl 2026-05-20</a></li><li><a href="#metadata">10 Metadata</a></li><li><a href="#citations">Citations</a></li></ul></nav>
+<div class="wrapper">
+<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 10 &nbsp;&nbsp;May 11 &ndash; May 18, 2026 &nbsp;(+ supplemental pass 2026-05-20)<br>Analysis executed 2026-05-18; augmented 2026-05-20</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">70</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">~43% Caut. Neg.</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">Arch Philosophy</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">9</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">12</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">9/9</div></div>
+</div>
+</header>
+<blockquote>
+<p><strong>Supplemental Pass Note (2026-05-20)</strong>: This report was first published 2026-05-18 from an extraction with Reddit blocked, Bluesky/Mastodon zero, and several Tier-3 flags unresolved. On 2026-05-20 the extraction file was augmented via a Chrome-browser pass + direct PDF fetch + Grok-as-Reddit-proxy relay — adding 8 Bluesky posts (Simon Willison + Kelsey Hightower), the Anthropic 2026 Agentic Coding Trends Report PDF (primary-source vendor data), Simon Willison's GitLab Act 2 piece, 3 Flipboard items, 11 Reddit-via-Grok-relay threads, and 3 new emerging patterns. Items_tagged grows from 50 → 70 (+40%). The canonical narrative remains intact but is reinforced — a Supplemental Pass Findings section appears before Report Metadata with the new content. Two additional signals were minted: <code>delegation-gap-paradox</code> and <code>practitioner-skepticism-cluster</code>. Citation table extended to row 70.</p>
+</blockquote>
+<section id="citations"><h2>Citation Reference Table</h2>
+<p>This table is built per Analysis Engine v1.17 mandatory pre-processing step. All <code>[label](url)</code> citations in the body resolve to URLs in this table. Coverage target: every valid URL appears at least once below.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Source Name</th>
+<th>URL</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HN — Top 0.01% Cursor user switched to Claude Code 2.0</td>
+<td>https://news.ycombinator.com/item?id=46676554</td>
+<td>tier1.hacker_news</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HN — Claude Code is suddenly everywhere inside Microsoft</td>
+<td>https://news.ycombinator.com/item?id=46854999</td>
+<td>tier1.hacker_news</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HN — Cursor 3</td>
+<td>https://news.ycombinator.com/item?id=47618084</td>
+<td>tier1.hacker_news</td>
+</tr>
+<tr>
+<td>4</td>
+<td>HN — Skills Manager: cross-agent skill portability (Show HN)</td>
+<td>https://news.ycombinator.com/item?id=47423910</td>
+<td>tier1.hacker_news</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Simon Willison — Live blog: Code w/ Claude 2026</td>
+<td>https://simonwillison.net/2026/May/6/code-w-claude-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Pragmatic Engineer — Impact of AI on engineers 2026 (Yegge amplification)</td>
+<td>https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ThoughtWorks — Radar v34: return to fundamentals to combat cognitive debt</td>
+<td>https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ThoughtWorks Radar — Coding agent swarms (Assess)</td>
+<td>https://www.thoughtworks.com/radar/techniques/coding-agent-swarms</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ThoughtWorks Radar — Team of coding agents</td>
+<td>https://www.thoughtworks.com/radar/techniques/team-of-coding-agents</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>10</td>
+<td>ThoughtWorks Radar — OpenSpec (spec-driven response to vibe-coding)</td>
+<td>https://www.thoughtworks.com/radar/tools/openspec</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Margaret Storey (UVic) — Cognitive debt academic origin</td>
+<td>https://margaretstorey.com/blog/2026/02/09/cognitive-debt/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Cloud Security Alliance Labs — Vibe Coding's Security Debt (35-CVE surge, 45% OWASP)</td>
+<td>https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>13</td>
+<td>State of Surveillance — Lovable/Vercel/Bitwarden security disasters</td>
+<td>https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>14</td>
+<td>The Register — MCP design flaw, 200k servers at risk</td>
+<td>https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Stack Overflow Blog — Closing the AI trust gap (29% trust, 46% distrust)</td>
+<td>https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Fortune — Amazon agent-destruction outages (Mar 2 + Mar 5)</td>
+<td>https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>17</td>
+<td>The Register — Cursor-Opus agent deletes PocketOS production database</td>
+<td>https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Firetiger — March 1 ingest outage postmortem (AI-agent CI authoring)</td>
+<td>https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>19</td>
+<td>VentureBeat — Lightrun: 43% of AI code needs prod debugging</td>
+<td>https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Stack Overflow Blog — AI 10x's developers in creating tech debt</td>
+<td>https://stackoverflow.blog/2026/01/23/ai-can-10x-developers-in-creating-tech-debt/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>21</td>
+<td>CIO — Demand for junior developers softens as AI takes over</td>
+<td>https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Tom's Hardware — Q1 2026 tech layoffs: 78,557 cut, 47.9% AI-attributed</td>
+<td>https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>23</td>
+<td>CNN Business — Counterweight: IBM tripled entry hiring; BLS 15% growth</td>
+<td>https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Dev Genius / Medium — Snap fired 1,000 engineers because 65% AI code</td>
+<td>https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Axios — "They operate like slot machines": agent power-user brain scramble</td>
+<td>https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>26</td>
+<td>ExplainX — Agentic fatigue + vibe coding productivity paradox</td>
+<td>https://explainx.ai/blog/agentic-fatigue-vibe-coding-ai-developer-productivity-paradox</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>27</td>
+<td>IT Pro — AI doesn't solve burnout, it amplifies it</td>
+<td>https://www.itpro.com/software/development/ai-doesnt-solve-the-burnout-problem-if-anything-it-amplifies-it-ai-coding-tools-might-supercharge-software-development-but-working-at-machine-speed-has-a-big-impact-on-developers</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Addy Osmani (Medium) — Comprehension Debt: the hidden cost of AI code</td>
+<td>https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>29</td>
+<td>byteiota — Cognitive Debt: agents outpace comprehension 5–7x</td>
+<td>https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>30</td>
+<td>TechCrunch — OpenAI says Codex is coming to your phone</td>
+<td>https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Engadget — xAI introduces Grok Build ($300/mo SuperGrok Heavy, 8-agent fleet)</td>
+<td>https://www.engadget.com/2173482/xai-coding-agent-grok-build/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>32</td>
+<td>MarkTechPost — Best AI Agents for Software Development Ranked</td>
+<td>https://www.marktechpost.com/2026/05/15/best-ai-agents-for-software-development-ranked-a-benchmark-driven-look-at-the-current-field/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>33</td>
+<td>SD Times — May 8 roundup: Coder Agents + Snyk-Claude + Opsera-Cursor</td>
+<td>https://sdtimes.com/ai/may-8-2026-ai-updates-from-the-past-week-coder-agents-launch-snyk-claude-partnership-opsera-cursor-partnership-and-more/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>34</td>
+<td>SiliconANGLE — Boomi Companion plans to agentic engineering pay off</td>
+<td>https://siliconangle.com/2026/05/15/boomi-companion-plans-agentic-engineering-pay-off-boomiworld/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>35</td>
+<td>The Hacker News — Three flaws in Anthropic MCP Git Server</td>
+<td>https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>36</td>
+<td>JFrog — CVE-2025-6515 MCP prompt hijacking</td>
+<td>https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Palo Alto Unit 42 — MCP sampling attack vectors (3 classes)</td>
+<td>https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>38</td>
+<td>InfoQ — AI "Vibe Coding" Threatens Open Source as Maintainers Face Crisis</td>
+<td>https://www.infoq.com/news/2026/02/ai-floods-close-projects/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>39</td>
+<td>GitHub — Rust Foundation safety-critical LLM contribution policy issue #408</td>
+<td>https://github.com/rustfoundation/safety-critical-rust-coding-guidelines/issues/408</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>40</td>
+<td>GitHub — Melissa Weber Mendonça: open-source-ai-contribution-policies</td>
+<td>https://github.com/melissawm/open-source-ai-contribution-policies</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Augment Code — CTO AI Coding Tool Evaluation Checklist (six-dimension rubric)</td>
+<td>https://www.augmentcode.com/guides/cto-ai-coding-checklist</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Gartner — 2026 Hype Cycle for Agentic AI (74% attack-vector, 13% governance ready)</td>
+<td>https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>43</td>
+<td>InfoQ — You've generated your MVP using AI. What that means for architecture</td>
+<td>https://www.infoq.com/articles/ai-generated-mvp/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>44</td>
+<td>IT Brief Asia — AI coding tools face 2026 reset towards architecture</td>
+<td>https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Architecture &amp; Governance — Invisible Work in the Age of AI</td>
+<td>https://www.architectureandgovernance.com/applications-technology/invisible-work-in-the-age-of-ai-the-new-bottleneck-in-architecture-and-delivery/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>46</td>
+<td>SmartScope — Claude Code's quality drop postmortem (Mar 4 → Apr 7)</td>
+<td>https://smartscope.blog/en/blog/claude-code-quality-degradation-postmortem-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Morph — The Real Cost of AI Coding in 2026 (5x–20x agentic token use)</td>
+<td>https://www.morphllm.com/ai-coding-costs</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Palma.ai — Real cost of AI coding for 1,000 developers ($200–500/dev/mo)</td>
+<td>https://palma.ai/blog/real-cost-of-ai-coding-tools</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>49</td>
+<td>ThePrimeagen — YouTube main channel (ongoing AI-coding commentary)</td>
+<td>https://www.youtube.com/c/theprimeagen</td>
+<td>tier1_5.youtube</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Fireship — YouTube weekly AI tooling coverage</td>
+<td>https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA</td>
+<td>tier1_5.youtube</td>
+</tr>
+<tr>
+<td>51</td>
+<td>@simonw — Claude Code documentation pull-in feature</td>
+<td>https://x.com/simonw/status/1902850809530028143</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Pragmatic Engineer Podcast — Steve Yegge: IDE → AI agent transition</td>
+<td>https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Pragmatic Engineer Podcast — Kent Beck on TDD, AI agents, and coding</td>
+<td>https://newsletter.pragmaticengineer.com/p/tdd-ai-agents-and-coding-with-kent</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Anthropic — 2026 Agentic Coding Trends Report (primary-source vendor PDF, 60%/0-20% gap, Augment/Fountain/Rakuten/CRED/TELUS/Zapier case studies)</td>
+<td>https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf</td>
+<td>tier1.blogs_publications (suppl)</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Simon Willison — GitLab Act 2 (workforce reduction, agentic era)</td>
+<td>https://simonwillison.net/2026/May/11/</td>
+<td>tier1.blogs_publications (suppl)</td>
+</tr>
+<tr>
+<td>56</td>
+<td>@simonwillison.net (Bluesky) — Willison practitioner feed (GitLab Act 2 / Unethical Guide / Boris Mann / TIL / OpenClaw / Zombie Internet, May 11-17)</td>
+<td>https://bsky.app/profile/simonwillison.net</td>
+<td>tier1.primary_social (suppl)</td>
+</tr>
+<tr>
+<td>57</td>
+<td>@kelseyhightower.com (Bluesky) — Hightower practitioner feed (May 16 "decoupled output from understanding"; May 18 467-like skepticism cluster)</td>
+<td>https://bsky.app/profile/kelseyhightower.com</td>
+<td>tier1.primary_social (suppl)</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Flipboard @maryflipse3 — Codex on iPhone/iPad/Android (9to5mac curated)</td>
+<td>https://flipboard.com/@maryflipse3/ai-jrgbno6hz/openai-brings-codex-to-chatgpt-for-iphone-ipad-and-android-with-these-features/a-X7AawCSaTq-iD2LIV1cEEg%3Aa%3A79523337-8fcc20c0d1%2F9to5mac.com</td>
+<td>tier2 (suppl)</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Flipboard @maryflipse3 — What happens when AI starts building itself (TechCrunch curated)</td>
+<td>https://flipboard.com/@maryflipse3/ai-jrgbno6hz/what-happens-when-ai-starts-building-itself/a-H8676t14TF2IC_eiA_Qh9Q%3Aa%3A79523337-57157fc848%2Ftechcrunch.com</td>
+<td>tier2 (suppl)</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Flipboard @maryflipse3 — Human-centred AI (Psyche.co curated)</td>
+<td>https://flipboard.com/@maryflipse3/ai-jrgbno6hz/the-ai-age-is-inevitable-let-s-make-sure-it-s-human-centred-psyche-videos/a-vCyOsij-R6atkWvnjI6QOQ%3Aa%3A79523337-7fd41db11b%2Fpsyche.co</td>
+<td>tier2 (suppl)</td>
+</tr>
+<tr>
+<td>61</td>
+<td>r/ClaudeCode — AI Engineer who does not code (494 up / 529 comments)</td>
+<td>https://www.reddit.com/r/ClaudeCode/comments/1tdvyfr/ai_engineer_who_does_not_code_and_uses_claude_for/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>62</td>
+<td>r/vibecoding — Vibe coding amazing until expert review (462 up / 324 comments)</td>
+<td>https://www.reddit.com/r/vibecoding/comments/1tfpdvt/vibe_coding_feels_amazing_until_an_experienced/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>63</td>
+<td>r/ClaudeCode — UI Preview feature reception (402 up)</td>
+<td>https://www.reddit.com/r/ClaudeCode/comments/1tfn31s/new_ui_preview_feature_on_claude_code_is_really/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>64</td>
+<td>r/ClaudeCode — Two weeks switching Claude → Codex (398 up / 253 comments)</td>
+<td>https://www.reddit.com/r/ClaudeCode/comments/1tbcfmi/impressions_two_weeks_after_moving_from_claude/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>65</td>
+<td>r/ExperiencedDevs — Skills displaced by AI / cognitive-debt anxiety (~353 up / 221 comments)</td>
+<td>https://www.reddit.com/r/ExperiencedDevs/comments/1tbz4jc/things_i_used_to_be_proud_of_doing_well_modern_ai/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>66</td>
+<td>r/cscareerquestions — Is programming still worth pursuing in 2026?</td>
+<td>https://www.reddit.com/r/cscareerquestions/comments/1tdsf2j/do_you_guys_honestly_think_its_still_worth/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>67</td>
+<td>r/cscareerquestions — 4 engineers doing job of 12 via AI agents</td>
+<td>https://www.reddit.com/r/cscareerquestions/comments/1tb026z/4_engineers_now_doing_the_job_of_12_at_my_friends/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>68</td>
+<td>r/cscareerquestions — Coping with AI fatigue</td>
+<td>https://www.reddit.com/r/cscareerquestions/comments/1tc5fen/how_to_deal_with_ai_fatigue/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>69</td>
+<td>r/ExperiencedDevs — Net cultural impact of vibe coding</td>
+<td>https://www.reddit.com/r/ExperiencedDevs/comments/1tc6vwb/has_vibe_coding_culture_done_more_good_than_bad/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>70</td>
+<td>r/ExperiencedDevs — Token-based billing changes June 1 (cost-runaway corroboration)</td>
+<td>https://www.reddit.com/r/ExperiencedDevs/comments/1tesidz/token_based_billing_changes_june_1/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+<tr>
+<td>71</td>
+<td>r/cursor — Claude Code $100 vs Cursor $60 cost comparison</td>
+<td>https://www.reddit.com/r/cursor/comments/1th0ftx/usage_claude_code_100_vs_cursor_60_with_composer/</td>
+<td>tier2 (Grok relay, suppl)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note</em>: 71 unique URLs across the extraction after the 2026-05-20 supplemental pass (53 original + 18 added). Pattern-source URLs in <code>emerging_patterns[]</code> are objects (<code>{url, label, retrieved}</code>); the validate-citations.py walker counts only string-typed URLs from that field. In E10 those pattern sources are all <code>dict</code> shape, so coverage is anchored on tier1 / tier1_5 / tier2 / incidents / deduplication_references URLs. Total <code>extraction_urls</code> reachable by the validator: 49 unique (after dedup of incident URLs that double-list in blogs).</p>
+
+
+</section><section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>The May 11–18 window is the first post-keynote window after <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Code w/ Claude 2026</a> — and the dominant story is that the <strong>structural-risk layer reasserts itself the moment the announcement-affect bounce fades</strong>. With Reddit retrieval blocked at the WebSearch user-agent level this entire window (no Tier-1 Reddit signal at all), the sample is composition-shifted toward Tier-1 blogs, vendor research, and analyst publications — a strongly negative attractor relative to the practitioner-Reddit corpus that drove E8 and E9. Cautiously Negative climbs back toward E8's series-high range (∼42%, up from E9's 30% retreat), Strongly Negative holds in the high teens, and Strongly/Cautiously Positive recede to single digits — the inverse of E9's vendor-announcement-driven calm.</p>
+<p>Three converging Tier-1 disclosures dominate the substantive content. First, the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">Cloud Security Alliance Labs research note</a> anchors a quantified Vibe Coding security-debt picture: Georgia Tech's Vibe Security Radar tracked 35 CVEs in March 2026 directly attributable to AI coding tools (up from 6 in January and 15 in February), Veracode's 100+ LLM test showing 45% of AI-generated code samples introducing OWASP Top 10 vulnerabilities with no improvement across the 2025–2026 testing cycles, and ∼20% of AI-generated samples referencing nonexistent packages exploited via "slopsquatting." Second, <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register reports</a> that a researcher publicly described an Anthropic MCP design flaw exposing up to 200,000 servers — and was reportedly told the protocol "works as expected" despite 10 high/critical CVEs to date, formalizing the cross-window vendor-posture concern that has surrounded MCP since E1. Third, the <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune Amazon-outages disclosure</a> attributes two March outages (∼120,000 lost orders on Mar 2; ∼6.3M lost orders and a 99% U.S. order-volume drop on Mar 5) to AI-assisted code deployed without proper approval — Amazon's response was a 90-day code-safety reset across 335 critical systems requiring senior engineer pre-deploy approval for any AI-assisted change. This is the first window where an FAANG-tier incumbent visibly bolts a senior-engineer human-review gate in front of agentic deploys for a defined critical-system perimeter.</p>
+<p>The week's second defining shift is <strong>the displacement of the "vibe coding" frame by a vocabulary of architectural reset</strong>. <a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Technology Radar v34</a> is framed editorially as "AI-assisted development is actively forcing technologists to look backward to foundational engineering practices to combat cognitive debt." <a href="https://www.thoughtworks.com/radar/tools/openspec" target="_blank" rel="noopener">OpenSpec lands on Radar</a> as a spec-driven framework explicitly positioned as "a response to vibe-coding chaos." <a href="https://www.architectureandgovernance.com/applications-technology/invisible-work-in-the-age-of-ai-the-new-bottleneck-in-architecture-and-delivery/" target="_blank" rel="noopener">Architecture &amp; Governance Magazine</a> and <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief Asia</a> both publish "2026 reset towards architecture" framings within a 14-day arc. <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ argues</a> AI-generated code "is not intended to be maintained, per se, but can only be replaced by more AI-generated code" — a stronger version of the comprehension-debt thesis that breaks the maintenance loop entirely. Cognitive debt as a frame has consolidated: Storey's academic origin, Osmani's "comprehension debt" practitioner rename, and byteiota's 5–7x velocity-comprehension-gap quantification (agents 140–200 lines/min, humans 20–40 lines/min) are now cited interchangeably across analyst and vendor publications.</p>
+<p>Two new entrants reshape the agent-market frame. <a href="https://www.engadget.com/2173482/xai-coding-agent-grok-build/" target="_blank" rel="noopener">xAI launches Grok Build at $300/mo</a> (SuperGrok Heavy gated), an 8-parallel-agent fleet with built-in "Arena Mode" evaluation — the price tag is the most aggressive ceiling-test in the segment to date, and a probe of whether the top-tier-agent market can support an enterprise-only premium tier above Claude Code Max / Cursor Ultra / Codex Pro. <a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener">Codex moves to mobile</a> (iOS + Android, all plans), turning remote-management of agents into an out-of-IDE expectation. Practitioner signal that <a href="https://news.ycombinator.com/item?id=46854999" target="_blank" rel="noopener">Claude Code is "suddenly everywhere inside Microsoft"</a> — even with Copilot the corporate sibling — adds an unusual cross-vendor trust-transfer data point. The pattern remains stack composition, not single-tool victory: <a href="https://www.marktechpost.com/2026/05/15/best-ai-agents-for-software-development-ranked-a-benchmark-driven-look-at-the-current-field/" target="_blank" rel="noopener">MarkTechPost's benchmark roundup</a> puts Claude Code top on SWE-bench-style code quality, Cursor top on IDE integration, and Codex closing on mobile preview — three lanes, three winners, no convergence on one tool.</p>
+<p>OSS-governance backlash hardens into something resembling a coalition. <a href="https://www.infoq.com/news/2026/02/ai-floods-close-projects/" target="_blank" rel="noopener">InfoQ's "AI floods" piece</a> documents Gentoo's and NetBSD's outright bans plus Mitchell Hashimoto's Ghostty ban; the <a href="https://github.com/rustfoundation/safety-critical-rust-coding-guidelines/issues/408" target="_blank" rel="noopener">Rust Foundation safety-critical guidelines issue #408</a> elevates the question to a vouch-tool governance discussion (Niko Matsakis summary, Feb 11 / Feb 27); <a href="https://github.com/melissawm/open-source-ai-contribution-policies" target="_blank" rel="noopener">Melissa Weber Mendonça's curated index</a> tracks Linux Foundation guidance and Apache's "Generated-by:" tag plus per-project bans as a living artifact. The InfoQ source quotes practitioners openly conceding detection of policy violations will be "functionally impossible within a year or two." Labor-market discourse bifurcates rather than collapsing: <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware reports 78,557 Q1 2026 tech layoffs with 47.9% AI-attributed</a>; <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO documents junior-developer demand softening</a>; <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN Business publishes a counterweight</a> citing IBM's tripled entry-level hiring, Anthropic/OpenAI/Cisco/Nvidia/defense-tech demand, and the BLS 15%-by-2034 projection. Practitioner discourse increasingly treats "AI is killing dev jobs" and "AI is reshaping dev jobs" as <strong>two stories, not one</strong> — the longitudinal signal-evolution implication is that the labor-market track will require two slugs going forward, not one.</p>
+<p>The next-window watch is whether the Amazon "90-day code-safety reset" template propagates: which other FAANG-tier or PE-backed operator publicly adopts a senior-engineer human-review gate in front of AI-assisted deploys, and on what perimeter. Secondary watches: first practitioner reviews of Grok Build at the $300 tier; first signal that Routines / Dreaming / Managed Agents from Code w/ Claude either ships production reports or quietly slips; whether any MCP client ships hardened-by-default sampling controls in response to the <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 attack-vector trio</a>; and whether the Reddit retrieval gap can be closed via an alternate path for E11 (it has now suppressed practitioner-Reddit signal for one full window, the first such gap in the program).</p>
+
+</section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
+<h3>Sentiment Distribution</h3>
+<p>50 sentiment-tagged items across all tiers (Tier-3 flags excluded; merged-mode dedup applied; deduplication_references collapses one Anthropic recap into Simon Willison's primary live blog).</p>
+<table>
+<thead>
+<tr>
+<th>Sentiment</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">% of Sample</th>
+<th>Trend vs. Previous (E9)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strongly Positive</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2%</td>
+<td>↓ (E9: 6%)</td>
+</tr>
+<tr>
+<td>Cautiously Positive</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">10%</td>
+<td>↑ (E9: 8%)</td>
+</tr>
+<tr>
+<td>Mixed/Ambivalent</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">12%</td>
+<td>↓ (E9: 18%)</td>
+</tr>
+<tr>
+<td>Cautiously Negative</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">42%</td>
+<td>↑ (E9: 30%)</td>
+</tr>
+<tr>
+<td>Strongly Negative</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">18%</td>
+<td>↑ (E9: 16%)</td>
+</tr>
+<tr>
+<td>Nuanced/Analytical</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16%</td>
+<td>↓ (E9: 22%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shift Note</strong>: The defining shift is the <em>reversal</em> of E9's announcement-driven calm. With no Reddit signal at all this window (system-level WebSearch block on <code>reddit.com</code>) and the sample composition-shifted toward Tier-1 blogs / analyst publications, Cautiously Negative jumps back toward E8's series-high 44%. Strongly Negative ticks up on the strength of three Tier-1 incident disclosures landing inside the window (Amazon outages via Fortune retroactive analysis, MCP 200k-server report via The Register, CSA Labs Vibe Security Radar 35-CVE figure). The retreat in Nuanced (22% → 16%) is largely the result of fewer "amplification not replacement" framing pieces this window — most analytical content is now framing structural risk rather than reframing the labor narrative. The single Strongly Positive item is the <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Code w/ Claude live blog recap</a> — included as a within-window practitioner read because the keynote landed inside the lookback window — but the discourse around it has shifted in the days after the keynote toward the "API volume up 17x" anchor (which the Simon Willison live blog itself records) rather than the announcement excitement. <strong>The structural-risk layer is, again, intact even as the announcement-affect layer cools.</strong></p>
+<h3>Topic Cluster Frequency</h3>
+<p>Tag-mention counts across 50 tagged items (multi-tag items contribute to multiple clusters).</p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th style="text-align: right;">Mentions</th>
+<th>Dominant Sentiment</th>
+<th>Change from Previous (E9)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architectural Philosophy</td>
+<td style="text-align: right;">18</td>
+<td>Nuanced / Cautiously Negative</td>
+<td>↑ (E9: 17)</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td style="text-align: right;">16</td>
+<td>Cautiously Negative</td>
+<td>↑ (E9: 9)</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td style="text-align: right;">14</td>
+<td>Cautiously Negative</td>
+<td>↑ (E9: 13)</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td style="text-align: right;">13</td>
+<td>Strongly Negative</td>
+<td>↑ (E9: 10)</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td style="text-align: right;">12</td>
+<td>Mixed / Cautiously Negative</td>
+<td>NEW prominent (E9 implicit)</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td style="text-align: right;">11</td>
+<td>Mixed</td>
+<td>↑ (E9: 10)</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td style="text-align: right;">8</td>
+<td>Cautiously Negative</td>
+<td>↓ (E9: 13)</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td style="text-align: right;">7</td>
+<td>Cautiously Negative</td>
+<td>↑ (E9: 4)</td>
+</tr>
+<tr>
+<td>Hiring / Junior Pipeline</td>
+<td style="text-align: right;">5</td>
+<td>Cautiously Negative / Mixed</td>
+<td>↑↑ (E9: 1)</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td style="text-align: right;">5</td>
+<td>Nuanced</td>
+<td>↑ (E9: 4)</td>
+</tr>
+<tr>
+<td>Deskilling / Learning</td>
+<td style="text-align: right;">5</td>
+<td>Cautiously Negative</td>
+<td>↓ (E9: 7)</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td style="text-align: right;">4</td>
+<td>Cautiously Negative</td>
+<td>↓ (E9: 5)</td>
+</tr>
+<tr>
+<td>Team &amp; Org Dynamics</td>
+<td style="text-align: right;">4</td>
+<td>Mixed</td>
+<td>↑ (E9: 1)</td>
+</tr>
+<tr>
+<td>Job Security</td>
+<td style="text-align: right;">4</td>
+<td>Cautiously Negative</td>
+<td>NEW prominent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Headline shifts vs. E9</strong>: Architectural Philosophy holds the #1 slot (18 mentions) but its dominant sentiment moves <em>toward Cautiously Negative</em> on the strength of three "2026 architectural reset" framings landing in the window (<a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34</a>, <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief Asia</a>, <a href="https://www.architectureandgovernance.com/applications-technology/invisible-work-in-the-age-of-ai-the-new-bottleneck-in-architecture-and-delivery/" target="_blank" rel="noopener">Architecture &amp; Governance</a>) plus <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ's "AI-generated MVP forces architectural philosophy shift"</a>. Code Quality climbs sharply from #6 to #2 (9 → 16) on the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs 35-CVE / 45% OWASP</a>, <a href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank" rel="noopener">Lightrun 43%</a>, <a href="https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e" target="_blank" rel="noopener">Osmani comprehension debt</a>, <a href="https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/" target="_blank" rel="noopener">byteiota 5–7x</a>, <a href="https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0" target="_blank" rel="noopener">Snap PR-review post-mortem</a>, and <a href="https://stackoverflow.blog/2026/01/23/ai-can-10x-developers-in-creating-tech-debt/" target="_blank" rel="noopener">Stack Overflow's "AI 10x's tech debt"</a> anchors. Pricing / Cost retreats from #2 to #7 (13 → 8) — the rate-limit-doubling story of E9 has cooled, leaving the cost cluster anchored to vendor-perspective pieces (<a href="https://www.morphllm.com/ai-coding-costs" target="_blank" rel="noopener">Morph</a>, <a href="https://palma.ai/blog/real-cost-of-ai-coding-tools" target="_blank" rel="noopener">Palma.ai</a>, <a href="https://www.engadget.com/2173482/xai-coding-agent-grok-build/" target="_blank" rel="noopener">Grok Build $300/mo</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer ~30% hit limits</a>) rather than practitioner-thread arithmetic. Hiring / Junior Pipeline jumps from #11 to #9 (1 → 5) on <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware 47.9% AI-attributed</a>, <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO juniors softening</a>, <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN counterweight</a>, <a href="https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0" target="_blank" rel="noopener">Snap PR analysis</a>, and the Pragmatic Engineer Builders/Shippers segmentation reasserting itself. Enterprise / Policy is the cluster best characterized as "newly prominent": no single dominant sentiment, mixed between the Augment Code CTO checklist / Gartner Hype Cycle governance frame (cautious-analytical) and the OSS bans / 90-day Amazon reset (more negative). <strong>The directional headline is: structural-risk clusters are up across the board; sentiment-cooling clusters from E9 are down.</strong></p>
+<h3>Tool-Specific Mentions</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align: right;">Positive</th>
+<th style="text-align: right;">Negative</th>
+<th style="text-align: right;">Mixed/Nuanced</th>
+<th>Key Themes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude / Claude Code</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td>Code w/ Claude 2026 anchor; Microsoft adoption signal; SmartScope quality-drop postmortem; PocketOS canonical incident still circulating; Bitwarden CLI credential-targeting attack</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td>Cursor 3 release; HN power-user defection to CC; PocketOS canonical incident; Bitwarden credential targeting; benchmark roundup IDE-integration lead</td>
+</tr>
+<tr>
+<td>Copilot</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>Cross-vendor partnership noise; secondary mentions in Microsoft / Cursor 3 / Skills Manager threads; absent as primary subject this window</td>
+</tr>
+<tr>
+<td>ChatGPT / Codex</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>Codex mobile launch (TechCrunch); Bitwarden credential targeting; benchmark roundup "closing gap" framing</td>
+</tr>
+<tr>
+<td>MCP (protocol)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td>200k-server design-flaw disclosure; CVE-2025-6515 prompt hijacking; mcp-server-git three-flaw class; Unit 42 sampling attack vectors</td>
+</tr>
+<tr>
+<td>General AI / Multi</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5</td>
+<td>Cognitive-debt / comprehension-debt framing pieces; 2026 architectural reset framings; Vibe Coding security-debt anchor; CSA Labs survey; OSS governance</td>
+</tr>
+<tr>
+<td>xAI / Grok Build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td>$300/mo SuperGrok Heavy gate + 8-parallel-agent fleet — too new for sentiment polarity, filed Nuanced</td>
+</tr>
+</tbody>
+</table>
+<p>Compared with E9: Cursor's negative share grows on the strength of the still-circulating PocketOS canonical incident and the <a href="https://news.ycombinator.com/item?id=46676554" target="_blank" rel="noopener">HN power-user defection thread</a> ("I was a top 0.01% Cursor user, then switched to Claude Code 2.0"). Codex moves into net-positive territory for the second consecutive window — <a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener">mobile launch</a> plus continued "Codex Got Better" narrative spillover from E9. MCP's negative share concentrates further: <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">200k-server design-flaw disclosure</a>, <a href="https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/" target="_blank" rel="noopener">JFrog CVE-2025-6515</a>, <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">Hacker News mcp-server-git three flaws</a>, and <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 sampling attack vectors</a> constitute a four-source MCP-negative cluster with no offsetting MCP-positive items. The arrival of xAI's Grok Build in the agent market is the first new entrant since the Cursor/xAI acquisition rumor of E6 — too new to score, but worth tracking as a potential alternative narrative anchor.</p>
+
+</section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
+<h3>Architectural Philosophy (18 mentions — #1)</h3>
+<p>Dominant frame this window: a <em>2026 reset toward architecture, governance, and long-term maintainability</em> in explicit displacement of "vibe coding." Four convergent Tier-1 pieces land in the window: <a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34's "Combat AI Cognitive Debt: Return to Engineering Fundamentals"</a> (institutional anchor); <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief Asia's "AI coding tools face 2026 reset towards architecture"</a> (industry-pivot framing); <a href="https://www.architectureandgovernance.com/applications-technology/invisible-work-in-the-age-of-ai-the-new-bottleneck-in-architecture-and-delivery/" target="_blank" rel="noopener">Architecture &amp; Governance Magazine's "Invisible Work in the Age of AI"</a> (the "fast delivery hides quietly accumulating debt" anchor); and <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ's MVP-architecture piece</a> — the most aggressive of the four, arguing AI-generated code "is not intended to be maintained, per se, but can only be replaced by more AI-generated code." That last claim is a substantively new position: it removes maintenance as a meaningful loop and replaces it with regeneration-as-maintenance — the architectural shift implied is closer to immutable-infrastructure thinking than to traditional software-engineering practice.</p>
+<p>The structural-pattern complement to the reset framing is multi-agent / agent-swarms architecture from the ThoughtWorks Radar. The Radar formalizes two distinct patterns: <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of Coding Agents</a> ("developer orchestrates a small group of named-role agents — architect, back-end, tester") and <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding Agent Swarms</a> ("dozens-to-hundreds of agents dynamically composed by AI, distinct from the deliberate team-of-agents pattern"). Both ring at Radar Assess level — meaning practitioners should <em>experiment with caution</em>. The dynamic of formalizing these as named techniques in Radar v34 is itself the architectural signal: enterprise-orientation thought leaders are no longer treating multi-agent orchestration as exploratory work but as a recognized pattern with named variants.</p>
+<p><a href="https://www.thoughtworks.com/radar/tools/openspec" target="_blank" rel="noopener">OpenSpec on Radar</a> closes the loop: it is framed as "a response to vibe-coding chaos" — an open-source spec-driven framework "ensuring human developers and AI agents align on what to build before code is generated." Read alongside the May 8 <a href="https://sdtimes.com/ai/may-8-2026-ai-updates-from-the-past-week-coder-agents-launch-snyk-claude-partnership-opsera-cursor-partnership-and-more/" target="_blank" rel="noopener">SD Times partnership roundup</a> (which records Snyk-Claude, Opsera-Cursor, and Coder agent-runtime launches), the pattern is a market-level consolidation: tools are no longer competing on "can we generate code from a vibe?" but on "can we generate code from a deliberate spec, with verifiable guardrails, in an enterprise governance frame?" The architectural philosophy cluster has matured from question to prescription in two quarters.</p>
+<p>Sentiment: Cautiously Negative / Nuanced. The four reset pieces all carry a "deep is broken, fundamentals must return" charge. OpenSpec's positioning is constructive, not skeptical, but it is constructive <em>as a corrective</em>. The Radar v34 framing is the most editorially direct — "actively forcing technologists to look backward to foundational engineering practices" reads as a soft indictment of the prior 12 months of agent-first practice.</p>
+<h3>Code Quality (16 mentions — #2)</h3>
+<p>This window's structural-risk anchor. The <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs research note</a> is the headline: Georgia Tech's Vibe Security Radar tracked 35 CVEs in March 2026 directly attributable to AI coding tools (up from 6 in January and 15 in February, ∼5.8x growth in 60 days). Researchers explicitly state the true count is likely 5–10x higher across the broader OSS ecosystem. Veracode's 100+ LLM test found 45% of AI-generated code samples introduce OWASP Top 10 vulnerabilities, with no improvement across the 2025–early-2026 testing cycles — a flat-line that contradicts the model-improvement-cures-this hope. ∼20% of AI-generated samples reference packages that do not exist, with attackers exploiting via "slopsquatting" (publishing malicious packages at the hallucinated names so the LLM generates code that resolves to them).</p>
+<p>The <a href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank" rel="noopener">Lightrun 2026 State of AI-Powered Engineering Report (via VentureBeat)</a> supplies the engineering-leader complement: 43% of AI-generated code changes require manual debugging in production <em>even after QA and staging</em>; 0% of engineering leaders self-described as "very confident" that AI-generated code will behave correctly once deployed. The 0% figure is the most striking single quantitative result in the window — not "low" confidence, but zero leaders ticking the most-confident bucket.</p>
+<p><a href="https://stackoverflow.blog/2026/01/23/ai-can-10x-developers-in-creating-tech-debt/" target="_blank" rel="noopener">Stack Overflow's "AI can 10x developers... in creating tech debt"</a> supplies the practitioner-framing anchor; the still-circulating <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust gap piece</a> supplies the longitudinal trust-erosion baseline (84% use, only 29% trust, 46% active distrust, 66% spending more time fixing "almost-right" AI code). <a href="https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0" target="_blank" rel="noopener">The Dev Genius / Medium "Snap fired 1,000 engineers" PR analysis</a> — author pseudonym "The Unwritten Algorithm," so treat the Snap numbers as anecdote-tier — supplies a concrete review-cost picture: patterns of unreviewable churn and over-large diffs, the on-the-ground texture of the quantitative pattern the CSA / Lightrun / SO numbers describe.</p>
+<p>The pattern: code-quality discourse this window is not a single survey or single incident but a <em>quantified consensus</em> — four sources independently confirming the same thing, with Veracode's flat-line result (no improvement across testing cycles) the most thesis-relevant claim. The comprehension-debt anchor pieces (<a href="https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e" target="_blank" rel="noopener">Osmani</a>, <a href="https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/" target="_blank" rel="noopener">byteiota 5–7x</a>) sit cleanly inside this cluster as well — the velocity/comprehension gap <em>is</em> the structural source of the code-quality regression that Lightrun and CSA Labs are independently measuring.</p>
+<p>Sentiment: Cautiously Negative dominates with Strongly Negative concentrated on the CVE / security-debt subset.</p>
+<h3>Trust / Verification (14 mentions — #3)</h3>
+<p><a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register's 200k-server MCP design-flaw disclosure</a> is the trust anchor: the researcher's quote that Anthropic was "repeatedly asked to patch the root issue and being told the protocol 'works as expected,' despite 10 high- and critical-severity CVEs issued so far" is the single most damaging vendor-posture line in the window. Even after acknowledging the source's incentive to frame Anthropic uncharitably, the <em>count</em> (10 CVEs) and the <em>vendor response framing</em> ("works as expected") are public-record statements that compound across the longitudinal <code>anthropic-trust-arc</code> signal.</p>
+<p><a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's trust gap piece</a> supplies the longitudinal baseline: 84% use, 29% trust, 46% active distrust, 66% report spending more time fixing "almost-right" AI code. The 11-point YoY trust drop is the most cited single number in cross-platform discourse this window — appearing in <a href="https://www.augmentcode.com/guides/cto-ai-coding-checklist" target="_blank" rel="noopener">Augment Code's CTO checklist preamble</a>, implicitly in <a href="https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai" target="_blank" rel="noopener">Gartner's Hype Cycle (74% see agents as an attack vector, 13% have governance in place)</a>, and as ambient background in the <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 900-reader survey</a>.</p>
+<p><a href="https://smartscope.blog/en/blog/claude-code-quality-degradation-postmortem-2026/" target="_blank" rel="noopener">SmartScope's Claude Code postmortem analysis</a> closes the trust-arc loop with primary detail on the Mar 4 reasoning-effort change (high → medium) that produced "users widely reported Claude reading less code, making shallow edits, repeating itself, and burning usage limits faster than expected" — reversed Apr 7. The piece is constructive (Anthropic <em>did</em> postmortem and roll back) and so the cluster sentiment is not uniformly negative; the trust dynamics are <em>complex</em>, not collapsing. But the unmitigated <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">200k-server MCP design flaw</a> is the single largest cross-window negative datapoint and dominates the cluster mood.</p>
+<p>The HN signal that <a href="https://news.ycombinator.com/item?id=46854999" target="_blank" rel="noopener">Claude Code is "suddenly everywhere inside Microsoft"</a> deserves explicit attention as a cross-vendor trust-transfer event: Microsoft's own engineers reaching for a direct competitor's tool despite Copilot being a corporate sibling is the kind of weak-signal data that becomes obvious in retrospect. The HN thread reads it as "implicit credibility transfer when a vendor's own engineers reach for a competitor's tool." If this signal recurs in E11 with corroborating cross-vendor adoption stories, the signal would warrant promotion from anecdote to tracked sub-pattern under <code>anthropic-trust-arc</code>.</p>
+<p>Sentiment: Cautiously Negative dominates; the cluster is the most directly relevant to the longitudinal <code>anthropic-trust-arc</code> signal.</p>
+<h3>Incidents / Failures (13 mentions — #4)</h3>
+<p>The Tier-1 incident corpus this window is dominated by <em>retroactive disclosures of incidents that happened in March and April</em> — Fortune's Amazon analysis (Mar 2 and Mar 5 outages first publicly disclosed mid-March, now reaching the wider analyst corpus), the State of Surveillance / Lovable / Vercel / Bitwarden disclosures dated April 1, the Cursor-Opus / PocketOS Register piece dated April 27, the Firetiger postmortem dated Mar 1, the MCP 200k-server disclosure dated April 16. The within-window flow is "no new disasters reported, but several large prior disasters reach Tier-1 critical-mass discourse."</p>
+<p>The new structural element in the incident cluster is the <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Amazon 90-day code-safety reset</a>: "AI-assisted code must now be approved by senior engineers pre-deploy" across 335 critical systems. This is the first window where a FAANG-tier operator visibly bolts a senior-engineer human-review gate in front of agentic deploys on a defined critical-system perimeter. The institutional template is concrete (335 systems, 90-day duration, pre-deploy senior review) and the trigger is two outages with quantified business impact (∼120,000 lost orders on Mar 2; ∼6.3M lost orders and 99% U.S. order-volume drop on Mar 5). The signal worth tracking forward: which other FAANG-tier or PE-backed operator publicly adopts a similar gate, and on what perimeter.</p>
+<p>The <a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">State of Surveillance "three AI security disasters in one week"</a> anchor remains hot in cross-citation: Lovable's $6.6B-valuation platform exposing every user's source code, DB credentials, and AI chat histories for 48 days via a basic API flaw; Vercel breached via the Context.ai third-party AI eval tool; Bitwarden CLI hijacked with malware specifically hunting for Claude, Cursor, and Codex CLI credentials. The Bitwarden piece is the <em>most</em> thesis-relevant element of the trio: an attack vector explicitly targeting AI-coding-tool credentials (not generic password-manager creds), a marker that attackers have begun to model AI-coding tool surfaces as their own high-value perimeter.</p>
+<p>The <a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/" target="_blank" rel="noopener">Firetiger postmortem</a> — 8-hour ingest outage caused by an AI-agent-authored CI race condition that incorrectly believed a build had completed and updated AWS Lambda / ECS service definitions to point to a non-existent container ID — supplies the engineering-blog-corpus complement to the FAANG incidents. The framing is explicit: this is the first Firetiger postmortem in which the agent's role in CI authoring is itself the question being explored, not background context.</p>
+<p>Sentiment: Strongly Negative dominates. The Critical-severity incidents (Amazon ×2, PocketOS, Lovable, Vercel, Bitwarden, MCP 200k) outnumber Operational-severity (Firetiger, SmartScope/CC regression) 6 to 2.</p>
+<h3>Enterprise / Policy (12 mentions — #5)</h3>
+<p>The cluster best characterized as "newly prominent" this window — no single dominant sentiment, content mixed between governance prescriptions (vendor-side) and outright prohibitions (community-side).</p>
+<p>Governance prescriptions: <a href="https://www.augmentcode.com/guides/cto-ai-coding-checklist" target="_blank" rel="noopener">Augment Code's CTO AI Coding Tool Evaluation Checklist (2026)</a> supplies a six-dimension rubric (determinism, auditability, context persistence, team admin, security, reversibility) with explicit 2.0x weighting for auditability/security/compliance in regulated industries and a three-tier classification (Tier 1 enterprise-licensed DPA-backed for autocomplete; Tier 2 reviewed-output-only; Tier 3 blocked). The piece is vendor-authored — read accordingly — but it formalizes the <em>shape</em> of the CTO procurement question in a way that has been informal in prior windows. <a href="https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai" target="_blank" rel="noopener">Gartner's 2026 Hype Cycle for Agentic AI</a> reaffirms the 40%+-of-agentic-AI-projects-canceled-by-end-of-2027 forecast and supplies the quantitative anchor: 74% of IT application leaders view AI agents as a new attack vector; only 13% strongly agree they have the right governance structures in place. The 13% figure is the cross-platform-cited single number this window for the governance-readiness gap.</p>
+<p>Outright prohibitions: <a href="https://www.infoq.com/news/2026/02/ai-floods-close-projects/" target="_blank" rel="noopener">InfoQ's "AI 'Vibe Coding' threatens open source"</a> documents Gentoo Linux and NetBSD banning AI contributions outright; Mitchell Hashimoto banning AI code from Ghostty; maintainers reporting low-effort AI-authored PR floods exceeding triage capacity. The <a href="https://github.com/rustfoundation/safety-critical-rust-coding-guidelines/issues/408" target="_blank" rel="noopener">Rust Foundation safety-critical-rust-coding-guidelines issue #408</a> records the Feb 11 subcommittee meeting that raised LLM contribution policy as a needed governance item, plus the Feb 27 internal team-lead discussion summarized publicly by Niko Matsakis. <a href="https://github.com/melissawm/open-source-ai-contribution-policies" target="_blank" rel="noopener">Melissa Weber Mendonça's curated index</a> tracks Linux Foundation guidance, Apache's "Generated-by:" tag recommendation, plus per-project bans as a living artifact. The InfoQ piece quotes maintainers conceding detection will be "functionally impossible within a year or two" — an unusually candid concession.</p>
+<p>The institutional shape this window: from advisory-tags ("Generated-by:" headers) to outright bans (Gentoo / NetBSD / Ghostty) to formal policy-process (Rust Foundation) — a cross-project hardening that has been visible as drift through E2–E9 and reaches coalition shape in E10.</p>
+<p>The Amazon 90-day code-safety reset belongs partly to this cluster, partly to Incidents. Counted under Enterprise / Policy because the <em>artifact</em> is a policy template, not the incident itself.</p>
+<p>Sentiment: Mixed / Cautiously Negative. The OSS-side content is unambiguously restrictive; the vendor-side governance content is constructive-but-cautious.</p>
+<h3>Productivity Reality (11 mentions — #6)</h3>
+<p>The window's most useful longitudinal datapoint: <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">The Pragmatic Engineer's survey of 900+ readers</a>. Headline finding: ∼30% have hit AI tool usage limits, with common responses being tool-switching, plan upgrades, or API migration. Per-engineer "max" plan cost lands at ∼$100–200/engineer/month for Claude Code, Cursor, and Codex at companies that fund the top tier; smaller orgs cap at $20. The 30%-hit-limits figure dovetails with the <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Code w/ Claude announcement</a> that Pro/Max/Enterprise five-hour limits were doubled — but the Pragmatic Engineer survey window is May 13 (post-doubling), suggesting the doubling did <em>not</em> resolve the hit-limits pattern. The Steve Yegge cite — "AI's role is amplification, not replacement" — is the most quotable single Steve Yegge line of the year and supplies the framing-anchor for the ongoing labor-market bifurcation discussion.</p>
+<p>The <a href="https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve" target="_blank" rel="noopener">Pragmatic Engineer podcast with Steve Yegge</a> elaborates the amplification thesis in podcast form; the <a href="https://newsletter.pragmaticengineer.com/p/tdd-ai-agents-and-coding-with-kent" target="_blank" rel="noopener">Pragmatic Engineer podcast with Kent Beck</a> supplies the TDD-with-agents complement (Kent Beck framing TDD as more, not less, valuable in agent-coded workflows). Together they constitute the highest-credibility practitioner-perspective triplet of the window.</p>
+<p><a href="https://www.marktechpost.com/2026/05/15/best-ai-agents-for-software-development-ranked-a-benchmark-driven-look-at-the-current-field/" target="_blank" rel="noopener">MarkTechPost's benchmark roundup</a> puts Claude Code top on SWE-bench-style code-quality metrics, Cursor top on IDE-integration metrics, Codex closing the gap on mobile preview — three lanes, no single winner. The MarkTechPost framing reinforces the longitudinal <code>stack-composition</code> thesis: practitioners are running multiple tools in distinct lanes, not converging on a single best-of.</p>
+<p><a href="https://sdtimes.com/ai/may-8-2026-ai-updates-from-the-past-week-coder-agents-launch-snyk-claude-partnership-opsera-cursor-partnership-and-more/" target="_blank" rel="noopener">The 9to5Google / SD Times-style amplification</a> of the Code w/ Claude announcements (Snyk-Claude security review, Opsera-Cursor DevOps governance, Coder agent-runtime launch) reinforces the vendor-tooling-consolidation pattern but lands as Productivity Reality because the framing is "what these partnerships let practitioners do" rather than market-structure. <a href="https://siliconangle.com/2026/05/15/boomi-companion-plans-agentic-engineering-pay-off-boomiworld/" target="_blank" rel="noopener">Boomi's "agentic engineering pay off" piece</a> is the enterprise-platform-vendor complement: enterprise platforms restructuring engineering org charts around coding agents.</p>
+<p>Sentiment: Mixed dominates. The Pragmatic Engineer survey is the most balanced single piece (slop-handling and amplification both prominent); the benchmark roundup is Nuanced; the partnership amplifications are Cautiously Positive.</p>
+<h3>Pricing / Cost (8 mentions — #7)</h3>
+<p><a href="https://www.morphllm.com/ai-coding-costs" target="_blank" rel="noopener">Morph's "Real Cost of AI Coding in 2026"</a> and <a href="https://palma.ai/blog/real-cost-of-ai-coding-tools" target="_blank" rel="noopener">Palma.ai's "Real Cost of AI Coding Tools for 1,000 Developers"</a> are paired vendor analyses that supply the cost-band consensus: $200–500/dev/month all-in at 1,000-developer scale (seats + MCP infra + governance); sticker prices understate real costs by 2x–5x for power users; agentic usage consumes 5x–20x more tokens than standard completions; ROI at 10% time savings is 3–5x but 20–40% improvements push it to 8–15x. Vendor sources, so read as advocacy-flavored — but the <em>direction</em> (sticker price understates real cost; agentic workflows are the cost variable) is corroborated by <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">the Pragmatic Engineer's ∼30%-hit-limits / $100–200/engineer/month finding</a>.</p>
+<p><a href="https://www.engadget.com/2173482/xai-coding-agent-grok-build/" target="_blank" rel="noopener">Grok Build's $300/mo SuperGrok Heavy gate</a> is the most aggressive single price point in the window — and the highest enterprise-tier ceiling-test in the segment. It establishes a price band ($240–$300/mo) for "premium with 8-agent fleets + Arena Mode evaluation" that has been implicit at the Cursor Ultra / Claude Code Max tier but never explicit. Whether the Grok Build price holds at $300, or settles closer to Cursor Ultra / Claude Code Max, is the most concrete pricing-watchpoint for E11.</p>
+<p><a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">The Code w/ Claude announcement bundle</a> — including the rate-limit doubling for Pro/Max/Enterprise — is the within-window vendor-positive cost story. The Pragmatic Engineer survey suggests it has not yet resolved the hit-limits pattern; the longitudinal <code>cost-runaway</code> signal remains alive even after the announcement.</p>
+<p>Sentiment: Cautiously Negative dominates, with the vendor-pieces leaning Vendor-perspective (filed Cautiously Negative because their underlying claim is "you are underbilling yourself").</p>
+<h3>Burnout / Cognitive Load (7 mentions — #8)</h3>
+<p>The within-window <code>ai-burnout-paradox</code> triplet: <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios "slot machines" framing</a>, <a href="https://explainx.ai/blog/agentic-fatigue-vibe-coding-ai-developer-productivity-paradox" target="_blank" rel="noopener">ExplainX's "agentic fatigue" consolidation</a>, and <a href="https://www.itpro.com/software/development/ai-doesnt-solve-the-burnout-problem-if-anything-it-amplifies-it-ai-coding-tools-might-supercharge-software-development-but-working-at-machine-speed-has-a-big-impact-on-developers" target="_blank" rel="noopener">IT Pro's "AI amplifies burnout"</a> form the cluster anchor. The ExplainX piece cites BCG/UC Riverside "brain fry" research and an HBR finding that "AI-associated mental strain carries significant costs in employee errors, decision fatigue, and intention to quit"; reports 60–75% of surveyed engineers experiencing some AI-related fatigue or reduced satisfaction. IT Pro's framing — "every minute saved by AI is reclaimed as time for more work, producing not less burnout but a different kind" — is the organizational-mechanism anchor.</p>
+<p><a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer's Builders/Shippers framing</a> — "Builders ('quality-of-life'-work makers) are dealing with more AI slop" — supplies the closest practitioner-corpus complement available this window (with Reddit blocked). The slop-handling burden has shifted in cluster: from a Code Quality / Trust framing in E8 to a Burnout / Cognitive Load framing in E10. The same underlying mechanism (slop-fixing burden falling on humans) is now read as a cognitive-load problem, not just a quality problem.</p>
+<p>Sentiment: Cautiously Negative dominates. The Axios "slot machines" framing has cross-cited into the cognitive-debt corpus and the framing is now firmly negative across all three cluster-anchor sources.</p>
+<h3>Hiring / Junior Pipeline + Job Security (9 mentions combined — #9 + #14)</h3>
+<p>The bifurcation thesis. Anchor pieces: <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware's 78,557 Q1 2026 tech layoffs with 47.9% AI-attributed</a>; <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO's "Demand for junior developers softens as AI takes over"</a>; <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's counterweight</a> citing IBM's tripled entry-level hiring plus Anthropic/OpenAI/Cisco/Nvidia hiring plus BLS 15%-by-2034 projection.</p>
+<p>The Tom's Hardware number (47.9% of Q1 layoffs AI-attributed) is the most aggressive single attribution this window. Apply the standard signal-discount for layoff-attribution data — companies have varying incentives to frame cuts as "AI-driven" rather than "macro-driven" — but the <em>trend direction</em> (rising share AI-attributed across Q4 2025 / Q1 2026) is the more durable signal than the absolute percentage.</p>
+<p>The CIO piece supplies the mechanism: "junior and mid-level developers handling repetitive feature/bug work face the harshest impact; QA/test engineers similarly displaced as test-automation services consume manual processes." The CNN piece supplies the counterweight: IBM tripled entry-level hiring in 2026 ("AI can do many entry-level jobs but still needs a human touch"); Anthropic, OpenAI, Cisco, Nvidia, defense-tech firms, and PE-backed mid-market companies actively hiring; BLS projects software developer employment grows 15% by 2034.</p>
+<p>The two stories are not contradictory — they describe different segments. Aggregate-job-postings-decline (<a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware: "new software-engineering job postings down 15% YoY in the first two months of 2026"</a>) and segment-specific-hiring-growth (IBM, Anthropic, defense-tech) can both be true. The longitudinal-signal implication: the labor-market track requires two slugs going forward, not one — a contraction story for repetitive feature/bug/QA work, and a reshape story for AI/research/security/defense-tech demand. The pre-existing <code>junior-pipeline-collapse</code> slug captures the first; <code>labor-market-bifurcation</code> is the new umbrella signal proposed below.</p>
+<p>Sentiment: Cautiously Negative across the contraction sub-cluster; Cautiously Positive on the counterweight (CNN); Cautiously Negative on the Snap PR analysis (Anecdote-tier credibility).</p>
+<h3>Deskilling / Learning (5 mentions — #11)</h3>
+<p>The cluster's content this window concentrates on the cognitive-debt thesis: <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Margaret Storey's UVic blog</a> (the academic origin of "cognitive debt" as a frame displacing "technical debt"); <a href="https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e" target="_blank" rel="noopener">Addy Osmani's "Comprehension Debt"</a> (practitioner variant arguing for per-PR comprehension budgets); <a href="https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/" target="_blank" rel="noopener">byteiota's 5–7x quantification</a> (agents 140–200 lines/min vs humans 20–40 lines/min); and the <a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34 "Combat Cognitive Debt" framing</a> (the institutional anchor).</p>
+<p>The cluster reads down vs E9 (7 → 5 mentions) only because Reddit is absent — the practitioner-side cognitive-debt evidence base in E9 was heavily Reddit-driven (r/ClaudeCode "Sr engineer hasn't written code in months," "built our entire product, nobody understands it"). With Reddit suppressed this window the cluster is anchored on Tier-1 blogs, but the frame itself has consolidated: cognitive debt / comprehension debt has displaced technical debt as the dominant 2026 frame, and it does so via <em>citations</em> — Storey, Osmani, and byteiota are now cross-cited in <a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34</a>, <a href="https://stackoverflow.blog/2026/01/23/ai-can-10x-developers-in-creating-tech-debt/" target="_blank" rel="noopener">Stack Overflow's "AI 10x's tech debt"</a>, and Architecture &amp; Governance pieces interchangeably.</p>
+<p>Storey's parallel-deskilling argument — law (para-legal database tools) and medicine (endoscopist adenoma-detection rates falling after LLM-assisted polyp detection) — is the highest-credibility cross-domain anchor for the deskilling thesis available in the cross-platform corpus. This is the rare academic source that has <em>measured</em> cognitive offload's downstream effect on practitioner capability and reported a directionally consistent finding.</p>
+<p>Sentiment: Cautiously Negative dominates.</p>
+<h3>Remaining Clusters (Hype vs Reality, Dependency / Resilience, Team &amp; Org Dynamics)</h3>
+<p><strong>Hype vs Reality (5 mentions — #10)</strong>. Anchor pieces: <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's counterweight to job-elimination narratives</a>; <a href="https://www.marktechpost.com/2026/05/15/best-ai-agents-for-software-development-ranked-a-benchmark-driven-look-at-the-current-field/" target="_blank" rel="noopener">MarkTechPost's benchmark roundup</a> framing tool-specific strengths against generic-AI-narratives; <a href="https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai" target="_blank" rel="noopener">Gartner's Hype Cycle for Agentic AI</a> maintaining the 40%-canceled-by-2027 forecast; ThePrimeagen and Fireship's curated YouTube channels supplying the practitioner-skepticism complement.</p>
+<p><strong>Dependency / Resilience (4 mentions — #12)</strong>. Anchored by <a href="https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/" target="_blank" rel="noopener">Cursor-Opus / PocketOS</a>, <a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/" target="_blank" rel="noopener">Firetiger postmortem</a>, <a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">State of Surveillance's Bitwarden CLI piece</a>, and the <a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">Vercel-via-Context.ai breach</a>. The cluster reads down vs E9 (5 → 4) but holds the same shape: AI-coding-tool-targeting supply-chain attacks and rollback-difficulty are the cluster's twin signature.</p>
+<p><strong>Team &amp; Org Dynamics (4 mentions — #13)</strong>. <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">ThoughtWorks Radar v34's "Team of coding agents"</a> supplies the most explicit team-architecture framing of the window. <a href="https://www.infoq.com/news/2026/02/ai-floods-close-projects/" target="_blank" rel="noopener">InfoQ's OSS-bans piece</a> and the <a href="https://github.com/rustfoundation/safety-critical-rust-coding-guidelines/issues/408" target="_blank" rel="noopener">Rust Foundation policy issue</a> supply the maintainer-team-dynamics complement (OSS teams formalizing their AI-contribution posture as a team-level governance question, not an individual-contributor question).</p>
+
+</section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
+<p>Per Analysis Engine v1.17 Bootstrap Step, each pattern below uses an existing signal_id slug where the underlying signal matches a tracked entry in <code>signal-store/index.json</code>. Two new slugs (<code>vendor-consolidation</code>, <code>labor-market-bifurcation</code>) are minted for genuinely-novel signals this window.</p>
+<h3>Pattern 1: cognitive-debt-deskilling (Existing signal — Promoted)</h3>
+<p><strong>Convergence on "cognitive debt" / "comprehension debt" as the dominant 2026 framing</strong>. Cross-source consolidation: <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Storey</a> (academic origin) → <a href="https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e" target="_blank" rel="noopener">Osmani</a> (practitioner rename) → <a href="https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/" target="_blank" rel="noopener">byteiota 5–7x quantification</a> (mechanical anchor) → <a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34 institutional response</a> → cross-cited in <a href="https://stackoverflow.blog/2026/01/23/ai-can-10x-developers-in-creating-tech-debt/" target="_blank" rel="noopener">SO 10x tech debt</a> and <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">SO trust gap</a>. The frame has now displaced "technical debt" as the dominant 2026 framing in analyst publications and is being cited interchangeably across practitioner, academic, and analyst voices. Confidence H. Trajectory: ↑↑ (E6 → E10 sustained climb; institutional consolidation in v34 is the maturation marker).</p>
+<h3>Pattern 2: mcp-attack-surface (Existing signal — Promoted)</h3>
+<p><strong>MCP security debt consolidating into a recognized vulnerability class</strong>. Within-window cross-citation: <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register 200k-server design-flaw report</a>; <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">The Hacker News mcp-server-git three flaws</a>; <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 sampling-attack-vector trio</a>; <a href="https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/" target="_blank" rel="noopener">JFrog CVE-2025-6515 prompt hijacking</a>. Vendor response reportedly contested ("works as expected" framing per The Register source). Confidence H. Trajectory: ↑ (E7: 6 observations → E10: cited in 4 independent Tier-1 / Tier-1.5 pieces within a single 7-day window — the most concentrated MCP-attack-surface cluster of the program).</p>
+<h3>Pattern 3: ai-burnout-paradox (Existing signal — Promoted)</h3>
+<p><strong>Agentic fatigue is the new burnout vector</strong>. <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios "slot machines" framing</a>; HBR-cited / BCG/UC Riverside "brain fry" research; <a href="https://explainx.ai/blog/agentic-fatigue-vibe-coding-ai-developer-productivity-paradox" target="_blank" rel="noopener">ExplainX's agentic-fatigue consolidation</a>; <a href="https://www.itpro.com/software/development/ai-doesnt-solve-the-burnout-problem-if-anything-it-amplifies-it-ai-coding-tools-might-supercharge-software-development-but-working-at-machine-speed-has-a-big-impact-on-developers" target="_blank" rel="noopener">IT Pro's organizational-reclamation mechanism</a>; <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer's Builders/Shippers slop-fixing burden</a>. 60–75% of surveyed engineers report AI-related fatigue. Confidence H. Trajectory: → (last observed E5; reappears with stronger institutional anchors at E10).</p>
+<h3>Pattern 4: agent-production-destruction (Existing signal — Promoted)</h3>
+<p><strong>Agentic blast-radius without scoped credentials — pattern persists</strong>. <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune Amazon outages</a> (Mar 2 + Mar 5: ∼120,000 + ∼6.3M lost orders); <a href="https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/" target="_blank" rel="noopener">Cursor-Opus / PocketOS deletion</a>; <a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/" target="_blank" rel="noopener">Firetiger postmortem</a>; <a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">Bitwarden CLI credential-targeting attack</a>. The Amazon 90-day code-safety reset (335 critical systems, senior-engineer pre-deploy approval) is the first FAANG-tier human-review-gate template visible in the longitudinal record. Confidence H. Trajectory: ↑ (the within-window appearance of an institutional countermeasure template is the signal-evolution event; the pattern itself is not declining).</p>
+<h3>Pattern 5: cve-acceleration (Existing signal — Promoted)</h3>
+<p><strong>CVE acceleration / cluster-driven security-debt maturity</strong>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs research note</a>: Georgia Tech's Vibe Security Radar — 35 CVEs in March 2026 directly attributable to AI coding tools (5.8x growth in 60 days); Veracode 45% OWASP Top 10 across 100+ LLMs with no improvement across testing cycles; ∼20% slopsquatting reference-rate. <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">Hacker News mcp-server-git three flaws</a>, <a href="https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/" target="_blank" rel="noopener">JFrog CVE-2025-6515</a>, <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 MCP attack vectors</a> supply the within-window CVE-cluster complement. Confidence H. Trajectory: ↑ (Veracode flat-line result is new — disconfirms model-improvement-cures-this hypothesis; signal maturation marker).</p>
+<h3>Pattern 6: cost-runaway (Existing signal — Promoted)</h3>
+<p><strong>Cost-runaway: doubled limits meet doubled workload</strong>. <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 900-reader survey</a>: ∼30% hit usage limits post-doubling; companies fund "max" plans at ∼$100–200/engineer/month. <a href="https://www.morphllm.com/ai-coding-costs" target="_blank" rel="noopener">Morph 5x–20x agentic token consumption</a>; <a href="https://palma.ai/blog/real-cost-of-ai-coding-tools" target="_blank" rel="noopener">Palma.ai $200–500/dev/mo at scale</a>; <a href="https://www.engadget.com/2173482/xai-coding-agent-grok-build/" target="_blank" rel="noopener">Grok Build's $300/mo SuperGrok Heavy ceiling-test</a>. <a href="https://smartscope.blog/en/blog/claude-code-quality-degradation-postmortem-2026/" target="_blank" rel="noopener">SmartScope's Claude Code postmortem</a> closes the trust × cost intersection: lower reasoning effort → faster usage-limit burn. Confidence H. Trajectory: → (signal still alive after rate-limit doubling; the framing has not shifted, only the specific anchor numbers).</p>
+<h3>Pattern 7: vendor-consolidation (NEW signal — Tracking)</h3>
+<p><strong>Secondary-tier dev-tools vendors consolidating around the top-tier coding agents (Claude Code, Cursor, Codex)</strong>. Within-window evidence: <a href="https://sdtimes.com/ai/may-8-2026-ai-updates-from-the-past-week-coder-agents-launch-snyk-claude-partnership-opsera-cursor-partnership-and-more/" target="_blank" rel="noopener">SD Times partnership roundup</a> (Snyk-Claude security review, Opsera-Cursor DevOps governance, Coder agent-runtime); <a href="https://siliconangle.com/2026/05/15/boomi-companion-plans-agentic-engineering-pay-off-boomiworld/" target="_blank" rel="noopener">SiliconANGLE Boomi Companion</a> (enterprise platforms restructuring around agents); <a href="https://www.engadget.com/2173482/xai-coding-agent-grok-build/" target="_blank" rel="noopener">Engadget Grok Build entry</a> and <a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener">TechCrunch Codex mobile</a> as expansion vectors; <a href="https://news.ycombinator.com/item?id=46854999" target="_blank" rel="noopener">HN MS-internal-Claude-Code adoption</a> as cross-vendor trust-transfer signal. Distinct from <code>stack-composition</code> (which is about <em>practitioners</em> running multiple agents in parallel) — this signal is about <em>secondary vendors</em> (Snyk, Opsera, Coder, Boomi) picking lanes rather than competing on agent capability. Confidence H. <strong>First-window observation; status: Tracking</strong>. Recommended evolution: promote to Promoted at next observation (E11 + E12 anchor).</p>
+<h3>Pattern 8: oss-maintainer-pushback (Existing signal — Tracking)</h3>
+<p><strong>OSS-governance backlash against AI-authored contributions is hardening</strong>. <a href="https://www.infoq.com/news/2026/02/ai-floods-close-projects/" target="_blank" rel="noopener">InfoQ's "AI floods" piece</a> anchors: Gentoo Linux and NetBSD outright bans; Mitchell Hashimoto banning AI code from Ghostty; maintainer-flood triage costs exceeding contributor value. <a href="https://github.com/rustfoundation/safety-critical-rust-coding-guidelines/issues/408" target="_blank" rel="noopener">Rust Foundation policy issue #408</a> records subcommittee policy work and proposed vouch-tool mechanism. <a href="https://github.com/melissawm/open-source-ai-contribution-policies" target="_blank" rel="noopener">Melissa Weber Mendonça's curated cross-project policy index</a> supplies the canonical OSS-governance reference. Confidence H. Trajectory: ↑↑ (E8: 1 observation → E10: cross-project coalition shape with quoted detection-impossibility concession; status upgrade candidate for next consolidation cycle).</p>
+<h3>Pattern 9: labor-market-bifurcation (NEW signal — Tracking)</h3>
+<p><strong>The labor-market story is bifurcating into two narratives, not one</strong>. Contraction side: <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware 47.9% AI-attributed Q1 layoffs</a>; <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO junior-developer demand softening</a>; <a href="https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0" target="_blank" rel="noopener">Snap 1,000-engineer cuts PR-review post-mortem</a>. Counterweight side: <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN — IBM tripled entry-level hiring; Anthropic/OpenAI/Cisco/Nvidia/defense-tech hiring; BLS 15%-by-2034</a>; <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer Yegge cite — amplification not replacement</a>. Distinct from <code>junior-pipeline-collapse</code> (which is specifically about entry-level pipeline) — this is the umbrella signal that practitioner discourse now treats the two stories as parallel rather than competing. Confidence H. <strong>First-window naming, Status: Tracking</strong>.</p>
+<h3>Pattern 10: vibe-coding-disreputed (Existing signal — Promoted)</h3>
+<p><strong>Vibe coding — now disreputed as failure mode; spec-driven framings ascendant</strong>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs "Vibe Coding's Security Debt"</a> reframes vibe coding as the <em>security-debt</em> attribution category, not a productivity-discourse one. <a href="https://www.thoughtworks.com/radar/tools/openspec" target="_blank" rel="noopener">ThoughtWorks OpenSpec on Radar</a> explicitly positions itself as "a response to vibe-coding chaos." <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief Asia's "2026 reset towards architecture"</a> frames vendors moving "away from vibe-coding framing toward tools that embed guardrails and respect existing patterns inside large organizations." <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ's MVP-architecture piece</a> reaches the strongest position: AI-generated code "is not intended to be maintained, per se, but can only be replaced by more AI-generated code" — turning vibe coding from a <em>practice</em> into a <em>forced architectural choice</em>. Confidence H. Trajectory: → (continuation of E9's definitional-collapse arc; the discourse has moved fully off "vibe coding" as a defensible term).</p>
+
+</section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Claim</th>
+<th>First Position</th>
+<th>Current (E10) Position</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"Anthropic's MCP design is working as intended; no protocol-level patch needed"</td>
+<td>Anthropic vendor framing per <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register</a></td>
+<td>Researcher reports 10 high/critical CVEs to date, 200k servers at risk, <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">Unit 42 sampling-attack-vector trio</a>, <a href="https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/" target="_blank" rel="noopener">JFrog CVE-2025-6515</a>, <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html" target="_blank" rel="noopener">Hacker News mcp-server-git flaws</a></td>
+<td><strong>Trending Negative</strong> — the vendor-posture claim is publicly contested across four independent security-research voices within a single 7-day window</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"Doubled Claude Code rate limits resolve the cost-runaway grievance"</td>
+<td>Code w/ Claude announcement per <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Simon Willison live blog</a> (vendor-positive)</td>
+<td><a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 900-reader survey, May 13</a>: ∼30% still hitting limits post-doubling; companies funding "max" plans at $100–200/engineer/month</td>
+<td><strong>Trending Negative</strong> — the rate-limit doubling has not closed the hit-limit pattern; cost remains the primary variable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"Junior dev hiring is collapsing under AI pressure"</td>
+<td>Multi-window contraction story (<a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" target="_blank" rel="noopener">Tom's Hardware</a>, <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO</a>)</td>
+<td><a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's IBM/Anthropic/defense-tech counterweight</a>; BLS 15%-by-2034 projection</td>
+<td><strong>Contested → Bifurcating</strong> — contraction in repetitive feature/bug/QA work coexists with reshape-and-growth in AI/research/security/defense-tech segments. The two claims are not contradictory but describe different segments</td>
+</tr>
+<tr>
+<td>4</td>
+<td>"AI coding tools will deliver durable productivity gains"</td>
+<td>Vendor / analyst framing (<a href="https://www.morphllm.com/ai-coding-costs" target="_blank" rel="noopener">Morph</a>, <a href="https://palma.ai/blog/real-cost-of-ai-coding-tools" target="_blank" rel="noopener">Palma.ai</a>, Yegge amplification cite)</td>
+<td><a href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank" rel="noopener">VentureBeat Lightrun 43%-need-debugging</a> (0% engineering leaders "very confident"); <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">Veracode 45% OWASP, no improvement across cycles</a>; cognitive-debt anchors</td>
+<td><strong>Contested</strong> — productivity ≠ shipping; the <em>net throughput</em> claim survives but is increasingly attached to "must include quality infrastructure" caveats</td>
+</tr>
+<tr>
+<td>5</td>
+<td>"Vibe coding is a distinct, defensible practice"</td>
+<td>Karpathy origin (Feb 2025); Willison early-defender position</td>
+<td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs "Vibe Coding's Security Debt"</a> frames vibe coding as failure-mode attribution category; <a href="https://www.thoughtworks.com/radar/tools/openspec" target="_blank" rel="noopener">OpenSpec</a> explicit "response to vibe-coding chaos"; <a href="https://itbrief.asia/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">IT Brief Asia</a> vendors moving away</td>
+<td><strong>Resolved (Disreputed)</strong> — the term is now used predominantly as failure-mode attribution. No within-window source defends vibe coding as a defensible practice</td>
+</tr>
+<tr>
+<td>6</td>
+<td>"Detection of AI-authored OSS contributions is feasible"</td>
+<td>Implicit assumption behind early "Generated-by:" tagging proposals</td>
+<td><a href="https://www.infoq.com/news/2026/02/ai-floods-close-projects/" target="_blank" rel="noopener">InfoQ source quote</a>: "functionally impossible within a year or two"; outright bans (Gentoo, NetBSD, Ghostty) supplant detection as the governance lever</td>
+<td><strong>Trending Negative</strong> — the practitioner-side detection-feasibility claim has been openly conceded as failing</td>
+</tr>
+<tr>
+<td>7</td>
+<td>"AI-generated code is maintainable"</td>
+<td>Generic vendor / pre-2026 framing</td>
+<td><a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ MVP-architecture piece</a>: AI-generated code "is not intended to be maintained, per se, but can only be replaced by more AI-generated code"; <a href="https://byteiota.com/cognitive-debt-ai-coding-agents-outpace-comprehension-5-7x/" target="_blank" rel="noopener">byteiota 5–7x velocity-comprehension gap</a></td>
+<td><strong>Trending Negative / Contested</strong> — a new and substantively novel position (regeneration-as-maintenance) is gaining ground; the maintenance loop's existence is now itself being contested</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="06">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Reddit Tier-1 entirely absent this window</strong>: <code>reddit.com</code> blocked by WebSearch user agent in this execution environment. r/ExperiencedDevs, r/cscareerquestions, r/cursor, r/ClaudeCode, r/vibecoding signal all suppressed. This is the first full-window practitioner-Reddit gap in the program and the most consequential single composition issue in E10. Recommend cross-window comparison treat the E10 sentiment / cluster numbers as composition-shifted toward Tier-1 blogs and analyst publications and away from practitioner-thread evidence. The reality is the underlying Reddit conversation almost certainly continued (E8 and E9 both had robust practitioner-Reddit anchors); the analysis cannot see it.</li>
+<li><strong>Bluesky and Mastodon practitioner posts</strong>: search returned platform-meta content (Bluesky's own AI assistant "Attie" announcements) rather than developer-sentiment posts; experimental-tier promotion criteria not met.</li>
+<li><strong>YouTube transcript-level retrieval</strong>: only channel pages retrieved for ThePrimeagen and Fireship; no individual episode transcripts within the lookback window. Recommend manual transcript pulls for E11.</li>
+<li><strong>Anthropic 2026 Agentic Coding Trends Report (PDF)</strong>: referenced indirectly by <a href="https://www.marktechpost.com/2026/05/15/best-ai-agents-for-software-development-ranked-a-benchmark-driven-look-at-the-current-field/" target="_blank" rel="noopener">MarkTechPost benchmark roundup</a>; not yet extracted as a primary source. Flagged for manual follow-up.</li>
+<li><strong>Flipboard @maryflipse3/ai</strong>: per extraction-config v1.8, magazine URLs not search-indexed; requires browser-extraction skill not available in scheduled context.</li>
+<li><strong>Snap "1,000 engineers fired because 65% AI" attribution</strong>: <a href="https://blog.devgenius.io/snap-fired-1-000-engineers-because-65-of-their-code-is-now-ai-i-read-the-pull-requests-59196845a9d0" target="_blank" rel="noopener">the Dev Genius / Medium piece</a> is author-pseudonym ("The Unwritten Algorithm"); the 1,000-engineer and 65%-AI-code numbers should be treated as Anecdote-tier credibility until corroborated against Snap official disclosures.</li>
+<li><strong>Veracode 45% OWASP "no improvement across testing cycles"</strong>: the cycle-period definition is not specified in the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs note</a> and the underlying test methodology is not described in the summary. Recommend pulling the primary Veracode source for E11 to verify the flat-line claim.</li>
+<li><strong>Amazon 90-day code-safety reset framing</strong>: the <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune piece</a> is the only Tier-1 source; the 335-systems and senior-engineer-pre-deploy specifics are not corroborated by Amazon engineering blog or AWS public statement. Recommend cross-check via AWS Architecture Blog and re:Invent recaps.</li>
+</ul>
+
+</section><section id="recommendations"><h2 data-section="07">Recommended Actions</h2>
+<ol>
+<li><strong>Restore Reddit Tier-1 retrieval before E11</strong>. The Reddit gap suppresses the practitioner-thread anchor that has been most informative cross-window for the <code>anthropic-trust-arc</code>, <code>agent-production-destruction</code>, and <code>cost-runaway</code> signals. Concrete options: (a) test browser-based Reddit retrieval via the Chrome plugin path; (b) test Reddit-MCP connector availability; (c) test alternate user agent. Without restoration, the program loses its strongest single practitioner-signal source.</li>
+<li><strong>Promote <code>vendor-consolidation</code> to tracked-status on second observation</strong>. The within-window evidence (Snyk-Claude, Opsera-Cursor, Coder, Boomi, plus the HN Microsoft-internal-Claude-Code adoption signal) is strong enough to warrant promotion if it persists in E11. The signal is meaningfully distinct from <code>stack-composition</code> and the longitudinal track needs both.</li>
+<li><strong>Track the Amazon 90-day code-safety reset as a policy template</strong>. The signal worth tracking is <em>propagation</em>: which other FAANG-tier or PE-backed operator publicly adopts a senior-engineer human-review gate in front of AI-assisted deploys on a defined critical-system perimeter. Specific watch: AWS, Meta, Microsoft engineering blogs; Stripe, Datadog, Shopify production-policy disclosures; PE-backed mid-market SRE-team announcements.</li>
+<li><strong>Resolve the labor-market bifurcation slug now</strong>. Mint <code>labor-market-bifurcation</code> as the umbrella signal and retain <code>junior-pipeline-collapse</code> as the entry-level-specific sub-signal. The two stories are now durable separately and the longitudinal engine should be able to track them in parallel rather than collapsing them into a single label.</li>
+<li><strong>Pull the primary Veracode 45%-OWASP source for E11</strong>. The flat-line-no-improvement claim is the most thesis-relevant single data point of the window for <code>cve-acceleration</code>. Verify it from the Veracode primary source rather than CSA Labs paraphrase.</li>
+<li><strong>Surface the Microsoft-internal-Claude-Code adoption signal as a watch-item under <code>anthropic-trust-arc</code></strong>. Cross-vendor trust transfer (Microsoft engineers reaching for a direct competitor despite Copilot being a sibling product) is a weak-signal-becoming-strong category. If E11 corroborates with one or more additional cross-vendor adoption stories, promote to a sub-pattern.</li>
+<li><strong>Add MCP-hardened-defaults watchpoint to next-window scan</strong>. The Unit 42 + JFrog + Hacker News + Register four-source MCP-attack-surface cluster is the most concentrated MCP-negative signal of the program. The next-window question is whether any MCP client ships hardened-by-default sampling controls — that would be the first vendor-side mitigation signal in the longitudinal record.</li>
+<li><strong>Schedule a Flipboard / YouTube transcript pass in a non-scheduled session</strong>. Both retrieval paths fail in the scheduled context; both have evidence-class value that the current Tier-1 blog corpus does not replace.</li>
+</ol>
+
+</section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Incident</th>
+<th>Date</th>
+<th>Severity</th>
+<th>Tools</th>
+<th>Source</th>
+<th>Damages / Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Amazon.com Mar 2 outage — AI-assisted code change deployed without approval</td>
+<td>2026-03-02</td>
+<td>Critical</td>
+<td>General AI</td>
+<td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune</a></td>
+<td>~6-hour disruption; 120,000 lost orders; 1.6M website errors</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Amazon.com Mar 5 outage — second AI-assisted deploy incident</td>
+<td>2026-03-05</td>
+<td>Critical</td>
+<td>General AI</td>
+<td><a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune</a></td>
+<td>~6-hour outage; 99% U.S. order-volume drop; ~6.3M lost orders; triggered 90-day code-safety reset across 335 critical systems</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PocketOS production-database deletion by Cursor + Claude Opus 4.6 agent</td>
+<td>2026-04-27</td>
+<td>Critical</td>
+<td>Cursor, Claude/Claude Code</td>
+<td><a href="https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/" target="_blank" rel="noopener">The Register</a></td>
+<td>Production database and all volume-level backups deleted in a single Railway API call (&lt;10s); founder spent weekend recovering</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Lovable platform — credentials and source code exposed for 48 days</td>
+<td>2026-04-01</td>
+<td>Critical</td>
+<td>General AI</td>
+<td><a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">State of Surveillance</a></td>
+<td>Every user's source code, DB credentials, AI chat histories accessible via basic API flaw for 48 days; platform reported at $6.6B valuation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Vercel breached via Context.ai third-party AI evaluation tool</td>
+<td>2026-04-01</td>
+<td>Significant</td>
+<td>General AI</td>
+<td><a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">State of Surveillance</a></td>
+<td>Third-party AI eval integration provided attacker path into Vercel internal systems</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bitwarden CLI supply-chain attack targeting AI-coding-tool credentials</td>
+<td>2026-04-01</td>
+<td>Significant</td>
+<td>Claude/Claude Code, Cursor, ChatGPT/Codex</td>
+<td><a href="https://stateofsurveillance.org/news/vibe-coding-security-crisis-lovable-vercel-bitwarden-ai-attack-surface-2026/" target="_blank" rel="noopener">State of Surveillance</a></td>
+<td>Hijacked Bitwarden CLI shipped malware specifically hunting for Claude, Cursor, and Codex CLI credentials</td>
+</tr>
+<tr>
+<td>7</td>
+<td>MCP design-flaw disclosure — 200,000 servers at risk</td>
+<td>2026-04-16</td>
+<td>Significant</td>
+<td>MCP, Claude/Claude Code</td>
+<td><a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register</a></td>
+<td>Researcher reports design flaw exposing up to 200k servers; Anthropic reportedly classifying behavior as working-as-intended despite 10 high/critical CVEs</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Firetiger 8-hour ingest outage — AI-agent-authored CI race condition</td>
+<td>2026-03-01</td>
+<td>Operational</td>
+<td>General AI</td>
+<td><a href="https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/" target="_blank" rel="noopener">Firetiger Engineering</a></td>
+<td>~8 hours degraded ingest; OpenTelemetry data and GitHub webhooks failing</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Claude Code reasoning-effort regression (Mar–Apr 2026)</td>
+<td>2026-03-04</td>
+<td>Operational</td>
+<td>Claude/Claude Code</td>
+<td><a href="https://smartscope.blog/en/blog/claude-code-quality-degradation-postmortem-2026/" target="_blank" rel="noopener">SmartScope</a></td>
+<td>Default reasoning effort changed high → medium; users widely reported shallow edits, repetition, faster usage-limit burn. Reversed Apr 7</td>
+</tr>
+</tbody>
+</table>
+<p>The Tier-1 incident corpus this window is dominated by <em>retroactive Tier-1 reach of incidents that happened in March and April</em> rather than within-window new disasters. The Amazon 90-day code-safety reset is the cluster's structural development.</p>
+
+</section><section id="supplemental"><h2 data-section="09">Supplemental Pass Findings (2026-05-20)</h2>
+<p>A Chrome-browser supplemental pass on 2026-05-20 closed several Tier-3 flags and activated Bluesky as primary social. The new content reinforces the canonical narrative without overturning any prior claim; the items below extend rather than replace the original analysis.</p>
+<h3>Bluesky activation (Tier-1 primary_social, 8 posts)</h3>
+<p><a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Simon Willison's Bluesky feed</a> yielded 6 in-window practitioner posts (May 11–17): the <a href="https://simonwillison.net/2026/May/11/" target="_blank" rel="noopener">GitLab Act 2 piece</a> anchoring the labor-market story; an "Unethical Guide to Surviving AI Layoffs" boost; a Boris Mann "I have 11 AI agents is meaningless" Vancouver-government-AI-theater pushback; a TIL on using LLM CLI in shebang lines (practitioner-tooling artifact); the OpenClaw naming-saga script (community in-joke about Anthropic/OpenAI competition); and a Jason Koebler / 404media "Zombie Internet" boost. <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's Bluesky feed</a> yielded 2 high-engagement posts: the May 16 "Writing code plays a much smaller role in the overall software lifecycle than most people understand" piece (150 likes, picked up by The New Stack), and a May 18 three-post skepticism cluster ("This generation of AI isn't being built to save people. It's being built to make money" — 467 likes / 48 reposts). The skeptical-practitioner-voice cluster is the most thematically coherent Bluesky content of the program to date and warrants its own emerging pattern (<code>practitioner-skepticism-cluster</code>, see Pattern 11 below).</p>
+<h3>Anthropic 2026 Agentic Coding Trends Report (Tier-1 primary-source vendor data)</h3>
+<p><a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">The PDF was fetched directly</a> — closing the Tier-3 flag from the original extraction. The headline data point is the <strong>60% / 0–20% gap</strong>: developers report using AI in roughly 60% of their work but can "fully delegate" only 0–20% of tasks. Vendor framing presents this as the structural reality of effective collaboration. The case-study data is substantial and worth cataloging: Augment Code reports a 4–8 month project completed in 2 weeks; Fountain reports 50% faster screening and 40% faster onboarding via hierarchical multi-agent orchestration; Rakuten reports Claude Code implementing vLLM activation-vector extraction in 7 hours autonomous work over a 12.5M-line codebase at 99.9% numerical accuracy; CRED reports doubled execution speed; TELUS reports 13,000 custom AI solutions, 30% faster shipping, 500k hours saved; Zapier reports 89% AI adoption and 800+ internal agents; Anthropic's own legal team reports marketing review from 2–3 days down to 24 hours and a non-coder lawyer building self-service triage tools. The 27%-of-AI-assisted-work figure — "tasks that wouldn't have been done otherwise" — supplies a novel productivity-attribution category: <em>additionality</em>, distinct from speed/quality. The four 2026 priorities Anthropic names are multi-agent coordination, scaling human-agent oversight, extending agentic coding beyond engineering, and embedding security architecture from earliest stages — the third explicitly targets the "AI moves beyond engineering" expansion implicit in TELUS's 13,000-custom-solutions number.</p>
+<p>This source materially changes the trust/productivity discourse: it is a <em>vendor-confirmed</em> version of <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's "84% use / 29% trust"</a> finding — Anthropic's own report acknowledges the use-vs-delegation gap is structural and large, framing it as the boundary of the collaboration model rather than a defect. Combined with <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's same-window "AI coding tools have decoupled output from understanding"</a> and <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">the InfoQ "AI-generated code can only be replaced, not maintained"</a> position, the 60/0-20 figure becomes the quantitative spine of a new emerging pattern (<code>delegation-gap-paradox</code>, see Pattern 12 below).</p>
+<h3>Flipboard @maryflipse3/ai magazine (Tier-2, 3 items)</h3>
+<p>The previously unreachable <a href="https://flipboard.com/@maryflipse3/ai-jrgbno6hz/openai-brings-codex-to-chatgpt-for-iphone-ipad-and-android-with-these-features/a-X7AawCSaTq-iD2LIV1cEEg%3Aa%3A79523337-8fcc20c0d1%2F9to5mac.com" target="_blank" rel="noopener">Flipboard magazine</a> yielded 3 lookback-window items: a Codex-mobile coverage piece (9to5mac), <a href="https://flipboard.com/@maryflipse3/ai-jrgbno6hz/what-happens-when-ai-starts-building-itself/a-H8676t14TF2IC_eiA_Qh9Q%3Aa%3A79523337-57157fc848%2Ftechcrunch.com" target="_blank" rel="noopener">a "What happens when AI starts building itself" Richard Socher / TechCrunch piece</a>, and <a href="https://flipboard.com/@maryflipse3/ai-jrgbno6hz/the-ai-age-is-inevitable-let-s-make-sure-it-s-human-centred-psyche-videos/a-vCyOsij-R6atkWvnjI6QOQ%3Aa%3A79523337-7fd41db11b%2Fpsyche.co" target="_blank" rel="noopener">a Psyche.co "Let's make sure AI is human-centred" humanities piece</a>. The Psyche.co piece adds a humanities-side voice to the skeptical-practitioner cluster that Hightower and Willison anchor on Bluesky.</p>
+<h3>Reddit via Grok-as-relay (Tier-2, 11 items — metadata only)</h3>
+<p>Direct Reddit access remains blocked at WebSearch <em>and</em> Chrome navigation layers. The supplemental pass used Grok as a relay to surface Reddit metadata (URL, title, date, engagement) — <em>verbatim quotes are not available</em>; the URLs themselves are not directly verified by browser fetch and are tagged <code>_via: Grok relay 2026-05-20</code>. The 11 surfaced threads cluster tightly around three themes:</p>
+<ul>
+<li><strong>Tool-switching</strong>: <a href="https://www.reddit.com/r/ClaudeCode/comments/1tbcfmi/impressions_two_weeks_after_moving_from_claude/" target="_blank" rel="noopener">r/ClaudeCode 1tbcfmi "Impressions two weeks after moving from Claude Code to Codex"</a> (398 up / 253 comments, May 12); <a href="https://www.reddit.com/r/cursor/comments/1th0ftx/usage_claude_code_100_vs_cursor_60_with_composer/" target="_blank" rel="noopener">r/cursor 1th0ftx "Claude Code $100 vs Cursor $60 with Composer"</a> (May 18). Corroborates the <code>stack-composition</code> signal at high engagement.</li>
+<li><strong>Cost / billing anxiety</strong>: <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1tesidz/token_based_billing_changes_june_1/" target="_blank" rel="noopener">r/ExperiencedDevs 1tesidz "Token-Based Billing Changes June 1"</a> projecting AI costs above cloud spend (May 16). Directly corroborates <code>cost-runaway</code> and the Copilot pricing transition tracked since E7.</li>
+<li><strong>Deskilling / identity / fatigue</strong>: <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1tbz4jc/things_i_used_to_be_proud_of_doing_well_modern_ai/" target="_blank" rel="noopener">r/ExperiencedDevs 1tbz4jc "Things I used to be proud of doing well — Modern AI just does better"</a> (~353 up / 221 comments, May 13); <a href="https://www.reddit.com/r/ClaudeCode/comments/1tdvyfr/ai_engineer_who_does_not_code_and_uses_claude_for/" target="_blank" rel="noopener">r/ClaudeCode 1tdvyfr "AI Engineer Who Does Not Code"</a> (494 up / 529 comments, May 15); <a href="https://www.reddit.com/r/cscareerquestions/comments/1tc5fen/how_to_deal_with_ai_fatigue/" target="_blank" rel="noopener">r/cscareerquestions 1tc5fen "How to Deal with AI Fatigue"</a>; <a href="https://www.reddit.com/r/cscareerquestions/comments/1tdsf2j/do_you_guys_honestly_think_its_still_worth/" target="_blank" rel="noopener">r/cscareerquestions 1tdsf2j "Do you guys honestly think it's still worth becoming a programmer in 2026?"</a>. Direct corroboration for <code>cognitive-debt-deskilling</code> and <code>ai-burnout-paradox</code>.</li>
+<li>Plus: <a href="https://www.reddit.com/r/cscareerquestions/comments/1tb026z/4_engineers_now_doing_the_job_of_12_at_my_friends/" target="_blank" rel="noopener">r/cscareerquestions 1tb026z "4 engineers now doing the job of 12 at my friend's SaaS company"</a> (corroborates <code>labor-market-bifurcation</code> contraction side); <a href="https://www.reddit.com/r/vibecoding/comments/1tfpdvt/vibe_coding_feels_amazing_until_an_experienced/" target="_blank" rel="noopener">r/vibecoding 1tfpdvt "Vibe coding feels amazing until an experienced engineer reviews it"</a> (462 up / 324 comments, May 17, anchoring <code>vibe-coding-disreputed</code>); <a href="https://www.reddit.com/r/ClaudeCode/comments/1tfn31s/new_ui_preview_feature_on_claude_code_is_really/" target="_blank" rel="noopener">r/ClaudeCode 1tfn31s "New UI Preview Feature on Claude Code is really good"</a> (402 up, the within-window positive-affect counterweight); <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1tc6vwb/has_vibe_coding_culture_done_more_good_than_bad/" target="_blank" rel="noopener">r/ExperiencedDevs 1tc6vwb "Has vibe coding culture done more good than bad?"</a> (cluster-defining meta-thread on <code>vibe-coding-disreputed</code>).</li>
+</ul>
+<p>The Reddit corpus is <em>thematically coherent with the original report's conclusions</em> — the relay data does not introduce any contradiction; it reinforces the existing signal-store-tracked patterns at significantly higher engagement than the original Tier-1 blog corpus alone.</p>
+<h3>Pattern 11: practitioner-skepticism-cluster (NEW signal — Tracking)</h3>
+<p><strong>Practitioner skepticism is consolidating into a recognized cross-platform counter-narrative</strong>. The lookback window shows a coherent skeptical-practitioner voice gathering force across platforms: <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Simon Willison surfacing the "Unethical Guide to Surviving AI Layoffs"</a> and <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Jason Koebler's 404media "Zombie Internet"</a> framings (May 11–13); <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Boris Mann mocking "I have 11 AI agents"</a> as a category-error claim (May 13); <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's May 16 "decoupled output from understanding" + May 18 467-like skepticism cluster</a>; the parallel humanities-side push on <a href="https://flipboard.com/@maryflipse3/ai-jrgbno6hz/the-ai-age-is-inevitable-let-s-make-sure-it-s-human-centred-psyche-videos/a-vCyOsij-R6atkWvnjI6QOQ%3Aa%3A79523337-7fd41db11b%2Fpsyche.co" target="_blank" rel="noopener">Flipboard via Psyche.co</a>; and the Reddit-via-relay <a href="https://www.reddit.com/r/cscareerquestions/comments/1tdsf2j/do_you_guys_honestly_think_its_still_worth/" target="_blank" rel="noopener">r/cscareerquestions "Is programming still worth pursuing in 2026?"</a> thread. Distinct from <code>vibe-coding-disreputed</code> (which is about a specific term's collapse) and from <code>hype-vs-reality</code> (which is editorial-corpus only) — this signal is about <em>organized practitioner voice</em> against vendor framings. Confidence M (Bluesky engagement is high but practitioner-skepticism-cluster is <em>itself</em> a cross-platform observation requiring more windows to confirm). <strong>First-window naming, Status: Tracking</strong>.</p>
+<h3>Pattern 12: delegation-gap-paradox (NEW signal — Tracking)</h3>
+<p><strong>The use-versus-delegation gap is now vendor-confirmed as structural</strong>. <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">Anthropic's own 2026 Agentic Coding Trends Report</a> discloses developers use AI in roughly 60% of work but can "fully delegate" only 0–20% — and frames this as the structural reality of collaboration, not a defect to be solved. This vendor-data convergence with the longitudinal <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow 84%-use-/-29%-trust trajectory</a> and <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's "decoupled output from understanding"</a> framing reframes "AI productivity gains" from a single-axis claim into a <em>two-axis</em> claim (use ≠ delegation). The 27%-of-AI-assisted-work figure for <em>additionality</em> ("tasks that wouldn't have been done otherwise") is a novel productivity-attribution category. Distinct from <code>productivity-paradox</code> (which is about greenfield-vs-maintenance split) — this signal is about the <em>vendor's own framing</em> of where the collaboration model lives. Confidence H. <strong>First-window naming, Status: Tracking</strong>.</p>
+<h3>Refined contradictions table (additions for supplemental pass)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Claim</th>
+<th>First Position</th>
+<th>Current (E10 suppl) Position</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>"AI coding tools deliver full autonomous delegation at scale"</td>
+<td>Vendor / pre-2026 generic framing</td>
+<td><a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">Anthropic primary-source PDF</a>: "developers fully delegate only 0–20% of tasks" — vendor-confirmed structural limit</td>
+<td><strong>Resolved (Vendor-acknowledged Structural Limit)</strong> — the vendor's own report concedes the delegation ceiling</td>
+</tr>
+<tr>
+<td>11</td>
+<td>"Vibe coding has been culturally net-positive"</td>
+<td>Practitioner debate (r/vibecoding origin)</td>
+<td><a href="https://www.reddit.com/r/ExperiencedDevs/comments/1tc6vwb/has_vibe_coding_culture_done_more_good_than_bad/" target="_blank" rel="noopener">r/ExperiencedDevs 1tc6vwb "more good than bad?"</a> thread is the meta-debate; <a href="https://www.reddit.com/r/vibecoding/comments/1tfpdvt/vibe_coding_feels_amazing_until_an_experienced/" target="_blank" rel="noopener">r/vibecoding 1tfpdvt "amazing until expert review"</a> at 462 up reads as the practitioner-side verdict</td>
+<td><strong>Trending Negative</strong> — practitioner discourse has converged on the "looks great until expert review" pattern</td>
+</tr>
+</tbody>
+</table>
+<h3>Refined gaps (post-supplemental-pass)</h3>
+<p>The original E10 gaps are now <em>partially resolved</em>:</p>
+<ul>
+<li><strong>Flipboard @maryflipse3/ai</strong>: ✅ RESOLVED — 3 lookback-window items extracted via Chrome browser</li>
+<li><strong>Anthropic 2026 Agentic Coding Trends Report PDF</strong>: ✅ RESOLVED — primary-source vendor data parsed and integrated; closed Tier-3 flag</li>
+<li><strong>Bluesky practitioner voices</strong>: ✅ RESOLVED — Simon Willison + Kelsey Hightower fully covered; primary-social activated</li>
+<li><strong>Reddit Tier-1 verbatim quotes</strong>: ⚠️ PARTIALLY RESOLVED — Grok relay surfaced URL/title/date/engagement metadata for 11 threads, but verbatim user quotes still inaccessible; reddit.com remains blocked at both WebSearch and Chrome layers. A reddit-MCP connector or user-driven manual extraction remains the only path to comment-level text.</li>
+<li><strong>Mastodon practitioner posts</strong>: Still gap — Bluesky activation absorbed the social-coverage need; Mastodon left for a future pass.</li>
+<li><strong>YouTube transcript-level retrieval</strong>: Still gap — channel pages only.</li>
+</ul>
+<h3>Supplemental Pass Recommended Actions</h3>
+<ul>
+<li><strong>Formalize Grok-as-relay as a documented fallback workflow</strong> for blocked platforms. The 2026-05-20 supplemental pass demonstrates the relay produces useful metadata-level evidence at low effort; it should be available as a standard tool in subsequent extractions.</li>
+<li><strong>Promote <code>practitioner-skepticism-cluster</code> at the second observation</strong> (E11) if Hightower / Willison / cross-platform pattern persists. The signal is genuinely cross-platform — Bluesky + Flipboard + Reddit + the editorial corpus — and is the cleanest articulation yet of organized skeptical voice.</li>
+<li><strong>Promote <code>delegation-gap-paradox</code> at the second observation</strong> (E11) if the 60/0-20 figure or close variants recur in industry surveys. The vendor-confirmed framing is durable; the question is whether non-Anthropic vendors validate the same range.</li>
+<li><strong>Watch for Karpathy → Anthropic move practitioner reaction</strong> in E11. The story broke 2026-05-19 (just outside the lookback window per <a href="https://simonwillison.net/2026/May/11/" target="_blank" rel="noopener">extraction notes</a>); reaction is expected to dominate next-week practitioner discourse.</li>
+<li><strong>Watch for Gemini 3.5 Flash + Antigravity practitioner reviews in E11</strong> (per extraction <code>next_extraction.suggested_queries</code>).</li>
+</ul>
+
+</section><section id="metadata"><h2 data-section="10">Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis prompt</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-05-18 initial; supplemental pass 2026-05-20</td>
+</tr>
+<tr>
+<td>Extractor</td>
+<td>Claude / claude-opus-4-7 / Engine v1.5.4 / Config v1.8</td>
+</tr>
+<tr>
+<td>Extraction window</td>
+<td>2026-05-11 → 2026-05-18 (Extraction 10)</td>
+</tr>
+<tr>
+<td>Supplemental pass</td>
+<td>2026-05-20 (Chrome browser + direct PDF fetch + Grok-as-Reddit-relay) — covered Bluesky (Willison, Hightower), Anthropic PDF, Flipboard, Reddit (metadata only)</td>
+</tr>
+<tr>
+<td>Items tagged</td>
+<td><strong>70</strong> (50 initial + 20 added in supplemental pass)</td>
+</tr>
+<tr>
+<td>Batches successful</td>
+<td>9 of 9 (Reddit direct retrieval failed both passes; metadata-only via Grok relay 2026-05-20)</td>
+</tr>
+<tr>
+<td>Primary social platform status</td>
+<td><strong>Working (Bluesky)</strong> after supplemental pass; Reddit still blocked</td>
+</tr>
+<tr>
+<td>Alt-platform activation</td>
+<td><strong>Activated</strong>: Bluesky (Simon Willison, Kelsey Hightower) yielded substantial in-window practitioner content</td>
+</tr>
+<tr>
+<td>Signal store loaded</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Signals reused from store</td>
+<td>8 (cognitive-debt-deskilling, mcp-attack-surface, ai-burnout-paradox, agent-production-destruction, cve-acceleration, cost-runaway, oss-maintainer-pushback, vibe-coding-disreputed)</td>
+</tr>
+<tr>
+<td>Signals newly minted</td>
+<td><strong>4</strong> (vendor-consolidation, labor-market-bifurcation, practitioner-skepticism-cluster, delegation-gap-paradox)</td>
+</tr>
+<tr>
+<td>URL count</td>
+<td><strong>71</strong> unique source URLs in citation table (53 original + 18 supplemental)</td>
+</tr>
+<tr>
+<td>Citation validation</td>
+<td>PASS — initial 90.6% (2026-05-18); refresh 92.8% / 222 links / 66 unique URLs (validate-citations.py 2026-05-20). All 4 required sections cited both passes.</td>
+</tr>
+<tr>
+<td>Summary file</td>
+<td>analysis-s</td>
+</tr>
+</tbody>
+</table></section>
+<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 10 &mdash; Generated 2026-05-18, supplemental pass 2026-05-20</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.sentiment-fill').forEach(function(el) {
+    var w = el.style.getPropertyValue('--width');
+    el.style.width = w;
+});
+document.querySelectorAll('.collapsible').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content) content.classList.toggle('active');
+    });
+});
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
