@@ -1,0 +1,187 @@
+# Friendly story labels for the consumer-tier dashboard
+#
+# One row per signal_id (the stable database key from the signal store).
+# The generator script (generate_consumer_index.py) reads this file and uses
+# `label` for cards and the story-map timeline; `one_line` for hover/expansion;
+# `sentiment_override` to force a dot color when the summary's dominant
+# sentiment misrepresents the story; `retired_alias[]` for backward-lookup
+# when slugs evolve (per v1.17 stability mandate, slugs never change after
+# minting — but display labels can).
+#
+# Schema:
+#   - signal_id:        STRING  (the canonical slug, lowercase-hyphen)
+#     label:            STRING  (consumer-tier display name; sentence case)
+#     one_line:         STRING  (one-sentence plain-English explainer)
+#     sentiment_override: ENUM  (sn|cn|mx|cp|sp — optional; null = use summary default)
+#     retired_alias:    LIST    (optional; prior labels for backward lookup)
+#
+# Sentiment buckets (encoded as dot color in the story-map):
+#   sn = strongly negative (deep red, #A32D2D)
+#   cn = cautiously negative (coral, #E24B4A)
+#   mx = mixed / nuanced (gray, #888780)
+#   cp = cautiously positive (light green, #97C459)
+#   sp = strongly positive (deep green, #3B6D11)
+#
+# When the Analysis Engine mints a new signal slug, add a row here BEFORE the
+# next Step 7 (consumer dashboard) run. If a row is missing, the generator
+# falls back to title-casing the slug and emits a WARNING.
+
+version: "1.0"
+updated: "2026-05-25"
+maintained_by: "Darrell + Claude (collaborative; updated as new signals mint)"
+
+labels:
+
+  # === Promoted (confirmed trends, 10 signals as of E11) ===
+
+  - signal_id: agent-production-destruction
+    label: "AI agents wrecking production"
+    one_line: "Autonomous AI agents are destroying real production systems — PocketOS, Amazon Kiro, Composio confirmed."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: ai-burnout-paradox
+    label: "Burnout from constant AI checking"
+    one_line: "Engineers report cognitive exhaustion from the constant trust-or-override choices that AI tools demand."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: anthropic-trust-arc
+    label: "Anthropic's reputation arc"
+    one_line: "Multi-window storyline tracking Anthropic's vendor-trust position — quality regressions, MCP design flaws, and quiet capability releases."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: cognitive-debt-deskilling
+    label: "Coders losing skills"
+    one_line: "Heavy AI assistance is measurably reducing skill mastery; Anthropic's own study found a 17% drop."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: cost-runaway
+    label: "Cost surprises hitting limits"
+    one_line: "Agentic workflows burn through tool quotas faster than expected; rate-limit doubling didn't resolve the underlying issue."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: cve-acceleration
+    label: "AI ships 6× more security bugs"
+    one_line: "CSA Labs / Georgia Tech tracked 35 CVEs in March attributable to AI-generated code, up from 6 in January."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: mcp-attack-surface
+    label: "AI tool-protocol security holes"
+    one_line: "The MCP protocol that connects AI to tools has a growing attack surface; Composio is the first production-confirmed incident."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: productivity-paradox
+    label: "Productivity gains real but offset"
+    one_line: "Greenfield code goes faster with AI; maintenance and review costs eat most of the gain."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: stack-composition
+    label: "Which AI tools get picked together"
+    one_line: "Three-lane / three-winner equilibrium: Claude Code for quality, Cursor for IDE, Codex for mobile. Stacks compose rather than consolidate."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: vibe-coding-disreputed
+    label: "Vibe coding has lost credibility"
+    one_line: "The term 'vibe coding' has shifted from practice description to failure-mode attribution across analyst and vendor publications."
+    sentiment_override: cn
+    retired_alias: []
+
+  # === Tracking (emerging signals, 15 signals as of E11) ===
+
+  - signal_id: cursor-xai-acquisition
+    label: "Cursor × xAI rumored deal"
+    one_line: "Speculation that Cursor would be acquired by xAI; no follow-up in 4 weeks. Candidate for retirement."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: enterprise-ai-controls
+    label: "Enterprise AI control planes"
+    one_line: "GitHub Agent Control Plane, Galileo Agent Control, and similar governance tools for managing AI agents in production."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: junior-pipeline-collapse
+    label: "Junior dev hiring is shrinking"
+    one_line: "Stanford documented a 13–16% employment decline for 22-to-25-year-olds in AI-exposed roles. Reached promotion threshold E11."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: oss-maintainer-pushback
+    label: "Open-source projects pushing back"
+    one_line: "Gentoo, NetBSD, Ghostty have banned AI-assisted contributions; Rust Foundation working on policy."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: reset-year-narrative
+    label: "2026 reset toward architecture"
+    one_line: "Thoughtworks Radar and analyst pieces frame 2026 as the year AI coding tools reset toward architecture, governance, and long-term maintainability."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: senior-deskilling
+    label: "Senior devs deskilling too"
+    one_line: "The deskilling effect is not limited to juniors; senior engineers also report skill atrophy from heavy AI assistance."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: thoughtworks-radar-formalization
+    label: "Thoughtworks Radar patterns formalize"
+    one_line: "Thoughtworks Technology Radar gives institutional weight to emerging AI-coding practices and anti-patterns. Last observed E4."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: vendor-consolidation
+    label: "Vendor consolidation accelerates"
+    one_line: "Secondary-tier dev-tool vendors picking lanes around the top-three coding agents (Snyk-Claude, Opsera-Cursor, Coder, Boomi)."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: labor-market-bifurcation
+    label: "Labor market splitting in two"
+    one_line: "Contraction (mass layoffs, junior-pipeline collapse) and reshape (new AI-related demand) run in parallel rather than as competing claims."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: practitioner-skepticism-cluster
+    label: "Practitioner skepticism is consolidating"
+    one_line: "Cross-platform skeptical voice (Willison, Hightower, Boris Mann, Psyche.co) treating AI coding as overhyped or premature."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: claude-code-automation-platform
+    label: "Claude Code as automation platform"
+    one_line: "Anthropic repositioning Claude Code from IDE-assistant to background automation platform via Routines, Dreaming, Managed Agents."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: quality-as-infrastructure
+    label: "Code quality becomes infrastructure"
+    one_line: "Quality discipline can no longer live in ad-hoc review; must move into pipelines, gates, and policies."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: delegation-gap-paradox
+    label: "Trust gap is widening"
+    one_line: "Vendor-confirmed 60% use vs. 0–20% full-delegation ceiling; 84% use, 29% trust, 46% active distrust per Stack Overflow."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: review-cost-inversion
+    label: "Review costs more than writing"
+    one_line: "AI-written code now eats more review time than it saves in writing time. NEW E11 — Harness 81%/4.6×/2× anchor."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: agent-infrastructure-inflection
+    label: "Agent platforms reach inflection"
+    one_line: "Code w/ Claude announcements set a Q3 2026 deadline for autonomous coding at named reference customers (Shopify, Mercado Libre at 90%). NEW E11."
+    sentiment_override: cp
+    retired_alias: []

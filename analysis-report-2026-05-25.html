@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Dev Sentiment Analysis &mdash; May 18 to May 25, 2026 (E11, n=42). Review-cost inversion becomes the headline finding (Harness 81%/4.6x/2x); Composio sandbox-escape graduates MCP attack surface to production-confirmed; junior-pipeline contraction tilts ahead of counterweight.">
+<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E11 (May 18 &ndash; May 25, 2026)">
+<meta property="og:description" content="Review-cost inversion crystallizes (Harness 81%/4.6x/2x); Composio sandbox-escape; junior-pipeline contraction; two new signals (review-cost-inversion, agent-infrastructure-inflection).">
+<meta property="og:type" content="article">
+<title>AI Dev Sentiment Analysis &mdash; E11 (May 18 &ndash; May 25, 2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --display: 'DM Serif Display', serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3441;
+    --text: #d1cec9;
+    --text-dim: #7a8694;
+    --head: #f0ede8;
+    --amber: #f0a832;
+    --amber-dim: #7a5318;
+    --red: #e05252;
+    --red-dim: #5c1f1f;
+    --green: #4caf7d;
+    --green-dim: #1a3d2b;
+    --blue: #5c9eed;
+    --blue-dim: #1a2f4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--serif);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav ul {
+    list-style: none; display: flex; gap: 0.25rem;
+    padding: 0 1rem; font-size: 0.78rem;
+    font-family: var(--mono);
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    margin: 0;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-track { background: transparent; }
+nav ul::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+nav li { flex-shrink: 0; margin: 0; }
+nav a {
+    color: var(--text-dim); text-decoration: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s; white-space: nowrap;
+    display: inline-block;
+}
+nav a:hover { color: var(--amber); background-color: var(--surface2); }
+body { padding-top: 2.6rem; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 2rem; }
+header.masthead {
+    margin-bottom: 4rem; padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+h1 {
+    font-family: var(--display); font-size: 3.5rem;
+    color: var(--head); margin-bottom: 0.5rem; line-height: 1.1;
+}
+.subtitle {
+    font-family: var(--mono); font-size: 0.95rem;
+    color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.masthead-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.stat-item {
+    background-color: var(--surface2); padding: 1rem;
+    border-radius: 6px; border-left: 3px solid var(--amber);
+}
+.stat-label {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.8rem; color: var(--amber); font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: var(--display); font-size: 2.2rem; color: var(--head);
+    margin-bottom: 1.5rem; margin-top: 2rem;
+    position: relative; padding-left: 2rem;
+}
+h2::before {
+    content: attr(data-section);
+    position: absolute; left: 0; color: var(--amber);
+    font-size: 0.9rem; font-weight: 700; font-family: var(--mono);
+}
+h3 {
+    font-family: var(--display); font-size: 1.5rem; color: var(--text);
+    margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: var(--display); font-size: 1.15rem; color: var(--head);
+    margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; text-align: justify; }
+a {
+    color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+code {
+    font-family: var(--mono); background-color: var(--surface2);
+    padding: 0.2em 0.5em; border-radius: 3px;
+    font-size: 0.9em; color: var(--amber);
+}
+strong { color: var(--head); font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin: 1.25rem 0; color: var(--text-dim);
+    font-style: italic; background-color: var(--surface2);
+    border-radius: 0 4px 4px 0;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+}
+thead { background-color: var(--surface2); }
+th {
+    padding: 1rem; text-align: left; font-weight: 600;
+    color: var(--head); border-bottom: 2px solid var(--border);
+    font-family: var(--mono); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); word-break: break-word; }
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: var(--surface2); }
+ul, ol { margin-left: 2rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.5rem; }
+.sentiment-bar {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.sentiment-label { font-family: var(--mono); font-size: 0.9rem; min-width: 170px; }
+.sentiment-container {
+    flex: 1; background-color: var(--surface2);
+    border-radius: 4px; height: 28px; overflow: hidden; position: relative;
+}
+.sentiment-fill {
+    height: 100%; border-radius: 4px; display: flex;
+    align-items: center; justify-content: flex-end;
+    padding-right: 0.5rem; color: var(--bg);
+    font-weight: 600; font-size: 0.8rem; font-family: var(--mono);
+    animation: growBar 1.2s ease-out forwards;
+}
+@keyframes growBar { from { width: 0; } to { width: var(--width); } }
+.sentiment-fill.positive { background-color: var(--green); }
+.sentiment-fill.mixed { background-color: var(--amber); }
+.sentiment-fill.negative { background-color: var(--red); }
+.sentiment-fill.analytical { background-color: var(--blue); }
+.sentiment-percentage {
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text-dim); min-width: 60px; text-align: right;
+}
+.card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h4 {
+    color: var(--head); margin-bottom: 0.5rem;
+    font-family: var(--display); font-size: 1.2rem;
+}
+.incident-card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 6px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+}
+.incident-card.severity-high { border-left-color: var(--red); }
+.incident-card.severity-medium { border-left-color: var(--amber); }
+.incident-card .incident-title {
+    font-family: var(--display); font-size: 1.15rem;
+    color: var(--head); margin-bottom: 0.4rem;
+}
+.incident-card .incident-meta {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); margin-bottom: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-size: 0.75rem; font-family: var(--mono); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    background-color: var(--amber-dim); color: var(--amber);
+}
+.badge.red { background-color: var(--red-dim); color: var(--red); }
+.badge.green { background-color: var(--green-dim); color: var(--green); }
+.badge.blue { background-color: var(--blue-dim); color: var(--blue); }
+.collapsible {
+    background-color: var(--surface2); color: var(--head);
+    cursor: pointer; padding: 1rem; width: 100%;
+    border: 1px solid var(--border); text-align: left;
+    outline: none; font-size: 1rem; font-family: var(--display);
+    border-radius: 6px; transition: all 0.2s; margin-bottom: 1rem;
+}
+.collapsible:hover { background-color: var(--surface); border-color: var(--amber); }
+.collapsible::after {
+    content: ' \25BC'; float: right; color: var(--amber);
+    transition: transform 0.2s;
+}
+.collapsible.active::after { transform: rotate(-180deg); }
+.collapsible-content {
+    padding: 0 1rem 1rem 1rem; display: none;
+    background-color: var(--surface2); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 1rem;
+}
+.collapsible-content.active { display: block; }
+.collapsible-content table { margin: 1rem 0; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid var(--border); text-align: center;
+    color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem;
+}
+.pattern-card {
+    position: relative; background-color: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 1.5rem 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.ghost-number {
+    position: absolute; font-size: 8rem; font-family: var(--display);
+    color: rgba(240, 168, 50, 0.08); line-height: 1;
+    z-index: 0; right: 1rem; top: 50%; transform: translateY(-50%);
+}
+.pattern-title {
+    position: relative; z-index: 1; font-family: var(--display);
+    font-size: 1.3rem; color: var(--head); margin-bottom: 0.75rem;
+}
+.pattern-description { position: relative; z-index: 1; color: var(--text); margin-bottom: 1rem; }
+.pattern-meta {
+    position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem;
+}
+.pattern-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-dim); font-family: var(--mono);
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .wrapper { padding: 1rem; padding-top: 0; }
+    nav ul { padding: 0 0.75rem; }
+    nav a { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+    table { font-size: 0.9rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+    .sentiment-label { min-width: 130px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<nav><ul><li><a href="#summary">01 Summary</a></li><li><a href="#quant">02 Quantitative</a></li><li><a href="#deep">03 Deep Analysis</a></li><li><a href="#patterns">04 Patterns</a></li><li><a href="#contradictions">05 Contradictions</a></li><li><a href="#gaps">06 Gaps</a></li><li><a href="#recommendations">07 Actions</a></li><li><a href="#incidents">08 Incidents</a></li><li><a href="#metadata">09 Metadata</a></li><li><a href="#citations">Citations</a></li></ul></nav>
+<div class="wrapper">
+<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 11 &nbsp;&nbsp;May 18 &ndash; May 25, 2026<br>Analysis executed 2026-05-25</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">42</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">43% Caut. Neg.</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">Code Quality</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">6</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">9</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">9/9</div></div>
+</div>
+</header>
+<section id="citations"><h2>Citation Reference Table</h2>
+<p>This table is built per Analysis Engine v1.17 mandatory pre-processing step. All <code>[label](url)</code> citations in the body resolve to URLs in this table. Coverage target: every valid URL appears at least once below.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Source Name</th>
+<th>URL</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HN — Claude Code most impressive innovation; Cursor solid daily editor</td>
+<td>https://news.ycombinator.com/item?id=46333753</td>
+<td>tier1.hacker_news</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stack Overflow Blog — Coding agents are giving everyone decision fatigue</td>
+<td>https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>3</td>
+<td>MIT Technology Review — Anthropic's Code with Claude showed off coding's future</td>
+<td>https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>4</td>
+<td>InfoQ — Code with Claude: Managed Agents, Proactive Workflows, Capability Curve</td>
+<td>https://www.infoq.com/news/2026/05/code-with-claude/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Simon Willison — Live blog: Code w/ Claude 2026</td>
+<td>https://simonwillison.net/2026/May/6/code-w-claude-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Simon Willison — Using Claude Code: The Unreasonable Effectiveness of HTML</td>
+<td>https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Simon Willison — Vibe coding and agentic engineering are getting closer than I'd like</td>
+<td>https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Addy Osmani (Elevate / Substack) — Code Review in the Age of AI</td>
+<td>https://addyo.substack.com/p/code-review-in-the-age-of-ai</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>9</td>
+<td>addyosmani.com — My LLM coding workflow going into 2026</td>
+<td>https://addyosmani.com/blog/ai-coding-workflow/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Pragmatic Engineer — AI Tooling for Software Engineers in 2026</td>
+<td>https://newsletter.pragmaticengineer.com/p/ai-tooling-2026</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Anthropic — Introducing Claude Opus 4.7</td>
+<td>https://www.anthropic.com/news/claude-opus-4-7</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Thoughtworks Radar — Claude Code: Adopt</td>
+<td>https://www.thoughtworks.com/radar/tools/claude-code</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Thoughtworks Radar — Complacency with AI-generated code (Hold)</td>
+<td>https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Stack Overflow Blog — What the AI trust gap means for enterprise SaaS</td>
+<td>https://stackoverflow.blog/2026/04/02/what-the-ai-trust-gap-means-for-enterprise-saas/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Stack Overflow Blog — Mind the gap: Closing the AI trust gap for developers</td>
+<td>https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>16</td>
+<td>ITBrief — AI coding tools face 2026 reset towards architecture</td>
+<td>https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>17</td>
+<td>d4b.dev — Quality has to become Infrastructure (May 4)</td>
+<td>https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>18</td>
+<td>d4b.dev — State of AI 2026 Survey: developer-work commentary</td>
+<td>https://www.d4b.dev/blog/2026-05-23-what-the-state-of-ai-2026-survey-says-about-developer-work</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>19</td>
+<td>CIO — Demand for junior developers softens as AI takes over</td>
+<td>https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>20</td>
+<td>IEEE Spectrum — AI Shifts Expectations for Entry-Level Jobs</td>
+<td>https://spectrum.ieee.org/ai-effect-entry-level-jobs</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>21</td>
+<td>CNN Business — Demise of software-engineering jobs has been greatly exaggerated</td>
+<td>https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Dark Reading — As Coders Adopt AI Agents, Security Pitfalls Lurk in 2026</td>
+<td>https://www.darkreading.com/application-security/coders-adopt-ai-agents-security-pitfalls-lurk-2026</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Cloud Security Alliance Labs — Vibe Coding's Security Debt: CVE Surge 2026</td>
+<td>https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/</td>
+<td>tier1.blogs_publications + incidents</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Salesforce Ben — 2026 Predictions: Year of Technical Debt (vibe-coding)</td>
+<td>https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Augment Code — Vibe Coding: Generating tech debt at the speed of light</td>
+<td>https://www.augmentcode.com/blog/generating-tech-debt-at-the-speed-of-light</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Techzine Global — Is 46% of your AI-generated code vulnerable?</td>
+<td>https://www.techzine.eu/blogs/security/140327/is-46-of-your-ai-generated-code-vulnerable/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Cycode — Enterprise-Grade Guardrails Against Secret Leaks in AI-Assisted Dev</td>
+<td>https://cycode.com/blog/ai-guardrails-real-time-ide-security/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Cloud Security Alliance — Enterprise AI: From Guardrails to Governance</td>
+<td>https://cloudsecurityalliance.org/blog/2026/03/17/from-guardrails-to-governance-why-enterprise-ai-needs-a-control-layer</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Augment Code — CTO AI Coding Tool Evaluation Checklist (2026)</td>
+<td>https://www.augmentcode.com/guides/cto-ai-coding-checklist</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>30</td>
+<td>SD Times — The Invisible Burden: AI Redefining Developer Productivity (Harness survey)</td>
+<td>https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Harvard Business Review — When Using AI Leads to 'Brain Fry'</td>
+<td>https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Axios — AI agents scrambling power users' brains ('slot machines')</td>
+<td>https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>33</td>
+<td>InfoQ — Anthropic study: AI coding cuts skill mastery by 17%</td>
+<td>https://www.infoq.com/news/2026/02/ai-coding-skill-formation/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Stanford DEL — Canaries in the Coal Mine? (Brynjolfsson et al.)</td>
+<td>https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Futurist.com (Badminton) — CEO's guide to AI: Young workers as canaries</td>
+<td>https://futurist.com/2026/03/10/the-ceos-guide-to-ai-young-workers-as-the-canaries-in-the-coalmine/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Cognitive World — Skill Atrophy: Frictionless AI and Cognitive Debt</td>
+<td>https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>37</td>
+<td>addyosmani.com — The Next Two Years of Software Engineering</td>
+<td>https://addyosmani.com/blog/next-two-years/</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Sonar (SonarSource) — State of Code Developer Survey 2026 (PDF)</td>
+<td>https://www.sonarsource.com/state-of-code-developer-survey-report.pdf</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Red Hat Developer — MCP servers vs. skills: choosing the right context</td>
+<td>https://developers.redhat.com/articles/2026/05/25/mcp-servers-vs-skills-choosing-right-context-your-ai</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>40</td>
+<td>DEV Community (austinwdigital) — AI-Assisted Development in 2026</td>
+<td>https://dev.to/austinwdigital/ai-assisted-development-in-2026-best-practices-real-risks-and-the-new-bar-for-engineers-3fom</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Science &amp; Technology News — The Automation of Junior Developer Roles</td>
+<td>https://science-technology.news-articles.net/content/2026/05/20/the-automation-of-junior-developer-roles.html</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Every.to (Chain of Thought) — Inside Anthropic's 2026 Developer Conference</td>
+<td>https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference</td>
+<td>tier1.blogs_publications</td>
+</tr>
+<tr>
+<td>43</td>
+<td>X — Addy Osmani thread on code review in the age of AI</td>
+<td>https://x.com/addyosmani/status/2002438238309658656</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Zenity — PocketOS production-database deletion (canonical incident report)</td>
+<td>https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos</td>
+<td>incidents</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Euronews Next — AI agent deleted a company's entire database in 9 seconds</td>
+<td>https://www.euronews.com/next/2026/04/28/an-ai-agent-deleted-a-companys-entire-database-in-9-seconds-then-wrote-an-apology</td>
+<td>incidents</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Particula — Amazon Kiro AI production-AWS incident lessons</td>
+<td>https://particula.tech/blog/ai-agent-production-safety-kiro-incident</td>
+<td>incidents</td>
+</tr>
+<tr>
+<td>47</td>
+<td>OECD.AI — Amazon.com storefront AI-assisted outages (Mar 2 / Mar 5)</td>
+<td>https://oecd.ai/en/incidents/2026-03-10-01aa</td>
+<td>incidents</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Composio — May 2026 Security Incident (sandbox-escape, MCP tool-injection)</td>
+<td>https://composio.dev/blog/composio-may-2026-security-incident</td>
+<td>incidents</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note</em>: 48 unique URLs total (Stack Overflow Blog "decision fatigue" appears in both tier1.blogs_publications and tier2; CSA Labs is both an incident anchor and the canonical tier1 source for the CVE-surge cluster). Pattern-source URLs in <code>emerging_patterns[]</code> are objects (<code>{url, label, retrieved}</code>) and resolve to the same set above. Tier-3 flags are intentionally URL-less per the gap-flagging convention.</p>
+
+
+</section><section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>The May 18–25 window is the first post-keynote <em>retrospective</em> window — the Code w/ Claude London follow-up event landed inside the lookback (May 19), and the conference-fueled framing has now had two weeks to settle into the analyst layer. The dominant story is that <strong>the review-cost inversion finally becomes the headline finding rather than a subtheme</strong>: <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow's "Coding agents are giving everyone decision fatigue"</a>, <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times' "Invisible Burden" report on the Harness 2026 survey</a> (81% of engineering leaders reporting review time has risen sharply since AI deployment; AI-generated PRs wait 4.6× longer for review pickup but are reviewed 2× faster once picked up), and <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani's "Code Review in the Age of AI"</a> all land in the same seven-day window. This is the third consecutive window in which Reddit Tier-1 retrieval has returned zero items and Bluesky/Mastodon Tier-1 zero — the program now has a structural-composition risk that must be flagged in every reading of the numbers.</p>
+<p>Three structural-risk anchors compound this window. First, <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">the Composio May 2026 security incident</a> is the <em>first major MCP-style sandbox-escape and tool-injection event with public technical disclosure</em> — attackers brute-forced LLM-generated attack patterns to gain a foothold in an internal monitoring agent, then registered malicious tool definitions to escalate privileges; this is the canonical "MCP attack surface" story the longitudinal record has been tracking since E1 finally landing as a production-confirmed incident rather than a vendor-disputed CVE. Second, <a href="https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos" target="_blank" rel="noopener">Zenity's PocketOS canonical report</a> and <a href="https://www.euronews.com/next/2026/04/28/an-ai-agent-deleted-a-companys-entire-database-in-9-seconds-then-wrote-an-apology" target="_blank" rel="noopener">Euronews' mainstream coverage</a> continue to circulate, and <a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula's analysis of the Amazon Kiro incident</a> and <a href="https://oecd.ai/en/incidents/2026-03-10-01aa" target="_blank" rel="noopener">OECD.AI's Amazon.com storefront entry</a> bind the Mar 2 / Mar 5 Amazon outages into the same agent-blast-radius class. The pattern is now stable enough to support a recognized "autonomous-agent destructive-action class" framing across three independent vendor write-ups. Third, the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs Vibe Security Radar quantification</a> (35 CVEs in March 2026 attributable to AI coding tools; researchers estimating true count 5–10× higher) is now the most-cited single quantitative data point in the corpus, appearing in <a href="https://www.darkreading.com/application-security/coders-adopt-ai-agents-security-pitfalls-lurk-2026" target="_blank" rel="noopener">Dark Reading</a>, <a href="https://www.techzine.eu/blogs/security/140327/is-46-of-your-ai-generated-code-vulnerable/" target="_blank" rel="noopener">Techzine</a>, <a href="https://www.augmentcode.com/blog/generating-tech-debt-at-the-speed-of-light" target="_blank" rel="noopener">Augment Code</a>, and <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben's 2026 predictions</a>.</p>
+<p>The week's second defining shift is <strong>the consolidation of "Code with Claude as agent-infrastructure inflection" into an analyst consensus</strong>. <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT Technology Review's piece</a> is the editorial anchor: "when asked who had shipped a PR in the last week entirely written by Claude, nearly half the packed room raised their hands." The piece frames the conference as the moment when "autonomous coding by Q3" became an explicit customer target — citing Shopify and Mercado Libre at 90% autonomous as named reference customers. <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ's roundup</a> catalogues the five infrastructure features (Managed Agents, Proactive Workflows, Capability Curve, Routines, Dreaming) as the platform-bet, while <a href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" target="_blank" rel="noopener">Every.to's "Inside Anthropic's 2026 Developer Conference"</a> and Simon Willison's <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">live blog</a> plus follow-up pieces on the <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" target="_blank" rel="noopener">unreasonable effectiveness of HTML</a> and <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">vibe coding vs agentic engineering</a> supply the practitioner-internalization layer. The narrative is no longer "what did they announce?" but "does the platform-bet ship and stick?" — a maturation of the <code>anthropic-trust-arc</code> signal that began as a vendor-trust crisis in E4 and now reads as a <em>capability-credibility verdict pending Q3 production reports</em>. The <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic Opus 4.7 release announcement</a> lands cleanly inside the window and is read in this corpus as a quiet capability iteration rather than a re-anchoring event.</p>
+<p>The third macro-shift is <strong>junior-pipeline compression hardening from "contested" to "quantified"</strong>. <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford's "Canaries in the Coal Mine"</a> (Brynjolfsson et al.) supplies the academic anchor — 13–16% employment decline for 22-to-25-year-olds in AI-exposed roles. The <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">InfoQ Anthropic 17% skill-mastery reduction study</a> supplies the vendor-side skill-formation data. <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>, <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO</a>, <a href="https://futurist.com/2026/03/10/the-ceos-guide-to-ai-young-workers-as-the-canaries-in-the-coalmine/" target="_blank" rel="noopener">Futurist.com</a>, and <a href="https://science-technology.news-articles.net/content/2026/05/20/the-automation-of-junior-developer-roles.html" target="_blank" rel="noopener">Science &amp; Technology News</a> supply the practitioner / business-press echo. <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's counterweight piece</a> still circulates but is now a minority position in the within-window corpus — the bifurcated reading from E10 has tilted toward the contraction-side data this window. The next-window watch is whether Q2 BLS or LinkedIn data corroborate the Stanford finding or whether the Stanford finding ends up being a 2025-snapshot artifact.</p>
+<p>Cautiously Negative holds in the low-40% range (∼42%, essentially flat from E10's 42%), Strongly Negative ticks down modestly (∼14%, down from E10's 18%) as the <em>no new disasters this week</em> signal pulls intensity off the incidents cluster, and Cautiously Positive recovers to ∼12% on the strength of the Code w/ Claude follow-on coverage and <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">Thoughtworks' "Claude Code — Adopt" Radar ring</a>. The Nuanced/Analytical bucket holds in the mid-teens as analyst pieces (Addy Osmani × 3, Pragmatic Engineer, Stack Overflow Blog × 3) frame rather than judge. <strong>The structural-risk layer is intact, the announcement-affect layer has cooled, and the review-burden story has matured into the dominant productivity narrative.</strong></p>
+<p>The next-window watch is twofold: (1) whether the <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio incident</a> generates a second-source corroboration from a major MCP vendor (Anthropic, JFrog, Unit 42, or Red Hat) and graduates the MCP attack surface from "vendor-disputed CVE" to "production-confirmed incident class," and (2) whether the Reddit / Bluesky / Mastodon retrieval gap can be closed for E12 — three consecutive zero-yield windows now constitute a structural composition risk on every sentiment number reported in this corpus.</p>
+
+</section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
+<h3>Sentiment Distribution</h3>
+<p>42 sentiment-tagged items across Tier-1 + Tier-2 (Tier-3 flags excluded; one cross-tier duplicate — Stack Overflow Blog "decision fatigue" appears as both tier1 and tier2 anchor — counted once).</p>
+<table>
+<thead>
+<tr>
+<th>Sentiment</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">% of Sample</th>
+<th>Trend vs. Previous (E10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strongly Positive</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2%</td>
+<td>flat (E10: 2%)</td>
+</tr>
+<tr>
+<td>Cautiously Positive</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">12%</td>
+<td>↑ (E10: 10%)</td>
+</tr>
+<tr>
+<td>Mixed/Ambivalent</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">12%</td>
+<td>flat (E10: 12%)</td>
+</tr>
+<tr>
+<td>Cautiously Negative</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">43%</td>
+<td>↑ (E10: 42%)</td>
+</tr>
+<tr>
+<td>Strongly Negative</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14%</td>
+<td>↓ (E10: 18%)</td>
+</tr>
+<tr>
+<td>Nuanced/Analytical</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">17%</td>
+<td>flat-ish (E10: 16%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shift Note</strong>: The window is best read as <em>post-incident-disclosure cooldown without recovery</em>. Strongly Negative ticks down because no major new disaster was disclosed this window (the prior windows' Lovable/Vercel/Bitwarden/Amazon March outage disclosures are out-of-window now), but Cautiously Negative inches up because the Tier-1 analyst layer is now sustained in "structural-risk consolidation" mode — review burden, CVE acceleration, comprehension debt, and junior-pipeline compression all hold their share. Cautiously Positive recovers two points on the strength of <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">Thoughtworks placing Claude Code on Adopt</a>, the <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic Opus 4.7 announcement</a>, and the <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT Technology Review framing of Code w/ Claude</a> ("whether you like it or not" carries enough ambivalence to read cautiously rather than strongly positive). The single Strongly Positive item is the <a href="https://news.ycombinator.com/item?id=46333753" target="_blank" rel="noopener">HN top thread</a> — "for me, Claude Code was the most impressive innovation this year" — included as a within-window practitioner read.</p>
+<p><strong>Composition caveat (critical)</strong>: This is the <strong>third consecutive window</strong> with zero Tier-1 Reddit, Bluesky, or Mastodon yield. The sample composition is now structurally tilted toward Tier-1 blogs / analyst publications / vendor research. Practitioner-Reddit signal — which historically supplied the bulk of Mixed and Cautiously Positive votes — is absent. Any percentage in this table should be read as <em>composition-shifted toward the analyst-publication corpus</em>, with the caveat that the underlying practitioner mood may diverge.</p>
+<h3>Topic Cluster Frequency</h3>
+<p>Tag-mention counts across 42 tagged items (multi-tag items contribute to multiple clusters).</p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th style="text-align: right;">Mentions</th>
+<th>Dominant Sentiment</th>
+<th>Change from Previous (E10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Quality</td>
+<td style="text-align: right;">17</td>
+<td>Cautiously Negative</td>
+<td>↑ (E10: 16)</td>
+</tr>
+<tr>
+<td>Review Burden</td>
+<td style="text-align: right;">14</td>
+<td>Cautiously Negative</td>
+<td>↑↑ (E10: implicit; new prominence)</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td style="text-align: right;">13</td>
+<td>Nuanced / Cautiously Negative</td>
+<td>↓ (E10: 18)</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td style="text-align: right;">13</td>
+<td>Cautiously Negative</td>
+<td>flat (E10: 14)</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td style="text-align: right;">12</td>
+<td>Mixed / Cautiously Negative</td>
+<td>↑ (E10: 11)</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td style="text-align: right;">10</td>
+<td>Strongly Negative</td>
+<td>↓ (E10: 13)</td>
+</tr>
+<tr>
+<td>Hiring / Junior Pipeline</td>
+<td style="text-align: right;">10</td>
+<td>Cautiously Negative</td>
+<td>↑↑ (E10: 5)</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td style="text-align: right;">9</td>
+<td>Mixed</td>
+<td>↓ (E10: 12)</td>
+</tr>
+<tr>
+<td>Deskilling / Learning</td>
+<td style="text-align: right;">8</td>
+<td>Cautiously Negative</td>
+<td>↑ (E10: 5)</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td style="text-align: right;">8</td>
+<td>Cautiously Negative</td>
+<td>↑ (E10: 7)</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td style="text-align: right;">6</td>
+<td>Nuanced</td>
+<td>↑ (E10: 5)</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td style="text-align: right;">5</td>
+<td>Cautiously Negative</td>
+<td>↓ (E10: 8)</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td style="text-align: right;">5</td>
+<td>Cautiously Negative</td>
+<td>↑ (E10: 4)</td>
+</tr>
+<tr>
+<td>Tool-Specific Issues</td>
+<td style="text-align: right;">5</td>
+<td>Mixed</td>
+<td>NEW prominent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Headline shifts vs. E10</strong>: Review Burden moves into the #2 slot on the strength of the <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow Blog "decision fatigue" piece</a>, the <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times Harness-survey "Invisible Burden" piece</a> (81% / 4.6× / 2× quantitative anchor), <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani's "Code Review in the Age of AI"</a>, and the <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks "Complacency with AI-generated code" Hold ring</a>. The cluster was present but diffused in E10 (subsumed under Burnout / Cognitive Load + Productivity Reality); this window it consolidates into a named, recognizable cluster with a quantitative spine. Hiring / Junior Pipeline doubles (5 → 10) on the strength of the Stanford / Anthropic / IEEE / CIO / Futurist / Science-Tech News cluster — the first window where the junior-pipeline data clusters tightly enough to read as a <em>coherent labor-market segment story</em> rather than a "two stories not one" bifurcation. Architectural Philosophy retreats slightly (18 → 13) — the "2026 reset towards architecture" framing held by <a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">ITBrief</a>, <a href="https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure" target="_blank" rel="noopener">d4b.dev</a>, and <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Complacency</a> is still present but is now competing for analyst attention with the review-burden frame. Pricing / Cost continues its retreat from E9–E10 peak (13 → 8 → 5) — pricing pieces this window are largely embedded references inside vendor pieces rather than first-class arguments. <strong>The directional headline: Review Burden has crystallized into a recognized cluster; junior-pipeline compression is now the second most cohesive labor-market story in the corpus.</strong></p>
+<h3>Tool-Specific Mentions</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align: right;">Positive</th>
+<th style="text-align: right;">Negative</th>
+<th style="text-align: right;">Mixed/Nuanced</th>
+<th>Key Themes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude / Claude Code</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td>Code w/ Claude follow-on coverage; Opus 4.7 announcement; Thoughtworks Radar Adopt ring; PocketOS canonical incident still circulating; HTML-effectiveness framing</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td>PocketOS canonical incident attribution (Cursor + Claude Opus 4.6); HN "innovation of the year" thread frames Cursor as "solid daily editor" but not the standout</td>
+</tr>
+<tr>
+<td>Copilot</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td>Absent as primary subject; background mentions in Stack Overflow trust-gap / Pragmatic Engineer tooling round-up</td>
+</tr>
+<tr>
+<td>ChatGPT / Codex</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td>Background mention in tooling round-ups; no incident attribution this window</td>
+</tr>
+<tr>
+<td>MCP (protocol)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td>Composio sandbox-escape incident; Red Hat "MCP servers vs skills" framing piece; lingering attack-surface references in Dark Reading / Techzine</td>
+</tr>
+<tr>
+<td>Kiro (Amazon)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td>Particula Kiro postmortem analysis; OECD.AI Amazon storefront entry</td>
+</tr>
+<tr>
+<td>General AI / Multi</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td>CVE surge framings; comprehension/cognitive debt; review burden; junior-pipeline compression; 2026-reset framings</td>
+</tr>
+</tbody>
+</table>
+<p>Compared with E10: Claude / Claude Code's positive share grows on the strength of Code w/ Claude follow-on coverage, the Opus 4.7 release, and Thoughtworks placing Claude Code on Adopt — the first time the tool has registered net-positive in three windows. Cursor's negative share is concentrated on the still-circulating PocketOS canonical incident plus the <a href="https://news.ycombinator.com/item?id=46333753" target="_blank" rel="noopener">HN top thread's "solid daily editor" but not standout</a> framing — Cursor is no longer the practitioner top-of-mind tool in this corpus. MCP's negative share continues to consolidate; the <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio incident</a> is the first production-confirmed MCP-style sandbox-escape and tool-injection event in the longitudinal record, advancing the <code>mcp-attack-surface</code> signal from "vendor-disputed CVE cluster" toward "production-confirmed incident class." Kiro's negative share is new prominence — the Amazon Kiro / Amazon.com storefront pair of incidents enters the longitudinal record as a Kiro-specific attribution that was previously absorbed into the broader "agent destruction class" framing.</p>
+
+</section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
+<h3>Code Quality (17 mentions — #1)</h3>
+<p>The cluster anchor remains the <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs Vibe Security Radar quantification</a> — 35 CVEs in March 2026 directly attributable to AI coding tools (up from 6 in January and 15 in February); researchers estimate the true count is 5–10× higher across the broader OSS ecosystem. This window the figure is no longer just the CSA Labs paper — it propagates across <a href="https://www.darkreading.com/application-security/coders-adopt-ai-agents-security-pitfalls-lurk-2026" target="_blank" rel="noopener">Dark Reading</a>, <a href="https://www.techzine.eu/blogs/security/140327/is-46-of-your-ai-generated-code-vulnerable/" target="_blank" rel="noopener">Techzine</a>, <a href="https://www.augmentcode.com/blog/generating-tech-debt-at-the-speed-of-light" target="_blank" rel="noopener">Augment Code</a>, and <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben</a> as the headline-grade datum for "AI-generated code has a structural security debt." The <a href="https://www.sonarsource.com/state-of-code-developer-survey-report.pdf" target="_blank" rel="noopener">Sonar 2026 State of Code Developer Survey</a> supplies the survey-of-practitioners counterpart — vendor instrumentation data on the same trend.</p>
+<p>The conceptual anchor is consolidating around "infrastructure-grade quality discipline." <a href="https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure" target="_blank" rel="noopener">d4b.dev's "When AI Writes Most of the Code, Quality Has to Become Infrastructure"</a> argues quality cannot live in ad-hoc review anymore; it must be encoded in pipelines, gates, and policies. <a href="https://cycode.com/blog/ai-guardrails-real-time-ide-security/" target="_blank" rel="noopener">Cycode's enterprise-guardrails framing</a> and the <a href="https://cloudsecurityalliance.org/blog/2026/03/17/from-guardrails-to-governance-why-enterprise-ai-needs-a-control-layer" target="_blank" rel="noopener">CSA "Guardrails to Governance" essay</a> push the same thesis from the vendor side. <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Radar's "Complacency with AI-generated code" Hold ring</a> is the most institutionally weighty statement: explicit Hold-grade warning that practitioners are accepting AI output without sufficient review. Read alongside the <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust-gap piece</a>, the cluster is a single coherent claim: <em>trust has collapsed, distrust has not yet translated into practice-level rigor, and the gap is producing CVEs at 5.8× year-over-year</em>.</p>
+<p>Sentiment: Cautiously Negative dominates with a Strongly Negative tail on the CVE surge subset. The <a href="https://www.d4b.dev/blog/2026-05-23-what-the-state-of-ai-2026-survey-says-about-developer-work" target="_blank" rel="noopener">d4b.dev May 23 State of AI 2026 piece</a> adds a within-window survey-commentary layer that frames the data as practitioner-perception lagging vendor-instrumentation by about a quarter.</p>
+<h3>Review Burden (14 mentions — #2, newly prominent)</h3>
+<p>This is the cluster of the window. Three convergent Tier-1 pieces land within 7 days. <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow Blog's "Coding agents are giving everyone decision fatigue"</a> frames the phenomenon as "cost has shifted from writing code to reviewing it" and supplies the <em>constant trust/override micro-decision</em> mechanism. <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times' coverage of the Harness 2026 survey</a> supplies the quantitative spine: 81% of engineering leaders report code review time has risen sharply since AI deployment; AI-generated PRs wait 4.6× longer for review pickup but are reviewed 2× faster once picked up. The 4.6× / 2× pair is the most diagnostically useful single statistic in the window — it captures both the <em>aversion</em> (delayed pickup) and the <em>abbreviation</em> (faster review once picked up) that together name rubber-stamping as a measurable behavior, not just a complaint. <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani's "Code Review in the Age of AI"</a> is the practitioner-prescription anchor: a working framework for review allocation when ∼50% of incoming code is AI-authored, including review-budget per PR and review-skill formation.</p>
+<p>The cluster's secondary spine is <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks' "Complacency with AI-generated code" Hold ring</a> — the most institutionally credible "stop doing this" signal of the quarter — plus <a href="https://www.augmentcode.com/guides/cto-ai-coding-checklist" target="_blank" rel="noopener">Augment Code's CTO checklist</a> which makes review-process maturity one of its six rubric dimensions. The <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR "Brain Fry" piece</a> and <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios slot-machines piece</a> supply the affective spine — review burden is read as a <em>cognitive endurance ceiling</em>, not merely a time-allocation problem. This is the maturation of the v1.2 emergent cluster: review burden has now moved from "distinct from general burnout" (the v1.2 rationale) to "the dominant productivity-cost narrative in the corpus," with both quantitative spine and prescription literature.</p>
+<p>Sentiment: Cautiously Negative dominates. The cluster has stable internal logic — the data, the mechanism, the prescription, and the affective layer all align on the same finding.</p>
+<h3>Architectural Philosophy (13 mentions — #3)</h3>
+<p>The cluster retreats slightly but holds the "2026 reset" framing established in E10. <a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">ITBrief's "AI coding tools face 2026 reset towards architecture"</a> is the explicit headline framing. <a href="https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure" target="_blank" rel="noopener">d4b.dev's "Quality has to become Infrastructure"</a> supplies the architectural prescription. <a href="https://addyosmani.com/blog/next-two-years/" target="_blank" rel="noopener">Addy Osmani's "Next Two Years of Software Engineering"</a> and <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's "AI Tooling for Software Engineers in 2026"</a> are the most-read practitioner-architect framings of the year — and both arrive at architecture-first rather than tool-first conclusions.</p>
+<p>The within-window substantive maturation is the practitioner-architect literature catching up to the "2026 reset" frame established by Thoughtworks Radar v34 in E10. <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Simon Willison's "Vibe coding and agentic engineering are getting closer than I'd like"</a> is the most informative single piece — Willison documents the felt-experience erosion of the distinction between vibe coding (low-discipline, fast iteration) and agentic engineering (high-discipline, agent-orchestrated) and treats the convergence as a <em>problem</em>, not a feature. The <a href="https://www.d4b.dev/blog/2026-05-23-what-the-state-of-ai-2026-survey-says-about-developer-work" target="_blank" rel="noopener">d4b.dev May 23 survey commentary</a> and <a href="https://dev.to/austinwdigital/ai-assisted-development-in-2026-best-practices-real-risks-and-the-new-bar-for-engineers-3fom" target="_blank" rel="noopener">DEV community piece</a> round out the practitioner-architect framing layer.</p>
+<p>The longitudinal trajectory: the cluster matured from "emergent" (v1.2 domain config) through "vibe coding contested" (E5–E8) into "reset framing established" (E10) and now "practitioner-architect prescription literature consolidating" (E11). The cluster's tone has cooled from the editorially-direct E10 Radar v34 framing to a more analytical "what does this practice actually look like" register. Sentiment: Nuanced dominating, with Cautiously Negative on the "vibe coding is the failure mode" subset.</p>
+<h3>Trust / Verification (13 mentions — #4)</h3>
+<p>The <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust-gap pieces</a> remain the longitudinal baseline — 84% use, 29% trust, 46% active distrust, 66% report spending more time fixing "almost-right" AI code. The <a href="https://stackoverflow.blog/2026/04/02/what-the-ai-trust-gap-means-for-enterprise-saas/" target="_blank" rel="noopener">Stack Overflow "What the AI trust gap means for enterprise SaaS"</a> supplies the enterprise-application framing — the same gap repackaged as a SaaS-vendor sales-cycle obstacle. The pair has been the most-cited single trust dataset in the corpus across E8–E11.</p>
+<p>This window adds two practitioner-affect anchors: <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's "Brain Fry"</a> and <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios's slot-machines piece</a>. Both frame the trust dynamic in cognitive-endurance terms — <em>trust cannot be ratchet-tightened without cognitive cost</em>. The Axios "fully cooked brains by mid-afternoon" framing of power-user agentic developers (often early-twenties) is the most vivid single image in the window and is being widely cited as the agentic-fatigue shorthand. The HBR piece supplies the institutional-press validation that practitioner-grade complaints are now executive-grade concerns.</p>
+<p><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic's Opus 4.7 release</a> lands inside the window and reads quietly — no breaking-change drama, no quality-regression complaints, no postmortems. After the SmartScope-documented March quality regression in earlier windows, the Opus 4.7 release reading as <em>quietly competent</em> is itself a trust-arc signal: the vendor has shipped a model release without the high-drama instability of prior months. This advances <code>anthropic-trust-arc</code> toward "capability-credibility verdict pending Q3 production reports." The HN top thread <a href="https://news.ycombinator.com/item?id=46333753" target="_blank" rel="noopener">"for me, Claude Code was the most impressive innovation this year"</a> is the within-window practitioner-trust-recovery datum — single source, but plausibly emblematic of the post-keynote affect arc.</p>
+<p>Sentiment: Cautiously Negative dominates the cluster overall, but with a Cautiously Positive sub-pattern emerging on Anthropic-specific items for the first time in three windows.</p>
+<h3>Productivity Reality (12 mentions — #5)</h3>
+<p>The cluster's quantitative anchor this window is the <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times Harness-survey "Invisible Burden"</a> — the 81% / 4.6× / 2× triple is the most concrete productivity-cost datum in the corpus. The <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow "decision fatigue" piece</a> supplies the mechanism (constant trust/override micro-decisions producing fatigue). <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT Technology Review on Code w/ Claude</a> supplies the vendor-side productivity claim — "nearly half the packed room raised their hands" when asked who had shipped a PR in the last week entirely written by Claude — which the <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ roundup</a> and <a href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" target="_blank" rel="noopener">Every.to inside-the-conference piece</a> frame as evidence of "autonomous coding by Q3" customer-target traction.</p>
+<p>The within-window contradiction is sharp. Vendor-side data (Code w/ Claude / Anthropic Trends Report references) frames productivity as already-delivered for a meaningful customer cohort; practitioner-side / analyst-side data (Harness survey via SD Times, Stack Overflow decision fatigue, Pragmatic Engineer 2026 tooling round-up, Sonar State of Code survey) frames productivity as decisively offset by review and verification costs. The longitudinal <code>productivity-paradox</code> signal therefore consolidates further — the paradox itself is the analyst consensus this window, not the gain-or-no-gain question. <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" target="_blank" rel="noopener">Simon Willison's "Unreasonable Effectiveness of HTML"</a> supplies the most-quoted practitioner data point of "productivity is real <em>for the right substrate</em>" — Willison frames his own productivity gains as substrate-conditional in a way that complements rather than refutes the productivity-paradox reading.</p>
+<p>Sentiment: Mixed dominates with Cautiously Negative on the review-burden subset.</p>
+<h3>Incidents / Failures (10 mentions — #6)</h3>
+<p>No major new disasters were reported within the lookback. The within-window incident corpus is dominated by <em>secondary disclosures and cross-reference coverage</em> of prior incidents: <a href="https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos" target="_blank" rel="noopener">Zenity's PocketOS canonical report</a>, <a href="https://www.euronews.com/next/2026/04/28/an-ai-agent-deleted-a-companys-entire-database-in-9-seconds-then-wrote-an-apology" target="_blank" rel="noopener">Euronews' mainstream coverage of the same incident</a>, <a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula's Amazon Kiro analysis</a>, and <a href="https://oecd.ai/en/incidents/2026-03-10-01aa" target="_blank" rel="noopener">OECD.AI's Amazon.com storefront incident database entry</a>.</p>
+<p>The within-window novel incident is <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio's May 2026 Security Incident</a>. Attackers brute-forced LLM-generated attack patterns to gain a foothold in an internal monitoring agent, then registered malicious tool definitions inside the sandboxed execution environment to escalate privileges. This is the first production-confirmed MCP-style sandbox-escape and tool-injection event with public technical disclosure — the longitudinal <code>mcp-attack-surface</code> signal has been tracking this attack-class theoretically since E1 (Anthropic MCP Git Server flaws, Unit 42 sampling attack vectors, JFrog prompt hijacking), and the Composio postmortem brings it to ground as a production-confirmed event class. The within-window structural-risk implication: MCP attack surface graduates from "vendor-disputed CVE cluster" to "production-confirmed incident class," and the watch for E12 is whether a second major MCP-platform vendor publishes a corroborating disclosure.</p>
+<p>The pattern of <em>agent-blast-radius via undisputed execution authority</em> now has three confirmed exemplars (PocketOS production database deletion via Cursor + Claude Opus 4.6; Amazon Kiro AWS environment deletion; Composio sandbox escape via malicious tool registration) and is robustly tagged in the <code>agent-production-destruction</code> signal. The cluster sentiment is dominated by Strongly Negative on the new Composio disclosure plus the continued retroactive coverage of the canonical PocketOS event.</p>
+<h3>Hiring / Junior Pipeline (10 mentions — #7, doubled)</h3>
+<p>This is the cluster of the secondary headline. <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford's "Canaries in the Coal Mine"</a> supplies the academic spine — six facts, anchored on 13–16% employment decline for 22-to-25-year-olds in AI-exposed roles, with controls for industry, location, and seasonality. <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">Anthropic's 17% skill-mastery reduction study via InfoQ</a> supplies the vendor-side skill-formation complement — the <em>mechanism</em> (skill mastery degrading at the formation stage) for the <em>outcome</em> (compression at the entry-level). The two together are the strongest theoretical-empirical pairing the corpus has seen on the junior-pipeline question.</p>
+<p><a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum's "AI Shifts Expectations for Entry-Level Jobs"</a> and <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO's "Demand for junior developers softens"</a> supply the business-press echo. <a href="https://futurist.com/2026/03/10/the-ceos-guide-to-ai-young-workers-as-the-canaries-in-the-coalmine/" target="_blank" rel="noopener">Futurist.com's CEO's-guide framing</a> and the <a href="https://science-technology.news-articles.net/content/2026/05/20/the-automation-of-junior-developer-roles.html" target="_blank" rel="noopener">Science &amp; Technology News "Automation of Junior Developer Roles"</a> round out the cluster. <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN's counterweight piece</a> (IBM tripled entry-level hiring, BLS 15% growth) still circulates but is now a minority position in the within-window corpus.</p>
+<p>The within-window resolution: the bifurcated reading from E10 (<code>labor-market-bifurcation</code> signal) tilts toward the contraction side this window on the strength of the Stanford academic anchor. The signal is not resolved — CNN's counterweight is not refuted, only outweighed in the within-window analyst-publication composition — but the contraction-side has gained the strongest theoretical-empirical pairing the corpus has yet seen. The watch for E12 is whether Q2 BLS or LinkedIn data corroborate Stanford or whether the Stanford finding ends up being a 2025-snapshot artifact.</p>
+<p>Sentiment: Cautiously Negative dominates. The cluster is the most consequential single labor-market story of the quarter.</p>
+<h3>Enterprise / Policy (9 mentions — #8)</h3>
+<p>The cluster cools modestly from E10 as the Amazon 90-day code-safety reset story exits the within-window cycle. The within-window cluster anchors are <a href="https://www.augmentcode.com/guides/cto-ai-coding-checklist" target="_blank" rel="noopener">Augment Code's CTO AI Coding Tool Evaluation Checklist</a> (six-dimension governance rubric), <a href="https://cloudsecurityalliance.org/blog/2026/03/17/from-guardrails-to-governance-why-enterprise-ai-needs-a-control-layer" target="_blank" rel="noopener">Cloud Security Alliance's "Guardrails to Governance" essay</a>, and <a href="https://cycode.com/blog/ai-guardrails-real-time-ide-security/" target="_blank" rel="noopener">Cycode's enterprise-guardrails framing</a>. The cluster's governance-prescription literature is now mature — the question has shifted from "should enterprises governance-frame AI coding?" to "what is the right six-dimension rubric?"</p>
+<p>Sentiment: Mixed dominates. The cluster is more analytical than judgmental this window.</p>
+<h3>Deskilling / Learning (8 mentions — #9)</h3>
+<p>The within-window anchor is the <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">InfoQ Anthropic skill-mastery study</a> (17% skill-mastery reduction), reinforced by <a href="https://cognitiveworld.com/articles/2026/3/19/skill-atrophy-frictionless-ai-and-cognitive-debt" target="_blank" rel="noopener">Cognitive World's "Skill Atrophy"</a> and <a href="https://addyosmani.com/blog/next-two-years/" target="_blank" rel="noopener">Addy Osmani's "Next Two Years"</a>. <a href="https://addyosmani.com/blog/ai-coding-workflow/" target="_blank" rel="noopener">Addy Osmani's "LLM coding workflow"</a> supplies the practitioner-prescription counterpart — workflow discipline as the <em>preventive</em> against deskilling. The cluster is internally coherent and sentiment-stable: Cautiously Negative on the deskilling claim, Nuanced on the prescription side.</p>
+<h3>Burnout / Cognitive Load (8 mentions — #10)</h3>
+<p><a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's "Brain Fry"</a> and <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">Axios's slot-machines piece</a> remain the affective spine. <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow's decision-fatigue piece</a> supplies the mechanism (continuous trust/override micro-decisions). <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times' Invisible Burden coverage</a> supplies the survey-grade quantification. The within-window novelty: burnout is no longer framed as <em>power-user-specific</em>; the analyst consensus is moving toward <em>agentic fatigue as a structural feature of the AI-assisted workflow</em>, including for the median practitioner.</p>
+<p>Sentiment: Cautiously Negative dominates.</p>
+
+</section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
+<p>This section uses signal_id slugs from the v1.17 Signal Store registry where applicable. New slugs minted this window follow the short-canonical convention.</p>
+<h3>review-cost-inversion (NEW this window, Tracking, M→H confidence)</h3>
+<p><strong>Pattern</strong>: Code review has displaced code writing as the dominant productivity-cost layer for AI-assisted development. The Harness 2026 survey (via <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times</a>) reports 81% of engineering leaders report review time has risen sharply since AI deployment; AI-generated PRs wait 4.6× longer for review pickup but are reviewed 2× faster once picked up — the canonical aversion-plus-abbreviation pair that names rubber-stamping as a measurable behavior. <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow Blog's "decision fatigue" piece</a> supplies the mechanism — constant trust/override micro-decisions as an exhaustion vector. <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani's "Code Review in the Age of AI"</a> supplies the practitioner prescription. <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks' "Complacency with AI-generated code" Hold ring</a> is the institutional-credibility anchor.</p>
+<p><strong>Signal-Store note</strong>: This pattern is <em>related to but distinct from</em> <code>ai-burnout-paradox</code>. Burnout is the affective consequence; review-cost-inversion is the <em>workflow-structural cause</em>. Where burnout discourse asks "are practitioners exhausted?", review-cost-inversion asks "where did the work go?" The two patterns will likely converge over E12–E14, but for now the <code>review-cost-inversion</code> slug is distinct because the workflow-structural framing has its own quantitative spine (4.6× / 2×) and its own institutional anchor (Thoughtworks Hold ring).</p>
+<p><strong>Confidence</strong>: H — three independent Tier-1 sources land in the same window with internally consistent mechanism, quantification, and prescription literature.</p>
+<h3>agent-production-destruction (existing, Promoted, H confidence — REINFORCED)</h3>
+<p><strong>Pattern</strong>: The pattern of <em>agent-blast-radius via undisputed execution authority</em> gains a third confirmed exemplar this window. <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio's May 2026 Security Incident</a> is the within-window novel incident — attackers brute-forced LLM-generated attack patterns to gain a foothold in an internal monitoring agent, then registered malicious tool definitions inside the sandboxed execution environment to escalate privileges. Adjacent: <a href="https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos" target="_blank" rel="noopener">Zenity's PocketOS canonical report</a> plus <a href="https://www.euronews.com/next/2026/04/28/an-ai-agent-deleted-a-companys-entire-database-in-9-seconds-then-wrote-an-apology" target="_blank" rel="noopener">Euronews mainstream coverage</a> (PocketOS still circulating); <a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula's Amazon Kiro analysis</a> and <a href="https://oecd.ai/en/incidents/2026-03-10-01aa" target="_blank" rel="noopener">OECD.AI Amazon.com storefront entry</a> (Amazon Kiro + Mar 2 / Mar 5 outages).</p>
+<p><strong>Signal-Store note</strong>: Title updated to reflect graduation from "blast-radius story" to "named incident class." Slug unchanged per v1.17 stability mandate.</p>
+<p><strong>Confidence</strong>: H — five independent exemplars across three distinct vendor / customer contexts.</p>
+<h3>mcp-attack-surface (existing, Promoted, H confidence — GRADUATED)</h3>
+<p><strong>Pattern</strong>: The longitudinal <code>mcp-attack-surface</code> signal advances from "vendor-disputed CVE cluster" to "production-confirmed incident class." The <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio May 2026 disclosure</a> is the first major MCP-style sandbox-escape and tool-injection event with public technical disclosure — attackers registered malicious tool definitions inside the sandboxed execution environment to escalate privileges. Adjacent within-window: <a href="https://developers.redhat.com/articles/2026/05/25/mcp-servers-vs-skills-choosing-right-context-your-ai" target="_blank" rel="noopener">Red Hat's "MCP servers vs skills" framing</a> is read as an institutional-vendor response — Red Hat positioning skills as the more-contained alternative to MCP servers for production contexts.</p>
+<p><strong>Signal-Store note</strong>: Title revised to capture the production-confirmed graduation. Slug unchanged.</p>
+<p><strong>Confidence</strong>: H — production-confirmed incident plus institutional-vendor positioning change.</p>
+<h3>cve-acceleration (existing, Promoted, H confidence — STABLE)</h3>
+<p><strong>Pattern</strong>: The <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs 35-CVE March figure</a> is now the most-cited single quantitative datum in the corpus, propagating across <a href="https://www.darkreading.com/application-security/coders-adopt-ai-agents-security-pitfalls-lurk-2026" target="_blank" rel="noopener">Dark Reading</a>, <a href="https://www.techzine.eu/blogs/security/140327/is-46-of-your-ai-generated-code-vulnerable/" target="_blank" rel="noopener">Techzine</a>, <a href="https://www.augmentcode.com/blog/generating-tech-debt-at-the-speed-of-light" target="_blank" rel="noopener">Augment Code</a>, and <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben</a>. The <a href="https://www.sonarsource.com/state-of-code-developer-survey-report.pdf" target="_blank" rel="noopener">Sonar 2026 State of Code Developer Survey</a> supplies a within-window vendor-instrumentation corroboration.</p>
+<p><strong>Confidence</strong>: H — 8 consecutive windows of observation, broad cross-source corroboration.</p>
+<h3>junior-pipeline-collapse (existing, Tracking, H confidence — STRENGTHENING)</h3>
+<p><strong>Pattern</strong>: The bifurcated reading from E10 (<code>labor-market-bifurcation</code>) tilts toward the contraction side this window. <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford's "Canaries in the Coal Mine"</a> (13–16% employment decline for 22-to-25-year-olds in AI-exposed roles) is the strongest single academic anchor the corpus has seen on the junior question, paired with <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">Anthropic's 17% skill-mastery reduction study</a>. Reinforcing: <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>, <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO</a>, <a href="https://futurist.com/2026/03/10/the-ceos-guide-to-ai-young-workers-as-the-canaries-in-the-coalmine/" target="_blank" rel="noopener">Futurist.com</a>, <a href="https://science-technology.news-articles.net/content/2026/05/20/the-automation-of-junior-developer-roles.html" target="_blank" rel="noopener">Science &amp; Technology News</a>. Counterweight: <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN Business piece</a> (IBM tripled entry, BLS 15% growth) still circulating but now a minority position in the within-window corpus.</p>
+<p><strong>Promotion candidacy</strong>: With this window's observations the signal reaches 3 observations (E2, E5, E11) at H confidence and meets the promotion threshold. Recommend promotion to Promoted at the next consolidation pass.</p>
+<p><strong>Confidence</strong>: H.</p>
+<h3>reset-year-narrative (existing, Tracking, H confidence — STRENGTHENING)</h3>
+<p><strong>Pattern</strong>: The "2026 reset towards architecture / fundamentals" framing established by Thoughtworks Radar v34 in E10 propagates this window. <a href="https://itbrief.news/story/ai-coding-tools-face-2026-reset-towards-architecture" target="_blank" rel="noopener">ITBrief's "AI coding tools face 2026 reset towards architecture"</a> is the explicit headline framing. <a href="https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure" target="_blank" rel="noopener">d4b.dev × 2</a> and <a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben "Year of Technical Debt"</a> provide the practitioner-architect and predictions-essay layers. <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Radar Complacency Hold ring</a> is the institutional anchor. The narrative is now stable enough to support a longitudinal frame: 2025 was "vibe coding ascendant"; 2026 is "infrastructure-grade quality discipline." Sentiment: Cautiously Negative on the diagnosis, Nuanced on the prescription.</p>
+<p><strong>Promotion candidacy</strong>: 2 observations (E10, E11) at H confidence; one more observation should reach the promotion threshold.</p>
+<p><strong>Confidence</strong>: H.</p>
+<h3>agent-infrastructure-inflection (NEW this window, Tracking, M→H confidence)</h3>
+<p><strong>Pattern</strong>: The Code w/ Claude event (SF May 6, London May 19) has consolidated into an analyst consensus that this is the <em>agent-infrastructure inflection moment</em>: five new infrastructure features (Managed Agents, Proactive Workflows, Capability Curve, Routines, Dreaming) plus a stated customer target of "autonomous coding by Q3" (Shopify, Mercado Libre cited at 90% autonomous). The <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT Technology Review piece</a> is the editorial anchor; <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ's feature roundup</a> supplies the inventory; <a href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" target="_blank" rel="noopener">Every.to inside-the-conference</a> and <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Simon Willison's live blog</a> supply the practitioner internalization. <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic Opus 4.7 release</a> reads as the quiet capability-iteration backbone.</p>
+<p><strong>Signal-Store note</strong>: Related to but distinct from <code>stack-composition</code> and <code>anthropic-trust-arc</code>. Stack composition is about <em>which tools are picked together</em>; agent-infrastructure-inflection is about <em>whether a specific platform-bet ships and sticks</em>. The two will likely converge after E13–E14 once Q3 production reports either confirm or refute the Shopify/Mercado-Libre 90% autonomous reference customers.</p>
+<p><strong>Confidence</strong>: M→H — single-vendor anchor (Anthropic) but cross-source corroboration across four Tier-1 publications.</p>
+<h3>delegation-gap-paradox (existing, Tracking, H confidence — REINFORCED)</h3>
+<p><strong>Pattern</strong>: <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's two trust-gap pieces</a> (84% use / 29% trust / 46% distrust / 66% spending more time fixing "almost-right" AI code; also the <a href="https://stackoverflow.blog/2026/04/02/what-the-ai-trust-gap-means-for-enterprise-saas/" target="_blank" rel="noopener">enterprise SaaS framing</a>) and <a href="https://www.sonarsource.com/state-of-code-developer-survey-report.pdf" target="_blank" rel="noopener">Sonar 2026 State of Code Developer Survey</a> continue to anchor the gap. The Code w/ Claude framings (Anthropic Trends Report cited indirectly via <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT TR</a> and <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ</a>) bind vendor-reported delegation against practitioner-survey trust to keep the paradox intact.</p>
+<p><strong>Confidence</strong>: H.</p>
+
+</section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Assessment</th>
+<th>Supporting</th>
+<th>Contradicting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Autonomous coding by Q3 will arrive as advertised at Anthropic-named reference customers (Shopify, Mercado Libre at 90% autonomous)"</td>
+<td>Contested — pending Q3 production data</td>
+<td><a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT TR</a>, <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ Code w/ Claude</a>, <a href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" target="_blank" rel="noopener">Every.to</a></td>
+<td><a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times Invisible Burden</a> (review burden offset), <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow Decision Fatigue</a>, <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Complacency Hold</a></td>
+</tr>
+<tr>
+<td>"Junior dev hiring is collapsing under AI pressure"</td>
+<td>Trending Confirmed (vs. E10 Contested)</td>
+<td><a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford Canaries</a>, <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">Anthropic 17% skill-mastery</a>, <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO juniors softening</a>, <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs" target="_blank" rel="noopener">IEEE Spectrum</a>, <a href="https://futurist.com/2026/03/10/the-ceos-guide-to-ai-young-workers-as-the-canaries-in-the-coalmine/" target="_blank" rel="noopener">Futurist.com</a>, <a href="https://science-technology.news-articles.net/content/2026/05/20/the-automation-of-junior-developer-roles.html" target="_blank" rel="noopener">Science &amp; Tech News</a></td>
+<td><a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN counterweight</a> (IBM tripled entry / BLS 15% growth)</td>
+</tr>
+<tr>
+<td>"AI-generated code review can be safely abbreviated at scale"</td>
+<td>Trending Negative</td>
+<td>(none surfaced inside window)</td>
+<td><a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Complacency Hold</a>, <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani Code Review</a>, <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow Decision Fatigue</a>, <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times Invisible Burden</a></td>
+</tr>
+<tr>
+<td>"MCP attack surface is theoretical / vendor-disputed only"</td>
+<td>Trending Negative (Composio graduates to production-confirmed)</td>
+<td>(Anthropic's prior "works as expected" framing, referenced cross-window)</td>
+<td><a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio May 2026 incident</a>, <a href="https://developers.redhat.com/articles/2026/05/25/mcp-servers-vs-skills-choosing-right-context-your-ai" target="_blank" rel="noopener">Red Hat MCP-vs-skills framing</a></td>
+</tr>
+<tr>
+<td>"Vibe coding is a distinct, defensible practice"</td>
+<td>Resolved (against, holds from E10)</td>
+<td>(none)</td>
+<td><a href="https://www.salesforceben.com/2026-predictions-its-the-year-of-technical-debt-thanks-to-vibe-coding/" target="_blank" rel="noopener">Salesforce Ben 2026 Predictions</a>, <a href="https://www.augmentcode.com/blog/generating-tech-debt-at-the-speed-of-light" target="_blank" rel="noopener">Augment Code generating tech debt</a>, <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks Complacency</a>, <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Simon Willison "getting closer than I'd like"</a></td>
+</tr>
+<tr>
+<td>"AI coding productivity gains hold up under longitudinal measurement"</td>
+<td>Contested (productivity-paradox consolidates)</td>
+<td><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic Opus 4.7</a>, <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" target="_blank" rel="noopener">Simon Willison HTML effectiveness</a>, <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">Thoughtworks Claude Code Adopt</a></td>
+<td><a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times Invisible Burden</a>, <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs CVE surge</a>, <a href="https://www.sonarsource.com/state-of-code-developer-survey-report.pdf" target="_blank" rel="noopener">Sonar 2026 survey</a>, <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust gap</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="06">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Reddit Tier-1 still entirely absent</strong> — third consecutive window with zero indexed Reddit results via WebSearch user agent. Fallback (handle/topic) queries also failed. Reddit discourse this window surfaced indirectly via aggregator/news sites only. Cumulative composition risk is now significant: practitioner-Reddit signal that historically drove much of the Mixed and Cautiously Positive votes has been absent across E9, E10, and E11.</li>
+<li><strong>Bluesky and Mastodon Tier-1 zero — third consecutive window</strong> — no usable practitioner posts within lookback via available search. Same persistent gap.</li>
+<li><strong>YouTube transcripts and podcasts — zero retrieval</strong> — channel pages only, no episode-transcript yield. The E10 supplemental pass via Claude in Chrome browser tools did produce results; the standard automated pipeline does not.</li>
+<li><strong>Composio incident — single primary source</strong> — the <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio postmortem</a> is currently the sole technical-disclosure source for this incident class. Watch for corroborating disclosure from a second MCP-platform vendor (Anthropic, Cloudflare, JFrog, or Red Hat) in E12; absent corroboration, the production-confirmed graduation of <code>mcp-attack-surface</code> should be flagged as single-source.</li>
+<li><strong>Code w/ Claude 90%-autonomous reference customers — second-hand only</strong> — Shopify and Mercado Libre at 90% autonomous are cited via <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT TR</a> and <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ</a> reportage of conference statements; no primary-source customer testimonial captured in this window. Watch for primary Shopify or Mercado Libre engineering-blog or conference talk in E12–E14.</li>
+<li><strong>Harness 2026 survey — single-source quantitative anchor</strong> — the 81% / 4.6× / 2× triple is surfaced via <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times' Invisible Burden coverage</a>. The primary Harness report has not been extracted in-window; recommend primary-source pull in E12.</li>
+<li><strong>Stanford "Canaries" — 2025-snapshot artifact risk</strong> — <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford's paper</a> is the strongest academic anchor in the labor-market story, but the 13–16% finding rests on 2025 employment data. Watch for Q2 2026 BLS / LinkedIn data in E13–E15 to corroborate or refute.</li>
+<li><strong>Pricing / Cost cluster sources thin this window</strong> — the cluster's mention count (5) is the lowest in three windows. The cost-runaway signal may be entering a quiet phase rather than resolving; watch for E12 Cursor / Claude Code / Codex pricing-tier rebalancing.</li>
+</ul>
+
+</section><section id="recommendations"><h2 data-section="07">Recommended Actions</h2>
+<ol>
+<li><strong>Pull primary Harness 2026 survey</strong> for E12 to verify the 81% / 4.6× / 2× triple and to extract additional review-burden quantification beyond what <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times</a> surfaced.</li>
+<li><strong>Pursue second-source corroboration for the Composio incident class</strong> — the <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio postmortem</a> is currently the sole primary source for a production-confirmed MCP-style sandbox-escape and tool-injection event. A second-source corroboration would graduate <code>mcp-attack-surface</code> cleanly from "vendor-disputed CVE cluster" to "production-confirmed incident class" without the single-source caveat.</li>
+<li><strong>Promote <code>junior-pipeline-collapse</code> and <code>reset-year-narrative</code> at the next consolidation pass</strong>. Both have reached observation thresholds at H confidence; both are emerging as durable cross-window framings.</li>
+<li><strong>Mint two new short-canonical slugs</strong> at next consolidation: <code>review-cost-inversion</code> (Tracking) and <code>agent-infrastructure-inflection</code> (Tracking). Both have strong within-window evidence; both will likely converge with adjacent signals over E12–E14 but warrant their own slugs for the next 2–3 windows.</li>
+<li><strong>Escalate Reddit / Bluesky / Mastodon retrieval</strong> — three consecutive zero-yield windows constitutes a structural composition risk that should now be escalated beyond manual fallback queries. Recommend dedicated Reddit-extraction skill modeled on flipboard-extraction, plus alternative-UA strategies for Bluesky / Mastodon.</li>
+<li><strong>Watch for Q3 2026 production reports</strong> on Code w/ Claude's five infrastructure features (Managed Agents, Proactive Workflows, Capability Curve, Routines, Dreaming) and the Shopify / Mercado Libre 90% autonomous reference customers. The <code>agent-infrastructure-inflection</code> signal's H-confidence graduation depends on whether the platform-bet ships or quietly slips.</li>
+<li><strong>Track second-source primary disclosure</strong> for Shopify or Mercado Libre at the 90% autonomous claim — currently second-hand-only via conference reportage.</li>
+</ol>
+
+</section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Incident</th>
+<th>Tools</th>
+<th>Severity</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-05</td>
+<td>Composio platform compromise — sandbox escape via malicious MCP tool registration; LLM-pattern brute-force foothold in internal monitoring agent; production agentic infrastructure compromise</td>
+<td>MCP, General AI</td>
+<td>Significant</td>
+<td><a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio Security Incident</a></td>
+</tr>
+<tr>
+<td>2026-04-25 (re-circulated)</td>
+<td>PocketOS production database + Railway volume-level backups deleted in 9 seconds by Cursor + Claude Opus 4.6 agent; ~30-hour operational outage; active reservations and customer records lost</td>
+<td>Cursor, Claude</td>
+<td>Critical</td>
+<td><a href="https://zenity.io/blog/current-events/ai-agent-database-deletion-pocketos" target="_blank" rel="noopener">Zenity canonical report</a></td>
+</tr>
+<tr>
+<td>2026-04-28 (secondary coverage)</td>
+<td>Euronews Next mainstream coverage of PocketOS — agent's written "I violated every principle" confession reaches viral artifact status</td>
+<td>Cursor, Claude</td>
+<td>Critical</td>
+<td><a href="https://www.euronews.com/next/2026/04/28/an-ai-agent-deleted-a-companys-entire-database-in-9-seconds-then-wrote-an-apology" target="_blank" rel="noopener">Euronews Next</a></td>
+</tr>
+<tr>
+<td>2025-12 (Particula analysis)</td>
+<td>Amazon Kiro AI — production-AWS environment deletion/recreation; 13-hour Amazon-internal outage; agent acting without oversight</td>
+<td>Kiro (Amazon)</td>
+<td>Critical</td>
+<td><a href="https://particula.tech/blog/ai-agent-production-safety-kiro-incident" target="_blank" rel="noopener">Particula analysis</a></td>
+</tr>
+<tr>
+<td>2026-03-02 / 2026-03-05</td>
+<td>Amazon.com storefront — AI-assisted code changes cause major outages; ~6-hour disruption Mar 2 (120,000 lost orders, 1.6M website errors); ~99% U.S. order-volume drop Mar 5 (~6.3M lost orders)</td>
+<td>Kiro (Amazon), General AI</td>
+<td>Critical</td>
+<td><a href="https://oecd.ai/en/incidents/2026-03-10-01aa" target="_blank" rel="noopener">OECD.AI incident database entry</a></td>
+</tr>
+<tr>
+<td>2026-03 (CSA Labs / Georgia Tech)</td>
+<td>AI-Generated Code CVE Surge — 35 CVEs in March directly attributable to AI-generated code (6 in Jan, 15 in Feb); ~5.8× growth in 60 days; researchers estimate true count 5–10× higher across broader OSS ecosystem</td>
+<td>General AI</td>
+<td>Significant</td>
+<td><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs / Vibe Security Radar</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="metadata"><h2 data-section="09">Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis prompt</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Extractor</td>
+<td>Claude / claude-opus-4-7 / Engine v1.5.4 / Config v1.8</td>
+</tr>
+<tr>
+<td>Extraction window</td>
+<td>2026-05-18 → 2026-05-25</td>
+</tr>
+<tr>
+<td>Extraction sequence</td>
+<td>E11 of ongoing</td>
+</tr>
+<tr>
+<td>Items tagged</td>
+<td>42 (Tier-1 + Tier-2; cross-tier duplicate counted once)</td>
+</tr>
+<tr>
+<td>Batches successful</td>
+<td>9 / 9</td>
+</tr>
+<tr>
+<td>Primary social platform status</td>
+<td>Degraded (third consecutive window)</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-05-25 16:00 UTC</td>
+</tr>
+<tr>
+<td>Citation pre-processing</td>
+<td>PASSED — table at top, 48 unique URLs, every URL appears ≥1 time</td>
+</tr>
+<tr>
+<td>Signal store loaded</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Signals reused from store</td>
+<td>7 (agent-production-destruction, mcp-attack-surface, cve-acceleration, junior-pipeline-collapse, reset-year-narrative, delegation-gap-paradox, plus ai-burnout-paradox via review-cost-inversion adjacency)</td>
+</tr>
+<tr>
+<td>New signals minted</td>
+<td>2 (review-cost-inversion, agent-infrastructure-inflection) — both Tracking</td>
+</tr>
+<tr>
+<td>Promotion candidates</td>
+<td>junior-pipeline-collapse → Promoted; reset-year-narrative → 2 observations toward threshold</td>
+</tr>
+<tr>
+<td>Summary file</td>
+<td>analysis-summary-2026-05-25.md</td>
+</tr>
+</tbody>
+</table></section>
+<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 11 &mdash; Generated 2026-05-25</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.sentiment-fill').forEach(function(el) {
+    var w = el.style.getPropertyValue('--width');
+    el.style.width = w;
+});
+document.querySelectorAll('.collapsible').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content) content.classList.toggle('active');
+    });
+});
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+</body>
+</html>
