@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E12 (2026-03-20 to 2026-06-01). 12 weekly windows; 597 tagged items; 26 tracked signals (10 Promoted, 11 Tracking, 5 retire-or-merge candidates). E12 mints ai-dependency-trap; four signals reach promotion threshold simultaneously.">
+<meta property="og:title" content="Longitudinal Trend Report — E1 - E12 (2026-03-20 to 2026-06-01)">
+<meta property="og:description" content="12 windows; ai-dependency-trap mints; cognitive-debt graduates to Thoughtworks Radar Trial; four signals reach promotion threshold; Pricing/Cost rebounds via FinOps formalization.">
+<title>Longitudinal Trend Report — E1 - E12 (2026-03-20 to 2026-06-01)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #c9d1d9;
+    font-family: 'Source Serif 4', serif; font-size: 16px; line-height: 1.6;
+    overflow-x: hidden; padding-top: 3rem;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 2px solid #5c9eed;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav .container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: flex-start; align-items: center;
+    gap: 1rem; padding: 0;
+}
+nav h1 {
+    font-family: 'DM Serif Display', serif; font-size: 1rem;
+    color: #5c9eed; font-weight: 400;
+    flex-shrink: 0; white-space: nowrap; margin: 0;
+}
+nav ul {
+    display: flex; list-style: none; gap: 0.25rem;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    margin: 0; padding: 0;
+    scrollbar-width: thin; scrollbar-color: #30363d transparent;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+nav li { margin: 0; flex-shrink: 0; }
+nav a {
+    color: #8b949e; text-decoration: none;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    white-space: nowrap; display: inline-block;
+}
+nav a:hover { color: #5c9eed; background-color: rgba(92, 158, 237, 0.1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 2px solid #5c9eed; }
+h1.title {
+    font-family: 'DM Serif Display', serif; font-size: 3rem;
+    color: #f0f6fc; line-height: 1.15; margin-bottom: 1rem;
+}
+.subtitle {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: #8b949e; margin-bottom: 1rem;
+}
+.masthead-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+}
+.stat-item {
+    background-color: #161b22; padding: 1rem; border-radius: 6px;
+    border-left: 3px solid #5c9eed;
+}
+.stat-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.6rem; color: #5c9eed; font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+    color: #f0f6fc; margin: 2.5rem 0 1.5rem 0;
+    padding-left: 2rem; position: relative;
+}
+h2::before {
+    content: attr(data-section); position: absolute; left: 0;
+    color: #5c9eed; font-size: 0.85rem; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; top: 0.6em;
+}
+h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: #c9d1d9; margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    color: #f0f6fc; margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; }
+a {
+    color: #5c9eed; text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+strong { color: #f0f6fc; font-weight: 600; }
+em { font-style: italic; color: #c9d1d9; }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #161b22; padding: 0.15em 0.4em;
+    border-radius: 3px; font-size: 0.9em; color: #79b8ff;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: #161b22; border: 1px solid #30363d;
+    border-radius: 6px; overflow: hidden; font-size: 0.92rem;
+}
+thead { background-color: #1c2330; }
+th {
+    padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+    color: #f0f6fc; border-bottom: 2px solid #30363d;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td {
+    padding: 0.6rem 1rem; border-bottom: 1px solid #30363d;
+    word-break: break-word; vertical-align: top;
+}
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: #1c2330; }
+ul, ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+.signal-card {
+    background-color: #161b22; border: 1px solid #30363d;
+    border-left: 3px solid #5c9eed;
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.signal-card h4 {
+    margin-top: 0; font-family: 'DM Serif Display', serif;
+    color: #f0f6fc; font-size: 1.1rem;
+}
+.signal-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.4rem; background-color: rgba(92, 158, 237, 0.15);
+    color: #5c9eed;
+}
+.badge.escalated {
+    background-color: rgba(224, 82, 82, 0.15); color: #e05252;
+}
+.badge.new { background-color: rgba(76, 175, 125, 0.15); color: #4caf7d; }
+.badge.continues { background-color: rgba(240, 168, 50, 0.15); color: #f0a832; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid #30363d; text-align: center;
+    color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    nav h1 { display: none; }
+    nav a { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+    .container { padding: 2rem 1rem; }
+    h1.title { font-size: 2rem; }
+    h2 { font-size: 1.5rem; padding-left: 1.5rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+}
+</style>
+</head>
+<body>
+<nav><h1>Longitudinal Trend Report</h1><ul><li><a href="#summary">01 Summary</a></li><li><a href="#composition">02 Composition</a></li><li><a href="#trajectory">03 Trajectory</a></li><li><a href="#momentum">04 Momentum</a></li><li><a href="#signals">05 Signals</a></li><li><a href="#contradictions">06 Contradictions</a></li><li><a href="#vocabulary">07 Vocabulary</a></li><li><a href="#gaps">08 Gaps</a></li><li><a href="#watch">09 Watch List</a></li><li><a href="#metadata">10 Metadata</a></li></ul></nav>
+<div class="container">
+<header>
+<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 12</h1>
+<div class="subtitle">2026-03-20 &ndash; 2026-06-01 &nbsp;&middot;&nbsp; 73 days &nbsp;&middot;&nbsp; 12 weekly windows<br>Generated 2026-06-01 from analysis-summary-{date}.md files (--from-summaries mode)</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">12</div></div>
+<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">597</div></div>
+<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">26</div></div>
+<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">10</div></div>
+<div class="stat-item"><div class="stat-label">NEW E12</div><div class="stat-value">1</div></div>
+<div class="stat-item"><div class="stat-label">Promotion Candidates</div><div class="stat-value">4</div></div>
+</div>
+</header>
+
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Across twelve consecutive weekly extractions spanning 73 days (597 sentiment-tagged items including the E10 supplemental pass), the AI coding tools discourse has executed a clear regime shift from "is the code any good?" (E1–E3, dominated by <code>cve-acceleration</code> and <code>mcp-attack-surface</code> technical-risk signals) through "is the agent safe?" (E4–E7, <code>agent-production-destruction</code> and <code>cost-runaway</code> become structural) into "is the harness right?" (E8–E9, <code>quality-as-infrastructure</code> and <code>claude-code-automation-platform</code> crystallize as architectural prescriptions) into "who governs the gate?" (E10), "who pays the review cost?" (E11), and now in E12 into <strong>"who pays the cognitive cost of being unable to work without?"</strong> — a new Tracking signal <code>ai-dependency-trap</code> mints this window on the back of <a href="https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/" target="_blank" rel="noopener">TechCrunch's METR-cannot-recruit reporting</a>, the <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">Anthropic 17% comprehension-drop RCT</a>, Amazon's Kirorank internal-leaderboard shutdown after employee gaming, and Uber exhausting its 2026 AI budget in four months without measurable productivity gains. The signal is distinct from <code>cognitive-debt-deskilling</code> (mechanism) and <code>delegation-gap-paradox</code> (trust): dependency-trap is the <em>behavioral lock-in</em> — cannot or will not work without — that compounds the cognitive-debt mechanism into a workforce-resilience risk.</p>
+<p>The most consequential E12 institutional event is <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">Thoughtworks Radar v34 placing "Codebase cognitive debt" on Trial</a> and pairing it with the <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors" target="_blank" rel="noopener">Thoughtworks Insights "Harness engineering" prescription</a>. Cognitive debt has now graduated from individual researcher framing (E2: Margaret Storey) through analyst commentary (E6–E10) into Trial-ring named technique with prescription literature — the analyst equivalent of qualified institutional adoption. The longitudinal <code>cognitive-debt-deskilling</code> signal (now 4 windows, E2/E5/E6/E12) reaches "institutional formalization" status.</p>
+<p>The third E12 macro-shift is <strong>Pricing / Cost rebounding decisively after three windows of retreat</strong>, driven by the <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">GitHub Copilot June 1 usage-based-billing cutover</a> landing inside the lookback window. <a href="https://siliconangle.com/2026/05/28/finops-ai-spending-boardroom-strategy-finopsx/" target="_blank" rel="noopener">SiliconANGLE's 98% FinOps boardroom datum</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's cost-cutting Pulse</a>, <a href="https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx" target="_blank" rel="noopener">Visual Studio Magazine's $30-$40/session backlash</a>, and the Amazon Kirorank + Uber budget data points re-energize <code>cost-runaway</code> with a <em>FinOps-formalization</em> axis it didn't have in E6–E10. Three within-window May incidents (Anthropic May 14 outage, OpenAI May 14 third-party code-security incident, Mini Shai-Hulud npm/PyPI worm May 11–12) add a fourth availability-class exemplar to <code>agent-production-destruction</code> and additional SDK-class CVEs (<a href="https://carthageelectronics.com/cve-may-2026-zero-day-vulnerabilities/" target="_blank" rel="noopener">Flowise CVE-2026-41265 CVSS 9.8</a>, <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Windsurf CVE-2026-30615</a>) advance <code>mcp-attack-surface</code> to "production-confirmed plus systemic SDK-class vulnerability."</p>
+<p>Sentiment composition cools modestly from E11: Cautiously Negative holds at 43% (flat from E11), Strongly Negative ticks up to 16% (E11: 14%) on the new May-14 dual-incident corpus + Mini Shai-Hulud, Cautiously Positive holds at 12% on the strength of <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Opus 4.7</a> reading as quietly competent + <a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener">Cursor Composer 2.5</a> launch + Pragmatic Engineer 2026 tooling survey reading as maturation-of-adoption. <strong>Critical composition caveat escalated</strong>: E12 is the <em>fourth</em> consecutive window with zero Tier-1 Reddit / Bluesky / Mastodon yield — the structural composition risk has crossed from "significant" to <em>regime</em>; every percentage should be read as composition-shifted toward the analyst-publication corpus, and the longitudinal record needs a recovery path for E13 or an explicit retrospective re-weighting acknowledgment.</p>
+
+</section><section id="composition"><h2 data-section="02">Source Composition Audit</h2>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th style="text-align: right;">Items</th>
+<th style="text-align: right;">Reddit</th>
+<th style="text-align: right;">HN</th>
+<th style="text-align: right;">Blogs/Pubs</th>
+<th style="text-align: right;">Bluesky</th>
+<th style="text-align: right;">Mastodon</th>
+<th style="text-align: right;">YouTube</th>
+<th style="text-align: right;">X/Twitter</th>
+<th style="text-align: right;">Incidents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1 (3/20–25)</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>E2 (3/23–30)</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>E3 (3/28–31)</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">partial</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>E4 (3/30–4/6)</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>E5 (4/6–13)</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>E6 (4/13–20)</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>E7 (4/20–27)</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>E8 (4/27–5/4)</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">yes (browser)</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">partial</td>
+<td style="text-align: right;">zero</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>E9 (5/4–11)</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">yes (Grok proxy)</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">partial (T2)</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>E10 (5/11–18)</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">metadata via Grok relay (suppl)</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes</td>
+<td style="text-align: right;">yes (suppl)</td>
+<td style="text-align: right;">zero</td>
+<td style="text-align: right;">partial (T2)</td>
+<td style="text-align: right;">partial</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>E11 (5/18–25)</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;">yes (1)</td>
+<td style="text-align: right;">yes (41)</td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;">zero</td>
+<td style="text-align: right;">partial (1)</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>E12 (5/25–6/1)</td>
+<td style="text-align: right;"><strong>49</strong></td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;">yes (5)</td>
+<td style="text-align: right;">yes (32)</td>
+<td style="text-align: right;"><strong>zero (1 promoted Substack)</strong></td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;">yes (5)</td>
+<td style="text-align: right;"><strong>zero</strong></td>
+<td style="text-align: right;">7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition anomalies (E12-specific):</strong></p>
+<ul>
+<li><strong>Fourth consecutive zero-Reddit window.</strong> <code>reddit.com</code> continues to be blocked at the WebSearch user-agent level. No browser workaround or Grok proxy invoked. No r/ExperiencedDevs, r/cscareerquestions, r/cursor, r/ClaudeCode, r/vibecoding signal for the fourth week running.</li>
+<li><strong>Fourth consecutive zero-Bluesky / zero-Mastodon window.</strong> The experimental_social tier did register one Substack-promoted Tier-1 item (Willison agent-definition piece), but no native Bluesky/Mastodon retrieval.</li>
+<li><strong>HN recovers to 5-item yield</strong> from E11's 1-item; HN is now the only practitioner-social Tier-1 source operating at sample-meaningful rate.</li>
+<li><strong>YouTube recovers to 5-item yield</strong> from E11's zero; channel pages with title/snippet inference, flagged Manual per gap convention.</li>
+<li><strong>Tier-1 blogs/publications at 32/49 items (65%)</strong> — lower than E11's 98% but still well above the program mean; combined with HN (5) and YouTube (5), the analyst-publication+aggregator share is 42/49 = 86%.</li>
+</ul>
+<p><strong>Composition verdict (full program through E12)</strong>: E1–E3 baselines remain noisier and report direction-only. E4–E10 form the stable mid-window-composition cohort with full social-platform coverage. <strong>E11–E12 are structurally composition-shifted toward the analyst-publication corpus</strong> with no native Reddit / Bluesky / Mastodon. The four-window stretch (E9-rescued, E10-rescued, E11, E12 — only the last two unrescued) confirms the social-platform-Tier-1 retrieval pipeline is structurally failing in the standard automated configuration. <strong>Recommend regime annotation</strong>: pre-E9 and post-E9 should be weighted separately in any sentiment-trend arithmetic across the full program.</p>
+
+</section><section id="trajectory"><h2 data-section="03">Sentiment Trajectory</h2>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th style="text-align: right;">SP</th>
+<th style="text-align: right;">CP</th>
+<th style="text-align: right;">MA</th>
+<th style="text-align: right;">CN</th>
+<th style="text-align: right;">SN</th>
+<th style="text-align: right;">Nu</th>
+<th>Direction (vs prev)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">18%</td>
+<td style="text-align: right;">18%</td>
+<td style="text-align: right;">26%</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">16%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E2</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">28%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">4%</td>
+<td>SN↑ (technical-risk surge)</td>
+</tr>
+<tr>
+<td>E3</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">63%</td>
+<td style="text-align: right;">0%</td>
+<td>SN↑↑ (small-corpus, incident-heavy)</td>
+</tr>
+<tr>
+<td>E4</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">18%</td>
+<td style="text-align: right;">41%</td>
+<td style="text-align: right;">5%</td>
+<td>SN↓ as discourse broadens</td>
+</tr>
+<tr>
+<td>E5</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">11%</td>
+<td style="text-align: right;">43%</td>
+<td style="text-align: right;">11%</td>
+<td>SN stable; Nu rising</td>
+</tr>
+<tr>
+<td>E6</td>
+<td style="text-align: right;">3%</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">34%</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">26%</td>
+<td><strong>Major shift</strong>: SN→CN; Nu doubles</td>
+</tr>
+<tr>
+<td>E7</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">9%</td>
+<td style="text-align: right;">41%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">7%</td>
+<td>MA peak (postmortem season)</td>
+</tr>
+<tr>
+<td>E8</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">6%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">44%</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">15%</td>
+<td>CN series high (vendor-trust collapse)</td>
+</tr>
+<tr>
+<td>E9</td>
+<td style="text-align: right;">6%</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">18%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">22%</td>
+<td><strong>CN retreat</strong>; SP off floor (CC announcement)</td>
+</tr>
+<tr>
+<td>E10</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">42%</td>
+<td style="text-align: right;">18%</td>
+<td style="text-align: right;">16%</td>
+<td><strong>CN re-climb</strong> toward E8 high; SP retreats</td>
+</tr>
+<tr>
+<td>E11</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;"><strong>43%</strong></td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">17%</td>
+<td>CN holds near E10/E8 high; SN cools; CP recovers</td>
+</tr>
+<tr>
+<td>E12</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;"><strong>43%</strong></td>
+<td style="text-align: right;"><strong>16%</strong></td>
+<td style="text-align: right;">14%</td>
+<td>CN flat at structural-risk floor; SN ticks up on new May incidents</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition-adjusted reading</strong>: E12 CN flat (43% → 43%) confirms the program's structural-risk floor at ~42–44% CN once practitioner-social composition is suppressed. The SN bump (14% → 16%) reflects the within-window May-14 dual-incident corpus + Mini Shai-Hulud — three new disclosures landed inside the lookback where E11 had only the Composio retrospective coverage. The CP flat at 12% reflects the Opus 4.7 release + Cursor Composer 2.5 + Pragmatic Engineer survey reading-as-maturation balance — no individual recovery signal but no retreat either. The Strongly Positive 2% holds (Cognition Devin 89% disclosure is the within-window SP datum, replacing E11's HN "innovation of the year" thread as the lone strong-positive). <strong>The structural-risk layer continues intact across all twelve windows; the program is at a stable equilibrium of "Cautiously Negative analyst consensus with periodic incident-driven Strongly Negative spikes."</strong></p>
+
+</section><section id="momentum"><h2 data-section="04">Cluster Momentum</h2>
+<p>Mention counts per cluster, E5 onward where comparable.</p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th style="text-align: right;">E5</th>
+<th style="text-align: right;">E6</th>
+<th style="text-align: right;">E7</th>
+<th style="text-align: right;">E8</th>
+<th style="text-align: right;">E9</th>
+<th style="text-align: right;">E10</th>
+<th style="text-align: right;">E11</th>
+<th style="text-align: right;">E12</th>
+<th>Trajectory</th>
+<th>Signal Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Quality</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;"><strong>18</strong></td>
+<td>E12 holds #1; three converging empirical anchors land in-window</td>
+<td>Emerging Consensus</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;"><strong>16</strong></td>
+<td>Recovers on Thoughtworks v34 Trial + harness engineering</td>
+<td>Emerging Consensus</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">14</td>
+<td>Continuing climb; paradox is the consensus</td>
+<td>Active Debate</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td>Stable</td>
+<td>Active Debate</td>
+</tr>
+<tr>
+<td>Review Burden</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;"><strong>14</strong></td>
+<td style="text-align: right;">12</td>
+<td>E11 explosion holds; cognitive-debt absorbs some attention</td>
+<td>Emerging Consensus</td>
+</tr>
+<tr>
+<td><strong>Pricing / Cost</strong></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;"><strong>11</strong></td>
+<td><strong>Decisive rebound</strong> via FinOps formalization</td>
+<td>Growing Trend</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">11</td>
+<td>Stable-with-tail; four-exemplar agent-blast-radius</td>
+<td>Emerging Consensus</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;"><strong>11</strong></td>
+<td>Sustained climb; cognitive-debt convergence</td>
+<td>Active Debate</td>
+</tr>
+<tr>
+<td>Deskilling / Learning</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">10</td>
+<td>Continuing climb; Anthropic 17% + TechCrunch dep-trap</td>
+<td>Growing Trend</td>
+</tr>
+<tr>
+<td>Hiring / Junior Pipeline</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;">9</td>
+<td>E11 doubling consolidates; Anthropic 14% confirms Stanford</td>
+<td>Emerging Consensus</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td>Modest climb; Yegge IDE-died framing</td>
+<td>Active Debate</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td>Climbs on Anthropic outage + Shai-Hulud + GitHub-strain</td>
+<td>Growing Trend</td>
+</tr>
+<tr>
+<td>Tool-Specific Issues</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+<td>NEW prominence carries forward; Composer 2.5 + Devin 89%</td>
+<td>Active Debate</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
+<td>Cooling; cost-discipline-as-governance axis dominates</td>
+<td>Emerging Consensus</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Momentum highlights (cumulative through E12):</strong></p>
+<ul>
+<li><strong>Fastest rising (E11→E12)</strong>: Pricing / Cost — E11: 5 → E12: 11. The decisive rebound is driven by the <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">Copilot June 1 cutover</a> landing inside the lookback, <a href="https://siliconangle.com/2026/05/28/finops-ai-spending-boardroom-strategy-finopsx/" target="_blank" rel="noopener">SiliconANGLE 98% FinOps datum</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer cost-cutting trend</a>, <a href="https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx" target="_blank" rel="noopener">Visual Studio Magazine pricing backlash</a>, and the Amazon Kirorank + Uber budget anecdotes from <a href="https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/" target="_blank" rel="noopener">TechCrunch's dependency-trap piece</a>. The cluster's E10 → E11 retreat is now decisively reversed via FinOps formalization.</li>
+<li><strong>Second-fastest rising (E11→E12)</strong>: Architectural Philosophy — E11: 13 → E12: 16. Recovery driven by <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">Thoughtworks Radar v34 Codebase cognitive debt</a>, <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors" target="_blank" rel="noopener">Thoughtworks Insights harness engineering</a>, <a href="https://margaretstorey.com/blog/2026/02/09/cognitive-debt/" target="_blank" rel="noopener">Storey</a>, and the <a href="https://news.ycombinator.com/item?id=46218922" target="_blank" rel="noopener">HN "Year the IDE Died" thread</a>.</li>
+<li><strong>Third-fastest rising (E11→E12)</strong>: Burnout / Cognitive Load — E11: 8 → E12: 11, on cognitive-debt + review-burden convergence. <a href="https://www.oreilly.com/radar/burnout-and-cognitive-debt/" target="_blank" rel="noopener">O'Reilly Radar's "Burnout and Cognitive Debt"</a> explicitly ties the two clusters together.</li>
+<li><strong>Modest retreat</strong>: Review Burden — E11: 14 → E12: 12. Not a resolution; cognitive-debt has absorbed some of the analytical attention E11 directed at PR-throughput specifically. The cluster's quantitative spine (Harness 81%/4.6×/2× + Builder.io 60% YoY) is intact and continues to circulate.</li>
+<li><strong>Continuing climb (3 windows)</strong>: Deskilling / Learning — E10: 5 → E11: 8 → E12: 10. The Anthropic 17% study + Stack Overflow Pulse + TechCrunch dependency-trap convergence is the within-program strongest single climbing-cluster trajectory.</li>
+<li><strong>Sustained Code Quality #1 (3 windows running at 16–18)</strong>: Veracode 100+ LLM study + arXiv 484k issues + CSA Labs CVE surge constitute three converging large-scale empirical anchors landing in the same week — the question has structurally shifted from "is AI code less secure?" to "how do we instrument at production scale?"</li>
+<li><strong>Tool-Specific carries forward</strong>: E11's new prominence holds at 7 mentions on Composer 2.5 + Devin 89% + Opus 4.7 + Pragmatic Engineer tooling survey.</li>
+</ul>
+
+</section><section id="signals"><h2 data-section="05">Signal Evolution</h2>
+<p>Signal IDs are quoted directly from input <code>patterns[].id</code> slugs per v1.3 summaries mode.</p>
+<table>
+<thead>
+<tr>
+<th>signal_id</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">Obs</th>
+<th>Status</th>
+<th>Trajectory</th>
+<th>Confidence</th>
+<th>Recommended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cve-acceleration</td>
+<td style="text-align: right;">E1</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://www.infosecurity-magazine.com/news/ai-generated-code-vulnerabilities/" target="_blank" rel="noopener">Veracode 45%/86%/88%</a> + <a href="https://arxiv.org/abs/2603.28592" target="_blank" rel="noopener">arXiv 484k issues</a> + CSA Labs anchor; three converging large-scale anchors)</td>
+<td>H</td>
+<td>Continue; cluster matured to "background datum + empirical-spine" status</td>
+</tr>
+<tr>
+<td>mcp-attack-surface</td>
+<td style="text-align: right;">E1</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>9</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic MCP RCE class 30+ CVEs</a> + <a href="https://carthageelectronics.com/cve-may-2026-zero-day-vulnerabilities/" target="_blank" rel="noopener">Flowise CVE-2026-41265 CVSS 9.8</a>; production-confirmed + systemic SDK-class)</td>
+<td>H</td>
+<td>Continue tracking at production-confirmed status</td>
+</tr>
+<tr>
+<td>agent-production-destruction</td>
+<td style="text-align: right;">E4</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>8</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://gvwire.com/2026/05/14/claude-ai-goes-down-for-thousands-downdetector-shows/" target="_blank" rel="noopener">Anthropic May 14 outage</a> adds availability-class fourth exemplar; PocketOS retrospective coverage continues)</td>
+<td>H</td>
+<td>Continue; signal now four-exemplar with two sub-classes</td>
+</tr>
+<tr>
+<td>anthropic-trust-arc</td>
+<td style="text-align: right;">E4</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>7</strong></td>
+<td>Promoted</td>
+<td>↑ (May 14 outage adds availability-credibility axis; Opus 4.7 reads quietly competent on capability axis)</td>
+<td>H</td>
+<td>Continue; multi-axis evaluation</td>
+</tr>
+<tr>
+<td>ai-burnout-paradox</td>
+<td style="text-align: right;">E3</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>6</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://www.oreilly.com/radar/burnout-and-cognitive-debt/" target="_blank" rel="noopener">O'Reilly Burnout+Cognitive Debt</a>; cognitive-debt convergence)</td>
+<td>H</td>
+<td>Continue; cognitive-debt becomes parent narrative</td>
+</tr>
+<tr>
+<td>cognitive-debt-deskilling</td>
+<td style="text-align: right;">E2</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td>Promoted</td>
+<td>↑↑ (<a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">Thoughtworks Radar v34 Trial-ring placement</a> — institutional formalization milestone)</td>
+<td>H</td>
+<td>Continue; INSTITUTIONALLY FORMALIZED this window</td>
+</tr>
+<tr>
+<td>cost-runaway</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td>Promoted</td>
+<td>↑↑ (<a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">Copilot June 1 cutover</a> + FinOps formalization axis)</td>
+<td>H</td>
+<td>Continue; signal re-energized with new axis</td>
+</tr>
+<tr>
+<td>productivity-paradox</td>
+<td style="text-align: right;">E7</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer 2026 tooling survey</a> is strongest single adoption datum; Cognition Devin 89% adds vendor-named-customer datum)</td>
+<td>H</td>
+<td>Continue; paradox is the consensus</td>
+</tr>
+<tr>
+<td>stack-composition</td>
+<td style="text-align: right;">E4</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer survey</a> crystallizes three-winner equilibrium; Composer 2.5 cost-positioning)</td>
+<td>H</td>
+<td>Continue tracking</td>
+</tr>
+<tr>
+<td>vibe-coding-disreputed</td>
+<td style="text-align: right;">E5</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td>Promoted</td>
+<td>↑ (<a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "AI Slop" framing</a>; ThePrimeagen practitioner-video layer)</td>
+<td>H</td>
+<td>Continue tracking</td>
+</tr>
+<tr>
+<td><strong>review-cost-inversion</strong></td>
+<td style="text-align: right;">E11</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>2</strong></td>
+<td>Tracking</td>
+<td>↑ (<a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io 60% YoY anchor</a>; <a href="https://www.codeant.ai/blogs/prevent-ai-code-review-overload" target="_blank" rel="noopener">CodeAnt</a>; <a href="https://www.qodo.ai/blog/5-ai-code-review-pattern-predictions-in-2026/" target="_blank" rel="noopener">Qodo</a>)</td>
+<td>H</td>
+<td>Promotion threshold reached at 2nd observation — recommend promotion at next consolidation run</td>
+</tr>
+<tr>
+<td><strong>junior-pipeline-collapse</strong></td>
+<td style="text-align: right;">E2</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td>Tracking</td>
+<td>↑ (<a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener">Anthropic Labor Market 14%</a> confirms Stanford 13–16%; <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO 40–50% drop</a>)</td>
+<td>H</td>
+<td><strong>Promotion threshold reached</strong> — recommend promotion at next consolidation run</td>
+</tr>
+<tr>
+<td><strong>reset-year-narrative</strong></td>
+<td style="text-align: right;">E9</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td>Tracking</td>
+<td>↑ (<a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">Thoughtworks Radar v34 Trial</a> formalizes the frame as named technique with <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors" target="_blank" rel="noopener">harness engineering prescription</a>)</td>
+<td>H</td>
+<td><strong>Promotion threshold reached</strong> — recommend promotion at next consolidation run</td>
+</tr>
+<tr>
+<td>delegation-gap-paradox</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td>Tracking</td>
+<td>↑ (<a href="https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/" target="_blank" rel="noopener">Stack Overflow 2025 Dev Survey re-anchor — 84%/46%/3%</a>; <a href="https://stackoverflow.blog/2026/03/16/domain-expertise-still-wanted-the-latest-trends-in-ai/" target="_blank" rel="noopener">Domain expertise still wanted</a>)</td>
+<td>H</td>
+<td><strong>Promotion threshold reached</strong> — recommend promotion at next consolidation run</td>
+</tr>
+<tr>
+<td>agent-infrastructure-inflection</td>
+<td style="text-align: right;">E11</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>2</strong></td>
+<td>Tracking</td>
+<td>↑↑ (<a href="https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/" target="_blank" rel="noopener">Cognition Devin 89% disclosure</a> is first named-vendor reference at 80%+ autonomy threshold)</td>
+<td>H (up from M)</td>
+<td>Approaching promotion at E13 if corroborated</td>
+</tr>
+<tr>
+<td><strong>ai-dependency-trap</strong></td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;">E12</td>
+<td style="text-align: right;"><strong>1</strong></td>
+<td>Tracking</td>
+<td>NEW</td>
+<td>H</td>
+<td>Mint window; promote at E13/E14 if corroborated</td>
+</tr>
+<tr>
+<td>cursor-xai-acquisition</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">E7</td>
+<td style="text-align: right;">2</td>
+<td>Tracking</td>
+<td>→ (no follow-up in E8–E12)</td>
+<td>M</td>
+<td><strong>Retire</strong> — narrative has not crystallized in 5 windows</td>
+</tr>
+<tr>
+<td>vendor-consolidation</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (not observed in E11/E12)</td>
+<td>H</td>
+<td>Tracking-decay — recommend retire if not observed by E13</td>
+</tr>
+<tr>
+<td>labor-market-bifurcation</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (subsumed by <code>junior-pipeline-collapse</code> in E11/E12)</td>
+<td>H</td>
+<td><strong>Retire and merge</strong> with <code>junior-pipeline-collapse</code></td>
+</tr>
+<tr>
+<td>practitioner-skepticism-cluster</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">E10</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (Reddit gap suppresses re-observation; HN partial-rescue insufficient)</td>
+<td>M</td>
+<td>Defer judgment to post-gap</td>
+</tr>
+<tr>
+<td>claude-code-automation-platform</td>
+<td style="text-align: right;">E9</td>
+<td style="text-align: right;">E9</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (subsumed by <code>agent-infrastructure-inflection</code>)</td>
+<td>H</td>
+<td><strong>Retire and merge</strong> with <code>agent-infrastructure-inflection</code></td>
+</tr>
+<tr>
+<td>quality-as-infrastructure</td>
+<td style="text-align: right;">E9</td>
+<td style="text-align: right;">E9</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (alive but tagged under <code>reset-year-narrative</code>)</td>
+<td>H</td>
+<td><strong>Retire and merge</strong> with <code>reset-year-narrative</code></td>
+</tr>
+<tr>
+<td>enterprise-ai-controls</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (not observed in E10–E12)</td>
+<td>M</td>
+<td>Tracking-decay</td>
+</tr>
+<tr>
+<td>thoughtworks-radar-formalization</td>
+<td style="text-align: right;">E4</td>
+<td style="text-align: right;">E4</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (Radar v34 in E12 is thematic re-emergence under <code>reset-year-narrative</code> / <code>cognitive-debt-deskilling</code>, not structural follow-up to E4 signal as originally defined)</td>
+<td>H</td>
+<td><strong>Retire</strong> — Radar v34 cognitive-debt is captured by other signals</td>
+</tr>
+<tr>
+<td>oss-maintainer-pushback</td>
+<td style="text-align: right;">E5</td>
+<td style="text-align: right;">E5</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (not observed in E6–E12)</td>
+<td>M</td>
+<td>Tracking-decay</td>
+</tr>
+<tr>
+<td>senior-deskilling</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">E6</td>
+<td style="text-align: right;">1</td>
+<td>Tracking</td>
+<td>→ (subsumed by <code>cognitive-debt-deskilling</code> post-E12 formalization)</td>
+<td>M</td>
+<td><strong>Retire and merge</strong> with <code>cognitive-debt-deskilling</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NEW signals this window</strong>: <code>ai-dependency-trap</code>
+<strong>Reached promotion threshold this window</strong>: <code>review-cost-inversion</code>, <code>junior-pipeline-collapse</code>, <code>reset-year-narrative</code>, <code>delegation-gap-paradox</code> (4 simultaneous threshold-reaches — largest single-window promotion cohort since E5)
+<strong>Approaching promotion (2 obs at H)</strong>: <code>agent-infrastructure-inflection</code>
+<strong>Recommended retire/merge consolidations at next run</strong>: <code>labor-market-bifurcation</code> → merge into <code>junior-pipeline-collapse</code>; <code>claude-code-automation-platform</code> → merge into <code>agent-infrastructure-inflection</code>; <code>quality-as-infrastructure</code> + <code>thoughtworks-radar-formalization</code> → merge into <code>reset-year-narrative</code>; <code>senior-deskilling</code> → merge into <code>cognitive-debt-deskilling</code>; retire <code>cursor-xai-acquisition</code> (5 windows no-follow-up)</p>
+
+</section><section id="contradictions"><h2 data-section="06">Cross-Extraction Contradictions</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>First Position</th>
+<th>Current Position</th>
+<th>Evolution</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Autonomous coding by Q3 will arrive at vendor-named reference customers"</td>
+<td>E11: NEW Contested (Code w/ Claude vendor-side reportage vs analyst review-burden offset)</td>
+<td>E12: <strong>Tilting Confirmed</strong> at vendor self-disclosure threshold (<a href="https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/" target="_blank" rel="noopener">Cognition Devin 89%</a> is first named-vendor reference at 80%+ autonomy)</td>
+<td>First named-customer corroboration at autonomy threshold</td>
+<td><strong>Tilting Confirmed</strong> (NEW E12)</td>
+</tr>
+<tr>
+<td>"Junior dev hiring is collapsing under AI pressure"</td>
+<td>E10: Contested</td>
+<td>E12: <strong>Trending Confirmed</strong> (Stanford 13-16% + Anthropic 14% + CIO 40-50% converge)</td>
+<td>Strongest cross-source convergence the corpus has seen</td>
+<td><strong>Trending Confirmed</strong></td>
+</tr>
+<tr>
+<td>"MCP attack surface is theoretical / vendor-disputed only"</td>
+<td>E1–E9: Trending Negative</td>
+<td>E12: <strong>Resolved Negative</strong> (<a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic MCP RCE class 30+ CVEs</a> + <a href="https://carthageelectronics.com/cve-may-2026-zero-day-vulnerabilities/" target="_blank" rel="noopener">Flowise CVE-2026-41265</a> + Composio = production-confirmed + systemic SDK-class)</td>
+<td>Resolved at production-confirmed systemic-class</td>
+<td><strong>Resolved Negative</strong> (NEW E12)</td>
+</tr>
+<tr>
+<td>"AI-generated code is no more vulnerable than human-written code"</td>
+<td>E1+: Trending Negative</td>
+<td>E12: <strong>Resolved Negative</strong> (<a href="https://www.infosecurity-magazine.com/news/ai-generated-code-vulnerabilities/" target="_blank" rel="noopener">Veracode</a> + <a href="https://arxiv.org/abs/2603.28592" target="_blank" rel="noopener">arXiv 484k</a> + CSA Labs converging anchors)</td>
+<td>Three converging large-scale empirical anchors</td>
+<td><strong>Resolved Negative</strong> (NEW E12)</td>
+</tr>
+<tr>
+<td>"AI-coding cost is a manageable per-seat expense"</td>
+<td>E6+: implicit; E11: implicit</td>
+<td>E12: <strong>Trending Negative</strong> (<a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">Copilot cutover</a> + <a href="https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx" target="_blank" rel="noopener">VS Mag $30-$40/session</a> + Uber budget exhaustion + <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer cost-cutting</a>)</td>
+<td>FinOps formalization shifts framing</td>
+<td><strong>Trending Negative</strong> (NEW E12)</td>
+</tr>
+<tr>
+<td>"Developers can choose to work without AI"</td>
+<td>E12: NEW Contested</td>
+<td>E12: <strong>Trending Negative</strong> (<a href="https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/" target="_blank" rel="noopener">TechCrunch refusing-without-AI / METR can't recruit</a>; <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">Anthropic 17% comprehension</a> + behavioral lock-in evidence)</td>
+<td>NEW E12; mints the <code>ai-dependency-trap</code> signal</td>
+<td><strong>Trending Negative</strong> (NEW E12)</td>
+</tr>
+<tr>
+<td>"Vibe coding is a distinct, defensible practice"</td>
+<td>E1–E5: Contested</td>
+<td>E10–E12: Resolved</td>
+<td>Stable through 3 windows</td>
+<td><strong>Resolved</strong> (stable)</td>
+</tr>
+<tr>
+<td>"AI coding productivity gains hold up under longitudinal measurement"</td>
+<td>E3–E7: Contested</td>
+<td>E12: Contested (paradox stable; Pragmatic Engineer adoption data + Cognition vendor claims vs arXiv 484k + maintenance-cost framing)</td>
+<td>Paradox is the consensus</td>
+<td><strong>Contested</strong> (paradox stable)</td>
+</tr>
+<tr>
+<td>"AI-generated code review can be safely abbreviated at scale"</td>
+<td>E11: Trending Negative</td>
+<td>E12: Trending Negative (Builder.io 60% YoY + CodeAnt/Qodo prescription literature)</td>
+<td>Stable</td>
+<td><strong>Trending Negative</strong> (carried)</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="vocabulary"><h2 data-section="07">Vocabulary &amp; Framing Drift</h2>
+<table>
+<thead>
+<tr>
+<th>New term (or term in new use)</th>
+<th>First appeared</th>
+<th>Frequency trend</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI dependency trap</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>Names the behavioral lock-in compounding cognitive-debt mechanism into workforce-resilience risk</td>
+</tr>
+<tr>
+<td><strong>Codebase cognitive debt (Thoughtworks Radar v34 Trial-ring)</strong></td>
+<td>E12</td>
+<td>First appearance as Radar-named technique</td>
+<td>Institutional formalization of the cognitive-debt concept tracked across E2–E11</td>
+</tr>
+<tr>
+<td><strong>Harness engineering (Thoughtworks Insights framing)</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>Names feedforward (Agent Skills, spec-driven) + feedback (mutation testing, runtime sensors) controls around coding agents</td>
+</tr>
+<tr>
+<td><strong>AI Slop (Builder.io "I didn't become a developer to review AI slop")</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>Vivid practitioner framing for AI-PR-volume cost on reviewers</td>
+</tr>
+<tr>
+<td><strong>Kirorank (Amazon internal token-leaderboard, shut down after gaming)</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>Anecdotal evidence for cost-runaway behavioral-incentive failure</td>
+</tr>
+<tr>
+<td><strong>Observed exposure (Anthropic Labor Market Impacts metric)</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>Anthropic's capability × actual-usage measure for labor-market analysis</td>
+</tr>
+<tr>
+<td><strong>Boardroom FinOps for AI (SiliconANGLE)</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>98% of FinOps teams now manage AI spend; usage-based billing as governance catalyst</td>
+</tr>
+<tr>
+<td><strong>Slopsquatting (Veracode framing — ~20% rate of AI-hallucinated package names)</strong></td>
+<td>E12</td>
+<td>First appearance as standalone term</td>
+<td>Specific failure mode within <code>cve-acceleration</code></td>
+</tr>
+<tr>
+<td><strong>Mini Shai-Hulud (TeamPCP self-propagating supply-chain worm class)</strong></td>
+<td>E12</td>
+<td>First appearance</td>
+<td>New incident class name</td>
+</tr>
+<tr>
+<td>Review-cost inversion</td>
+<td>E11</td>
+<td>E11 → E12 stable, mature</td>
+<td>Names the workflow-structural cause; now consolidated</td>
+</tr>
+<tr>
+<td>Decision fatigue (Stack Overflow framing)</td>
+<td>E11</td>
+<td>E11 → E12 stable</td>
+<td>Mechanism for review-cost-inversion</td>
+</tr>
+<tr>
+<td>Invisible Burden (SD Times / Harness framing)</td>
+<td>E11</td>
+<td>E11 → E12 stable</td>
+<td>Harness 2026 survey packaging vocabulary</td>
+</tr>
+<tr>
+<td>Complacency with AI-generated code (Thoughtworks Hold)</td>
+<td>E11</td>
+<td>E11 → E12 stable</td>
+<td>Institutional anchor naming rubber-stamping</td>
+</tr>
+<tr>
+<td>Canaries in the Coal Mine (Stanford)</td>
+<td>E11</td>
+<td>E11 → E12 corroborated by Anthropic 14%</td>
+<td>Academic anchor; now corroborated within program</td>
+</tr>
+<tr>
+<td>Sandbox escape via malicious tool registration</td>
+<td>E11</td>
+<td>E11 → E12 carried forward</td>
+<td>Composio incident class; SDK-class CVE follow-on widens base</td>
+</tr>
+<tr>
+<td>Capability Curve / Managed Agents / Proactive Workflows / Routines / Dreaming</td>
+<td>E11</td>
+<td>E11 → E12 retrospective coverage continues</td>
+<td>Anthropic Code w/ Claude feature vocabulary; Q3 verdict pending</td>
+</tr>
+<tr>
+<td>Vibe Security Radar</td>
+<td>E10</td>
+<td>E10 → E12 stable</td>
+<td>Anchor reference for CVE-attribution time series</td>
+</tr>
+<tr>
+<td>Agentic fatigue (ExplainX)</td>
+<td>E9</td>
+<td>E9 → E12 stable</td>
+<td>Vocabulary winner for burnout-paradox</td>
+</tr>
+<tr>
+<td>Slopsquatting</td>
+<td>E10</td>
+<td>E10 → E12 named technique</td>
+<td>Named failure mode within cve-acceleration</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="08">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Reddit Tier-1 absent for FOUR consecutive windows (E9-rescued, E10-rescued, E11, E12).</strong> Cumulative composition risk has crossed from "significant" to <em>regime</em>. Recommend formal engineering intervention (dedicated Reddit-extraction skill modeled on <code>flipboard-extraction</code> plus alternative-UA strategies) rather than continued manual rescue.</li>
+<li><strong>Bluesky / Mastodon Tier-1 zero for four consecutive windows.</strong> Same persistent gap; E12 has one Substack-promoted item but no native Bluesky/Mastodon retrieval.</li>
+<li><strong>YouTube transcripts and podcasts</strong> — five YouTube items retrieved in E12 with title/snippet inference only; flagged Manual.</li>
+<li><strong>Cognition Devin 89% disclosure</strong> — vendor self-disclosure only; no third-party customer reference at 80%+ autonomy threshold yet.</li>
+<li><strong>Anthropic May 14 outage</strong> — single GV Wire / Downdetector aggregate source; Anthropic post-mortem not retrieved in-window. If no public post-mortem materializes the data point degrades from availability-class agent-production-destruction exemplar to dependency-trap anecdote.</li>
+<li><strong>GitHub Copilot June 1 cutover post-mortem</strong> — pre-cutover backlash captured; E13 is the first empirical test of the FinOps-formalization narrative.</li>
+<li><strong>METR Feb 2026 productivity-experiment-redesign note</strong> — single secondary source via TechCrunch; recommend manual METR-blog pull for E13.</li>
+<li><strong>Composio incident second-source corroboration (from E11)</strong> — still pending in E12; the <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic MCP RCE class disclosure</a> provides systemic complement but is not a peer-vendor sandbox-escape postmortem.</li>
+<li><strong>Harness 2026 survey primary report (from E11)</strong> — still pending in E12.</li>
+<li><strong>Q2 2026 BLS / LinkedIn corroboration of Stanford + Anthropic junior-pipeline convergence</strong> — pending.</li>
+<li><strong>Harness engineering as named technique</strong> — single Thoughtworks Insights source within E12; watch for additional analyst adoption.</li>
+</ul>
+
+</section><section id="watch"><h2 data-section="09">Watch List for Next Extraction</h2>
+<ol>
+<li><strong>GitHub Copilot June 1 cutover post-mortem (highest)</strong> — E13 is the first window after cutover; expect a measurable practitioner-discourse shift confirming or refuting the FinOps-formalization narrative.</li>
+<li><strong>Reddit / Bluesky / Mastodon retrieval restoration (highest)</strong> — four zero-yield windows constitute a structural regime; the longitudinal record needs a recovery path or explicit retrospective re-weighting acknowledgment.</li>
+<li><strong>Anthropic Claude May 14 outage post-mortem (highest)</strong> — if Anthropic publishes a public post-mortem in E13, it elevates the availability-class exemplar of <code>agent-production-destruction</code>; if not, the data point degrades.</li>
+<li><strong>Second vendor named-customer 80%+ autonomy disclosure (high)</strong> — would corroborate Code w/ Claude Shopify/Mercado Libre + Cognition Devin claims and advance <code>agent-infrastructure-inflection</code> toward "production-confirmed across vendors."</li>
+<li><strong>METR primary-source pull (high)</strong> — manual fetch of Feb 2026 productivity-experiment-redesign note for primary methodology.</li>
+<li><strong>Q2 2026 BLS / LinkedIn data on junior-pipeline (high)</strong> — corroborate or refute Stanford 13-16% + Anthropic 14% convergence.</li>
+<li><strong>Harness engineering as named technique (medium)</strong> — watch for additional analyst adoption beyond Thoughtworks.</li>
+<li><strong>AI-load-as-infrastructure-strain (medium)</strong> — Pragmatic Engineer GitHub-breaks framing; watch for GitLab/Bitbucket comparative reliability data.</li>
+</ol>
+
+</section><section id="metadata"><h2 data-section="10">Longitudinal Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitudinal prompt</td>
+<td>v1.3</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-06-01 15:00 UTC</td>
+</tr>
+<tr>
+<td>Input mode</td>
+<td>summaries (--from-summaries)</td>
+</tr>
+<tr>
+<td>Extractions covered</td>
+<td>E1 through E12</td>
+</tr>
+<tr>
+<td>Date range</td>
+<td>2026-03-20 – 2026-06-01 (73 days)</td>
+</tr>
+<tr>
+<td>Total tagged items</td>
+<td>597 (sum of items_tagged across summaries; includes E10's +20 supplemental pass)</td>
+</tr>
+<tr>
+<td>Tracked signals</td>
+<td>26 unique signal_ids across the program; 10 Promoted, 11 Tracking (4 reached promotion threshold this window), 5 candidate retire-or-merge</td>
+</tr>
+<tr>
+<td>NEW signals this window</td>
+<td>ai-dependency-trap</td>
+</tr>
+<tr>
+<td>Escalated signals this window</td>
+<td>review-cost-inversion (Tracking → Promotion threshold reached); junior-pipeline-collapse (Tracking → Promotion threshold reached); reset-year-narrative (Tracking → Promotion threshold reached); delegation-gap-paradox (Tracking → Promotion threshold reached); agent-infrastructure-inflection (M → H confidence)</td>
+</tr>
+<tr>
+<td>Confirmed trends</td>
+<td>cve-acceleration (10 obs), mcp-attack-surface (9 obs, production-confirmed systemic-class), agent-production-destruction (8 obs, four-exemplar with two sub-classes), anthropic-trust-arc (7 obs), cognitive-debt-deskilling (5 obs, Thoughtworks Radar Trial-ring formalized)</td>
+</tr>
+<tr>
+<td>Resolved contradictions</td>
+<td>"MCP attack surface is theoretical" (Resolved Negative E12); "AI-generated code is no more vulnerable than human" (Resolved Negative E12); "Vibe coding is a distinct defensible practice" (Resolved against, stable E10-E12)</td>
+</tr>
+<tr>
+<td>Newly contested claims</td>
+<td>"AI-coding cost is manageable per-seat expense" (Trending Negative, NEW E12); "Developers can choose to work without AI" (Trending Negative, NEW E12 — mints ai-dependency-trap)</td>
+</tr>
+</tbody>
+</table></section>
+<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid #2a3441;text-align:center;color:#7a8694;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">
+<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 12 &mdash; Generated 2026-06-01</p>
+<p>Longitudinal Engine v1.3 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2 (blue accent)</p>
+</footer>
+</div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+</body>
+</html>

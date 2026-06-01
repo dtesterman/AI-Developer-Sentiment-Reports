@@ -185,3 +185,9 @@ labels:
     one_line: "Code w/ Claude announcements set a Q3 2026 deadline for autonomous coding at named reference customers (Shopify, Mercado Libre at 90%). NEW E11."
     sentiment_override: cp
     retired_alias: []
+
+  - signal_id: ai-dependency-trap
+    label: "AI dependency lock-in"
+    one_line: "Developers now refuse to work without AI even briefly — METR can't recruit baseline subjects; Amazon Kirorank gamed; Uber's 2026 AI budget exhausted in four months."
+    sentiment_override: sn
+    retired_alias: []
