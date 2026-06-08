@@ -2,21 +2,21 @@
 
 ## Executive Summary
 
-Across thirteen consecutive weekly extractions spanning 80 days (~632 sentiment-tagged items including E10's supplemental pass and E13's 35-item analyst-shifted corpus), the AI coding tools discourse has executed a clear regime-shift sequence from "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost of being unable to work without?" (E12 — `ai-dependency-trap` mint) → and now in **E13 to "is the infrastructure load-bearing?"** — a fragility-and-cost reckoning week that lands the [June 5 Claude / Claude Code global outage](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) (Claude Code sub-agent infinite-loop bug exponentially multiplying sub-agents and wiping user token allowances within minutes — the **first vendor-side root-cause exemplar** of `agent-production-destruction`), simultaneously with [Uber's $1,500/tool/month employee cap after burning the full-year AI budget in four months](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs) and [GitHub Copilot's June 1 transition to usage-based "AI Credits" billing](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/) on the same Monday.
+Across thirteen consecutive weekly extractions spanning 80 days (~634 sentiment-tagged items including E10's supplemental pass and E13's revised 37-item Chrome-augmented corpus), the AI coding tools discourse has executed a clear regime-shift sequence from "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost of being unable to work without?" (E12 — `ai-dependency-trap` mint) → and now in **E13 to "is the infrastructure load-bearing AND who pays?"** — a simultaneous fragility-and-tokenomics-reckoning week that lands [Microsoft Copilot's June 1 outage](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) on the very day [GitHub Copilot's usage-based "AI Credits" billing transition](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) launched, followed 24 hours later by the [June 2 Anthropic Claude outage on Opus 4.6 affecting API / Console / claude.ai / Claude Code](https://status.claude.com/) — corroborated by [TechRadar's Downdetector breakdown (60% Claude Chat, 24% mobile, 8% Claude Code)](https://www.techradar.com/news/live/claude-outage-june-2026) and framed by [Thoughtworks editorial](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) as the canonical "AI's increasing status as infrastructure" statement.
 
-E13 mints one new signal — `vendor-model-independence` — anchored on [Microsoft's MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/) (5B parameters, 256K context, explicitly no OpenAI/Anthropic distillation) and its same-day rollout into [GitHub Copilot](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/), with [Simon Willison's commentary](https://simonwillison.net/2026/Jun/2/microsofts-new-models/) framing both new MAI models (Thinking-1 1T MoE + Code-1-Flash 5B). The signal is distinct from `stack-composition` (practitioner-side multi-tool composition) and `cost-runaway` (price/value response) — it is the **vendor-side hyperscaler reduction in dependency on frontier-lab APIs** for AI coding. Bench-marketing language (SWE-Bench Pro +16-point lead vs Claude Haiku 4.5's 35.2%, 60% fewer tokens on SWE-Bench Verified) is the dominant comparison axis.
+E13 mints one new signal — `ai-as-infrastructure` — anchored on the 48-hour dual-vendor outage window plus practitioner amplification including the [510-point HN front-page demand for an official Claude Desktop for Linux](https://news.ycombinator.com/item?id=48434436) and [fasterthanli.me's Anthropic install-footprint critique](https://bsky.app/profile/fasterthanli.me/post/3mnjumq6yis2o). The signal is distinct from `agent-production-destruction` (which is about agent-runtime runaway in production) and from `anthropic-trust-arc` (which is about Anthropic-specific vendor trust): `ai-as-infrastructure` is a multi-vendor availability-class framing that reframes vendor-tool reliability from productivity preference to SRE-class concern.
 
-The most consequential E13 institutional event is the Thoughtworks-editorial framing "When an LLM provider goes down, internal dev velocity drops, support triage bots fall silent, and LLM-dependent data pipelines freeze" — the canonical statement of AI-as-infrastructure that the program has been building toward since E2's first incident exemplars. `agent-production-destruction` now has five exemplars across two sub-classes: customer-side runaway (PocketOS, Kiro, Composio) and vendor-side availability + sub-agent root-cause (May 14 capacity outage, June 5 sub-agent runaway). `anthropic-trust-arc` reaches 7 windows (E4–E8 + E12–E13) and compounds in E13 across three axes simultaneously: outage + unconfirmed [cross-tenant inference-leak rumor](https://x.com/kimmonismus/status/2062997809067139468) + [HN front-page Claude-Desktop-for-Linux trust gap](https://news.ycombinator.com/item?id=48434436).
+The most consequential E13 macro-shift is `cost-runaway` graduating from FinOps-formalization (E11–E12 framing) into **sector-wide pricing-model realignment**. [GitHub Copilot moved all plans to usage-based billing on June 1](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/); within five days, [Cursor responded by CUTTING prices and adding enterprise spend controls](https://thenewstack.io/cursor-pricing-token-billing/) — explicitly framed by The New Stack as a "tokenomics reckoning." [Simon Willison reported Uber caps coding agents at $1,500/month per employee per tool](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n), the first concrete enterprise spend cap in the public record this cycle. [Kilo.ai's "The GitHub Copilot Bill Came Due"](https://blog.kilo.ai/p/the-github-copilot-bill-came-due) codifies the engineering-leader response pattern ("predict, cap, alert"); [Ask HN: "Copilot pricing exploding"](https://news.ycombinator.com/item?id=48444008) confirms the vocabulary; [Show HN: Cost.dev (YC W21)](https://cost.dev/) is the tooling-side response; and [Abhishek Shankar's "The AI Coding Bill Is a Headcount Problem in Disguise"](https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem) reframes pricing pressure as org-design problem. The cost-runaway signal has now traversed dev-tool-line-item complaint (E6–E8) → trust-failure dimension (E9–E10) → FinOps-formalization (E11–E12) → **sector-pricing realignment + cost-as-headcount** (E13) — four discrete phases over eight windows, the longest signal arc in the program.
 
-The third E13 macro-shift is `cost-runaway` graduating from FinOps-formalization (E11–E12 framing) into **budget-cap inflection** — the Uber datum is the first published vendor-side budget-cap policy at scale. The signal has now traversed dev-tool-line-item complaint (E6–E8) → trust-failure dimension (E9–E10) → FinOps-formalization (E11–E12) → budget-cap inflection (E13) — four discrete phases over eight windows, the longest signal arc in the program.
+`anthropic-trust-arc` reaches 7 windows (E4–E8 + E12–E13) and compounds in E13 across three axes simultaneously: the [June 2 Opus 4.6 outage](https://status.claude.com/), the [HN Linux-desktop trust gap](https://news.ycombinator.com/item?id=48434436), and [fasterthanli.me's UX papercuts critique](https://bsky.app/profile/fasterthanli.me/post/3mnelaurqak2c). `vibe-coding-disreputed` reaches 5 windows with both a cautionary tale and a legitimization counterweight in the same week: the [rsync 'Please Do Not Vibe Fuck Up This Software' incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) is the OSS-maintainer-policy exemplar; [Wes McKinney's MotherDuck "Vibe Coding Is Dangerous, Agentic Engineering Isn't"](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/) explicitly codifies the terminological split; and [CNBC reports Supabase raised $500M at a $10.5B valuation on a "vibe-coding tailwind"](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html). The signal evolves toward a terminological-bifurcation framing rather than a uniform-disrepute framing.
 
-`vibe-coding-disreputed` reaches 5 windows with the [rsync 'Please Do Not Vibe Fuck Up This Software' incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) as its first critical-infrastructure exemplar — rsync 3.4.3 broke incremental backup workflows; dozens of commits since 3.4.1 attributed to "tridge and claude"; Tridgell acknowledged regressions, blamed test-suite gaps, and plans to continue AI-assisted dev through 3.5. Paired with [Martin Fowler's 14-25x security-bug-volume datum](https://martinfowler.com/fragments/2026-06-02.html) and the [June 6 HN dev-stack thread's spec-driven 'sword and shield' mainstream](https://news.ycombinator.com/item?id=48413629), the critical-infrastructure contributor norm is crystallizing.
+A separate emerging Microsoft trust deficit pattern compounds in window — [Kotaku/404 Media reported a leaked Microsoft strategy framing Copilot as designed for "addictive" engagement](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924), landing on the same week as the billing transition AND the Copilot outage. The capability expansion that GitHub also shipped this week — [larger context windows + configurable reasoning levels](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/) and the [Copilot Agent Tasks REST API GA](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) — is increasingly read through the "addictive" framing. Held this window pending second confirming window before minting `microsoft-trust-arc`.
 
-`mcp-attack-surface` extends from protocol-class CVE arc (E1–E10) into systemic LLM-execution-boundary hardening (E13): [OpenAI Lockdown Mode](https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/), Simon Willison's [MicroPython/WASM sandbox alpha](https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/) with GPT-5.5 hardening test, the [Meta AI Instagram prompt-engineering attack](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/), and the [github.dev OAuth token-theft HN thread's pivot to LLM-agent push-permission risk](https://news.ycombinator.com/item?id=48371562). The pattern in aggregate: practitioners are explicitly hardening LLM execution boundaries as agentic systems gain network and tool access.
+A disciplined-adoption counter-camp gains coherence: [Show HN: Lathe — LLMs to learn a new domain, not skip past it (363 pts)](https://news.ycombinator.com/item?id=48433756) is the explicit counter-design to `cognitive-debt-deskilling`; [Launch HN: Hyper (YC P26) company brain for agentic dev (78 pts)](https://news.ycombinator.com/item?id=48387095) is the org-knowledge-for-agents pattern; [the NBER working paper on productivity effects across generations of AI coding tools](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf) is the academic-grade datum; and [VentureBeat's "Agentic AI solved coding and exposed every other problem in software engineering"](https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering) reframes the productivity discussion away from raw code generation. [The New Stack's six-month Claude Code vs Cursor vs Codex vs Antigravity retrospective](https://thenewstack.io/claude-code-vs-cursor-vs-codex-vs-antigravity-2026/) and [Clay Nicholson's Claude Code wrapper](https://claynicholson.com/blog/khlawde-code) anchor the disciplined-stack-composition end.
 
-Sentiment composition shifts decisively from E12: **SN spikes to 24% (↑8 from E12's 16%)** on the Claude outage + four within-window incidents; **CN drops to 31% (↓12 from 43%)** as the headline shifts from steady-state critique to acute-incident SN; MA holds 14% flat; CP slips 0 to 12% on [Opus 4.8 quiet-competence side-by-side](https://news.ycombinator.com/item?id=48362551) (notably framing 4.7 as a regression) + MAI-Code-1-Flash bench positioning. **Critical composition caveat (escalated regime — FIFTH consecutive zero-Reddit/Bluesky/Mastodon window)**: the SN spike must be read as analyst-publication-corpus-shifted, not as a primary-channel practitioner-sentiment shift. The five-window structural-regime gap is the most important methodological caveat in the full longitudinal record.
+Sentiment composition shifts decisively from E12: **SN spikes to 24% (↑8 from E12's 16%)** on the dual outage + rsync regression + Microsoft "addictive" leak + fasterthanli.me critique; **CN drops to 31% (↓12 from 43%)** as the headline shifts from steady-state critique to acute fragility; MA holds 14% flat; CP slips to 12% on the disciplined-adoption camp's quieter signals. **Critical composition caveat (escalated regime — FIFTH consecutive zero-Reddit window)**: the Chrome-augmented supplemental pass restored 6 Bluesky items + 1 Mastodon item, but Reddit remains hard-blocked at the plugin safety layer. The SN/CN spike must be read as analyst-publication-corpus-weighted with partial practitioner-voice restoration.
 
-Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the `ai-dependency-trap` mint from E12 awaiting E13 corroboration — partially corroborated by Uber's cost-cap narrative and the [HN dev-stack thread's skeptic-vs-mainstream split](https://news.ycombinator.com/item?id=48413629)). **Highest-priority next-window watch**: Anthropic public post-mortem for the June 5 sub-agent runaway, cross-tenant-leak confirm/deny, Copilot AI Credits post-cutover sentiment, and the [Anthropic subscription split](https://news.ycombinator.com/item?id=48413629) June 15 aftermath.
+**Highest-priority next-window watch**: Anthropic public post-mortem for the June 2 Opus 4.6 outage; Microsoft Copilot post-mortem for the June 1 outage; Copilot AI Credits week-2 practitioner reaction; Reddit retrieval restoration (config v1.9 demotion or interactive-Chrome pattern).
 
 ---
 
@@ -36,18 +36,18 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 | E10 (5/11–18) | 70 | metadata via Grok relay (suppl) | yes | yes | yes (suppl) | zero | partial (T2) | partial | 9 |
 | E11 (5/18–25) | 42 | **zero** | yes (1) | yes (41) | **zero** | **zero** | zero | partial (1) | 6 |
 | E12 (5/25–6/1) | 49 | **zero** | yes (5) | yes (32) | **zero** | **zero** | yes (5) | **zero** | 7 |
-| E13 (6/1–6/8) | **35** | **zero** | yes (10) | yes (16) | **zero** | **zero** | **zero** | partial (2) | 4 |
+| E13 (6/1–6/8) | **37** | **zero** | yes (20) | yes (15) | **yes (6)** | partial (1) | yes (5, T1.5) | zero | 4 |
 
-**Composition anomalies (E13-specific):**
+**Composition anomalies (E13-specific, revised after Chrome-augmented supplemental pass):**
 
-- **FIFTH consecutive zero-Reddit window.** Confirmed at the crawler level (HTTP 400 on `allowed_domains=['reddit.com']`); no browser workaround or Grok proxy invoked this run. The structural-composition regime has now persisted through five consecutive weeks.
-- **FIFTH consecutive zero-Bluesky / zero-Mastodon window.** Both Tier-1 social platforms returned zero verifiable in-window items via WebSearch. Index lag + undated permalinks remain the binding constraint.
-- **YouTube regresses to zero yield** from E12's 5. ThePrimeagen's "Claude's New Plans Is a Trap" appears to predate the window; no Tier-1.5 video could be match-verified to Jun 1–8.
-- **HN recovers strongly to 10-item yield** (E12: 5; E11: 1). HN is now the dominant practitioner-aggregator Tier-1 source, carrying 5 of E13's top-13 items (front-page outage, config deep-dive at 556pts, token-theft at 399pts, Opus 4.8 side-by-side, dev-stack thread).
-- **Tier-1 blogs/publications at 16/35 items (46%)** — analyst-publication share remains high but HN proportion rises. Combined HN + blogs share is 26/35 = 74%; Tier-2 X/podcasts adds 4 items.
-- **Lowest item count of any non-E3 window**: 35 items vs program mean ~50. The combination of Reddit/Bluesky/Mastodon/YouTube zero yields with a thin Tier-1.5 layer concentrates the corpus onto HN + analyst blogs + news outlets.
+- **FIFTH consecutive zero-Reddit window.** Chrome plugin safety layer hard-blocks www.reddit.com navigation AND cross-origin fetch. The structural-composition regime has now persisted through five consecutive weeks.
+- **Bluesky restored to 6 Tier-1 items** (Simon Willison ×3, Kelsey Hightower, fasterthanli.me ×2) — first non-zero Bluesky window since E10. The supplemental Chrome pass live-queried `public.api.bsky.app`.
+- **Mastodon partial (1 item, off-topic)**: federated server discovery remains the bottleneck. Need broader handle list across hachyderm.io and infosec-exchange.com.
+- **HN posts a program-high 20-item yield** (E12: 5; E11: 1). HN dominated Tier-1 this week with 510 / 363 / 78 / 67-point items, plus Ask/Show/Launch HN diversity.
+- **YouTube returns at 5 Tier-1.5 items** — all from Theo - t3.gg (62k–65k view range). ThePrimeagen and Fireship had no in-window AI uploads.
+- **X / Twitter not attempted** this pass — Chrome plugin safety likely blocks; fxtwitter / nitter proxy fallback not implemented.
 
-**Composition verdict (full program through E13)**: pre-E9 (E1–E8) is the stable mid-window-composition cohort with broad social-platform coverage. E9–E10 are the "Grok-proxy / browser rescue" cohort. **E11–E13 is the structurally-shifted cohort** (three consecutive unrescued zero-Reddit/Bluesky/Mastodon windows). The five-window stretch confirms the social-platform-Tier-1 retrieval pipeline is structurally failing in the standard automated configuration. **Re-affirmed regime annotation**: pre-E11 and E11–E13 should be weighted separately in any sentiment-trend arithmetic across the full program. E13 specifically is the smallest unrescued window in the cohort and most acutely composition-shifted.
+**Composition verdict (full program through E13)**: pre-E9 (E1–E8) remains the stable mid-window-composition cohort. E9–E10 are the "Grok-proxy / browser rescue" cohort. **E11–E13 is the structurally-shifted cohort**, but E13's Chrome-augmented pass partially restored Bluesky coverage. The five-window Reddit gap remains the dominant methodological caveat; the longitudinal record requires explicit retrospective re-weighting for E11–E13 comparisons against E1–E10.
 
 ---
 
@@ -67,9 +67,9 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 | E10 | 2% | 10% | 12% | 42% | 18% | 16% | **CN re-climb** toward E8 high; SP retreats |
 | E11 | 2% | 12% | 12% | 43% | 14% | 17% | CN holds at structural-risk floor; SN cools; CP recovers |
 | E12 | 2% | 12% | 12% | **43%** | 16% | 14% | CN flat; SN ticks up on new May incidents |
-| E13 | **3%** | 12% | 14% | **31%** | **24%** | 16% | **CN drops 12, SN spikes 8** — acute-incident shift; analyst-corpus composition caveat |
+| E13 | **3%** | 12% | 14% | **31%** | **24%** | 16% | **CN drops 12, SN spikes 8** — acute-incident + tokenomics-reckoning shift |
 
-**Composition-adjusted reading**: E13's CN→SN shift of ~12 points is the sharpest single-window movement since E6's E5→E6 sentiment transition (SN→CN-driven by analyst layer). The CN→SN movement is driven by four within-window incidents (Claude outage, rsync, github.dev token theft, Meta AI), not by a regime shift in steady-state critique. Without primary-channel practitioner voice (zero Reddit/Bluesky/Mastodon for the fifth window), the trajectory must be read as "analyst-corpus emphasis on acute incident severity" rather than as a community-wide sentiment regime change. The CN→SN swing is consistent with the historic pattern that high-incident weeks pull mass from steady CN into acute SN; the structural CN floor (~30–43% across E6–E13) is the more durable signal of the program's settled state.
+**Composition-adjusted reading**: E13's CN→SN shift of ~12 points is the sharpest single-window movement since the E5→E6 SN→CN transition. The shift is driven by the dual outage (Microsoft Copilot June 1 + Anthropic Claude June 2) + rsync regression + Microsoft "addictive" leak — four within-window acute-incident-class items. Without Reddit primary-channel practitioner voice (fifth consecutive zero window), the trajectory must be read as analyst-corpus + restored-Bluesky weighted rather than as a community-wide sentiment regime change. The structural CN floor (~30–43% across E6–E13) is the more durable signal of the program's settled state.
 
 ---
 
@@ -77,29 +77,26 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 
 | Cluster | E10 | E11 | E12 | E13 | Trajectory | Signal Strength |
 |---|---:|---:|---:|---:|---|---|
-| Code Quality | 18 | 17 | 18 | 9 | ↓ acute-incident displacement | Emerging Consensus |
+| Pricing / Cost | 6 | 10 | 11 | **14** | ↑↑ four-window monotonic; sector realignment | Emerging Consensus |
+| Dependency / Resilience | 5 | 4 | 8 | **12** | ↑↑ program-high | Emerging Consensus |
+| Incidents / Failures | 12 | 8 | 11 | 11 | flat at high; dual-outage anchor | Emerging Consensus |
 | Architectural Philosophy | 14 | 16 | 16 | 10 | ↓ small reset; Nu-dominant | Active Debate |
-| Trust / Verification | 14 | 14 | 13 | 12 | flat | Emerging Consensus |
-| Review Burden | 9 | 14 | 12 | 4 (was implicit) | ↓ this window's silent cluster | Growing Trend |
-| Productivity Reality | 12 | 9 | 14 | 6 | ↓ post-Pragmatic Engineer week | Active Debate |
-| Pricing / Cost | 6 | 10 | 11 | **12** | ↑ continuing | Growing Trend |
-| Incidents / Failures | 12 | 8 | 11 | **14** | ↑↑ peak | Emerging Consensus |
-| Burnout / Cognitive Load | 6 | 7 | 11 | 3 (silent) | ↓ pause | Growing Trend |
-| Deskilling / Learning | 8 | 6 | 10 | 3 (silent) | ↓ pause | Growing Trend |
-| Hiring / Junior Pipeline | 4 | 6 | 9 | 3 | ↓ counter-narrative emergent | Active Debate |
-| Hype vs Reality | 5 | 5 | 8 | 8 | flat | Active Debate |
-| Dependency / Resilience | 5 | 4 | 8 | **11** | ↑ peak | Emerging Consensus |
-| Tool-Specific Issues | 8 | 7 | 7 | 5 | flat | Growing Trend |
-| Enterprise / Policy | 4 | 8 | 7 | 2 | ↓ E13 absence | Active Debate |
+| Tool-Specific Issues | 8 | 7 | 7 | 9 | ↑ retrospective + wrapper + GPT-5.2 deprecation | Growing Trend |
+| Trust / Verification | 14 | 14 | 13 | 8 | ↓ acute-incident displacement | Growing Trend |
+| Productivity Reality | 12 | 9 | 14 | 7 | ↓ post-Pragmatic Engineer week | Active Debate |
+| Enterprise / Policy | 4 | 8 | 7 | 6 | ↑ Uber cap + Copilot enterprise billing | Active Debate |
+| Code Quality | 18 | 17 | 18 | 5 | ↓↓ acute-incident displacement | Growing Trend |
+| Hype vs Reality | 5 | 5 | 8 | 4 | ↓ small | Active Debate |
+| Job Security / Hiring | 4 | 6 | 9 | 2 | ↓ E13 silent | Isolated Signal |
+| Learning & Skill Development | 8 | 6 | 10 | 1 | ↓ Show HN: Lathe sole anchor | Isolated Signal |
 
 **Momentum highlights**:
 
-- **Incidents / Failures** posts its program-high mention rate (14 in a 35-item corpus = 40%) driven by the Claude outage + three other within-window incidents. Signal Strength: Emerging Consensus.
-- **Dependency / Resilience** posts its program-high (11) — direct corollary of Incidents/Failures + Thoughtworks AI-as-infrastructure framing.
-- **Pricing / Cost** continues its E11→E12→E13 ascent: 10 → 11 → 12. Three-window monotonic rise on Uber + Copilot AI Credits + Simon Willison framing.
-- **Code Quality and Productivity Reality both collapse sharply** — not because the topics are resolved, but because acute-incident coverage displaces steady-state discussion. Expect rebound in E14 as the analyst layer processes the events.
-- **Review Burden, Burnout, Deskilling, Hiring** all silent or near-silent — clear analyst-corpus narrowing toward the week's headline events.
-- **Architectural Philosophy** drops Nu-dominant — HN dev-stack thread + Computex Agentic-PC coverage carry the cluster, but with skeptic/maximalist tension rather than consensus.
+- **Pricing / Cost** posts its program-high mention rate (14 in a 37-item corpus = 38%) — the four-window monotonic E10→E11→E12→E13 trajectory (6 → 10 → 11 → 14) is the program's most durable rising trend. Signal Strength: Emerging Consensus.
+- **Dependency / Resilience** posts its program-high (12) — direct corollary of the dual outage + Thoughtworks "AI as infrastructure" framing.
+- **Incidents / Failures** stays at the prior-window's elevated level. The four anchors (Microsoft Copilot June 1, Anthropic June 2, rsync, Microsoft "addictive" leak) replace the prior framing.
+- **Trust / Verification** declines as the trust conversation diffuses into Pricing/Cost and Dependency/Resilience clusters.
+- **Code Quality and Productivity Reality both retreat sharply** — acute-incident-and-pricing coverage displaces steady-state discussion. Expect rebound in E14 as the analyst layer processes post-cutover billing data.
 
 ---
 
@@ -107,38 +104,37 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 
 | Signal | First Obs | Last Obs | Obs Count | Status | Trajectory | Latest Confidence | Recommended Action |
 |---|---|---|---:|---|---|---|---|
-| `agent-production-destruction` | E4 (4/06) | **E13 (6/08)** | **6** | Promoted | **Vendor-side root-cause confirmed (sub-agent runaway)** | H | Continue tracking; Anthropic post-mortem is highest-leverage E14 retrieval |
-| `anthropic-trust-arc` | E4 (4/06) | **E13 (6/08)** | **7** | Promoted | **Compounds — three axes in E13 (outage + leak rumor + Linux desktop trust gap)** | H | Continue; cross-tenant-leak verification is binary watch |
-| `cost-runaway` | E6 (4/20) | **E13 (6/08)** | **8** | Promoted | **Budget-cap inflection (Uber + Copilot AI Credits same Monday)** | H | Continue; track post-cutover sentiment shock E14 |
-| `cve-acceleration` | E1 (3/25) | **E13 (6/08)** | **8** | Promoted | Continuing — Martin Fowler 14-25x analyst datum + rsync corollary | M (E13 single-source) | Continue; M-confidence pending independent corroboration |
-| `mcp-attack-surface` | E1 (3/25) | **E13 (6/08)** | **8** | Promoted | **Extends to systemic LLM-execution-boundary hardening** | M (E13) | Continue; watch second-vendor Lockdown Mode adoption |
-| `stack-composition` | E4 (4/06) | **E13 (6/08)** | **6** | Promoted | "Sword and shield" paired-agent named on HN | M | Continue |
-| `vibe-coding-disreputed` | E1 (3/25) | **E13 (6/08)** | **5** | Promoted | **Critical-infrastructure exemplar (rsync)** | H | Continue; rsync 3.5 outcome is load-bearing test |
-| `productivity-paradox` | E3 (3/31) | E12 (6/01) | 5 | Promoted | Quiet this window | H | Hold — E14 rebound expected |
-| `cognitive-debt-deskilling` | E2 (3/30) | E12 (6/01) | 4 | Promoted | Quiet this window | H | Hold — Thoughtworks Radar framing endures |
-| `ai-burnout-paradox` | E3 (3/31) | E5 (4/13) | 3 | Promoted | Dormant 6+ windows | H | Watchful — retire if not reactivated by E15 |
-| `review-cost-inversion` | E9 (5/11) | E12 (6/01) | 4 | **Promoted at E12** | Quiet this window | H | Hold — expect E14 rebound on post-cutover review-cost data |
-| `junior-pipeline-collapse` | E2 (3/30) | **E13 (6/08)** | **4** | Promoted (E12) | **Newly contested (HN remote-vs-AI)** | H | Continue tracking; first credible counter-narrative |
-| `delegation-gap-paradox` | E9 (5/11) | E12 (6/01) | 4 | **Promoted at E12** | Quiet this window | H | Hold |
-| `reset-year-narrative` | E7 (4/27) | E12 (6/01) | 3 | **Promoted at E12** | Quiet this window | M | Hold |
-| `agent-infrastructure-inflection` | E10 (5/18) | E12 (6/01) | 3 | Tracking | Quiet this window — Code w/ Claude consensus held | H | Continue |
-| `ai-dependency-trap` | E12 (6/01) | **E13 (6/08)** | **2** | Tracking | **Partially corroborated by Uber cost-cap narrative + HN skeptic-vs-mainstream split** | H | Continue; one more observation to reach promotion |
-| `vendor-model-independence` | **E13 (6/08)** | **E13 (6/08)** | **1** | **NEW Tracking** | First emergence — Microsoft MAI-Code-1-Flash + no-distillation positioning + Copilot integration | H | Continue; watch second hyperscaler positioning |
-| `cursor-xai-acquisition` | E6 (4/20) | E7 (4/27) | 2 | Tracking | Dormant 6 windows | M | Candidate retire — folded into vendor-model-independence narrative |
-| `enterprise-ai-controls` | E6 (4/20) | E6 (4/20) | 1 | Tracking | Dormant 7 windows | M | Candidate retire |
-| `oss-maintainer-pushback` | E8 (5/04) | E8 (5/04) | 1 | Tracking | Dormant 5 windows | M | Candidate folded into vibe-coding-disreputed |
-| `senior-deskilling` | E7 (4/27) | E8 (5/04) | 2 | Tracking | Dormant 5 windows | H | Candidate folded into cognitive-debt-deskilling |
+| `cost-runaway` | E6 (4/20) | **E13 (6/08)** | **8** | Promoted | **Sector pricing realignment phase (Copilot up, Cursor down) + cost-as-headcount reframe** | H | Continue; track post-cutover sentiment shock E14 |
+| `cve-acceleration` | E1 (3/25) | E12 (6/01) | 7 | Promoted | Quiet this window — no academic / analyst datum | M | Hold — likely E14 rebound when post-cutover code-quality data publishes |
+| `mcp-attack-surface` | E1 (3/25) | E12 (6/01) | 7 | Promoted | Quiet this window | M | Hold |
+| `anthropic-trust-arc` | E4 (4/06) | **E13 (6/08)** | **7** | Promoted | **Three-axis compound — outage + Linux desktop gap + UX papercuts** | M | Continue; outage post-mortem is highest-leverage E14 |
+| `agent-production-destruction` | E4 (4/06) | E12 (6/01) | 5 | Promoted | Quiet this window — no in-window vendor-side runaway | H | Hold — adjacent to `ai-as-infrastructure` |
+| `stack-composition` | E4 (4/06) | **E13 (6/08)** | **6** | Promoted | Six-month retrospective + wrapper + Hyper YC org-knowledge anchor | M | Continue |
+| `vibe-coding-disreputed` | E1 (3/25) | **E13 (6/08)** | **5** | Promoted | **Critical-infra exemplar (rsync) + terminological-bifurcation codification (McKinney) + legitimization counterweight (Supabase)** | H | Continue; rsync 3.5 outcome is load-bearing test |
+| `productivity-paradox` | E3 (3/31) | E12 (6/01) | 5 | Promoted | Quiet this window | H | Hold — E14 rebound expected on NBER paper + post-cutover data |
+| `cognitive-debt-deskilling` | E2 (3/30) | **E13 (6/08)** | **5** | Promoted | **Disciplined-adoption counter-camp (Show HN: Lathe 363pts, NBER, VentureBeat)** | H | Continue |
+| `ai-burnout-paradox` | E3 (3/31) | E5 (4/13) | 3 | Promoted | Dormant 7+ windows | H | Watchful — retire if not reactivated by E15 |
+| `review-cost-inversion` | E9 (5/11) | E12 (6/01) | 4 | Promoted (E12) | Quiet this window | H | Hold — expect E14 rebound on post-cutover review-cost data |
+| `junior-pipeline-collapse` | E2 (3/30) | E12 (6/01) | 3 | Promoted (E12) | Quiet this window | H | Hold |
+| `delegation-gap-paradox` | E9 (5/11) | E12 (6/01) | 4 | Promoted (E12) | Quiet this window | H | Hold |
+| `reset-year-narrative` | E7 (4/27) | E12 (6/01) | 3 | Promoted (E12) | Quiet this window | M | Hold |
+| `agent-infrastructure-inflection` | E10 (5/18) | E12 (6/01) | 3 | Tracking | Quiet this window — but partly absorbed by new `ai-as-infrastructure` framing | H | Continue; consider merger candidate with `ai-as-infrastructure` |
+| `ai-dependency-trap` | E12 (6/01) | E12 (6/01) | 1 | Tracking | Quiet this window | H | Hold — second observation needed for promotion |
+| `ai-as-infrastructure` | **E13 (6/08)** | **E13 (6/08)** | **1** | **NEW Tracking** | Dual-vendor outage week + Thoughtworks canonical framing + 510-pt HN Linux desktop demand | H | Continue; second observation in E14 promotes |
+| `cursor-xai-acquisition` | E6 (4/20) | E7 (4/27) | 2 | Tracking | Dormant 6 windows | M | Candidate retire |
+| `enterprise-ai-controls` | E6 (4/20) | E6 (4/20) | 1 | Tracking | Dormant 7 windows | M | Candidate retire — folded into `cost-runaway` |
+| `oss-maintainer-pushback` | E8 (5/04) | **E13 (6/08)** | **2** | Tracking | rsync row reactivates | M | Continue; second observation moves toward promotion |
+| `senior-deskilling` | E7 (4/27) | E8 (5/04) | 2 | Tracking | Dormant 5 windows | H | Candidate folded into `cognitive-debt-deskilling` |
 | `thoughtworks-radar-formalization` | E4 (4/06) | E12 (6/01) | 2 | Tracking | Picked back up E12 via Radar v34 | H | Continue |
 
 **Confirmed trends (highest cross-window observation counts)**:
 
-- **`cost-runaway` (8 obs across 8 of last 8 windows)** — the strongest continuing-observation rate in the program. The signal is now the program's longest-running multi-phase arc.
-- **`cve-acceleration` (8 obs across 8 of 13 windows)** — second-longest. Maturity well-established.
-- **`mcp-attack-surface` (8 obs across 8 of 13 windows)** — systemic-vulnerability-class established.
+- **`cost-runaway` (8 obs across 8 of last 8 windows)** — the strongest continuing-observation rate in the program; longest multi-phase signal arc.
 - **`anthropic-trust-arc` (7 obs)** — compounds again in E13.
-- **`agent-production-destruction` (6 obs, first vendor-side root-cause this window)** — qualitative shift.
+- **`cve-acceleration` / `mcp-attack-surface` / `stack-composition` (7, 7, 6 obs)** — well-established maturity signals.
+- **`vibe-coding-disreputed` / `cognitive-debt-deskilling` (5 each)** — reactivated in E13 with new anchors.
 
-**Signal regime observation**: of the 22 signals tracked across the program, only 8 (~36%) appeared in E13. The remaining 14 were either dormant or absent. This is a slightly lower active-signal rate than E11 (10/19 = 53%) or E12 (14/21 = 67%). The E13-specific narrowness reflects the small-corpus + acute-incident-displacement effect, not signal die-off.
+**Signal regime observation**: of the 22 signals tracked across the program, 7 appeared in E13 plus 1 new mint = 8 active. Consistent with E11's 36% active rate and lower than E12's 67% — reflects the E13 narrowness on dual-outage + tokenomics-reckoning displacing steady-state discussion.
 
 ---
 
@@ -146,18 +142,17 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 
 | Claim | First Position | Current Position | Evolution | Assessment |
 |---|---|---|---|---|
-| AI coding tools deliver net productivity gains under longitudinal measurement | E1: Cautious-Positive (Pragmatic Engineer / METR pilot framing) | **E13: Tilting Negative** (Uber four-month-budget-burn + Copilot AI Credits + Simon Willison enthusiasts-vs-skeptics) | Maximalist productivity narrative tilts decisively against on empirical cost evidence | **Tilting Negative** |
-| AI-assisted code in critical infrastructure is acceptable when expert-supervised | E2: Cautious-Positive (early Tridgell adoption news) | **E13: Contested** (rsync 3.4.3 regressions; Tridgell's continued-AI-use posture + Martin Fowler 14-25x security-bug volume) | Critical-infra contributor norm crystallizing toward "AI-assisted commits acceptable IF test suite catches" | **Contested** |
-| AI coding tools and providers are reliable enough for load-bearing production use | E2–E4: Mixed/Ambivalent | **E13: Tilting Negative** (Claude June 5 outage + cross-tenant rumor + OpenAI Lockdown Mode hardening signal) | First vendor-side root-cause + practitioner hardening push tilt strongly negative | **Tilting Negative** |
-| Coding-AI vendor lock-in is acceptable because frontier-lab APIs are the only credible option | Implicit consensus through E12 | **E13: Resolved Negative** (Microsoft MAI-Code-1-Flash + Copilot integration + no-distillation posture) | Single-window resolution; hyperscaler-independence positioning is now a public vendor stance | **Resolved Negative** |
-| Junior hiring collapse is driven by AI substitution rather than macro-economic conditions | E2: Trending Confirmed (Stanford 13–16% + Anthropic 14%) | **E13: Newly Contested** (HN remote-vs-AI counter-narrative) | First credible counter-narrative to the AI-causal framing | **Newly Contested** |
-| AI-coding cost is a manageable per-seat expense | E1: Confirmed | E12: Trending Negative → **E13: Resolved Negative** (Uber + Copilot AI Credits convergence) | Per-seat-billing era is over; usage-based is the new default | **Resolved Negative** |
-| Developers can choose to work without AI | Implicit through E11 | E12: Trending Negative (METR-can't-recruit) → **E13: Confirmed by mainstream** (HN dev-stack thread — skeptic positions exist but are marginal) | The choice exists but is increasingly marginal — `ai-dependency-trap` partial corroboration | **Trending Confirmed** (lock-in is real but minority skeptic posture exists) |
-| AI-generated code is no more vulnerable than human-written code | E1: Trending Contested | E12: Resolved Negative (Veracode + arXiv 484k + CSA convergence) | Stable resolution; E13's Martin Fowler 14-25x datum reinforces | **Resolved Negative (stable)** |
-| MCP attack surface is theoretical / vendor-disputed only | E1: Trending Contested | E12: Resolved Negative | Stable resolution; E13 extends the surface to LLM-execution-boundary hardening | **Resolved Negative (stable)** |
+| AI coding tools deliver net productivity gains at sustainable cost | E1: Cautious-Positive | **E13: Tilting Negative** (Uber cap + Copilot AI Credits + Cursor cut + Kilo.ai playbook + cost-as-headcount reframe) | Sector pricing realignment tilts decisively against sustainable-cost claim | **Tilting Negative** |
+| AI-assisted code in critical infrastructure is acceptable when expert-supervised | E2: Cautious-Positive (early Tridgell adoption news) | **E13: Contested** (rsync 3.4.3 regressions vs Wes McKinney's disciplined-engineering framing) | OSS-maintainer-policy row puts the question into formal dispute | **Contested** |
+| AI coding tools and providers are reliable enough for load-bearing production use | E2–E4: Mixed/Ambivalent | **E13: Tilting Negative** (Microsoft Copilot June 1 + Anthropic Claude June 2 dual outage; Thoughtworks framing; HN Linux-desktop demand) | Dual-vendor 48h outage + practitioner amplification tilt strongly negative | **Tilting Negative** |
+| Vibe coding is uniformly dangerous | E11: Trending Confirmed | **E13: Newly Contested** (Supabase $10.5B valuation on "vibe-coding tailwind" vs Wes McKinney terminological split) | Capital-side legitimization counterweight against critical-infra cautionary tale | **Newly Contested** |
+| Microsoft AI product strategy operates in users' interests | Implicit through E12 | **E13: Tilting Negative** (Kotaku "addictive" leak + Copilot outage on billing-cutover day + GPT-5.2 deprecation churn) | First multi-axis Microsoft trust deficit framing in the program | **Tilting Negative — single-window single-vendor; promote in E14 if confirms** |
+| AI-coding cost is a manageable per-seat expense | E1: Confirmed | E12: Trending Negative → **E13: Resolved Negative** (Uber + Copilot AI Credits + Cursor token billing convergence) | Per-seat-billing era is over; usage-based is the new default | **Resolved Negative** |
+| AI-generated code is no more vulnerable than human-written code | E1: Trending Contested | E12: Resolved Negative | Stable resolution; E13 quiet (no in-window academic datum) | **Resolved Negative (stable)** |
+| MCP attack surface is theoretical / vendor-disputed only | E1: Trending Contested | E12: Resolved Negative | Stable resolution; E13 quiet | **Resolved Negative (stable)** |
 
-**Newly resolved**: vendor-lock-in (Resolved Negative E13); cost-per-seat (Resolved Negative E13).
-**Newly contested**: junior-pipeline-collapse causal claim (HN remote-vs-AI E13 counter-narrative).
+**Newly resolved**: cost-per-seat (Resolved Negative E13).
+**Newly contested**: vibe-coding uniformly dangerous (E13 Supabase counterweight); Microsoft AI strategy in users' interests (E13 — first multi-axis Microsoft trust deficit).
 **Tilting movements**: AI productivity-vs-cost (Tilting Negative E13); load-bearing reliability (Tilting Negative E13).
 
 ---
@@ -166,54 +161,55 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 
 | Term | First Appeared | Frequency Trend | Significance |
 |---|---|---|---|
-| "Vibe coding" (failure mode) | E1 | Stable high through E13; "Vibe Fuck Up" escalation E13 | Critical-infra contributor norm now using the term as cautionary label |
-| "AI dependency trap" | E12 | Reinforced E13 (Uber + HN skeptic framing) | Behavioral lock-in framing distinct from cognitive-debt |
-| "Cognitive debt" | E2 | E12 Thoughtworks Radar v34 Trial-ring named technique; quiet E13 | Institutional formalization established |
+| "Vibe coding" (failure mode) | E1 | Stable high through E13 with "Vibe Fuck Up" escalation in rsync row | Critical-infra contributor norm using the term as cautionary label |
+| "AI dependency trap" | E12 | Reinforced E13 (Uber cap + HN skeptic framing) | Behavioral lock-in framing distinct from cognitive-debt |
+| "Cognitive debt" | E2 | E12 Thoughtworks Radar v34 Trial; quiet E13 | Institutional formalization established |
 | "Harness engineering" | E12 | Quiet E13 | Vendor-prescription label; await E14 spread |
-| "AI Slop" | E11 | Echo E12; quiet E13 | Critic-side framing of AI-PR volume |
-| "Stack composition" (operator framing) | E4 | Reinforced E13 ("sword and shield") | Multi-tool composition now mainstream |
-| **"Sword and shield" (paired-agent)** | **E13 NEW** | Single observation | Practitioner-side risk-reduction pattern naming |
-| **"AI Credits" (GitHub billing unit)** | **E13 NEW** | Single observation | New billing unit for usage-based-billing era |
-| **"Sub-agent runaway / infinite loop"** | **E13 NEW** | Single observation | Vendor-side failure-mode terminology |
-| **"Cross-tenant inference leak"** | **E13 NEW** | Single observation | Most severe trust-scenario framing in the program |
-| **"Lockdown Mode" (OpenAI)** | **E13 NEW** | Single observation | Vendor-side execution-boundary hardening feature |
-| **"Agentic PC" (Computex 2026)** | **E13 NEW** | Single observation | Vendor-marketing framing replacing "AI PC" |
-| **"Spec-driven development" (mainstream)** | **E13 NEW** | Single observation | Post-vibe-coding workflow label |
-| **"Project Glasswing" (Anthropic)** | **E13 NEW** | Single observation | Limited cybersecurity rollout of Mythos-class models |
-| "FinOps for AI" / boardroom-FinOps | E12 | Reinforced E13 (Uber cap implicitly) | Cost-discipline regime |
-| "Boardroom FinOps for AI" | E12 | Echo E13 (Uber datum) | Institutional-formalization of AI cost discipline |
-| "Slopsquatting" (Veracode) | E12 | Quiet E13 | Supply-chain-attack class naming |
-| "Mini Shai-Hulud" (supply-chain worm class) | E12 | Quiet E13 | TeamPCP supply-chain incident class |
+| "AI Slop" | E11 | Echo E12; reactivated E13 via Simon Willison HN-slop-tolerance critique | Critic-side framing of AI-generated-content volume |
+| "Stack composition" (operator framing) | E4 | Reinforced E13 (six-month retrospective + Clay Nicholson wrapper + Hyper YC) | Multi-tool composition now mainstream |
+| **"Tokenomics reckoning"** | **E13 NEW** | Single observation (The New Stack) | Sector-wide pricing-model-shift framing — distinct from per-vendor pricing complaints |
+| **"AI Credits" (GitHub billing unit)** | **E13 NEW** | Single observation | New billing unit for usage-based-billing era (1 credit = $0.01) |
+| **"Bill Came Due" (engineering-leader framing)** | **E13 NEW** | Single observation (Kilo.ai) | Practitioner anticipation of the cost-runaway tail |
+| **"Pricing exploding"** | **E13 NEW** | Single observation (Ask HN) | Dominant practitioner-complaint vocabulary in window |
+| **"Cost-as-headcount"** | **E13 NEW** | Single observation (Abhishek Shankar) | Reframes agentic AI spend as developer-equivalent budget line |
+| **"Agentic engineering" (vs vibe coding)** | **E13 NEW** | Single observation (Wes McKinney) | Discipline-marker terminological split |
+| **"Vibe-coding tailwind"** | **E13 NEW** | Single observation (CNBC) | Investor-narrative framing for capital legitimization |
+| **"AI as infrastructure"** | **E13 NEW** | Single observation (Thoughtworks) | Canonical multi-vendor availability-class framing |
+| **"More Prompts = Worse Code"** | **E13 NEW** | Single observation (Theo - t3.gg) | Counter to "more agent turns = better" assumption |
+| **"Addictive Copilot"** | **E13 NEW** | Single observation (Kotaku/404 Media) | Microsoft strategy-leak framing — dark-pattern accusation |
+| **"Macro-delegation"** | **E13 NEW** | Single observation (GitHub CPO interview) | Vendor-side agentic future-of-work framing |
 
-**Vocabulary observation**: E13 mints 8 new terms in a single window — the highest single-window mint rate in the program. This reflects the dense incident + product-launch + framing-event clustering: each major event (outage, MAI launch, Lockdown Mode, github.dev token theft pivot, HN dev-stack thread, Computex pivot, Project Glasswing, Anthropic subscription split anticipation) generates its own terminology layer. Three terms ("Sub-agent runaway", "Cross-tenant inference leak", "AI Credits") are load-bearing operational vocabulary; the rest are framing/marketing labels.
+The E13 vocabulary explosion (10 new terms) is the largest single-window vocabulary expansion in the program — driven by the simultaneous sector-pricing event + dual outage week. Most are framing terms rather than technical terms, suggesting a maturing discourse layer rather than novel technical capability emergence.
 
 ---
 
 ## Gaps & Uncertainties
 
-- **Reddit Tier-1 absent for FIVE consecutive windows** — five-window structural regime is the most important methodological caveat in the program. The longitudinal sentiment record materially undersamples the largest practitioner-voice channel. Pre-E11 vs E11–E13 cohort weighting should be applied in any sentiment-trend arithmetic.
-- **Bluesky / Mastodon Tier-1 zero for FIVE consecutive windows** — parallel structural gap.
-- **YouTube Tier-1.5 regression to zero in E13** — first complete-zero YouTube window since E11.
-- **Anthropic public post-mortem for June 5 sub-agent runaway not yet published.** The Thoughtworks editorial framing is the load-bearing secondary; cross-tenant-leak rumor remains unconfirmed by Anthropic.
-- **GitHub Copilot AI Credits post-cutover sentiment shock lags 1–2 weeks** — E14 is the first window with material practitioner-side reaction data.
-- **rsync 3.4.3 quantified blast radius unknown** — regression count and affected-user count not retrieved beyond "incremental backup workflows broken."
-- **Microsoft MAI-Code-1-Flash bench claims** are vendor-self-reported — independent SWE-Bench Pro / Verified replication is the credibility-gate.
-- **Anthropic subscription split (June 15) is post-window** — E14 lookback should fully capture the practitioner-side reaction.
-- **Anthropic Mythos / Project Glasswing technical detail** is vendor-post only; no third-party benchmark or customer disclosure.
+- **Reddit Tier-1 absent (FIFTH consecutive window)** — Chrome plugin safety layer hard-blocks www.reddit.com navigation AND cross-origin fetch. Structural-composition regime hardened.
+- **Mastodon yield very low** (1 off-topic item) — federated server discovery is the bottleneck; broader handle list needed.
+- **YouTube depth shallow** — Theo - t3.gg dominated 5 of 5 items.
+- **X / Twitter not attempted** this pass — Chrome plugin safety likely blocks; would need fxtwitter / nitter fallback strategy.
+- **Anthropic post-mortem for June 2 outage** not published in-window; status page timeline only.
+- **Microsoft Copilot post-mortem** not published in-window; likely-authentication-failure framing only.
+- **NBER paper w35275 substantive findings** not extracted this pass — high-value disciplined-adoption-camp evidence pending review.
+- **Anthropic / Cursor official responses** to the Uber $1,500/mo cap narrative not retrieved in-window.
+- **Microsoft trust deficit single-vendor single-window** — second confirming window required before minting `microsoft-trust-arc`.
+- **Below-threshold pattern**: self-hosted alternatives accelerating (local-MCP, local Copilot via Lemonade Show HN posts) — no concentrated thread yet.
 
 ---
 
 ## Watch List for Next Extraction
 
-- **Anthropic public post-mortem for the June 5 Claude Code sub-agent runaway**. *Highest priority.* Resolves whether `agent-production-destruction` is vendor-side-root-cause-confirmed (elevating to vendor-architecture-class signal) or stays at availability-class. Cross-tenant inference-leak confirm/deny is the highest-stakes binary in `anthropic-trust-arc`.
-- **GitHub Copilot AI Credits post-cutover practitioner reaction (Jun 8–15)**. *Highest priority.* First empirical test of cost-runaway's budget-cap-inflection phase. Expect Reddit and HN volume on AI Credits billing impact.
-- **Anthropic subscription split / Agent SDK billing change (June 15)**. *Highest priority.* High topical activity flagged from extraction below-threshold queue; ThePrimeagen + Reddit (if available) + X coverage expected to materialize in E14 window.
-- **Reddit / Bluesky / Mastodon retrieval restoration**. *Highest priority.* Five-consecutive-window structural-regime gap; without recovery the longitudinal record requires explicit retrospective re-weighting.
-- **Third-party SWE-Bench Pro verification of Microsoft MAI-Code-1-Flash +16-point claim**. High priority — `vendor-model-independence` credibility depends on independent benchmark replication.
-- **Cursor / Anthropic vendor response to Uber $1,500/mo cap narrative**. High priority — vendor pricing-narrative-response is the natural follow-up.
+- **Anthropic public post-mortem for the June 2 Opus 4.6 outage**. *Highest priority.* Resolves whether `ai-as-infrastructure` is vendor-side-root-cause-confirmed.
+- **Microsoft Copilot post-mortem for the June 1 outage**. *Highest priority.* Authentication-failure-vs-other root cause has implications for Microsoft trust deficit framing.
+- **GitHub Copilot AI Credits post-cutover practitioner reaction (Jun 8–15)**. *Highest priority.* First empirical test of cost-runaway's sector-pricing-realignment phase.
+- **Reddit / Bluesky / Mastodon retrieval restoration**. *Highest priority.* Five-consecutive-window structural-regime gap (Bluesky partially restored in E13 via Chrome supplemental pass).
+- **Cursor enterprise spend controls detail** — what governance primitives ship matters for how the cost-as-headcount framing lands at procurement teams. High priority.
+- **Anthropic / Cursor vendor responses to Uber $1,500/mo cap narrative**. High priority — pricing-narrative-response is the natural follow-up.
 - **rsync 3.5 security-focused release outcome**. High priority — contributor-norm crystallization test of `vibe-coding-disreputed` resolution.
-- **Second hyperscaler no-distillation positioning** (Google Gemini Code Assist, AWS Q). Medium priority — would advance `vendor-model-independence` from single-vendor framing to industry pattern.
-- **Anthropic Project Glasswing technical detail / customer disclosure**. Medium priority — Mythos-class capability anchor.
+- **NBER paper w35275 substantive findings** — quantitative summary needed for next-window analysis. High priority.
+- **Microsoft trust-deficit second window confirm** — if a second axis surfaces in E14, mint `microsoft-trust-arc` as new signal. Medium priority.
+- **Theo transcripts** — "I didn't expect this from Anthropic" (same-day) and "More Prompts = Worse Code?" — both high-engagement practitioner takes on in-window themes. Medium priority.
 
 ---
 
@@ -224,14 +220,14 @@ Two prior Tracking signals (`vendor-model-independence` minted at 1 obs E13; the
 | Longitudinal prompt | v1.3 |
 | Domain config | v1.2 |
 | Bootloader | v1.9 |
-| Report generated | 2026-06-08 13:30 UTC |
+| Report generated | 2026-06-08 15:45 UTC |
 | Input mode | summaries (--from-summaries) |
 | Extractions covered | E1 through E13 |
 | Date range | 2026-03-20 – 2026-06-08 (80 days) |
-| Total tagged items | ~632 (sum across summaries; includes E10's +20 supplemental pass and E13's 35-item analyst-corpus window) |
+| Total tagged items | ~634 (sum across summaries; E13 revised to 37-item Chrome-augmented corpus) |
 | Tracked signals | 22 unique signal_ids across the program; 12 Promoted, 6 Tracking, 4 candidate retire-or-merge |
-| NEW signals this window | `vendor-model-independence` |
-| Escalated signals this window | none — all four E12 promotions (review-cost-inversion, junior-pipeline-collapse, reset-year-narrative, delegation-gap-paradox) hold; `ai-dependency-trap` advances to 2 obs (one more needed) |
-| Confirmed trends | `cost-runaway` (8 obs, budget-cap-inflection phase), `cve-acceleration` (8 obs), `mcp-attack-surface` (8 obs, LLM-execution-boundary class), `anthropic-trust-arc` (7 obs, three-axis compound), `agent-production-destruction` (6 obs, vendor-side root-cause class) |
-| Resolved contradictions | "Vendor lock-in is acceptable because frontier-lab APIs are only option" (Resolved Negative E13); "AI-coding cost is manageable per-seat expense" (Resolved Negative E13); prior resolutions hold |
-| Newly contested claims | "Junior hiring collapse is AI-driven not macro-economic" (Newly Contested E13 — first credible counter); "Load-bearing AI reliability acceptable" (Tilting Negative E13); "AI productivity gains under longitudinal measurement" (Tilting Negative E13) |
+| NEW signals this window | `ai-as-infrastructure` |
+| Escalated signals this window | none — all four E12 promotions hold; `ai-dependency-trap` at 1 obs E12; `oss-maintainer-pushback` reactivated at 2 obs (rsync) |
+| Confirmed trends | `cost-runaway` (8 obs, sector pricing realignment), `anthropic-trust-arc` (7 obs, three-axis compound), `cve-acceleration` / `mcp-attack-surface` (7 obs each), `stack-composition` (6 obs), `cognitive-debt-deskilling` / `vibe-coding-disreputed` (5 obs each, both reactivated E13) |
+| Resolved contradictions | "AI-coding cost is manageable per-seat expense" (Resolved Negative E13); prior resolutions hold |
+| Newly contested claims | "Vibe coding is uniformly dangerous" (Newly Contested E13 — Supabase counterweight); "Microsoft AI strategy operates in users' interests" (Tilting Negative E13 — first multi-axis trust deficit framing); "Load-bearing AI reliability acceptable" (Tilting Negative E13); "AI productivity gains under longitudinal measurement" (Tilting Negative E13) |

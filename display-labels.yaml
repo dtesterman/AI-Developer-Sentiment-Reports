@@ -197,3 +197,11 @@ labels:
     one_line: "Microsoft's MAI-Code-1-Flash ships into Copilot with explicit no-distillation-from-OpenAI-or-Anthropic positioning — first vendor stating model-independence as posture. NEW E13."
     sentiment_override: mx
     retired_alias: []
+
+  # === E13 mint ===
+
+  - signal_id: ai-as-infrastructure
+    label: "AI tools as infrastructure"
+    one_line: "Dual-vendor outages (Microsoft Copilot June 1, Anthropic Claude June 2) reframe AI coding tools as SRE-class dependencies, not productivity preferences."
+    sentiment_override: sn
+    retired_alias: []

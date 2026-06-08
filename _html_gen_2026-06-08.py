@@ -14,7 +14,7 @@ except ImportError:
     import markdown
 from pathlib import Path
 
-OUTDIR = Path('/sessions/zen-optimistic-johnson/mnt/local_754ac9df-27cd-4e02-8ee2-7d29ecd49486--outputs')
+OUTDIR = Path('/sessions/zealous-lucid-thompson/mnt/local_754ac9df-27cd-4e02-8ee2-7d29ecd49486--outputs')
 SRC_MD = OUTDIR / 'analysis-report-2026-06-08.md'
 DST_HTML = OUTDIR / 'analysis-report-2026-06-08.html'
 TEMPLATE_HTML = OUTDIR / 'analysis-report-2026-06-01.html'

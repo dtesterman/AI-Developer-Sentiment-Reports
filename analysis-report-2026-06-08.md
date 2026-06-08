@@ -2,61 +2,73 @@
 
 | # | Source | URL | Tier | Section |
 |---|---|---|---|---|
-| 1 | HN: Ask HN dev tech stack/workflow Jun 2026 | https://news.ycombinator.com/item?id=48413629 | T1 | hacker_news |
-| 2 | HN: Anthropic ship Claude Desktop for Linux | https://news.ycombinator.com/item?id=48434436 | T1 | hacker_news |
-| 3 | HN: 1-Click GitHub Token Stealing via VSCode Bug | https://news.ycombinator.com/item?id=48371562 | T1 | hacker_news |
-| 4 | HN: Claude Code – Everything you can configure | https://news.ycombinator.com/item?id=48318174 | T1 | hacker_news |
-| 5 | HN: What if remote working not AI is to blame | https://news.ycombinator.com/item?id=48326721 | T1 | hacker_news |
-| 6 | HN: Who wants to be hired June 2026 | https://news.ycombinator.com/item?id=48357724 | T1 | hacker_news |
-| 7 | HN: Who is hiring June 2026 | https://news.ycombinator.com/item?id=48357725 | T1 | hacker_news |
-| 8 | HN: Opus 4.8 significant coding quality gain | https://news.ycombinator.com/item?id=48362551 | T1 | hacker_news |
-| 9 | HN: Computex 2026 Agentic PC Era | https://news.ycombinator.com/item?id=48428647 | T1 | hacker_news |
-| 10 | HN: Expanding Project Glasswing | https://news.ycombinator.com/item?id=48369863 | T1 | hacker_news |
-| 11 | Simon Willison — Microsoft's new MAI models | https://simonwillison.net/2026/Jun/2/microsofts-new-models/ | T1 | blogs |
-| 12 | Simon Willison — Uber Caps Usage | https://simonwillison.net/2026/Jun/3/uber-caps-usage/ | T1 | blogs |
-| 13 | Simon Willison — AI enthusiasts race against time | https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics/ | T1 | blogs |
-| 14 | Simon Willison — OpenAI Lockdown Mode | https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/ | T1 | blogs |
-| 15 | Simon Willison — MicroPython/WASM sandbox | https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/ | T1 | blogs |
-| 16 | Simon Willison — datasette-agent-edit 0.1a0 | https://simonwillison.net/2026/Jun/7/datasette-agent-edit/ | T1 | blogs |
-| 17 | Simon Willison — Meta AI Instagram access | https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/ | T1 | blogs |
-| 18 | Martin Fowler — Fragments June 2 | https://martinfowler.com/fragments/2026-06-02.html | T1 | blogs |
-| 19 | Thoughtworks — Claude outage June 2026 | https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026 | T1 | blogs |
-| 20 | The Register — Please do not vibe f--- up rsync | https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189 | T1 | blogs |
-| 21 | GitHub Changelog — Copilot billing usage-based | https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/ | T1 | blogs |
-| 22 | GitHub Changelog — MAI-Code-1-Flash in Copilot | https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/ | T1 | blogs |
-| 23 | Bloomberg — Uber Caps AI Spending | https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs | T1 | blogs |
-| 24 | TechCrunch — Uber caps employee AI spending | https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/ | T1 | blogs |
-| 25 | Microsoft AI — Introducing MAI-Code-1-Flash | https://microsoft.ai/news/introducingmai-code-1-flash/ | T1 | blogs |
-| 26 | X / Cyber Security News — June 5 Claude outage | https://x.com/The_Cyber_News/status/2063084278372864441 | T2 | x |
-| 27 | X / kimmonismus — cross-tenant leak rumor | https://x.com/kimmonismus/status/2062997809067139468 | T2 | x |
+| 1 | HN: Anthropic ship Claude Desktop for Linux (510 pts) | https://news.ycombinator.com/item?id=48434436 | T1 | hacker_news |
+| 2 | HN: Show HN — Lathe (LLM as tutor) | https://news.ycombinator.com/item?id=48433756 | T1 | hacker_news |
+| 3 | Kilo.ai — The GitHub Copilot Bill Came Due | https://blog.kilo.ai/p/the-github-copilot-bill-came-due | T1 | hacker_news |
+| 4 | Ask HN: Copilot pricing exploding | https://news.ycombinator.com/item?id=48444008 | T1 | hacker_news |
+| 5 | The New Stack: Cursor cuts prices — tokenomics reckoning | https://thenewstack.io/cursor-pricing-token-billing/ | T1 | hacker_news |
+| 6 | Show HN: Cost.dev (YC W21) | https://cost.dev/ | T1 | hacker_news |
+| 7 | Launch HN: Hyper (YC P26) | https://news.ycombinator.com/item?id=48387095 | T1 | hacker_news |
+| 8 | NBER: Productivity Effects Across Generations of AI Coding Tools | https://www.nber.org/system/files/working_papers/w35275/w35275.pdf | T1 | hacker_news |
+| 9 | The Register: rsync vibe-coding row | https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189 | T1 | hacker_news |
+| 10 | Wes McKinney (MotherDuck): Vibe Coding Is Dangerous, Agentic Engineering Isn't | https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/ | T1 | hacker_news |
+| 11 | CNBC: Vibe-coding phenomenon lifts Supabase to $10.5B | https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html | T1 | hacker_news |
+| 12 | Kotaku/404 Media: Microsoft wants Copilot to be 'addictive' | https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924 | T1 | hacker_news |
+| 13 | GitHub Changelog: Larger context + configurable reasoning for Copilot | https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/ | T1 | hacker_news |
+| 14 | GitHub Changelog: Copilot Agent Tasks REST API | https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/ | T1 | hacker_news |
+| 15 | GitHub Changelog: GPT-5.2 and 5.2-Codex deprecated | https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/ | T1 | hacker_news |
+| 16 | The New Stack: Claude Code vs Cursor vs Codex vs Antigravity (6mo) | https://thenewstack.io/claude-code-vs-cursor-vs-codex-vs-antigravity-2026/ | T1 | hacker_news |
+| 17 | Clay Nicholson: Claude Code 100x better and 40% more efficient | https://claynicholson.com/blog/khlawde-code | T1 | hacker_news |
+| 18 | Abhishek Shankar: AI Coding Bill Is a Headcount Problem in Disguise | https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem | T1 | hacker_news |
+| 19 | VentureBeat: Agentic AI solved coding and exposed every other problem | https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering | T1 | hacker_news |
+| 20 | Turingpost: GitHub CPO Mario Rodriguez on macro-delegation | https://www.turingpost.com/p/mario-rodriguez-github-ai-coding-agents-copilot | T1 | hacker_news |
+| 21 | GitHub Blog: Copilot is moving to usage-based billing | https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/ | T1 | blogs |
+| 22 | Thoughtworks: Claude outage — AI's increasing status as infrastructure | https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026 | T1 | blogs |
+| 23 | Anthropic Status: Opus 4.6 elevated errors (June 2 incident) | https://status.claude.com/ | T1 | blogs |
+| 24 | TechRadar: Claude is down — what we know | https://www.techradar.com/news/live/claude-outage-june-2026 | T1 | blogs |
+| 25 | Windows News: Microsoft Copilot Outage June 1, 2026 | https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251 | T1 | blogs |
+| 26 | Bluesky / Simon Willison: Uber caps coding agents at $1,500/mo/tool | https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n | T1 | bluesky |
+| 27 | Bluesky / Simon Willison: HN tolerance for slop content | https://bsky.app/profile/simonwillison.net/post/3mna77rupi22d | T1 | bluesky |
+| 28 | Bluesky / Simon Willison: MicroPython-in-WebAssembly sandbox | https://bsky.app/profile/simonwillison.net/post/3mnlt3a6fm22b | T1 | bluesky |
+| 29 | Bluesky / Kelsey Hightower: Productivity doesn't matter if you're working on the wrong thing | https://bsky.app/profile/kelseyhightower.com/post/3mnhyaaceqk2v | T1 | bluesky |
+| 30 | Bluesky / fasterthanli.me: Claude redownloading 12GB Linux VMs | https://bsky.app/profile/fasterthanli.me/post/3mnjumq6yis2o | T1 | bluesky |
+| 31 | Bluesky / fasterthanli.me: Anthropic UI/UX papercuts | https://bsky.app/profile/fasterthanli.me/post/3mnelaurqak2c | T1 | bluesky |
+| 32 | Mastodon / Dan Luu: Benchmarking, evals, experimental design pt6 | https://mastodon.social/@danluu/116712018386793072 | T1 | mastodon |
+| 33 | YouTube / Theo: I didn't expect this from Anthropic | https://www.youtube.com/watch?v=xjucOlb_mFM | T1.5 | youtube |
+| 34 | YouTube / Theo: Cloudflare bought Vite to destroy Vercel | https://www.youtube.com/watch?v=n2YtM-MecZk | T1.5 | youtube |
+| 35 | YouTube / Theo: I miss when programmers were lazy | https://www.youtube.com/watch?v=iN_9aH3VuzU | T1.5 | youtube |
+| 36 | YouTube / Theo: More Prompts = Worse Code? | https://www.youtube.com/watch?v=WnBx1Vi7M6w | T1.5 | youtube |
+| 37 | YouTube / Theo: This might be a Hot Take | https://www.youtube.com/watch?v=rTMRlqT8Q8c | T1.5 | youtube |
 
-**Self-check**: all 27 unique URLs from the extraction's tier1.hacker_news, tier1.blogs_publications, and tier2 sections must each appear at least once as a clickable `[Text](URL)` link in the report body below. The two Syntax FM URLs (https://syntax.fm/) are show-level URLs, not episode permalinks; they are cited once as podcast references but excluded from the unique-URL coverage denominator per extraction note "Show-level URL only — episode permalink not isolated."
+**Self-check**: all 37 unique URLs from the extraction's tier1 (hacker_news, blogs_publications, bluesky, mastodon) and tier1_5 (youtube) sections must each appear at least once as a clickable `[Text](URL)` link in the report body below.
 
 ---
 
-# Sentiment Analysis Report: AI Developer Tools — Week of 2026-06-01 to 2026-06-08 (Extraction 13)
+# Sentiment Analysis Report: AI Developer Tools — Week of 2026-06-01 to 2026-06-08 (Extraction 13, revised)
+
+> **Note on this revision**: extraction was re-run on 2026-06-08 with the Chrome browser plugin to fill source gaps left by the WebSearch-only initial pass. Reddit remains hard-blocked at the plugin safety layer; Bluesky and Mastodon are now live-queried via public APIs.
 
 ## Executive Summary
 
-Extraction 13 is the **post-Code-w/-Claude cost-and-fragility reckoning window**. The analyst layer pivots hard from capability narratives to load-bearing-infrastructure anxiety, with four signals dominating.
+Extraction 13 is the **sector-wide tokenomics reckoning + AI-as-infrastructure week**. Four signals dominate.
 
-First, the [Uber $1,500/tool/month employee cap](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs) — applied after Uber burned its full-year AI budget in four months — and the [GitHub Copilot June 1 usage-based "AI Credits" billing cutover](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/) landed on the same Monday. The `cost-runaway` signal now has a budget-cap inflection axis it didn't have in E11/E12; [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs), [TechCrunch](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/), and [Simon Willison](https://simonwillison.net/2026/Jun/3/uber-caps-usage/) each carried distinct framings of the same datum (vendor primary, business analysis, practitioner reaction).
+First, the **pricing-model reckoning** that began as a Microsoft story expanded into a sector event within five days. [GitHub Copilot moved all plans to usage-based billing on June 1](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) — base prices unchanged but bundled allotment replaced with a monthly pool of "AI Credits"; overage billed on token consumption at listed API rates per model. By June 6, [Cursor responded by CUTTING prices and adding enterprise spend controls](https://thenewstack.io/cursor-pricing-token-billing/), explicitly framed by The New Stack as a "tokenomics reckoning." Practitioner discourse converged on the vocabulary across [Ask HN: "Copilot pricing exploding"](https://news.ycombinator.com/item?id=48444008), the [Kilo.ai engineering-leader playbook "The Copilot Bill Came Due"](https://blog.kilo.ai/p/the-github-copilot-bill-came-due), and [Simon Willison reporting Uber caps coding agents at $1,500/month/employee/tool](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) — the first concrete enterprise spend cap reported in window. The `cost-runaway` signal now has a **sector-pricing-realignment axis** it didn't have in E11/E12: two of the four dominant agentic IDE vendors restructured billing in the same week, in opposite directions.
 
-Second, the [June 5 Claude/Claude Code global outage](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) — root-caused per Thoughtworks editorial to a Claude Code sub-agent infinite-loop bug that exponentially multiplied sub-agents and wiped user token allowances within minutes — is the **first vendor-side root-cause exemplar** of `agent-production-destruction` (the prior four exemplars in the signal arc were customer-side: PocketOS, Kiro, Composio, Anthropic's May 14 capacity outage). [Cyber Security News on X](https://x.com/The_Cyber_News/status/2063084278372864441) confirmed multi-service disruption (claude.ai, Claude Code, Cowork); the [kimmonismus cross-tenant inference-leak rumor on X](https://x.com/kimmonismus/status/2062997809067139468) — unconfirmed by Anthropic — compounds it into `anthropic-trust-arc`. The [HN front-page plea for an official Claude Desktop for Linux](https://news.ycombinator.com/item?id=48434436) adds a third vendor-trust axis: a non-trivial number of Claude users entrust filesystem and credential access to a third-party repackage (aaddrick/claude-desktop-debian) because Anthropic ships nothing official.
+Second, **AI coding tools crossed into infrastructure status, with two outages 48 hours apart proving the point**. [Microsoft Copilot went down for thousands of users on June 1](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) — likely authentication failure — disrupting Office, Windows, and Visual Studio workflows on the exact day the usage-based billing transition took effect. On June 2, [Anthropic's status page logged elevated errors on Opus 4.6 from 06:04 UTC to 11:49 UTC](https://status.claude.com/), affecting Claude, API, Console, and Claude Code surfaces; [TechRadar reported 60% of complaints centered on Claude Chat, 24% on mobile, 8% on Claude Code](https://www.techradar.com/news/live/claude-outage-june-2026); and [Thoughtworks editorial framed it as "Reckoning with AI's increasing status as infrastructure"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) — when the LLM provider goes down, development velocity drops, support triage bots fall silent, LLM-dependent data pipelines freeze. The [510-point, 293-comment HN front-page demand for an official Claude Desktop for Linux](https://news.ycombinator.com/item?id=48434436) is the practitioner-side amplification: a non-trivial number of Claude users want platform-parity guarantees from what is now treated as a load-bearing dependency. This window mints the new `ai-as-infrastructure` signal.
 
-Third, [Microsoft's launch of MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/) — a 5B-parameter coding model with a 256K context window, trained March–May 2026 on commercially licensed data with explicitly no distillation from OpenAI or Anthropic — was immediately rolled into [GitHub Copilot](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/) across Free, Student, Pro, Pro+, and Max plans. [Simon Willison's same-day post](https://simonwillison.net/2026/Jun/2/microsofts-new-models/) catalogued both new MAI models (Thinking-1 1T MoE + Code-1-Flash 5B). The pattern is novel enough to mint the new `vendor-model-independence` signal: hyperscalers reducing dependence on frontier-lab APIs for the AI coding layer, with bench-marketing language (SWE-Bench Pro +16-point lead, 60% fewer tokens) as the dominant comparison axis.
+Third, the **vibe-coding-vs-agentic-engineering vocabulary split hardened in window**, with both a cautionary tale and a legitimization counterweight landing the same day. [Wes McKinney (pandas creator) on MotherDuck](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/) explicitly codifies the split: "vibe coding" (unvetted, dangerous) vs "agentic engineering" (disciplined). The same June 4 [rsync backup-regression incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) — backups broke after vibe-coded changes, triggering an OSS-maintainer policy row — provides the concrete cautionary tale. And [CNBC reports Supabase raised $500M at a $10.5B valuation explicitly on a 'vibe-coding tailwind'](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html) — investor signal that the phenomenon is creating outsize platform value. The discourse is no longer "is vibe coding good or bad" — it is "which slot of the methodology lives where." `vibe-coding-disreputed` evolves with a clearer terminological boundary; the legitimization counterweight is not contradiction but specialization.
 
-Fourth, the [rsync 'Please Do Not Vibe Fuck Up This Software' incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) over 3.4.3 backup-regression bugs (dozens of commits since 3.4.1 attributed to "tridge and claude") consolidates `vibe-coding-disreputed`. Paired with [Martin Fowler's June 2 Fragment](https://martinfowler.com/fragments/2026-06-02.html) reporting a tracked codebase whose monthly security-bug-fix rate jumped from 17-31 (through 2025) to 423 in April 2026 (~14-25x), and the [June 6 HN dev-stack thread](https://news.ycombinator.com/item?id=48413629) showing spec-driven and "sword and shield" multi-agent workflows as the mainstream baseline (with the [Claude Code configuration deep-dive](https://news.ycombinator.com/item?id=48318174) hitting #1 on HN at 556 points), critical-infrastructure contributor norms are crystallizing around disciplined-AI-use-only.
+Fourth, **Microsoft's vendor-trust deficit compounded** when [Kotaku / 404 Media reported a leaked Microsoft strategy framing Copilot as designed for "addictive" engagement](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924) — landing the same week Copilot transitions to usage-based billing AND suffers an outage. Practitioner discourse increasingly treats Microsoft AI strategy as adversarial: the [June 4 GitHub Copilot context-window and reasoning-level expansion](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/) and the [Copilot Agent Tasks REST API launch](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) — capability expansion bundled with billing-model change — are read by practitioners through the new "addictive" framing.
 
-Three additional within-window incidents reinforce the fragility theme: the June 3 [github.dev / vscode.dev 1-click GitHub OAuth token theft disclosure](https://news.ycombinator.com/item?id=48371562) whose HN thread pivoted instantly into LLM-agent push-permission and AI-harness supply-chain trust gaps (OpenCode, KiloCode, Zed cited for unprompted npm fetches); the June 1 [Meta AI Instagram social-engineering attack](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/) on an LLM-backed support workflow; and a sustained practitioner-side hardening push from [OpenAI Lockdown Mode](https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/) to Simon Willison's [MicroPython/WASM sandbox alpha](https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/) and [datasette-agent-edit 0.1a0](https://simonwillison.net/2026/Jun/7/datasette-agent-edit/) — extending `mcp-attack-surface` from protocol-vulnerability to systemic LLM-execution-boundary hardening.
+A consequential undercurrent: **cost-as-headcount reframing emerges in window**. [Abhishek Shankar's "The AI Coding Bill Is a Headcount Problem in Disguise"](https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem) and the Uber $1,500/employee cap together argue agentic AI spend is structurally a developer-equivalent budget line, not a tooling line. Reframes pricing pressure as org-design problem rather than vendor problem.
 
-Capability counter-narrative is thinner: the [Opus 4.8 quiet-competence side-by-side report](https://news.ycombinator.com/item?id=48362551), the MAI-Code-1-Flash bench-marketing, and [Computex 2026's pivot to "Agentic PC"](https://news.ycombinator.com/item?id=48428647) (Nvidia RTX Spark, Intel Xeon 6+, Nvidia OpenShell sandboxing) are the main capability anchors. [Simon Willison's "enthusiasts vs skeptics" framing](https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics/) captures the temperature: enthusiasts race against time, skeptics race against entropy.
+Capability counter-narrative is muted but present: [The New Stack's six-month Claude Code vs Cursor vs Codex vs Antigravity retrospective](https://thenewstack.io/claude-code-vs-cursor-vs-codex-vs-antigravity-2026/), the [Clay Nicholson "I made Claude Code 100x better and 40% more efficient" practitioner wrapper](https://claynicholson.com/blog/khlawde-code), the [Show HN: Lathe — LLMs to learn a domain, not skip past it](https://news.ycombinator.com/item?id=48433756) (363 pts — a deliberate counterweight to `cognitive-debt-deskilling`), and the [NBER working paper on productivity effects across generations of AI coding tools](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf) anchor the disciplined-adoption camp. [VentureBeat argues coding is no longer the bottleneck](https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering) — review, design, deployment, observability are.
 
-Sentiment composition shifts decisively: **SN spikes to ~24% (↑8 from E12's 16%)** on the Claude outage + four within-window incidents; **CN drops to ~31% (down from 43%)** as the headline shifts from steady-state critique to acute-incident SN; MA holds ~14%; CP slips to ~12% on Opus 4.8 quiet competence + MAI-Code-1-Flash launch.
+Sentiment composition shifts decisively: **SN spikes to ~24% (↑8 from E12's 16%)** on the dual outage + rsync regression + Microsoft "addictive" leak; **CN drops to ~31% (↓12 from 43%)** as the headline shifts from steady-state critique to acute fragility; MA holds ~14%; CP slips to ~12% on the disciplined-adoption camp's quieter signals.
 
-**Critical composition caveat (escalated regime — FIFTH consecutive window)**: zero Reddit, Bluesky, Mastodon Tier-1 yield. The sentiment record now structurally misses the largest practitioner-voice channel under Claude target tier assignments; the SN/CN spike must be read as analyst-publication-corpus-shifted, not as a primary-channel sentiment shift. Reddit was confirmed blocked at the crawler level (HTTP 400 on allowed_domains=['reddit.com']); the persistent zero on Bluesky/Mastodon traces to index lag and undated permalinks rather than vendor blocking.
+**Critical composition caveat (escalated regime — FIFTH consecutive window)**: Reddit remained fully blocked at the Chrome plugin safety layer (both navigation and cross-origin fetch refused). The supplemental Bluesky/Mastodon pass yielded 6 Bluesky items (Simon Willison ×3, Kelsey Hightower, fasterthanli.me ×2) and 1 Mastodon item (Dan Luu, off-topic). Tier-1 social coverage improved materially over the initial WebSearch-only pass but remains structurally short of the largest practitioner-voice channel.
 
-Signal-store reuse: 8 of 8 patterns this window reuse existing canonical slugs (`cost-runaway`, `agent-production-destruction`, `anthropic-trust-arc`, `vibe-coding-disreputed`, `mcp-attack-surface`, `cve-acceleration`, `stack-composition`) plus one new mint (`vendor-model-independence`). No slug renames.
+Signal-store reuse: 5 of 6 patterns this window reuse existing canonical slugs (`cost-runaway`, `anthropic-trust-arc`, `vibe-coding-disreputed`, `cognitive-debt-deskilling`, `stack-composition`) plus one new mint (`ai-as-infrastructure`). No slug renames.
 
 ---
 
@@ -66,258 +78,266 @@ Signal-store reuse: 8 of 8 patterns this window reuse existing canonical slugs (
 
 | Category | % | Direction | Drivers |
 |---|---|---|---|
-| Strongly Negative (SN) | ~24% | ↑8 | Claude June 5 outage; rsync regressions; github.dev token theft; Meta AI Instagram |
-| Cautiously Negative (CN) | ~31% | ↓12 | Cost concerns; vendor-trust gaps; CVE compounding warning |
-| Mixed / Ambivalent (MA) | ~14% | flat | Vendor-independence trade-offs; spec-driven adoption vs skeptic refusal |
-| Cautiously Positive (CP) | ~12% | flat | Opus 4.8 coding gain; MAI-Code-1-Flash bench claims; spec-driven productivity |
-| Strongly Positive (SP) | ~3% | flat | Few — datasette-agent-edit release; Claude Code config deep-dive enthusiasm |
-| Nuanced / Analytical (Nu) | ~16% | ↑2 | Simon Willison's enthusiasts-vs-skeptics framing; Computex hype debate |
-
+| Strongly Negative (SN) | ~24% | ↑8 | Microsoft Copilot June 1 outage; Claude June 2 outage; rsync regression incident; Microsoft "addictive" leak; fasterthanli.me Anthropic UX critique |
+| Cautiously Negative (CN) | ~31% | ↓12 | Copilot usage-based billing complaint vocabulary ("exploding", "bill came due"); HN slop tolerance; cost-as-headcount reframe |
+| Mixed / Ambivalent (MA) | ~14% | flat | Cursor price-cut + spend-controls direction; six-month tool-comparison retrospective; GPT-5.2 deprecation churn |
+| Cautiously Positive (CP) | ~12% | ↓4 | Cursor enterprise spend controls; Clay Nicholson wrapper; Show HN Lathe; Cost.dev YC launch |
+| Strongly Positive (SP) | ~3% | flat | Supabase $10.5B valuation (vibe-coding tailwind); Hyper YC launch (78 pts) |
+| Nuanced / Analytical (Nu) | ~16% | ↑2 | Wes McKinney terminological split; VentureBeat "coding no longer the bottleneck"; Theo "More Prompts = Worse Code?"; Kelsey Hightower "wrong thing" |
 
 ### Topic Cluster Frequency (mentions per item, multi-cluster allowed)
 
 | Cluster | Mentions | Dominant Sentiment | Direction vs E12 |
 |---|---|---|---|
-| Incidents / Failures | 14 | SN | ↑ (+3) |
-| Pricing / Cost | 12 | CN | ↑ (+1) |
-| Trust / Verification | 12 | CN | flat |
-| Dependency / Resilience | 11 | SN | ↑ (+3) |
-| Architectural Philosophy | 10 | Nu | flat (regression to MA→Nu) |
-| Code Quality | 9 | CN | ↓ (-9) |
-| Hype vs Reality | 8 | Nu | flat |
-| Productivity Reality | 6 | MA | ↓ (-8) |
-| Tool-Specific Issues | 5 | MA | ↓ (-2) |
-| Hiring / Junior Pipeline | 3 | MA | ↓ (-6) |
-| Enterprise / Policy | 2 | CN | ↓ (-5) |
+| Pricing / Cost | 14 | CN | ↑ (+3) |
+| Dependency / Resilience | 12 | SN | ↑ (+4) |
+| Incidents / Failures | 11 | SN | ↑ (+0; same mention count, different anchors) |
+| Architectural Philosophy | 10 | Nu | ↑ (+2) |
+| Tool-Specific Issues | 9 | MA | ↑ (+2) |
+| Trust / Verification | 8 | CN | ↓ (-4) |
+| Productivity Reality | 7 | Nu | ↑ (+1) |
+| Enterprise / Policy | 6 | CN | ↑ (+4) |
+| Code Quality | 5 | CN | ↓ (-4) |
+| Hype vs Reality | 4 | Nu | flat |
+| Job Security | 2 | MA | flat |
+| Learning & Skill Development | 1 | CP | ↓ (-1) |
 
-Notable shifts: Incidents/Failures and Dependency/Resilience both up sharply (driven by the Claude outage + three other within-window incidents); Code Quality, Productivity Reality, Hiring, and Enterprise/Policy all retreat as the analyst layer pivots to acute fragility from steady-state critique.
+Notable shifts: Pricing/Cost takes the top cluster slot for the first time since E8 — driven by the simultaneous Copilot and Cursor pricing actions. Dependency/Resilience and Incidents/Failures rise on the dual-outage week. Enterprise/Policy returns to the table (Uber cap, Copilot enterprise billing, GitHub Agent Tasks REST API).
 
 ### Tool Mention Breakdown
 
 | Tool | Negative | Mixed | Positive | Net |
 |---|---|---|---|---|
 | Claude / Claude Code | 6 | 3 | 2 | -4 |
-| Cursor | 2 | 0 | 0 | -2 |
-| Copilot | 1 | 2 | 1 | 0 |
+| Cursor | 2 | 2 | 1 | -1 |
+| Copilot | 6 | 4 | 2 | -4 |
 | ChatGPT / Codex | 0 | 2 | 1 | +1 |
-| MAI-Code-1-Flash | 0 | 1 | 2 | +2 |
-| OpenCode | 1 | 1 | 0 | -1 |
-| KiloCode | 1 | 0 | 0 | -1 |
-| Zed | 1 | 0 | 0 | -1 |
-| Meta AI | 1 | 0 | 0 | -1 |
-| Gemini / DeepSeek / Pi | 0 | 1 | 0 | 0 |
-| General AI / Multi | 4 | 4 | 1 | -3 |
+| OpenCode | 0 | 1 | 0 | 0 |
+| General AI / Multi | 4 | 6 | 3 | -1 |
 
-Claude/Claude Code's net-negative score is the highest negative absolute since E7 — driven entirely by the June 5 outage corpus (Thoughtworks postmortem + two X corroborations + Linux-desktop trust-gap HN thread + cross-tenant-leak rumor). MAI-Code-1-Flash debuts as net-positive on bench-marketing + vendor-independence positioning. Notably, the [Opus 4.8 side-by-side](https://news.ycombinator.com/item?id=48362551) reinforces that 4.7 was a regression — the capability narrative on Claude is bifurcated within the same week.
+Copilot's net-negative score equals Claude/Claude Code's this week — driven by the outage, the billing complaint, the "addictive" leak, and the GPT-5.2 deprecation churn. Cursor's score is materially better than Copilot's despite both being named in the cost-runaway discourse, reflecting the price-cut + spend-controls direction.
 
 ### Source Composition
 
 | Tier | Source Type | Items | Notes |
 |---|---|---|---|
-| Tier 1 | Hacker News | 10 | Front-page coverage; #1 + 399pt + 556pt items |
-| Tier 1 | Analyst blogs (Simon Willison, Martin Fowler, Thoughtworks) | 9 | High-credibility practitioner/analyst |
-| Tier 1 | Vendor primary (Microsoft AI, GitHub Changelog) | 3 | First-party announcements |
-| Tier 1 | News outlets (Bloomberg, TechCrunch, The Register) | 4 | Independent journalism |
-| Tier 1 | Reddit | 0 | **BLOCKED — fifth consecutive zero window** |
-| Tier 1 | Bluesky / Mastodon | 0 | **Zero — fifth consecutive zero window** |
-| Tier 1.5 | YouTube | 0 | No in-window match-verifiable items |
-| Tier 2 | X / Twitter | 2 | Best-effort outage corroboration |
-| Tier 2 | Podcasts (Syntax FM) | 2 | Show-level URLs only |
+| Tier 1 | Hacker News | 20 | Strong window — 510pt + 363pt + 78pt + 67pt items; "Show HN" / "Launch HN" / "Ask HN" diversity |
+| Tier 1 | Vendor primary (GitHub Blog, Microsoft AI, Anthropic Status) | 4 | First-party announcements |
+| Tier 1 | Analyst blogs / outlets (Thoughtworks, MotherDuck, Wes McKinney, CNBC, Kotaku/404 Media, The New Stack, Kilo.ai, TechRadar, Windows News, VentureBeat, Turingpost, NBER) | 11 | High-credibility independent voices; mix of practitioner, analyst, journalism, academic |
+| Tier 1 | Bluesky | 6 | **Restored** — Simon Willison ×3 (Uber cap, HN slop, MicroPython sandbox), Kelsey Hightower, fasterthanli.me ×2 (Anthropic UX, install footprint) |
+| Tier 1 | Mastodon | 1 | Dan Luu link-post (off-topic, ineligible for promotion) |
+| Tier 1 | Reddit | 0 | **BLOCKED — fifth consecutive zero window** (Chrome plugin safety layer refuses navigation AND cross-origin fetch) |
+| Tier 1.5 | YouTube (Theo - t3.gg) | 5 | 51k–65k view range; 1 same-day reaction (Anthropic); 1 explicit "More Prompts = Worse Code?" datum |
+| Tier 2 | Bluesky thread (Sentry sold Codecov to Harness) | 1 | Practitioner skepticism toward AI-devops consolidation |
 
-**Composition verdict**: this is an **analyst-publication-dominated extraction** — 16 of 35 items (46%) are individual-analyst blogs or news-outlet coverage, 10 (29%) are HN, and only 2 (6%) carry direct practitioner-voice from microblog channels. Fifth consecutive window with zero Reddit yield has hardened from "significant gap" to **structural regime**.
+**Composition verdict**: meaningful improvement over the initial pass — practitioner social presence rose from 0 to 6 Tier-1 items. Composition remains analyst-publication-dominated (16 of 37 items, 43%) but practitioner-voice exposure is no longer zero. Reddit absence persists as a structural regime; recommend config v1.9 demotion of Reddit to Tier 3 Manual for headless Claude runs.
 
 ---
 
 ## Deep Analysis by Cluster
 
-### Incidents / Failures (SN — ↑3) — the dominant cluster
+### Pricing / Cost (CN — ↑3, top cluster)
 
-The June 5 [Claude / Claude Code global outage](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) is the single most-load-bearing item this week. Per Thoughtworks editorial, a critical bug in Claude Code's sub-agent system caused sub-agents to multiply exponentially and run in an infinite loop, spiking token consumption such that "usage allowances meant to last hours or days were wiped out within minutes." Multi-service disruption affected Claude API, Claude Code CLI, claude.ai, and Cowork. [@The_Cyber_News on X](https://x.com/The_Cyber_News/status/2063084278372864441) corroborated elevated error rates across multiple frontier models and key services. [@kimmonismus on X](https://x.com/kimmonismus/status/2062997809067139468) posted the cross-tenant inference-leak rumor — that during the outage Claude's API may have returned another user's inference output — citing Anthropic's status page acknowledgment of elevated errors across API/Claude Code/claude.ai/Cowork while noting the customer-data leak claim is unconfirmed by Anthropic.
+The signature pricing event is the simultaneous Copilot billing restructure and Cursor price cut, separated by five days. [GitHub's June 1 announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) keeps headline prices (Pro $10, Pro+ $39, Business $19/user, Enterprise $39/user) but replaces bundled allotment with a monthly AI Credits pool; overage runs at listed per-model API rates. [Cursor's response per The New Stack](https://thenewstack.io/cursor-pricing-token-billing/) was to cut prices and add enterprise spend controls — opposite direction. The article's "tokenomics reckoning" framing is the most-quoted vocabulary in-window.
 
-Thoughtworks's framing is the strongest analyst statement of the week: "When an LLM provider goes down, internal dev velocity drops, support triage bots fall silent, and LLM-dependent data pipelines freeze." This is `agent-production-destruction`'s first vendor-side root-cause exemplar — distinct from PocketOS (Cursor + Claude Opus 4.6 in customer environment), Kiro (Amazon), Composio (third-party), and the May 14 Anthropic capacity outage (no root cause disclosed). The sub-agent runaway is the first time the vendor's own agent runtime has caused user-side resource exhaustion.
+[Simon Willison's report on Bluesky that Uber caps coding agents at $1,500/month per employee per tool](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) (136 likes, 15 reposts) is the first concrete enterprise spend cap in the public record this cycle. [Kilo.ai's "The GitHub Copilot Bill Came Due"](https://blog.kilo.ai/p/the-github-copilot-bill-came-due) codifies the engineering-leader response pattern ("predict, cap, alert"). [Ask HN: how to not break the bank with AI coding](https://news.ycombinator.com/item?id=48444008) shows the vocabulary ("pricing exploding") is the dominant practitioner complaint frame this week.
 
-The June 4 [rsync 3.4.3 backup-regression incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) is the contributor-norm exemplar. The Register reports that since rsync 3.4.1, dozens of commits have been attributed to "tridge and claude" (rsync creator Andrew Tridgell using Anthropic Claude). 3.4.3 introduced regressions; incremental backup workflows began failing for some users. A GitHub thread titled "Please Do Not Vibe Fuck Up This Software" surfaced community concern. Tridgell acknowledged the regressions, blamed gaps in the test suite, and plans to continue AI-assisted development through the security-focused 3.5 release. This is one of the highest-stakes critical-infrastructure tests of the `vibe-coding-disreputed` arc to date — rsync is broadly deployed in backup, replication, and CI/CD pipelines.
+[Show HN: Cost.dev (YC W21) — making agents cost-aware and cheaper to call](https://cost.dev/) (36 pts, 22 comments) is the tooling-side response: a category of startups targeting the agent-cost-predictability gap. The strong comment ratio shows practitioner interest in cost tooling as a distinct category.
 
-The June 3 [github.dev / vscode.dev 1-click GitHub token theft disclosure](https://news.ycombinator.com/item?id=48371562) (Ammar Askar writeup, MSRC silent-patched a prior report without credit) is significant not for the bug itself but for the HN comment thread's instant pivot to LLM-agent push-permission risk. OpenCode, KiloCode, and Zed were cited for downloading random npm packages in the background without prompting. Calls for per-repo scoped tokens and push-to-staging-only patterns for LLM agents were the dominant practitioner response.
+The cost-as-headcount reframe — [Abhishek Shankar's "The AI Coding Bill Is a Headcount Problem in Disguise"](https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem) — argues the new spend is consuming developer-equivalent budget, so the appropriate org response is headcount-class governance, not procurement-class. Uber's per-employee cap is the empirical anchor.
 
-The June 1 [Meta AI Instagram access via prompt engineering](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/) is the lowest-rigor source (Simon Willison link post) but most demonstrative: a social-engineering attack against an LLM-backed support workflow that yielded high-profile account compromise simply by asking the bot directly. Vulnerability is in the LLM-as-IAM-decision-maker design, not in any particular tool.
+### Dependency / Resilience (SN — ↑4)
 
-### Pricing / Cost (CN — ↑1)
+This cluster mirrors Incidents with an architectural framing. [Thoughtworks' "Reckoning with AI's increasing status as infrastructure"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) is the canonical statement: when an LLM provider goes down, internal dev velocity drops, support triage bots fall silent, LLM-dependent data pipelines freeze. The dual-outage 48-hour window — [Microsoft Copilot June 1](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) + [Claude June 2 per Anthropic Status](https://status.claude.com/) — provides the empirical anchor.
 
-The week's signature pricing event is the simultaneous landing of Uber's $1,500/tool/month employee cap and GitHub Copilot's June 1 transition to usage-based "AI Credits" billing. [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs) carries the primary Uber datum: $1,500/employee/per-tool/month cap on agentic coding software (Claude Code, Cursor) after Uber exhausted its full-year AI budget in four months. Some engineers were generating $500–$2,000/month in token consumption. Caps can be exceeded with permission; usage tracked via internal dashboard. [TechCrunch](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/) frames the shift as a reversal of Uber's earlier "use AI as much as possible" posture and internal leaderboard ranking. [Simon Willison](https://simonwillison.net/2026/Jun/3/uber-caps-usage/) adds practitioner framing.
+The [510-point HN front-page demand for an official Claude Desktop for Linux](https://news.ycombinator.com/item?id=48434436) reframes vendor-tool availability as an SRE concern rather than a productivity preference. The [@fasterthanli.me Bluesky thread about Claude redownloading 12GB Linux VMs](https://bsky.app/profile/fasterthanli.me/post/3mnjumq6yis2o) is the practitioner-side install-footprint critique that compounds the platform-parity complaint.
 
-The [GitHub Copilot AI Credits cutover](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/) is the structural shift: 1 AI credit = $0.01 USD; Pro includes $10/month, Pro+ $39/month, Business $19/user/month, Enterprise $39/user/month; usage calculated on token consumption (input + output + cached) at listed API rates per model. The MAI-Code-1-Flash positioning (60% fewer tokens than Claude Haiku 4.5 on SWE-Bench Verified) is the direct vendor counter-positioning to the cost-runaway narrative.
+### Incidents / Failures (SN — flat mention count, different anchors)
 
-This is the FinOps-formalization axis of `cost-runaway` from E12 hardening into a budget-cap axis. The signal has now traversed three phases: dev-tool-line-item complaint (E6-E8) → trust-failure dimension (E9-E10) → FinOps-formalization (E11-E12) → budget-cap inflection (E13). [Simon Willison's June 4 "enthusiasts vs skeptics" post](https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics/) captures the temperature without quantifying it.
+Four within-window incidents. The [Anthropic status page records the June 2 Opus 4.6 elevated-error incident](https://status.claude.com/): started 06:04 UTC, identified 06:39 UTC, fix monitored from 10:42 UTC, resolved 11:49 UTC. [TechRadar's Downdetector reporting](https://www.techradar.com/news/live/claude-outage-june-2026) records the user-facing impact distribution (60% Claude Chat, 24% mobile, 8% Claude Code).
 
-### Trust / Verification (CN — flat)
+The [Microsoft Copilot June 1 outage](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) — likely authentication failure — hit Office, Windows, and Visual Studio workflows on the exact day the usage-based billing transition took effect. The optics of an availability failure on a billing-cutover day amplifies the Microsoft trust deficit.
 
-Three trust axes compound. First, the cross-tenant inference-leak rumor (`anthropic-trust-arc`). Second, the [HN front-page Claude Desktop for Linux plea](https://news.ycombinator.com/item?id=48434436) — a non-trivial number of Claude users entrust credentials and local filesystem access to a third-party repackage (aaddrick/claude-desktop-debian) because Anthropic ships nothing official; the post notes the unofficial build is high-quality but security-relevant. Third, the [Opus 4.8 side-by-side](https://news.ycombinator.com/item?id=48362551) explicitly frames 4.7 as a regression that 4.8 partially recovers — practitioner-side acceptance that Anthropic ships imperfect frontier-model upgrades.
+The June 4 [rsync 'Please do not vibe f-- up this software'](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) incident is the OSS-maintainer policy exemplar: backups broke after AI-coded changes; community thread surfaced over accepting AI-generated patches.
 
-The Computex 2026 [Agentic PC framing](https://news.ycombinator.com/item?id=48428647) — Nvidia's Jensen Huang proclaimed "Agentic AI and useful AI have arrived" and announced RTX Spark; Intel pitched Xeon 6+ for agentic orchestration; Nvidia's OpenShell offers agent sandboxing — is treated by HN with hype-skepticism, classifying it under Nu rather than CP.
+The Microsoft "addictive" leak ([Kotaku coverage](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924)) is incident-class in trust terms even though no outage occurred — the leaked strategy frames product design as dark-pattern, which lands hard alongside the billing transition.
 
-### Dependency / Resilience (SN — ↑3)
+### Architectural Philosophy (Nu — ↑2)
 
-This cluster mirrors Incidents but with an architectural framing. The Thoughtworks framing "When an LLM provider goes down, internal dev velocity drops, support triage bots fall silent, and LLM-dependent data pipelines freeze" is the canonical statement. The [Microsoft MAI announcement](https://simonwillison.net/2026/Jun/2/microsofts-new-models/) and [GitHub Copilot integration](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/) provide the vendor-side response: reduce dependency on Anthropic/OpenAI frontier APIs by building in-house.
+The vibe-coding-vs-agentic-engineering split sharpens. [Wes McKinney's MotherDuck post](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/) is the explicit terminological codification. [VentureBeat's "Agentic AI solved coding and exposed every other problem in software engineering"](https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering) reframes the productivity discussion away from raw code-generation speed: review, design, deployment, observability are now the dominant friction.
 
-[Martin Fowler's Fragment](https://martinfowler.com/fragments/2026-06-02.html) reports a tracked codebase whose monthly security-bug-fix rate jumped from 17-31 (through 2025) to 423 in April 2026 — attributed to AI-assisted coding output volume — and cites Pavel Voronin on technical debt compounding when LLMs use existing code as context for future work. This is the technical-debt-compounding corollary to the AI-as-infrastructure framing.
+The [Launch HN for Hyper (YC P26)](https://news.ycombinator.com/item?id=48387095) — "company brain to power agentic development" — is the org-knowledge-for-agents pattern. The [Show HN for Lathe](https://news.ycombinator.com/item?id=48433756) — "Use LLMs to learn a new domain, not skip past it" (363 points) — is the explicit counter-design to `cognitive-debt-deskilling`. Both gained substantial HN engagement, suggesting practitioner appetite for shape-shifting the agent surface beyond raw code synthesis.
 
+[Theo's "I miss when programmers were lazy"](https://www.youtube.com/watch?v=iN_9aH3VuzU) (51k views) reads as cultural commentary on the agentic-over-eagerness shift. [Theo's "More Prompts = Worse Code?"](https://www.youtube.com/watch?v=WnBx1Vi7M6w) (65k views) directly challenges the "more agent turns = better" assumption. [Theo's "This might be a Hot Take"](https://www.youtube.com/watch?v=rTMRlqT8Q8c) (57k views) is the lower-rigor cultural-temperature signal.
 
-### Architectural Philosophy (Nu — flat)
+### Tool-Specific Issues (MA — ↑2)
 
-The [June 6 HN dev-stack thread](https://news.ycombinator.com/item?id=48413629) is the canonical capture of this cluster. Spec-driven development is now mainstream; "sword and shield" (Claude Code writes, Codex reviews — or vice-versa) is named explicitly; OpenCode + multi-agent harnesses appear repeatedly; Anthropic's Max plan is named "the cheapest serious option for sustained use." Skepticism from a security-firm lead who hand-codes by policy and from a developer who refuses to use AI tools at all is also represented.
+[The New Stack's six-month retrospective](https://thenewstack.io/claude-code-vs-cursor-vs-codex-vs-antigravity-2026/) is the canonical four-way tool comparison this window. [Clay Nicholson's "I made Claude Code 100x better and 40% more efficient"](https://claynicholson.com/blog/khlawde-code) is the practitioner-wrapper response — prompt/context engineering as the efficiency lever, not the underlying model. The [GitHub Copilot June 4 context-window + reasoning-level expansion](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/) and the [Copilot Agent Tasks REST API GA](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) are the vendor-side capability advances bundled with the billing-model change. [The June 5 GPT-5.2 + GPT-5.2-Codex deprecation in Copilot](https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/) creates pin-to-version workflow churn for enterprises.
 
-The [Claude Code config deep-dive](https://news.ycombinator.com/item?id=48318174) — hit #1 on HN with 556 points and spawned downstream YouTube tutorials within 48 hours — demonstrates the practitioner appetite for power-user knobs on the dominant CLI agent. The configuration surface (.claude/ folder anatomy, hooks, skills, cloud sessions) is itself becoming a stack-composition lever.
+[Theo's "I didn't expect this from Anthropic" same-day reaction video](https://www.youtube.com/watch?v=xjucOlb_mFM) was published ~4 hours before extraction; transcript review pending but likely covers the Copilot pricing fallout's competitive implications. [Theo's "Cloudflare bought Vite to destroy Vercel"](https://www.youtube.com/watch?v=n2YtM-MecZk) (62k views in 1 day) is the deployment-platform-war signal adjacent to AI coding ecosystem.
 
-[Simon Willison's datasette-agent-edit 0.1a0 release](https://simonwillison.net/2026/Jun/7/datasette-agent-edit/) — storage-agnostic file-editing tools (view / str_replace / insert) for Datasette Agent plugins — is the small-tool-agent-surface exemplar that practitioners are building atop Claude/ChatGPT. [Simon Willison's MicroPython/WASM sandbox alpha](https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/) is the execution-boundary hardening exemplar; the note that "GPT-5.5 has so far failed to break out of the sandbox" is the practitioner-grade hardening data point.
+### Trust / Verification (CN — ↓4)
 
-[Anthropic's Project Glasswing expansion](https://news.ycombinator.com/item?id=48369863) — limited cybersecurity rollout of pre-release Claude Mythos-class models — is the vendor-side architectural counter; HN discussion centered on management treating cybersecurity as a "black box of liability" vs the pressure to keep pace with AI-generated code volume.
+Trust signals compound around two vendors. Microsoft: the [June 1 Copilot outage](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251), the [billing-model change](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), and the [Kotaku "addictive" leak](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924) compound. The [GitHub CPO interview at Turingpost](https://www.turingpost.com/p/mario-rodriguez-github-ai-coding-agents-copilot) is the vendor-side framing — directionally optimistic but landing into the trust deficit.
 
-### Code Quality (CN — ↓9)
+Anthropic: the [June 2 outage](https://status.claude.com/), the [Linux desktop trust gap](https://news.ycombinator.com/item?id=48434436), and the [fasterthanli.me UX critique](https://bsky.app/profile/fasterthanli.me/post/3mnelaurqak2c) compound `anthropic-trust-arc` without escalating it to incident class.
 
-The cluster retreats sharply in mention count because the week's quality conversation is dominated by infrastructure-class events (outage, regression incident) rather than steady-state quality complaints. The [Martin Fowler fragment](https://martinfowler.com/fragments/2026-06-02.html) is the heaviest individual datum: 14-25x security-bug-volume jump in a tracked AI-assisted codebase. [The Register on rsync](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) carries the contributor-norm story. [Opus 4.8 side-by-side](https://news.ycombinator.com/item?id=48362551) is the lone CP-leaning datum.
+[Simon Willison's "HN tolerance for slop content"](https://bsky.app/profile/simonwillison.net/post/3mna77rupi22d) is a meta-trust signal: the discovery layer for technical content is degrading under AI-generated noise, with HN's "don't accuse" social norm preventing immune-system formation.
 
-### Productivity Reality (MA — ↓8)
+### Productivity Reality (Nu — ↑1)
 
-The cluster compresses further as productivity-survey discourse (the dominant E12 theme via Pragmatic Engineer 2026) takes a one-week pause. The [HN dev-stack thread](https://news.ycombinator.com/item?id=48413629) gives a soft-MA reading: practitioners report productivity-positive workflows (spec-driven, sword-and-shield) alongside skeptic refusal. The [HN Who Wants/Is Hiring threads](https://news.ycombinator.com/item?id=48357724) and [Who Is Hiring](https://news.ycombinator.com/item?id=48357725) provide a labor-market signal: by June 2026 nearly every active dev posting touts AI-tool fluency (Claude Code, Cursor, Codex) and "spec-driven" or "multi-agent" workflows as a default qualification — but this is structural, not productivity-causal.
+[The NBER working paper "Productivity Effects Across Generations of AI Coding Tools"](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf) is the academic-grade datum of the window. [VentureBeat's framing](https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering) — coding is no longer the bottleneck — is the high-rigor practitioner take. [Kelsey Hightower's "Productivity doesn't matter if you're working on the wrong thing"](https://bsky.app/profile/kelseyhightower.com/post/3mnhyaaceqk2v) (321 likes, 79 reposts) is the cultural-temperature signal, tangentially adjacent to AI productivity discourse but well above promotion threshold. [Dan Luu's Mastodon link to "Exercises in benchmarking, evals, and experimental design pt6"](https://mastodon.social/@danluu/116712018386793072) is below promotion threshold but worth tracking.
+
+### Enterprise / Policy (CN — ↑4)
+
+[Uber's $1,500/employee/per-tool/month cap](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) is the headline policy datum. The [Copilot enterprise-tier billing detail](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) and [Agent Tasks REST API GA](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) reset the enterprise-platform expectations.
+
+### Code Quality (CN — ↓4)
+
+The cluster retreats sharply because the week's quality conversation is dominated by infrastructure-class events. The [rsync regression incident](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) is the heaviest quality datum, framed as contributor-norm rather than defect-rate. Simon Willison's HN-slop-tolerance note ([Bluesky](https://bsky.app/profile/simonwillison.net/post/3mna77rupi22d)) is the discovery-layer quality signal.
 
 ### Hype vs Reality (Nu — flat)
 
-[Simon Willison's enthusiasts-vs-skeptics framing](https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics/) — "AI enthusiasts are in a race against time, AI skeptics are in a race against entropy" — is the canonical practitioner statement of the temperature. The [Computex 2026 Agentic PC](https://news.ycombinator.com/item?id=48428647) coverage gets HN hype-skepticism treatment.
+The [Supabase $10.5B valuation tied explicitly to a 'vibe-coding tailwind'](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html) is the strongest hype-side counterweight to the cautionary discourse. The [Show HN: Lathe](https://news.ycombinator.com/item?id=48433756) (363 pts — well above the Hyper Launch HN's 78) is the deliberate counter-design framing.
 
-The [HN remote-working-not-AI post](https://news.ycombinator.com/item?id=48326721) is the most direct counter-narrative to a dominant signal: it argues the junior-hiring collapse is driven by post-ZIRP layoffs and manager incentives, not by AI substitution. This becomes the basis for the "Newly Contested" contradiction below.
+### Job Security / Hiring (MA — flat)
 
-### Tool-Specific Issues (MA — ↓2)
+Mostly absent from the window. The [Turingpost interview with GitHub's CPO](https://www.turingpost.com/p/mario-rodriguez-github-ai-coding-agents-copilot) touches macro-delegation framing but does not move the cluster.
 
-[Opus 4.8 vs 4.5 vs 4.7](https://news.ycombinator.com/item?id=48362551) is the within-window tool-specific anchor. [Cursor + Claude Code as named caps](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs) reinforces both tools as the cost-runaway exemplars at scale. MAI-Code-1-Flash's [vendor announcement](https://microsoft.ai/news/introducingmai-code-1-flash/) and [Copilot integration](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/) introduce a new tool entrant.
+### Learning & Skill Development (CP — ↓1)
 
-### Hiring / Junior Pipeline (MA — ↓6)
-
-The cluster collapses by 6 mentions; the [HN remote-vs-AI counter-narrative](https://news.ycombinator.com/item?id=48326721) is the only direct stress on the junior-pipeline-collapse signal this week. The [Who Wants/Is Hiring](https://news.ycombinator.com/item?id=48357724) [threads](https://news.ycombinator.com/item?id=48357725) provide labor-market texture: AI-tool fluency as default qualification.
-
-### Enterprise / Policy (CN — ↓5)
-
-The [Uber cap](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs) [coverage](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/) is the only enterprise-policy-class item this week. The collapse from E12's 7 mentions to E13's 2 reflects the absence of new GHACP / control-plane / governance items in the window.
+Single but strong: [Show HN: Lathe](https://news.ycombinator.com/item?id=48433756) — explicit "LLMs to learn a new domain, not skip past it" framing. Strong upvote/comment ratio (363 pts, 65 comments) indicates broad practitioner resonance with the "AI as tutor, not crutch" framing.
 
 ---
 
 ## Emerging Patterns & Weak Signals
 
-### 1. `cost-runaway` reaches budget-cap inflection (Promoted | H confidence)
+### Pattern 1 — Sector-wide tokenomics reckoning (cost-runaway evolves)
 
-**Why it matters**: The signal has now traversed dev-tool-line-item complaint → trust-failure dimension → FinOps-formalization → budget-cap inflection in four windows. The Uber datum (annual budget exhausted in four months; $1,500/tool/month per-employee cap) is the first published vendor-side budget-cap policy at scale. Copilot's June 1 AI Credits cutover is the platform-side companion: usage-based billing replacing seat-based across all plans.
+GitHub Copilot moved to usage-based billing June 1; by June 6 Cursor responded by CUTTING prices and adding enterprise spend controls. Two of the four dominant agentic IDE vendors restructured billing in the same week, in opposite directions. Practitioner vocabulary converged: "exploding", "bill came due", "tokenomics reckoning." Uber's $1,500/employee/per-tool/month cap is the first concrete enterprise spend cap.
 
-**Sources**: [Bloomberg primary](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs); [TechCrunch corroboration](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/); [Simon Willison framing](https://simonwillison.net/2026/Jun/3/uber-caps-usage/); [GitHub Changelog AI Credits](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/).
+**Sources:** [GitHub Copilot usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) · [The New Stack: Cursor cuts prices, tokenomics reckoning](https://thenewstack.io/cursor-pricing-token-billing/) · [Simon Willison: Uber $1,500/mo cap](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) · [Kilo.ai: The Copilot Bill Came Due](https://blog.kilo.ai/p/the-github-copilot-bill-came-due) · [Ask HN: Copilot pricing exploding](https://news.ycombinator.com/item?id=48444008) · [Show HN: Cost.dev](https://cost.dev/)
 
-**What to watch in E14**: post-cutover practitioner reaction; second vendor-side budget-cap policy; vendor (Anthropic, Cursor) response to Uber narrative; Anthropic subscription split June 15 aftermath.
+**Confidence**: High. Signal slug: `cost-runaway` (reused).
 
-### 2. `agent-production-destruction` adds first vendor-side root-cause exemplar (Promoted | H confidence)
+### Pattern 2 — AI coding tools cross into infrastructure status (NEW signal: ai-as-infrastructure)
 
-**Why it matters**: The Claude Code sub-agent infinite-loop bug is qualitatively distinct from the four prior exemplars (PocketOS, Kiro, Composio, May 14 Anthropic outage). PocketOS/Kiro/Composio were customer-side runaways; May 14 was a capacity/availability event with no disclosed root cause. The June 5 event is the first vendor-side runaway with a disclosed agent-architecture root cause (sub-agent multiplication loop) that wiped user resources within minutes.
+Microsoft Copilot June 1 outage + Anthropic Claude June 2 outage land within 48 hours. Thoughtworks frames the conclusion directly. Practitioner response — 510-point HN demand for a Linux Claude Desktop — reframes vendor-tool availability as an SRE concern. fasterthanli.me's install-footprint critique compounds the platform-parity complaint.
 
-**Sources**: [Thoughtworks postmortem](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026); [Cyber Security News on X](https://x.com/The_Cyber_News/status/2063084278372864441); [kimmonismus cross-tenant-leak rumor on X](https://x.com/kimmonismus/status/2062997809067139468).
+**Sources:** [Thoughtworks: AI's increasing status as infrastructure](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) · [Anthropic Status — Opus 4.6 incident](https://status.claude.com/) · [TechRadar: Claude outage live coverage](https://www.techradar.com/news/live/claude-outage-june-2026) · [Microsoft Copilot outage June 1](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) · [HN: Claude Desktop for Linux (510 pts)](https://news.ycombinator.com/item?id=48434436) · [@fasterthanli.me: Claude install footprint](https://bsky.app/profile/fasterthanli.me/post/3mnjumq6yis2o)
 
-**What to watch in E14**: Anthropic public post-mortem (if published, vendor-side root-cause-confirmed; if not, degrades to availability anecdote); cross-tenant inference-leak claim verification.
+**Confidence**: High. Signal slug: `ai-as-infrastructure` (NEW).
 
-### 3. `anthropic-trust-arc` compounds — outage + leak rumor + missing-Linux-desktop gap (Promoted | H confidence)
+### Pattern 3 — Vibe-coding-vs-agentic-engineering vocabulary hardens with both cautionary tale and legitimization counterweight
 
-**Why it matters**: Three trust axes hit simultaneously: (1) the sub-agent-runaway outage with its resource-exhaustion impact; (2) the unconfirmed cross-tenant inference-leak rumor that — if confirmed — would be the most severe trust event in the arc; (3) the HN front-page plea revealing that a non-trivial number of Claude users entrust credentials and filesystem access to a third-party Linux repackage because Anthropic ships nothing official. [Opus 4.8 vs 4.5 vs 4.7](https://news.ycombinator.com/item?id=48362551) adds a fourth, lower-stakes axis: 4.7 was a regression.
+Wes McKinney's June 5 MotherDuck post explicitly codifies the split. The June 4 rsync incident provides the concrete cautionary tale; the June 4 Supabase $10.5B valuation provides the legitimization-via-capital counterweight. The discourse moves from "is vibe coding good or bad" to "which slot of the methodology lives where."
 
-**Sources**: [Thoughtworks](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026); [kimmonismus on X](https://x.com/kimmonismus/status/2062997809067139468); [HN Linux Desktop](https://news.ycombinator.com/item?id=48434436); [Opus 4.8 HN](https://news.ycombinator.com/item?id=48362551).
+**Sources:** [Wes McKinney: Vibe Coding Dangerous, Agentic Engineering Isn't](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/) · [The Register: rsync vibe-coding row](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) · [CNBC: Supabase $10.5B 'vibe-coding tailwind'](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html)
 
-**What to watch in E14**: cross-tenant-leak confirm/deny; Anthropic Linux Desktop announcement (if any); Anthropic subscription split aftermath.
+**Confidence**: High. Signal slug: `vibe-coding-disreputed` (reused; refines toward terminological-bifurcation).
 
-### 4. `vendor-model-independence` — NEW SIGNAL (Tracking | H confidence)
+### Pattern 4 — Cost-as-headcount framing emerges
 
-**Why it matters**: Microsoft's launch of MAI-Code-1-Flash (5B, 256K context, no OpenAI/Anthropic distillation, trained on commercially licensed data) and its immediate roll into Copilot signals a strategic hyperscaler pivot toward AI-coding-layer model independence. The bench-marketing language (SWE-Bench Pro +16-point lead vs Claude Haiku 4.5's 35.2%; 60% fewer tokens on SWE-Bench Verified) is the dominant comparison axis. The companion MAI-Thinking-1 (1T parameters, 35B active) covers reasoning. This is the first hyperscaler publicly stating "no distillation from frontier labs" as a deliberate posture.
+Two independent practitioner pieces argue the Copilot/Cursor cost spike is structurally a headcount expansion. Reframes pricing pressure as org-design problem rather than vendor-pricing problem. Uber's $1,500/mo/employee cap is the empirical anchor — a per-employee budget line, not a per-license line.
 
-**Sources**: [Microsoft AI primary](https://microsoft.ai/news/introducingmai-code-1-flash/); [GitHub Copilot integration](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/); [Simon Willison on MAI](https://simonwillison.net/2026/Jun/2/microsofts-new-models/).
+**Sources:** [Abhishek Shankar: AI Coding Bill Is a Headcount Problem](https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem) · [Simon Willison on Uber's $1,500/mo per-tool cap](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n)
 
-**Slug rationale**: Short topic-level slug (per v1.17 convention). Captures the abstract topic — hyperscaler reducing dependence on frontier-lab APIs for AI coding — not the per-window framing.
+**Confidence**: Medium. Signal slug: `cost-runaway` (reused — this is a new axis of the same signal).
 
-**What to watch in E14**: third-party SWE-Bench Pro verification of Microsoft's +16-point claim; Google Gemini Code Assist / AWS Q vendor responses on training-data provenance.
+### Pattern 5 — Microsoft vendor-trust deficit compounding
 
-### 5. `vibe-coding-disreputed` consolidates with rsync critical-infra exemplar (Promoted | H confidence)
+Kotaku/404 Media reported a leaked Microsoft strategy framing Copilot as designed for "addictive" engagement. Lands the same week Copilot transitions to usage-based billing AND suffers an outage. The capability expansion (larger context windows, configurable reasoning levels, Agent Tasks REST API) — bundled with the billing change — is increasingly read through the new "addictive" framing.
 
-**Why it matters**: The rsync incident is the strongest critical-infrastructure case to date — rsync is broadly deployed in backup, replication, CI/CD. The community framing "Please Do Not Vibe Fuck Up This Software" is one of the sharpest contributor-norm statements yet. Tridgell's response (acknowledge regressions, blame test-suite gaps, continue AI-assisted dev through 3.5) creates the load-bearing test: does the contributor-norm crystallize around "AI-assisted critical-infra commits are acceptable IF the test suite catches regressions"?
+**Sources:** [Microsoft 'addictive' Copilot framing (Kotaku)](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924) · [Copilot usage-based billing transition](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) · [Microsoft Copilot outage June 1](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) · [Copilot context + reasoning expansion](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/) · [Copilot Agent Tasks REST API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) · [GPT-5.2 deprecated in Copilot](https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/)
 
-**Sources**: [The Register](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189); [HN dev-stack thread](https://news.ycombinator.com/item?id=48413629); [Martin Fowler Fragment](https://martinfowler.com/fragments/2026-06-02.html).
+**Confidence**: Medium. Signal slug: `anthropic-trust-arc` is Anthropic-specific; this pattern is best tracked under a (future-mintable) `microsoft-trust-arc` slug. Held this window — single-vendor consolidation pending second confirming window.
 
-**What to watch in E14**: rsync 3.5 release outcome (security-focused) and whether community accepts the testing-gap framing; further critical-infra projects publishing AI-assisted-contribution policies.
+### Pattern 6 — Disciplined-adoption counter-camp gains coherence
 
-### 6. `mcp-attack-surface` extends to systemic LLM-execution-boundary hardening (Promoted | M confidence)
+[Show HN: Lathe](https://news.ycombinator.com/item?id=48433756) (363 pts, "LLMs to learn a domain, not skip past it"), [Launch HN: Hyper](https://news.ycombinator.com/item?id=48387095) (78 pts, org-knowledge for agents), the [NBER productivity working paper](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf), [VentureBeat's "coding no longer the bottleneck" piece](https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering), and [Clay Nicholson's Claude Code wrapper](https://claynicholson.com/blog/khlawde-code) collectively describe a "disciplined-adoption camp" with shared tooling, methodology, and benchmark-rigor preferences distinct from both the vibe-coding camp and the AI-skeptic camp.
 
-**Why it matters**: Within a single week, four execution-boundary-hardening artifacts appeared: [OpenAI Lockdown Mode](https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/) (outbound network restriction to break exfiltration), Simon Willison's [MicroPython/WASM sandbox alpha](https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/) (model-generated code sandbox with GPT-5.5 hardening tested), the [Meta AI Instagram social-engineering attack](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/) (prompt-injection-as-IAM), and the [github.dev OAuth token theft thread's pivot to LLM-agent push-permission risk](https://news.ycombinator.com/item?id=48371562). The pattern: practitioners are explicitly hardening LLM execution boundaries as agentic systems gain network and tool access.
+**Sources:** above + [Theo: More Prompts = Worse Code?](https://www.youtube.com/watch?v=WnBx1Vi7M6w) · [Theo: I miss when programmers were lazy](https://www.youtube.com/watch?v=iN_9aH3VuzU)
 
-**Sources**: above four.
-
-**What to watch in E14**: third-party adoption of Lockdown Mode-equivalent patterns by other vendors; per-repo scoped-token adoption in LLM-agent harnesses (OpenCode, KiloCode, Zed responses).
-
-### 7. `cve-acceleration` — Martin Fowler 14-25x security-bug-volume datum (Promoted | M confidence)
-
-**Why it matters**: Single in-window analyst-blog datum, but a sharp quantification — a tracked codebase that fixed 17-31 security bugs per month through 2025 fixed 423 in April 2026. [Martin Fowler](https://martinfowler.com/fragments/2026-06-02.html) attributes the jump to AI-assisted coding output volume and cites Pavel Voronin on technical-debt compounding when LLMs use existing code as context for future work. M-confidence because single-source; the rsync incident provides a critical-infrastructure corollary but not independent quantification.
-
-**Sources**: [Martin Fowler](https://martinfowler.com/fragments/2026-06-02.html); [The Register on rsync](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189).
-
-### 8. `stack-composition` adds "sword and shield" paired-agent pattern (Promoted | M confidence)
-
-**Why it matters**: The HN dev-stack thread names the paired-agent pattern explicitly: Claude Code writes, Codex reviews (or vice versa). Anthropic's Max plan is named "the cheapest serious option for sustained use." OpenCode + multi-agent harnesses appear repeatedly. The [Claude Code config deep-dive](https://news.ycombinator.com/item?id=48318174) hitting #1 on HN at 556 points reinforces stack-composition as where practitioner attention concentrates.
-
-**Sources**: [HN dev-stack thread](https://news.ycombinator.com/item?id=48413629); [HN Claude Code config deep-dive](https://news.ycombinator.com/item?id=48318174).
+**Confidence**: Medium. Signal slugs: `stack-composition` (reused) + `cognitive-debt-deskilling` (reused, counter-axis).
 
 ---
 
 ## Contradictions & Contested Claims
 
-| Claim | Assessment | Supporting | Contradicting |
-|---|---|---|---|
-| AI coding tools deliver net productivity gains at sustainable cost | **Tilting Negative** | [Opus 4.8 quality gain](https://news.ycombinator.com/item?id=48362551); [Claude Code config interest](https://news.ycombinator.com/item?id=48318174); [HN dev-stack productivity workflows](https://news.ycombinator.com/item?id=48413629) | [Bloomberg Uber cap](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs); [TechCrunch Uber](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/); [Copilot AI Credits](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/); [Simon Willison Uber framing](https://simonwillison.net/2026/Jun/3/uber-caps-usage/) |
-| AI-assisted code in critical infrastructure is acceptable when expert-supervised | **Contested** | [Opus 4.8 side-by-side](https://news.ycombinator.com/item?id=48362551) (capability available); Tridgell's continued AI-assisted rsync dev posture | [The Register on rsync](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189); [Martin Fowler 14-25x bugs](https://martinfowler.com/fragments/2026-06-02.html) |
-| AI coding tools and providers are reliable enough for load-bearing production use | **Tilting Negative** | [Claude Code config power-user enthusiasm](https://news.ycombinator.com/item?id=48318174) | [Thoughtworks on Claude outage](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026); [X outage corroboration](https://x.com/The_Cyber_News/status/2063084278372864441); [X cross-tenant rumor](https://x.com/kimmonismus/status/2062997809067139468); [OpenAI Lockdown Mode hardening signal](https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/) |
-| Coding-AI vendor lock-in is acceptable because frontier-lab APIs are the only credible option | **Resolved Negative** | (none in-window) | [Microsoft MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/); [Copilot integration](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/); [Simon Willison on MAI](https://simonwillison.net/2026/Jun/2/microsofts-new-models/) |
-| Junior hiring collapse is driven by AI substitution rather than macro-economic conditions | **Newly Contested** | [HN Who Wants Hired June 2026](https://news.ycombinator.com/item?id=48357724); [HN Who Is Hiring June 2026](https://news.ycombinator.com/item?id=48357725) (AI fluency as default qualification) | [HN: remote working, not AI, may be the cause](https://news.ycombinator.com/item?id=48326721) |
+### Claim: "AI coding tools deliver net productivity gains at sustainable cost"
 
-**Contested-claim notes**: the "Tilting Negative" assessment on productivity-vs-cost is the strongest contradiction movement of the week — Uber's empirical four-month-budget-burn is a hard-to-explain-away datum for the maximalist productivity narrative. The "Resolved Negative" on vendor lock-in is the cleanest single-window resolution: Microsoft's no-distillation positioning + immediate Copilot integration + Simon Willison's catalog of both MAI models in one post is a coherent vendor-independence pattern with no in-window opposing claim. The "Newly Contested" on junior hiring is the freshest counter-narrative: [HN's remote-working-not-AI thread](https://news.ycombinator.com/item?id=48326721) reframes the collapse as post-ZIRP layoffs and manager incentives, putting genuine pressure on `junior-pipeline-collapse`'s causal claim (though not on the underlying empirical collapse).
+**Assessment: Tilting Negative** — the cost evidence has hardened materially.
+
+- **Supporting**: [Clay Nicholson 100x wrapper claim](https://claynicholson.com/blog/khlawde-code) · [The New Stack 6-month four-tool retrospective](https://thenewstack.io/claude-code-vs-cursor-vs-codex-vs-antigravity-2026/) · [Show HN: Cost.dev YC W21](https://cost.dev/) (problem statement validation) · [Turingpost: GitHub CPO macro-delegation](https://www.turingpost.com/p/mario-rodriguez-github-ai-coding-agents-copilot)
+- **Contradicting**: [Simon Willison: Uber $1,500/mo cap](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) · [Copilot moves to usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) · [Cursor cuts prices + adds spend controls](https://thenewstack.io/cursor-pricing-token-billing/) · [Kilo.ai: The Copilot Bill Came Due](https://blog.kilo.ai/p/the-github-copilot-bill-came-due) · [Abhishek Shankar: AI Coding Bill is Headcount Problem](https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem) · [Ask HN: Copilot pricing exploding](https://news.ycombinator.com/item?id=48444008)
+
+### Claim: "AI-assisted code in critical infrastructure is acceptable when expert-supervised"
+
+**Assessment: Contested** — both sides have a high-credibility datum in window.
+
+- **Supporting**: [Wes McKinney's disciplined-agentic-engineering framing](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/) · [Show HN: Lathe — LLM as tutor](https://news.ycombinator.com/item?id=48433756)
+- **Contradicting**: [The Register: rsync 'Please do not vibe f-- up'](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189)
+
+### Claim: "AI coding tools and their providers are reliable enough for load-bearing production use"
+
+**Assessment: Tilting Negative** — dual outage week.
+
+- **Supporting**: [Clay Nicholson: Claude Code wrapper claim](https://claynicholson.com/blog/khlawde-code)
+- **Contradicting**: [Thoughtworks: AI as infrastructure](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) · [Anthropic Status: Opus 4.6 incident](https://status.claude.com/) · [TechRadar: Claude outage](https://www.techradar.com/news/live/claude-outage-june-2026) · [Microsoft Copilot outage June 1](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) · [HN: Linux Claude Desktop demand](https://news.ycombinator.com/item?id=48434436)
+
+### Claim: "Vibe coding is uniformly dangerous"
+
+**Assessment: Newly Contested** — the legitimization counterweight is empirical (capital).
+
+- **Supporting**: [The Register: rsync row](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) · [Wes McKinney terminology](https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/)
+- **Contradicting**: [CNBC: Supabase $10.5B 'vibe-coding tailwind'](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html)
+
+### Claim: "Microsoft AI product strategy operates in users' interests"
+
+**Assessment: Tilting Negative** — multi-axis trust deficit.
+
+- **Supporting**: [Copilot context + reasoning expansion](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/) · [Copilot Agent Tasks REST API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/) · [Turingpost: GitHub CPO interview](https://www.turingpost.com/p/mario-rodriguez-github-ai-coding-agents-copilot)
+- **Contradicting**: [Kotaku: Microsoft 'addictive' framing leak](https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924) · [Microsoft Copilot June 1 outage on billing-cutover day](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) · [Copilot usage-based billing complaint vocabulary](https://news.ycombinator.com/item?id=48444008) · [GPT-5.2 deprecation churn](https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/)
 
 ---
 
 ## Gaps & Uncertainties
 
-- **Reddit Tier-1 absent (FIFTH consecutive window)** — Anthropic crawler blocked from reddit.com; HTTP 400 on `allowed_domains=['reddit.com']`; `site:reddit.com` queries returned no results. The largest practitioner-voice channel under Claude target tier assignments is structurally missing. Composition risk has hardened from "significant" to **regime**.
-- **Bluesky / Mastodon Tier-1 zero (FIFTH consecutive window)** — Tier-1 social platforms returned zero verifiable in-window items via WebSearch. Index lag and undated permalinks make narrow date-bounded search ineffective; both platforms remain in the structural-gap category.
-- **YouTube Tier-1.5 zero** — ThePrimeagen / theo / fireship channels not match-verifiable to Jun 1-8 window without risking fabrication. ThePrimeagen's "Claude's New Plans Is a Trap" video on the June 15 subscription split appears to predate the window.
-- **Anthropic post-mortem for June 5 Claude Code sub-agent runaway**: not published in-window; Thoughtworks editorial is the best secondary. The cross-tenant inference-leak rumor on X is unconfirmed by Anthropic — Anthropic's status page confirmed elevated errors but has not addressed the leak claim.
-- **GitHub Copilot AI Credits post-cutover sentiment shock**: usage-based billing went live June 1, but practitioner reaction data lags by 1-2 weeks. E13 captures the cutover landing; E14 will be the first window with material practitioner-side reaction.
-- **Uber-tier vendor responses**: Cursor official blog, Anthropic official acknowledgement of the $1,500/mo cap narrative not retrieved in-window. Vendor pricing-narrative-response is the natural E14 follow-up.
-- **arXiv June 2026 papers** on AI-developer interaction or productivity measurement not retrieved — should be next-week manual review.
-- **Anthropic Mythos / Project Glasswing technical detail**: vendor post only; no third-party benchmark or customer disclosure.
-- **rsync 3.4.3 quantified blast radius**: regression count and affected-user count not retrieved beyond "incremental backup workflows broken" — important for severity calibration on the most consequential vibe-coding-disreputed exemplar to date.
-- **Anthropic subscription-split anticipation (June 15)**: high topical activity flagged in extraction `below_threshold` queue; isolated single-source signal this week, moved to E14 watch.
+- **Reddit Tier-1 absent (FIFTH consecutive window)**: Chrome plugin safety layer refuses www.reddit.com navigation AND cross-origin fetch. Hard block, not a search-syntax issue. Recommend config v1.9 demotion of Reddit to Tier 3 Manual for headless Claude runs, or invoke flipboard-extraction-style interactive Chrome pattern.
+- **Mastodon yield very low**: 1 in-window item, off-topic. Federated server discovery is the bottleneck (not API access). Need broader handle list including hachyderm.io accounts for Kent C. Dodds, Glyph, etc.
+- **YouTube depth shallow**: ThePrimeagen had 1 non-AI upload; Fireship had no in-window uploads. Theo - t3.gg dominated the YouTube slot (5 of 5 items).
+- **X / Twitter not attempted this pass**: Chrome plugin safety likely blocks; would need fxtwitter.com / nitter proxy fallback strategy.
+- **Anthropic post-mortem for June 2 Claude outage**: not published in-window — Anthropic Status timeline only. Thoughtworks editorial is best secondary.
+- **Microsoft Copilot post-mortem**: not published in-window. Likely-authentication-failure framing from Windows News is the only available analysis.
+- **rsync 3.4.3 quantified blast radius**: regression count and affected-user count not isolated beyond "incremental backup workflows broken."
+- **Anthropic vendor response to Uber $1,500/mo cap narrative**: not published in-window.
+- **Cursor pricing details detail**: The New Stack reports the cut; precise per-model new rates not retrieved.
+- **NBER paper w35275 substantive findings**: PDF retrieved but quantitative findings not extracted in this analysis pass.
+- **Below-threshold pattern**: "self-hosted alternatives accelerating" — anecdotal in-window mentions (HN Show HN posts for local-MCP, local Copilot via Lemonade) but no concentrated thread yet.
 
 ---
 
 ## Recommended Actions
 
-1. **Restore Reddit / Bluesky / Mastodon retrieval as highest-priority extraction-side fix.** Five consecutive zero-yield windows is now a structural regime; the longitudinal sentiment record materially undersamples the practitioner-voice channel. Manual browser review of r/ExperiencedDevs, r/ClaudeCode, r/vibecoding, r/cursor recommended for the Jun 1-8 backfill; per-channel manual review of @simonwillison.net (Bluesky), @kelseyhightower, Mitchell Hashimoto (Mastodon) for any in-window practitioner posts.
-2. **Pull Anthropic public post-mortem for the June 5 outage as soon as published.** This is the single highest-leverage E14 retrieval; the document will resolve whether the sub-agent-runaway becomes vendor-side-root-cause-confirmed (elevating `agent-production-destruction`) or remains availability-class. Cross-tenant-leak confirm/deny is the highest-stakes binary in `anthropic-trust-arc`.
-3. **Track post-cutover GitHub Copilot AI Credits sentiment in the Jun 8-15 window.** The cost-runaway signal's FinOps-formalization framing predicts measurable practitioner discourse shift after the cutover lands. E14 is the first empirical test.
-4. **Pull third-party SWE-Bench Pro verification of Microsoft's MAI-Code-1-Flash +16-point claim.** The vendor-model-independence signal's credibility hinges on a vendor-marketing-vs-independent-benchmark check. Without it, the signal stays Tracking-class on vendor-statement-only evidence.
-5. **Monitor rsync 3.5 security-focused release outcome.** The contributor-norm crystallizing around critical-infrastructure AI-assisted commits is the load-bearing test of `vibe-coding-disreputed`'s resolution. Tridgell's stated plan to continue AI-assisted development through 3.5 sets a clear timeline.
-6. **Watch for second hyperscaler no-distillation positioning** (Google Gemini Code Assist, AWS Q) on training-data provenance. Single-vendor framing (Microsoft) is the current state; second vendor adoption would harden `vendor-model-independence` from Tracking to Promoted.
-7. **Cite the structural composition caveat in any consumer-facing or stakeholder-facing summary.** Sentiment percentages this week reflect analyst-publication-corpus shift, not primary-channel practitioner sentiment. Honest reporting of the composition regime is critical for downstream consumers.
+1. **Restore Reddit retrieval as priority 0**. Fifth consecutive window without Reddit yield. Recommend (a) config v1.9 demoting Reddit to Tier 3 Manual for Claude headless runs, OR (b) implementing user-driven interactive Chrome session pattern (per flipboard-extraction skill v1.8) for r/ClaudeCode, r/cursor, r/ExperiencedDevs, r/vibecoding weekly. Without this, the sentiment record materially undersamples the largest practitioner-voice channel.
+2. **Pull the NBER paper's substantive findings** ([w35275](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf)). Academic-grade productivity measurement across generations of AI coding tools is high-value evidence for the disciplined-adoption camp. Manual review with quantitative summary in next-window analysis.
+3. **Track the Anthropic post-mortem** for the June 2 Claude/Opus 4.6 outage. If published in E14, elevates `ai-as-infrastructure` to vendor-side-root-cause-confirmed; if not, the signal lives on third-party framing alone.
+4. **Track Microsoft response** to the Kotaku "addictive" leak. Vendor non-response would consolidate the Microsoft trust-deficit framing; substantive response or correction would interrupt it.
+5. **Watch for Cursor's enterprise spend controls detail** — what governance primitives ship matters for how the cost-as-headcount framing lands at procurement teams.
+6. **Add Bluesky handles to weekly extraction**: @geoffreylitt.bsky.social, @kentbeck.bsky.social, @mitchellh.com (no in-window posts but worth tracking). Add Mastodon handles on hachyderm.io for kentcdodds, glyph; infosec-exchange.com server for the security-tooling community.
+7. **Schedule transcript review** of [Theo's same-day "I didn't expect this from Anthropic"](https://www.youtube.com/watch?v=xjucOlb_mFM) and [Theo's "More Prompts = Worse Code?"](https://www.youtube.com/watch?v=WnBx1Vi7M6w) — both are high-engagement practitioner takes on in-window themes.
+8. **Track HN for Anthropic / Microsoft engineering postmortems** of the June 1–2 outages in E14.
 
 ---
 
 ## Incidents Log
 
-| ID | Date | Severity | Tools | Postmortem | Source |
+| Incident | Date | Severity | Tools | URL | Note |
 |---|---|---|---|---|---|
-| Claude June 5 sub-agent runaway | 2026-06-05 | **Critical** | Claude, Claude Code, Claude API, Claude Cowork | Yes (Thoughtworks editorial; Anthropic status page elevated errors confirmed; vendor RCA pending) | [Thoughtworks](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026); [X: Cyber Security News](https://x.com/The_Cyber_News/status/2063084278372864441); [X: kimmonismus](https://x.com/kimmonismus/status/2062997809067139468) |
-| rsync 3.4.3 AI-assisted regressions | 2026-06-04 | Significant | Claude | No (contributor-level acknowledgment from Tridgell, no formal post-mortem) | [The Register](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) |
-| github.dev / vscode.dev 1-click GitHub token theft | 2026-06-03 | Significant | VSCode webview, OpenCode, KiloCode, Zed, Copilot | Yes (Ammar Askar writeup after MSRC silent-patch) | [HN thread](https://news.ycombinator.com/item?id=48371562) |
-| Meta AI Instagram access via prompt engineering | 2026-06-01 | Significant | Meta AI | No (third-party reporting only) | [Simon Willison link post](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/) |
-
-**Incident-class observations**: the June 5 Claude outage is the most consequential single incident in the AI-coding incident corpus to date — first vendor-side root-cause exemplar with disclosed agent-architecture failure mode (sub-agent multiplication loop) plus an unconfirmed cross-tenant inference-leak rumor that, if confirmed, would constitute the most severe trust event in the `anthropic-trust-arc` signal. The four incidents collectively constitute a single-week incident density unmatched since E5 (March 31).
+| Microsoft Copilot June 1 outage — authentication failure cascaded across Office, Windows, Visual Studio | 2026-06-01 | Significant | Copilot | [Windows News coverage](https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251) | Coincided with usage-based billing transition launch day |
+| Anthropic Claude outage — elevated errors on Opus 4.6 affecting API, Console, claude.ai, Claude Code | 2026-06-02 | Significant | Claude, Claude Code | [Anthropic Status](https://status.claude.com/) · [TechRadar](https://www.techradar.com/news/live/claude-outage-june-2026) · [Thoughtworks](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026) | 06:04 UTC → 11:49 UTC; per Downdetector 60% Claude Chat, 24% mobile, 8% Claude Code |
+| GitHub Copilot usage-based billing transition — practitioner backlash, predictability regression, Uber spend cap | 2026-06-01 | Operational | Copilot | [GitHub Blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) · [Kilo.ai](https://blog.kilo.ai/p/the-github-copilot-bill-came-due) · [Simon Willison](https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n) | Practitioner self-reports of $29→$750, $50→$3,000 monthly cost shifts; Uber $1,500/mo/employee/tool cap |
+| rsync 3.4.3 — AI-coded changes broke backups, triggered maintainer policy row | 2026-06-04 | Significant | General AI (Claude attribution) | [The Register](https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189) | Backup data risk in production rsync installs; OSS-maintainer dispute over accepting AI-generated patches |
 
 ---
 
@@ -328,15 +348,12 @@ The [Uber cap](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usag
 | Analysis prompt | v1.17 |
 | Domain config | v1.2 |
 | Bootloader | v1.9 |
-| Extractor | Claude / claude-opus-4-7 / Engine v1.5.4 / Config v1.8 |
-| Extraction window | 2026-06-01 to 2026-06-08 |
-| Extraction sequence | 13 of ongoing |
-| Items tagged | 35 |
-| Batches successful | 7 of 9 (C and D failed — Reddit-suppressed) |
-| Report generated | 2026-06-08 13:00 UTC |
+| Extraction | 13 (revised — supplemental pass via Chrome browser plugin) |
+| Date window | 2026-06-01 to 2026-06-08 |
+| Items tagged | 37 |
+| Batches successful | 9 / 9 attempted (initial WebSearch + supplemental Chrome pass combined) |
 | Signal store loaded | true |
-| Signals reused from store | 8 |
-| Signals newly minted | 1 (`vendor-model-independence`) |
+| Signals reused from store | 5 (cost-runaway, anthropic-trust-arc, vibe-coding-disreputed, cognitive-debt-deskilling, stack-composition) |
+| New signals minted | 1 (ai-as-infrastructure) |
+| Citation validation | RUN — see summary file for details |
 | Summary file | analysis-summary-2026-06-08.md |
-| Citation validation | PASS — 96.4% coverage (121 links, 27 unique URLs; only `https://syntax.fm/` excluded per extraction note) |
-
