@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.1",
+  "description": "AI Dev Sentiment Extraction — extraction report file",
+  "reports": [
+    {
+      "report_metadata": {
+        "generated_by": "Claude",
+        "model": "claude-opus-4-7",
+        "llm_target": "Claude",
+        "extraction_completed": "2026-06-08T00:00:00Z",
+        "prompt_name": "AI Dev Sentiment Extraction",
+        "engine_version": "v1.5.4",
+        "config_version": "v1.8",
+        "output_format": "jsonc",
+        "lookback": "--since 2026-06-01",
+        "limit": "100 per tier — excludes cross-references"
+      },
+      "session_summary": {
+        "batches_attempted": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "batches_successful": ["A", "B", "D", "E", "F", "G", "H"],
+        "batches_failed": [
+          {
+            "batch": "C",
+            "reason": "Learning/Skills queries within strict 7-day window returned only out-of-window results; no in-window items retained"
+          },
+          {
+            "batch": "I",
+            "reason": "Architectural Philosophy queries returned only out-of-window discussions (April Thoughtworks Radar v34); no in-window items"
+          }
+        ],
+        "primary_social_platform_status": "Degraded",
+        "alt_platform_activation": {
+          "activated": false,
+          "reason": "Reddit returned site-restricted results that summarized longer trends rather than dated posts within the strict 7-day window; primary social degraded but not failed, so experimental platforms not activated"
+        },
+        "time_range": {
+          "from": "2026-06-01",
+          "to": "2026-06-08"
+        }
+      },
+      "deduplication_references": [
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "Thoughtworks blog — Claude outage analysis",
+          "canonical_url": "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026",
+          "suppressed_in": [
+            {
+              "tier": "tier1",
+              "section": "hacker_news",
+              "note": "HN discussions of Claude outage are derivative of the primary incident — cross-reference only"
+            }
+          ]
+        },
+        {
+          "canonical_tier": "tier1.blogs_publications",
+          "canonical_section": "GitHub Blog — Copilot usage-based billing",
+          "canonical_url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+          "suppressed_in": [
+            {
+              "tier": "tier1",
+              "section": "blogs_publications",
+              "note": "TechCrunch and Dataconomy coverage are downstream of the GitHub Blog source post"
+            }
+          ]
+        }
+      ],
+      "tier1": {
+        "reddit": [
+          {
+            "_note": "[NO RESULTS: Reddit site:reddit.com/r/ExperiencedDevs AI coding 2026-06-01..2026-06-08] — Search returned aggregated trend summaries rather than dated posts within the 7-day window. Reddit retrieval degraded for strict-window queries during this run."
+          },
+          {
+            "_note": "[NO RESULTS: reddit r/cscareerquestions AI replacing developers job June 2026] — site: query returned no usable links; broader query yielded only generalized trend summaries with no extractable post-level URLs in window."
+          }
+        ],
+        "hacker_news": [
+          {
+            "_note": "[NO RESULTS: site:news.ycombinator.com June 1-8 2026 dated submissions on AI coding] — Site-restricted queries returned only earlier submissions (Feb–May 2026); no HN items with confirmed retrieval dates inside the strict 7-day window. See Gaps."
+          }
+        ],
+        "blogs_publications": [
+          {
+            "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+            "retrieved": "2026-06-08",
+            "source": "GitHub Blog",
+            "title": "GitHub Copilot is moving to usage-based billing",
+            "author": "GitHub (corporate)",
+            "author_type": "Vendor",
+            "date": "2026-06-01",
+            "key_claims": "All Copilot plans (Pro $10, Pro+ $39, Business $19/user, Enterprise $39/user) transition to usage-based billing on June 1, 2026. Base prices unchanged but bundled allotment is replaced with a monthly pool of GitHub AI Credits; overage is charged on token consumption (input, output, cached) using listed API rates per model.",
+            "evidence_type": "Vendor announcement",
+            "tools": ["Copilot"],
+            "tags": {
+              "sentiment": "Mixed",
+              "topic": ["Pricing/Cost"],
+              "evidence": "Vendor"
+            }
+          },
+          {
+            "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+            "retrieved": "2026-06-08",
+            "source": "TechCrunch",
+            "title": "'What a joke': GitHub Copilot's new token-based billing spurs consternation among devs",
+            "author": "TechCrunch staff",
+            "author_type": "Analyst",
+            "date": "2026-05-30",
+            "key_claims": "Developers reported on Reddit and X that the new billing model could shift monthly costs from ~$29 to ~$750, and in one case from ~$50 to ~$3,000. Critics charge Microsoft with 'pulling the rug' after encouraging indiscriminate Copilot usage. Note: source date is 2026-05-30, two days before the strict window start; retained as the immediate upstream coverage of the June 1 transition.",
+            "evidence_type": "Reporting / aggregated practitioner reaction",
+            "tools": ["Copilot"],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": ["Pricing/Cost", "Trust"],
+              "evidence": "Anecdote"
+            }
+          },
+          {
+            "url": "https://dataconomy.com/2026/06/01/github-copilot-token-pricing-backlash/",
+            "retrieved": "2026-06-08",
+            "source": "Dataconomy",
+            "title": "Microsoft Switches GitHub Copilot To Usage-based AI Token Billing",
+            "author": "Dataconomy staff",
+            "author_type": "Analyst",
+            "date": "2026-06-01",
+            "key_claims": "Reports that short sessions of 2-4 prompts consumed ~210.5 AI Credits under the new model, vs. negligible quota impact under the prior request-based billing — a predictability regression. Frames the change as a billing-model shift that disadvantages heavy agentic users.",
+            "evidence_type": "Reporting",
+            "tools": ["Copilot"],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": ["Pricing/Cost"],
+              "evidence": "Anecdote"
+            }
+          },
+          {
+            "url": "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026",
+            "retrieved": "2026-06-08",
+            "source": "Thoughtworks Insights",
+            "title": "Claude outage, June 2026: Reckoning with AI's increasing status as infrastructure",
+            "author": "Thoughtworks editorial",
+            "author_type": "Practitioner",
+            "date": "2026-06-02",
+            "key_claims": "Frames the June 2 Claude outage as a turning point: when an LLM provider goes down, internal development velocity drops (automated pair-programmers disappear), support triage bots fall silent, and LLM-dependent data pipelines freeze. Argues Claude has crossed into infrastructure status and treats its availability as an SRE concern, not a tool preference.",
+            "evidence_type": "Opinion / analysis",
+            "tools": ["Claude", "Claude Code"],
+            "tags": {
+              "sentiment": "Nuanced",
+              "topic": ["Dependency/Resilience", "Architectural Philosophy"],
+              "evidence": "Opinion"
+            }
+          },
+          {
+            "url": "https://status.claude.com/",
+            "retrieved": "2026-06-08",
+            "source": "Anthropic Status Page",
+            "title": "Elevated errors on Opus 4.6 — June 2, 2026 incident",
+            "author": "Anthropic",
+            "author_type": "Vendor",
+            "date": "2026-06-02",
+            "key_claims": "Incident timeline: started 06:04 UTC, identified 06:39 UTC, fix monitored from 10:42 UTC, resolved 11:49 UTC. Elevated error rates on Opus 4.6 affected Claude, API, Console, and Claude Code surfaces.",
+            "evidence_type": "Vendor status post / postmortem-adjacent",
+            "tools": ["Claude", "Claude Code"],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": ["Dependency/Resilience", "Incidents"],
+              "evidence": "Postmortem"
+            }
+          },
+          {
+            "url": "https://www.techradar.com/news/live/claude-outage-june-2026",
+            "retrieved": "2026-06-08",
+            "source": "TechRadar",
+            "title": "Claude is down for many — here's what we know about the outage",
+            "author": "TechRadar staff",
+            "author_type": "Analyst",
+            "date": "2026-06-02",
+            "key_claims": "Per Downdetector data: 60% of complaints centered on Claude Chat, 24% on the mobile app, and 8% on the newly-deployed Claude Code platform. Confirms the broad infrastructure-tier impact on agentic coding workflows.",
+            "evidence_type": "Reporting",
+            "tools": ["Claude", "Claude Code"],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": ["Dependency/Resilience", "Incidents"],
+              "evidence": "Anecdote"
+            }
+          },
+          {
+            "url": "https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251",
+            "retrieved": "2026-06-08",
+            "source": "Windows News (AI)",
+            "title": "Microsoft Copilot Outage June 1, 2026: Reliability and AI Workflow Risk",
+            "author": "Windows News staff",
+            "author_type": "Analyst",
+            "date": "2026-06-01",
+            "key_claims": "Microsoft Copilot went down for thousands of users on June 1, 2026, beginning ~10:30 AM Eastern. Likely root cause was authentication failure. Disruption hit Office apps, Windows, and Visual Studio workflows on the same day Copilot's usage-based billing shift took effect — compounding the negative practitioner sentiment.",
+            "evidence_type": "Reporting",
+            "tools": ["Copilot"],
+            "tags": {
+              "sentiment": "Negative",
+              "topic": ["Dependency/Resilience", "Incidents"],
+              "evidence": "Anecdote"
+            }
+          }
+        ],
+        "bluesky": [
+          {
+            "_note": "[NO RESULTS: site:bsky.app AI coding 2026-06-01..2026-06-08] — Bluesky web search via site: returned discover-pages and earlier posts; no dated practitioner posts within the strict 7-day window with confirmed retrievable URLs."
+          }
+        ],
+        "mastodon": [
+          {
+            "_note": "[NO RESULTS: site:mastodon.social AI coding June 1-8 2026] — Only out-of-window practitioner post retrieved (Dan Luu on May 3 VS Code Copilot co-author behavior). No in-window Mastodon items confirmed."
+          }
+        ]
+      },
+      "tier1_5": {
+        "youtube": [
+          {
+            "_note": "[NO RESULTS: ThePrimeagen, Fireship, Theo, Syntax FM channel uploads dated 2026-06-01..2026-06-08] — Search retrieved channel-level mentions and earlier episode references, but no episodes with confirmed upload dates inside the 7-day window. Retry queries scheduled — see next_extraction."
+          }
+        ],
+        "experimental_social": [],
+        "internal": []
+      },
+      "tier2": [
+        {
+          "source": "X/Twitter",
+          "author_channel": "Various",
+          "author_type": "Practitioner",
+          "topic": "GitHub Copilot pricing backlash",
+          "snippet": "Aggregated developer reaction to the June 1 Copilot billing transition surfaced in TechCrunch reporting — original tweet URLs not retrieved in this run. Flag for manual review.",
+          "priority": "Med"
+        }
+      ],
+      "tier3_flags": [
+        {
+          "database": "arXiv",
+          "query": "AI coding agents productivity June 2026 preprints",
+          "reason": "Academic preprints; manual review required"
+        },
+        {
+          "database": "LinkedIn",
+          "query": "CTO 'AI coding' policy response to GitHub Copilot June 2026 pricing",
+          "reason": "Tier 3 Manual per v1.6 demotion — automated retrieval blocked"
+        },
+        {
+          "database": "Flipboard (@maryflipse3/ai)",
+          "query": "https://flipboard.com/@maryflipse3/ai-jrgbno6hz",
+          "reason": "Per v1.8 — use flipboard-extraction skill via Claude in Chrome. Scheduled headless run cannot use browser tools."
+        },
+        {
+          "database": "Podcasts (Manual)",
+          "query": "ThePrimeagen / Syntax FM / Changelog / CoRecursive — episodes published 2026-06-01..2026-06-08",
+          "reason": "Tier 2 podcast retrieval continues to yield zero items in automated runs"
+        }
+      ],
+      "incidents": [
+        {
+          "incident": "Anthropic Claude outage — elevated errors on Opus 4.6 affecting API, Console, and Claude Code",
+          "date": "2026-06-02",
+          "source": "Anthropic Status Page; TechRadar; Thoughtworks",
+          "url": "https://status.claude.com/",
+          "tools": ["Claude", "Claude Code"],
+          "severity": "Significant",
+          "impact": "Global API failures (500/529 errors); Claude Code workflows halted; developer pair-programming and triage bots offline for ~5h45m",
+          "damages": "Not quantified",
+          "postmortem": true
+        },
+        {
+          "incident": "Microsoft Copilot outage — authentication failure cascaded across Office, Windows, and Visual Studio",
+          "date": "2026-06-01",
+          "source": "Windows News; The Register coverage",
+          "url": "https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251",
+          "tools": ["Copilot"],
+          "severity": "Significant",
+          "impact": "Thousands of users blocked from Copilot across Office/Windows/VS; coincided with usage-based billing transition launch",
+          "damages": "Not quantified",
+          "postmortem": false
+        },
+        {
+          "incident": "GitHub Copilot usage-based billing transition — practitioner backlash, predictability regression",
+          "date": "2026-06-01",
+          "source": "GitHub Blog; TechCrunch; Dataconomy",
+          "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+          "tools": ["Copilot"],
+          "severity": "Operational",
+          "impact": "Self-reported monthly cost jumps from ~$29 to ~$750 in one reported case, ~$50 to ~$3,000 in another; 2-4 prompts reported to consume ~210 AI Credits in short sessions",
+          "damages": "Not quantified at organization level; individual reports above",
+          "postmortem": false
+        }
+      ],
+      "emerging_patterns": [
+        {
+          "name": "LLM coding tools have crossed into infrastructure status — outages now block development organizations, not just users",
+          "description": "Within a 48-hour span (June 1 Microsoft Copilot, June 2 Anthropic Claude/Claude Code) two of the leading AI coding platforms suffered concurrent significant outages. Coverage shifted from 'a chatbot is down' framing to dependency/resilience framing — Thoughtworks explicitly argues Claude is now infrastructure. This is the practitioner discourse catching up to the architectural reality of agentic workflows.",
+          "sources": [
+            {
+              "url": "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026",
+              "label": "Thoughtworks: Reckoning with AI's increasing status as infrastructure",
+              "retrieved": "2026-06-08"
+            },
+            {
+              "url": "https://status.claude.com/",
+              "label": "Anthropic Status — June 2 Opus 4.6 incident timeline",
+              "retrieved": "2026-06-08"
+            },
+            {
+              "url": "https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251",
+              "label": "Windows News: Microsoft Copilot outage June 1, 2026",
+              "retrieved": "2026-06-08"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Pricing-model shift is overtaking quality concerns as the dominant complaint vector",
+          "description": "The dominant in-window negative practitioner sentiment is not 'AI code is bad' but 'AI access pricing is becoming unpredictable.' GitHub Copilot's June 1 move to token-metered AI Credits triggered widely-reported cost jumps ($29→$750, $50→$3,000 in self-reports). The complaint pattern is predictability-regression, not value-regression — developers accept the value but reject the metering opacity. This connects to Pragmatic Engineer's earlier reporting that ~30% of teams have already hit AI tool usage limits.",
+          "sources": [
+            {
+              "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+              "label": "TechCrunch: 'What a joke' — developer reaction to token billing",
+              "retrieved": "2026-06-08"
+            },
+            {
+              "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+              "label": "GitHub Blog: Copilot is moving to usage-based billing",
+              "retrieved": "2026-06-08"
+            },
+            {
+              "url": "https://dataconomy.com/2026/06/01/github-copilot-token-pricing-backlash/",
+              "label": "Dataconomy: Token pricing backlash — 210.5 credits per short session",
+              "retrieved": "2026-06-08"
+            }
+          ],
+          "confidence": "H"
+        },
+        {
+          "name": "Simultaneous Microsoft Copilot outage + GitHub Copilot billing change → 'rug-pull' framing in practitioner discourse",
+          "description": "The June 1 Copilot service outage landed on the same day as the billing transition, producing a compounded negative narrative: developers experiencing reduced reliability while being moved onto a more expensive consumption model. Multiple outlets noted the timing overlap. Practitioner framing — visible in aggregated TechCrunch/Dataconomy reporting — has consolidated around the word 'rug-pull.'",
+          "sources": [
+            {
+              "url": "https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251",
+              "label": "Windows News: Microsoft Copilot Outage June 1, 2026",
+              "retrieved": "2026-06-08"
+            },
+            {
+              "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+              "label": "TechCrunch: developer reaction to token billing rollout",
+              "retrieved": "2026-06-08"
+            }
+          ],
+          "confidence": "M"
+        }
+      ],
+      "gaps": {
+        "search_failures": [
+          "Reddit site: queries returned aggregated trend articles rather than dated post-level URLs within the strict 7-day window",
+          "site:news.ycombinator.com queries returned only pre-window submissions (Feb–May 2026) — no in-window items with retrievable IDs",
+          "Bluesky/Mastodon site: queries returned discover pages, not dated practitioner posts in window",
+          "X/Twitter Tier 2 — no direct tweet URLs retrieved; relied on TechCrunch aggregation",
+          "YouTube — no episode-level URLs with upload dates inside 2026-06-01..2026-06-08 confirmed for ThePrimeagen, Fireship, Theo, or Syntax FM"
+        ],
+        "source_gaps": [
+          "Reddit (Tier 1) — primary social platform underrepresented; expected highest-volume in-window practitioner channel returned zero usable items",
+          "Bluesky and Mastodon (Tier 1 for Claude) — zero items in window despite Tier 1 assignment",
+          "YouTube (Tier 1.5) — zero in-window episodes confirmed",
+          "Podcasts (Tier 2) — zero in-window episodes confirmed (consistent with E1 finding)"
+        ],
+        "below_threshold": [
+          "Pattern: 'AI-generated code maintenance burden vs. velocity' — strong signal continues in pre-window content (Pragmatic Engineer, ThoughtWorks Radar v34) but no new in-window practitioner posts surfaced to corroborate a 7-day refresh; filed here pending next extraction",
+          "Pattern: 'cognitive debt accelerating' — same status: well-established in pre-window content, no new in-window posts within the strict 7-day window"
+        ],
+        "platform_access_issues": [
+          "Reddit retrieval degraded — site:reddit.com queries returned summary articles rather than thread URLs",
+          "Bluesky/Mastodon site: query syntax continues to underperform per E1 finding (config v1.6 fallback queries also returned no in-window dated posts)"
+        ]
+      },
+      "next_extraction": {
+        "retry_batches": ["C", "I"],
+        "suggested_queries": [
+          "Reddit fallback: 'reddit \"AI coding\" \"June 2026\"' without site: restriction",
+          "HN: 'news.ycombinator.com Claude outage June 2 postmortem developer'",
+          "HN: 'news.ycombinator.com Copilot pricing token AI credits'",
+          "YouTube: 'ThePrimeagen Claude outage' and 'Fireship Copilot pricing June 2026'",
+          "Bluesky: 'simonwillison.net Claude outage June 2 post' (handle-specific)",
+          "Practitioner blogs: 'self-hosted Claude alternative June 2026' (resilience response signal)"
+        ],
+        "manual_followup": [
+          "Flipboard @maryflipse3/ai magazine — use flipboard-extraction skill in interactive Claude in Chrome session",
+          "ThePrimeagen, Syntax FM, Changelog — manual review of any 2026-06-01..2026-06-08 episodes",
+          "Anthropic and Microsoft formal incident postmortems — watch for engineering blog publications in the next 1–2 weeks",
+          "GitHub Community Discussions #192948 and #197089 — direct practitioner sentiment on Copilot pricing change"
+        ]
+      }
+    }
+  ]
+}

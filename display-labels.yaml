@@ -26,8 +26,8 @@
 # next Step 7 (consumer dashboard) run. If a row is missing, the generator
 # falls back to title-casing the slug and emits a WARNING.
 
-version: "1.0"
-updated: "2026-05-25"
+version: "1.1"
+updated: "2026-06-08"
 maintained_by: "Darrell + Claude (collaborative; updated as new signals mint)"
 
 labels:
@@ -190,4 +190,10 @@ labels:
     label: "AI dependency lock-in"
     one_line: "Developers now refuse to work without AI even briefly — METR can't recruit baseline subjects; Amazon Kirorank gamed; Uber's 2026 AI budget exhausted in four months."
     sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: vendor-model-independence
+    label: "Hyperscalers ditching frontier labs"
+    one_line: "Microsoft's MAI-Code-1-Flash ships into Copilot with explicit no-distillation-from-OpenAI-or-Anthropic positioning — first vendor stating model-independence as posture. NEW E13."
+    sentiment_override: mx
     retired_alias: []
