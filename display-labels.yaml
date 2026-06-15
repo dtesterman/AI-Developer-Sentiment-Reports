@@ -205,3 +205,11 @@ labels:
     one_line: "Dual-vendor outages (Microsoft Copilot June 1, Anthropic Claude June 2) reframe AI coding tools as SRE-class dependencies, not productivity preferences."
     sentiment_override: sn
     retired_alias: []
+
+  # === E14 mint ===
+
+  - signal_id: fable5-release
+    label: "Claude Fable 5 launches to a polarized welcome"
+    one_line: "Anthropic's June 9 Fable 5 launch drew mixed reception — one-shot quality wins on r/vibecoding, gimmick critiques on r/ClaudeCode, and 10× token pricing."
+    sentiment_override: mx
+    retired_alias: []
