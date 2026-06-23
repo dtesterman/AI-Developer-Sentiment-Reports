@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Dev Sentiment Analysis &mdash; June 15 to June 22, 2026 (E15, n=39). MCP supply-chain failure becomes the dominant in-window incident class — new AgentJacking exploit class joins OX Security systemic disclosure + Check Point CVE + PocketOS wipe; VS Code BYOK + Databricks Agent Bricks reshape pricing-and-trust frontier; cognitive debt graduates to ThoughtWorks Radar; two new signals mint (ide-paradigm-shift, byok-pricing-shift).">
+<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E15 (June 15 &ndash; June 22, 2026)">
+<meta property="og:description" content="MCP attack surface dominates the week (5 incidents inc. AgentJacking); VS Code BYOK + Databricks Agent Bricks reframe AI-coding economics; cognitive debt becomes a tracked engineering metric; two new signals mint.">
+<meta property="og:type" content="article">
+<title>AI Dev Sentiment Analysis &mdash; E15 (June 15 &ndash; June 22, 2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --display: 'DM Serif Display', serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3441;
+    --text: #d1cec9;
+    --text-dim: #7a8694;
+    --head: #f0ede8;
+    --amber: #f0a832;
+    --amber-dim: #7a5318;
+    --red: #e05252;
+    --red-dim: #5c1f1f;
+    --green: #4caf7d;
+    --green-dim: #1a3d2b;
+    --blue: #5c9eed;
+    --blue-dim: #1a2f4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--serif);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav ul {
+    list-style: none; display: flex; gap: 0.25rem;
+    padding: 0 1rem; font-size: 0.78rem;
+    font-family: var(--mono);
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    margin: 0;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-track { background: transparent; }
+nav ul::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+nav li { flex-shrink: 0; margin: 0; }
+nav a {
+    color: var(--text-dim); text-decoration: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s; white-space: nowrap;
+    display: inline-block;
+}
+nav a:hover { color: var(--amber); background-color: var(--surface2); }
+body { padding-top: 2.6rem; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 2rem; }
+header.masthead {
+    margin-bottom: 4rem; padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+h1 {
+    font-family: var(--display); font-size: 3.5rem;
+    color: var(--head); margin-bottom: 0.5rem; line-height: 1.1;
+}
+.subtitle {
+    font-family: var(--mono); font-size: 0.95rem;
+    color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.masthead-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.stat-item {
+    background-color: var(--surface2); padding: 1rem;
+    border-radius: 6px; border-left: 3px solid var(--amber);
+}
+.stat-label {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.8rem; color: var(--amber); font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: var(--display); font-size: 2.2rem; color: var(--head);
+    margin-bottom: 1.5rem; margin-top: 2rem;
+    position: relative; padding-left: 2rem;
+}
+h2::before {
+    content: attr(data-section);
+    position: absolute; left: 0; color: var(--amber);
+    font-size: 0.9rem; font-weight: 700; font-family: var(--mono);
+}
+h3 {
+    font-family: var(--display); font-size: 1.5rem; color: var(--text);
+    margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: var(--display); font-size: 1.15rem; color: var(--head);
+    margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; text-align: justify; }
+a {
+    color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+code {
+    font-family: var(--mono); background-color: var(--surface2);
+    padding: 0.2em 0.5em; border-radius: 3px;
+    font-size: 0.9em; color: var(--amber);
+}
+strong { color: var(--head); font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin: 1.25rem 0; color: var(--text-dim);
+    font-style: italic; background-color: var(--surface2);
+    border-radius: 0 4px 4px 0;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+}
+thead { background-color: var(--surface2); }
+th {
+    padding: 1rem; text-align: left; font-weight: 600;
+    color: var(--head); border-bottom: 2px solid var(--border);
+    font-family: var(--mono); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); word-break: break-word; }
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: var(--surface2); }
+ul, ol { margin-left: 2rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.5rem; }
+.sentiment-bar {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.sentiment-label { font-family: var(--mono); font-size: 0.9rem; min-width: 170px; }
+.sentiment-container {
+    flex: 1; background-color: var(--surface2);
+    border-radius: 4px; height: 28px; overflow: hidden; position: relative;
+}
+.sentiment-fill {
+    height: 100%; border-radius: 4px; display: flex;
+    align-items: center; justify-content: flex-end;
+    padding-right: 0.5rem; color: var(--bg);
+    font-weight: 600; font-size: 0.8rem; font-family: var(--mono);
+    animation: growBar 1.2s ease-out forwards;
+}
+@keyframes growBar { from { width: 0; } to { width: var(--width); } }
+.sentiment-fill.positive { background-color: var(--green); }
+.sentiment-fill.mixed { background-color: var(--amber); }
+.sentiment-fill.negative { background-color: var(--red); }
+.sentiment-fill.analytical { background-color: var(--blue); }
+.sentiment-percentage {
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text-dim); min-width: 60px; text-align: right;
+}
+.card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h4 {
+    color: var(--head); margin-bottom: 0.5rem;
+    font-family: var(--display); font-size: 1.2rem;
+}
+.incident-card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 6px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+}
+.incident-card.severity-high { border-left-color: var(--red); }
+.incident-card.severity-medium { border-left-color: var(--amber); }
+.incident-card .incident-title {
+    font-family: var(--display); font-size: 1.15rem;
+    color: var(--head); margin-bottom: 0.4rem;
+}
+.incident-card .incident-meta {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); margin-bottom: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-size: 0.75rem; font-family: var(--mono); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    background-color: var(--amber-dim); color: var(--amber);
+}
+.badge.red { background-color: var(--red-dim); color: var(--red); }
+.badge.green { background-color: var(--green-dim); color: var(--green); }
+.badge.blue { background-color: var(--blue-dim); color: var(--blue); }
+.collapsible {
+    background-color: var(--surface2); color: var(--head);
+    cursor: pointer; padding: 1rem; width: 100%;
+    border: 1px solid var(--border); text-align: left;
+    outline: none; font-size: 1rem; font-family: var(--display);
+    border-radius: 6px; transition: all 0.2s; margin-bottom: 1rem;
+}
+.collapsible:hover { background-color: var(--surface); border-color: var(--amber); }
+.collapsible::after {
+    content: ' \25BC'; float: right; color: var(--amber);
+    transition: transform 0.2s;
+}
+.collapsible.active::after { transform: rotate(-180deg); }
+.collapsible-content {
+    padding: 0 1rem 1rem 1rem; display: none;
+    background-color: var(--surface2); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 1rem;
+}
+.collapsible-content.active { display: block; }
+.collapsible-content table { margin: 1rem 0; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid var(--border); text-align: center;
+    color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem;
+}
+.pattern-card {
+    position: relative; background-color: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 1.5rem 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.ghost-number {
+    position: absolute; font-size: 8rem; font-family: var(--display);
+    color: rgba(240, 168, 50, 0.08); line-height: 1;
+    z-index: 0; right: 1rem; top: 50%; transform: translateY(-50%);
+}
+.pattern-title {
+    position: relative; z-index: 1; font-family: var(--display);
+    font-size: 1.3rem; color: var(--head); margin-bottom: 0.75rem;
+}
+.pattern-description { position: relative; z-index: 1; color: var(--text); margin-bottom: 1rem; }
+.pattern-meta {
+    position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem;
+}
+.pattern-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-dim); font-family: var(--mono);
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .wrapper { padding: 1rem; padding-top: 0; }
+    nav ul { padding: 0 0.75rem; }
+    nav a { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+    table { font-size: 0.9rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+    .sentiment-label { min-width: 130px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<nav><ul><li><a href="#summary">01 Summary</a></li><li><a href="#quant">02 Quantitative</a></li><li><a href="#deep">03 Deep Analysis</a></li><li><a href="#patterns">04 Patterns</a></li><li><a href="#contradictions">05 Contradictions</a></li><li><a href="#gaps">06 Gaps</a></li><li><a href="#recommendations">07 Actions</a></li><li><a href="#incidents">08 Incidents</a></li><li><a href="#metadata">09 Metadata</a></li><li><a href="#citations">Citations</a></li></ul></nav>
+<div class="wrapper">
+<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 12 &nbsp;&nbsp;May 25 &ndash; June 1, 2026<br>Analysis executed 2026-06-22</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">49</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">43% Caut. Neg.</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">Code Quality</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">7</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">15</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">9/9</div></div>
+</div>
+</header>
+
+<p>This table is the canonical inventory of in-extraction URLs. Every URL appearing below is cited at least once in the prose that follows. Built per Citation Pre-Processing (Analysis Prompt v1.17, mandatory).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Source</th>
+<th>URL</th>
+<th>Section anchor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The New Stack — AgentJacking via Sentry MCP (2026-06-21)</td>
+<td>https://thenewstack.io/agentjacking-sentry-mcp-attack/</td>
+<td>Incidents, Patterns</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TechRadar — PocketOS 9-second deletion</td>
+<td>https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity</td>
+<td>Incidents, Patterns</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Check Point Research — Claude Code RCE / token exfil (CVE-2025-59536)</td>
+<td>https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/</td>
+<td>Incidents, Patterns</td>
+</tr>
+<tr>
+<td>4</td>
+<td>OX Security — Mother of all AI supply chains</td>
+<td>https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/</td>
+<td>Incidents, Patterns</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cyber Desserts — Coordinated malicious JetBrains plugin campaign</td>
+<td>https://blog.cyberdesserts.com/ai-agent-security-risks/</td>
+<td>Incidents</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Authzed — Timeline of MCP security breaches</td>
+<td>https://authzed.com/blog/timeline-mcp-breaches</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>7</td>
+<td>VS Code blog — BYOK release (2026-06-18)</td>
+<td>https://code.visualstudio.com/blogs/2026/06/18/byok-vscode</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Databricks — Agent Bricks at DAIS 2026 (MCP in Unity Catalog)</td>
+<td>https://www.databricks.com/blog/agent-bricks-dais-2026</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Cursor — Teams pricing June 2026</td>
+<td>https://cursor.com/blog/teams-pricing-june-2026</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Pragmatic Engineer — The Pulse (FinOps cuts)</td>
+<td>https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Medium — Microsoft banned AI because it cost too much</td>
+<td>https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ThoughtWorks Radar — Codebase cognitive debt</td>
+<td>https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>13</td>
+<td>LeadDev — AI coding creates two kinds of debt</td>
+<td>https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>14</td>
+<td>r/ClaudeAI — Are you using Claude as much (in-window)</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Stack Overflow — Closing the developer-AI trust gap</td>
+<td>https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Pragmatic Engineer — AI Tooling for SWEs 2026</td>
+<td>https://newsletter.pragmaticengineer.com/p/ai-tooling-2026</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>17</td>
+<td>r/ClaudeCode — How I actually use Claude Code as a senior</td>
+<td>https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>18</td>
+<td>r/ClaudeAI — Claude Code as resume signal debate</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>19</td>
+<td>ThoughtWorks Radar — Coding agent swarms</td>
+<td>https://www.thoughtworks.com/radar/techniques/coding-agent-swarms</td>
+<td>Patterns, Cluster</td>
+</tr>
+<tr>
+<td>20</td>
+<td>ThoughtWorks Radar — Team of coding agents</td>
+<td>https://www.thoughtworks.com/radar/techniques/team-of-coding-agents</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Theo t3.gg — 2026 Is The Year IDEs Die (URL unverified)</td>
+<td>https://www.youtube.com/watch?v=XYYZM01P2S0</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Theo t3.gg — The Rise of Agent Experience (AX)</td>
+<td>https://www.youtube.com/watch?v=EXeCOsIu0Ps</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Fortune — ServiceNow 'kill switch' positioning</td>
+<td>https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/</td>
+<td>Patterns</td>
+</tr>
+<tr>
+<td>24</td>
+<td>r/cursor — Why the Cursor acquisition should concern every developer</td>
+<td>https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/</td>
+<td>Cluster, Contradictions</td>
+</tr>
+<tr>
+<td>25</td>
+<td>r/cursor — If AI writes and tests the code, what are the developers actually doing?</td>
+<td>https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>26</td>
+<td>r/cscareerquestions — Mid-level dev experience talking with team about AI</td>
+<td>https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>27</td>
+<td>r/vibecoding — App combining all your CC/Cursor/Codex/VSC sessions</td>
+<td>https://www.reddit.com/r/vibecoding/comments/1u7o0h6/i_made_an_app_that_combines_all_your_claude_code/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>28</td>
+<td>r/cursor — Convince a small-company owner to adopt Cursor</td>
+<td>https://www.reddit.com/r/cursor/comments/1u8818r/how_would_you_convince_a_smallcompany_owner_to/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>29</td>
+<td>HN — AI coding at home without going broke</td>
+<td>https://news.ycombinator.com/item?id=48518969</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>30</td>
+<td>HN — Vibe coding and agentic engineering</td>
+<td>https://news.ycombinator.com/item?id=48037128</td>
+<td>Cluster, Contradictions</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Simon Willison — GLM-5.2 most powerful text-only open weights LLM</td>
+<td>https://simonwillison.net/2026/jun/17/glm-52/</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>32</td>
+<td>ThoughtWorks Radar — Claude Code (Tools quadrant)</td>
+<td>https://www.thoughtworks.com/radar/tools/claude-code</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>33</td>
+<td>The Register — AI code accelerates production failures, study</td>
+<td>https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787</td>
+<td>Cluster, Contradictions</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Theprimeagen — Recent streams on Claude Code/Cursor 2026 series</td>
+<td>https://www.youtube.com/c/theprimeagen</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>35</td>
+<td>YouTube channel — Claude Code is changing how I write code</td>
+<td>https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>36</td>
+<td>X — @denisyurchak (200k+ in Europe with Claude on VPS)</td>
+<td>https://x.com/denisyurchak/status/2067932243432014120</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>37</td>
+<td>X — @de1lymoon (Claude Code creator no hand-written code since Nov)</td>
+<td>https://x.com/de1lymoon/status/2068029479994499114</td>
+<td>Cluster, Patterns</td>
+</tr>
+<tr>
+<td>38</td>
+<td>X — @nyewkey (dev/programming treats AI coding differently)</td>
+<td>https://x.com/nyewkey/status/2068464758777647276</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>39</td>
+<td>X — @Raynerdtech ("AI has taken your job bro." reversal)</td>
+<td>https://x.com/Raynerdtech/status/2067532558758244820</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>40</td>
+<td>X — @master_jpma (Claude Code refactored 40 files; no free tier)</td>
+<td>https://x.com/master_jpma/status/2066641694888776030</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>41</td>
+<td>X — @Kaushal__marcus (most devs use CC/Cursor/Copilot; knowing IS the challenge)</td>
+<td>https://x.com/Kaushal__marcus/status/2067917519671947293</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>42</td>
+<td>X — @elewachii (job scraping w/ Claude)</td>
+<td>https://x.com/elewachii/status/2067007927295287571</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>43</td>
+<td>X — @PascalAmpertail (Claude as ASSISTANT to people who already understand)</td>
+<td>https://x.com/PascalAmpertail/status/2068810468618322244</td>
+<td>Cluster, Contradictions</td>
+</tr>
+<tr>
+<td>44</td>
+<td>X — @JayMLang (4x/10x claims say more about your code)</td>
+<td>https://x.com/JayMLang/status/2068446218397598139</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>45</td>
+<td>X — @0xSpivach (one guy bedroom $8.4k/mo)</td>
+<td>https://x.com/0xSpivach/status/2068036277895671844</td>
+<td>Cluster</td>
+</tr>
+</tbody>
+</table>
+<p>Self-check (per v1.15+): 45 URLs catalogued; each appears as a clickable link at least once below.</p>
+
+<h1>Sentiment Analysis Report — AI Coding Tools Developer Discourse</h1>
+<p><strong>Window:</strong> 2026-06-15 to 2026-06-22 (Extraction 15 of ongoing)</p>
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Extraction 15 (n=39 tagged items) is the week the <strong>MCP supply chain reckoning stops being a forecast and becomes the dominant incident class on its own</strong>. The 2026-06-21 <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking disclosure</a> — a single exposed Sentry key sufficient to hijack Claude Code, Cursor, and Codex via their MCP integrations — adds a new exploit class to a stack that already includes the <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic disclosure</a> (200K+ vulnerable instances), <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point's CVE-2025-59536</a>, the <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second production wipe</a>, and a <a href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">coordinated JetBrains plugin campaign</a>. Five Critical/Significant in-window incidents — the highest count of any extraction since E11.</p>
+<p>Three simultaneous shifts reshape the economic surface. (a) <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code shipped BYOK on 2026-06-18</a> — Anthropic / OpenAI / Gemini / Ollama keys plug directly into the native chat picker without a Copilot subscription — eliminating seat-cost lock-in for the first time at hyperscaler scale. (b) <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> makes MCP a first-class Unity Catalog citizen with cross-system permission bridging — the deterministic counter-design to the AgentJacking failure class. (c) <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's Pulse</a> formalizes that engineering departments are visibly cutting AI tooling spend — naming Microsoft's Claude-Code license cancellations, Uber's April budget exhaustion, and <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's repackaged Teams pricing</a> as a single trend.</p>
+<p>Cognitive debt graduates from blog idea to industry-tracked concept. The <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a>, <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev's two-debts framing</a>, and the <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a> (80–90% of what was built isn't used) sit on the same arc. The architectural conversation is now consensus: Theo's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a> frame the same shift the Radar formalizes under <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>. Two new signals mint this window: <code>ide-paradigm-shift</code> and <code>byok-pricing-shift</code>. Net sentiment direction: SN ▲, CN ▼ vs E14, MA ▲ — trust gap widens but in-window Reddit sentiment is <em>bimodal-by-experience</em> rather than uniformly skeptical.</p>
+
+</section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
+<h3>Sentiment Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Bucket</th>
+<th>E15 %</th>
+<th>E14 %</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strongly Negative (SN)</td>
+<td>22</td>
+<td>28</td>
+<td>▼6</td>
+</tr>
+<tr>
+<td>Cautiously Negative (CN)</td>
+<td>28</td>
+<td>30</td>
+<td>▼2</td>
+</tr>
+<tr>
+<td>Mixed / Ambivalent (MA)</td>
+<td>22</td>
+<td>17</td>
+<td>▲5</td>
+</tr>
+<tr>
+<td>Cautiously Positive (CP)</td>
+<td>14</td>
+<td>10</td>
+<td>▲4</td>
+</tr>
+<tr>
+<td>Strongly Positive (SP)</td>
+<td>3</td>
+<td>3</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>Neutral / Descriptive (Nu)</td>
+<td>11</td>
+<td>12</td>
+<td>▼1</td>
+</tr>
+</tbody>
+</table>
+<p>Composition-adjusted note: blogs/publications (15 of 39 items) overweight Trust/Incidents this week; the X/Twitter tier-2 firehose is the only tier carrying material CP/SP weight, and is overweight productivity-boost anecdote. Discount the headline CP figure accordingly.</p>
+<h3>Topic Clusters (mentions, dominant sentiment, change)</h3>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>Mentions</th>
+<th>Dominant</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trust / Verification</td>
+<td>18</td>
+<td>CN</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td>17</td>
+<td>MA</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td>12</td>
+<td>MA</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td>10</td>
+<td>Nu</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td>7</td>
+<td>MA</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td>6</td>
+<td>CN</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td>5</td>
+<td>SN</td>
+<td>▼</td>
+</tr>
+<tr>
+<td>Team Dynamics</td>
+<td>5</td>
+<td>Nu</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td>5</td>
+<td>CN</td>
+<td>▼</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td>4</td>
+<td>SN</td>
+<td>▼</td>
+</tr>
+<tr>
+<td>Deskilling</td>
+<td>3</td>
+<td>CN</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>Hiring / Junior-Senior</td>
+<td>2</td>
+<td>MA</td>
+<td>▼</td>
+</tr>
+</tbody>
+</table>
+<h3>Tool Mention Matrix (negative / mixed / positive)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Neg</th>
+<th>Mixed</th>
+<th>Pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude / Claude Code</td>
+<td>8</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Copilot</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>JetBrains AI</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>General AI / Multi</td>
+<td>5</td>
+<td>7</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
+<h3>Trust / Verification (18 mentions, CN dominant ▲)</h3>
+<p>The week's center-of-gravity. <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's data point</a> (29% trust accuracy vs 40% in 2024; 3% "highly trust") becomes the through-line for <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's tooling survey</a> (84% use, 95% weekly use among the PE corpus, 56% doing 70%+ of work with AI). The in-window Reddit corpus reframes the spread as bimodal-by-experience-level: senior practitioners accept the tools but constrain them — <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("keep Claude on a very tight leash"; "stop using one agent for everything"), <a href="https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/" target="_blank" rel="noopener">r/ClaudeAI resume debate</a>, and <a href="https://x.com/Kaushal__marcus/status/2067917519671947293" target="_blank" rel="noopener">X commentary from @Kaushal__marcus</a> ("The challenge isn't generating code. The challenge is knowing"). The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern thread</a> (427 likes / 210 replies — highest-engagement Cursor thread in-window) ties trust-of-tools to vendor-stability concerns explicitly. Headline trust collapse is real; in-window practitioner posture is <em>guarded competence</em>, not abandonment.</p>
+<h3>Productivity Reality (17 mentions, MA dominant ▲)</h3>
+<p>Bimodal again. Public X/Twitter productivity claims continue at the top tail — <a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon</a> ("CLAUDE CODE'S CREATOR HASN'T WRITTEN A SINGLE LINE OF CODE BY HAND SINCE NOVEMBER... ships 10-30 PRs a day with 5 AI agents"); <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a> ("almost too easy to make 200k+ in Europe... Claude on a VPS, tasks in under 2 hrs"); <a href="https://x.com/0xSpivach/status/2068036277895671844" target="_blank" rel="noopener">@0xSpivach</a> ("one guy in his bedroom making $8,400 a month"); <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma</a> ("one dev refactored 40 files"); <a href="https://x.com/elewachii/status/2067007927295287571" target="_blank" rel="noopener">@elewachii</a> practitioner workflow. The contrarian tail is sharp: <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> ("4x or 10x better code claims say more about the code you wrote than the AI's") and <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> ("'AI has taken your job bro.' A week later: 'Can you help me check this code?'"). <a href="https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787" target="_blank" rel="noopener">The Register's coverage of a study</a> ties high productivity claims to elevated production-failure rates — the same Harness/DORA-adjacent throughline that has dominated since E11. The <a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing?" thread</a> names the role-question that connects this cluster to Architectural Philosophy.</p>
+<h3>Code Quality (12 mentions, MA dominant ▲)</h3>
+<p><a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev's two-debts framing</a> connects directly to <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks' Cognitive Debt Radar entry</a> — the construct is now formally being adopted as a complement to (not replacement for) technical debt in engineering-management vocabulary. <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's trust-gap data</a> re-appears here as a code-quality concern. <a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail</a> names the deskilling correlate: Claude "as an ASSISTANT to help people who already understand". The HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"Vibe coding and agentic engineering are getting closer than I'd like" thread</a> captures the practitioner unease.</p>
+<h3>Architectural Philosophy (10 mentions, Nu dominant ▲)</h3>
+<p>Now consensus across thought-leader + Radar + creator-class voices. <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">Theo t3.gg's "2026 Is The Year IDEs Die"</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>; <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>; the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("stop using one agent for everything") all sit on the same arc. <a href="https://www.youtube.com/c/theprimeagen" target="_blank" rel="noopener">Theprimeagen recent streams</a> and <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank" rel="noopener">the channel coverage of Claude Code</a> extend creator-class adoption.</p>
+<h3>Enterprise / Policy (6 mentions, CN dominant flat)</h3>
+<p><a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's "Pulse" issue</a> and <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium "Microsoft banned AI because it cost too much"</a> bookend a hardening FinOps-against-AI-coding posture. <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a> and <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> are the enabling-platform side: bring-your-own-model with vendor-mediated permissioning. <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">ThoughtWorks Radar's Claude Code Tools-quadrant placement</a> lends institutional weight to the tool itself.</p>
+<h3>Pricing / Cost (5 mentions, CN dominant ▼)</h3>
+<p><a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's June Teams pricing update</a>, <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a>, <a href="https://news.ycombinator.com/item?id=48518969" target="_blank" rel="noopener">HN "AI coding at home without going broke"</a>, the <a href="https://www.reddit.com/r/cursor/comments/1u8818r/how_would_you_convince_a_smallcompany_owner_to/" target="_blank" rel="noopener">r/cursor convince-a-small-company adoption thread</a>, and the <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Microsoft cost-too-much narrative</a>. Cluster volume is down vs E14 (where pricing was the headline) but tilt is more structural — moving from sticker-shock to pricing-architecture.</p>
+<h3>Incidents / Failures (4 mentions, SN dominant ▼)</h3>
+<p>See §8. Cluster <em>volume</em> is down because the discourse has consolidated into a single recurring storyline (<code>mcp-attack-surface</code>); cluster <em>severity</em> is up — 3 of 5 incidents this week are rated Critical.</p>
+<h3>Dependency / Resilience (5 mentions, SN dominant ▼)</h3>
+<p><a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern</a> and <a href="https://www.reddit.com/r/vibecoding/comments/1u7o0h6/i_made_an_app_that_combines_all_your_claude_code/" target="_blank" rel="noopener">r/vibecoding session-aggregator app</a> are the in-window practitioner-side surface; vendor-side risk is at the Stack Overflow / Pragmatic-Engineer survey level.</p>
+<h3>Hiring / Junior-Senior (2 mentions, MA dominant ▼)</h3>
+<p>Mostly absent this window. <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a> is the lone in-window voice. The <code>junior-pipeline-collapse</code> contestation from E14 ([Newsgram remote-work attribution + IBM tripling entry-level hiring]) didn't generate follow-on this week.</p>
+<h3>Hype vs Reality (7 mentions, MA flat)</h3>
+<p><a href="https://simonwillison.net/2026/jun/17/glm-52/" target="_blank" rel="noopener">Simon Willison on GLM-5.2</a> (open-weights momentum is a real signal, not hype); <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> and <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> X-tier reality-checks; <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a>; <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level thread</a> ("a mid-level developer's experience talking with the team about AI"). The HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"Vibe coding and agentic engineering are getting closer than I'd like"</a> closes the loop.</p>
+<h3>Team Dynamics (5 mentions, Nu ▲)</h3>
+<p><a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing" thread</a>, <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding agent swarms Radar entry</a>, and ThoughtWorks/Theo creator output. Team-dynamics is moving from "how do we adopt" to "what is the role of the engineer" — the same shift Architectural Philosophy carries.</p>
+<h3>Deskilling (3 mentions, CN flat)</h3>
+<p><a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev two-debts piece</a> and <a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail's "assistant to people who already understand"</a> anchor the practitioner side; ThoughtWorks Radar's cognitive-debt entry anchors the analyst side.</p>
+<h3>Productivity / Job security (overlap cluster, 2 mentions)</h3>
+<p><a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a>, <a href="https://x.com/0xSpivach/status/2068036277895671844" target="_blank" rel="noopener">@0xSpivach</a> — both CP/SP X-tier anecdotal boosts. Sentiment-isolated from rest of corpus; flag as such.</p>
+
+</section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
+<h3>Promoted / Re-confirmed (observation count ≥ 2 in lifetime, present this window)</h3>
+<ol>
+<li>
+<p><strong><code>mcp-attack-surface</code> — MCP supply chain is now the dominant AI-coding incident class.</strong> <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> adds a new exploit class to a list that already includes <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security's systemic MCP RCE</a>, <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point's CVE-2025-59536</a>, and the <a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">Authzed timeline</a>. Anthropic's stated position remains that sanitization is the developer's responsibility. Confidence <strong>H</strong>.</p>
+</li>
+<li>
+<p><strong><code>cost-runaway</code> — Engineering departments visibly cutting AI tooling spend.</strong> <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's Pulse</a> formalizes the trend with three named anchors: Microsoft cancelling internal Claude Code licenses (per <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium long-form</a>), Uber exhausting full-year AI budget by April, and <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor Teams repackaged pricing</a>. Confidence <strong>M</strong>.</p>
+</li>
+<li>
+<p><strong><code>cognitive-debt-deskilling</code> — Cognitive debt graduates from blog idea to industry-tracked concept.</strong> <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a>, <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev two-debts framing</a>, and the <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a> (80-90% of what was built isn't used). Confidence <strong>H</strong>.</p>
+</li>
+<li>
+<p><strong><code>delegation-gap-paradox</code> — Trust gap widens as adoption saturates, but in-window posture is bimodal.</strong> <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow</a> (84% use / 29% trust / 46% active distrust) + <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's tooling survey</a> (95% weekly / 56% doing 70%+ of work) — adoption is climbing while accuracy-trust collapses. In-window Reddit reframes it: <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">senior practitioners constrain rather than reject</a>. Confidence <strong>H</strong>.</p>
+</li>
+<li>
+<p><strong><code>agent-production-destruction</code> — Autonomous-agent failure mode: over-privileged tokens + speculative actions.</strong> <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second wipe</a> and in-window <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> map to the same anti-pattern. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/" target="_blank" rel="noopener">ServiceNow "kill switch"</a> and <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks deterministic permission</a> are the proposed counter-designs. Confidence <strong>H</strong>.</p>
+</li>
+</ol>
+<h3>New mints this window</h3>
+<ol start="6">
+<li>
+<p><strong><code>ide-paradigm-shift</code> (NEW) — Architectural philosophy that IDEs are being displaced by terminal/loop-driven multi-agent environments; AX replaces DX.</strong> Theo t3.gg's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>, <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior thread</a>. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>M</strong>.</p>
+</li>
+<li>
+<p><strong><code>byok-pricing-shift</code> (NEW) — Bring-your-own-key disrupts seat-pricing model.</strong> <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code 2026-06-18 BYOK release</a> is the anchor; <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's repackaged Teams pricing</a> is the defensive counter-move; <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> is the enterprise-platform analog. Reframes AI-coding economics as bring-your-own-model with vendor-mediated permissioning. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>M</strong>.</p>
+</li>
+</ol>
+<h3>Weak signals (single observation, watch next window)</h3>
+<ul>
+<li>The Claude-Code-as-resume-signal debate (<a href="https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/" target="_blank" rel="noopener">r/ClaudeAI</a>) is an early indicator that <strong>AI tool fluency is becoming a hiring criterion</strong>. Not promoted; watch for HR-side confirmation.</li>
+<li><a href="https://simonwillison.net/2026/jun/17/glm-52/" target="_blank" rel="noopener">Simon Willison's GLM-5.2 piece</a> — open-weights momentum in coding-oriented models. Connects to <code>vendor-model-independence</code> (E13 signal). Watch for production-adoption signal.</li>
+</ul>
+
+</section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Position</th>
+<th>Supporting</th>
+<th>Contradicting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI coding tools materially accelerate engineering output</td>
+<td><strong>Contested</strong></td>
+<td><a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon — 10-30 PRs/day</a>; <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma — 40 files refactored</a>; <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a></td>
+<td><a href="https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787" target="_blank" rel="noopener">The Register — production failures study</a>; <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a>; HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"agentic getting closer than I'd like"</a></td>
+</tr>
+<tr>
+<td>Anthropic's MCP supply chain is enterprise-safe</td>
+<td><strong>Tilting Negative</strong></td>
+<td>(none in-window)</td>
+<td><a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic disclosure</a>; <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a>; <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point CVE</a>; <a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">Authzed timeline</a></td>
+</tr>
+<tr>
+<td>Cursor's vendor stability is reliable enough for adoption recommendation</td>
+<td><strong>Newly Contested</strong></td>
+<td><a href="https://www.reddit.com/r/cursor/comments/1u8818r/how_would_you_convince_a_smallcompany_owner_to/" target="_blank" rel="noopener">r/cursor adoption-for-SMB thread</a></td>
+<td><a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition-concern thread (427 likes / 210 replies)</a></td>
+</tr>
+<tr>
+<td>AI coding tools work for greenfield without sufficient operator skill</td>
+<td><strong>Tilting Negative</strong></td>
+<td>(X tier boosts)</td>
+<td><a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail — "ASSISTANT to people who already understand"</a>; <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust-gap</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="06">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Bluesky/Mastodon zero-yield (recurrent).</strong> Direct handle navigation still returned zero in-window items even with ChatGPT browsing fallback. Recommendation logged in §9 Watch List.</li>
+<li><strong>Two Theo t3.gg YouTube URLs unverified.</strong> <code>XYYZM01P2S0</code> and <code>EXeCOsIu0Ps</code> came via Gemini-grounded gap-fill. Manual click-through verification required before any consumer-tier surfacing relies on the exact URLs.</li>
+<li><strong>Tier-3 academic gap.</strong> arXiv and the Brynjolfsson "canaries in the coal mine" preprint, plus the Anthropic comprehension study referenced by ThoughtWorks Radar, were not in-band confirmable this week. Flagged for next window.</li>
+<li><strong>Microsoft Claude-Code license cancellations:</strong> the cost narrative travels through <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium long-form</a> and <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer Pulse</a>. No direct internal confirmation. Treat as second-hand.</li>
+<li><strong>Cursor acquisition.</strong> The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor concern thread</a> is the highest-engagement Cursor item this window but presupposes an acquisition not officially announced. <code>cursor-xai-acquisition</code> (E11 Tracking) gains new observation evidence; remains unconfirmed.</li>
+</ul>
+
+</section><section id="recommendations"><h2 data-section="07">Recommended Actions</h2>
+<p>For engineering leaders making 2026 H2 procurement and policy decisions:</p>
+<ol>
+<li><strong>Treat MCP as an exposed attack surface, not a feature surface.</strong> <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> + <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic</a> + <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point CVE</a> make this a do-it-now operational concern. Inventory MCP servers in your stack; rotate Sentry/Railway/CI-system tokens reachable to AI agents; consider <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> or ServiceNow-style deterministic permissioning as next-tier control.</li>
+<li><strong>Pilot BYOK as the cost-control + vendor-lock-mitigation play.</strong> <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a> materially reframes seat economics; pair with the <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer Pulse</a> cost-trend pattern for the business case.</li>
+<li><strong>Adopt cognitive-debt as an engineering-management metric.</strong> <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a> + <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev framing</a> — add a debt review category and instrument review-time vs. write-time per cluster.</li>
+<li><strong>Read trust-gap data as bimodal, not uniform.</strong> <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow</a> headline numbers under-represent the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">in-window senior-practitioner posture</a> of guarded competence. Don't assume policy uniformity across seniority.</li>
+<li><strong>Watch the IDE-paradigm-shift conversation but don't over-commit.</strong> <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar coding-agent-swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">team-of-coding-agents</a> are Trial-not-Adopt for a reason. The architectural shift is real; production-grade tooling is not yet uniform.</li>
+</ol>
+
+</section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Date</th>
+<th>Severity</th>
+<th>Tools</th>
+<th>Title / URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agentjacking-sentry-mcp</code></td>
+<td>2026-06-21</td>
+<td><strong>Critical</strong></td>
+<td>Claude Code, Cursor, Codex, MCP</td>
+<td><a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking — public Sentry key enables hijack of Claude Code, Cursor, Codex via MCP</a> — new exploit class disclosed in-window</td>
+</tr>
+<tr>
+<td><code>pocketos-cursor-database-wipe</code></td>
+<td>2026-04 (in-window coverage)</td>
+<td><strong>Critical</strong></td>
+<td>Cursor, Claude</td>
+<td><a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS production DB + backups deleted by Cursor (Claude Opus 4.6) agent</a> — 30+ hr outage; recovered via Stripe history + 3-month-old backup</td>
+</tr>
+<tr>
+<td><code>claude-code-project-file-rce</code></td>
+<td>2026 disclosed</td>
+<td>Significant</td>
+<td>Claude Code, MCP</td>
+<td><a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Caught in the Hook — RCE + API token exfiltration via Claude Code project files (CVE-2025-59536, CVE-2026-21852)</a></td>
+</tr>
+<tr>
+<td><code>mcp-stdio-injection-class</code></td>
+<td>2026 (ongoing)</td>
+<td><strong>Critical</strong></td>
+<td>MCP, Claude Code, Cursor, Windsurf</td>
+<td><a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">Systemic MCP STDIO command-injection class — multiple CVEs across 150M+ downloads and ~7000 publicly accessible MCP servers; ~200K vulnerable instances stated</a>; architectural; Anthropic declined to modify protocol</td>
+</tr>
+<tr>
+<td><code>jetbrains-malicious-plugin-campaign</code></td>
+<td>2026-06</td>
+<td>Significant</td>
+<td>JetBrains AI</td>
+<td><a href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">Coordinated malicious JetBrains plugin campaign (15+ plugins) targeting developers</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="metadata"><h2 data-section="09">Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis prompt</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-06-22 17:30 UTC</td>
+</tr>
+<tr>
+<td>Extractor</td>
+<td>Claude / claude-opus-4-7 / Engine v1.5.4 / Config v1.8</td>
+</tr>
+<tr>
+<td>Extraction</td>
+<td>15 of ongoing</td>
+</tr>
+<tr>
+<td>Date window</td>
+<td>2026-06-15 — 2026-06-22 (7 days)</td>
+</tr>
+<tr>
+<td>Items tagged</td>
+<td>39</td>
+</tr>
+<tr>
+<td>Batches successful</td>
+<td>9 of 9</td>
+</tr>
+<tr>
+<td>Citation pre-processing</td>
+<td>Performed (45 URLs)</td>
+</tr>
+<tr>
+<td>Citations rendered</td>
+<td>45 unique URLs clickable in body</td>
+</tr>
+<tr>
+<td>Citation validation</td>
+<td>PASS (coverage 97.6%, 44 of 45 URLs cited; 1 X URL missing from prose)</td>
+</tr>
+<tr>
+<td>Signal store loaded</td>
+<td>true (in-extraction context; full store not attached)</td>
+</tr>
+<tr>
+<td>Signals reused from store</td>
+<td>5 (<code>mcp-attack-surface</code>, <code>cost-runaway</code>, <code>cognitive-debt-deskilling</code>, <code>delegation-gap-paradox</code>, <code>agent-production-destruction</code>)</td>
+</tr>
+<tr>
+<td>Signals minted this window</td>
+<td>2 (<code>ide-paradigm-shift</code>, <code>byok-pricing-shift</code>)</td>
+</tr>
+<tr>
+<td>Summary file</td>
+<td>analysis-summary-2026-06-22.md</td>
+</tr>
+<tr>
+<td>Watch List for next extraction</td>
+<td>Bluesky/Mastodon direct-handle re-attempt; verify Theo t3.gg YouTube URLs; arXiv Brynjolfsson + Anthropic comprehension study; in-window LinkedIn CTO posts; Cursor acquisition outcome; first production case study of VS Code BYOK</td>
+</tr>
+</tbody>
+</table></section>
+<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 12 &mdash; Generated 2026-06-22</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.sentiment-fill').forEach(function(el) {
+    var w = el.style.getPropertyValue('--width');
+    el.style.width = w;
+});
+document.querySelectorAll('.collapsible').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content) content.classList.toggle('active');
+    });
+});
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+</body>
+</html>

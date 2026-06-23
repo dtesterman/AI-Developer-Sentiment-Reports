@@ -26,8 +26,8 @@
 # next Step 7 (consumer dashboard) run. If a row is missing, the generator
 # falls back to title-casing the slug and emits a WARNING.
 
-version: "1.1"
-updated: "2026-06-08"
+version: "1.2"
+updated: "2026-06-22"
 maintained_by: "Darrell + Claude (collaborative; updated as new signals mint)"
 
 labels:
@@ -211,5 +211,19 @@ labels:
   - signal_id: fable5-release
     label: "Claude Fable 5 launches to a polarized welcome"
     one_line: "Anthropic's June 9 Fable 5 launch drew mixed reception — one-shot quality wins on r/vibecoding, gimmick critiques on r/ClaudeCode, and 10× token pricing."
+    sentiment_override: mx
+    retired_alias: []
+
+  # === E15 mints ===
+
+  - signal_id: ide-paradigm-shift
+    label: "IDEs giving way to agent loops"
+    one_line: "Architectural shift from IDE-centric coding to terminal/loop-driven multi-agent environments — 'Agent Experience' replaces 'Developer Experience'."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: byok-pricing-shift
+    label: "Bring-your-own-key breaks seat pricing"
+    one_line: "VS Code's June 18 BYOK release lets developers plug their own model keys directly into the editor — eliminating Copilot subscription lock-in."
     sentiment_override: mx
     retired_alias: []

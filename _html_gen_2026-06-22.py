@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+"""Generate analysis-report-2026-06-22.html from the markdown report.
+
+Reuses locked design system from analysis-report-2026-05-25.html.
+"""
+
+import re
+import sys
+import subprocess
+try:
+    import markdown
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "markdown", "--break-system-packages", "--quiet"])
+    import markdown
+from pathlib import Path
+
+OUTDIR = Path('/sessions/loving-nifty-heisenberg/mnt/local_754ac9df-27cd-4e02-8ee2-7d29ecd49486--outputs')
+SRC_MD = OUTDIR / 'analysis-report-2026-06-22.md'
+DST_HTML = OUTDIR / 'analysis-report-2026-06-22.html'
+TEMPLATE_HTML = OUTDIR / 'analysis-report-2026-06-08.html'
+
+NAV_ITEMS = [
+    ("#summary", "01 Summary"),
+    ("#quant", "02 Quantitative"),
+    ("#deep", "03 Deep Analysis"),
+    ("#patterns", "04 Patterns"),
+    ("#contradictions", "05 Contradictions"),
+    ("#gaps", "06 Gaps"),
+    ("#recommendations", "07 Actions"),
+    ("#incidents", "08 Incidents"),
+    ("#metadata", "09 Metadata"),
+    ("#citations", "Citations"),
+]
+
+SECTION_MAP = [
+    ("Executive Summary", "summary", "01"),
+    ("Quantitative Overview", "quant", "02"),
+    ("Deep Analysis by Cluster", "deep", "03"),
+    ("Emerging Patterns & Weak Signals", "patterns", "04"),
+    ("Contradictions & Contested Claims", "contradictions", "05"),
+    ("Gaps & Uncertainties", "gaps", "06"),
+    ("Recommended Actions", "recommendations", "07"),
+    ("Incidents Log", "incidents", "08"),
+    ("Report Metadata", "metadata", "09"),
+]
+
+
+def extract_design_system():
+    html = TEMPLATE_HTML.read_text(encoding='utf-8')
+    m = re.search(r'^(<!DOCTYPE html>.*?</style>\s*</head>)', html, re.DOTALL)
+    head = m.group(1) if m else ''
+    m2 = re.search(r'(<script>.*?</script>\s*)?</body>', html, re.DOTALL)
+    scripts = m2.group(1) if m2 and m2.group(1) else ''
+    return head, scripts
+
+
+def normalize_md_links(html_body):
+    def fix(m):
+        attrs = m.group(1)
+        href = m.group(2)
+        if href.startswith('#'):
+            return m.group(0)
+        return f'<a{attrs}href="{href}" target="_blank" rel="noopener">'
+    return re.sub(r'<a([^>]*?)href="([^"]+)"[^>]*>', fix, html_body)
+
+
+def add_section_anchors(html_body):
+    h2_re = re.compile(r'<h2>(.*?)</h2>', re.DOTALL)
+    h2_positions = [(m.start(), m.end(), m.group(1).strip()) for m in h2_re.finditer(html_body)]
+    if not h2_positions:
+        return html_body
+    out = [html_body[:h2_positions[0][0]]]
+    for idx, (start, end, title_html) in enumerate(h2_positions):
+        plain = re.sub(r'<[^>]+>', '', title_html).strip().replace('&amp;', '&')
+        sid = snum = None
+        for canonical, mapped_id, mapped_num in SECTION_MAP:
+            if canonical.lower() in plain.lower():
+                sid, snum = mapped_id, mapped_num
+                break
+        next_start = h2_positions[idx + 1][0] if idx + 1 < len(h2_positions) else len(html_body)
+        inner = html_body[end:next_start]
+        if sid:
+            out.append(f'<section id="{sid}"><h2 data-section="{snum}">{title_html}</h2>')
+        else:
+            out.append(f'<section><h2>{title_html}</h2>')
+        out.append(inner)
+        out.append('</section>')
+    return ''.join(out)
+
+
+def insert_citation_anchor(html_body):
+    return re.sub(
+        r'<section><h2>Citation Reference Table</h2>',
+        r'<section id="citations"><h2>Citation Reference Table</h2>',
+        html_body,
+        count=1,
+    )
+
+
+def build_masthead(stats):
+    return f'''<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 12 &nbsp;&nbsp;May 25 &ndash; June 1, 2026<br>Analysis executed 2026-06-22</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">{stats["items"]}</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">{stats["dominant"]}</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">{stats["top_cluster"]}</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">{stats["incidents"]}</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">{stats["patterns"]}</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">{stats["batches"]}</div></div>
+</div>
+</header>'''
+
+
+def render_nav():
+    items = ''.join(f'<li><a href="{href}">{label}</a></li>' for href, label in NAV_ITEMS)
+    return f'<nav><ul>{items}</ul></nav>'
+
+
+def main():
+    head, scripts = extract_design_system()
+    md_text = SRC_MD.read_text(encoding='utf-8')
+    body = markdown.markdown(md_text, extensions=['extra', 'tables', 'sane_lists'], output_format='html5')
+    body = re.sub(r'<h1>.*?</h1>', '', body, count=1, flags=re.DOTALL)
+    body = normalize_md_links(body)
+    body = add_section_anchors(body)
+    body = insert_citation_anchor(body)
+    body = re.sub(r'<hr\s*/?>', '', body)
+    nav = render_nav()
+    stats = {
+        "items": "49",
+        "dominant": "43% Caut. Neg.",
+        "top_cluster": "Code Quality",
+        "incidents": "7",
+        "patterns": "15",
+        "batches": "9/9",
+    }
+    masthead = build_masthead(stats)
+    footer = '''<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 12 &mdash; Generated 2026-06-22</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>'''
+    head = re.sub(
+        r'<meta name="description" content="[^"]*">',
+        '<meta name="description" content="AI Dev Sentiment Analysis &mdash; May 25 to June 1, 2026 (E12, n=49). New ai-dependency-trap signal mints (METR cannot recruit subjects, Anthropic 17% comprehension drop, Amazon Kirorank, Uber budget); cognitive-debt graduates to Thoughtworks Radar v34 Trial; Pricing/Cost rebounds via FinOps formalization around June 1 Copilot cutover.">',
+        head,
+    )
+    head = re.sub(
+        r'<meta property="og:title" content="[^"]*">',
+        '<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E12 (May 25 &ndash; June 1, 2026)">',
+        head,
+    )
+    head = re.sub(
+        r'<meta property="og:description" content="[^"]*">',
+        '<meta property="og:description" content="AI dependency-trap mints; cognitive debt graduates to Thoughtworks Radar Trial; FinOps for AI hits boardrooms; three within-window May incidents (Anthropic May 14, OpenAI May 14, Mini Shai-Hulud).">',
+        head,
+    )
+    head = re.sub(
+        r'<title>.*?</title>',
+        '<title>AI Dev Sentiment Analysis &mdash; E12 (May 25 &ndash; June 1, 2026)</title>',
+        head,
+    )
+    html = f'''{head}
+<body>
+{nav}
+<div class="wrapper">
+{masthead}
+{body}
+{footer}
+</div>
+{scripts}
+</body>
+</html>'''
+    DST_HTML.write_text(html, encoding='utf-8')
+    print(f"Wrote {DST_HTML} ({len(html):,} bytes)")
+
+
+if __name__ == '__main__':
+    main()
