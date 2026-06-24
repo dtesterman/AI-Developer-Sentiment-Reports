@@ -14,7 +14,7 @@
         "output_format": "jsonc",
         "lookback": "--since 2026-06-15",
         "limit": "100 per tier (excludes cross-references)",
-        "gap_fill_method": "Pass 1: WebSearch. Pass 2: cross-LLM (Grok for X/Twitter firehose; ChatGPT for Reddit; Gemini for YouTube/incidents) via Claude in Chrome browser automation. Items sourced from secondary LLMs are tagged with origin in a _via field."
+        "gap_fill_method": "Pass 1: WebSearch. Pass 2: cross-LLM (Grok for X/Twitter firehose; ChatGPT for Reddit; Gemini for YouTube/incidents) via Claude in Chrome browser automation. Pass 3: direct Bluesky/Mastodon browser navigation — bsky.app/profile/{handle} and Mastodon instance profiles read via Claude in Chrome get_page_text. Items sourced from secondary LLMs are tagged with origin in a _via field."
       },
       "session_summary": {
         "batches_attempted": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
@@ -23,7 +23,7 @@
         "primary_social_platform_status": "Working",
         "alt_platform_activation": {
           "activated": true,
-          "reason": "Pass 2 cross-LLM gap-fill activated via browser automation: Grok for X/Twitter (native firehose), ChatGPT for Reddit (deep search), Gemini for YouTube/incidents (Google grounding). Bluesky/Mastodon still returned zero in-window items from requested handles even via ChatGPT browsing."
+          "reason": "Pass 2 cross-LLM gap-fill via browser automation: Grok (X/Twitter firehose), ChatGPT (Reddit), Gemini (YouTube/incidents). Pass 3 direct Bluesky/Mastodon navigation via Claude in Chrome recovered the platforms that all three LLMs missed via web-search alone — confirming the v1.8 finding that the gap is a search-engine indexing problem, not absent content."
         },
         "time_range": {
           "from": "2026-06-15",
@@ -32,7 +32,177 @@
       },
       "deduplication_references": [],
       "tier1": {
-        "primary_social": [],
+        "primary_social": [
+          {
+            "url": "https://bsky.app/profile/simonwillison.net",
+            "retrieved": "2026-06-22",
+            "author": "@simonwillison.net",
+            "author_role": "Independent AI researcher; creator of Datasette, llm.datasette.io",
+            "author_type": "Practitioner",
+            "date": "2026-06-21",
+            "content": "My parallel agent side-project today was having Claude Code port the new Moebius image pinpointing model to ONNX in order to run it entirely in the browser",
+            "engagement": {"likes": 42, "reposts": 4, "replies": 4},
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Architectural Philosophy"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/simonwillison.net",
+            "retrieved": "2026-06-22",
+            "author": "@simonwillison.net",
+            "author_role": "Independent AI researcher",
+            "author_type": "Practitioner",
+            "date": "2026-06-17",
+            "content": "Just launched Datasette Apps - a plugin for Datasette that lets you host full HTML+JS apps in an iframe sandbox that can query your database and do interesting things with your data. Think of this as Claude Artifacts reimagined for Datasette",
+            "engagement": {"likes": 56, "reposts": 5, "replies": 4},
+            "tools": ["Claude Code"],
+            "tags": ["Productivity", "Architectural Philosophy"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://fedi.simonwillison.net/@simon",
+            "retrieved": "2026-06-22",
+            "author": "@simon@simonwillison.net (Mastodon)",
+            "author_role": "Independent AI researcher",
+            "author_type": "Practitioner",
+            "date": "2026-06-20",
+            "content": "[Mirror of Bluesky post] Moebius image pinpointing model ported to ONNX with Claude Code parallel agents. Confirms direct Mastodon extraction works; account has 27K followers / 9.3K posts.",
+            "engagement": {"likes": 0, "reposts": 0, "replies": 0},
+            "tools": ["Claude Code"],
+            "tags": ["Productivity"],
+            "_via": "Direct fedi.simonwillison.net Mastodon browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Author of The Pragmatic Engineer newsletter (#1 tech Substack); ex-Uber/Skype",
+            "author_type": "Analyst",
+            "date": "2026-06-15",
+            "content": "So apparently after Meta leadership: - Force reassigned some of the best devs on teams to AI data labelling fulltime - Laid off another 10% - Started to record every dev's screen in the US 24/7. They now realized that it has indeed started to destroy their eng culture. And now trying to walk back",
+            "engagement": {"likes": 262, "reposts": 42, "replies": 6},
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Team dynamics", "Enterprise"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-15",
+            "content": "All of the above was unprompted, not forced by anything external or even business reasons (Meta recorded record revenue, record profits). The biggest self-inflicted eng culture destruction I've seen happen in a matter of weeks",
+            "engagement": {"likes": 155, "reposts": 5, "replies": 4},
+            "tools": ["General AI"],
+            "tags": ["Burnout", "Team dynamics"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-15",
+            "content": "Unbelievable damage in two months' time. It's likely that there are few engineers not looking for a way out. If you ever wanted to hire AI-native engineers from Meta who feel thrown aside, not valued, and under-utilized: now is the time",
+            "engagement": {"likes": 59, "reposts": 5, "replies": 5},
+            "tools": ["General AI"],
+            "tags": ["Hiring", "Burnout", "Job security"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-14",
+            "content": "I'm realizing that with AI tools (coding + non-coding tasks) they are absolutely a superpower when I know what I want to do, am locked in, and don't let myself get distracted. Then it's truly like having a mecha suit. When I don't have it, it's 'meh.' Not the fault of the tool!",
+            "engagement": {"likes": 66, "reposts": 4, "replies": 2},
+            "tools": ["General AI"],
+            "tags": ["Productivity", "Trust", "Learning"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-16",
+            "content": "Ironic: been recommending a resume service built by an ex-Dropbox eng for years (a side project, but a good one.) Dev pivoted to building an AI Engineer - fine! But now resume site is down. Customers billed. Support nonexistent. AI made it... a lot worse!",
+            "engagement": {"likes": 46, "reposts": 1, "replies": 2},
+            "tools": ["General AI"],
+            "tags": ["Hype vs Reality", "Dependency/Resilience"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-21",
+            "content": "What's the job market like, as a hiring manager trying to fill positions, or as an engineer looking for a new job? I'm collecting anecdotes and stories to supplement the data. DM me your observations + stories, and will share (anonymized) what I have. Feels like an odd market.",
+            "engagement": {"likes": 24, "reposts": 4, "replies": 4},
+            "tools": ["General AI"],
+            "tags": ["Hiring", "Job security"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/gergely.pragmaticengineer.com",
+            "retrieved": "2026-06-22",
+            "author": "@gergely.pragmaticengineer.com",
+            "author_role": "Analyst — Pragmatic Engineer",
+            "author_type": "Analyst",
+            "date": "2026-06-21",
+            "content": "A recruiter messaged me about a sr eng leadership role that he's struggling to fill. Here's part of the role. Do you see the problem? They ask for a bazillion requirements (already a red flag). The company is considered a 'lower-tier' company. And there's no comp listed!!",
+            "engagement": {"likes": 54, "reposts": 2, "replies": 12},
+            "tools": ["General AI"],
+            "tags": ["Hiring"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/mitsuhiko.at",
+            "retrieved": "2026-06-22",
+            "author": "@mitsuhiko.at",
+            "author_role": "Armin Ronacher — Creator of Flask; agentic engineering practitioner",
+            "author_type": "Practitioner",
+            "date": "2026-06-21",
+            "content": "Some more thoughts on looping in coding agents. [lucumr.pocoo.org/2026/6/23/the-coming-loop] — Loops, harnesses, and why even loop skeptics may end up with them.",
+            "engagement": {"likes": 83, "reposts": 13, "replies": 8},
+            "tools": ["General AI"],
+            "tags": ["Architectural Philosophy", "Productivity"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/mitsuhiko.at",
+            "retrieved": "2026-06-22",
+            "author": "@mitsuhiko.at",
+            "author_role": "Armin Ronacher — Creator of Flask; Pi coding-agent maintainer",
+            "author_type": "Practitioner",
+            "date": "2026-06-19",
+            "content": "People of pi, enjoy a little weekend update! /new with lots of extensions should now be slightly faster. Fixed GLM-5.2 configs on some providers, added a new way to configure reasoning on VLLM and others. edit tool's fuzzy algorithm is no longer touching non-modified lines.",
+            "engagement": {"likes": 71, "reposts": 1, "replies": 2},
+            "tools": ["Pi (coding agent)", "GLM-5.2"],
+            "tags": ["Productivity", "emerging tools"],
+            "_via": "Direct bsky.app browser navigation"
+          },
+          {
+            "url": "https://bsky.app/profile/kelseyhightower.com",
+            "retrieved": "2026-06-22",
+            "author": "@kelseyhightower.com",
+            "author_role": "Kelsey Hightower — retired Distinguished Engineer; influential dev voice",
+            "author_type": "Practitioner",
+            "date": "2026-06-20",
+            "content": "[Father's Day post] — In-window, but off-topic for AI coding sentiment. Listed here only to document that the handle was reachable via direct navigation; Kelsey's in-window posts skewed off-topic / personal.",
+            "engagement": {"likes": 191, "reposts": 1, "replies": 3},
+            "tools": [],
+            "tags": [],
+            "_via": "Direct bsky.app browser navigation"
+          }
+        ],
         "reddit": [
           {
             "url": "https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/",
@@ -519,14 +689,14 @@
           "reason": "Demoted to Tier 3 Manual (config v1.8) — URLs not indexed; use flipboard-extraction skill via Claude in Chrome."
         },
         {
-          "database": "Bluesky (handles)",
-          "query": "bsky.app simonwillison.net / kelseyhightower.com / krzysztofcieslak.bsky.social",
-          "reason": "Both Claude/WebSearch and ChatGPT/browsing returned zero in-window posts from requested handles. Simon Willison's content surfaced via his own blog, not Bluesky."
+          "database": "Bluesky (handles) — RESOLVED via direct navigation",
+          "query": "bsky.app/profile/{handle} via Claude in Chrome",
+          "reason": "Pass 3 direct browser navigation recovered substantial in-window content from simonwillison.net, gergely.pragmaticengineer.com, mitsuhiko.at, kelseyhightower.com. krzysztofcieslak.bsky.social handle did not load (possibly renamed/private). All entries promoted to tier1.primary_social."
         },
         {
-          "database": "Mastodon",
-          "query": "mastodon.social AI coding June 2026",
-          "reason": "Zero in-window items via WebSearch and via ChatGPT browsing pass."
+          "database": "Mastodon — partially RESOLVED",
+          "query": "fedi.simonwillison.net/@simon, hachyderm.io, fosstodon.org via Claude in Chrome",
+          "reason": "Direct navigation to fedi.simonwillison.net/@simon confirmed extraction works and Simon's Mastodon mirrors his Bluesky. hachyderm.io/@kelseyhightower 404'd. Building a known-good handle list for dev Mastodon instances is next-extraction work."
         },
         {
           "database": "Podcasts (manual)",
@@ -658,6 +828,16 @@
           "confidence": "M"
         },
         {
+          "name": "Meta's AI-fueled self-inflicted engineering culture destruction",
+          "description": "Gergely Orosz's in-window Bluesky thread documents Meta's most acute crisis to date: best devs forcibly reassigned to AI data labelling fulltime, ~10% additional layoffs, 24/7 screen recording of every US dev, ~60% gutting of Instagram Trust & Safety, leadership now trying to walk back. All self-inflicted in two months — Meta posted record revenue and profits during this. Tied to a SEV-0 outage and an Instagram account-takeover. Strongest in-window signal of the 'AI maxxing' anti-pattern destroying eng culture at scale.",
+          "sources": [
+            {"url": "https://bsky.app/profile/gergely.pragmaticengineer.com", "label": "Gergely Orosz — Meta dev screen-recording / forced AI-labelling reassignments (2026-06-15)", "retrieved": "2026-06-22"},
+            {"url": "https://bsky.app/profile/gergely.pragmaticengineer.com", "label": "Gergely Orosz — Instagram T&S gutted, prod bugs from 'AI maxxing' (2026-05-31)", "retrieved": "2026-06-22"},
+            {"url": "https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/", "label": "TechCrunch — Meta AI unit 'soul-crushing gulag'", "retrieved": "2026-06-22"}
+          ],
+          "confidence": "H"
+        },
+        {
           "name": "Autonomous-agent failure mode: over-privileged tokens + speculative actions",
           "description": "PocketOS (Cursor + Claude Opus 4.6, 9-second DB+backup deletion) and the in-window AgentJacking class map to the same anti-pattern: agents discover credentials (Railway API token, Sentry key) in unrelated files, infer plausible parameter values, and execute destructive operations without confirmation. ServiceNow is positioning a 'kill switch' control plane around this exact failure shape; Databricks Agent Bricks pitches the deterministic-permission counter-design.",
           "sources": [
@@ -671,7 +851,7 @@
       ],
       "gaps": {
         "search_failures": [
-          "Bluesky and Mastodon: zero in-window items from requested handles (simonwillison.net, kelseyhightower.com, krzysztofcieslak.bsky.social) across both Claude/WebSearch and ChatGPT/browsing passes. Simon Willison's in-window AI/MCP content surfaced on his own blog, not Bluesky.",
+          "Bluesky/Mastodon via web search (all three LLMs) returned zero in-window items — confirmed as a search-engine-indexing problem, NOT absent content. Pass 3 direct browser navigation recovered the content cleanly.",
           "Direct WebSearch site:reddit.com queries continued to fail for Claude (consistent with config v1.6 finding), but ChatGPT browsing recovered 15 in-window Reddit items."
         ],
         "source_gaps": [
@@ -683,14 +863,14 @@
           "Several blog/news findings (CNN, VentureBeat, Stack Overflow Feb 2026 post) sit outside the strict window but corroborate in-window patterns; retained as supporting evidence under Emerging Patterns rather than emitted as standalone Tier 1 items."
         ],
         "platform_access_issues": [
-          "Reddit site: syntax remains broken for Claude via WebSearch — but ChatGPT browsing recovered the data, so the gap is search-engine-specific rather than truly absent content.",
-          "Bluesky/Mastodon retrieval continues to be near-zero across LLMs — likely a search-indexing rather than platform-policy issue.",
+          "Reddit site: syntax remains broken for Claude via WebSearch — but ChatGPT browsing recovered the data.",
+          "Bluesky/Mastodon: direct navigation works perfectly. The platform-access issue was the search-engine layer, not the platforms. Recommend treating Bluesky/Mastodon as 'browser-direct only' in future extractions rather than relying on web search.",
           "Two Theo t3.gg YouTube URLs from Gemini remain URL-unverified — flagged in tier3_flags for manual confirm."
         ]
       },
       "next_extraction": {
         "retry_batches": [
-          "Bluesky/Mastodon — try direct app navigation via Claude in Chrome to specific handles next week.",
+          "Bluesky/Mastodon — direct browser navigation is now the standard path. Curate a known-good handle list: simonwillison.net, gergely.pragmaticengineer.com, mitsuhiko.at, kelseyhightower.com (Bluesky) + simon@simonwillison.net (Mastodon). Add Mario Zechner (@mariozechner.at) and Thorsten Ball as additional high-signal Bluesky voices observed in repost chains.",
           "Verify the two Theo t3.gg YouTube URLs (XYYZM01P2S0, EXeCOsIu0Ps) by clicking through in-browser."
         ],
         "suggested_queries": [

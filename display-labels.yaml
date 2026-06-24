@@ -227,3 +227,9 @@ labels:
     one_line: "VS Code's June 18 BYOK release lets developers plug their own model keys directly into the editor — eliminating Copilot subscription lock-in."
     sentiment_override: mx
     retired_alias: []
+
+  - signal_id: meta-ai-culture
+    label: "Meta's 'AI maxxing' culture collapse"
+    one_line: "Meta self-inflicted engineering culture destruction in 2 months over AI — forced reassignment to labelling, 10% layoffs, 24/7 screen recording — during record-revenue quarters."
+    sentiment_override: sn
+    retired_alias: []

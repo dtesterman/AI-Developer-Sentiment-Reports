@@ -92,14 +92,14 @@ def render_nav():
 
 def build_masthead():
     return '''<header>
-<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 12</h1>
-<div class="subtitle">2026-03-20 &ndash; 2026-06-22 &nbsp;&middot;&nbsp; 73 days &nbsp;&middot;&nbsp; 12 weekly windows<br>Generated 2026-06-22 from analysis-summary-{date}.md files (--from-summaries mode)</div>
+<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 15</h1>
+<div class="subtitle">2026-03-20 &ndash; 2026-06-22 &nbsp;&middot;&nbsp; 94 days &nbsp;&middot;&nbsp; 15 weekly windows<br>Generated 2026-06-22 from analysis-summary-{date}.md files (--from-summaries mode)</div>
 <div class="masthead-stats">
-<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">12</div></div>
-<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">597</div></div>
-<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">26</div></div>
-<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">10</div></div>
-<div class="stat-item"><div class="stat-label">NEW E12</div><div class="stat-value">1</div></div>
+<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">15</div></div>
+<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">~727</div></div>
+<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">25</div></div>
+<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">13</div></div>
+<div class="stat-item"><div class="stat-label">NEW E15</div><div class="stat-value">1</div></div>
 <div class="stat-item"><div class="stat-label">Promotion Candidates</div><div class="stat-value">4</div></div>
 </div>
 </header>'''
@@ -116,12 +116,12 @@ def main():
     nav = render_nav()
     masthead = build_masthead()
     footer = '''<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid #2a3441;text-align:center;color:#7a8694;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">
-<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 12 &mdash; Generated 2026-06-22</p>
+<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 15 &mdash; Generated 2026-06-22</p>
 <p>Longitudinal Engine v1.3 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2 (blue accent)</p>
 </footer>'''
     head = re.sub(
         r'<meta name="description" content="[^"]*">',
-        '<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E12 (2026-03-20 to 2026-06-22). 12 weekly windows; 597 tagged items; 26 tracked signals (10 Promoted, 11 Tracking, 5 retire-or-merge candidates). E12 mints ai-dependency-trap; four signals reach promotion threshold simultaneously.">',
+        '<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E15 (2026-03-20 to 2026-06-22). 15 weekly windows; ~727 tagged items; 25 tracked signals. E15 mints ide-paradigm-shift, byok-pricing-shift, and meta-ai-culture; MCP attack surface adds new AgentJacking exploit class; cognitive-debt graduates to ThoughtWorks Radar.">',
         head,
     )
     head = re.sub(

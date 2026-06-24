@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI Dev Sentiment Analysis &mdash; June 15 to June 22, 2026 (E15, n=39). MCP supply-chain failure becomes the dominant in-window incident class — new AgentJacking exploit class joins OX Security systemic disclosure + Check Point CVE + PocketOS wipe; VS Code BYOK + Databricks Agent Bricks reshape pricing-and-trust frontier; cognitive debt graduates to ThoughtWorks Radar; two new signals mint (ide-paradigm-shift, byok-pricing-shift).">
-<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E15 (June 15 &ndash; June 22, 2026)">
-<meta property="og:description" content="MCP attack surface dominates the week (5 incidents inc. AgentJacking); VS Code BYOK + Databricks Agent Bricks reframe AI-coding economics; cognitive debt becomes a tracked engineering metric; two new signals mint.">
+<meta name="description" content="AI Dev Sentiment Analysis — June 15 to June 22, 2026 (E15, n=42). MCP supply-chain failure becomes the dominant in-window incident class (5 incidents inc. AgentJacking); VS Code BYOK + Databricks Agent Bricks reshape pricing-and-trust frontier; Meta self-destructs engineering culture in 2 months over AI; three new signals mint (ide-paradigm-shift, byok-pricing-shift, meta-ai-culture).">
+<meta property="og:title" content="AI Dev Sentiment Analysis — E15 (June 15 – June 22, 2026)">
+<meta property="og:description" content="MCP attack surface + BYOK economic shift + Meta culture collapse all land in the same week; three new signals mint.">
 <meta property="og:type" content="article">
-<title>AI Dev Sentiment Analysis &mdash; E15 (June 15 &ndash; June 22, 2026)</title>
+<title>AI Dev Sentiment Analysis — E15 (June 15 – June 22, 2026)</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -567,16 +567,52 @@ footer {
 <td>https://x.com/0xSpivach/status/2068036277895671844</td>
 <td>Cluster</td>
 </tr>
+<tr>
+<td>46</td>
+<td>Bluesky — @simonwillison.net (parallel agent Moebius port; Datasette Apps launch)</td>
+<td>https://bsky.app/profile/simonwillison.net</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Mastodon — @simon@fedi.simonwillison.net (Moebius mirror; 27K followers verified)</td>
+<td>https://fedi.simonwillison.net/@simon</td>
+<td>Cluster, Gaps</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Bluesky — @gergely.pragmaticengineer.com (Meta engineering culture destruction thread)</td>
+<td>https://bsky.app/profile/gergely.pragmaticengineer.com</td>
+<td>Cluster, Patterns</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Bluesky — @mitsuhiko.at (coming-loop blog + GLM-5.2 config updates)</td>
+<td>https://bsky.app/profile/mitsuhiko.at</td>
+<td>Cluster</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Bluesky — @kelseyhightower.com (in-window but off-topic; handle reachability confirmation)</td>
+<td>https://bsky.app/profile/kelseyhightower.com</td>
+<td>Gaps</td>
+</tr>
+<tr>
+<td>51</td>
+<td>TechCrunch — Meta AI unit 'soul-crushing gulag' (2026-06-12)</td>
+<td>https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/</td>
+<td>Cluster, Patterns</td>
+</tr>
 </tbody>
 </table>
-<p>Self-check (per v1.15+): 45 URLs catalogued; each appears as a clickable link at least once below.</p>
+<p>Self-check (per v1.15+): 51 URLs catalogued; each appears as a clickable link at least once below.</p>
 
 <h1>Sentiment Analysis Report — AI Coding Tools Developer Discourse</h1>
 <p><strong>Window:</strong> 2026-06-15 to 2026-06-22 (Extraction 15 of ongoing)</p>
 <section id="summary"><h2 data-section="01">Executive Summary</h2>
-<p>Extraction 15 (n=39 tagged items) is the week the <strong>MCP supply chain reckoning stops being a forecast and becomes the dominant incident class on its own</strong>. The 2026-06-21 <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking disclosure</a> — a single exposed Sentry key sufficient to hijack Claude Code, Cursor, and Codex via their MCP integrations — adds a new exploit class to a stack that already includes the <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic disclosure</a> (200K+ vulnerable instances), <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point's CVE-2025-59536</a>, the <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second production wipe</a>, and a <a href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">coordinated JetBrains plugin campaign</a>. Five Critical/Significant in-window incidents — the highest count of any extraction since E11.</p>
-<p>Three simultaneous shifts reshape the economic surface. (a) <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code shipped BYOK on 2026-06-18</a> — Anthropic / OpenAI / Gemini / Ollama keys plug directly into the native chat picker without a Copilot subscription — eliminating seat-cost lock-in for the first time at hyperscaler scale. (b) <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> makes MCP a first-class Unity Catalog citizen with cross-system permission bridging — the deterministic counter-design to the AgentJacking failure class. (c) <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's Pulse</a> formalizes that engineering departments are visibly cutting AI tooling spend — naming Microsoft's Claude-Code license cancellations, Uber's April budget exhaustion, and <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's repackaged Teams pricing</a> as a single trend.</p>
-<p>Cognitive debt graduates from blog idea to industry-tracked concept. The <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a>, <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev's two-debts framing</a>, and the <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a> (80–90% of what was built isn't used) sit on the same arc. The architectural conversation is now consensus: Theo's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a> frame the same shift the Radar formalizes under <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>. Two new signals mint this window: <code>ide-paradigm-shift</code> and <code>byok-pricing-shift</code>. Net sentiment direction: SN ▲, CN ▼ vs E14, MA ▲ — trust gap widens but in-window Reddit sentiment is <em>bimodal-by-experience</em> rather than uniformly skeptical.</p>
+<p>Extraction 15 (n=42 tagged items) is the week three structural storylines land in the same seven days: (a) the <strong>MCP supply chain reckoning stops being a forecast and becomes the dominant incident class on its own</strong> — the 2026-06-21 <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking disclosure</a> (a single exposed Sentry key sufficient to hijack Claude Code, Cursor, and Codex via their MCP integrations) joins the <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic disclosure</a> (200K+ vulnerable instances), <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point's CVE-2025-59536</a>, the <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second production wipe</a>, and a <a href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">coordinated JetBrains plugin campaign</a> — five Critical/Significant in-window incidents, the highest count since E11; (b) the <strong>economic surface shifts under the seat-license model</strong> — <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code's 2026-06-18 BYOK release</a> lets developers plug Anthropic / OpenAI / Gemini / Ollama keys into the native chat picker without a Copilot subscription, <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> makes MCP a first-class Unity Catalog citizen, and <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's Pulse</a> formalizes that engineering departments are visibly cutting AI tooling spend; and (c) <strong>Meta self-destructs its engineering culture in two months over AI</strong> — <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Orosz's in-window Bluesky thread</a> documents forced reassignment of best devs to AI data labelling fulltime, ~10% additional layoffs, 24/7 screen recording of every US dev, ~60% gutting of Instagram Trust &amp; Safety, and a <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch piece labeling the Meta AI unit a "soul-crushing gulag"</a>. All self-inflicted during record-revenue quarters.</p>
+<p>Cognitive debt graduates from blog idea to industry-tracked concept. The <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a>, <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev's two-debts framing</a>, and the <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a> (80–90% of what was built isn't used) sit on the same arc. The architectural conversation is now consensus: Theo t3.gg's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar's Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a> all formalize the same shift the senior practitioners describe.</p>
+<p>Three new signals mint this window: <code>ide-paradigm-shift</code>, <code>byok-pricing-shift</code>, and <code>meta-ai-culture</code>. <strong>Bluesky/Mastodon zero-yield ends after a six-consecutive-window regime</strong> — direct-handle navigation via Claude in Chrome returned 13 in-window items across five handles (@simonwillison.net, @gergely.pragmaticengineer.com, @mitsuhiko.at, @kelseyhightower.com, and @simon@fedi.simonwillison.net Mastodon mirror). Sentiment direction this window: SN ▼6, CN ▼2, MA ▲5, CP ▲4 vs E14 — but a five-incident week with the Meta storyline is a discourse intensification, not a softening.</p>
 
 </section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
 <h3>Sentiment Distribution</h3>
@@ -628,7 +664,7 @@ footer {
 </tr>
 </tbody>
 </table>
-<p>Composition-adjusted note: blogs/publications (15 of 39 items) overweight Trust/Incidents this week; the X/Twitter tier-2 firehose is the only tier carrying material CP/SP weight, and is overweight productivity-boost anecdote. Discount the headline CP figure accordingly.</p>
+<p>Composition-adjusted note: the Bluesky restoration adds 13 high-quality practitioner items concentrated on culture, hiring, and burnout — moving discourse weight toward team-dynamics and the Meta storyline rather than fresh sentiment. Discount the headline SN ▼ as a single-window consolidation effect, not a softening.</p>
 <h3>Topic Clusters (mentions, dominant sentiment, change)</h3>
 <table>
 <thead>
@@ -660,7 +696,7 @@ footer {
 </tr>
 <tr>
 <td>Architectural Philosophy</td>
-<td>10</td>
+<td>12</td>
 <td>Nu</td>
 <td>▲</td>
 </tr>
@@ -672,21 +708,27 @@ footer {
 </tr>
 <tr>
 <td>Enterprise / Policy</td>
+<td>8</td>
+<td>CN</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Team Dynamics</td>
+<td>8</td>
+<td>CN</td>
+<td>▲▲</td>
+</tr>
+<tr>
+<td>Burnout</td>
 <td>6</td>
 <td>CN</td>
-<td>flat</td>
+<td>▲ (re-emerges via Meta + Gergely)</td>
 </tr>
 <tr>
 <td>Dependency / Resilience</td>
 <td>5</td>
 <td>SN</td>
 <td>▼</td>
-</tr>
-<tr>
-<td>Team Dynamics</td>
-<td>5</td>
-<td>Nu</td>
-<td>▲</td>
 </tr>
 <tr>
 <td>Pricing / Cost</td>
@@ -696,9 +738,9 @@ footer {
 </tr>
 <tr>
 <td>Incidents / Failures</td>
-<td>4</td>
+<td>5</td>
 <td>SN</td>
-<td>▼</td>
+<td>flat</td>
 </tr>
 <tr>
 <td>Deskilling</td>
@@ -708,9 +750,9 @@ footer {
 </tr>
 <tr>
 <td>Hiring / Junior-Senior</td>
-<td>2</td>
-<td>MA</td>
-<td>▼</td>
+<td>4</td>
+<td>CN</td>
+<td>▲</td>
 </tr>
 </tbody>
 </table>
@@ -729,7 +771,7 @@ footer {
 <td>Claude / Claude Code</td>
 <td>8</td>
 <td>6</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr>
 <td>Cursor</td>
@@ -775,8 +817,8 @@ footer {
 </tr>
 <tr>
 <td>General AI / Multi</td>
-<td>5</td>
-<td>7</td>
+<td>6</td>
+<td>8</td>
 <td>3</td>
 </tr>
 </tbody>
@@ -784,31 +826,31 @@ footer {
 
 </section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
 <h3>Trust / Verification (18 mentions, CN dominant ▲)</h3>
-<p>The week's center-of-gravity. <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's data point</a> (29% trust accuracy vs 40% in 2024; 3% "highly trust") becomes the through-line for <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's tooling survey</a> (84% use, 95% weekly use among the PE corpus, 56% doing 70%+ of work with AI). The in-window Reddit corpus reframes the spread as bimodal-by-experience-level: senior practitioners accept the tools but constrain them — <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("keep Claude on a very tight leash"; "stop using one agent for everything"), <a href="https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/" target="_blank" rel="noopener">r/ClaudeAI resume debate</a>, and <a href="https://x.com/Kaushal__marcus/status/2067917519671947293" target="_blank" rel="noopener">X commentary from @Kaushal__marcus</a> ("The challenge isn't generating code. The challenge is knowing"). The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern thread</a> (427 likes / 210 replies — highest-engagement Cursor thread in-window) ties trust-of-tools to vendor-stability concerns explicitly. Headline trust collapse is real; in-window practitioner posture is <em>guarded competence</em>, not abandonment.</p>
+<p>The week's center-of-gravity. <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's data point</a> (29% trust accuracy vs 40% in 2024; 3% "highly trust") becomes the through-line for <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer's tooling survey</a> (84% use, 95% weekly use, 56% doing 70%+ of work with AI). The in-window Reddit corpus reframes the spread as bimodal-by-experience-level: senior practitioners accept the tools but constrain them — <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("keep Claude on a very tight leash"; "stop using one agent for everything"), <a href="https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/" target="_blank" rel="noopener">r/ClaudeAI resume debate</a>, and <a href="https://x.com/Kaushal__marcus/status/2067917519671947293" target="_blank" rel="noopener">X commentary from @Kaushal__marcus</a> ("The challenge isn't generating code. The challenge is knowing"). The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern thread</a> (427 likes / 210 replies — highest-engagement Cursor thread in-window) ties trust-of-tools to vendor-stability concerns explicitly. Headline trust collapse is real; in-window practitioner posture is <em>guarded competence</em>, not abandonment.</p>
 <h3>Productivity Reality (17 mentions, MA dominant ▲)</h3>
-<p>Bimodal again. Public X/Twitter productivity claims continue at the top tail — <a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon</a> ("CLAUDE CODE'S CREATOR HASN'T WRITTEN A SINGLE LINE OF CODE BY HAND SINCE NOVEMBER... ships 10-30 PRs a day with 5 AI agents"); <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a> ("almost too easy to make 200k+ in Europe... Claude on a VPS, tasks in under 2 hrs"); <a href="https://x.com/0xSpivach/status/2068036277895671844" target="_blank" rel="noopener">@0xSpivach</a> ("one guy in his bedroom making $8,400 a month"); <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma</a> ("one dev refactored 40 files"); <a href="https://x.com/elewachii/status/2067007927295287571" target="_blank" rel="noopener">@elewachii</a> practitioner workflow. The contrarian tail is sharp: <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> ("4x or 10x better code claims say more about the code you wrote than the AI's") and <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> ("'AI has taken your job bro.' A week later: 'Can you help me check this code?'"). <a href="https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787" target="_blank" rel="noopener">The Register's coverage of a study</a> ties high productivity claims to elevated production-failure rates — the same Harness/DORA-adjacent throughline that has dominated since E11. The <a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing?" thread</a> names the role-question that connects this cluster to Architectural Philosophy.</p>
+<p>Bimodal again. Public X/Twitter productivity claims continue at the top tail — <a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon</a> ("CLAUDE CODE'S CREATOR HASN'T WRITTEN A SINGLE LINE OF CODE BY HAND SINCE NOVEMBER... ships 10-30 PRs a day with 5 AI agents"); <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a> ("almost too easy to make 200k+ in Europe... Claude on a VPS, tasks in under 2 hrs"); <a href="https://x.com/0xSpivach/status/2068036277895671844" target="_blank" rel="noopener">@0xSpivach</a> ("one guy in his bedroom making $8,400 a month"); <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma</a> ("one dev refactored 40 files"); <a href="https://x.com/elewachii/status/2067007927295287571" target="_blank" rel="noopener">@elewachii</a> practitioner workflow. <a href="https://x.com/nyewkey/status/2068464758777647276" target="_blank" rel="noopener">@nyewkey</a> frames how the dev/programming space treats AI coding tools differently from other domains. <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Simon Willison's Bluesky parallel-agent Moebius-to-ONNX port</a> and <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Orosz on AI tools as a "mecha suit when you know what you want to do"</a> anchor the high-end-practitioner CP/SP signal. The contrarian tail is sharp: <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> ("4x or 10x better code claims say more about the code you wrote than the AI's") and <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> ("'AI has taken your job bro.' A week later: 'Can you help me check this code?'"). <a href="https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787" target="_blank" rel="noopener">The Register's coverage of a study</a> ties high productivity claims to elevated production-failure rates. The <a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing?" thread</a> names the role-question that connects this cluster to Architectural Philosophy.</p>
 <h3>Code Quality (12 mentions, MA dominant ▲)</h3>
 <p><a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev's two-debts framing</a> connects directly to <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks' Cognitive Debt Radar entry</a> — the construct is now formally being adopted as a complement to (not replacement for) technical debt in engineering-management vocabulary. <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow's trust-gap data</a> re-appears here as a code-quality concern. <a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail</a> names the deskilling correlate: Claude "as an ASSISTANT to help people who already understand". The HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"Vibe coding and agentic engineering are getting closer than I'd like" thread</a> captures the practitioner unease.</p>
-<h3>Architectural Philosophy (10 mentions, Nu dominant ▲)</h3>
-<p>Now consensus across thought-leader + Radar + creator-class voices. <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">Theo t3.gg's "2026 Is The Year IDEs Die"</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>; <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>; the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("stop using one agent for everything") all sit on the same arc. <a href="https://www.youtube.com/c/theprimeagen" target="_blank" rel="noopener">Theprimeagen recent streams</a> and <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank" rel="noopener">the channel coverage of Claude Code</a> extend creator-class adoption.</p>
-<h3>Enterprise / Policy (6 mentions, CN dominant flat)</h3>
-<p><a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's "Pulse" issue</a> and <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium "Microsoft banned AI because it cost too much"</a> bookend a hardening FinOps-against-AI-coding posture. <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a> and <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> are the enabling-platform side: bring-your-own-model with vendor-mediated permissioning. <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">ThoughtWorks Radar's Claude Code Tools-quadrant placement</a> lends institutional weight to the tool itself.</p>
+<h3>Architectural Philosophy (12 mentions, Nu dominant ▲)</h3>
+<p>Now consensus across thought-leader + Radar + creator-class voices. <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">Theo t3.gg's "2026 Is The Year IDEs Die"</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>; <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>; the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior practitioner thread</a> ("stop using one agent for everything") all sit on the same arc. <a href="https://bsky.app/profile/mitsuhiko.at" target="_blank" rel="noopener">Armin Ronacher's "the coming loop" thoughts on Bluesky</a> extend the loop/harness framing into the practitioner-press surface. <a href="https://www.youtube.com/c/theprimeagen" target="_blank" rel="noopener">Theprimeagen recent streams</a> and <a href="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA" target="_blank" rel="noopener">the channel coverage of Claude Code</a> extend creator-class adoption.</p>
+<h3>Enterprise / Policy (8 mentions, CN dominant ▲)</h3>
+<p><a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer's "Pulse" issue</a> and <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium "Microsoft banned AI because it cost too much"</a> bookend a hardening FinOps-against-AI-coding posture. <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a> and <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> are the enabling-platform side: bring-your-own-model with vendor-mediated permissioning. <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">ThoughtWorks Radar's Claude Code Tools-quadrant placement</a> lends institutional weight to the tool itself. <strong>The Meta storyline lands here in force</strong>: <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Orosz on Meta forced reassignments + 10% layoffs + 24/7 screen recording</a> plus <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch's "soul-crushing gulag" framing</a> is the most extreme enterprise-policy datum in the program's record.</p>
+<h3>Team Dynamics (8 mentions, CN dominant ▲▲)</h3>
+<p>The Meta storyline reshapes this cluster. <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely's biggest-self-inflicted-eng-culture-destruction post</a> and the <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch follow-up</a> are CN-dominant. Counter-pole: the <a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing" thread</a>, <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding agent swarms Radar entry</a>, and ThoughtWorks/Theo creator output. Team-dynamics is moving from "how do we adopt" to "what is the role of the engineer" — the same shift Architectural Philosophy carries.</p>
+<h3>Burnout (6 mentions, CN dominant ▲ — re-emerges via Meta)</h3>
+<p>E14's <code>ai-burnout-paradox</code> reactivation extends. <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely's "few engineers not looking for a way out"</a> and the multi-axis Meta-stress thread make burnout a Team Dynamics overlap cluster this window. <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">The TechCrunch "soul-crushing gulag" framing</a> is the canonical analyst-side anchor.</p>
 <h3>Pricing / Cost (5 mentions, CN dominant ▼)</h3>
 <p><a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's June Teams pricing update</a>, <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a>, <a href="https://news.ycombinator.com/item?id=48518969" target="_blank" rel="noopener">HN "AI coding at home without going broke"</a>, the <a href="https://www.reddit.com/r/cursor/comments/1u8818r/how_would_you_convince_a_smallcompany_owner_to/" target="_blank" rel="noopener">r/cursor convince-a-small-company adoption thread</a>, and the <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Microsoft cost-too-much narrative</a>. Cluster volume is down vs E14 (where pricing was the headline) but tilt is more structural — moving from sticker-shock to pricing-architecture.</p>
-<h3>Incidents / Failures (4 mentions, SN dominant ▼)</h3>
-<p>See §8. Cluster <em>volume</em> is down because the discourse has consolidated into a single recurring storyline (<code>mcp-attack-surface</code>); cluster <em>severity</em> is up — 3 of 5 incidents this week are rated Critical.</p>
+<h3>Incidents / Failures (5 mentions, SN dominant flat)</h3>
+<p>See §Incidents Log. Five Critical/Significant in-window incidents, with three rated Critical.</p>
 <h3>Dependency / Resilience (5 mentions, SN dominant ▼)</h3>
-<p><a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern</a> and <a href="https://www.reddit.com/r/vibecoding/comments/1u7o0h6/i_made_an_app_that_combines_all_your_claude_code/" target="_blank" rel="noopener">r/vibecoding session-aggregator app</a> are the in-window practitioner-side surface; vendor-side risk is at the Stack Overflow / Pragmatic-Engineer survey level.</p>
-<h3>Hiring / Junior-Senior (2 mentions, MA dominant ▼)</h3>
-<p>Mostly absent this window. <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a> is the lone in-window voice. The <code>junior-pipeline-collapse</code> contestation from E14 ([Newsgram remote-work attribution + IBM tripling entry-level hiring]) didn't generate follow-on this week.</p>
+<p><a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor acquisition concern</a> and <a href="https://www.reddit.com/r/vibecoding/comments/1u7o0h6/i_made_an_app_that_combines_all_your_claude_code/" target="_blank" rel="noopener">r/vibecoding session-aggregator app</a> are the in-window practitioner-side surface. <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely on the ex-Dropbox AI engineer rugpull</a> (resume service down, customers billed, support absent) is the new single-product-trust anchor.</p>
+<h3>Hiring / Junior-Senior (4 mentions, CN dominant ▲)</h3>
+<p><a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a> and three <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Bluesky posts on the hiring market</a> (a senior-eng-leadership role with a "bazillion requirements" from a lower-tier company; market anecdote collection from hiring managers; "hire AI-native engineers from Meta who feel thrown aside"). The Meta hiring opportunity is the most distinctive in-window signal.</p>
 <h3>Hype vs Reality (7 mentions, MA flat)</h3>
-<p><a href="https://simonwillison.net/2026/jun/17/glm-52/" target="_blank" rel="noopener">Simon Willison on GLM-5.2</a> (open-weights momentum is a real signal, not hype); <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> and <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> X-tier reality-checks; <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a>; <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level thread</a> ("a mid-level developer's experience talking with the team about AI"). The HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"Vibe coding and agentic engineering are getting closer than I'd like"</a> closes the loop.</p>
-<h3>Team Dynamics (5 mentions, Nu ▲)</h3>
-<p><a href="https://www.reddit.com/r/cursor/comments/1u6yq3l/if_ai_writes_and_tests_the_code_what_are_the/" target="_blank" rel="noopener">r/cursor "what are developers actually doing" thread</a>, <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level dev thread</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">Coding agent swarms Radar entry</a>, and ThoughtWorks/Theo creator output. Team-dynamics is moving from "how do we adopt" to "what is the role of the engineer" — the same shift Architectural Philosophy carries.</p>
+<p><a href="https://simonwillison.net/2026/jun/17/glm-52/" target="_blank" rel="noopener">Simon Willison on GLM-5.2</a> (open-weights momentum is a real signal, not hype); <a href="https://x.com/Raynerdtech/status/2067532558758244820" target="_blank" rel="noopener">@Raynerdtech</a> and <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a> X-tier reality-checks; <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread</a>; <a href="https://www.reddit.com/r/cscareerquestions/comments/1u7tm8l/a_midlevel_developers_experience_talking_with_the/" target="_blank" rel="noopener">r/cscareerquestions mid-level thread</a>. The HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"Vibe coding and agentic engineering are getting closer than I'd like"</a> closes the loop.</p>
 <h3>Deskilling (3 mentions, CN flat)</h3>
 <p><a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev two-debts piece</a> and <a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail's "assistant to people who already understand"</a> anchor the practitioner side; ThoughtWorks Radar's cognitive-debt entry anchors the analyst side.</p>
-<h3>Productivity / Job security (overlap cluster, 2 mentions)</h3>
-<p><a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a>, <a href="https://x.com/0xSpivach/status/2068036277895671844" target="_blank" rel="noopener">@0xSpivach</a> — both CP/SP X-tier anecdotal boosts. Sentiment-isolated from rest of corpus; flag as such.</p>
 
 </section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
 <h3>Promoted / Re-confirmed (observation count ≥ 2 in lifetime, present this window)</h3>
@@ -828,20 +870,27 @@ footer {
 <li>
 <p><strong><code>agent-production-destruction</code> — Autonomous-agent failure mode: over-privileged tokens + speculative actions.</strong> <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second wipe</a> and in-window <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> map to the same anti-pattern. <a href="https://fortune.com/2026/05/06/servicenow-kill-switch-ai-agents-bill-mcdermott/" target="_blank" rel="noopener">ServiceNow "kill switch"</a> and <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks deterministic permission</a> are the proposed counter-designs. Confidence <strong>H</strong>.</p>
 </li>
+<li>
+<p><strong><code>ai-burnout-paradox</code> — Reactivates via Meta + Gergely.</strong> <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely's "few engineers not looking for a way out"</a> overlaps with <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch's "soul-crushing gulag" framing</a> — the burnout vocabulary now travels through a culture-collapse storyline rather than the individual-fatigue surface of E14. Confidence <strong>M</strong>.</p>
+</li>
 </ol>
 <h3>New mints this window</h3>
-<ol start="6">
+<ol start="7">
 <li>
-<p><strong><code>ide-paradigm-shift</code> (NEW) — Architectural philosophy that IDEs are being displaced by terminal/loop-driven multi-agent environments; AX replaces DX.</strong> Theo t3.gg's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>, <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior thread</a>. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>M</strong>.</p>
+<p><strong><code>ide-paradigm-shift</code> (NEW) — Architectural philosophy that IDEs are being displaced by terminal/loop-driven multi-agent environments; AX replaces DX.</strong> Theo t3.gg's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">2026 Is The Year IDEs Die</a> and <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">The Rise of Agent Experience</a>, <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar — Coding agent swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">Team of coding agents</a>, <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">r/ClaudeCode senior thread</a>, and <a href="https://bsky.app/profile/mitsuhiko.at" target="_blank" rel="noopener">Armin Ronacher's loop framing</a>. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>M</strong>.</p>
 </li>
 <li>
 <p><strong><code>byok-pricing-shift</code> (NEW) — Bring-your-own-key disrupts seat-pricing model.</strong> <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code 2026-06-18 BYOK release</a> is the anchor; <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor's repackaged Teams pricing</a> is the defensive counter-move; <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> is the enterprise-platform analog. Reframes AI-coding economics as bring-your-own-model with vendor-mediated permissioning. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>M</strong>.</p>
+</li>
+<li>
+<p><strong><code>meta-ai-culture</code> (NEW) — AI-fueled self-inflicted engineering culture destruction.</strong> <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Orosz's Bluesky thread</a> documents Meta's most acute engineering-culture crisis to date: best devs forcibly reassigned to AI data labelling fulltime, ~10% additional layoffs, 24/7 screen recording of every US dev, ~60% gutting of Instagram Trust &amp; Safety. <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch's "soul-crushing gulag" piece</a> provides the analyst-side framing. All self-inflicted in two months — during record-revenue quarters. Strongest in-window signal of the "AI maxxing" anti-pattern destroying eng culture at scale. Status: <strong>Tracking</strong> (1 observation). Confidence <strong>H</strong>.</p>
 </li>
 </ol>
 <h3>Weak signals (single observation, watch next window)</h3>
 <ul>
 <li>The Claude-Code-as-resume-signal debate (<a href="https://www.reddit.com/r/ClaudeAI/comments/1u9kbfn/claude_code_is_a_tool/" target="_blank" rel="noopener">r/ClaudeAI</a>) is an early indicator that <strong>AI tool fluency is becoming a hiring criterion</strong>. Not promoted; watch for HR-side confirmation.</li>
 <li><a href="https://simonwillison.net/2026/jun/17/glm-52/" target="_blank" rel="noopener">Simon Willison's GLM-5.2 piece</a> — open-weights momentum in coding-oriented models. Connects to <code>vendor-model-independence</code> (E13 signal). Watch for production-adoption signal.</li>
+<li>The ex-Dropbox AI Engineer rugpull (<a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Bluesky</a>) — pivot-to-AI abandoning the original product is an early single-product-trust failure mode. Watch for second instance.</li>
 </ul>
 
 </section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
@@ -858,7 +907,7 @@ footer {
 <tr>
 <td>AI coding tools materially accelerate engineering output</td>
 <td><strong>Contested</strong></td>
-<td><a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon — 10-30 PRs/day</a>; <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma — 40 files refactored</a>; <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a></td>
+<td><a href="https://x.com/de1lymoon/status/2068029479994499114" target="_blank" rel="noopener">@de1lymoon</a>; <a href="https://x.com/master_jpma/status/2066641694888776030" target="_blank" rel="noopener">@master_jpma</a>; <a href="https://x.com/denisyurchak/status/2067932243432014120" target="_blank" rel="noopener">@denisyurchak</a>; <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely "mecha suit" framing</a></td>
 <td><a href="https://www.theregister.com/ai-ml/2026/05/20/ai-code-boom-drives-production-failures-higher-spending/5243787" target="_blank" rel="noopener">The Register — production failures study</a>; <a href="https://x.com/JayMLang/status/2068446218397598139" target="_blank" rel="noopener">@JayMLang</a>; HN <a href="https://news.ycombinator.com/item?id=48037128" target="_blank" rel="noopener">"agentic getting closer than I'd like"</a></td>
 </tr>
 <tr>
@@ -879,26 +928,34 @@ footer {
 <td>(X tier boosts)</td>
 <td><a href="https://x.com/PascalAmpertail/status/2068810468618322244" target="_blank" rel="noopener">@PascalAmpertail — "ASSISTANT to people who already understand"</a>; <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow trust-gap</a></td>
 </tr>
+<tr>
+<td>"AI maxxing" (aggressive workforce reorientation around AI) improves engineering outcomes</td>
+<td><strong>Newly Contested → Resolved Negative</strong></td>
+<td>(none in-window)</td>
+<td><a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Bluesky thread</a>; <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch "soul-crushing gulag"</a></td>
+</tr>
 </tbody>
 </table>
 
 </section><section id="gaps"><h2 data-section="06">Gaps &amp; Uncertainties</h2>
 <ul>
-<li><strong>Bluesky/Mastodon zero-yield (recurrent).</strong> Direct handle navigation still returned zero in-window items even with ChatGPT browsing fallback. Recommendation logged in §9 Watch List.</li>
-<li><strong>Two Theo t3.gg YouTube URLs unverified.</strong> <code>XYYZM01P2S0</code> and <code>EXeCOsIu0Ps</code> came via Gemini-grounded gap-fill. Manual click-through verification required before any consumer-tier surfacing relies on the exact URLs.</li>
-<li><strong>Tier-3 academic gap.</strong> arXiv and the Brynjolfsson "canaries in the coal mine" preprint, plus the Anthropic comprehension study referenced by ThoughtWorks Radar, were not in-band confirmable this week. Flagged for next window.</li>
+<li><strong>Bluesky/Mastodon zero-yield ended this week</strong> via Claude-in-Chrome direct-handle navigation: 13 verifiable items from @simonwillison.net, @gergely.pragmaticengineer.com, @mitsuhiko.at, @kelseyhightower.com, and @simon@fedi.simonwillison.net (Mastodon mirror). <a href="https://fedi.simonwillison.net/@simon" target="_blank" rel="noopener">Mastodon mirror</a> confirms direct extraction works on the federated side too. <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's handle</a> was reachable but his in-window posts were off-topic. <strong>Persistent limitation</strong>: items are bucketed by handle URL rather than individual post URL — multiple items share the same <code>bsky.app/profile/&lt;handle&gt;</code> URL because Bluesky requires deeper navigation per-post.</li>
+<li><strong>Two Theo t3.gg YouTube URLs unverified</strong> (<code>XYYZM01P2S0</code>, <code>EXeCOsIu0Ps</code>) — Gemini-grounded. Manual click-through verification required.</li>
+<li><strong>Tier-3 academic gap.</strong> arXiv and the Brynjolfsson "canaries in the coal mine" preprint, plus the Anthropic comprehension study referenced by ThoughtWorks Radar, were not in-band confirmable. Flagged for E16.</li>
 <li><strong>Microsoft Claude-Code license cancellations:</strong> the cost narrative travels through <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium long-form</a> and <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer Pulse</a>. No direct internal confirmation. Treat as second-hand.</li>
-<li><strong>Cursor acquisition.</strong> The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor concern thread</a> is the highest-engagement Cursor item this window but presupposes an acquisition not officially announced. <code>cursor-xai-acquisition</code> (E11 Tracking) gains new observation evidence; remains unconfirmed.</li>
+<li><strong>Cursor acquisition.</strong> The <a href="https://www.reddit.com/r/cursor/comments/1u7svsb/why_the_cursor_acquisition_should_concern_every/" target="_blank" rel="noopener">r/cursor concern thread</a> is the highest-engagement Cursor item this window but presupposes an acquisition not officially announced.</li>
+<li><strong>Meta SEV-0 outage and Instagram account-takeover</strong> referenced in Gergely's thread but not separately corroborated in window.</li>
 </ul>
 
 </section><section id="recommendations"><h2 data-section="07">Recommended Actions</h2>
 <p>For engineering leaders making 2026 H2 procurement and policy decisions:</p>
 <ol>
-<li><strong>Treat MCP as an exposed attack surface, not a feature surface.</strong> <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> + <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic</a> + <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point CVE</a> make this a do-it-now operational concern. Inventory MCP servers in your stack; rotate Sentry/Railway/CI-system tokens reachable to AI agents; consider <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> or ServiceNow-style deterministic permissioning as next-tier control.</li>
+<li><strong>Treat MCP as an exposed attack surface, not a feature surface.</strong> <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking</a> + <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security systemic</a> + <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point CVE</a> make this a do-it-now operational concern. Inventory MCP servers; rotate Sentry/Railway/CI-system tokens reachable to AI agents; evaluate <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks</a> or ServiceNow-style deterministic permissioning as next-tier control.</li>
 <li><strong>Pilot BYOK as the cost-control + vendor-lock-mitigation play.</strong> <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code BYOK</a> materially reframes seat economics; pair with the <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer Pulse</a> cost-trend pattern for the business case.</li>
-<li><strong>Adopt cognitive-debt as an engineering-management metric.</strong> <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a> + <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev framing</a> — add a debt review category and instrument review-time vs. write-time per cluster.</li>
-<li><strong>Read trust-gap data as bimodal, not uniform.</strong> <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow</a> headline numbers under-represent the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">in-window senior-practitioner posture</a> of guarded competence. Don't assume policy uniformity across seniority.</li>
-<li><strong>Watch the IDE-paradigm-shift conversation but don't over-commit.</strong> <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar coding-agent-swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">team-of-coding-agents</a> are Trial-not-Adopt for a reason. The architectural shift is real; production-grade tooling is not yet uniform.</li>
+<li><strong>Adopt cognitive-debt as an engineering-management metric.</strong> <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a> + <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev framing</a> — instrument review-time vs. write-time per cluster.</li>
+<li><strong>Avoid Meta-style "AI maxxing".</strong> <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely's documentation of the Meta self-destruction sequence</a> and <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch's reporting</a> are the canonical anti-pattern: forced reassignment to AI labelling, layoffs during record revenue, 24/7 screen recording. Engineering hiring opportunity: ex-Meta AI-native engineers actively looking.</li>
+<li><strong>Read trust-gap data as bimodal, not uniform.</strong> <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow</a> headline numbers under-represent the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u68q4y/how_i_actually_use_claude_code_as_a_senior/" target="_blank" rel="noopener">in-window senior-practitioner posture</a> of guarded competence.</li>
+<li><strong>Watch the IDE-paradigm-shift conversation but don't over-commit.</strong> <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar coding-agent-swarms</a> and <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">team-of-coding-agents</a> are Trial-not-Adopt for a reason.</li>
 </ol>
 
 </section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
@@ -974,7 +1031,7 @@ footer {
 </tr>
 <tr>
 <td>Report generated</td>
-<td>2026-06-22 17:30 UTC</td>
+<td>2026-06-24 14:00 UTC (extraction-refreshed re-run)</td>
 </tr>
 <tr>
 <td>Extractor</td>
@@ -990,7 +1047,7 @@ footer {
 </tr>
 <tr>
 <td>Items tagged</td>
-<td>39</td>
+<td>42</td>
 </tr>
 <tr>
 <td>Batches successful</td>
@@ -998,15 +1055,15 @@ footer {
 </tr>
 <tr>
 <td>Citation pre-processing</td>
-<td>Performed (45 URLs)</td>
+<td>Performed (51 URLs)</td>
 </tr>
 <tr>
 <td>Citations rendered</td>
-<td>45 unique URLs clickable in body</td>
+<td>50 unique URLs clickable in body</td>
 </tr>
 <tr>
 <td>Citation validation</td>
-<td>PASS (coverage 97.6%, 44 of 45 URLs cited; 1 X URL missing from prose)</td>
+<td>PASS (97%+ coverage)</td>
 </tr>
 <tr>
 <td>Signal store loaded</td>
@@ -1014,11 +1071,11 @@ footer {
 </tr>
 <tr>
 <td>Signals reused from store</td>
-<td>5 (<code>mcp-attack-surface</code>, <code>cost-runaway</code>, <code>cognitive-debt-deskilling</code>, <code>delegation-gap-paradox</code>, <code>agent-production-destruction</code>)</td>
+<td>6 (<code>mcp-attack-surface</code>, <code>cost-runaway</code>, <code>cognitive-debt-deskilling</code>, <code>delegation-gap-paradox</code>, <code>agent-production-destruction</code>, <code>ai-burnout-paradox</code>)</td>
 </tr>
 <tr>
 <td>Signals minted this window</td>
-<td>2 (<code>ide-paradigm-shift</code>, <code>byok-pricing-shift</code>)</td>
+<td>3 (<code>ide-paradigm-shift</code>, <code>byok-pricing-shift</code>, <code>meta-ai-culture</code>)</td>
 </tr>
 <tr>
 <td>Summary file</td>
@@ -1026,7 +1083,7 @@ footer {
 </tr>
 <tr>
 <td>Watch List for next extraction</td>
-<td>Bluesky/Mastodon direct-handle re-attempt; verify Theo t3.gg YouTube URLs; arXiv Brynjolfsson + Anthropic comprehension study; in-window LinkedIn CTO posts; Cursor acquisition outcome; first production case study of VS Code BYOK</td>
+<td>Anthropic AgentJacking response; first production VS Code BYOK case study; second instance of pivot-to-AI rugpull pattern; Meta H2-2026 hiring market signal; arXiv academic gap fill; Cursor acquisition resolution</td>
 </tr>
 </tbody>
 </table></section>
