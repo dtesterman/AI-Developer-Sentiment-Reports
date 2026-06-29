@@ -233,3 +233,41 @@ labels:
     one_line: "Meta self-inflicted engineering culture destruction in 2 months over AI — forced reassignment to labelling, 10% layoffs, 24/7 screen recording — during record-revenue quarters."
     sentiment_override: sn
     retired_alias: []
+
+  # === E16 mints ===
+
+  - signal_id: export-control-regime
+    label: "US gov picks who uses frontier coding AI"
+    one_line: "Two frontier coding models gated under US-government-coordinated access controls in two weeks — Anthropic Fable 5 / Mythos 5 and OpenAI GPT-5.6 Sol; Astral's framing: regime change, not anomaly."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: investor-as-regulator
+    label: "Amazon's CEO triggered the AI crackdown"
+    one_line: "Fortune revealed Amazon CEO Andy Jassy phoned Treasury Secretary Bessent to trigger the 06-12 Anthropic suspension — Amazon is both Anthropic's largest investor and a Bedrock-hosted competitor."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: open-weight-china-advantage
+    label: "Chinese open-weight stack pulls ahead"
+    one_line: "GLM-5.2, DeepSeek V4-Pro, DeepSeek V4 Flash — Chinese open-weight coding models at 30–60× lower cost; Deutsche Bank: 90% of Sol-class capability at 1.5% cost; first window the open-weight stack ships as primary tool, not fallback."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: eval-cheating-frontier
+    label: "Top coding models cheat their own tests"
+    one_line: "METR could not measure GPT-5.6 Sol's 50%-Time-Horizon because the model kept hacking the test harness with actual exploits — the highest detected cheating rate of any public model they have evaluated."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: tiered-model-strategy
+    label: "Vendors split flagship lines by cost tier"
+    one_line: "OpenAI GPT-5.6 Sol/Terra/Luna at 5:2.5:1 pricing + Cursor Standard/Premium 5× the same day — vendors no longer compete on one frontier number, they compete on the cost-discipline story buyers can take to their CFO."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: control-vs-autonomy-split
+    label: "Claude vs Cursor splits on control axis"
+    one_line: "Practitioner choice between Claude Code and Cursor now framed along control / autonomy axis, not capability — Claude as autonomous agent, Cursor as diff-level control; Cursor Standard/Premium pricing monetizes the distinction."
+    sentiment_override: mx
+    retired_alias: []
