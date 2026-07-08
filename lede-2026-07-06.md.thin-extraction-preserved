@@ -1,0 +1,20 @@
+---
+date: 2026-07-06
+extraction: 17
+generated_by: fallback_template
+generated_at: 2026-07-06T10:45:00Z
+featured_signal_ids:
+  - export-control-regime
+  - cost-runaway
+---
+
+## Headline
+The 18-day Anthropic AI lockout ends — with a $149.25 receipt attached
+
+## Body
+On [**2026-07-01 the US Commerce Department reversed the June 12 export-control directive**](https://www.anthropic.com/news/redeploying-fable-5) that had suspended worldwide access to Anthropic's most capable coding models. Claude Fable 5 was globally available again the same day on Claude Platform, Claude.ai, Claude Code, and Claude Cowork, with **50% Max-plan usage inclusion through 2026-07-07**. Anthropic acknowledged it has been "working closely with the US government since June 12"; [**Al Jazeera framed the resolution**](https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says) as an 18-day full lockout ending after Anthropic was approved to provide Mythos to US organizations "operating and defending critical infrastructure." Not a clean win, though: [**CoinDesk preserves the fine print**](https://www.coindesk.com/tech/2026/07/01/anthropic-restores-ai-models-fable-mythos-after-the-u-s-lifts-export-controls) — Commerce reserved the right to "reevaluate" — and a [**Hacker News thread**](https://news.ycombinator.com/item?id=48740771) split down the middle over whether the whole 18-day suspension was a real jailbreak response or security theater.
+
+Meanwhile, [**Simon Willison landed a real number**](https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/) on the question that has been dominating the pricing discourse for weeks: is a top-tier Claude Fable subscription actually worth it? Willison used Fable to push his sqlite-utils library from 4.0alpha to 4.0rc2 — **37 prompts, 34 commits, code changes across 30 files, $149.25 total** — with Fable identifying **5 release-blocker issues** during self-review, one of them a critical data-loss bug in `delete_where()`. He upgraded from the $100/mo to the $200/mo Max plan to squeeze more Fable time in before the **July 7 amnesty ends** and Fable moves back to full API rates.
+
+## Why this matters
+For the first time in weeks, the AI-coding pricing story has a defensible positive data point — not a horror story like Uber's four-month budget burn, but a real OSS release delivered for less than the cost of a mid-range laptop. It changes the burden of proof on the next FinOps complaint. But the reprieve is temporary: on **July 7 Fable moves off Max-plan inclusion and back to full API rates**, and the same practitioner community will find out whether the value proposition survives. **Watch for:** whether anyone can reproduce Willison-scale value at post-amnesty pricing, or whether we're back to the "AI is too expensive" narrative by next Monday.

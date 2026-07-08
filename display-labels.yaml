@@ -27,7 +27,7 @@
 # falls back to title-casing the slug and emits a WARNING.
 
 version: "1.2"
-updated: "2026-07-06"
+updated: "2026-07-08"
 maintained_by: "Darrell + Claude (collaborative; updated as new signals mint)"
 
 labels:
@@ -278,5 +278,19 @@ labels:
     label: "Delegate to a smaller model, judge with the big one"
     one_line: "First-class practitioner discipline: prefer model judgment over prescriptive instructions; delegate implementation to lower-power subagents while keeping judgment/review/synthesis in the top-tier main loop for cost efficiency."
     sentiment_override: cp
+    retired_alias: []
+
+  # === E17-v2 mints ===
+
+  - signal_id: composer-25-quality-drift
+    label: "Cursor Composer 2.5 quality drift"
+    one_line: "Cursor's own CursorBench 3.1 places Composer 2.5 near frontier at fractional cost, but practitioners report cross-project chain-of-thought leakage and 'confidently makes subtle, incorrect changes' — vendor benchmark vs practitioner experience diverge."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: tool-schema-drift
+    label: "Newer models regress on tool schemas"
+    one_line: "Ronacher and Willison document post-training regression on third-party tool-schema fidelity — newer Claude models invent extra fields that older models handled correctly. Architectural regression from post-training, not base-model capability."
+    sentiment_override: cn
     retired_alias: []
 

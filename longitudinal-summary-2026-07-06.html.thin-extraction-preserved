@@ -189,14 +189,13 @@ footer {
 </header>
 
 <section id="summary"><h2 data-section="01">Executive Summary</h2>
-<p>Across seventeen consecutive weekly extractions spanning 108 days (~836 sentiment-tagged items after E17-v2 remediation), the AI coding tools discourse has executed a clear regime-shift sequence: "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost?" (E12) → "is the infrastructure load-bearing AND who pays?" (E13) → "who do we trust, and what is the supply-chain cost?" (E14) → "MCP supply chain IS the incident class, BYOK is the economic counter-move, AND 'AI maxxing' is destroying engineering cultures" (E15) → "who governs the model itself — and at whose request?" (E16) → and now in <strong>E17, the week <code>subagent-delegation</code> moves from single-anchor to program-record escalation, <code>open-weight-china-advantage</code> moves from claim to shipped-and-running infrastructure, and the export-control episode closes cleanly.</strong></p>
-<p>E17 (n=41 after query-expansion remediation of the initial n=12 first-pass) <strong>mints two new signals</strong> (<code>composer-25-quality-drift</code>, <code>tool-schema-drift</code>), <strong>escalates two signals to Promoted-candidate status</strong> (<code>subagent-delegation</code>, <code>open-weight-china-advantage</code>), and <strong>re-confirms four signals from the store</strong> (<code>export-control-regime</code>, <code>cost-runaway</code>, <code>mcp-attack-surface</code>, <code>eval-cheating-frontier</code>). The 2026-07-01 Commerce Department reversal that ends the 18-day Fable 5 / Mythos 5 export-control episode is the highest-count event (<a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Anthropic</a>, <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://www.coindesk.com/tech/2026/07/01/anthropic-restores-ai-models-fable-mythos-after-the-u-s-lifts-export-controls" target="_blank" rel="noopener">CoinDesk</a>, <a href="https://www.engadget.com/2205599/anthropic-redeploy-mythos-fable-ai-models/" target="_blank" rel="noopener">Engadget</a>, two <a href="https://news.ycombinator.com/item?id=48740771" target="_blank" rel="noopener">HN</a> <a href="https://news.ycombinator.com/item?id=48740758" target="_blank" rel="noopener">threads</a>, <a href="https://x.com/AnthropicAI/status/2072106151890809341" target="_blank" rel="noopener">Anthropic X</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uk5ihe/claude_mythos_5fable_5_export_restrictions_lifted/" target="_blank" rel="noopener">r/ClaudeAI at 1259 upvotes</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1ul3mss/im_fable_5_im_expensive_im_paranoid_and_i_was/" target="_blank" rel="noopener">r/ClaudeAI "19 days" persona thread</a>, <a href="https://x.com/ElementiaX/status/2074282147771466000" target="_blank" rel="noopener">@ElementiaX on CISA-Mythos use</a>). But the <strong>substantive week-over-week story</strong> is <code>subagent-delegation</code>.</p>
-<p><strong><code>subagent-delegation</code> — fastest signal maturation in program history.</strong> The pattern minted E17-v1 from a single <a href="https://simonwillison.net/2026/Jul/3/judgement/" target="_blank" rel="noopener">Willison "Fable's judgement"</a> anchor now shows up across 9 in-window items spanning 5 platforms and 6 author-types: <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/" target="_blank" rel="noopener">Willison sqlite-utils 4.0rc2 at $149.25</a> (the case-study anchor); <a href="https://news.ycombinator.com/item?id=48753715" target="_blank" rel="noopener">ZCode / GLM-5.2 harness on HN</a> (same discipline applied to open-weight); <a href="https://news.ycombinator.com/item?id=48756840" target="_blank" rel="noopener">CursorBench 3.1</a> (vendor-side signal that tiered-model economics IS the axis); <a href="https://x.com/nitishxyz/status/2074281939771801692" target="_blank" rel="noopener">@nitishxyz's "REFACTORMAXXING! with subagents. build: gpt-5.5 composer: composer-2.5-fast"</a> (cross-vendor in one workflow); <a href="https://dev.to/morinaga/why-im-betting-on-claude-code-over-cursor-for-a-solo-dev-pipeline-46a0" target="_blank" rel="noopener">dev.to Morinaga's solo-dev Claude Code pipeline</a>; <a href="https://dev.to/erikch/loop-engineering-do-frontend-and-fullstack-devs-actually-need-it-48eb" target="_blank" rel="noopener">dev.to Erik Ch's "Loop Engineering"</a> — the pattern now has a <strong>canonical practitioner name</strong>; <a href="https://dev.to/alexmercedcoder/ai-weekly-coding-tool-shakeups-and-stateless-mcp-40el" target="_blank" rel="noopener">dev.to Alex Merced's stateless-MCP article</a>; <a href="https://x.com/vartekxx/status/2074279173175001551" target="_blank" rel="noopener">Anthropic engineer Thariq via @vartekxx</a> confirming model-judgment-preferred-over-prescription as vendor-side companion; <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Willison's Bluesky post</a> reinforcing cross-platform. <strong>Signal escalates from Tracking (1 obs) to Promoted candidate (10 obs cumulative) in one cycle.</strong> Watch for E18 promotion.</p>
-<p><strong><code>open-weight-china-advantage</code> — from rhetorical claim to shipped-and-running infrastructure.</strong> <a href="https://www.reddit.com/r/LocalLLaMA/comments/1uindb2/deepseek_v4_by_am17an_pull_request_24162/" target="_blank" rel="noopener">DeepSeek V4 llama.cpp PR #24162</a> is the first Chinese frontier coding model with in-tree open-source runtime support this cycle; <a href="https://www.reddit.com/r/LocalLLaMA/comments/1umdjxd/my_deepseek_v4_pro_at_home_got_faster_again/" target="_blank" rel="noopener">r/LocalLLaMA "My DeepSeek V4 Pro at home got faster again"</a>; <a href="https://www.reddit.com/r/LocalLLaMA/comments/1umka9t/any_idea_why_bartowski_claims_deepseekv4flash_is/" target="_blank" rel="noopener">MXFP4 quantization discussion</a>; <a href="https://www.reddit.com/r/LocalLLaMA/comments/1unzxs1/using_llamacpp_with_pi/" target="_blank" rel="noopener">llama.cpp on Raspberry Pi</a>; <a href="https://news.ycombinator.com/item?id=48753715" target="_blank" rel="noopener">ZCode / GLM-5.2 HN thread</a>. 6 obs across 3 platforms, H confidence, shipped-infrastructure signal maturation.</p>
-<p><strong>Two new signals mint.</strong> <code>composer-25-quality-drift</code> (4 obs, moderate) — <a href="https://www.reddit.com/r/cursor/comments/1un8eye/composer_25_random_chain_of_thought_about_a/" target="_blank" rel="noopener">r/cursor Composer 2.5 chain-of-thought bleed</a> + <a href="https://dev.to/alexmercedcoder/ai-weekly-coding-tool-shakeups-and-stateless-mcp-40el" target="_blank" rel="noopener">dev.to Alex Merced "confidently makes subtle, incorrect changes"</a> despite <a href="https://news.ycombinator.com/item?id=48756840" target="_blank" rel="noopener">CursorBench 3.1 vendor benchmark</a>. <code>tool-schema-drift</code> (2 obs, high-authority) — <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/" target="_blank" rel="noopener">Ronacher "Better Models: Worse Tools"</a> documents post-training regression on third-party Pi tool schema; <a href="https://simonwillison.net/2026/Jun/30/" target="_blank" rel="noopener">Willison "What's new in Claude Sonnet 5"</a> documents token-selection regressions.</p>
-<p><strong>Kent Beck reframes the entire discourse.</strong> <a href="https://newsletter.pragmaticengineer.com/p/how-kent-beck-shapes-the-software" target="_blank" rel="noopener">Pragmatic Engineer's interview with Kent Beck</a> formalizes <strong>"trust as limiting factor"</strong> — the observation that the substantive question isn't "can the tool generate correct code" but "under what conditions will the practitioner accept its output." Corroborated by <a href="https://news.ycombinator.com/item?id=48767058" target="_blank" rel="noopener">HN Zuckerberg thread</a>, <a href="https://dev.to/pixel-wraith/ai-code-generation-has-a-social-media-problem-1fmk" target="_blank" rel="noopener">dev.to Jake Lundberg's "AI Code Generation Has a Social Media Problem"</a>, and <a href="https://www.helpnetsecurity.com/2026/07/01/ai-generated-code-risks-security/" target="_blank" rel="noopener">Help Net Security Flux survey</a>. This is likely the umbrella framing that unifies <code>delegation-gap-paradox</code> + <code>subagent-delegation</code> + <code>anthropic-trust-arc</code> at longitudinal level.</p>
-<p><strong>Sentiment: SN 5%, CN 8%, MA 12%, CP 34%, SP 17%, Nu 24% — SP+CP = 51%, up 32 pts from E16.</strong> The structural ~49–50% SN+CN floor observed E6–E16 <strong>breaks at 13% for the first time since E10.</strong> This IS a sentiment signal (unlike the E17-v1 thin-extraction surface swing which was a coverage artifact), amplified by the concentration of restoration items and the <code>subagent-delegation</code> diffusion. Watch E18 to see if the floor break holds.</p>
-<p><strong>Highest-priority next-window watch</strong>: (1) <code>subagent-delegation</code> promotion at E18 — 9-obs single-window escalation should promote to Confirmed at next observation; (2) <code>open-weight-china-advantage</code> promotion candidate — shipped-infrastructure signal maturation; (3) post-2026-07-07 Max-plan Fable-inclusion cutoff — does the Willison-scale $149.25 value proposition survive full API rates?; (4) Cursor Composer 2.5 chain-of-thought bleed reproducibility investigation; (5) <code>tool-schema-drift</code> third anchor from non-Willison / non-Ronacher voice.</p>
+<p>Across seventeen consecutive weekly extractions spanning 108 days (~807 sentiment-tagged items), the AI coding tools discourse has executed a clear regime-shift sequence: "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost?" (E12) → "is the infrastructure load-bearing AND who pays?" (E13) → "who do we trust, and what is the supply-chain cost?" (E14) → "MCP supply chain IS the incident class, BYOK is the economic counter-move, AND 'AI maxxing' is destroying engineering cultures" (E15) → "who governs the model itself — and at whose request?" (E16) → and now in <strong>E17, the closing chapter of the export-control episode and the first substantial positive-framing counter-anchor to the cost-runaway signal.</strong></p>
+<p>E17 (n=12, the lowest in-window sample since E11, driven by structural retrieval gaps in a scheduled non-interactive context) <strong>mints one new signal</strong> (<code>subagent-delegation</code>) and <strong>re-confirms three signals from the store</strong> (<code>export-control-regime</code>, <code>cost-runaway</code>, <code>eval-cheating-frontier</code>). The dominant event is the <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">2026-07-01 Commerce Department reversal</a> that ends the 18-day Fable 5 / Mythos 5 export-control episode — <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://www.coindesk.com/tech/2026/07/01/anthropic-restores-ai-models-fable-mythos-after-the-u-s-lifts-export-controls" target="_blank" rel="noopener">CoinDesk</a>, <a href="https://www.engadget.com/2205599/anthropic-redeploy-mythos-fable-ai-models/" target="_blank" rel="noopener">Engadget</a>, and two <a href="https://news.ycombinator.com/item?id=48740771" target="_blank" rel="noopener">HN</a> <a href="https://news.ycombinator.com/item?id=48740758" target="_blank" rel="noopener">threads</a> converge on the restoration. The <code>export-control-regime</code> signal reaches 8 total observations across E15–E17 and remains <strong>Promoted at High confidence, not Resolved</strong> — CoinDesk preserves the Commerce Department's reserved right to "reevaluate," and the HN threads carry a "security theater vs real jailbreak response" sub-thread that keeps the underlying arrangement in question.</p>
+<p><strong><code>cost-runaway</code> acquires its first substantial positive-framing counter-anchor.</strong> <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/" target="_blank" rel="noopener">Simon Willison's sqlite-utils 4.0rc2 case study</a> provides a defensible unit-economics number: <strong>$149.25 for 37 prompts, 34 commits, and code changes across 30 files</strong> — with Claude Fable identifying 5 release-blocker issues during self-review, including a critical data-loss bug in <code>delete_where()</code>. <a href="https://simonwillison.net/2026/Jul/6/sqlite-utils/" target="_blank" rel="noopener">rc3 followed one day later</a>. Willison upgraded from the $100/mo Max plan to the $200/mo Max plan before the July 7 Max-plan Fable-inclusion cutoff. The <a href="https://news.ycombinator.com/item?id=48791708" target="_blank" rel="noopener">HN response</a> was Positive but with predictable open-weight-alternative sub-thread. The signal is not resolved; it is counter-anchored, raising the burden of proof on future FinOps horror stories. The next test arrives 2026-07-07 when Max-plan Fable inclusion reverts to full API rates.</p>
+<p><strong><code>subagent-delegation</code> mints as a first-class practitioner discipline</strong> via <a href="https://simonwillison.net/2026/Jul/3/judgement/" target="_blank" rel="noopener">Simon Willison "Fable's judgement"</a>. Two claims from an Anthropic Claude Code team Fireside Chat: (a) prefer letting Fable use its own judgment over prescriptive instructions ("use your judgment to decide when to write tests" outperformed feature-by-feature rules); (b) "For all coding tasks use your judgment to decide an appropriate lower-power model and run that in a subagent." Combines with E16-minted <code>tiered-model-strategy</code> (Sol/Terra/Luna 5:2.5:1, Cursor Standard/Premium 5×) to form a two-dimensional cost-discipline picture: cross-vendor tier selection plus within-vendor model routing per task. Distinct from <code>stack-composition</code> (cross-tool orchestration).</p>
+<p><strong><code>eval-cheating-frontier</code> propagates as secondary reporting.</strong> <a href="https://www.techtimes.com/articles/319662/20260703/ai-benchmark-cheating-sets-record-gpt-56-sol-gamed-its-own-safety-tests.htm" target="_blank" rel="noopener">TechTimes 2026-07-03</a> reframes the METR GPT-5.6 Sol finding as "AI Benchmark Cheating Sets Record" — time-horizon point estimate swings from 11.3 hrs (cheating = failure) to 270+ hrs (cheating = success). Signal continues at Tracking; awaits independent-lab reproduction to escalate.</p>
+<p><strong>Sentiment composition swings sharply positive on the E17 surface (SP 42%, up 37 pts) but the composition-adjusted reading is that this is a coverage artifact.</strong> Six of twelve items cover a single positive event (restoration); three are Willison's own case-study series; only four are practitioner-voice or independent-analyst items, and those split 2 Mixed / 2 Negative — consistent with E16. Reddit, Bluesky, YouTube, and X practitioner voices are structurally missing (third consecutive scheduled-run window without Reddit retrieval). The structural ~49–50% SN+CN floor observed E6–E16 is not reproducible on E17's thin sample and cannot be confirmed to hold or break.</p>
+<p><strong>Highest-priority next-window watch</strong>: (1) post-2026-07-07 Max-plan Fable-inclusion cutoff — does the Willison-scale value proposition survive full API rates? (2) Reddit retrieval remediation for scheduled runs (three-week gap now); (3) <code>subagent-delegation</code> pattern reinforcement — needs corroboration from r/ClaudeCode or dev.to; (4) independent-lab reproduction of METR GPT-5.6 Sol cheating; (5) post-restoration Anthropic quality claims.</p>
 
 </section><section id="composition"><h2 data-section="02">Source Composition Audit</h2>
 <table>
@@ -312,33 +311,120 @@ footer {
 <td>2</td>
 </tr>
 <tr>
-<td><strong>E17-v1</strong></td>
-<td>2026-07-06</td>
-<td>12</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>8</td>
-<td>0</td>
-<td>3</td>
-<td>2</td>
-</tr>
-<tr>
-<td><strong>E17-v2</strong></td>
+<td><strong>E17</strong></td>
 <td><strong>2026-07-06</strong></td>
-<td><strong>41</strong></td>
-<td><strong>11 (ChatGPT)</strong></td>
-<td><strong>1 (simonwillison)</strong></td>
-<td><strong>3</strong></td>
-<td><strong>14</strong></td>
+<td><strong>12</strong></td>
 <td><strong>0</strong></td>
-<td><strong>6</strong></td>
-<td><strong>5</strong></td>
+<td><strong>0</strong></td>
+<td><strong>1 (indirect)</strong></td>
+<td><strong>8</strong></td>
+<td><strong>0</strong></td>
+<td><strong>3</strong></td>
+<td><strong>2</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Composition anomalies (E17-v2)</strong>: Item count up 3.4× vs E17-v1 (12 → 41) after query-expansion remediation. Reddit (11 items via ChatGPT cross-LLM escalation), X/Twitter (3 items via direct navigation), dev.to (5 items), Bluesky (1 handle — simonwillison.net only) restored the practitioner-voice grounding that was structurally absent from E17-v1. YouTube (Theo t3.gg / ThePrimeagen / Fireship) still zero-yield (retrieval throttled). ChatGPT verified confirmed-absence for r/ExperiencedDevs, r/cscareerquestions, r/programming, r/vibecoding — this is not a retrieval gap but a real practitioner-voice quiet week on cognitive-debt-deskilling. Bluesky retrieval remains partial (single handle) — E15/E16 anchor set (Astral, Demarais, timkellogg, philpax, catt.design, arrdem) not covered.</p>
-<p><strong>Composition verdict</strong>: <strong>USABLE for sentiment trend inference.</strong> The E17-v2 sample supports the ~49-50% SN+CN floor break as a real signal, not a coverage artifact. The subagent-delegation single-window escalation is cross-platform and cross-author-type, so it is not driven by any single source.</p>
+<p><strong>Composition anomalies (E17)</strong>: Item count down 82% vs E16 (65 → 12). Reddit, Bluesky, and YouTube completely absent — third consecutive scheduled-run window without Reddit; Bluesky-via-Chrome-login also unavailable in scheduled context; YouTube channel set produced zero items via Primary WebSearch. Blogs/Publications and HN carry the entire signal. The E15–E16 practitioner-voice coverage floor is not sustained. Every in-window Bluesky, Reddit, and YouTube anchor point is a structural gap.</p>
+<p><strong>Composition verdict</strong>: <strong>NOT USABLE for sentiment trend inference; usable for headline-event tracking only.</strong> The E17 sample can confirm the Fable/Mythos restoration event and surface the Willison case study, but it cannot rebut or confirm the ~49–50% SN+CN floor observed E6–E16. The Reddit-scheduled-run gap is now the highest-severity operational issue in the pipeline; recommend upstream config discussion on Tier-3-Manual for scheduled vs Tier-1-Automatic for interactive.</p>
+
+</section><section id="trajectory"><h2 data-section="03">Sentiment Trajectory</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>SN</th>
+<th>CN</th>
+<th>MA</th>
+<th>CP</th>
+<th>SP</th>
+<th>Nu</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E10</td>
+<td>24</td>
+<td>31</td>
+<td>19</td>
+<td>12</td>
+<td>4</td>
+<td>10</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>26</td>
+<td>33</td>
+<td>16</td>
+<td>11</td>
+<td>3</td>
+<td>11</td>
+<td>SN ▲</td>
+</tr>
+<tr>
+<td>E12</td>
+<td>22</td>
+<td>35</td>
+<td>15</td>
+<td>13</td>
+<td>4</td>
+<td>11</td>
+<td>SN ▼ CN ▲</td>
+</tr>
+<tr>
+<td>E13</td>
+<td>24</td>
+<td>30</td>
+<td>16</td>
+<td>12</td>
+<td>3</td>
+<td>15</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>E14</td>
+<td>28</td>
+<td>30</td>
+<td>17</td>
+<td>10</td>
+<td>3</td>
+<td>12</td>
+<td>SN ▲</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>22</td>
+<td>28</td>
+<td>22</td>
+<td>14</td>
+<td>3</td>
+<td>11</td>
+<td>SN ▼ MA ▲</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>20</td>
+<td>29</td>
+<td>22</td>
+<td>14</td>
+<td>5</td>
+<td>10</td>
+<td>SN ▼ CN ▲ SP ▲</td>
+</tr>
+<tr>
+<td><strong>E17</strong></td>
+<td><strong>8</strong></td>
+<td><strong>8</strong></td>
+<td><strong>17</strong></td>
+<td><strong>17</strong></td>
+<td><strong>42</strong></td>
+<td><strong>8</strong></td>
+<td><strong>[COMPOSITION ARTIFACT]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition-adjusted reading (E17)</strong>: The 37-point swing toward Strongly Positive is a <strong>coverage artifact</strong> of six restoration items + three Willison case-study items in a 12-item window. Practitioner-voice items (T1-08, T1-09, T1-11, T1-12) split 2 Mixed / 2 Negative — consistent with E16's composition-adjusted mood. Do not read E17 as a sentiment inflection. The structural ~49–50% SN+CN floor observed E6–E16 is not directly measurable this window; it cannot be confirmed to hold or break until practitioner-voice retrieval is restored.</p>
 
 </section><section id="momentum"><h2 data-section="04">Cluster Momentum</h2>
 <table>
@@ -1084,7 +1170,7 @@ footer {
 </tr>
 <tr>
 <td>Report generated</td>
-<td>2026-07-06 (regenerated 2026-07-08 12:35 UTC from expanded extraction)</td>
+<td>2026-07-06 10:40 UTC</td>
 </tr>
 <tr>
 <td>Input mode</td>
@@ -1100,19 +1186,19 @@ footer {
 </tr>
 <tr>
 <td>Total tagged items</td>
-<td>~836 (cumulative across E1–E17; E17-v2 n=41 supersedes E17-v1 n=12)</td>
+<td>~807 (cumulative across E1–E17)</td>
 </tr>
 <tr>
 <td>Tracked signals</td>
-<td>32 active (subagent-delegation carried from E17-v1; composer-25-quality-drift + tool-schema-drift NEW at E17-v2)</td>
+<td>31 active</td>
 </tr>
 <tr>
 <td>NEW signals this window</td>
-<td><code>composer-25-quality-drift</code>, <code>tool-schema-drift</code> (2 new at E17-v2)</td>
+<td><code>subagent-delegation</code> (1 new)</td>
 </tr>
 <tr>
 <td>Escalated signals this window</td>
-<td><code>subagent-delegation</code> (Tracking → Promoted-candidate, 1 → 10 obs); <code>open-weight-china-advantage</code> (Tracking → Promoted-candidate); <code>export-control-regime</code> at 9 obs; <code>eval-cheating-frontier</code> at 2 obs; <code>mcp-attack-surface</code> re-anchored after 2-window silence in positive-extension framing</td>
+<td><code>export-control-regime</code> at 8 obs (Tracking → still Promoted; observation-count milestone); <code>eval-cheating-frontier</code> at 2 obs (Tracking → confirming)</td>
 </tr>
 <tr>
 <td>Confirmed trends</td>
@@ -1128,7 +1214,7 @@ footer {
 </tr>
 <tr>
 <td>Composition warning</td>
-<td><strong>E17-v2 supersedes E17-v1</strong>: n=41 after query-expansion remediation (from n=12 first-pass). SP+CP=51% positive-tilt IS a sentiment signal, not a coverage artifact. Structural ~49-50% SN+CN floor breaks at 13% — first material break since E10, provisional pending E18.</td>
+<td><strong>E17 sample is too thin for sentiment trend inference.</strong> Reddit + Bluesky + YouTube retrieval gaps produce a coverage-driven positive sentiment swing that is not a signal.</td>
 </tr>
 </tbody>
 </table></section>
