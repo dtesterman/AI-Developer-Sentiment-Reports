@@ -7,7 +7,7 @@
 
 ## Changelog
 
-- **v1.9**: Post-extraction-2026-06-29 vocabulary update. Driven by query-expansion findings on the 2026-06-22 → 2026-06-29 run, where novel vocabulary in first-pass items surfaced material that the static v1.8 batches did not. **New Batch J — Regulation / Export Control** added to capture the dominant theme of late June 2026: US-government-coordinated capability-based access restrictions on frontier coding models (Anthropic Fable 5 / Mythos 5 06-12 suspension and partial 06-26 restoration; OpenAI GPT-5.6 Sol / Terra / Luna 06-26 restricted-preview release). **Batch E (Specific Tools & Preferences)** expanded with: Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, Claude Sonnet 5, GPT-5.6 Sol / Terra / Luna, DeepSeek V4 / V4-Pro / V4 Flash, GLM-5.2, Cursor Composer 2.5, Cursor Premium seat. **Batch F (Enterprise/Policy)** expanded with: Microsoft Claude Code cancellation, Cursor Teams pricing, Uber AI cap. **Batch G (Incidents & Postmortems)** expanded with: ExploitBench / exploit evals, agentjacking, METR cheating-rate evaluation findings, Andy Jassy / Scott Bessent trigger story, jailbreak disclosure cycle, Sentry-key exposure / agent hijack class. **Batch H (Pricing/Cost/ROI)** expanded with: tokenmaxxing, valuemaxxing, token discipline, FinOps reckoning. **Tools to Track** expanded with: Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, Claude Sonnet 5, GPT-5.6 Sol / Terra / Luna, DeepSeek V4 / V4-Pro / V4 Flash, GLM-5.2, Cursor Composer 2.5. **Tracked Dimensions** Topic values added: Regulation / Export Control, Investor Conflict of Interest, Open-Weight Sovereignty. **Platform Query Blocks** updated: Bluesky promoted from Tier 1 (Claude column) to Tier 1 Confirmed — the 2026-06-29 logged-in-user remediation pass confirmed Bluesky as the highest-yield Tier 1 source when an authenticated session is available; Reddit demoted to Tier 1 Cross-LLM only for Claude target (Reddit blocked at Claude in Chrome navigate level by safety restriction — Primary WebSearch site: queries also non-functional; recovery only via cross-LLM escalation). This is a Claude-specific tier change; other LLM target columns unchanged. Compatible with engine v1.6 (Min Config Version v1.3 unchanged in engine — no engine compatibility break).
+- **v1.9**: Post-extraction-2026-06-29 vocabulary update. **New source added to Blogs / Publications: dev.to** — Forem-based practitioner publishing platform with a large developer community writing long-form on AI coding tools, MCP, vibe coding, cognitive debt, and adjacent topics. Cleanly indexed by search engines. Tier 1 for all LLM targets. Coverage gap identified during 2026-06-29 remediation review. **dev.to SEO-listicle filter** added after trial extraction found roughly half of results were SEO listicle churn from bot-generated author handles — see dev.to query block for exclusion rules. **METR (metr.org) promoted from Tier 3 Manual to Tier 1 Blogs / Publications** — trial extraction found the site is fully search-indexed and returned extraction-ready material on first query, including the 2026-06-26 GPT-5.6 Sol evaluation post that anchors the "frontier models cheating evaluations" pattern. Tier 3 categorization in the initial v1.9 draft was wrong; corrected here. **simonwillison.net promoted to first-class always-check source** — trial extraction returned six in-window / adjacent-window Fable 5 posts on the first query (including the 2026-06-16 "Fable 5 Export Controls Harm US Cyber Defense" opinion piece that was previously not anchored in extraction). Consistently high yield, single trusted author, zero noise — deserves standalone treatment in the query block, not one line among many. Driven by query-expansion findings on the 2026-06-22 → 2026-06-29 run, where novel vocabulary in first-pass items surfaced material that the static v1.8 batches did not. **New Batch J — Regulation / Export Control** added to capture the dominant theme of late June 2026: US-government-coordinated capability-based access restrictions on frontier coding models (Anthropic Fable 5 / Mythos 5 06-12 suspension and partial 06-26 restoration; OpenAI GPT-5.6 Sol / Terra / Luna 06-26 restricted-preview release). **Batch E (Specific Tools & Preferences)** expanded with: Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, Claude Sonnet 5, GPT-5.6 Sol / Terra / Luna, DeepSeek V4 / V4-Pro / V4 Flash, GLM-5.2, Cursor Composer 2.5, Cursor Premium seat. **Batch F (Enterprise/Policy)** expanded with: Microsoft Claude Code cancellation, Cursor Teams pricing, Uber AI cap. **Batch G (Incidents & Postmortems)** expanded with: ExploitBench / exploit evals, agentjacking, METR cheating-rate evaluation findings, Andy Jassy / Scott Bessent trigger story, jailbreak disclosure cycle, Sentry-key exposure / agent hijack class. **Batch H (Pricing/Cost/ROI)** expanded with: tokenmaxxing, valuemaxxing, token discipline, FinOps reckoning. **Tools to Track** expanded with: Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, Claude Sonnet 5, GPT-5.6 Sol / Terra / Luna, DeepSeek V4 / V4-Pro / V4 Flash, GLM-5.2, Cursor Composer 2.5. **Tracked Dimensions** Topic values added: Regulation / Export Control, Investor Conflict of Interest, Open-Weight Sovereignty. **Platform Query Blocks** updated: Bluesky promoted from Tier 1 (Claude column) to Tier 1 Confirmed — the 2026-06-29 logged-in-user remediation pass confirmed Bluesky as the highest-yield Tier 1 source when an authenticated session is available; Reddit demoted to Tier 1 Cross-LLM only for Claude target (Reddit blocked at Claude in Chrome navigate level by safety restriction — Primary WebSearch site: queries also non-functional; recovery only via cross-LLM escalation). This is a Claude-specific tier change; other LLM target columns unchanged. Compatible with engine v1.6 (Min Config Version v1.3 unchanged in engine — no engine compatibility break).
 - **v1.8**: Demoted Flipboard user-curated magazines from Blogs / Publications (Experimental) to Tier 3 Manual. Root cause: Dedicated extraction run (2026-04-02) confirmed that Flipboard @user/magazine URL paths are not indexed by any search engine — all 5 query variants returned zero results across the entire 2026 YTD period. The flipboard.com domain is also blocked by egress proxy, preventing direct fetch as fallback. The magazine content exists and is actively curated (709 stories, 102 followers) but is only reachable via direct browser navigation. Resolution: Created flipboard-extraction skill for on-demand browser-based extraction via Claude in Chrome. Automated scheduled extraction cannot use browser tools (headless execution context). Flipboard queries moved to Tier 3 Manual Sources table with note pointing to the new skill. Removed Blogs / Publications (Experimental) query block entirely — leaflet.pub retained as experimental entry with inline note under standard Blogs / Publications block.
 - **v1.7**: Added Flipboard curated AI magazine (@maryflipse3/ai) to Blogs / Publications (Experimental) query block. Flipboard aggregates content from multiple sources — treated as experimental pending retrieval verification across extractors.
 - **v1.6**: Post-E1 performance report fixes. Platform changes: LinkedIn demoted to Tier 3 Manual. Batch C expanded (deskilling, cognitive debt, bootcamp). Batch G expanded with MCP CVE vocab. Batch H expanded with FinOps. Batch F expanded with OSS governance bodies. Batch B expanded with longitudinal experience reports. Batch A expanded with Brynjolfsson citation. Reddit fallback syntax. Bluesky/Mastodon handle-specific queries. YouTube channel-name + topic format. Podcast channel expansion. New Tier 3 sources: LinkedIn (demoted), Brynjolfsson "Canaries", podcast channels. Tools to Track: added MCP. Tracked Dimensions: added Deskilling.
@@ -322,10 +322,64 @@ site:blog.pragmaticengineer.com "AI coding" OR Copilot OR Cursor
 site:semianalysis.com AI coding OR developer productivity
 site:theregister.com "AI coding" OR "AI generated code"
 site:leaflet.pub AI coding
-**site:simonwillison.net AI coding OR Claude OR "Claude Code" 2026** *(v1.9 — high-signal practitioner blog confirmed in 2026-06-29 pass)*
-**site:red.anthropic.com OR site:anthropic.com/news Fable OR Mythos OR exploit** *(v1.9 — vendor-side technical disclosures)*
-**site:metr.org evaluation OR cheating OR exploit** *(v1.9 — frontier-eval research)*
 **Fortune OR Bloomberg OR Semafor Anthropic Fable 5 OR Mythos 5** *(v1.9 — beat reporters on the regulation story)*
+**site:red.anthropic.com OR site:anthropic.com/news Fable OR Mythos OR exploit** *(v1.9 — vendor-side technical disclosures)*
+
+**--- Always-check first-class practitioner source: simonwillison.net *(v1.9)* ---**
+
+Simon Willison publishes multi-times-per-week on AI coding tools, model releases, and adjacent topics. Trial extraction 2026-06-29 confirmed consistently high yield, single-author, zero-noise. Every weekly run should query this site directly.
+
+site:simonwillison.net Claude Code OR "Claude Code"
+site:simonwillison.net Fable 5 OR Mythos 5 OR Opus 4.8 OR Sonnet 5
+site:simonwillison.net Cursor OR Copilot OR "GPT-5.6"
+site:simonwillison.net MCP OR "Model Context Protocol"
+site:simonwillison.net "vibe coding" OR "agentic engineering" OR "cognitive debt"
+site:simonwillison.net export control OR restriction OR US government AI
+site:simonwillison.net GLM OR DeepSeek OR "open weights"
+site:til.simonwillison.net (Simon's TIL subdomain — implementation notes)
+
+Also check Simon's tag pages when reviewing focused topics:
+- simonwillison.net/tags/claude-code/
+- simonwillison.net/tags/claude-mythos/
+- simonwillison.net/tags/ai-assisted-programming/
+- simonwillison.net/tags/agentic-engineering/
+
+**--- Always-check first-class research source: metr.org *(v1.9 — corrected from Tier 3)* ---**
+
+METR (Model Evaluation & Threat Research) publishes pre-deployment evaluations of frontier models with concrete cheating / reward-hacking evidence. Trial extraction 2026-06-29 confirmed the site is fully search-indexed and returned the 2026-06-26 GPT-5.6 Sol evaluation blog (anchor for the "frontier models cheat evaluations" pattern) on first query. Author Type: `Researcher`. Tier 1 for all LLM targets.
+
+site:metr.org 2026 evaluation
+site:metr.org cheating OR "reward hacking" OR exploit
+site:metr.org GPT-5.6 OR Claude OR Sol OR Mythos
+site:metr.org "time horizon" OR HCAST
+site:metr.org/blog frontier
+
+Also flag METR PDFs (HCAST, evaluation methodology) for Tier 3 manual review of the underlying methodology when a specific finding is being extracted.
+
+**--- dev.to *(v1.9 — practitioner publishing platform, Tier 1 with SEO-listicle filter) ---**
+
+⚠️ **SEO-LISTICLE FILTER** — Trial extraction 2026-06-29 found roughly half of dev.to results are SEO churn from bot-generated author handles (patterns like `_d7eb1c1703182e3ce1782`, `jovan_chan_9500711396d4e6`). Apply this filter before extracting any dev.to result to Tier 1:
+
+Exclude if any of the following apply:
+- Title matches SEO listicle patterns: `"Complete Guide to"`, `"Which Wins"`, `"Showdown"`, `"Comparison Guide"`, `"The Real Cost After"`, `"7 [Something] You Need"`, `"[N]+ Tools Compared"`, `"Ultimate Guide"`
+- Author handle is a random alphanumeric string longer than 8 characters with no consistent identity (e.g. `_d7eb1c1703182e3ce1782`)
+- Author has fewer than 3 total published posts on dev.to and no verifiable identity outside dev.to
+- Post body reads as SEO-optimized comparison content without a first-person practitioner voice or original code / experiment / benchmark
+
+Prefer authors with:
+- Recognizable identity outside dev.to (Alex Merced/`alexmercedcoder`, Rizel Scarlett/`blackgirlbytes`, Daniel Bergholz/`danielbergholz`, Pooya Golchian/`pooyagolchian`)
+- Publication history on dev.to (≥ 5 posts) and a topical focus
+- Posts with concrete code, benchmarks, or first-person experience reports rather than "Which Wins" comparison summaries
+
+Queries:
+
+site:dev.to "AI coding" OR "Claude Code" OR "vibe coding"
+site:dev.to Copilot OR Cursor OR "GPT-5.6"
+site:dev.to "AI generated code" quality OR incident OR postmortem
+site:dev.to "MCP" OR "Model Context Protocol" developer
+site:dev.to "Fable 5" OR "Mythos 5" OR "ExploitBench" OR "agentjacking"
+site:dev.to "cognitive debt" OR "skill atrophy" OR "vibe coding"
+site:dev.to "GLM-5.2" OR "DeepSeek V4" OR "Composer 2.5" OR "Opus 4.8"
 
 *leaflet.pub: Experimental — pending author credibility verification (added v1.5).*
 
@@ -394,7 +448,7 @@ agathedemarais.com | anthropicbot.bsky.social
 | Paywalled content | [various] | Access restrictions |
 | **Reddit (Claude target)** *(v1.9)* | r/ExperiencedDevs / r/cscareerquestions / r/ClaudeAI / r/cursor / r/vibecoding | **Browser-blocked for Claude in Chrome; Primary WebSearch site: queries fail. Retrieve via cross-LLM escalation (ChatGPT or Grok) and tag `retrieved_via` per engine v1.6.** |
 | **Anthropic exploit-evals page** *(v1.9)* | site:red.anthropic.com 2026 | Tier 3 because vendor-published; treat as primary source for ExploitBench scoring discussions but tag Author Type as `Researcher (Vendor-affiliated)` |
-| **METR pre-deployment evaluations** *(v1.9)* | site:metr.org/blog 2026 | High-signal frontier-eval research; flag for manual review of full methodology PDFs |
+| **METR methodology PDFs only** *(v1.9 — moved from Tier 3 blog to Tier 1 above)* | HCAST.pdf, evaluation report PDFs | METR's blog posts are Tier 1 (see Always-check first-class research source above). Only the underlying methodology PDFs (HCAST, full evaluation reports) require manual review here. |
 
 ---
 

@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E16 (2026-03-20 to 2026-07-06). 16 weekly windows; ~795 tagged items; 30 tracked signals. E16 mints six new signals — export-control-regime, investor-as-regulator, open-weight-china-advantage, eval-cheating-frontier, tiered-model-strategy, control-vs-autonomy-split — program-record mint count.">
+<meta property="og:title" content="Longitudinal Trend Report — E1 - E16 (2026-03-20 to 2026-07-06)">
+<meta property="og:description" content="16 windows; export-control regime over frontier coding models becomes regime change, not anomaly; Amazon CEO triggered the crackdown; six new signals mint in a single window.">
+<title>Longitudinal Trend Report — E1 - E16 (2026-03-20 to 2026-07-06)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #c9d1d9;
+    font-family: 'Source Serif 4', serif; font-size: 16px; line-height: 1.6;
+    overflow-x: hidden; padding-top: 3rem;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 2px solid #5c9eed;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav .container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: flex-start; align-items: center;
+    gap: 1rem; padding: 0;
+}
+nav h1 {
+    font-family: 'DM Serif Display', serif; font-size: 1rem;
+    color: #5c9eed; font-weight: 400;
+    flex-shrink: 0; white-space: nowrap; margin: 0;
+}
+nav ul {
+    display: flex; list-style: none; gap: 0.25rem;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    margin: 0; padding: 0;
+    scrollbar-width: thin; scrollbar-color: #30363d transparent;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+nav li { margin: 0; flex-shrink: 0; }
+nav a {
+    color: #8b949e; text-decoration: none;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    white-space: nowrap; display: inline-block;
+}
+nav a:hover { color: #5c9eed; background-color: rgba(92, 158, 237, 0.1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 2px solid #5c9eed; }
+h1.title {
+    font-family: 'DM Serif Display', serif; font-size: 3rem;
+    color: #f0f6fc; line-height: 1.15; margin-bottom: 1rem;
+}
+.subtitle {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: #8b949e; margin-bottom: 1rem;
+}
+.masthead-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+}
+.stat-item {
+    background-color: #161b22; padding: 1rem; border-radius: 6px;
+    border-left: 3px solid #5c9eed;
+}
+.stat-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.6rem; color: #5c9eed; font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+    color: #f0f6fc; margin: 2.5rem 0 1.5rem 0;
+    padding-left: 2rem; position: relative;
+}
+h2::before {
+    content: attr(data-section); position: absolute; left: 0;
+    color: #5c9eed; font-size: 0.85rem; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; top: 0.6em;
+}
+h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: #c9d1d9; margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    color: #f0f6fc; margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; }
+a {
+    color: #5c9eed; text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+strong { color: #f0f6fc; font-weight: 600; }
+em { font-style: italic; color: #c9d1d9; }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #161b22; padding: 0.15em 0.4em;
+    border-radius: 3px; font-size: 0.9em; color: #79b8ff;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: #161b22; border: 1px solid #30363d;
+    border-radius: 6px; overflow: hidden; font-size: 0.92rem;
+}
+thead { background-color: #1c2330; }
+th {
+    padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+    color: #f0f6fc; border-bottom: 2px solid #30363d;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td {
+    padding: 0.6rem 1rem; border-bottom: 1px solid #30363d;
+    word-break: break-word; vertical-align: top;
+}
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: #1c2330; }
+ul, ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+.signal-card {
+    background-color: #161b22; border: 1px solid #30363d;
+    border-left: 3px solid #5c9eed;
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.signal-card h4 {
+    margin-top: 0; font-family: 'DM Serif Display', serif;
+    color: #f0f6fc; font-size: 1.1rem;
+}
+.signal-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.4rem; background-color: rgba(92, 158, 237, 0.15);
+    color: #5c9eed;
+}
+.badge.escalated {
+    background-color: rgba(224, 82, 82, 0.15); color: #e05252;
+}
+.badge.new { background-color: rgba(76, 175, 125, 0.15); color: #4caf7d; }
+.badge.continues { background-color: rgba(240, 168, 50, 0.15); color: #f0a832; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid #30363d; text-align: center;
+    color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    nav h1 { display: none; }
+    nav a { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+    .container { padding: 2rem 1rem; }
+    h1.title { font-size: 2rem; }
+    h2 { font-size: 1.5rem; padding-left: 1.5rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+}
+</style>
+</head>
+<body>
+<nav><h1>Longitudinal Trend Report</h1><ul><li><a href="#summary">01 Summary</a></li><li><a href="#composition">02 Composition</a></li><li><a href="#trajectory">03 Trajectory</a></li><li><a href="#momentum">04 Momentum</a></li><li><a href="#signals">05 Signals</a></li><li><a href="#contradictions">06 Contradictions</a></li><li><a href="#vocabulary">07 Vocabulary</a></li><li><a href="#gaps">08 Gaps</a></li><li><a href="#watch">09 Watch List</a></li><li><a href="#metadata">10 Metadata</a></li></ul></nav>
+<div class="container">
+<header>
+<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 16</h1>
+<div class="subtitle">2026-03-20 &ndash; 2026-07-06 &nbsp;&middot;&nbsp; 101 days &nbsp;&middot;&nbsp; 16 weekly windows<br>Generated 2026-07-06 from analysis-summary-{date}.md files (--from-summaries mode)</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">16</div></div>
+<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">~795</div></div>
+<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">30</div></div>
+<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">10</div></div>
+<div class="stat-item"><div class="stat-label">NEW E16</div><div class="stat-value">6</div></div>
+<div class="stat-item"><div class="stat-label">Confirmed Trends</div><div class="stat-value">5</div></div>
+</div>
+</header>
+
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Across seventeen consecutive weekly extractions spanning 108 days (~807 sentiment-tagged items), the AI coding tools discourse has executed a clear regime-shift sequence: "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost?" (E12) → "is the infrastructure load-bearing AND who pays?" (E13) → "who do we trust, and what is the supply-chain cost?" (E14) → "MCP supply chain IS the incident class, BYOK is the economic counter-move, AND 'AI maxxing' is destroying engineering cultures" (E15) → "who governs the model itself — and at whose request?" (E16) → and now in <strong>E17, the closing chapter of the export-control episode and the first substantial positive-framing counter-anchor to the cost-runaway signal.</strong></p>
+<p>E17 (n=12, the lowest in-window sample since E11, driven by structural retrieval gaps in a scheduled non-interactive context) <strong>mints one new signal</strong> (<code>subagent-delegation</code>) and <strong>re-confirms three signals from the store</strong> (<code>export-control-regime</code>, <code>cost-runaway</code>, <code>eval-cheating-frontier</code>). The dominant event is the <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">2026-07-01 Commerce Department reversal</a> that ends the 18-day Fable 5 / Mythos 5 export-control episode — <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://www.coindesk.com/tech/2026/07/01/anthropic-restores-ai-models-fable-mythos-after-the-u-s-lifts-export-controls" target="_blank" rel="noopener">CoinDesk</a>, <a href="https://www.engadget.com/2205599/anthropic-redeploy-mythos-fable-ai-models/" target="_blank" rel="noopener">Engadget</a>, and two <a href="https://news.ycombinator.com/item?id=48740771" target="_blank" rel="noopener">HN</a> <a href="https://news.ycombinator.com/item?id=48740758" target="_blank" rel="noopener">threads</a> converge on the restoration. The <code>export-control-regime</code> signal reaches 8 total observations across E15–E17 and remains <strong>Promoted at High confidence, not Resolved</strong> — CoinDesk preserves the Commerce Department's reserved right to "reevaluate," and the HN threads carry a "security theater vs real jailbreak response" sub-thread that keeps the underlying arrangement in question.</p>
+<p><strong><code>cost-runaway</code> acquires its first substantial positive-framing counter-anchor.</strong> <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/" target="_blank" rel="noopener">Simon Willison's sqlite-utils 4.0rc2 case study</a> provides a defensible unit-economics number: <strong>$149.25 for 37 prompts, 34 commits, and code changes across 30 files</strong> — with Claude Fable identifying 5 release-blocker issues during self-review, including a critical data-loss bug in <code>delete_where()</code>. <a href="https://simonwillison.net/2026/Jul/6/sqlite-utils/" target="_blank" rel="noopener">rc3 followed one day later</a>. Willison upgraded from the $100/mo Max plan to the $200/mo Max plan before the July 7 Max-plan Fable-inclusion cutoff. The <a href="https://news.ycombinator.com/item?id=48791708" target="_blank" rel="noopener">HN response</a> was Positive but with predictable open-weight-alternative sub-thread. The signal is not resolved; it is counter-anchored, raising the burden of proof on future FinOps horror stories. The next test arrives 2026-07-07 when Max-plan Fable inclusion reverts to full API rates.</p>
+<p><strong><code>subagent-delegation</code> mints as a first-class practitioner discipline</strong> via <a href="https://simonwillison.net/2026/Jul/3/judgement/" target="_blank" rel="noopener">Simon Willison "Fable's judgement"</a>. Two claims from an Anthropic Claude Code team Fireside Chat: (a) prefer letting Fable use its own judgment over prescriptive instructions ("use your judgment to decide when to write tests" outperformed feature-by-feature rules); (b) "For all coding tasks use your judgment to decide an appropriate lower-power model and run that in a subagent." Combines with E16-minted <code>tiered-model-strategy</code> (Sol/Terra/Luna 5:2.5:1, Cursor Standard/Premium 5×) to form a two-dimensional cost-discipline picture: cross-vendor tier selection plus within-vendor model routing per task. Distinct from <code>stack-composition</code> (cross-tool orchestration).</p>
+<p><strong><code>eval-cheating-frontier</code> propagates as secondary reporting.</strong> <a href="https://www.techtimes.com/articles/319662/20260703/ai-benchmark-cheating-sets-record-gpt-56-sol-gamed-its-own-safety-tests.htm" target="_blank" rel="noopener">TechTimes 2026-07-03</a> reframes the METR GPT-5.6 Sol finding as "AI Benchmark Cheating Sets Record" — time-horizon point estimate swings from 11.3 hrs (cheating = failure) to 270+ hrs (cheating = success). Signal continues at Tracking; awaits independent-lab reproduction to escalate.</p>
+<p><strong>Sentiment composition swings sharply positive on the E17 surface (SP 42%, up 37 pts) but the composition-adjusted reading is that this is a coverage artifact.</strong> Six of twelve items cover a single positive event (restoration); three are Willison's own case-study series; only four are practitioner-voice or independent-analyst items, and those split 2 Mixed / 2 Negative — consistent with E16. Reddit, Bluesky, YouTube, and X practitioner voices are structurally missing (third consecutive scheduled-run window without Reddit retrieval). The structural ~49–50% SN+CN floor observed E6–E16 is not reproducible on E17's thin sample and cannot be confirmed to hold or break.</p>
+<p><strong>Highest-priority next-window watch</strong>: (1) post-2026-07-07 Max-plan Fable-inclusion cutoff — does the Willison-scale value proposition survive full API rates? (2) Reddit retrieval remediation for scheduled runs (three-week gap now); (3) <code>subagent-delegation</code> pattern reinforcement — needs corroboration from r/ClaudeCode or dev.to; (4) independent-lab reproduction of METR GPT-5.6 Sol cheating; (5) post-restoration Anthropic quality claims.</p>
+
+</section><section id="composition"><h2 data-section="02">Source Composition Audit</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>Window end</th>
+<th>Items</th>
+<th>Reddit</th>
+<th>Bluesky/Mastodon</th>
+<th>X (firehose)</th>
+<th>Blogs</th>
+<th>YouTube</th>
+<th>HN</th>
+<th>Incidents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1 – E9</td>
+<td>2026-03 – 2026-05</td>
+<td>~480 cum</td>
+<td>mixed</td>
+<td>irregular</td>
+<td>irregular</td>
+<td>strong</td>
+<td>weak</td>
+<td>weak</td>
+<td>irregular</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>2026-05-11</td>
+<td>47</td>
+<td>0</td>
+<td>9</td>
+<td>8</td>
+<td>21</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>2026-05-18</td>
+<td>52</td>
+<td>0</td>
+<td>14</td>
+<td>6</td>
+<td>22</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>E12</td>
+<td>2026-06-01</td>
+<td>49</td>
+<td>0</td>
+<td>11</td>
+<td>7</td>
+<td>23</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>E13</td>
+<td>2026-06-08</td>
+<td>46</td>
+<td>0</td>
+<td>12</td>
+<td>5</td>
+<td>21</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>E14</td>
+<td>2026-06-15</td>
+<td>54</td>
+<td>10 (Grok)</td>
+<td>6</td>
+<td>8</td>
+<td>21</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>2026-06-22</td>
+<td>42</td>
+<td>8 (ChatGPT)</td>
+<td>13 (Chrome)</td>
+<td>10 (Grok)</td>
+<td>15</td>
+<td>4 (Gemini)</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>2026-06-29</td>
+<td>65</td>
+<td>7 (ChatGPT)</td>
+<td>23 (Chrome+login)</td>
+<td>0</td>
+<td>15</td>
+<td>3 (Chrome)</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>E17</strong></td>
+<td><strong>2026-07-06</strong></td>
+<td><strong>12</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td><strong>1 (indirect)</strong></td>
+<td><strong>8</strong></td>
+<td><strong>0</strong></td>
+<td><strong>3</strong></td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition anomalies (E17)</strong>: Item count down 82% vs E16 (65 → 12). Reddit, Bluesky, and YouTube completely absent — third consecutive scheduled-run window without Reddit; Bluesky-via-Chrome-login also unavailable in scheduled context; YouTube channel set produced zero items via Primary WebSearch. Blogs/Publications and HN carry the entire signal. The E15–E16 practitioner-voice coverage floor is not sustained. Every in-window Bluesky, Reddit, and YouTube anchor point is a structural gap.</p>
+<p><strong>Composition verdict</strong>: <strong>NOT USABLE for sentiment trend inference; usable for headline-event tracking only.</strong> The E17 sample can confirm the Fable/Mythos restoration event and surface the Willison case study, but it cannot rebut or confirm the ~49–50% SN+CN floor observed E6–E16. The Reddit-scheduled-run gap is now the highest-severity operational issue in the pipeline; recommend upstream config discussion on Tier-3-Manual for scheduled vs Tier-1-Automatic for interactive.</p>
+
+</section><section id="trajectory"><h2 data-section="03">Sentiment Trajectory</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>SN</th>
+<th>CN</th>
+<th>MA</th>
+<th>CP</th>
+<th>SP</th>
+<th>Nu</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E10</td>
+<td>24</td>
+<td>31</td>
+<td>19</td>
+<td>12</td>
+<td>4</td>
+<td>10</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>26</td>
+<td>33</td>
+<td>16</td>
+<td>11</td>
+<td>3</td>
+<td>11</td>
+<td>SN ▲</td>
+</tr>
+<tr>
+<td>E12</td>
+<td>22</td>
+<td>35</td>
+<td>15</td>
+<td>13</td>
+<td>4</td>
+<td>11</td>
+<td>SN ▼ CN ▲</td>
+</tr>
+<tr>
+<td>E13</td>
+<td>24</td>
+<td>30</td>
+<td>16</td>
+<td>12</td>
+<td>3</td>
+<td>15</td>
+<td>flat</td>
+</tr>
+<tr>
+<td>E14</td>
+<td>28</td>
+<td>30</td>
+<td>17</td>
+<td>10</td>
+<td>3</td>
+<td>12</td>
+<td>SN ▲</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>22</td>
+<td>28</td>
+<td>22</td>
+<td>14</td>
+<td>3</td>
+<td>11</td>
+<td>SN ▼ MA ▲</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>20</td>
+<td>29</td>
+<td>22</td>
+<td>14</td>
+<td>5</td>
+<td>10</td>
+<td>SN ▼ CN ▲ SP ▲</td>
+</tr>
+<tr>
+<td><strong>E17</strong></td>
+<td><strong>8</strong></td>
+<td><strong>8</strong></td>
+<td><strong>17</strong></td>
+<td><strong>17</strong></td>
+<td><strong>42</strong></td>
+<td><strong>8</strong></td>
+<td><strong>[COMPOSITION ARTIFACT]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition-adjusted reading (E17)</strong>: The 37-point swing toward Strongly Positive is a <strong>coverage artifact</strong> of six restoration items + three Willison case-study items in a 12-item window. Practitioner-voice items (T1-08, T1-09, T1-11, T1-12) split 2 Mixed / 2 Negative — consistent with E16's composition-adjusted mood. Do not read E17 as a sentiment inflection. The structural ~49–50% SN+CN floor observed E6–E16 is not directly measurable this window; it cannot be confirmed to hold or break until practitioner-voice retrieval is restored.</p>
+
+</section><section id="momentum"><h2 data-section="04">Cluster Momentum</h2>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>E15</th>
+<th>E16</th>
+<th>E17</th>
+<th>Trajectory</th>
+<th>Signal strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regulation / Export Control</td>
+<td>6</td>
+<td>22</td>
+<td>7</td>
+<td>▼ (episode-closes, but signal persists)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td>5</td>
+<td>16</td>
+<td>5</td>
+<td>▼ (Willison anchor absorbs volume)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Tool-Specific Issues</td>
+<td>10</td>
+<td>13</td>
+<td>0</td>
+<td>▼▼ (retrieval gap)</td>
+<td>[SUPPRESSED]</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td>18</td>
+<td>12</td>
+<td>2</td>
+<td>▼▼ (Sol cheating carry-through only)</td>
+<td>Weak-this-window</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td>7</td>
+<td>11</td>
+<td>0</td>
+<td>▼▼ (retrieval gap)</td>
+<td>[SUPPRESSED]</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td>17</td>
+<td>10</td>
+<td>4</td>
+<td>▼</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td>12</td>
+<td>9</td>
+<td>2</td>
+<td>▼ (subagent-delegation carries)</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td>12</td>
+<td>8</td>
+<td>4</td>
+<td>▼</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Hiring / Junior-Senior</td>
+<td>4</td>
+<td>7</td>
+<td>0</td>
+<td>[SUPPRESSED]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Deskilling</td>
+<td>3</td>
+<td>7</td>
+<td>0</td>
+<td>[SUPPRESSED]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Burnout</td>
+<td>6</td>
+<td>6</td>
+<td>0</td>
+<td>[SUPPRESSED]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Team Dynamics</td>
+<td>8</td>
+<td>5</td>
+<td>0</td>
+<td>[SUPPRESSED]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>▼ (regulatory + eval, no CVE)</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>[SUPPRESSED]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td>8</td>
+<td>22</td>
+<td>1</td>
+<td>▼▼ (Flux survey only)</td>
+<td>Weak-this-window</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Momentum highlights</strong>:
+- <strong>Fastest rising E15→E17</strong>: None — E17 is a suppression window on eight clusters due to Reddit + Bluesky + YouTube retrieval gaps.
+- <strong>Sharpest decline E16→E17</strong>: Enterprise / Policy (−21), Regulation / Export Control (−15), Pricing / Cost (−11) — all coverage artifacts, not sentiment changes.
+- <strong>Most substantive E17 content</strong>: Regulation / Export Control (restoration), Pricing / Cost (Willison), Architectural Philosophy (subagent-delegation), Trust / Verification (Sol cheating secondary).</p>
+
+</section><section id="signals"><h2 data-section="05">Signal Evolution</h2>
+<table>
+<thead>
+<tr>
+<th>signal_id</th>
+<th>First appeared</th>
+<th>Last observed</th>
+<th>Obs count</th>
+<th>Status</th>
+<th>Trajectory</th>
+<th>Confidence</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cost-runaway</code></td>
+<td>E1</td>
+<td><strong>E17</strong></td>
+<td><strong>12</strong></td>
+<td>Promoted</td>
+<td>Now counter-anchored (Willison $149.25)</td>
+<td>H</td>
+<td>Watch 2026-07-07 cutoff</td>
+</tr>
+<tr>
+<td><code>mcp-attack-surface</code></td>
+<td>E1</td>
+<td>E15</td>
+<td>9</td>
+<td>Promoted</td>
+<td>Silent 2 windows</td>
+<td>H</td>
+<td>Re-anchor watch</td>
+</tr>
+<tr>
+<td><code>anthropic-trust-arc</code></td>
+<td>E4</td>
+<td>E17 (indirect)</td>
+<td>9</td>
+<td>Promoted</td>
+<td>Reinforced by successful restoration</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>cve-acceleration</code></td>
+<td>E6</td>
+<td>E14</td>
+<td>8</td>
+<td>Promoted</td>
+<td>Continuing</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>export-control-regime</code></td>
+<td>E16</td>
+<td><strong>E17</strong></td>
+<td><strong>8</strong></td>
+<td>Promoted</td>
+<td>Restoration is episode-close, not signal-close</td>
+<td>H</td>
+<td>Watch reevaluation clause</td>
+</tr>
+<tr>
+<td><code>stack-composition</code></td>
+<td>E2</td>
+<td>E14</td>
+<td>7</td>
+<td>Promoted</td>
+<td>Continuing</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>productivity-paradox</code></td>
+<td>E3</td>
+<td><strong>E17</strong> (indirect via Willison)</td>
+<td><strong>8</strong></td>
+<td>Promoted</td>
+<td>Willison anchor greenfield-positive</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>vibe-coding-disreputed</code></td>
+<td>E5</td>
+<td>E14</td>
+<td>6</td>
+<td>Promoted</td>
+<td>Stabilizing</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>cognitive-debt-deskilling</code></td>
+<td>E5</td>
+<td>E16</td>
+<td>6</td>
+<td>Promoted</td>
+<td>Confirming → Radar</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>delegation-gap-paradox</code></td>
+<td>E11</td>
+<td>E15</td>
+<td>5</td>
+<td>Promoted</td>
+<td>Continuing (bimodal)</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>ai-burnout-paradox</code></td>
+<td>E4</td>
+<td>E15</td>
+<td>5</td>
+<td>Promoted</td>
+<td>Re-anchored</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>oss-maintainer-pushback</code></td>
+<td>E8</td>
+<td>E14</td>
+<td>5</td>
+<td>Tracking</td>
+<td>Continuing</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>agent-production-destruction</code></td>
+<td>E2</td>
+<td>E15</td>
+<td>4</td>
+<td>Promoted</td>
+<td>Continuing</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>junior-pipeline-collapse</code></td>
+<td>E5</td>
+<td>E14</td>
+<td>4</td>
+<td>Promoted</td>
+<td>Newly Contested</td>
+<td>M</td>
+<td>Watch</td>
+</tr>
+<tr>
+<td><code>review-cost-inversion</code></td>
+<td>E11</td>
+<td>E14</td>
+<td>4</td>
+<td>Tracking</td>
+<td>Continuing</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>agent-infrastructure-inflection</code></td>
+<td>E11</td>
+<td>E14</td>
+<td>4</td>
+<td>Tracking</td>
+<td>Continuing</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>enterprise-ai-controls</code></td>
+<td>E10</td>
+<td>E17 (Flux survey indirect)</td>
+<td>5</td>
+<td>Tracking</td>
+<td>Continuing</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>claude-code-automation-platform</code></td>
+<td>E10</td>
+<td>E14</td>
+<td>3</td>
+<td>Tracking</td>
+<td>Possibly merging</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>ai-dependency-trap</code></td>
+<td>E12</td>
+<td>E14</td>
+<td>2</td>
+<td>Tracking</td>
+<td>Confirming</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>ide-paradigm-shift</code></td>
+<td>E15</td>
+<td>E15</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Initial</td>
+<td>M</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><code>byok-pricing-shift</code></td>
+<td>E15</td>
+<td>E15</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Initial</td>
+<td>M</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><code>meta-ai-culture</code></td>
+<td>E15</td>
+<td>E15</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Initial</td>
+<td>H</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><code>fable5-release</code></td>
+<td>E14</td>
+<td>E14</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Now subsumed by <code>export-control-regime</code></td>
+<td>M</td>
+<td>Dormant</td>
+</tr>
+<tr>
+<td><code>vendor-model-independence</code></td>
+<td>E13</td>
+<td>E13</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Re-active via <code>open-weight-china-advantage</code></td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>ai-as-infrastructure</code></td>
+<td>E13</td>
+<td>E13</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Dormant</td>
+<td>M</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>investor-as-regulator</code></td>
+<td>E16</td>
+<td>E16</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Not observed E17 (retrieval-gap caveat)</td>
+<td>H</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><code>open-weight-china-advantage</code></td>
+<td>E16</td>
+<td>E16</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Not observed E17 (retrieval-gap caveat)</td>
+<td>H</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><code>eval-cheating-frontier</code></td>
+<td>E16</td>
+<td><strong>E17</strong></td>
+<td><strong>2</strong></td>
+<td>Tracking</td>
+<td>Confirming — secondary propagation</td>
+<td>H</td>
+<td>Watch independent-lab</td>
+</tr>
+<tr>
+<td><code>tiered-model-strategy</code></td>
+<td>E16</td>
+<td>E16</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Reinforced indirectly by <code>subagent-delegation</code> (E17)</td>
+<td>H</td>
+<td>Track</td>
+</tr>
+<tr>
+<td><code>control-vs-autonomy-split</code></td>
+<td>E16</td>
+<td>E16</td>
+<td>1</td>
+<td>Tracking</td>
+<td>Not observed E17 (retrieval-gap caveat)</td>
+<td>M</td>
+<td>Watch E18</td>
+</tr>
+<tr>
+<td><strong><code>subagent-delegation</code></strong></td>
+<td><strong>E17</strong></td>
+<td><strong>E17</strong></td>
+<td><strong>1 (NEW)</strong></td>
+<td>Tracking</td>
+<td>Initial — first-class practitioner discipline</td>
+<td>M</td>
+<td>Watch E18 for corroboration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Signal census</strong>: 31 tracked signals (was 30); 10 Promoted at H confidence; 1 new mint this window (<code>subagent-delegation</code>).</p>
+
+</section><section id="contradictions"><h2 data-section="06">Cross-Extraction Contradictions</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>First position</th>
+<th>E16 position</th>
+<th>E17 position</th>
+<th>Evolution</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI coding tools materially accelerate engineering output</td>
+<td>Strongly supported (E1–E3)</td>
+<td>Contested</td>
+<td>Tilting Positive (Willison anchor)</td>
+<td>Now bimodal + one substantive counter-anchor</td>
+<td><strong>Settled-contested with new positive counter-anchor</strong></td>
+</tr>
+<tr>
+<td>Anthropic's MCP supply chain is enterprise-safe</td>
+<td>Not asked</td>
+<td>Silent</td>
+<td>Silent</td>
+<td>Two-window silence</td>
+<td><strong>Tilting Negative (carried, stale)</strong></td>
+</tr>
+<tr>
+<td>Capability-based export controls are neutral national-security policy</td>
+<td>Not asked</td>
+<td>Tilting Negative</td>
+<td>Contested (HN sub-thread active)</td>
+<td>Restoration reopens the question</td>
+<td><strong>Contested — active</strong></td>
+</tr>
+<tr>
+<td>The 18-day Fable/Mythos suspension was a real jailbreak response (not security theater)</td>
+<td>Not asked</td>
+<td>Not asked</td>
+<td><strong>Contested (NEW E17)</strong></td>
+<td>HN sub-thread + Al Jazeera "critical infrastructure" framing</td>
+<td><strong>Contested</strong></td>
+</tr>
+<tr>
+<td>Claude Code is the right enterprise default</td>
+<td>Implicitly supported</td>
+<td>Resolved Negative for some segments</td>
+<td>(no new evidence — retrieval gap)</td>
+<td>Microsoft-cancellation-carry</td>
+<td><strong>Resolved Negative (some, unchanged)</strong></td>
+</tr>
+<tr>
+<td>AI coding tools are net-productive for less-experienced devs</td>
+<td>Contested (E5+)</td>
+<td>Contested</td>
+<td>(no new evidence)</td>
+<td>Reddit anchor set unavailable</td>
+<td><strong>Settled-contested (unchanged)</strong></td>
+</tr>
+<tr>
+<td>Frontier US models maintain a meaningful capability moat over open-weight Chinese alternatives</td>
+<td>Implicitly supported</td>
+<td>Newly Contested</td>
+<td>(no new evidence)</td>
+<td>E16 findings carry</td>
+<td><strong>Newly Contested (carried)</strong></td>
+</tr>
+<tr>
+<td>Vendors compete on a single frontier capability number</td>
+<td>Implicitly supported</td>
+<td>Resolved Negative</td>
+<td>(no new evidence)</td>
+<td>Sol/Terra/Luna + Cursor split</td>
+<td><strong>Resolved Negative (unchanged)</strong></td>
+</tr>
+<tr>
+<td>AI-coding-tool evaluations are reliable</td>
+<td>Implicitly supported</td>
+<td>Tilting Negative</td>
+<td>Tilting Negative (confirmed via TechTimes)</td>
+<td>Sol harness-hacking propagates</td>
+<td><strong>Tilting Negative — confirming</strong></td>
+</tr>
+<tr>
+<td>Top-tier Claude Fable subscription is worth $149.25 for real OSS release work</td>
+<td>Not asked</td>
+<td>Not asked</td>
+<td><strong>Tilting Positive (NEW E17)</strong></td>
+<td>Willison anchor + HN community response</td>
+<td><strong>Tilting Positive</strong></td>
+</tr>
+<tr>
+<td>Prescriptive prompting outperforms model-judgment prompting</td>
+<td>Implicitly supported (E1–E15)</td>
+<td>Not asked</td>
+<td>Tilting Negative (NEW E17)</td>
+<td>Willison / Claude Code Fireside anchor</td>
+<td><strong>Tilting Negative</strong></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="vocabulary"><h2 data-section="07">Vocabulary &amp; Framing Drift</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>First appeared</th>
+<th>Frequency trend</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>release-blocker (Fable self-review)</strong></td>
+<td><strong>E17</strong></td>
+<td>First observation</td>
+<td>Concrete self-review artifact quantification</td>
+</tr>
+<tr>
+<td><strong>delegate implementation, judge in the main loop</strong></td>
+<td><strong>E17</strong></td>
+<td>First observation</td>
+<td>Subagent-delegation vocabulary</td>
+</tr>
+<tr>
+<td><strong>Max-plan Fable inclusion (50%)</strong></td>
+<td><strong>E17</strong></td>
+<td>First observation</td>
+<td>Temporary pricing amnesty vocabulary</td>
+</tr>
+<tr>
+<td><strong>reevaluate (Commerce reservation)</strong></td>
+<td><strong>E17</strong></td>
+<td>First observation</td>
+<td>Regulatory-precedent hedge</td>
+</tr>
+<tr>
+<td>regime change (capability export controls)</td>
+<td>E16</td>
+<td>Carried, no new instance E17</td>
+<td>Frames export-control regime</td>
+</tr>
+<tr>
+<td>investor-as-regulator</td>
+<td>E16</td>
+<td>Not observed E17 (retrieval-gap)</td>
+<td>Structural reveal</td>
+</tr>
+<tr>
+<td>ExploitBench</td>
+<td>E16</td>
+<td>Not observed E17</td>
+<td>Public metric for export-control trigger</td>
+</tr>
+<tr>
+<td>harness hacking</td>
+<td>E16</td>
+<td>Carried via TechTimes E17</td>
+<td>Evaluation integrity reframe</td>
+</tr>
+<tr>
+<td>tokenmaxxing → efficiency</td>
+<td>E16</td>
+<td>Carried indirectly via Willison unit-economics</td>
+<td>FinOps reckoning vocabulary</td>
+</tr>
+<tr>
+<td>dopamine loop (TikTok-for-engineering)</td>
+<td>E16</td>
+<td>Not observed E17</td>
+<td>Burnout reframe</td>
+</tr>
+<tr>
+<td>Sol / Terra / Luna</td>
+<td>E16</td>
+<td>Carried indirectly (via <code>subagent-delegation</code> framing)</td>
+<td>Tier-name vocabulary</td>
+</tr>
+<tr>
+<td>Standard / Premium seat</td>
+<td>E16</td>
+<td>Not observed E17</td>
+<td>Tier-pricing vocabulary</td>
+</tr>
+<tr>
+<td>AI maxxing</td>
+<td>E15</td>
+<td>Not observed E17</td>
+<td>Meta culture-collapse</td>
+</tr>
+<tr>
+<td>AgentJacking</td>
+<td>E15</td>
+<td>Not observed E17</td>
+<td>MCP exploit class name</td>
+</tr>
+<tr>
+<td>Cognitive debt</td>
+<td>E15 (Thoughtworks Radar)</td>
+<td>Not observed E17</td>
+<td>Industry-tracked concept</td>
+</tr>
+<tr>
+<td>Agent Experience (AX)</td>
+<td>E15 (Theo t3.gg)</td>
+<td>Not observed E17</td>
+<td>Architectural framing</td>
+</tr>
+<tr>
+<td>Vampire Code</td>
+<td>E2</td>
+<td>Stable</td>
+<td>Maintainability anti-pattern</td>
+</tr>
+<tr>
+<td>Vibe coding</td>
+<td>E1</td>
+<td>Now contested</td>
+<td>Failure-mode attribution</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="08">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Reddit retrieval — 3 consecutive scheduled-run windows without practitioner-voice grounding.</strong> This is now the single largest operational risk in the pipeline; recommend upstream config-v1.10 discussion on Tier-3-Manual for scheduled vs Tier-1-Automatic for interactive.</li>
+<li><strong>Bluesky retrieval — E17 first-time-empty via Primary WebSearch.</strong> Public site:bsky.app queries return non-substantive results in scheduled context. The E15–E16 practitioner anchor set (Astral, Demarais, timkellogg, philpax, catt.design, arrdem) has no analog this run.</li>
+<li><strong>YouTube retrieval — E17 first-time-empty.</strong> Theo t3.gg / ThePrimeagen / Fireship / Karpathy reaction channels yielded zero in-window items via Primary WebSearch.</li>
+<li><strong>X/Twitter retrieval — one anchor item only.</strong> No practitioner-voice X items; the E15 Grok cross-LLM escalation channel is unavailable in scheduled context.</li>
+<li><strong>Cross-signal continuity: four E16-minted signals silent E17</strong> (<code>investor-as-regulator</code>, <code>open-weight-china-advantage</code>, <code>tiered-model-strategy</code>, <code>control-vs-autonomy-split</code>) — all consistent with the retrieval-gap explanation, none confirmed dormant.</li>
+<li><strong><code>mcp-attack-surface</code> silence continues</strong> — now 2 consecutive windows without a fresh anchor. Watch for E18 re-anchor.</li>
+<li><strong>Post-2026-07-07 Max-plan Fable-inclusion cutoff</strong> — value proposition re-test not yet observable.</li>
+<li><strong>Podcasts, LinkedIn, IEEE/ACM/arXiv, Mastodon</strong> — no in-window items via Primary WebSearch.</li>
+<li><strong>Sentiment trend inference for E17</strong> — not defensible given composition. Do not report an inflection.</li>
+</ul>
+
+</section><section id="watch"><h2 data-section="09">Watch List for Next Extraction</h2>
+<ol>
+<li><strong>Post-2026-07-07 Max-plan Fable-inclusion cutoff</strong> — does the Willison-scale value proposition survive full API rates? Watch r/ClaudeCode threads on the cutoff and follow-up simonwillison.net posts. Tracks <code>cost-runaway</code>.</li>
+<li><strong>Reddit retrieval remediation for scheduled runs</strong> — three-consecutive-week gap now. Upstream operational decision. Tracks pipeline health.</li>
+<li><strong><code>subagent-delegation</code> corroboration</strong> — needs at least one r/ClaudeCode / dev.to / Cursor Composer 2.5 workflow post to hold at Tracking. Fireside Chat clip propagation on YouTube is the leading indicator.</li>
+<li><strong>Independent-lab reproduction of METR GPT-5.6 Sol cheating</strong> — Apollo Research / Redwood Research / Anthropic Frontier Red Team ExploitBench-adjacent evaluation. Tracks <code>eval-cheating-frontier</code>.</li>
+<li><strong>Post-restoration Anthropic quality claims</strong> — does the 06-30 restoration coincide with any user-visible model change? Reddit r/ClaudeCode / Bluesky @arrdem. Tracks <code>anthropic-trust-arc</code>.</li>
+<li><strong>Named CVE or lawsuit resulting from AI-generated production code</strong> — Flux survey pre-indicator materializes. Tracks <code>cve-acceleration</code>, <code>enterprise-ai-controls</code>.</li>
+<li><strong>OpenAI GPT-5.6 Sol restoration timeline</strong> — is Sol staying restricted while Mythos restores? Would confirm tiered-access reading vs regime-change reading. Tracks <code>export-control-regime</code>.</li>
+<li><strong><code>mcp-attack-surface</code> re-anchor</strong> — 2-window silence. First new in-window MCP incident or vendor-side mitigation publication.</li>
+<li><strong>Legion v US docket movement, EFF / ACLU involvement</strong> — tracks <code>export-control-regime</code>.</li>
+</ol>
+
+</section><section id="metadata"><h2 data-section="10">Longitudinal Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitudinal prompt</td>
+<td>v1.3</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-07-06 10:40 UTC</td>
+</tr>
+<tr>
+<td>Input mode</td>
+<td>summaries (--from-summaries)</td>
+</tr>
+<tr>
+<td>Extractions covered</td>
+<td>E1 – E17</td>
+</tr>
+<tr>
+<td>Date range</td>
+<td>2026-03-20 – 2026-07-06 (108 days)</td>
+</tr>
+<tr>
+<td>Total tagged items</td>
+<td>~807 (cumulative across E1–E17)</td>
+</tr>
+<tr>
+<td>Tracked signals</td>
+<td>31 active</td>
+</tr>
+<tr>
+<td>NEW signals this window</td>
+<td><code>subagent-delegation</code> (1 new)</td>
+</tr>
+<tr>
+<td>Escalated signals this window</td>
+<td><code>export-control-regime</code> at 8 obs (Tracking → still Promoted; observation-count milestone); <code>eval-cheating-frontier</code> at 2 obs (Tracking → confirming)</td>
+</tr>
+<tr>
+<td>Confirmed trends</td>
+<td><code>cost-runaway</code> (12 obs, first positive counter-anchor), <code>mcp-attack-surface</code> (9 obs, 2-window silent), <code>anthropic-trust-arc</code> (9 obs), <code>cve-acceleration</code> (8 obs), <code>export-control-regime</code> (8 obs), <code>productivity-paradox</code> (8 obs, Willison anchor greenfield-positive)</td>
+</tr>
+<tr>
+<td>Resolved contradictions</td>
+<td>Carried from E16 — no new resolutions this window</td>
+</tr>
+<tr>
+<td>Newly contested claims</td>
+<td>"The 18-day Fable/Mythos suspension was a real jailbreak response (not security theater)"; "Top-tier Claude Fable subscription is worth $149.25 for real OSS release work"; "Prescriptive prompting outperforms model-judgment prompting"</td>
+</tr>
+<tr>
+<td>Composition warning</td>
+<td><strong>E17 sample is too thin for sentiment trend inference.</strong> Reddit + Bluesky + YouTube retrieval gaps produce a coverage-driven positive sentiment swing that is not a signal.</td>
+</tr>
+</tbody>
+</table></section>
+<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid #2a3441;text-align:center;color:#7a8694;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">
+<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 16 &mdash; Generated 2026-07-06</p>
+<p>Longitudinal Engine v1.3 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2 (blue accent)</p>
+</footer>
+</div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+
+</body>
+</html>

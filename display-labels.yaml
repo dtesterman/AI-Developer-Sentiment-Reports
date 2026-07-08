@@ -27,7 +27,7 @@
 # falls back to title-casing the slug and emits a WARNING.
 
 version: "1.2"
-updated: "2026-06-22"
+updated: "2026-07-06"
 maintained_by: "Darrell + Claude (collaborative; updated as new signals mint)"
 
 labels:
@@ -271,3 +271,12 @@ labels:
     one_line: "Practitioner choice between Claude Code and Cursor now framed along control / autonomy axis, not capability — Claude as autonomous agent, Cursor as diff-level control; Cursor Standard/Premium pricing monetizes the distinction."
     sentiment_override: mx
     retired_alias: []
+
+  # === E17 mints ===
+
+  - signal_id: subagent-delegation
+    label: "Delegate to a smaller model, judge with the big one"
+    one_line: "First-class practitioner discipline: prefer model judgment over prescriptive instructions; delegate implementation to lower-power subagents while keeping judgment/review/synthesis in the top-tier main loop for cost efficiency."
+    sentiment_override: cp
+    retired_alias: []
+
