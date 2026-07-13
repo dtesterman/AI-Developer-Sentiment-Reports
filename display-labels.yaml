@@ -294,3 +294,15 @@ labels:
     sentiment_override: cn
     retired_alias: []
 
+  - signal_id: safety-classifier-friction
+    label: "Fable 5's stricter safety classifier"
+    one_line: "The new Anthropic cybersecurity classifier — the coding-workflow cost of the Commerce Department deal — flags benign code and burns through practitioners' patience."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: release-cadence-shock
+    label: "Three frontier coding models in ten days"
+    one_line: "Claude Sonnet 5, Fable 5 restored, and GPT-5.6 all shipped inside one 10-day window — practitioner attention fragmented across model bakeoffs and price-per-solved-task comparisons."
+    sentiment_override: mx
+    retired_alias: []
+
