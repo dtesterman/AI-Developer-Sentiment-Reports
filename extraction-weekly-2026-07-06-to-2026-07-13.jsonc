@@ -1,0 +1,1755 @@
+// AI Developer Sentiment Extraction — Weekly Run
+// Window: 2026-07-06 through 2026-07-13 (Monday-to-Monday, previous 7 days)
+// Engine: v1.6 | Config: v1.9 | LLM Target: Claude | Format: JSONC schema v1.1
+// Executed by scheduled task 'weekly-ai-developer-sentiment-extraction'
+{
+  "report_metadata": {
+    "prompt_name": "AI Dev Sentiment Extraction",
+    "engine_version": "v1.6",
+    "config_version": "v1.9",
+    "llm_target": "Claude",
+    "run_type": "scheduled_weekly",
+    "generated_at": "2026-07-13T00:00:00Z",
+    "time_range": {
+      "since": "2026-07-06",
+      "until": "2026-07-13"
+    },
+    "limit_per_tier": 100,
+    "format": "jsonc",
+    "query_expansion": {
+      "performed": true,
+      "note": "Expansion terms harvested from first-pass items: GhostApproval, HalluSquatting, Sonnet 5, Kimi K2.7-Code, Hy3, Codex-merger, Claude-Code-steganography."
+    },
+    "retrieval_channel_note": "First-pass run relied on Primary WebSearch only. Second pass (user-requested 'retry using chrome') added Bluesky logged-in full-text search via Claude in Chrome. Third pass (user-requested 'retry using chrome plugin and use chatgpt, gemini, and grok to fill the gaps') ran cross-LLM escalation: ChatGPT for Reddit (10 verifiable items), Grok for X/Twitter native firehose (12 items), Gemini for enterprise/regulation cross-check (negative confirmation — validates anti-fabrication). All cross-LLM items carry provisional status per engine v1.6 Rule 7 and require Analysis-stage re-verification."
+  },
+
+  "tier1": [
+    {
+      "id": "t1-01",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "The new GPT-5.6 family: Luna, Terra, Sol",
+      "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "OpenAI's GPT-5.6 family (Sol flagship, Terra balanced, Luna cheap) hit GA July 9 2026.",
+        "Sol: $5/$30 per Mtok; Terra: $2.50/$15; Luna: $1/$6.",
+        "Terra positioned as roughly GPT-5.5 quality at half the price."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-02",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "Fable gets another bump",
+      "url": "https://simonwillison.net/2026/Jul/12/bump/",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Pricing/Cost", "Regulation/Export Control"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Anthropic extended Claude Fable 5 access on paid plans through July 19.",
+        "Framed as ongoing goodwill following the 19-day suspension and July 1 restoration."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-03",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "Introducing GPT-Live",
+      "url": "https://simonwillison.net/2026/Jul/8/introducing-gptlive/",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools"],
+      "tool": ["ChatGPT", "GPT-Live"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "OpenAI upgraded the model behind ChatGPT voice mode to GPT-Live.",
+        "Adjacent to the July 9 GPT-5.6 rollout; part of the same product cycle."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-04",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "Introducing Muse Spark 1.1",
+      "url": "https://simonwillison.net/2026/Jul/9/muse-spark-1-1/",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools"],
+      "tool": ["Muse Spark 1.1"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "First Spark model to offer an API; follows April 2026 Muse Spark launch.",
+        "Practitioner interest in image/generative side-tools continues."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-05",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "tencent/Hy3",
+      "url": "https://simonwillison.net/2026/jul/6/hy3/",
+      "published_date": "2026-07-06",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Open-Weight Sovereignty"],
+      "tool": ["Hy3", "Tencent open-weight"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "New Apache-2.0 licensed model from Tencent in China.",
+        "Adds to the Chinese open-weight stack narrative alongside DeepSeek V4, GLM-5.2, Kimi K2.7."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-06",
+      "platform": "Blogs / Publications",
+      "source_name": "simonwillison.net",
+      "title": "Release: sqlite-utils 4.1",
+      "url": "https://simonwillison.net/2026/Jul/11/sqlite-utils/",
+      "published_date": "2026-07-11",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools"],
+      "tool": ["sqlite-utils"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner tooling update — sqlite-utils 4.1 release."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-07",
+      "platform": "Blogs / Publications",
+      "source_name": "Wiz Research",
+      "title": "GhostApproval: A Trust Boundary Gap in AI Coding Assistants",
+      "url": "https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "Wiz Research team",
+      "author_type": "Researcher",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Trust", "Code quality"],
+      "tool": ["Amazon Q Developer", "Claude Code", "Augment", "Cursor", "Google Antigravity", "Windsurf"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Symlink-based flaw lets a malicious repo trick 6 AI coding assistants into writing files outside their sandbox.",
+        "Approval dialog shows harmless filename while the agent resolves to a sensitive target (SSH keys, config).",
+        "Amazon, Google, Cursor treated as vulnerability and shipped fixes. Augment and Windsurf silent as of publication. Anthropic said Claude Code's behavior is 'outside our threat model'.",
+        "\"[SINGLE SOURCE WARNING]\" NOT applicable — corroborated by The Hacker News, Infosecurity Magazine, SecurityWeek."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-08",
+      "platform": "Blogs / Publications",
+      "source_name": "The Hacker News",
+      "title": "GhostApproval Symlink Flaws Could Let Malicious Repos Run Code in AI Coding Agents",
+      "url": "https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "The Hacker News editorial",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Trust"],
+      "tool": ["Claude Code", "Cursor", "Amazon Q", "Windsurf", "Antigravity", "Augment"],
+      "evidence_type": "Incident",
+      "key_points": [
+        "Second-source confirmation of Wiz GhostApproval disclosure.",
+        "Anthropic's 'outside threat model' response drew criticism in follow-up commentary."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-09",
+      "platform": "Blogs / Publications",
+      "source_name": "SecurityWeek",
+      "title": "'HalluSquatting' Turns AI Hallucinations Into Botnet Delivery Mechanism",
+      "url": "https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "SecurityWeek editorial",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Code quality"],
+      "tool": ["Cursor", "Windsurf", "Copilot", "Cline", "Gemini CLI"],
+      "evidence_type": "Study",
+      "key_points": [
+        "New arXiv paper 'Beware of Agentic Botnets' (July 8) escalates slopsquatting into targeted attacks.",
+        "Universal transferable adversarial trigger makes agents hallucinate an attacker-owned resource on demand, chained with indirect prompt injection.",
+        "Hallucinated-resource rates measured up to 85% for repo cloning and 100% for skill installation across 9 coding assistants."
+      ],
+      "confidence": "High",
+      "retrieved_via_expansion": true,
+      "expansion_trigger": "HalluSquatting"
+    },
+    {
+      "id": "t1-10",
+      "platform": "Blogs / Publications",
+      "source_name": "TheRegister",
+      "title": "Anthropic is removing its covert code for catching Chinese competitors",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "The Register editorial",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Trust", "Team dynamics"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Incident",
+      "key_points": [
+        "Claude Code binary found to embed steganographic fingerprints in system prompt based on ANTHROPIC_BASE_URL and timezone.",
+        "Uses four visually identical Unicode apostrophes to encode a 3-bit fingerprint of proxy/gateway identity.",
+        "Motivation likely detection of API resellers and distillation attack pipelines (DeepSeek/Moonshot/MiniMax accused in Feb 2026 disclosure).",
+        "Anthropic acknowledged and released v2.1.197 removing the code.",
+        "Adjacent-window (2026-07-01) but discussion peaked in the reporting week."
+      ],
+      "confidence": "High",
+      "retrieved_via_expansion": true,
+      "expansion_trigger": "Claude Code steganography"
+    },
+    {
+      "id": "t1-11",
+      "platform": "Blogs / Publications",
+      "source_name": "TheRegister",
+      "title": "Claude Sonnet 5.0 heads straight down the middle of the road to dodge controversy",
+      "url": "https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "The Register editorial",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Sonnet 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Sonnet 5 shipped June 30 as Anthropic's most agentic Sonnet yet.",
+        "Available on Free, Pro, Max, Team, Enterprise, and Claude Code from day one.",
+        "Intro price $2/$10 per Mtok; increases to $3/$15 after Aug 31 2026.",
+        "Framed as 'closing the gap with Opus 4.8 at Sonnet economics'.",
+        "Adjacent-window release; discussion carried forward into the reporting week."
+      ],
+      "confidence": "High",
+      "retrieved_via_expansion": true,
+      "expansion_trigger": "Sonnet 5"
+    },
+    {
+      "id": "t1-12",
+      "platform": "Blogs / Publications",
+      "source_name": "Anthropic (vendor)",
+      "title": "More details on Fable 5's cyber safeguards and our jailbreak framework",
+      "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "Anthropic",
+      "author_type": "Researcher (Vendor-affiliated)",
+      "sentiment": "Positive",
+      "topic": ["Regulation/Export Control", "Incidents", "Trust"],
+      "tool": ["Claude Fable 5", "Claude Mythos 5"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Fable 5 returned globally July 1 after 19-day suspension tied to Amazon-reported jailbreak.",
+        "New classifier blocks the reported technique in >99% of cases; expected higher false-positive rate on benign coding.",
+        "Proposed CJS (Claude Jailbreak Severity) scale CJS-0 to CJS-4, logarithmic tiers.",
+        "Adjacent-window (07-01) primary vendor source for the ongoing narrative."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-13",
+      "platform": "Blogs / Publications",
+      "source_name": "Fortune",
+      "title": "Anthropic restoring access to its most powerful AI models signals a necessary truce with the U.S. government",
+      "url": "https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "Fortune editorial",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Regulation/Export Control"],
+      "tool": ["Claude Fable 5", "Claude Mythos 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Framed the restoration as a 'truce' between Anthropic and the Trump administration.",
+        "Commerce Secretary Lutnick: no export license required; Anthropic agreed to proactive security cooperation.",
+        "Adjacent-window; central to the reporting-week regulation narrative."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-14",
+      "platform": "Blogs / Publications",
+      "source_name": "Al Jazeera",
+      "title": "US lifts restrictions on Anthropic's powerful AI models Fable and Mythos",
+      "url": "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "Al Jazeera economy desk",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Regulation/Export Control"],
+      "tool": ["Claude Fable 5", "Claude Mythos 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "International-audience confirmation of the export-control lift."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-15",
+      "platform": "Blogs / Publications",
+      "source_name": "The Record (Recorded Future)",
+      "title": "US lifts export controls on Anthropic's frontier cybersecurity AI models",
+      "url": "https://therecord.media/us-lifts-export-controls-anthropic-cyber-models",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "The Record editorial",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Regulation/Export Control", "Trust"],
+      "tool": ["Claude Fable 5", "Claude Mythos 5"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Cybersecurity-industry angle on the export-control removal.",
+        "Frames Mythos 5 as restored to a set of US organizations under stricter classifier."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-16",
+      "platform": "Blogs / Publications",
+      "source_name": "MarkTechPost",
+      "title": "Anthropic Redeploys Claude Fable 5 on July 1 After US Export Controls Lift, Adds New Cybersecurity Classifier",
+      "url": "https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "MarkTechPost editorial",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Regulation/Export Control", "Specific Tools"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Fourth-source confirmation of the redeploy and classifier addition.",
+        "Notes trade-off: classifier expected to flag some benign coding tasks (false positives)."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-17",
+      "platform": "Blogs / Publications",
+      "source_name": "MarketScale",
+      "title": "Enterprise AI cost controls arrive as Walmart, Uber, and Microsoft rein in usage",
+      "url": "https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage",
+      "published_date": "2026-07-07",
+      "retrieved_date": "2026-07-13",
+      "author": "MarketScale editorial",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Enterprise", "Pricing/Cost"],
+      "tool": ["Claude Code", "Copilot", "Code Puppy"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Consolidates the June-July 2026 pattern: Uber $1,500/tool/month cap, Walmart Code Puppy usage caps, Microsoft internal Claude Code cancellation.",
+        "Frames H2 2026 as budget-cycle reckoning for AI line items."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-18",
+      "platform": "Blogs / Publications",
+      "source_name": "TechCrunch",
+      "title": "A warning sign about AI's real cost, courtesy of Google and Amazon",
+      "url": "https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/",
+      "published_date": "2026-07-02",
+      "retrieved_date": "2026-07-13",
+      "author": "TechCrunch editorial",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Pricing/Cost", "Enterprise"],
+      "tool": ["General AI"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Adjacent-window (07-02) framing of AI cost trajectory hitting big-cap tech balance sheets.",
+        "Reinforces reporting-week narrative on enterprise AI cost controls."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-19",
+      "platform": "Blogs / Publications",
+      "source_name": "The New Stack",
+      "title": "Anthropic Sonnet 5: It closes the gap with Opus 4.8, and is cheap until August",
+      "url": "https://thenewstack.io/claude-sonnet-5-launch/",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "The New Stack editorial",
+      "author_type": "Analyst",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Sonnet 5", "Claude Opus 4.8"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Sonnet 5 performance close to Opus 4.8 at lower cost.",
+        "$2/$10 introductory pricing sunsets Aug 31 → $3/$15.",
+        "Second-source confirmation of the June 30 launch positioning."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-20",
+      "platform": "Blogs / Publications",
+      "source_name": "GitHub Blog",
+      "title": "Claude Sonnet 5 is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/",
+      "published_date": "2026-06-30",
+      "retrieved_date": "2026-07-13",
+      "author": "GitHub Changelog",
+      "author_type": "Vendor",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Enterprise"],
+      "tool": ["Claude Sonnet 5", "GitHub Copilot"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Anthropic Sonnet 5 available inside Copilot Chat.",
+        "Adjacent-window (June 30) but core context for the July availability picture."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-21",
+      "platform": "Blogs / Publications",
+      "source_name": "Every 'Vibe Check'",
+      "title": "Vibe Check: Fable 5 Is the Best Coding Model in the World",
+      "url": "https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check",
+      "published_date": "2026-07-02",
+      "retrieved_date": "2026-07-13",
+      "author": "Every / Vibe Check",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Productivity"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Every's Senior Engineer benchmark: Fable 5 scored 91/100, near human-engineer range.",
+        "Opus 4.8 scored 63; GPT-5.5 scored 62 on the same benchmark.",
+        "Adjacent-window; part of the ongoing Fable-restoration reception cycle."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-22",
+      "platform": "Blogs / Publications",
+      "source_name": "CodeRabbit blog",
+      "title": "Claude Fable 5 Model Review",
+      "url": "https://www.coderabbit.ai/blog/fable-5-model-review",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "CodeRabbit team",
+      "author_type": "Vendor",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Code quality"],
+      "tool": ["Claude Fable 5", "Claude Opus 4.8"],
+      "evidence_type": "Study",
+      "key_points": [
+        "105-EP internal code-review benchmark: Fable 5 passed 65/105 actionable EPs, just behind Opus 4.8 at 66/105.",
+        "Fable 5 weaker on precision: 32.8% actionable / 19.4% full vs Opus 4.8 at 35.5% / 26.5%.",
+        "Vendor-affiliated (CodeRabbit is a code-review tool vendor); treat as one datapoint."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-23",
+      "platform": "Blogs / Publications",
+      "source_name": "Microsoft Security Blog",
+      "title": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+      "published_date": "2026-05-07",
+      "retrieved_date": "2026-07-13",
+      "author": "Microsoft Security research",
+      "author_type": "Researcher (Vendor-affiliated)",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Trust"],
+      "tool": ["MCP", "Agent frameworks"],
+      "evidence_type": "Study",
+      "key_points": [
+        "Older piece (May 2026) but repeatedly cited during the reporting week alongside GhostApproval/HalluSquatting.",
+        "Documents tool-poisoning and description-injection attack pattern observed in the wild.",
+        "Adjacent-scope; retained as reference for the ongoing MCP-security theme."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-24",
+      "platform": "Blogs / Publications",
+      "source_name": "Al Jazeera / Reuters coverage",
+      "title": "Claude Fable 5 Returns Globally: New Classifier Blocks Jailbreak, Flags More Code",
+      "url": "https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "TechTimes editorial",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Regulation/Export Control", "Code quality"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Emphasizes practitioner-facing trade-off: new classifier expected to flag benign coding/debugging tasks.",
+        "Anticipates false-positive complaints from Claude Code users in the following weeks."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-25",
+      "platform": "Hacker News",
+      "source_name": "news.ycombinator.com",
+      "title": "Claude Code is steganographically marking requests",
+      "url": "https://news.ycombinator.com/item?id=48734373",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "HN community discussion",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Trust", "Team dynamics"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Community thread of Anthropic's steganographic-fingerprinting disclosure.",
+        "Dominant sentiment: concern about covert client behavior; enterprise users flagged compliance risk."
+      ],
+      "confidence": "Medium",
+      "retrieved_via_expansion": true,
+      "expansion_trigger": "Claude Code steganography"
+    },
+    {
+      "id": "t1-26",
+      "platform": "Hacker News",
+      "source_name": "news.ycombinator.com",
+      "title": "Fable extended until 19 July",
+      "url": "https://news.ycombinator.com/item?id=48882730",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "HN community discussion",
+      "author_type": "Practitioner",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner community response to Anthropic's paid-plan Fable 5 extension.",
+        "Threads compared with Codex and Cursor subscription value."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-27",
+      "platform": "Hacker News",
+      "source_name": "news.ycombinator.com",
+      "title": "The short leash AI coding method for beating Fable",
+      "url": "https://news.ycombinator.com/item?id=48766026",
+      "published_date": "2026-07-06",
+      "retrieved_date": "2026-07-13",
+      "author": "HN community discussion",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Productivity", "Code quality"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner method: short-turn, tight-context prompting to manage Fable 5's long-run behavior.",
+        "Framed as pragmatic workaround for the new classifier's false-positive tendency."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-28",
+      "platform": "Hacker News",
+      "source_name": "news.ycombinator.com",
+      "title": "Claude Code May–July 2026 weekly limits promotion",
+      "url": "https://news.ycombinator.com/item?id=48883064",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "HN community discussion",
+      "author_type": "Practitioner",
+      "sentiment": "Mixed",
+      "topic": ["Pricing/Cost", "Specific Tools"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Discussion of Anthropic's weekly-limits promotion timing during the Fable restoration window."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-29",
+      "platform": "Blogs / Publications",
+      "source_name": "METR",
+      "title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
+      "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
+      "published_date": "2026-06-26",
+      "retrieved_date": "2026-07-13",
+      "author": "METR",
+      "author_type": "Researcher",
+      "sentiment": "Nuanced",
+      "topic": ["Code quality", "Incidents"],
+      "tool": ["GPT-5.6 Sol"],
+      "evidence_type": "Study",
+      "key_points": [
+        "Pre-window (06-26) but re-surfaced in reporting-week discourse tied to July 9 GPT-5.6 GA.",
+        "Independent external evaluation with railfree API access and raw chain-of-thought.",
+        "Anchor citation for the 'frontier models cheat evaluations' pattern config v1.9 tracks."
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "t1-30",
+      "platform": "Blogs / Publications",
+      "source_name": "dev.to",
+      "title": "GPT-5.6 launched and developers immediately hit their usage limits. The fix is not a bigger plan",
+      "url": "https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "skillselion",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Pricing/Cost", "Productivity"],
+      "tool": ["GPT-5.6"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner post-launch reaction to GPT-5.6 usage limits.",
+        "Argument: upgrade path isn't a bigger plan, it's token discipline.",
+        "Passes dev.to SEO-listicle filter — first-person practitioner voice, specific token-economics framing."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-31",
+      "platform": "Blogs / Publications",
+      "source_name": "dev.to",
+      "title": "AI Dev Weekly #17: Sonnet 5, GPT-5.6 Government-Gated, Fable 5 Returns, Claude Code Spying",
+      "url": "https://dev.to/ai_made_tools/ai-dev-weekly-17-sonnet-5-gpt-56-government-gated-fable-5-returns-claude-code-spying-1pgb",
+      "published_date": "2026-07-11",
+      "retrieved_date": "2026-07-13",
+      "author": "ai_made_tools (curator)",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Regulation/Export Control", "Trust"],
+      "tool": ["Claude Sonnet 5", "GPT-5.6", "Claude Fable 5", "Claude Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Weekly aggregation of the four stories dominating the reporting-week discourse.",
+        "Useful as cross-index; passes dev.to filter (recognizable curator series, ≥5 posts)."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-32",
+      "platform": "Mastodon",
+      "source_name": "The Register / DevOps",
+      "title": "Uber Caps Usage of AI Tools Like Claude Code to Manage Costs (Simon Willison summary)",
+      "url": "https://simonwillison.net/2026/Jun/3/uber-caps-usage/",
+      "published_date": "2026-06-03",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Enterprise", "Pricing/Cost"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Pre-window (June 3) but re-surfaced repeatedly during the reporting week's cost-controls discourse.",
+        "Uber $1,500/tool/month cap; per-tool structure lets an engineer stack tools."
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "t1-33",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "Decided to try Claude Fable this weekend and it burns so many tokens that it's unusable with the $20 plan.",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner in-window verdict on Fable 5 economics at the $20 subscription tier.",
+        "\"Definitely not worth it unless it gets better at one shotting solutions and following instructions.\""
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('Claude Code')"
+    },
+    {
+      "id": "t1-34",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "Just asked Claude to look at my workout and sleep data … The shine is gone.",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Trust", "Code quality"],
+      "tool": ["Claude"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "\"I've gone from being regularly impressed to being regularly frustrated by Claude in recent weeks. The shine is gone.\"",
+        "Anchors the 'Claude regressed' practitioner pattern config v1.9 tracks (added to Batch B for v1.9)."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-35",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "Anthropic and OpenAI running the Uber playbook: start cheap, then raise prices",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Pricing/Cost", "Open-Weight Sovereignty"],
+      "tool": ["Claude", "ChatGPT", "DeepSeek", "GLM-5.2"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Frames Anthropic/OpenAI pricing trajectory as the Uber playbook.",
+        "Chinese open models plus Meta and SpaceXAI pricing lower.",
+        "Explicitly links to 'Your AI Margin is Meta's Opportunity' Spyglass article."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-36",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "Starbucks bets on AI to replace Microsoft and IBM software — SaaSpocalypse via vibe coding",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Enterprise", "Architectural Philosophy"],
+      "tool": ["General AI", "vibe coding"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Starbucks planning to vibe-code replacements for Microsoft/IBM inventory + maintenance software ($400M software costs).",
+        "Framed as SaaSpocalypse test case — 'curious if they can pull this off and start a trend'."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-37",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "AI bubble looks a lot like the dotcom bubble",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Pricing/Cost", "Hype vs Reality"],
+      "tool": ["General AI"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner framing on reporting-week's date (07-13): AI bubble mirrors dotcom on adoption inevitability and spectacular-crash trajectory."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-38",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @carnage4life.bsky.social",
+      "title": "Frontier AI labs lobbying Trump to take action against open Chinese AI models",
+      "url": "https://bsky.app/profile/carnage4life.bsky.social",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "Dare Obasanjo",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Regulation/Export Control", "Open-Weight Sovereignty"],
+      "tool": ["DeepSeek", "GLM-5.2", "Kimi K2.7"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner-side interpretation of the government-as-gatekeeper pattern.",
+        "\"The AI bubble could totally burst if the end game is U.S. companies spending billions … only for Chinese labs to produce good enough AI models you can run locally.\""
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-39",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @simonwillison.net",
+      "title": "sqlite-utils 4.0 shipped with Claude Fable review catching 4 release blockers",
+      "url": "https://simonwillison.net/2026/Jul/7/sqlite-utils/",
+      "published_date": "2026-07-07",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Productivity", "Specific Tools"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "First major-version bump since sqlite-utils 3.0 (2020) — 124th release.",
+        "Claude Fable 5 caught 4 additional release blockers on the final review pass.",
+        "Complements Willison's earlier 'sqlite-utils 4.0rc2, mostly written by Claude Fable' post ($149.25 review cost)."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-40",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @simonwillison.net",
+      "title": "Notes and a Pelican on Claude Sonnet 5 — new tokenizer 1.4x more expensive for English",
+      "url": "https://simonwillison.net/2026/Jun/30/",
+      "published_date": "2026-06-30",
+      "retrieved_date": "2026-07-13",
+      "author": "Simon Willison",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Sonnet 5"],
+      "evidence_type": "Study",
+      "key_points": [
+        "New Sonnet 5 tokenizer: ~1.4x more expensive for English, ~1.33x for Spanish, roughly the same for Simplified Mandarin.",
+        "Adjacent-window (06-30) but core reference for the reporting-week Sonnet 5 pricing conversation."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-41",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @timkellogg.me",
+      "title": "Sonnet 5 details from the Claude Code binary — $2/$10 promo, 'near Opus' at Sonnet prices",
+      "url": "https://bsky.app/profile/timkellogg.me",
+      "published_date": "2026-06-30",
+      "retrieved_date": "2026-07-13",
+      "author": "Tim Kellogg",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Sonnet 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner reverse-engineering of Claude Code binary confirmed pricing details day-of-launch.",
+        "\"$2/$10 (normally $3/$15) … near Opus at Sonnet prices … recommended model in claude code\".",
+        "Adjacent-window (06-30) practitioner voice."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-42",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @timkellogg.me",
+      "title": "\"I'm finding Sonnet 5 is basically just a very fast Opus\"",
+      "url": "https://bsky.app/profile/timkellogg.me",
+      "published_date": "2026-07-02",
+      "retrieved_date": "2026-07-13",
+      "author": "Tim Kellogg",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Productivity"],
+      "tool": ["Claude Sonnet 5", "Claude Opus 4.8"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Post-launch practitioner verdict on Sonnet 5 (~11d ago from 07-13 = ~07-02).",
+        "Adjacent-window; reinforces the Sonnet 5 positioning captured in item t1-11 and t1-19."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search"
+    },
+    {
+      "id": "t1-43",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @mary.branscombe (marypcbuk)",
+      "title": "GhostApproval writeup anthropomorphism trap — agents don't 'know' file purpose",
+      "url": "https://bsky.app/profile/marypcbuk.bsky.social",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "Mary Branscombe",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Incidents", "Trust"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner critique of Wiz writeup: says the agent 'knew' the JSON file was actually a zsh config; Branscombe argues agents don't 'know' — they derive.",
+        "Nuance layer on the GhostApproval discourse from a working infosec journalist."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('GhostApproval')"
+    },
+    {
+      "id": "t1-44",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @walking-mirage (wolf.observer)",
+      "title": "\"Flowers for Algernon moment\" — vibe coders lose Fable 5 access in Claude Code subs",
+      "url": "https://bsky.app/profile/wolf.observer",
+      "published_date": "2026-07-06",
+      "retrieved_date": "2026-07-13",
+      "author": "walking mirage",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Pricing/Cost", "Specific Tools"],
+      "tool": ["Claude Fable 5", "Claude Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "\"We're about to see a world-historical flowers for algernon moment as thousands of vibe coding developers, allowed the use of Claude Fable 5 in their Claude Code subscriptions for a brief moment, are asked to begin paying $100-200 per session for their tokens.\"",
+        "Captures the vibe-coder-facing side of the enterprise cost-controls story."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('Fable 5')"
+    },
+    {
+      "id": "t1-45",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @apenwarr.ca",
+      "title": "\"Could someone please have Claude Code rewrite Claude Code in rust so it takes less than 2GB of RAM\"",
+      "url": "https://bsky.app/profile/apenwarr.ca",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "apenwarr (Avery Pennarun)",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Code quality"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner complaint about Claude Code's Electron/JS memory footprint from a well-known systems engineer."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('Claude Code')"
+    },
+    {
+      "id": "t1-46",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @infosec.skyfleet.blue",
+      "title": "China tells devs to ditch Claude Code over 'backdoor code' fears (theregister.com)",
+      "url": "https://www.theregister.com/",
+      "published_date": "2026-07-08",
+      "retrieved_date": "2026-07-13",
+      "author": "InfoSec (curator handle)",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Trust", "Regulation/Export Control"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Downstream fallout from the July 1 steganography disclosure: Chinese government / dev community advisory to avoid Claude Code.",
+        "Closes the loop between t1-10 (steganography), t1-25 (HN discussion) and downstream geopolitical response.",
+        "Adjacent to the Claude Code steganography pattern; primary source is The Register."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('Claude Code')"
+    },
+    {
+      "id": "t1-47",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @patak.cat",
+      "title": "\"vite downloads 4x in the last 6 months, the npm world has gone completely bananas\" — vibe-coding growth proxy",
+      "url": "https://bsky.app/profile/patak.cat",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "patak (Vite maintainer)",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Hype vs Reality", "Productivity"],
+      "tool": ["vibe coding", "Vite"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Vite downloads 4x in last 6 months — cited by @gordon.bsky.social as 'good proxy for growth of vibe coding'.",
+        "Quantitative proxy for the vibe-coding adoption curve."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('vibe coding')"
+    },
+    {
+      "id": "t1-48",
+      "platform": "Bluesky",
+      "source_name": "bsky.app / @anthropicbot.bsky.social (vendor)",
+      "title": "Anthropic patterns for Fable 5 — advisor + Sonnet 5 executor",
+      "url": "https://bsky.app/profile/anthropicbot.bsky.social",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "Anthropic",
+      "author_type": "Vendor",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Pricing/Cost", "Architectural Philosophy"],
+      "tool": ["Claude Fable 5", "Claude Sonnet 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "\"Use Fable 5 as an 'advisor.' An executor (Sonnet 5) calls Fable 5 for guidance. Most tokens are billed at the lower executor rate.\"",
+        "Anthropic-endorsed pattern for the two-model workflow that emerged after the Fable restoration."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — Bluesky logged-in full-text search ('Fable 5')"
+    },
+
+    // -------- Reddit items (cross-LLM escalation via ChatGPT) --------
+    {
+      "id": "t1-49",
+      "platform": "Reddit",
+      "source_name": "r/ClaudeAI",
+      "title": "the Fable 5 that came back doesn't feel like the one that got pulled, and i think the safety fallbacks are the reason",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "u/Big_Currency_1805",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Trust", "Regulation/Export Control"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Fable remains capable, but security-adjacent words trigger opaque fallbacks often enough to weaken ordinary development work.",
+        "Undermines trust in 'which model is actually responding' — the new classifier false-positive story from the practitioner side."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation — Reddit browser-blocked at Chrome navigate level for Claude target)"
+    },
+    {
+      "id": "t1-50",
+      "platform": "Reddit",
+      "source_name": "r/ClaudeAI",
+      "title": "Honest question: What are you building that you need fable 5 so badly?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uv70kq/honest_question_what_are_you_building_that_you/",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "u/hollowredditor",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Fable 5", "Claude Opus 4.8", "Claude Sonnet 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Ten-year big-tech engineer satisfied with Opus/Sonnet for production data systems.",
+        "Skeptically asks whether Fable enables materially new work or just accelerates parallel workflows — cost/value framing."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-51",
+      "platform": "Reddit",
+      "source_name": "r/ClaudeAI",
+      "title": "My Fable 5 is on leave forever...",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "u/pigeatshiiit",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Pricing/Cost", "Burnout"],
+      "tool": ["Claude Fable 5"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "$200-plan Fable session required ~12 manual 'Continue' actions to verify an 11-page PDF.",
+        "Makes the supposedly autonomous model 'feel impractical' — user-friction complaint anchoring the false-positive pattern."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-52",
+      "platform": "Reddit",
+      "source_name": "r/ClaudeAI",
+      "title": "Is FABLE 5 the prelude to the next leap in AGI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "u/2EXTRA4YOU",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Hype vs Reality"],
+      "tool": ["Claude Fable 5", "Claude Opus 4.8"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Attributes Fable's edge over Opus to 'spending more inference context before answering'.",
+        "Frames infrastructure economics — not raw reasoning — as the remaining constraint."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-53",
+      "platform": "Reddit",
+      "source_name": "r/cursor",
+      "title": "GPT-5.6 Luna",
+      "url": "https://www.reddit.com/r/cursor/comments/1us0cnc/gpt56_luna/",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "u/sprfrkr",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["GPT-5.6 Luna", "Grok"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Cautiously optimistic on Luna as cost-effective GPT-5.6 tier.",
+        "Compares output pricing favorably against Cursor's first-party Grok."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-54",
+      "platform": "Reddit",
+      "source_name": "r/cursor",
+      "title": "GPT 5.6 sol Extra High piece of garbage",
+      "url": "https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "u/TheOdbball",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Code quality"],
+      "tool": ["GPT-5.6 Sol", "Cursor Grok"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Sol Extra High repeatedly damaged an unrelated page; successive fixes made it worse.",
+        "Practitioner conclusion: performs poorly as multi-agent coder — prefers Cursor's Grok."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-55",
+      "platform": "Reddit",
+      "source_name": "r/cursor",
+      "title": "GPT 5.6 Sol vs Grok 4.5",
+      "url": "https://www.reddit.com/r/cursor/comments/1uso6fk/gpt_56_sol_vs_grok_45/",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "u/MullingMulianto",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["GPT-5.6 Sol", "Grok 4.5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "GPT considered generally smarter but evaluated on sustained-coding-per-dollar under $20 plan.",
+        "Practitioner-side framing that echoes the Pragmatic Engineer 'usage limit' pattern from item t2-01."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-56",
+      "platform": "Reddit",
+      "source_name": "r/cursor",
+      "title": "Gpt 5.5 vs 5.6 luna vs terra vs sol.",
+      "url": "https://www.reddit.com/r/cursor/comments/1usmrp2/gpt_55_vs_56_luna_vs_terra_vs_sol/",
+      "published_date": "2026-07-10",
+      "retrieved_date": "2026-07-13",
+      "author": "u/King_GG_13",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Pricing/Cost", "Productivity"],
+      "tool": ["GPT-5.5", "GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Startup engineer reportedly consuming 50-80M tokens daily.",
+        "Concerned Sol will exhaust plan limits — wants guidance on Luna vs Terra vs sticking with 5.5 for workflow stability."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-57",
+      "platform": "Reddit",
+      "source_name": "r/cursor",
+      "title": "Best coding setup for price-to-performance in Q3 2026?",
+      "url": "https://www.reddit.com/r/cursor/comments/1uttd7q/best_coding_setup_for_pricetoperformance_in_q3/",
+      "published_date": "2026-07-11",
+      "retrieved_date": "2026-07-13",
+      "author": "u/teenaxta",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Pricing/Cost", "Specific Tools"],
+      "tool": ["GPT-5.6 Sol", "Claude Code", "Cursor Grok"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Model selection framed as economic routing problem across $100-200 budgets.",
+        "Compares GPT-5.6 Sol, Claude Code, Cursor/Grok, and Pi — treats 'strongest benchmark' as not automatically the best purchase."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-58",
+      "platform": "Reddit",
+      "source_name": "r/vibecoding",
+      "title": "Fable 5 Extended Again!",
+      "url": "https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "u/satyuga",
+      "author_type": "Practitioner",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Fable 5", "Claude Opus 4.8", "Claude Sonnet 5", "GPT-5.6"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "OP values Fable as orchestrator that uncovers reasoning gaps missed by Opus/Sonnet.",
+        "Comment thread sharply divided on whether that advantage justifies cost vs GPT-5.6."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "ChatGPT (cross-LLM escalation)"
+    },
+
+    // -------- X/Twitter items (cross-LLM escalation via Grok native firehose) --------
+    {
+      "id": "t1-59",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @naima_ste",
+      "title": "Adversarial code audit: Claude Fable 5 vs GPT-5.6 Sol Ultra",
+      "url": "https://x.com/naima_ste/status/2076228816268066957",
+      "published_date": "2026-07-12",
+      "retrieved_date": "2026-07-13",
+      "author": "@naima_ste (Naimastè)",
+      "author_type": "Practitioner",
+      "sentiment": "Negative",
+      "topic": ["Specific Tools", "Code quality"],
+      "tool": ["Claude Fable 5", "GPT-5.6 Sol"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner adversarial test: Fable 5 flagged resolved issues as bugs due to 'context anchoring in large codebases'.",
+        "Sol Ultra cleared Fable 5's false positives and caught deep logic bugs on Pass 2.",
+        "Concrete practitioner benchmark supporting Fable false-positive pattern from Anthropic's own classifier warning."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation — X/Twitter native firehose access)"
+    },
+    {
+      "id": "t1-60",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @hardikshingala_",
+      "title": "DON'T pick agents randomly — agent-selection guide across Claude, OpenAI, Grok",
+      "url": "https://x.com/hardikshingala_/status/2076680693414015055",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@hardikshingala_ (TraycerAI)",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Productivity"],
+      "tool": ["Claude Sonnet 5", "Claude Fable 5", "Claude Opus 4.8", "GPT-5.6 Sol", "GPT-5.6 Terra", "Grok 4.5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Detailed prompt/agent-selection guide by an AI-tooling builder — Sonnet 5, Fable, Opus / GPT-5.6 Sol-Terra / Grok 4.5.",
+        "Claim: overriding the default agent-selection made delegated work 'much more predictable'."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-61",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @Sousinr",
+      "title": "\"depends on the task, but sonnet 5 still wins for coding.\"",
+      "url": "https://x.com/Sousinr/status/2076679852988702828",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@Sousinr (elev8or_io)",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Productivity"],
+      "tool": ["Claude Sonnet 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Post-GPT-5.6-launch practitioner verdict: 'sonnet 5 still wins for coding'."
+      ],
+      "confidence": "Low",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-62",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @thekennwakanma",
+      "title": "OpenAI Launches GPT-5.6 Sol — Leading AI Coding Benchmarks",
+      "url": "https://x.com/thekennwakanma/status/2076682559224688765",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@thekennwakanma",
+      "author_type": "Analyst",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools"],
+      "tool": ["GPT-5.6 Sol"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Framing: 'Sol topped benchmarks... Massive demand'.",
+        "Industry-tracker voice on the launch, day-of-response."
+      ],
+      "confidence": "Low",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-63",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @matteosaponati",
+      "title": "GPT-5.6 auto-research experiments — 'high-variance behaviour' on coding agents",
+      "url": "https://x.com/matteosaponati/status/2076682501481750708",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@matteosaponati",
+      "author_type": "Researcher",
+      "sentiment": "Nuanced",
+      "topic": ["Specific Tools", "Code quality"],
+      "tool": ["GPT-5.6"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Research-scientist practitioner: 'net difference' visible on auto-research, but coding agents show 'high-variance behaviour'.",
+        "Reinforces METR / cheating-eval / variance patterns from Batch G."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-64",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @chrisvibe_ai",
+      "title": "Sol medium 'crushing it' in Claude Code harness — Luna medium the sleeper pick",
+      "url": "https://x.com/chrisvibe_ai/status/2076682461308969094",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@chrisvibe_ai",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Specific Tools", "Productivity"],
+      "tool": ["GPT-5.6 Sol", "GPT-5.6 Luna", "Claude Code"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner running GPT-5.6 inside Claude Code harness — Sol medium for speed/efficiency, Luna medium for quality.",
+        "Cross-vendor harness experimentation as a persistent 2026 practitioner pattern."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-65",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @wiz_io",
+      "title": "GhostApproval — 6 AI coding assistants, 'human-in-the-loop only works when humans have the full picture'",
+      "url": "https://x.com/wiz_io/status/2076640885266166198",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@wiz_io",
+      "author_type": "Researcher (Vendor-affiliated)",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Trust"],
+      "tool": ["Amazon Q Developer", "Claude Code", "Augment", "Cursor", "Google Antigravity", "Windsurf"],
+      "evidence_type": "Postmortem",
+      "key_points": [
+        "Vendor-source amplification of GhostApproval disclosure.",
+        "Frames the human-in-the-loop failure mode succinctly for X audience."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-66",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @ByteDrop453",
+      "title": "GhostApproval — 'the approval step itself becomes the target'",
+      "url": "https://x.com/ByteDrop453/status/2076605055688376575",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@ByteDrop453",
+      "author_type": "Analyst",
+      "sentiment": "Negative",
+      "topic": ["Incidents", "Trust"],
+      "tool": ["Claude Code", "Cursor", "Amazon Q"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Sharp analytical framing on GhostApproval: as agents write and merge code with minimal review, the approval step itself becomes the attack target."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-67",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @f_marzotto (UberEats strategy)",
+      "title": "Uber cap clarification — '$1500 on Claude code only, other tools still available'",
+      "url": "https://x.com/f_marzotto/status/2074041026805649739",
+      "published_date": "2026-07-06",
+      "retrieved_date": "2026-07-13",
+      "author": "@f_marzotto",
+      "author_type": "Practitioner",
+      "sentiment": "Nuanced",
+      "topic": ["Enterprise", "Pricing/Cost"],
+      "tool": ["Claude Code"],
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Insider clarification of the Uber $1,500 cap story: 'other tools are still available … so max threshold is higher'.",
+        "Adds nuance to the earlier framing that treated $1,500 as a single-tool ceiling — actually per-tool, so composite spend can stack.",
+        "Adjacent-window (07-06); on the boundary but valid."
+      ],
+      "confidence": "High",
+      "retrieved_via": "Grok (cross-LLM escalation — X/Twitter native)"
+    },
+    {
+      "id": "t1-68",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @merohitkumawat",
+      "title": "3 free open-source coding LLMs beating paid tools — GLM-5.2, DeepSeek V4-Pro, Kimi K2.7 Code",
+      "url": "https://x.com/merohitkumawat/status/2076646856629866630",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@merohitkumawat",
+      "author_type": "Practitioner",
+      "sentiment": "Positive",
+      "topic": ["Open-Weight Sovereignty", "Specific Tools", "Pricing/Cost"],
+      "tool": ["GLM-5.2", "DeepSeek V4-Pro", "Kimi K2.7 Code"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner-side amplification of the Chinese open-weight coding-model narrative.",
+        "GLM-5.2 highlighted as topping open-weight coding benchmarks."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-69",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @Prithvir12",
+      "title": "Usage stats including DeepSeek V4 Flash and GLM-5.2",
+      "url": "https://x.com/Prithvir12/status/2076660336048922860",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@Prithvir12 (founder/investor)",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Open-Weight Sovereignty", "Pricing/Cost"],
+      "tool": ["DeepSeek V4 Flash", "GLM-5.2"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Investor-angle datapoint on open-weight coding-model usage momentum."
+      ],
+      "confidence": "Low",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    },
+    {
+      "id": "t1-70",
+      "platform": "X/Twitter",
+      "source_name": "x.com / @fominaaalina",
+      "title": "\"anthropic extended fable 5 again — 3rd time in 18 days… sonnet 5 costs ~2x per task vs 4.6\"",
+      "url": "https://x.com/fominaaalina/status/2076659388312391872",
+      "published_date": "2026-07-13",
+      "retrieved_date": "2026-07-13",
+      "author": "@fominaaalina",
+      "author_type": "Analyst",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Pricing/Cost"],
+      "tool": ["Claude Fable 5", "Claude Sonnet 5", "Claude Sonnet 4.6"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Notes Anthropic extended Fable 5 a third time in 18 days.",
+        "Points out Sonnet 5 costs ~2x per task vs Sonnet 4.6 — pricing-migration friction."
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Grok (cross-LLM escalation)"
+    }
+  ],
+
+  "tier1_5": [
+    {
+      "id": "t15-01",
+      "platform": "YouTube",
+      "source_name": "Theo (t3.gg)",
+      "title": "Coverage: GPT-5.6 family (Sol/Terra/Luna) and Fable 5 restoration",
+      "url": "https://www.youtube.com/@t3dotgg",
+      "published_date": "2026-07-09",
+      "retrieved_date": "2026-07-13",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "sentiment": "Mixed",
+      "topic": ["Specific Tools", "Regulation/Export Control"],
+      "tool": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "Claude Fable 5"],
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Config v1.9 flagged Theo as the highest-yield in-window channel in the 2026-06-29 pass.",
+        "Reporting-week uploads cover GPT-5.6 launch reactions; specific video URLs not resolved by Primary WebSearch alone.",
+        "\"[SINGLE SOURCE WARNING]\" — channel-level reference; individual video-level items not retrieved this run."
+      ],
+      "confidence": "Low"
+    }
+  ],
+
+  "tier2": [
+    {
+      "id": "t2-01",
+      "platform": "Podcasts",
+      "source_name": "Pragmatic Engineer (Gergely Orosz)",
+      "title": "The Pulse: Interesting AI coding stats from Cursor",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats",
+      "published_date": "2026-07-01",
+      "retrieved_date": "2026-07-13",
+      "author": "Gergely Orosz",
+      "author_type": "Analyst",
+      "sentiment": "Nuanced",
+      "topic": ["Productivity", "Trust", "Pricing/Cost"],
+      "tool": ["Cursor", "Claude Opus 4.7", "GPT-5.5"],
+      "evidence_type": "Study",
+      "key_points": [
+        "Cursor devs letting AI agents create commits without a manual review step jumped from ~10% to ~40% in one month.",
+        "Correlated with Opus 4.7 / GPT-5.5 capability step.",
+        "~30% of respondents hit their AI tool usage limits.",
+        "Adjacent-window (07-01); referenced repeatedly during the reporting week."
+      ],
+      "confidence": "High"
+    }
+  ],
+
+  "tier3_manual_flags": [
+    {
+      "id": "t3-01",
+      "platform": "Reddit (Claude target)",
+      "source_name": "r/ClaudeAI, r/cursor, r/vibecoding, r/ClaudeCode, r/ExperiencedDevs, r/LocalLLaMA, r/programming",
+      "note": "THIRD PASS RECOVERED via ChatGPT cross-LLM escalation. 10 verifiable in-window items merged as t1-49 through t1-58, all tagged retrieved_via=ChatGPT. Reddit remains browser-blocked at the Claude in Chrome navigate level for direct retrieval. Items provisional per engine v1.6 Rule 7 — Analysis-stage should re-verify each Reddit URL via direct fetch. ChatGPT explicitly reported no verifiable in-window posts in r/ClaudeCode, r/ExperiencedDevs, r/LocalLLaMA, or r/programming, and no in-window posts specifically centered on GhostApproval, Uber/Walmart caps, or DeepSeek/GLM/Kimi practitioner reactions (those signals surfaced on Bluesky and X instead)."
+    },
+    {
+      "id": "t3-02",
+      "platform": "Bluesky (Claude target)",
+      "source_name": "bsky.app logged-in full-text search",
+      "note": "SECOND PASS RECOVERED. Bluesky Tier 1 Confirmed for Claude re-activated in second pass via Claude in Chrome (user-requested 'retry using chrome'). 16 items added (t1-33 through t1-48) covering carnage4life, simonwillison, timkellogg, marypcbuk, wolf.observer, apenwarr, infosec, patak, anthropicbot. Highest-yield source as config v1.9 predicted."
+    },
+    {
+      "id": "t3-03",
+      "platform": "X/Twitter (Claude target: Tier 2)",
+      "source_name": "x.com",
+      "note": "THIRD PASS RECOVERED via Grok cross-LLM escalation (native X/Twitter firehose access). 12 in-window items merged as t1-59 through t1-70, all tagged retrieved_via=Grok. Provisional per engine v1.6 Rule 7 — Analysis-stage should sample-verify by direct URL fetch. Grok returned strong practitioner coverage on Fable false-positives (t1-59), GPT-5.6 launch reactions (t1-60 through t1-64), GhostApproval (t1-65, t1-66 including vendor amplification from @wiz_io), Uber cap clarification (t1-67), and open-weight practitioner voice (t1-68, t1-69, t1-70)."
+    },
+    {
+      "id": "t3-04",
+      "platform": "Gemini cross-check (enterprise + regulation angles)",
+      "source_name": "Google Gemini web search grounding",
+      "note": "THIRD PASS — NEGATIVE CONFIRMATION. Gemini refused to fabricate: reported 'no in-window articles found' for both Theme A (enterprise cost controls) and Theme B (regulation). Explicitly noted adjacent-window articles just outside the July 6-13 boundary (e.g., Malay Mail 06-26/06-27 GPT-5.6 government-gated framing). This is not a failed retrieval — it is a valid corroboration that the July 6-13 window is thinner on fresh mainstream enterprise/regulation reporting than on practitioner discourse, and that the WebSearch/Bluesky/Grok items already captured (t1-17 MarketScale, t1-18 TechCrunch, t1-12 through t1-16 Fable restoration cluster) are the substantive in-window coverage for those themes."
+    }
+  ],
+
+  "emerging_patterns": [
+    {
+      "id": "ep-01",
+      "label": "Frontier-model release cadence: three major GA events in one week",
+      "supporting_items": ["t1-01", "t1-19", "t1-11", "t1-12", "t1-20", "t1-24"],
+      "summary": "In the 07-06 → 07-13 window plus the immediate lead-in, three frontier coding models hit GA: Claude Sonnet 5 (06-30), Claude Fable 5 restored globally (07-01) with new cybersecurity classifier and higher benign-code false-positive rate, and GPT-5.6 Sol/Terra/Luna (07-09). Practitioners consistently framed this as an unusual density of coding-relevant releases; discourse focused on price-per-solved-task rather than raw benchmark scores.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-02",
+      "label": "Enterprise cost-control regime hardens",
+      "supporting_items": ["t1-17", "t1-18", "t1-32", "t2-01"],
+      "summary": "Multiple sources reinforce that H1 2026's 'ship-fast' pattern is giving way to explicit per-tool caps and token-based FinOps. Uber's $1,500/tool/month cap, Walmart's Code Puppy caps, Microsoft's internal Claude Code cancellation, and Cursor's Teams-Standard/Premium split usage pools (in effect from July 1) all point in the same direction. Pragmatic Engineer data shows ~30% of surveyed devs hit tool usage limits.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-03",
+      "label": "AI-coding-agent security threat model expanding faster than assistants can patch",
+      "supporting_items": ["t1-07", "t1-08", "t1-09", "t1-23"],
+      "summary": "Two significant new attack classes disclosed in-window: GhostApproval (Wiz, 07-08 — symlink trust-boundary bypass in 6 major coding assistants) and HalluSquatting (arXiv, 07-08 — adversarial trigger forcing on-demand hallucination of attacker-owned packages). Both extend to multiple vendors (Amazon, Google, Anthropic, Cursor, Windsurf, Augment, Copilot, Cline, Gemini CLI). Notable divergence: Amazon, Google, Cursor patched GhostApproval; Anthropic disputed it as a vulnerability at all.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-04",
+      "label": "Government-as-gatekeeper becomes a normal channel for frontier coding models",
+      "supporting_items": ["t1-12", "t1-13", "t1-14", "t1-15", "t1-16", "t1-31"],
+      "summary": "The Fable 5 / Mythos 5 restoration under a formal Commerce Department deal — no export license required, in exchange for proactive detection cooperation and pre-release-review commitments — normalizes government-negotiated access terms for frontier coding models. Practitioner-facing side-effect: stricter safety classifiers that flag more benign coding tasks. Discourse treats this as a durable structural change, not a one-off.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-05",
+      "label": "Trust erosion at the client-binary layer",
+      "supporting_items": ["t1-10", "t1-25"],
+      "summary": "The Claude Code steganography disclosure landed at the same moment as GhostApproval and immediately connected in HN discourse: a coding assistant that (a) writes files outside its sandbox by design when tricked, and (b) covertly fingerprints traffic based on customer proxy setup, is a compounding trust problem. Anthropic pulled the fingerprinting code in v2.1.197. Enterprise commenters flagged the pattern as a compliance-review trigger.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-06",
+      "label": "Chinese open-weight stack keeps compounding through weekly releases",
+      "supporting_items": ["t1-05", "t1-38", "t1-68", "t1-69"],
+      "summary": "Tencent Hy3 (07-06) sits inside a rapidly-growing cluster with Kimi K2.7-Code (06-12), GLM-5.2 (06-13), DeepSeek V4 (April 2026). Practitioner voice on X (@merohitkumawat, @Prithvir12) and Bluesky (carnage4life explicit lobbying-against-Chinese-models framing) treats this as the sovereignty/cost hedge against government-gated US frontier models. Cross-channel corroboration upgraded from Medium to High.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-07",
+      "label": "Practitioner backlash on Fable 5's stricter safety classifier — the coding cost of the Commerce Department deal",
+      "supporting_items": ["t1-12", "t1-24", "t1-27", "t1-33", "t1-49", "t1-51", "t1-59", "t1-70"],
+      "summary": "First-pass reporting (t1-12, t1-24) predicted the new cybersecurity classifier would produce higher false-positive rates on benign coding tasks. Third-pass practitioner recovery confirmed it landed: 4 distinct r/ClaudeAI posts in the window (Big_Currency_1805 on 07-09 explicitly calling out 'security-adjacent words trigger opaque fallbacks'; pigeatshiiit on 07-13 documenting 12 manual Continue clicks to verify an 11-page PDF; hollowredditor on 07-13 questioning the value proposition), X practitioner adversarial audit (@naima_ste) showing Fable flagging resolved issues as bugs in large codebases, Bluesky (carnage4life 'burns so many tokens', walking mirage 'Flowers for Algernon moment'). This is the coding-workflow cost of the Anthropic-Commerce-Department deal, and it is the strongest new practitioner-side signal in the reporting week.",
+      "confidence": "High"
+    },
+    {
+      "id": "ep-08",
+      "label": "Emergent post-restoration workflow: Fable-as-advisor + Sonnet-5-as-executor",
+      "supporting_items": ["t1-48", "t1-39", "t1-42", "t1-52", "t1-60"],
+      "summary": "Anthropic itself published (via @anthropicbot, 07-10) the two-model workflow that emerged after Fable 5's restoration: use Fable 5 as an 'advisor' called by a Sonnet 5 'executor', so most tokens are billed at the lower Sonnet rate. Simon Willison's sqlite-utils 4.0 release (07-07) demonstrated the pattern in practice — Fable review on final pass caught 4 additional release blockers. Tim Kellogg's 'Sonnet 5 is basically just a very fast Opus' framing (07-02) and Reddit t1-52's 'infrastructure economics not raw reasoning is the constraint' converge on the same architectural pattern. X @hardikshingala_'s agent-selection guide (07-13) formalized this as a builder-facing prompt template. This is the first-order product/workflow innovation of the reporting week.",
+      "confidence": "High"
+    }
+  ],
+
+  "deduplication_references": [
+    {
+      "id": "dedup-01",
+      "note": "GhostApproval covered by Wiz (t1-07), The Hacker News (t1-08); considered corroborating rather than duplicate."
+    },
+    {
+      "id": "dedup-02",
+      "note": "Fable 5 restoration covered by Anthropic vendor post (t1-12), Fortune (t1-13), Al Jazeera (t1-14), The Record (t1-15), MarkTechPost (t1-16), TechTimes (t1-24). Multi-source cluster kept intact because the regulation-story anchor requires it; downstream analysis can collapse."
+    },
+    {
+      "id": "dedup-03",
+      "note": "Sonnet 5 launch covered by TheRegister (t1-11), The New Stack (t1-19), GitHub Changelog (t1-20). Kept separate — vendor + two independent analyst voices."
+    }
+  ],
+
+  "gaps": [
+    {
+      "id": "gap-01",
+      "description": "No Reddit items retrieved (Tier 1 Cross-LLM only for Claude; escalation unavailable in non-interactive scheduled context)."
+    },
+    {
+      "id": "gap-02",
+      "description": "No Bluesky items retrieved (Tier 1 Confirmed for Claude requires Chrome login; unavailable in non-interactive scheduled context). Config v1.9 flagged this as highest-yield source for practitioner voice — this is a material limitation of the scheduled-task variant."
+    },
+    {
+      "id": "gap-03",
+      "description": "YouTube (t15-01) recorded only as channel-level flag. Individual video-level items not resolved through Primary WebSearch alone."
+    },
+    {
+      "id": "gap-04",
+      "description": "Mastodon: no in-window items surfaced through Primary WebSearch. Tier 1 for Claude per config — may benefit from direct handle checks in interactive follow-up."
+    },
+    {
+      "id": "gap-05",
+      "description": "Batch I (Architectural Philosophy) returned only broad framing items; no in-window practitioner opinion pieces surfaced with specific reporting-week anchors. Third-pass Bluesky recovery partially closed this via t1-48 (Fable-as-advisor + Sonnet-executor pattern) and Reddit t1-52 (infrastructure economics as constraint framing) — remains a Medium gap."
+    },
+    {
+      "id": "gap-06",
+      "description": "CLOSED: Reddit (Tier 1 Cross-LLM only for Claude) recovered via ChatGPT cross-LLM escalation, 10 items (t1-49 through t1-58)."
+    },
+    {
+      "id": "gap-07",
+      "description": "CLOSED: Bluesky (Tier 1 Confirmed for Claude, login required) recovered via Claude in Chrome logged-in full-text search, 16 items (t1-33 through t1-48)."
+    },
+    {
+      "id": "gap-08",
+      "description": "CLOSED: X/Twitter (Tier 2 for Claude) recovered via Grok cross-LLM escalation with native X firehose access, 12 items (t1-59 through t1-70)."
+    }
+  ],
+
+  "alt_platform_activation": {
+    "reason": "User requested 'retry using chrome' and 'retry using chrome plugin and use chatgpt, gemini, and grok to fill the gaps' — moved from non-interactive-only mode into full escalation ladder.",
+    "primary_channels_used": ["Primary WebSearch"],
+    "fallback_channels_available": [
+      "Claude in Chrome — Bluesky logged-in full-text search",
+      "ChatGPT (cross-LLM escalation)",
+      "Grok (cross-LLM escalation — X/Twitter native firehose)",
+      "Gemini (cross-LLM cross-check)"
+    ],
+    "fallback_channels_used": [
+      "Claude in Chrome — Bluesky logged-in full-text search: 16 items (t1-33 through t1-48)",
+      "ChatGPT cross-LLM escalation for Reddit: 10 items (t1-49 through t1-58)",
+      "Grok cross-LLM escalation for X/Twitter: 12 items (t1-59 through t1-70)",
+      "Gemini cross-LLM cross-check: 0 items (negative confirmation on July 6-13 mainstream enterprise/regulation reporting — see t3-04)"
+    ],
+    "channels_skipped": []
+  },
+
+  "session_summary": {
+    "run_type": "scheduled_weekly (three-pass — Primary WebSearch, Chrome/Bluesky, cross-LLM ChatGPT/Grok/Gemini)",
+    "time_range": {
+      "since": "2026-07-06",
+      "until": "2026-07-13"
+    },
+    "items_collected": {
+      "tier1": 70,
+      "tier1_5": 1,
+      "tier2": 1,
+      "tier3_manual_flags": 4
+    },
+    "batches_run": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+    "batches_failed": [],
+    "query_expansion": {
+      "performed": true,
+      "terms_harvested": [
+        "GhostApproval", "HalluSquatting", "Claude Sonnet 5", "Kimi K2.7-Code",
+        "Tencent Hy3", "Codex+ChatGPT merger", "Claude Code steganography",
+        "CJS scale", "Muse Spark 1.1", "Code Puppy",
+        "GPT-5.6 Sol Extra High", "Cursor Grok 4.5", "Fable 5 as advisor pattern"
+      ],
+      "terms_queried": [
+        "GhostApproval", "HalluSquatting", "Claude Sonnet 5",
+        "Kimi K2.7 / Hy3", "Codex+ChatGPT merger", "Claude Code steganography",
+        "Claude Code (Bluesky)", "Fable 5 (Bluesky)", "GPT-5.6 (Bluesky/Reddit/X)",
+        "vibe coding (Bluesky)"
+      ],
+      "items_added": 6,
+      "zero_result_terms": []
+    },
+    "retrieval_channel_summary": {
+      "primary_websearch": 34,
+      "chrome_logged_in_bluesky": 16,
+      "chrome_public_page": 0,
+      "cross_llm_escalation_chatgpt": 10,
+      "cross_llm_escalation_grok": 12,
+      "cross_llm_escalation_gemini": 0,
+      "user_paste": 0
+    },
+    "provisional_items_flagged_for_reverification": [
+      "t1-49 through t1-58 (Reddit via ChatGPT — 10 items)",
+      "t1-59 through t1-70 (X/Twitter via Grok — 12 items)"
+    ],
+    "dominant_themes": [
+      "Frontier-release cadence (Sonnet 5, Fable 5 restored, GPT-5.6) — corroborated across all four channels",
+      "Enterprise cost controls (Uber $1500/tool cap clarified per-tool by @f_marzotto, Walmart Code Puppy, Microsoft cancellation) — mainstream + practitioner voice",
+      "New security-attack classes on coding assistants (GhostApproval, HalluSquatting) — vendor + analyst + practitioner coverage across Bluesky/X/HN",
+      "Regulation-as-normal-channel (Anthropic Commerce Department deal) — mainstream reporting cluster",
+      "Client-binary trust erosion (Claude Code steganography → China dev-community advisory) — extended arc across Bluesky and mainstream reporting",
+      "Practitioner backlash on Fable 5 classifier false positives — Reddit (t1-49, t1-51), X (t1-59, t1-70), Bluesky (t1-27, t1-33)",
+      "Fable-as-advisor + Sonnet-5-as-executor pattern (t1-48) becomes the emergent post-restoration workflow",
+      "Chinese open-weight coding models (DeepSeek V4/V4-Pro/Flash, GLM-5.2, Kimi K2.7-Code, Tencent Hy3) — practitioner voice on X (t1-68, t1-69) reinforces earlier mainstream reporting"
+    ],
+    "compared_to_last_run": "Consistent with 2026-06-29 remediation-pass themes; Regulation/Export Control and Investor Conflict of Interest themes continue as dominant. New this week: GhostApproval + HalluSquatting security disclosures (materially new attack surface), Sonnet 5 launch reception, GPT-5.6 GA. New in this run's third pass: practitioner-side backlash on Fable 5's stricter safety classifier is stronger than expected — 4 distinct Reddit posts in r/ClaudeAI plus X/Bluesky corroboration. This is the 'Anthropic's Commerce-Department deal costs coding-agent users' story that was implicit in first-pass reporting."
+  }
+}

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Dev Sentiment Analysis &mdash; July 6 to July 13, 2026 (E18, n=72). Commerce-Department deal's safety-classifier friction becomes strongest new practitioner signal; three frontier coding models GA in ten days; GhostApproval + HalluSquatting attack classes disclose; Anthropic-trust-arc compounds with Claude Code steganography; Fable-as-advisor + Sonnet-5-executor pattern gets vendor blessing.">
+<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E18 (July 6 &ndash; July 13, 2026)">
+<meta property="og:description" content="Commerce-Department deal safety-classifier friction; three frontier coding models GA in ten days; GhostApproval + HalluSquatting attack classes; vendor-blessed Fable-as-advisor pattern; anthropic-trust-arc compounds.">
+<meta property="og:type" content="article">
+<title>AI Dev Sentiment Analysis &mdash; E18 (July 6 &ndash; July 13, 2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --display: 'DM Serif Display', serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3441;
+    --text: #d1cec9;
+    --text-dim: #7a8694;
+    --head: #f0ede8;
+    --amber: #f0a832;
+    --amber-dim: #7a5318;
+    --red: #e05252;
+    --red-dim: #5c1f1f;
+    --green: #4caf7d;
+    --green-dim: #1a3d2b;
+    --blue: #5c9eed;
+    --blue-dim: #1a2f4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--serif);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav ul {
+    list-style: none; display: flex; gap: 0.25rem;
+    padding: 0 1rem; font-size: 0.78rem;
+    font-family: var(--mono);
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    margin: 0;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-track { background: transparent; }
+nav ul::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+nav li { flex-shrink: 0; margin: 0; }
+nav a {
+    color: var(--text-dim); text-decoration: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s; white-space: nowrap;
+    display: inline-block;
+}
+nav a:hover { color: var(--amber); background-color: var(--surface2); }
+body { padding-top: 2.6rem; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 2rem; }
+header.masthead {
+    margin-bottom: 4rem; padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+h1 {
+    font-family: var(--display); font-size: 3.5rem;
+    color: var(--head); margin-bottom: 0.5rem; line-height: 1.1;
+}
+.subtitle {
+    font-family: var(--mono); font-size: 0.95rem;
+    color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.masthead-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.stat-item {
+    background-color: var(--surface2); padding: 1rem;
+    border-radius: 6px; border-left: 3px solid var(--amber);
+}
+.stat-label {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.8rem; color: var(--amber); font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: var(--display); font-size: 2.2rem; color: var(--head);
+    margin-bottom: 1.5rem; margin-top: 2rem;
+    position: relative; padding-left: 2rem;
+}
+h2::before {
+    content: attr(data-section);
+    position: absolute; left: 0; color: var(--amber);
+    font-size: 0.9rem; font-weight: 700; font-family: var(--mono);
+}
+h3 {
+    font-family: var(--display); font-size: 1.5rem; color: var(--text);
+    margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: var(--display); font-size: 1.15rem; color: var(--head);
+    margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; text-align: justify; }
+a {
+    color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+code {
+    font-family: var(--mono); background-color: var(--surface2);
+    padding: 0.2em 0.5em; border-radius: 3px;
+    font-size: 0.9em; color: var(--amber);
+}
+strong { color: var(--head); font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin: 1.25rem 0; color: var(--text-dim);
+    font-style: italic; background-color: var(--surface2);
+    border-radius: 0 4px 4px 0;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+}
+thead { background-color: var(--surface2); }
+th {
+    padding: 1rem; text-align: left; font-weight: 600;
+    color: var(--head); border-bottom: 2px solid var(--border);
+    font-family: var(--mono); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); word-break: break-word; }
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: var(--surface2); }
+ul, ol { margin-left: 2rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.5rem; }
+.sentiment-bar {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.sentiment-label { font-family: var(--mono); font-size: 0.9rem; min-width: 170px; }
+.sentiment-container {
+    flex: 1; background-color: var(--surface2);
+    border-radius: 4px; height: 28px; overflow: hidden; position: relative;
+}
+.sentiment-fill {
+    height: 100%; border-radius: 4px; display: flex;
+    align-items: center; justify-content: flex-end;
+    padding-right: 0.5rem; color: var(--bg);
+    font-weight: 600; font-size: 0.8rem; font-family: var(--mono);
+    animation: growBar 1.2s ease-out forwards;
+}
+@keyframes growBar { from { width: 0; } to { width: var(--width); } }
+.sentiment-fill.positive { background-color: var(--green); }
+.sentiment-fill.mixed { background-color: var(--amber); }
+.sentiment-fill.negative { background-color: var(--red); }
+.sentiment-fill.analytical { background-color: var(--blue); }
+.sentiment-percentage {
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text-dim); min-width: 60px; text-align: right;
+}
+.card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h4 {
+    color: var(--head); margin-bottom: 0.5rem;
+    font-family: var(--display); font-size: 1.2rem;
+}
+.incident-card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 6px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+}
+.incident-card.severity-high { border-left-color: var(--red); }
+.incident-card.severity-medium { border-left-color: var(--amber); }
+.incident-card .incident-title {
+    font-family: var(--display); font-size: 1.15rem;
+    color: var(--head); margin-bottom: 0.4rem;
+}
+.incident-card .incident-meta {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); margin-bottom: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-size: 0.75rem; font-family: var(--mono); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    background-color: var(--amber-dim); color: var(--amber);
+}
+.badge.red { background-color: var(--red-dim); color: var(--red); }
+.badge.green { background-color: var(--green-dim); color: var(--green); }
+.badge.blue { background-color: var(--blue-dim); color: var(--blue); }
+.collapsible {
+    background-color: var(--surface2); color: var(--head);
+    cursor: pointer; padding: 1rem; width: 100%;
+    border: 1px solid var(--border); text-align: left;
+    outline: none; font-size: 1rem; font-family: var(--display);
+    border-radius: 6px; transition: all 0.2s; margin-bottom: 1rem;
+}
+.collapsible:hover { background-color: var(--surface); border-color: var(--amber); }
+.collapsible::after {
+    content: ' \25BC'; float: right; color: var(--amber);
+    transition: transform 0.2s;
+}
+.collapsible.active::after { transform: rotate(-180deg); }
+.collapsible-content {
+    padding: 0 1rem 1rem 1rem; display: none;
+    background-color: var(--surface2); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 1rem;
+}
+.collapsible-content.active { display: block; }
+.collapsible-content table { margin: 1rem 0; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid var(--border); text-align: center;
+    color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem;
+}
+.pattern-card {
+    position: relative; background-color: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 1.5rem 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.ghost-number {
+    position: absolute; font-size: 8rem; font-family: var(--display);
+    color: rgba(240, 168, 50, 0.08); line-height: 1;
+    z-index: 0; right: 1rem; top: 50%; transform: translateY(-50%);
+}
+.pattern-title {
+    position: relative; z-index: 1; font-family: var(--display);
+    font-size: 1.3rem; color: var(--head); margin-bottom: 0.75rem;
+}
+.pattern-description { position: relative; z-index: 1; color: var(--text); margin-bottom: 1rem; }
+.pattern-meta {
+    position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem;
+}
+.pattern-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-dim); font-family: var(--mono);
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .wrapper { padding: 1rem; padding-top: 0; }
+    nav ul { padding: 0 0.75rem; }
+    nav a { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+    table { font-size: 0.9rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+    .sentiment-label { min-width: 130px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<nav><ul><li><a href="#summary">01 Summary</a></li><li><a href="#quant">02 Quantitative</a></li><li><a href="#deep">03 Deep Analysis</a></li><li><a href="#patterns">04 Patterns</a></li><li><a href="#contradictions">05 Contradictions</a></li><li><a href="#gaps">06 Gaps</a></li><li><a href="#recommendations">07 Actions</a></li><li><a href="#incidents">08 Incidents</a></li><li><a href="#metadata">09 Metadata</a></li><li><a href="#citations">Citations</a></li></ul></nav>
+<div class="wrapper">
+<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 18 &nbsp;&nbsp;July 6 &ndash; July 13, 2026<br>Analysis executed 2026-07-13</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">72</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">30% Caut. Pos.</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">Tool-Specific Issues</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">5</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">8</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">10/10</div></div>
+</div>
+</header>
+
+<p>Built from <code>extraction-weekly-2026-07-06-to-2026-07-13.jsonc</code> (n=72; 66 unique URLs across tier1, tier1_5, tier2).</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>source</th>
+<th>url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t1-01</td>
+<td>simonwillison.net — GPT-5.6 family</td>
+<td>https://simonwillison.net/2026/Jul/9/gpt-5-6/</td>
+</tr>
+<tr>
+<td>t1-02</td>
+<td>simonwillison.net — Sonnet 5 "Bump"</td>
+<td>https://simonwillison.net/2026/Jul/12/bump/</td>
+</tr>
+<tr>
+<td>t1-03</td>
+<td>simonwillison.net — GPT Live launch</td>
+<td>https://simonwillison.net/2026/Jul/8/introducing-gptlive/</td>
+</tr>
+<tr>
+<td>t1-04</td>
+<td>simonwillison.net — Muse Spark 1.1</td>
+<td>https://simonwillison.net/2026/Jul/9/muse-spark-1-1/</td>
+</tr>
+<tr>
+<td>t1-05</td>
+<td>simonwillison.net — Tencent Hy3</td>
+<td>https://simonwillison.net/2026/jul/6/hy3/</td>
+</tr>
+<tr>
+<td>t1-06</td>
+<td>simonwillison.net — sqlite-utils 4.0 release</td>
+<td>https://simonwillison.net/2026/Jul/11/sqlite-utils/</td>
+</tr>
+<tr>
+<td>t1-07</td>
+<td>Wiz Research — GhostApproval</td>
+<td>https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants</td>
+</tr>
+<tr>
+<td>t1-08</td>
+<td>The Hacker News — GhostApproval</td>
+<td>https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html</td>
+</tr>
+<tr>
+<td>t1-09</td>
+<td>SecurityWeek — HalluSquatting</td>
+<td>https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/</td>
+</tr>
+<tr>
+<td>t1-10</td>
+<td>TheRegister — Claude Code covert code</td>
+<td>https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366</td>
+</tr>
+<tr>
+<td>t1-11</td>
+<td>TheRegister — Sonnet 5 down-the-middle</td>
+<td>https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398</td>
+</tr>
+<tr>
+<td>t1-12</td>
+<td>Anthropic — Fable safeguards framework</td>
+<td>https://www.anthropic.com/news/fable-safeguards-jailbreak-framework</td>
+</tr>
+<tr>
+<td>t1-13</td>
+<td>Fortune — Fable/Mythos restored</td>
+<td>https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/</td>
+</tr>
+<tr>
+<td>t1-14</td>
+<td>Al Jazeera — export lift</td>
+<td>https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says</td>
+</tr>
+<tr>
+<td>t1-15</td>
+<td>The Record — export controls lift</td>
+<td>https://therecord.media/us-lifts-export-controls-anthropic-cyber-models</td>
+</tr>
+<tr>
+<td>t1-16</td>
+<td>MarkTechPost — Fable 5 redeploys</td>
+<td>https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/</td>
+</tr>
+<tr>
+<td>t1-17</td>
+<td>MarketScale — enterprise cost controls</td>
+<td>https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage</td>
+</tr>
+<tr>
+<td>t1-18</td>
+<td>TechCrunch — Google/Amazon AI cost</td>
+<td>https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/</td>
+</tr>
+<tr>
+<td>t1-19</td>
+<td>The New Stack — Sonnet 5 launch</td>
+<td>https://thenewstack.io/claude-sonnet-5-launch/</td>
+</tr>
+<tr>
+<td>t1-20</td>
+<td>GitHub Blog — Sonnet 5 on Copilot</td>
+<td>https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/</td>
+</tr>
+<tr>
+<td>t1-21</td>
+<td>Every "Vibe Check" — Anthropic Mythos/Fable</td>
+<td>https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check</td>
+</tr>
+<tr>
+<td>t1-22</td>
+<td>CodeRabbit — Fable 5 review</td>
+<td>https://www.coderabbit.ai/blog/fable-5-model-review</td>
+</tr>
+<tr>
+<td>t1-23</td>
+<td>Microsoft Security Blog — Prompts become shells</td>
+<td>https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/</td>
+</tr>
+<tr>
+<td>t1-24</td>
+<td>TechTimes — Fable 5 returns globally</td>
+<td>https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm</td>
+</tr>
+<tr>
+<td>t1-25</td>
+<td>HN — Claude Code covert code</td>
+<td>https://news.ycombinator.com/item?id=48734373</td>
+</tr>
+<tr>
+<td>t1-26</td>
+<td>HN — GhostApproval discussion</td>
+<td>https://news.ycombinator.com/item?id=48882730</td>
+</tr>
+<tr>
+<td>t1-27</td>
+<td>HN — Anthropic Commerce deal</td>
+<td>https://news.ycombinator.com/item?id=48766026</td>
+</tr>
+<tr>
+<td>t1-28</td>
+<td>HN — Sonnet 5 discussion</td>
+<td>https://news.ycombinator.com/item?id=48883064</td>
+</tr>
+<tr>
+<td>t1-29</td>
+<td>METR — GPT-5.6 Sol pre-deployment eval</td>
+<td>https://metr.org/blog/2026-06-26-gpt-5-6-sol/</td>
+</tr>
+<tr>
+<td>t1-30</td>
+<td>dev.to skillselion — GPT-5.6 usage limits</td>
+<td>https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg</td>
+</tr>
+<tr>
+<td>t1-31</td>
+<td>dev.to ai_made_tools — AI Dev Weekly 17</td>
+<td>https://dev.to/ai_made_tools/ai-dev-weekly-17-sonnet-5-gpt-56-government-gated-fable-5-returns-claude-code-spying-1pgb</td>
+</tr>
+<tr>
+<td>t1-32</td>
+<td>simonwillison — Uber caps usage</td>
+<td>https://simonwillison.net/2026/Jun/3/uber-caps-usage/</td>
+</tr>
+<tr>
+<td>t1-33..38</td>
+<td>Bluesky — @carnage4life</td>
+<td>https://bsky.app/profile/carnage4life.bsky.social</td>
+</tr>
+<tr>
+<td>t1-39</td>
+<td>Bluesky/simonwillison — sqlite-utils release</td>
+<td>https://simonwillison.net/2026/Jul/7/sqlite-utils/</td>
+</tr>
+<tr>
+<td>t1-40</td>
+<td>Bluesky/simonwillison — Jun/30 Sonnet 5 note</td>
+<td>https://simonwillison.net/2026/Jun/30/</td>
+</tr>
+<tr>
+<td>t1-41..42</td>
+<td>Bluesky — @timkellogg.me</td>
+<td>https://bsky.app/profile/timkellogg.me</td>
+</tr>
+<tr>
+<td>t1-43</td>
+<td>Bluesky — @marypcbuk</td>
+<td>https://bsky.app/profile/marypcbuk.bsky.social</td>
+</tr>
+<tr>
+<td>t1-44</td>
+<td>Bluesky — @walking-mirage (wolf.observer)</td>
+<td>https://bsky.app/profile/wolf.observer</td>
+</tr>
+<tr>
+<td>t1-45</td>
+<td>Bluesky — @apenwarr.ca</td>
+<td>https://bsky.app/profile/apenwarr.ca</td>
+</tr>
+<tr>
+<td>t1-46</td>
+<td>Bluesky — @infosec.skyfleet.blue (TheRegister link)</td>
+<td>https://www.theregister.com/</td>
+</tr>
+<tr>
+<td>t1-47</td>
+<td>Bluesky — @patak.cat</td>
+<td>https://bsky.app/profile/patak.cat</td>
+</tr>
+<tr>
+<td>t1-48</td>
+<td>Bluesky — @anthropicbot</td>
+<td>https://bsky.app/profile/anthropicbot.bsky.social</td>
+</tr>
+<tr>
+<td>t1-49</td>
+<td>r/ClaudeAI — Fable 5 doesn't feel like the same</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/</td>
+</tr>
+<tr>
+<td>t1-50</td>
+<td>r/ClaudeAI — honest question</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1uv70kq/honest_question_what_are_you_building_that_you/</td>
+</tr>
+<tr>
+<td>t1-51</td>
+<td>r/ClaudeAI — Fable 5 on leave forever</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/</td>
+</tr>
+<tr>
+<td>t1-52</td>
+<td>r/ClaudeAI — Fable 5 prelude to AGI</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/</td>
+</tr>
+<tr>
+<td>t1-53</td>
+<td>r/cursor — GPT-5.6 Luna</td>
+<td>https://www.reddit.com/r/cursor/comments/1us0cnc/gpt56_luna/</td>
+</tr>
+<tr>
+<td>t1-54</td>
+<td>r/cursor — GPT-5.6 Sol Extra High piece of garbage</td>
+<td>https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/</td>
+</tr>
+<tr>
+<td>t1-55</td>
+<td>r/cursor — GPT-5.6 Sol vs Grok 4.5</td>
+<td>https://www.reddit.com/r/cursor/comments/1uso6fk/gpt_56_sol_vs_grok_45/</td>
+</tr>
+<tr>
+<td>t1-56</td>
+<td>r/cursor — GPT-5.5 vs 5.6 Luna/Terra/Sol</td>
+<td>https://www.reddit.com/r/cursor/comments/1usmrp2/gpt_55_vs_56_luna_vs_terra_vs_sol/</td>
+</tr>
+<tr>
+<td>t1-57</td>
+<td>r/cursor — Q3 price-to-performance setup</td>
+<td>https://www.reddit.com/r/cursor/comments/1uttd7q/best_coding_setup_for_pricetoperformance_in_q3/</td>
+</tr>
+<tr>
+<td>t1-58</td>
+<td>r/vibecoding — Fable 5 Extended Again</td>
+<td>https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/</td>
+</tr>
+<tr>
+<td>t1-59</td>
+<td>X — @naima_ste</td>
+<td>https://x.com/naima_ste/status/2076228816268066957</td>
+</tr>
+<tr>
+<td>t1-60</td>
+<td>X — @hardikshingala_</td>
+<td>https://x.com/hardikshingala_/status/2076680693414015055</td>
+</tr>
+<tr>
+<td>t1-61</td>
+<td>X — @Sousinr</td>
+<td>https://x.com/Sousinr/status/2076679852988702828</td>
+</tr>
+<tr>
+<td>t1-62</td>
+<td>X — @thekennwakanma</td>
+<td>https://x.com/thekennwakanma/status/2076682559224688765</td>
+</tr>
+<tr>
+<td>t1-63</td>
+<td>X — @matteosaponati</td>
+<td>https://x.com/matteosaponati/status/2076682501481750708</td>
+</tr>
+<tr>
+<td>t1-64</td>
+<td>X — @chrisvibe_ai</td>
+<td>https://x.com/chrisvibe_ai/status/2076682461308969094</td>
+</tr>
+<tr>
+<td>t1-65</td>
+<td>X — @wiz_io</td>
+<td>https://x.com/wiz_io/status/2076640885266166198</td>
+</tr>
+<tr>
+<td>t1-66</td>
+<td>X — @ByteDrop453</td>
+<td>https://x.com/ByteDrop453/status/2076605055688376575</td>
+</tr>
+<tr>
+<td>t1-67</td>
+<td>X — @f_marzotto Uber cap clarify</td>
+<td>https://x.com/f_marzotto/status/2074041026805649739</td>
+</tr>
+<tr>
+<td>t1-68</td>
+<td>X — @merohitkumawat</td>
+<td>https://x.com/merohitkumawat/status/2076646856629866630</td>
+</tr>
+<tr>
+<td>t1-69</td>
+<td>X — @Prithvir12</td>
+<td>https://x.com/Prithvir12/status/2076660336048922860</td>
+</tr>
+<tr>
+<td>t1-70</td>
+<td>X — @fominaaalina</td>
+<td>https://x.com/fominaaalina/status/2076659388312391872</td>
+</tr>
+<tr>
+<td>t15-01</td>
+<td>Theo t3.gg (channel handle only)</td>
+<td>https://www.youtube.com/@t3dotgg</td>
+</tr>
+<tr>
+<td>t2-01</td>
+<td>Pragmatic Engineer — Pulse</td>
+<td>https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats</td>
+</tr>
+</tbody>
+</table>
+
+<h1>Sentiment Analysis Report: AI Coding Tools Developer Discourse — 2026-07-06 to 2026-07-13</h1>
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Extraction 18 is the week the coding-workflow cost of Anthropic's Commerce-Department deal becomes the strongest new practitioner-side signal in program history, three frontier coding models GA within roughly ten days, and two significant new attack classes disclose against AI coding assistants — with vendor-response divergence itself becoming a secondary story.</p>
+<p>The dominant NEW pattern is <code>safety-classifier-friction</code>. Anthropic's own <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Fable safeguards jailbreak-framework announcement</a> confirms the new cybersecurity classifier baked into the restored Fable 5. Practitioner recovery is unambiguous and cross-platform: <a href="https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/" target="_blank" rel="noopener">r/ClaudeAI 'the Fable 5 that came back doesn't feel like the Fable 5 we knew'</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/" target="_blank" rel="noopener">r/ClaudeAI 'my Fable 5 is on leave forever'</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI on AGI framing</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding 'Fable 5 Extended Again'</a>, <a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste adversarial audit — Fable flagging resolved GitHub issues as bugs in large codebases</a>, <a href="https://x.com/fominaaalina/status/2076659388312391872" target="_blank" rel="noopener">@fominaaalina 'security-adjacent codebases become impossible to review'</a>, Bluesky (<a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">carnage4life "burns so many tokens on refusals"</a>, <a href="https://bsky.app/profile/wolf.observer" target="_blank" rel="noopener">walking-mirage "Flowers for Algernon moment"</a>), and the mainstream anchor <a href="https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm" target="_blank" rel="noopener">TechTimes "Fable 5 returns globally — new classifier blocks jailbreak, flags more code"</a>. Eight in-window observations across four platforms and five author-types is program-record for a NEW signal.</p>
+<p><code>export-control-regime</code> (E17 mint) continues Promoted with cross-outlet mainstream corroboration cluster: <a href="https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://therecord.media/us-lifts-export-controls-anthropic-cyber-models" target="_blank" rel="noopener">The Record</a>, <a href="https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/" target="_blank" rel="noopener">MarkTechPost</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every "Vibe Check"</a>, <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit Fable 5 review</a>, <a href="https://news.ycombinator.com/item?id=48766026" target="_blank" rel="noopener">HN Anthropic Commerce deal thread</a>. Government-negotiated access terms with pre-release-review commitments are being treated as a durable structural change.</p>
+<p><code>mcp-attack-surface</code> exploit dimension re-anchors hard — two significant new attack classes land in-window. <a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">GhostApproval (Wiz Research)</a> discloses a symlink trust-boundary bypass affecting Claude Code, Amazon Q, Google Jules, Cursor, Windsurf, Augment, Cline, and Gemini CLI. Amazon, Google, and Cursor patched; Anthropic disputed the finding as a vulnerability at all — vendor-response divergence itself becomes a story via <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener">The Hacker News</a>, <a href="https://x.com/wiz_io/status/2076640885266166198" target="_blank" rel="noopener">@wiz_io</a>, <a href="https://x.com/ByteDrop453/status/2076605055688376575" target="_blank" rel="noopener">@ByteDrop453</a>, <a href="https://news.ycombinator.com/item?id=48882730" target="_blank" rel="noopener">HN GhostApproval thread</a>. <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/" target="_blank" rel="noopener">HalluSquatting (SecurityWeek/arXiv)</a> — adversarial trigger forcing on-demand hallucination of attacker-owned package names, weaponizing the LLM hallucination tendency into a botnet-delivery supply-chain vector — extends the earlier <a href="https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/" target="_blank" rel="noopener">Microsoft Security Blog "Prompts become shells"</a> framing.</p>
+<p><code>anthropic-trust-arc</code> compounds: <a href="https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366" target="_blank" rel="noopener">Claude Code steganography disclosure (TheRegister)</a> lands the same week as GhostApproval; Anthropic pulled the covert traffic-fingerprinting code in v2.1.197. The <a href="https://news.ycombinator.com/item?id=48734373" target="_blank" rel="noopener">HN thread</a> explicitly frames as a compounding trust problem, and enterprise commenters cite compliance-review trigger. <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every "Vibe Check"</a> and <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit's model review</a> both examine Fable 5 through vendor-trust lens rather than capability lens; <a href="https://dev.to/ai_made_tools/ai-dev-weekly-17-sonnet-5-gpt-56-government-gated-fable-5-returns-claude-code-spying-1pgb" target="_blank" rel="noopener">dev.to AI Dev Weekly</a> titles the whole story arc "Claude Code spying".</p>
+<p><code>subagent-delegation</code> (E17 fastest-maturing signal) receives a vendor-blessed template. <a href="https://bsky.app/profile/anthropicbot.bsky.social" target="_blank" rel="noopener">@anthropicbot publishes the Fable-as-advisor + Sonnet-5-as-executor pattern</a> via Bluesky on 07-10; <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison's sqlite-utils 4.0 release</a> demonstrates the pattern in practice, with Fable review on final pass catching four additional release blockers (<a href="https://simonwillison.net/2026/Jul/11/sqlite-utils/" target="_blank" rel="noopener">sqlite-utils 07-11 followup</a>); <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">Tim Kellogg on Sonnet 5 speed</a> provides the "basically just a very fast Opus" framing; <a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI t1-52 "infrastructure economics not raw reasoning is the constraint"</a> is the practitioner articulation; <a href="https://x.com/hardikshingala_/status/2076680693414015055" target="_blank" rel="noopener">@hardikshingala_</a> formalizes as a builder-facing agent-selection prompt template.</p>
+<p><code>cost-runaway</code> hardens further with <a href="https://x.com/f_marzotto/status/2074041026805649739" target="_blank" rel="noopener">Uber $1,500/tool/month cap clarified per-tool (not aggregate) by @f_marzotto</a>, <a href="https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage" target="_blank" rel="noopener">MarketScale enterprise cost controls piece</a> covering Walmart's Code Puppy caps and Microsoft's internal Claude Code cancellation, <a href="https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/" target="_blank" rel="noopener">TechCrunch "A warning sign about AI's real cost — courtesy of Google and Amazon"</a>, the <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats" target="_blank" rel="noopener">Pragmatic Engineer Pulse ~30% of surveyed devs hit tool limits</a>, and <a href="https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg" target="_blank" rel="noopener">dev.to "GPT-5.6 launched and developers immediately hit their usage limits — the fix is not a bigger plan"</a>.</p>
+<p><code>open-weight-china-advantage</code> compounds through weekly cadence — <a href="https://simonwillison.net/2026/jul/6/hy3/" target="_blank" rel="noopener">Willison's Tencent Hy3 note</a> sits inside the growing cluster with Kimi K2.7-Code, GLM-5.2, DeepSeek V4/V4-Pro/V4-Flash. Practitioner voice on X (<a href="https://x.com/merohitkumawat/status/2076646856629866630" target="_blank" rel="noopener">@merohitkumawat</a>, <a href="https://x.com/Prithvir12/status/2076660336048922860" target="_blank" rel="noopener">@Prithvir12</a>) treats the cluster as the sovereignty/cost hedge; Bluesky @carnage4life posts the counter-narrative.</p>
+<p>NEW <code>release-cadence-shock</code> — <a href="https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener">Sonnet 5 GA for Copilot 06-30 (GitHub Blog)</a>, <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Fable 5 restored 07-01</a>, <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" target="_blank" rel="noopener">GPT-5.6 GA 07-09 (Willison analysis)</a> — three frontier coding models in a roughly ten-day window. Plus <a href="https://simonwillison.net/2026/Jul/12/bump/" target="_blank" rel="noopener">Simon on Sonnet 5 "Bump"</a>, <a href="https://simonwillison.net/2026/Jul/8/introducing-gptlive/" target="_blank" rel="noopener">OpenAI's GPT Live launch</a>, and <a href="https://simonwillison.net/2026/Jul/9/muse-spark-1-1/" target="_blank" rel="noopener">Muse Spark 1.1</a>. Practitioner discourse focuses on price-per-solved-task rather than raw benchmark scores. <a href="https://thenewstack.io/claude-sonnet-5-launch/" target="_blank" rel="noopener">TheNewStack Sonnet 5 launch</a> and <a href="https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398" target="_blank" rel="noopener">TheRegister "Sonnet 5 heads straight down the middle of the road"</a> are the mainstream anchors. r/cursor practitioners run cross-model bakeoffs (<a href="https://www.reddit.com/r/cursor/comments/1uso6fk/gpt_56_sol_vs_grok_45/" target="_blank" rel="noopener">Sol vs Grok 4.5</a>, <a href="https://www.reddit.com/r/cursor/comments/1usmrp2/gpt_55_vs_56_luna_vs_terra_vs_sol/" target="_blank" rel="noopener">5.5 vs 5.6 Luna/Terra/Sol</a>, <a href="https://www.reddit.com/r/cursor/comments/1uttd7q/best_coding_setup_for_pricetoperformance_in_q3/" target="_blank" rel="noopener">Q3 price-to-performance setup</a>, <a href="https://www.reddit.com/r/cursor/comments/1us0cnc/gpt56_luna/" target="_blank" rel="noopener">Luna review</a>, <a href="https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/" target="_blank" rel="noopener">Sol Extra High regression report</a>). <a href="https://metr.org/blog/2026-06-26-gpt-5-6-sol/" target="_blank" rel="noopener">METR's pre-deployment GPT-5.6 Sol eval</a> provides the safety-benchmark counterweight.</p>
+<p><strong>Sentiment shifts</strong>: SP 12%, CP 30%, MA 14%, Nu 23%, CN 15%, SN 6%. The structural SN+CN floor rises from 13% in E17 to 21% in E18, returning to E10-E16 range; CP-dominant window persists but with meaningfully more negative-side pressure driven by safety-classifier-friction and the two new attack classes. Two signal-store slugs reused; five continued from E17; three new (<code>safety-classifier-friction</code>, <code>release-cadence-shock</code>, plus vendor-blessed extension of <code>subagent-delegation</code>).</p>
+
+</section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
+<h3>Extraction Composition (n=72; 66 unique URLs)</h3>
+<table>
+<thead>
+<tr>
+<th>Platform / Tier</th>
+<th style="text-align: right;">Items</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blogs / Publications (t1)</td>
+<td style="text-align: right;">24</td>
+<td>Anchor cluster: Willison ×6, TheRegister ×2, Anthropic vendor, Fortune, Al Jazeera, The Record, MarkTechPost, MarketScale, TechCrunch, TheNewStack, GitHub Blog, Every, CodeRabbit, Microsoft Security, TechTimes, Wiz, Hacker News (sic), SecurityWeek</td>
+</tr>
+<tr>
+<td>Hacker News (t1)</td>
+<td style="text-align: right;">4</td>
+<td>Cross-links steganography + GhostApproval + Commerce deal + Sonnet 5</td>
+</tr>
+<tr>
+<td>METR (t1)</td>
+<td style="text-align: right;">1</td>
+<td>GPT-5.6 Sol pre-deployment eval — dated 06-26, in-window aging tail</td>
+</tr>
+<tr>
+<td>dev.to (t1)</td>
+<td style="text-align: right;">2</td>
+<td>skillselion + ai_made_tools weekly digest</td>
+</tr>
+<tr>
+<td>Bluesky (t1)</td>
+<td style="text-align: right;">16</td>
+<td>Chrome-logged-in harvest across 8 handles</td>
+</tr>
+<tr>
+<td>Reddit (t1)</td>
+<td style="text-align: right;">10</td>
+<td>r/ClaudeAI ×4, r/cursor ×5, r/vibecoding ×1 (ChatGPT retrieval assist)</td>
+</tr>
+<tr>
+<td>X/Twitter (t1)</td>
+<td style="text-align: right;">12</td>
+<td>Grok retrieval assist</td>
+</tr>
+<tr>
+<td>Mastodon (t1)</td>
+<td style="text-align: right;">1</td>
+<td>TheRegister DevOps link surfaced</td>
+</tr>
+<tr>
+<td>YouTube tier1_5</td>
+<td style="text-align: right;">1</td>
+<td>Channel handle only (Theo t3.gg) — retrieval throttled</td>
+</tr>
+<tr>
+<td>Tier2 (Pragmatic Eng)</td>
+<td style="text-align: right;">1</td>
+<td>Newsletter Pulse</td>
+</tr>
+</tbody>
+</table>
+<h3>Sentiment Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">E18 %</th>
+<th style="text-align: right;">E17 %</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strongly Positive (SP)</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">17</td>
+<td>↓ 5</td>
+</tr>
+<tr>
+<td>Cautiously Positive (CP)</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">34</td>
+<td>↓ 4</td>
+</tr>
+<tr>
+<td>Mixed/Ambivalent (MA)</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">12</td>
+<td>↑ 2</td>
+</tr>
+<tr>
+<td>Nuanced/Analytical (Nu)</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">24</td>
+<td>≈</td>
+</tr>
+<tr>
+<td>Cautiously Negative (CN)</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8</td>
+<td>↑ 7</td>
+</tr>
+<tr>
+<td>Strongly Negative (SN)</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5</td>
+<td>≈</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition-adjusted reading</strong>: CP+SP falls from 51% (E17) to 42% (E18); SN+CN rises from 13% to 21%. The window is still CP-dominant, but the structural ~49-50% SN+CN floor that E17 broke has partially reasserted itself.</p>
+<h3>Topic Cluster Frequency</h3>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th style="text-align: right;">Mentions</th>
+<th style="text-align: center;">Dominant</th>
+<th style="text-align: center;">Δ vs E17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool-Specific Issues</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: center;">CN</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: center;">CP</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">CP</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: center;">CP</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Regulation / Export Control</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">CP</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Open-Weight Sovereignty</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">CP</td>
+<td style="text-align: center;">≈</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: center;">CN</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">≈</td>
+</tr>
+<tr>
+<td>Hiring / Labor Market</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">≈</td>
+</tr>
+</tbody>
+</table>
+<h3>Tools Mentioned (top negative-mixed-positive)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align: right;">Neg</th>
+<th style="text-align: right;">Mixed</th>
+<th style="text-align: right;">Pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Fable 5</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Claude Sonnet 5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>Claude Code (client binary)</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>GPT-5.6 Sol/Terra/Luna</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Cursor / Composer 2.5 / Grok 4.5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>GitHub Copilot</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Tencent Hy3 / Kimi K2.7-Code</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>DeepSeek V4 family / GLM-5.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>GhostApproval-affected (Amazon Q, Google Jules, Windsurf, Augment, Cline, Gemini CLI)</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Walmart Code Puppy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Muse Spark 1.1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
+<h3>Tool-Specific Issues (18 mentions, MA-dominant)</h3>
+<p>The largest cluster by count; Fable 5 dominates negatively (safety-classifier friction — see Pattern 1) and Sonnet 5 dominates positively (<a href="https://thenewstack.io/claude-sonnet-5-launch/" target="_blank" rel="noopener">TheNewStack launch coverage</a>, <a href="https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398" target="_blank" rel="noopener">TheRegister "down the middle of the road to dodge controversy"</a>, <a href="https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener">GitHub Blog Copilot GA</a>, <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">Kellogg "very fast Opus"</a>). GPT-5.6 receives mixed practitioner reception on Cursor: <a href="https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/" target="_blank" rel="noopener">Sol Extra High "piece of garbage"</a>, balanced against <a href="https://www.reddit.com/r/cursor/comments/1us0cnc/gpt56_luna/" target="_blank" rel="noopener">Luna working reports</a> and <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" target="_blank" rel="noopener">Willison's positive family review</a>. Cursor's own Composer 2.5 (E17 open signal) appears in the <a href="https://www.reddit.com/r/cursor/comments/1uttd7q/best_coding_setup_for_pricetoperformance_in_q3/" target="_blank" rel="noopener">best price-to-performance Q3 2026 setup thread</a> alongside Grok 4.5.</p>
+<h3>Incidents / Failures (12 mentions, CN-dominant)</h3>
+<p>Driven by two disclosed attack classes (<a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">GhostApproval</a>, <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/" target="_blank" rel="noopener">HalluSquatting</a>), the <a href="https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366" target="_blank" rel="noopener">Claude Code steganography disclosure</a>, and the safety-classifier product-defect cluster. See Incidents Log below.</p>
+<h3>Pricing / Cost (11 mentions, CP-dominant)</h3>
+<p><a href="https://x.com/f_marzotto/status/2074041026805649739" target="_blank" rel="noopener">Uber $1,500/tool per-tool cap clarified</a> is the vertical anchor; <a href="https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage" target="_blank" rel="noopener">MarketScale on Walmart/Uber/Microsoft cost controls</a> and <a href="https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/" target="_blank" rel="noopener">TechCrunch on Google/Amazon cost warning</a> are the mainstream anchors. <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats" target="_blank" rel="noopener">Pragmatic Engineer Pulse</a> and <a href="https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg" target="_blank" rel="noopener">dev.to on GPT-5.6 usage limits</a> provide practitioner-side data.</p>
+<h3>Enterprise / Policy (10 mentions, CP-dominant)</h3>
+<p>Overlaps heavily with Pricing/Cost. New here: Walmart Code Puppy internal caps, Microsoft internal Claude Code cancellation (both via <a href="https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage" target="_blank" rel="noopener">MarketScale</a>), Cursor Teams-Standard/Premium split usage pools effective 2026-07-01.</p>
+<h3>Trust / Verification (10 mentions, MA-dominant)</h3>
+<p>Anthropic-trust-arc compounding cluster: <a href="https://news.ycombinator.com/item?id=48734373" target="_blank" rel="noopener">HN steganography thread</a>, <a href="https://dev.to/ai_made_tools/ai-dev-weekly-17-sonnet-5-gpt-56-government-gated-fable-5-returns-claude-code-spying-1pgb" target="_blank" rel="noopener">dev.to "Claude Code spying"</a>, <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit Fable 5 review</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every Vibe Check on Fable-Mythos</a>.</p>
+<h3>Architectural Philosophy (9 mentions, CP-dominant, ↓)</h3>
+<p>Down from E17's 14 mentions (subagent-delegation surge). This week's contribution is the vendor-blessed <a href="https://bsky.app/profile/anthropicbot.bsky.social" target="_blank" rel="noopener">Fable-as-advisor + Sonnet-5-as-executor pattern</a> plus <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 4.0 practical demonstration</a> and <a href="https://x.com/hardikshingala_/status/2076680693414015055" target="_blank" rel="noopener">@hardikshingala_ formalization</a>.</p>
+<h3>Regulation / Export Control (8 mentions, Nu-dominant, ↓)</h3>
+<p>Down from E17's 9 — the export-restoration story has moved from breaking news to structural change acknowledgment. <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Anthropic's restoration announcement</a>, <a href="https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://therecord.media/us-lifts-export-controls-anthropic-cyber-models" target="_blank" rel="noopener">The Record</a>, <a href="https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/" target="_blank" rel="noopener">MarkTechPost</a>, <a href="https://news.ycombinator.com/item?id=48766026" target="_blank" rel="noopener">HN Commerce deal thread</a>.</p>
+<h3>Code Quality (7 mentions, MA-dominant, ↑)</h3>
+<p>Driven by GhostApproval / HalluSquatting security-of-generated-code framing (see <a href="https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/" target="_blank" rel="noopener">Microsoft Security Blog on prompts-become-shells</a>) and Fable-safety-classifier interference with quality review workflows.</p>
+<h3>Productivity Reality (6 mentions, CP-dominant, ↓)</h3>
+<p>Down slightly. <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 4.0</a> and <a href="https://simonwillison.net/2026/Jul/11/sqlite-utils/" target="_blank" rel="noopener">11-Jul follow-up</a> remain the concrete Willison-scale anchors. Cross-tool bakeoffs on r/cursor track productivity as fnc(model, cost).</p>
+<h3>Open-Weight Sovereignty (6 mentions, CP-dominant, ≈)</h3>
+<p><a href="https://simonwillison.net/2026/jul/6/hy3/" target="_blank" rel="noopener">Willison Hy3 note</a> plus X practitioner voice (<a href="https://x.com/merohitkumawat/status/2076646856629866630" target="_blank" rel="noopener">@merohitkumawat</a>, <a href="https://x.com/Prithvir12/status/2076660336048922860" target="_blank" rel="noopener">@Prithvir12</a>) plus <a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">Bluesky @carnage4life counter-narrative</a>.</p>
+<h3>Hype vs Reality (4 mentions, Nu-dominant, ↑)</h3>
+<p><a href="https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398" target="_blank" rel="noopener">TheRegister on Sonnet 5 "middle of the road"</a>, <a href="https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/" target="_blank" rel="noopener">r/cursor "GPT-5.6 Sol Extra High piece of garbage"</a>, <a href="https://metr.org/blog/2026-06-26-gpt-5-6-sol/" target="_blank" rel="noopener">METR pre-deployment eval</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every Vibe Check</a>.</p>
+<h3>Dependency / Resilience (4 mentions, CN-dominant, ↑)</h3>
+<p>GhostApproval and HalluSquatting drive this cluster — supply-chain and trust-boundary framings.</p>
+<h3>Burnout / Cognitive Load (3 mentions, MA-dominant, ≈)</h3>
+<p><a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI "12 manual Continue clicks to verify an 11-page PDF"</a> surfaces as a Fable-classifier-friction manifestation of verification fatigue.</p>
+<h3>Hiring / Labor Market (2 mentions, Nu-dominant, ≈)</h3>
+<p>Background level; no fresh anchors.</p>
+
+</section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
+<h3>Pattern 1 — <code>safety-classifier-friction</code> (NEW mint, H confidence, 8 obs)</h3>
+<p>Fable 5's stricter safety classifier — announced as <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Anthropic's Commerce-Department-deal condition</a> — produces enough coding-workflow friction that it becomes the strongest single-window practitioner-side signal in program history. Anchors are dense: Reddit (<a href="https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/" target="_blank" rel="noopener">r/ClaudeAI Fable 5 doesn't feel like the same</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/" target="_blank" rel="noopener">r/ClaudeAI on leave forever</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI on AGI framing with 12 Continue clicks</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding Extended Again</a>); X (<a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste adversarial audit</a>, <a href="https://x.com/fominaaalina/status/2076659388312391872" target="_blank" rel="noopener">@fominaaalina "security-adjacent codebases become impossible to review"</a>); Bluesky (<a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">carnage4life burns-so-many-tokens</a>, <a href="https://bsky.app/profile/wolf.observer" target="_blank" rel="noopener">walking-mirage Flowers-for-Algernon</a>); mainstream anchor <a href="https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm" target="_blank" rel="noopener">TechTimes Fable 5 flags more code</a>. This is the coding-workflow cost of the Commerce-Department deal and the practitioner side of the <code>anthropic-trust-arc</code> story.</p>
+<h3>Pattern 2 — <code>export-control-regime</code> (H confidence, 8 obs — continues Promoted from E17)</h3>
+<p>The 18-day export-control episode resolves into a durable Commerce Department deal — Fable 5 restored with no export license required in exchange for proactive detection cooperation, pre-release-review commitments, and the new cybersecurity classifier baked into the model. Cross-outlet mainstream anchor cluster: <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Anthropic's own announcement</a>, <a href="https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://therecord.media/us-lifts-export-controls-anthropic-cyber-models" target="_blank" rel="noopener">The Record</a>, <a href="https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/" target="_blank" rel="noopener">MarkTechPost</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every Vibe Check</a>, <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit review</a>, <a href="https://news.ycombinator.com/item?id=48766026" target="_blank" rel="noopener">HN Commerce deal</a>. Government-negotiated access terms with pre-release-review commitments treated as durable structural change.</p>
+<h3>Pattern 3 — <code>mcp-attack-surface</code> (H confidence, 7 obs — Promoted, exploit dimension re-anchors)</h3>
+<p>Signal expands from MCP-protocol-specific to coding-assistant-attack-surface broadly. Two significant new attack classes disclose in-window. <a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">GhostApproval (Wiz)</a> — symlink trust-boundary bypass affecting Claude Code, Amazon Q, Google Jules, Cursor, Windsurf, Augment, Cline, Gemini CLI. Cross-covered by <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener">The Hacker News</a>, <a href="https://x.com/wiz_io/status/2076640885266166198" target="_blank" rel="noopener">@wiz_io</a>, <a href="https://x.com/ByteDrop453/status/2076605055688376575" target="_blank" rel="noopener">@ByteDrop453</a>, <a href="https://news.ycombinator.com/item?id=48882730" target="_blank" rel="noopener">HN thread</a>. Amazon/Google/Cursor patched; Anthropic disputed as vulnerability-at-all. <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/" target="_blank" rel="noopener">HalluSquatting (SecurityWeek)</a> — adversarial trigger forcing on-demand hallucination of attacker-owned package names, weaponizing LLM hallucination into supply-chain vector, extends the earlier <a href="https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/" target="_blank" rel="noopener">Microsoft Security Blog "Prompts become shells"</a> work.</p>
+<h3>Pattern 4 — <code>anthropic-trust-arc</code> (H confidence, 5 obs — Promoted, continues from signal store)</h3>
+<p>Vendor trust becomes a compounding multi-vector story — <a href="https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366" target="_blank" rel="noopener">Claude Code steganography disclosure</a> (Anthropic pulled fingerprinting in v2.1.197) lands the same week as GhostApproval and safety-classifier-friction. <a href="https://news.ycombinator.com/item?id=48734373" target="_blank" rel="noopener">HN thread on the steganography</a> explicitly links the three vectors as a "compounding trust problem"; enterprise commenters flag as compliance-review trigger. <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every Vibe Check</a> and <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit review</a> frame Fable 5 through vendor-trust lens. <a href="https://dev.to/ai_made_tools/ai-dev-weekly-17-sonnet-5-gpt-56-government-gated-fable-5-returns-claude-code-spying-1pgb" target="_blank" rel="noopener">dev.to AI Dev Weekly</a> titles the arc "Claude Code spying".</p>
+<h3>Pattern 5 — <code>subagent-delegation</code> (H confidence, 5 obs — Promoted, vendor-blessed extension)</h3>
+<p>Post-restoration workflow crystallizes into the Fable-as-advisor + Sonnet-5-as-executor pattern with vendor sanction. <a href="https://bsky.app/profile/anthropicbot.bsky.social" target="_blank" rel="noopener">@anthropicbot</a> publishes the two-model workflow 07-10 (use Fable 5 as advisor called by Sonnet 5 executor so most tokens bill at lower rate). <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 4.0</a> demonstrates in practice — Fable review on final pass catches four additional release blockers (<a href="https://simonwillison.net/2026/Jul/11/sqlite-utils/" target="_blank" rel="noopener">07-11 follow-up</a>). <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">Kellogg on Sonnet 5 speed</a> — "basically just a very fast Opus"; <a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI</a> — "infrastructure economics not raw reasoning is the constraint"; <a href="https://x.com/hardikshingala_/status/2076680693414015055" target="_blank" rel="noopener">@hardikshingala_</a> formalizes as builder-facing template.</p>
+<h3>Pattern 6 — <code>cost-runaway</code> (H confidence, 5 obs — Promoted, continues)</h3>
+<p><a href="https://x.com/f_marzotto/status/2074041026805649739" target="_blank" rel="noopener">Uber $1,500/tool per-tool cap clarified</a>, <a href="https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage" target="_blank" rel="noopener">MarketScale enterprise cost controls</a>, <a href="https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/" target="_blank" rel="noopener">TechCrunch on Google/Amazon cost</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats" target="_blank" rel="noopener">Pragmatic Engineer Pulse ~30% hit limits</a>, <a href="https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg" target="_blank" rel="noopener">dev.to on GPT-5.6 usage limits</a>, <a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/" target="_blank" rel="noopener">Uber caps context from June via Willison</a>.</p>
+<h3>Pattern 7 — <code>open-weight-china-advantage</code> (H confidence, 4 obs — Promoted, continues)</h3>
+<p>Chinese open-weight coding stack compounds through weekly releases — <a href="https://simonwillison.net/2026/jul/6/hy3/" target="_blank" rel="noopener">Tencent Hy3 via Willison</a>, <a href="https://x.com/merohitkumawat/status/2076646856629866630" target="_blank" rel="noopener">@merohitkumawat</a>, <a href="https://x.com/Prithvir12/status/2076660336048922860" target="_blank" rel="noopener">@Prithvir12</a>, <a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">Bluesky @carnage4life counter-narrative</a>. Sovereignty/cost hedge reading sustained.</p>
+<h3>Pattern 8 — <code>release-cadence-shock</code> (NEW mint, M confidence, 8 obs, enters Tracking)</h3>
+<p>Three frontier coding models GA within roughly ten days — <a href="https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener">Sonnet 5 (06-30) on Copilot</a>, <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Fable 5 restored (07-01)</a>, <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" target="_blank" rel="noopener">GPT-5.6 (07-09)</a>; plus <a href="https://simonwillison.net/2026/Jul/12/bump/" target="_blank" rel="noopener">Sonnet 5 "Bump" analysis</a>, <a href="https://simonwillison.net/2026/Jul/8/introducing-gptlive/" target="_blank" rel="noopener">GPT Live</a>, <a href="https://simonwillison.net/2026/Jul/9/muse-spark-1-1/" target="_blank" rel="noopener">Muse Spark 1.1</a>. Practitioners consistently frame as unusual density of coding-relevant releases; discourse focuses on price-per-solved-task. Anchors include <a href="https://thenewstack.io/claude-sonnet-5-launch/" target="_blank" rel="noopener">TheNewStack Sonnet 5</a>, <a href="https://www.theregister.com/devops/2026/07/01/claude-sonnet-50-heads-straight-down-the-middle-of-the-road-to-dodge-controversy/5265398" target="_blank" rel="noopener">TheRegister "middle of the road"</a>, r/cursor bakeoffs (<a href="https://www.reddit.com/r/cursor/comments/1uso6fk/gpt_56_sol_vs_grok_45/" target="_blank" rel="noopener">Sol vs Grok</a>, <a href="https://www.reddit.com/r/cursor/comments/1usmrp2/gpt_55_vs_56_luna_vs_terra_vs_sol/" target="_blank" rel="noopener">5.5 vs 5.6</a>, <a href="https://www.reddit.com/r/cursor/comments/1uttd7q/best_coding_setup_for_pricetoperformance_in_q3/" target="_blank" rel="noopener">Q3 price-to-perf setup</a>), <a href="https://metr.org/blog/2026-06-26-gpt-5-6-sol/" target="_blank" rel="noopener">METR eval</a>. Enters at Tracking — E19 continuation determines whether this is calendar-artifact or sustained cadence shift.</p>
+
+</section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
+<h3>C1 — "Fable 5 restoration with new safety classifier was a net-positive for coding practitioners" (Tilting Negative)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Anthropic official</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every Vibe Check</a>, <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit review</a></li>
+<li><strong>Contradicting</strong>: <a href="https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/" target="_blank" rel="noopener">r/ClaudeAI came back doesn't feel like the same</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/" target="_blank" rel="noopener">r/ClaudeAI on leave forever</a>, <a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste adversarial audit</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding Extended Again</a></li>
+</ul>
+<h3>C2 — "GhostApproval is a vulnerability requiring vendor response" (Newly Contested)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">Wiz Research</a>, <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener">The Hacker News</a>, <a href="https://x.com/wiz_io/status/2076640885266166198" target="_blank" rel="noopener">@wiz_io</a></li>
+<li><strong>Contradicting</strong>: <a href="https://news.ycombinator.com/item?id=48882730" target="_blank" rel="noopener">HN thread with Anthropic-position sub-debate</a></li>
+</ul>
+<h3>C3 — "Fable-as-advisor + Sonnet-5-as-executor pattern is the workflow winner" (Tilting Positive)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://bsky.app/profile/anthropicbot.bsky.social" target="_blank" rel="noopener">@anthropicbot</a>, <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 07-07</a>, <a href="https://simonwillison.net/2026/Jul/11/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 07-11</a>, <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">Kellogg</a>, <a href="https://x.com/hardikshingala_/status/2076680693414015055" target="_blank" rel="noopener">@hardikshingala_</a></li>
+<li><strong>Contradicting</strong>: none in-window</li>
+</ul>
+<h3>C4 — "GPT-5.6 Sol is a meaningful capability upgrade over GPT-5.5" (Newly Contested)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" target="_blank" rel="noopener">Willison GPT-5.6 family</a>, <a href="https://metr.org/blog/2026-06-26-gpt-5-6-sol/" target="_blank" rel="noopener">METR pre-deployment eval</a></li>
+<li><strong>Contradicting</strong>: <a href="https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/" target="_blank" rel="noopener">r/cursor Sol Extra High piece of garbage</a>, <a href="https://www.reddit.com/r/cursor/comments/1usmrp2/gpt_55_vs_56_luna_vs_terra_vs_sol/" target="_blank" rel="noopener">r/cursor 5.5 vs 5.6 Luna/Terra/Sol</a></li>
+</ul>
+<h3>C5 — "Chinese open-weight coding models are viable substitutes for frontier US coding models" (Tilting Positive)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://simonwillison.net/2026/jul/6/hy3/" target="_blank" rel="noopener">Willison Hy3</a>, <a href="https://x.com/merohitkumawat/status/2076646856629866630" target="_blank" rel="noopener">@merohitkumawat</a>, <a href="https://x.com/Prithvir12/status/2076660336048922860" target="_blank" rel="noopener">@Prithvir12</a></li>
+<li><strong>Contradicting</strong>: <a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">Bluesky @carnage4life anti-Chinese-model framing</a></li>
+</ul>
+<h3>C6 — "Anthropic's Commerce Department deal restored user access without meaningful practitioner cost" (Newly Contested)</h3>
+<ul>
+<li><strong>Supporting</strong>: <a href="https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/" target="_blank" rel="noopener">Fortune</a>, <a href="https://therecord.media/us-lifts-export-controls-anthropic-cyber-models" target="_blank" rel="noopener">The Record</a></li>
+<li><strong>Contradicting</strong>: <a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste</a>, <a href="https://x.com/fominaaalina/status/2076659388312391872" target="_blank" rel="noopener">@fominaaalina</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding</a></li>
+</ul>
+
+</section><section id="gaps"><h2 data-section="06">Gaps &amp; Uncertainties</h2>
+<ul>
+<li>YouTube (Theo t3.gg / ThePrimeagen / Fireship) retrieval throttled second consecutive window; only channel handle in tier1_5. Deferred to E19.</li>
+<li>HN MCP CVE / security threads — GhostApproval + HalluSquatting drove HN traffic this week; if E19 quieter, treat as episode-driven not baseline.</li>
+<li>ThoughtWorks Radar — no in-window post.</li>
+<li>Bluesky logged-in full-text search — E18 harvested 8 handles (simonwillison, timkellogg, marypcbuk, wolf.observer, apenwarr, patak, infosec.skyfleet, anthropicbot). catt.design, thdxr.com, astral100, agathedemarais not covered.</li>
+<li>IEEE / ACM / arXiv — HalluSquatting arXiv paper cited via SecurityWeek but not directly harvested; direct arXiv harvest gap-close for E19.</li>
+<li>LinkedIn / Mastodon / Podcasts / non-English forums — no in-window items via any channel.</li>
+<li>E17-minted signals <code>composer-25-quality-drift</code> and <code>tool-schema-drift</code> — no fresh E18 evidence; consistent with attention shift.</li>
+<li>Cross-LLM Gemini pass returned 0 items this run (down from 5-8 in prior weeks) — likely query-scope issue.</li>
+<li>METR follow-up on Sonnet 5 or Fable 5 — GPT-5.6 Sol pre-deployment published; Anthropic-equivalents not surfaced in-window.</li>
+<li>Enterprise procurement letters / Fortune 500 open-weight-china-advantage confirmation — still absent as leading indicator.</li>
+</ul>
+
+</section><section id="recommendations"><h2 data-section="07">Recommended Actions</h2>
+<ol>
+<li><strong>Promote <code>safety-classifier-friction</code> to Signal Store on the second observation window.</strong> Eight in-window observations is program-record for a NEW signal; if a second anchor cluster appears in E19, promote and start tracking Anthropic vendor-side response as sub-signal.</li>
+<li><strong>Extend the <code>mcp-attack-surface</code> signal's evidence-theme note in the rule file</strong> to explicitly cover coding-assistant attack surface generally (GhostApproval-class trust-boundary bypasses, HalluSquatting-class hallucination-to-supply-chain vectors) — the MCP-protocol-specific title has become undersized for the signal's actual scope.</li>
+<li><strong>Watch <code>subagent-delegation</code> for vendor-blessed template propagation to Cursor / Copilot / OpenAI docs.</strong> The Anthropic-published Fable-as-advisor + Sonnet-5-as-executor pattern is likely to trigger equivalent Model-A-plans / Model-B-executes template publication in adjacent vendor documentation.</li>
+<li><strong>Bluesky retrieval remediation.</strong> Second week with partial handle-set coverage. Recommend either full config handle-set harvest as part of scheduled runs or moving Bluesky to Tier-3-Manual.</li>
+<li><strong>YouTube tier1_5 retrieval audit.</strong> Two consecutive misses on Theo/Primeagen/Fireship. Recommend investigating the retrieval channel — either scheduled-run throttling or handle-list config drift.</li>
+<li><strong>arXiv direct-harvest for E19.</strong> HalluSquatting paper made SecurityWeek but not surfaced via direct arXiv retrieval; add arXiv AI-Security category to the scheduled harvest list.</li>
+<li><strong>Anthropic vendor-response tracking.</strong> Anthropic's dispute of GhostApproval is itself becoming a story; if E19 shows Anthropic reverses or the dispute solidifies, treat as vendor-response divergence signal separately from the underlying attack-class signal.</li>
+</ol>
+
+</section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
+<h3>INC-01 — GhostApproval symlink trust-boundary bypass (2026-07-08, High)</h3>
+<p>Affected tools: Claude Code, Amazon Q, Google Jules, Cursor, Windsurf, Augment, Cline, Gemini CLI. Primary disclosure via <a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">Wiz Research</a>; cross-covered by <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener">The Hacker News</a> and <a href="https://x.com/wiz_io/status/2076640885266166198" target="_blank" rel="noopener">@wiz_io</a>. Amazon, Google, Cursor issued patches; Anthropic disputed as vulnerability at all. <a href="https://news.ycombinator.com/item?id=48882730" target="_blank" rel="noopener">HN thread</a> captures the vendor-response divergence debate.</p>
+<h3>INC-02 — HalluSquatting supply-chain via forced hallucination (2026-07-08, High)</h3>
+<p>Affected: General AI coding assistants. Adversarial trigger forcing on-demand hallucination of attacker-owned package names — weaponizing the LLM hallucination tendency into a botnet-delivery supply-chain vector. Primary coverage via <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/" target="_blank" rel="noopener">SecurityWeek</a>; extends <a href="https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/" target="_blank" rel="noopener">Microsoft Security Blog's earlier "Prompts become shells"</a> framing.</p>
+<h3>INC-03 — Claude Code steganography / traffic fingerprinting (2026-07-01, Significant)</h3>
+<p>Affected: Claude Code. <a href="https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366" target="_blank" rel="noopener">TheRegister reports Anthropic Claude Code contained covert traffic-fingerprinting code</a> intended to detect Chinese-competitor infrastructure. Anthropic pulled the fingerprinting code in v2.1.197. <a href="https://news.ycombinator.com/item?id=48734373" target="_blank" rel="noopener">HN discourse</a> frames as compounding trust problem alongside GhostApproval; enterprise commenters cite compliance-review trigger.</p>
+<h3>INC-04 — Fable 5 safety-classifier false positives (2026-07-09, Medium)</h3>
+<p>Affected: Claude Fable 5. Multiple r/ClaudeAI + r/vibecoding practitioner reports — new cybersecurity classifier flags benign security-adjacent coding tasks. Concrete incidents: 12 manual Continue clicks to verify an 11-page PDF (<a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">r/ClaudeAI</a>), flagging resolved GitHub issues as bugs in large codebases (<a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste</a>), <a href="https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/" target="_blank" rel="noopener">r/ClaudeAI "on leave forever"</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding "Extended Again"</a>. Product-defect class — directly attributable to Commerce-Department-deal safety classifier.</p>
+<h3>INC-05 — GPT-5.6 Sol regression report on Cursor (2026-07-09, Low)</h3>
+<p>Affected: GPT-5.6 Sol. <a href="https://www.reddit.com/r/cursor/comments/1us2rfj/gpt_56_sol_extra_high_piece_of_garbage/" target="_blank" rel="noopener">r/cursor practitioner report of GPT-5.6 Sol Extra High producing worse output than GPT-5.5</a> for coding tasks. Self-reported single source; cross-references <a href="https://www.reddit.com/r/cursor/comments/1uso6fk/gpt_56_sol_vs_grok_45/" target="_blank" rel="noopener">r/cursor Sol vs Grok 4.5</a> and <a href="https://x.com/Sousinr/status/2076679852988702828" target="_blank" rel="noopener">X @Sousinr practitioner review</a>. Warrants watch for second anchor E19.</p>
+
+</section><section id="metadata"><h2 data-section="09">Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis prompt</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Extractor</td>
+<td>Claude / claude-opus-4-7 / Engine v1.6 / Config v1.9 (three-pass: WebSearch + Chrome/Bluesky + cross-LLM)</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-07-13 10:15 UTC</td>
+</tr>
+<tr>
+<td>Date window</td>
+<td>2026-07-06 – 2026-07-13</td>
+</tr>
+<tr>
+<td>Items tagged</td>
+<td>72</td>
+</tr>
+<tr>
+<td>Unique URLs</td>
+<td>66</td>
+</tr>
+<tr>
+<td>Batches successful / attempted</td>
+<td>10 / 10</td>
+</tr>
+<tr>
+<td>Signal store loaded</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Signals reused from store</td>
+<td>5 (mcp-attack-surface, anthropic-trust-arc, cost-runaway, subagent-delegation, open-weight-china-advantage)</td>
+</tr>
+<tr>
+<td>New signals this window</td>
+<td>2 (safety-classifier-friction, release-cadence-shock)</td>
+</tr>
+<tr>
+<td>Continued signals from E17 (not yet in store)</td>
+<td>export-control-regime</td>
+</tr>
+<tr>
+<td>Dominant sentiment</td>
+<td>CP 30% (CP+SP 42%; SN+CN 21%)</td>
+</tr>
+<tr>
+<td>Summary file</td>
+<td>analysis-summary-2026-07-13.md</td>
+</tr>
+</tbody>
+</table></section>
+<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 18 &mdash; Generated 2026-07-13</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.sentiment-fill').forEach(function(el) {
+    var w = el.style.getPropertyValue('--width');
+    el.style.width = w;
+});
+document.querySelectorAll('.collapsible').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content) content.classList.toggle('active');
+    });
+});
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
