@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Dev Sentiment Analysis &mdash; July 13 to July 20, 2026 (E19, n=61 via cross-LLM escalation). MCP-mediated coding-agent RCE crystallizes as enterprise threat class; autonomous AI attackers hit Hugging Face and Nacos in production; verification-gap reaches quantitative consensus. Three NEW signals: consent-surface-erosion, agentic-threat-actor, chinese-open-weight-parity.">
+<meta property="og:title" content="AI Dev Sentiment Analysis &mdash; E19 (July 13 &ndash; July 20, 2026)">
+<meta property="og:description" content="MCP crystallizes as enterprise threat class; autonomous AI attackers hit Hugging Face and Nacos; verification-gap consensus + Microsoft 24% counter-signal; three NEW signals; Fable 5 credits-only Pro switch lands with r/ClaudeAI reaction cluster.">
+<meta property="og:type" content="article">
+<title>AI Dev Sentiment Analysis &mdash; E19 (July 13 &ndash; July 20, 2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --display: 'DM Serif Display', serif;
+    --serif: 'Source Serif 4', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3441;
+    --text: #d1cec9;
+    --text-dim: #7a8694;
+    --head: #f0ede8;
+    --amber: #f0a832;
+    --amber-dim: #7a5318;
+    --red: #e05252;
+    --red-dim: #5c1f1f;
+    --green: #4caf7d;
+    --green-dim: #1a3d2b;
+    --blue: #5c9eed;
+    --blue-dim: #1a2f4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--serif);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav ul {
+    list-style: none; display: flex; gap: 0.25rem;
+    padding: 0 1rem; font-size: 0.78rem;
+    font-family: var(--mono);
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    margin: 0;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-track { background: transparent; }
+nav ul::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+nav li { flex-shrink: 0; margin: 0; }
+nav a {
+    color: var(--text-dim); text-decoration: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s; white-space: nowrap;
+    display: inline-block;
+}
+nav a:hover { color: var(--amber); background-color: var(--surface2); }
+body { padding-top: 2.6rem; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 2rem; }
+header.masthead {
+    margin-bottom: 4rem; padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+h1 {
+    font-family: var(--display); font-size: 3.5rem;
+    color: var(--head); margin-bottom: 0.5rem; line-height: 1.1;
+}
+.subtitle {
+    font-family: var(--mono); font-size: 0.95rem;
+    color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.masthead-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.stat-item {
+    background-color: var(--surface2); padding: 1rem;
+    border-radius: 6px; border-left: 3px solid var(--amber);
+}
+.stat-label {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.8rem; color: var(--amber); font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: var(--display); font-size: 2.2rem; color: var(--head);
+    margin-bottom: 1.5rem; margin-top: 2rem;
+    position: relative; padding-left: 2rem;
+}
+h2::before {
+    content: attr(data-section);
+    position: absolute; left: 0; color: var(--amber);
+    font-size: 0.9rem; font-weight: 700; font-family: var(--mono);
+}
+h3 {
+    font-family: var(--display); font-size: 1.5rem; color: var(--text);
+    margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: var(--display); font-size: 1.15rem; color: var(--head);
+    margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; text-align: justify; }
+a {
+    color: var(--blue); text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+code {
+    font-family: var(--mono); background-color: var(--surface2);
+    padding: 0.2em 0.5em; border-radius: 3px;
+    font-size: 0.9em; color: var(--amber);
+}
+strong { color: var(--head); font-weight: 600; }
+em { font-style: italic; color: var(--text); }
+blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin: 1.25rem 0; color: var(--text-dim);
+    font-style: italic; background-color: var(--surface2);
+    border-radius: 0 4px 4px 0;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+}
+thead { background-color: var(--surface2); }
+th {
+    padding: 1rem; text-align: left; font-weight: 600;
+    color: var(--head); border-bottom: 2px solid var(--border);
+    font-family: var(--mono); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); word-break: break-word; }
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: var(--surface2); }
+ul, ol { margin-left: 2rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.5rem; }
+.sentiment-bar {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.sentiment-label { font-family: var(--mono); font-size: 0.9rem; min-width: 170px; }
+.sentiment-container {
+    flex: 1; background-color: var(--surface2);
+    border-radius: 4px; height: 28px; overflow: hidden; position: relative;
+}
+.sentiment-fill {
+    height: 100%; border-radius: 4px; display: flex;
+    align-items: center; justify-content: flex-end;
+    padding-right: 0.5rem; color: var(--bg);
+    font-weight: 600; font-size: 0.8rem; font-family: var(--mono);
+    animation: growBar 1.2s ease-out forwards;
+}
+@keyframes growBar { from { width: 0; } to { width: var(--width); } }
+.sentiment-fill.positive { background-color: var(--green); }
+.sentiment-fill.mixed { background-color: var(--amber); }
+.sentiment-fill.negative { background-color: var(--red); }
+.sentiment-fill.analytical { background-color: var(--blue); }
+.sentiment-percentage {
+    font-family: var(--mono); font-size: 0.9rem;
+    color: var(--text-dim); min-width: 60px; text-align: right;
+}
+.card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h4 {
+    color: var(--head); margin-bottom: 0.5rem;
+    font-family: var(--display); font-size: 1.2rem;
+}
+.incident-card {
+    background-color: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 6px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+}
+.incident-card.severity-high { border-left-color: var(--red); }
+.incident-card.severity-medium { border-left-color: var(--amber); }
+.incident-card .incident-title {
+    font-family: var(--display); font-size: 1.15rem;
+    color: var(--head); margin-bottom: 0.4rem;
+}
+.incident-card .incident-meta {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-dim); margin-bottom: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge {
+    display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-size: 0.75rem; font-family: var(--mono); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    background-color: var(--amber-dim); color: var(--amber);
+}
+.badge.red { background-color: var(--red-dim); color: var(--red); }
+.badge.green { background-color: var(--green-dim); color: var(--green); }
+.badge.blue { background-color: var(--blue-dim); color: var(--blue); }
+.collapsible {
+    background-color: var(--surface2); color: var(--head);
+    cursor: pointer; padding: 1rem; width: 100%;
+    border: 1px solid var(--border); text-align: left;
+    outline: none; font-size: 1rem; font-family: var(--display);
+    border-radius: 6px; transition: all 0.2s; margin-bottom: 1rem;
+}
+.collapsible:hover { background-color: var(--surface); border-color: var(--amber); }
+.collapsible::after {
+    content: ' \25BC'; float: right; color: var(--amber);
+    transition: transform 0.2s;
+}
+.collapsible.active::after { transform: rotate(-180deg); }
+.collapsible-content {
+    padding: 0 1rem 1rem 1rem; display: none;
+    background-color: var(--surface2); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 1rem;
+}
+.collapsible-content.active { display: block; }
+.collapsible-content table { margin: 1rem 0; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid var(--border); text-align: center;
+    color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem;
+}
+.pattern-card {
+    position: relative; background-color: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 1.5rem 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.ghost-number {
+    position: absolute; font-size: 8rem; font-family: var(--display);
+    color: rgba(240, 168, 50, 0.08); line-height: 1;
+    z-index: 0; right: 1rem; top: 50%; transform: translateY(-50%);
+}
+.pattern-title {
+    position: relative; z-index: 1; font-family: var(--display);
+    font-size: 1.3rem; color: var(--head); margin-bottom: 0.75rem;
+}
+.pattern-description { position: relative; z-index: 1; color: var(--text); margin-bottom: 1rem; }
+.pattern-meta {
+    position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem;
+}
+.pattern-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-dim); font-family: var(--mono);
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .wrapper { padding: 1rem; padding-top: 0; }
+    nav ul { padding: 0 0.75rem; }
+    nav a { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+    table { font-size: 0.9rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+    .sentiment-label { min-width: 130px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<nav><ul><li><a href="#summary">01 Summary</a></li><li><a href="#quant">02 Quantitative</a></li><li><a href="#deep">03 Deep Analysis</a></li><li><a href="#patterns">04 Patterns</a></li><li><a href="#contradictions">05 Contradictions</a></li><li><a href="#gaps">06 Gaps</a></li><li><a href="#recommendations">07 Actions</a></li><li><a href="#incidents">08 Incidents</a></li><li><a href="#metadata">09 Metadata</a></li><li><a href="#citations">Citations</a></li></ul></nav>
+<div class="wrapper">
+<header class="masthead">
+<h1>Sentiment Analysis Report<br>AI Coding Tools</h1>
+<div class="subtitle">Extraction 19 &nbsp;&nbsp;July 13 &ndash; July 20, 2026<br>Analysis executed 2026-07-20</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Tagged Items</div><div class="stat-value">61</div></div>
+<div class="stat-item"><div class="stat-label">Dominant Sentiment</div><div class="stat-value">40% SN+CN</div></div>
+<div class="stat-item"><div class="stat-label">Top Cluster</div><div class="stat-value">Incidents / Failures</div></div>
+<div class="stat-item"><div class="stat-label">Incidents</div><div class="stat-value">8</div></div>
+<div class="stat-item"><div class="stat-label">Emerging Patterns</div><div class="stat-value">11</div></div>
+<div class="stat-item"><div class="stat-label">Batches</div><div class="stat-value">9/9</div></div>
+</div>
+</header>
+
+<p>Built from <code>extraction-weekly-2026-07-13-to-2026-07-20.jsonc</code> (n=61 across 61 unique URLs; tier1=26 + tier1_5=3 + cross_llm_reddit=7 + cross_llm_x_twitter=18 + expansion=7). Cross-LLM escalation via Claude in Chrome closed the Reddit gap via ChatGPT, the X/Twitter gap via Grok, and the YouTube gap via Gemini.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>source</th>
+<th>url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t1-01</td>
+<td>VentureBeat — Agentjacking via Sentry/Datadog/PagerDuty/Jira</td>
+<td>https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure</td>
+</tr>
+<tr>
+<td>t1-02</td>
+<td>The Hacker News — Hugging Face autonomous-agent breach</td>
+<td>https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html</td>
+</tr>
+<tr>
+<td>t1-03</td>
+<td>Sysdig — JADEPUFFER agentic ransomware</td>
+<td>https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion</td>
+</tr>
+<tr>
+<td>t1-04</td>
+<td>Wiz Research — Amazon Q MCP auto-execution CVE</td>
+<td>https://www.wiz.io/blog/amazon-q-vulnerability</td>
+</tr>
+<tr>
+<td>t1-05</td>
+<td>Olaf Alders — Claude Code Anatomy of a Misfeature</td>
+<td>https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/</td>
+</tr>
+<tr>
+<td>t1-06</td>
+<td>AI Weekly Alerts — Claude Code 2.1.198 auto-continue</td>
+<td>https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s</td>
+</tr>
+<tr>
+<td>t1-07</td>
+<td>Forbes — Fable 5 Extension July 13</td>
+<td>https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/</td>
+</tr>
+<tr>
+<td>t1-08</td>
+<td>TechTimes — Fable 5 Subscription Limbo</td>
+<td>https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm</td>
+</tr>
+<tr>
+<td>t1-09</td>
+<td>Digital Applied — Fable 5 July 7 usage-credits switch</td>
+<td>https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026</td>
+</tr>
+<tr>
+<td>t1-10</td>
+<td>Anthropic — Redeploying Fable 5</td>
+<td>https://www.anthropic.com/news/redeploying-fable-5</td>
+</tr>
+<tr>
+<td>t1-11</td>
+<td>Sonar — Verification Gap in AI Coding</td>
+<td>https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/</td>
+</tr>
+<tr>
+<td>t1-12</td>
+<td>Faros AI — Acceleration Whiplash report</td>
+<td>https://www.faros.ai/research/ai-acceleration-whiplash</td>
+</tr>
+<tr>
+<td>t1-13</td>
+<td>Builder.io — Developers Drowning in AI PRs</td>
+<td>https://www.builder.io/blog/developers-drowning-in-ai-prs</td>
+</tr>
+<tr>
+<td>t1-14</td>
+<td>Larridin — AI Slop Index</td>
+<td>https://larridin.com/blog/ai-slop-index</td>
+</tr>
+<tr>
+<td>t1-15</td>
+<td>Adversa AI — Top MCP security resources &amp; CVEs July 2026</td>
+<td>https://adversa.ai/blog/top-mcp-security-resources-july-2026/</td>
+</tr>
+<tr>
+<td>t1-16</td>
+<td>Security Boulevard — MCP under scrutiny (MSTI, ShareLock)</td>
+<td>https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/</td>
+</tr>
+<tr>
+<td>t1-17</td>
+<td>NSA — MCP security design considerations</td>
+<td>https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/</td>
+</tr>
+<tr>
+<td>t1-18</td>
+<td>Thoughtworks — Radar Vol 34 AI cognitive debt</td>
+<td>https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34</td>
+</tr>
+<tr>
+<td>t1-19</td>
+<td>The Pragmatic Engineer — 2026 AI-on-SWE survey Part 1</td>
+<td>https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026</td>
+</tr>
+<tr>
+<td>t1-20</td>
+<td>HN — Where is the AI jobs crisis?</td>
+<td>https://news.ycombinator.com/item?id=48464333</td>
+</tr>
+<tr>
+<td>t1-21</td>
+<td>HN — Hiring in the age of AI-assisted coding</td>
+<td>https://news.ycombinator.com/item?id=47722081</td>
+</tr>
+<tr>
+<td>t1-22</td>
+<td>HN — AI ships faster but 1.7× more bugs</td>
+<td>https://news.ycombinator.com/item?id=46312159</td>
+</tr>
+<tr>
+<td>t1-23</td>
+<td>HN — Graphs that explain the state of AI 2026</td>
+<td>https://news.ycombinator.com/item?id=47817581</td>
+</tr>
+<tr>
+<td>t1-24</td>
+<td>HN — AI won't make your processes faster</td>
+<td>https://news.ycombinator.com/item?id=48168221</td>
+</tr>
+<tr>
+<td>t1-25</td>
+<td>Simon Willison — Fable's judgement (July archive)</td>
+<td>https://simonwillison.net/2026/Jul/</td>
+</tr>
+<tr>
+<td>t1-26</td>
+<td>Cursor — Introducing Composer 2.5</td>
+<td>https://cursor.com/blog/composer-2-5</td>
+</tr>
+<tr>
+<td>t15-01</td>
+<td>YouTube AIForWork — Fable 5 Extended Again #Shorts</td>
+<td>https://www.youtube.com/shorts/Ympl1NEnwcY</td>
+</tr>
+<tr>
+<td>t15-02</td>
+<td>YouTube ZTS Infotech — Kimi K3 beats GPT and Claude</td>
+<td>https://www.youtube.com/shorts/Wx_TAZFskHA</td>
+</tr>
+<tr>
+<td>t15-03</td>
+<td>YouTube BlackBoxArt — Kimi K3 caught Claude</td>
+<td>https://www.youtube.com/shorts/dYYjXPsYAqY</td>
+</tr>
+<tr>
+<td>r-01</td>
+<td>r/ClaudeAI — Fable staying on Max (at 50%)</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/</td>
+</tr>
+<tr>
+<td>r-02</td>
+<td>r/ClaudeAI — Fable, So $100 credit for pro user</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/</td>
+</tr>
+<tr>
+<td>r-03</td>
+<td>r/ClaudeAI — Another move to sweeten the masses</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/</td>
+</tr>
+<tr>
+<td>r-04</td>
+<td>r/ClaudeAI — Clown Code</td>
+<td>https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/</td>
+</tr>
+<tr>
+<td>r-05</td>
+<td>r/cursor — Composer 2.5 vs Grok 4.5</td>
+<td>https://www.reddit.com/r/cursor/comments/1uxgte5/i_tested_grok_45_vs_composer_25/</td>
+</tr>
+<tr>
+<td>r-06</td>
+<td>r/ExperiencedDevs — The code comprehension trap</td>
+<td>https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/</td>
+</tr>
+<tr>
+<td>r-07</td>
+<td>r/ExperiencedDevs — Responsible AI usage</td>
+<td>https://www.reddit.com/r/ExperiencedDevs/comments/1ux6wp1/examples_of_usefulresponsible_ai_usage/</td>
+</tr>
+<tr>
+<td>x-01</td>
+<td>X @simonw — Claude Code ships unreleased Rust-Bun</td>
+<td>https://x.com/simonw/status/2078692298301587758</td>
+</tr>
+<tr>
+<td>x-02</td>
+<td>X @simonw — Claude Code web repo-cloning regression</td>
+<td>https://x.com/simonw/status/2078343997119172705</td>
+</tr>
+<tr>
+<td>x-03</td>
+<td>X @mitchellh — AI agents as background productivity</td>
+<td>https://x.com/mitchellh/status/2078586110113181796</td>
+</tr>
+<tr>
+<td>x-04</td>
+<td>X @mitchellh — Context on past infra bets</td>
+<td>https://x.com/mitchellh/status/2078356144029093899</td>
+</tr>
+<tr>
+<td>x-05</td>
+<td>X @ThePrimeagen — Claude Code / doubly reaction</td>
+<td>https://x.com/ThePrimeagen/status/2078780790532612528</td>
+</tr>
+<tr>
+<td>x-06</td>
+<td>X @swyx — Europe's AI engineering talent depth</td>
+<td>https://x.com/swyx/status/2078628617987518855</td>
+</tr>
+<tr>
+<td>x-07</td>
+<td>X @firstintentdev — CCTeam multi-vendor coding orchestration</td>
+<td>https://x.com/firstintentdev/status/2078992893751296269</td>
+</tr>
+<tr>
+<td>x-08</td>
+<td>X @OpenAI — GPT-5.6 Sol Codex Security launch</td>
+<td>https://x.com/OpenAI/status/2078243667081617826</td>
+</tr>
+<tr>
+<td>x-09</td>
+<td>X @emadgnia — Claude Code material from practitioners</td>
+<td>https://x.com/emadgnia/status/2078992897211310516</td>
+</tr>
+<tr>
+<td>x-10</td>
+<td>X @shubhamtarade24 — AI speeds up bad decisions</td>
+<td>https://x.com/shubhamtarade24/status/2078436193507889333</td>
+</tr>
+<tr>
+<td>x-11</td>
+<td>X @code_n_curls — 100% AI stack = tech-debt trap</td>
+<td>https://x.com/code_n_curls/status/2076772739776454761</td>
+</tr>
+<tr>
+<td>x-12</td>
+<td>X @Herald_Dev — VPs can't say what they're getting from Claude/Cursor</td>
+<td>https://x.com/Herald_Dev/status/2077516798631829803</td>
+</tr>
+<tr>
+<td>x-13</td>
+<td>X @MAliyanIshfaq — Feature-delta between top coding tools small</td>
+<td>https://x.com/MAliyanIshfaq/status/2078691217555202377</td>
+</tr>
+<tr>
+<td>x-14</td>
+<td>X @frodothecat_ — Vibe coding front-end / Claude Code best</td>
+<td>https://x.com/frodothecat_/status/2078993101461266738</td>
+</tr>
+<tr>
+<td>x-15</td>
+<td>X @srishticodes — Leaked Fable 5 system prompt</td>
+<td>https://x.com/srishticodes/status/2078842001697767897</td>
+</tr>
+<tr>
+<td>x-16</td>
+<td>X @HeyAnjula — Leaked Claude Code project template</td>
+<td>https://x.com/HeyAnjula/status/2077615621282599136</td>
+</tr>
+<tr>
+<td>x-17</td>
+<td>X @congxing — Claude Code vs Codex — productivity up</td>
+<td>https://x.com/congxing/status/2076758851789918709</td>
+</tr>
+<tr>
+<td>x-18</td>
+<td>X @MikelEcheve — Microsoft 24% more PRs merged</td>
+<td>https://x.com/MikelEcheve/status/2077680608931615210</td>
+</tr>
+<tr>
+<td>ex-01</td>
+<td>Hackread — Agentjacking expansion</td>
+<td>https://hackread.com/agentjacking-fake-bug-report-hijack-ai-coding-agents/</td>
+</tr>
+<tr>
+<td>ex-02</td>
+<td>ByteIota — Agentjacking expansion</td>
+<td>https://byteiota.com/agentjacking-the-fake-bug-report-that-hijacks-your-ai-coding-agent/</td>
+</tr>
+<tr>
+<td>ex-03</td>
+<td>CyberScoop — JADEPUFFER agentic ransomware</td>
+<td>https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/</td>
+</tr>
+<tr>
+<td>ex-04</td>
+<td>The Register — Amazon Q booby-trap flaw</td>
+<td>https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202</td>
+</tr>
+<tr>
+<td>ex-05</td>
+<td>The Hacker News — Grok Build CLI repo upload</td>
+<td>https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html</td>
+</tr>
+<tr>
+<td>ex-06</td>
+<td>AI Magicx — AI Productivity Paradox</td>
+<td>https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026</td>
+</tr>
+<tr>
+<td>ex-07</td>
+<td>Evil Martians — AI-assisted engineers burning out</td>
+<td>https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine</td>
+</tr>
+</tbody>
+</table>
+
+<h1>Sentiment Analysis Report: AI Coding Tools Developer Discourse — 2026-07-13 to 2026-07-20</h1>
+<section id="metadata"><h2 data-section="09">Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis prompt</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Extraction engine</td>
+<td>v1.6 (config v1.8)</td>
+</tr>
+<tr>
+<td>Window</td>
+<td>2026-07-13 to 2026-07-20</td>
+</tr>
+<tr>
+<td>Extraction</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Items tagged</td>
+<td>61</td>
+</tr>
+<tr>
+<td>Unique URLs</td>
+<td>61</td>
+</tr>
+<tr>
+<td>Batches successful</td>
+<td>9 of 9 (A–I)</td>
+</tr>
+<tr>
+<td>Signal store loaded</td>
+<td>false (no signal-store attached; falling back to v1.16 behavior)</td>
+</tr>
+<tr>
+<td>Signals reused from store</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Cross-LLM escalation</td>
+<td>Reddit (ChatGPT, 7 items Provisional), X/Twitter (Grok, 18 items Provisional), YouTube (Gemini, 3 items Provisional)</td>
+</tr>
+<tr>
+<td>Summary file</td>
+<td>analysis-summary-2026-07-20.md</td>
+</tr>
+</tbody>
+</table>
+</section><section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p>Extraction 19 is <strong>the week MCP-mediated coding-agent RCE consolidates as a distinct enterprise threat class, autonomous AI agents graduate from research demos to production intrusions at named foundational-infrastructure providers, the verification-gap between AI-generated code volume and reviewer bandwidth becomes quantitatively undeniable, and the Fable 5 credits-only Pro switch lands with a coherent practitioner-reaction cluster on Reddit — plus one durable NEW frontier-competition story: Chinese open-weight model Kimi K3 claims coding parity with Fable 5</strong>. The dominant story remains <code>mcp-attack-surface</code> — this week alone brings the VentureBeat consolidation of <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">Tenet Security's agentjacking chain across Sentry, Datadog, PagerDuty, and Jira</a>, the <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Research disclosure of Amazon Q's MCP auto-execution CVE cluster (CVE-2026-12957/58)</a> with cross-vendor cousins in <a href="https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202" target="_blank" rel="noopener">Claude Code and Windsurf</a>, <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">The Hacker News' report of an autonomous AI agent breaching Hugging Face itself</a>, Adversa's roll-up of <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">30+ new MCP-related CVEs since Q2 2026</a>, and Security Boulevard's introduction of <a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">MSTI (Mid-Session Tool Injection) and ShareLock (Shamir-secret-split multi-tool poisoning)</a>. The <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA's June 2 MCP hardening guidance</a> continues to anchor the enterprise-policy conversation.</p>
+<p>Two signals mint this cycle. <strong>NEW <code>consent-surface-erosion</code></strong> reads the <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Olaf Alders postmortem on Claude Code 2.1.198's undocumented 60-second AskUserQuestion auto-continue</a> — corroborated by <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">an AI Weekly aggregator alert</a> and now also by <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Simon Willison's public bug ping to @AnthropicAI about a Claude Code web repo-cloning regression</a> — as a three-instance cross-vendor pattern including the Amazon Q consent bypass. <strong>NEW <code>agentic-threat-actor</code></strong> reads the <a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig JADEPUFFER disclosure</a>, the <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face autonomous-agent breach</a>, and the <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">xAI Grok Build CLI repository-exfiltration report</a> as three-instance evidence that autonomous AI agents are now running end-to-end attack chains against production infrastructure. The expansion-side <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop pickup of JADEPUFFER</a> confirms the industry-benchmark framing.</p>
+<p><strong><code>cost-runaway</code> compounds into the strongest practitioner-side story of the cycle</strong> now that cross-LLM escalation has recovered r/ClaudeAI. Anthropic's <a href="https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/" target="_blank" rel="noopener">three-extension Fable 5 sequence closing July 20</a>, <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">TechTimes "permanent for Max, credits-only for Pro" clarification</a>, and <a href="https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026" target="_blank" rel="noopener">Digital Applied's $10 input / $50 output per Mtok metered pricing</a> meet a coherent r/ClaudeAI response cluster: <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/" target="_blank" rel="noopener">Fable staying on Max at 50% limits — is that even worth it?</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">is a $100 credit adequate compensation for Pro users losing subscription-bundled Fable?</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">another move to sweeten the masses — changing limits are confusing and anxiety-inducing</a>, and <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Clown Code — Claude Max no longer competes economically with OpenAI's lower-priced subscription</a>. <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev on X</a> reports the enterprise-side twin: VPs of Engineering can't say what they're getting from Claude/Cursor spend. <a href="https://x.com/code_n_curls/status/2076772739776454761" target="_blank" rel="noopener">@code_n_curls</a> frames the tail risk: 100% AI stack = massive technical-debt trap. The signal upgrades from vendor-side-only (last cycle) to two-sided-with-practitioner-frustration this cycle.</p>
+<p><strong>NEW <code>chinese-open-weight-parity</code></strong> resurrects the retired <code>open-weight-china-advantage</code> arc under a fresher slug. Moonshot's <a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">Kimi K3 launch (2.8T params, 1M context, autonomous debugging via visual loop inspection)</a> — corroborated by <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt "a free model just caught Claude, and it came from behind America's chip wall"</a> — surfaces as YouTube-side anchor with cross-references in the Reddit Fable-5-credits threads (<a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">Kimi as economic hedge</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Kimi in Clown Code</a>). The Arena-coding-parity claim requires independent verification; enters Tracking with L confidence pending mainstream-outlet corroboration. Notably, both YouTube anchors are from previously-unlisted channels (AIForWork, ZTS Infotech, BlackBoxArt) surfacing via Gemini cross-LLM escalation — provisional pending manual channel-authority review.</p>
+<p><code>review-cost-inversion</code> continues Promoted with the strongest quantitative anchoring the program has recorded. <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar's 96%-don't-trust-yet-only-48%-verify statistic</a> pairs with <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros AI's 154% PR-size surge, 91% review-time increase (5× baseline), triple incident-to-PR ratio, and 31% of PRs merging without review</a>. <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io's "I didn't become a developer to review AI slop"</a> turns the numbers into practitioner voice; <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin operationalizes an "AI Slop Index"</a> as the first vendor tool to score PR maintainability + correctness risk. Counter-signal: <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">Microsoft internal study, cited by @MikelEcheve</a>, reports that Claude Code + Copilot CLI adopters merged <strong>24% more PRs</strong> than a control cohort — a positive productivity data point that complicates but does not overturn the verification-gap narrative. <a href="https://news.ycombinator.com/item?id=46312159" target="_blank" rel="noopener">HN "1.7× more bugs" stylized fact</a> and <a href="https://news.ycombinator.com/item?id=48168221" target="_blank" rel="noopener">HN "AI won't make your processes faster"</a> hold the practitioner-side skeptical anchor.</p>
+<p><code>anthropic-trust-arc</code> compounds from a different angle — <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">the Claude Code 2.1.198 auto-continue misfeature</a> is a client-binary product-defect story that pairs with Willison's <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">public bug ping about a Claude Code web repo-cloning regression</a> — two Claude Code regressions surfaced by high-signal Practitioner voices in one week. Alders' architectural argument — the 60-second AskUserQuestion timer "converted a hard human-in-the-loop stop into a soft nudge, invalidating downstream user assumptions built around it as a safety gate" — remains the sharpest single Practitioner statement on vendor governance in program history. <code>subagent-delegation</code> continues via <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Simon Willison's July archive</a> plus the emergent <a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">CCTeam multi-vendor coding-agent orchestration pattern</a>, <a href="https://x.com/srishticodes/status/2078842001697767897" target="_blank" rel="noopener">leaked Fable 5 system prompt confirming "environment not personality" framing (@srishticodes)</a>, and <a href="https://x.com/HeyAnjula/status/2077615621282599136" target="_blank" rel="noopener">leaked Claude Code project template as AI engineering infrastructure (@HeyAnjula)</a> — a set of practitioner-tooling artifacts corroborating the vendor-blessed template arc.</p>
+<p><code>cognitive-debt-deskilling</code> acquires institutional weight and practitioner-side quantitative anchoring simultaneously. <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Technology Radar Vol 34 formally names "cognitive debt"</a> as the emerging risk of AI-accelerated code volume, and frames the industry response as "return to fundamentals". <a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians' "AI-assisted engineers are burning out"</a>, <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx's productivity-paradox survey (2,147 engineers, 71% "feel like middlemen")</a>, and the <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs "code comprehension trap" thread — 6-month agentic-coding practitioner arguing the real cost is lost codebase comprehension, not tokens</a> — together confirm the signal at H.</p>
+<p>Labor-market discourse continues quietly under <code>junior-pipeline-collapse</code> — <a href="https://news.ycombinator.com/item?id=48464333" target="_blank" rel="noopener">HN "Where is the AI jobs crisis?"</a> surfaces Stanford ADP 16-20% junior-role decline alongside a "normal post-ZIRP correction" counter-reading. <a href="https://news.ycombinator.com/item?id=47722081" target="_blank" rel="noopener">HN "Hiring in the age of AI-assisted coding"</a> captures the unresolved debate. Countervailing: <a href="https://x.com/swyx/status/2078628617987518855" target="_blank" rel="noopener">@swyx on Europe's AI engineering talent depth</a> reads the labor market as fragmenting geographically. Vendor product velocity remains positive: <a href="https://x.com/simonw/status/2078692298301587758" target="_blank" rel="noopener">Claude Code shipping an unreleased Rust-rewritten Bun (@simonw)</a>, <a href="https://x.com/OpenAI/status/2078243667081617826" target="_blank" rel="noopener">OpenAI GPT-5.6 Sol Codex Security launch</a>, <a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener">Cursor Composer 2.5</a> at 62 on the Coding Agent Index — third overall behind Claude Opus 4.7 (66) and GPT-5.5 xhigh in Codex (65). <a href="https://www.reddit.com/r/cursor/comments/1uxgte5/i_tested_grok_45_vs_composer_25/" target="_blank" rel="noopener">r/cursor practitioner reports Composer 2.5 outperforming Grok 4.5 High and GPT-5.6 Sol Medium on previously-solved Terraform/AWS bugs</a>. Practitioner voices <a href="https://x.com/congxing/status/2076758851789918709" target="_blank" rel="noopener">@congxing (individual productivity clearly up)</a>, <a href="https://x.com/mitchellh/status/2078586110113181796" target="_blank" rel="noopener">@mitchellh (background productivity multiplier)</a>, and <a href="https://x.com/MAliyanIshfaq/status/2078691217555202377" target="_blank" rel="noopener">@MAliyanIshfaq (feature-delta between top tools is small)</a> provide the vendor-agnostic positive-tilt anchor.</p>
+<p><strong>Sentiment shifts (composition-adjusted):</strong> SP 21%, CP 0%, MA 18%, Nu 21%, CN 20%, SN 20%. The window returns to a more balanced distribution than the incident-only slice would produce: cross-LLM escalation via Grok (X/Twitter) added 9 SP items (practitioner tooling wins, vendor product velocity, positive productivity anecdata); via ChatGPT (Reddit) added a mixed cluster of Fable-5 pricing frustration; via Gemini (YouTube) added Kimi K3 launch coverage. CP remains at 0% — the practitioner-side positive voice this cycle skews to Strongly Positive product wins (Willison, mitchellh, OpenAI, Microsoft study) rather than the Cautiously Positive cost-savings framing of E17-E18. SN+CN 40% is elevated vs the E17-E18 baseline of 13-21% but nowhere near the raw amplitude of an incidents-only reading. <strong>Seven signal-store slugs reused (<code>mcp-attack-surface</code>, <code>cost-runaway</code>, <code>anthropic-trust-arc</code>, <code>review-cost-inversion</code>, <code>subagent-delegation</code>, <code>cognitive-debt-deskilling</code>, <code>ai-burnout-paradox</code>); three NEW candidates flagged (<code>consent-surface-erosion</code>, <code>agentic-threat-actor</code>, <code>chinese-open-weight-parity</code>) — all three enter as Tracking at M/L pending E20 corroboration.</strong></p>
+
+</section><section id="quant"><h2 data-section="02">Quantitative Overview</h2>
+<h3>Extraction Composition (n=61; 61 unique URLs)</h3>
+<table>
+<thead>
+<tr>
+<th>Platform / Tier</th>
+<th style="text-align: right;">Items</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blogs / Publications (t1)</td>
+<td style="text-align: right;">19</td>
+<td>Anchor cluster: VentureBeat, Wiz, Sysdig, The Hacker News ×2, The Register, Adversa, Security Boulevard, NSA, Thoughtworks, Sonar, Faros, Builder.io, Larridin, Forbes, TechTimes, Digital Applied, Anthropic, Cursor</td>
+</tr>
+<tr>
+<td>Hacker News (t1)</td>
+<td style="text-align: right;">5</td>
+<td>Jobs-crisis, hiring, 1.7× bugs, state-of-AI graphs, AI-processes-not-faster</td>
+</tr>
+<tr>
+<td>Newsletter/Practitioner (t1)</td>
+<td style="text-align: right;">2</td>
+<td>Pragmatic Engineer survey; Alders Claude Code postmortem; Willison Fable-judgement archive</td>
+</tr>
+<tr>
+<td>Expansion (t1)</td>
+<td style="text-align: right;">7</td>
+<td>Agentjacking corroboration ×2, CyberScoop JADEPUFFER, Register Amazon Q, Grok Build CLI, AI Magicx paradox, Evil Martians burnout</td>
+</tr>
+<tr>
+<td>YouTube tier1_5</td>
+<td style="text-align: right;">3</td>
+<td>Gemini cross-LLM escalation — Kimi K3 launch (×2) + Fable 5 extension Shorts (all Provisional; non-config-listed channels)</td>
+</tr>
+<tr>
+<td>Reddit (cross_llm)</td>
+<td style="text-align: right;">7</td>
+<td>ChatGPT cross-LLM escalation — r/ClaudeAI ×4 Fable 5 pricing reaction cluster + r/cursor Composer 2.5 vs Grok 4.5 + r/ExperiencedDevs ×2 (code comprehension trap, responsible AI usage)</td>
+</tr>
+<tr>
+<td>X/Twitter (cross_llm)</td>
+<td style="text-align: right;">18</td>
+<td>Grok cross-LLM escalation (SuperGrok Fast) — Willison ×2, Mitchell H ×2, ThePrimeagen, swyx, firstintentdev CCTeam, OpenAI, emadgnia, shubhamtarade, code_n_curls, Herald_Dev VP-eng, MAliyanIshfaq, frodothecat, srishticodes leaked Fable prompt, HeyAnjula leaked Claude Code template, congxing, MikelEcheve Microsoft 24% study</td>
+</tr>
+<tr>
+<td>Bluesky / Mastodon (t1)</td>
+<td style="text-align: right;">0</td>
+<td>Both channels failed retrieval — see gaps</td>
+</tr>
+<tr>
+<td>LinkedIn (Tier 3 Manual)</td>
+<td style="text-align: right;">0</td>
+<td>Per config policy</td>
+</tr>
+</tbody>
+</table>
+<h3>Sentiment Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">E19 %</th>
+<th style="text-align: right;">E18 %</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strongly Positive (SP)</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">12</td>
+<td>↑ 9</td>
+</tr>
+<tr>
+<td>Cautiously Positive (CP)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+<td>↓ 30</td>
+</tr>
+<tr>
+<td>Mixed/Ambivalent (MA)</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">14</td>
+<td>↑ 4</td>
+</tr>
+<tr>
+<td>Nuanced/Analytical (Nu)</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">23</td>
+<td>≈</td>
+</tr>
+<tr>
+<td>Cautiously Negative (CN)</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">15</td>
+<td>↑ 5</td>
+</tr>
+<tr>
+<td>Strongly Negative (SN)</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">6</td>
+<td>↑ 14</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition-adjusted reading</strong>: CP+SP falls from 42% (E18) to 21% (E19); SN+CN rises from 21% to 40%. The distribution is more balanced this cycle than the raw incident count would suggest, because cross-LLM escalation restored the practitioner-tooling positive-voice cluster on X/Twitter (9 SP items). The CP-column collapse from 30% to 0% is real: this cycle's positive-side items skew to strongly-positive vendor-tool product wins rather than cautiously-positive cost-savings framing. The SN+CN elevation is driven by (i) 11 negative security-incident items in blogs+expansion, (ii) 2 CN items in Willison's Claude Code regression + Alders postmortem, (iii) the Reddit Fable-5 pricing frustration cluster. Interpretation: the incidents are structural; the CP-column collapse reflects a genuine shift in practitioner voice from cost-relief framing (E17-E18) to product-velocity framing (E19).</p>
+<h3>Topic Cluster Frequency</h3>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th style="text-align: right;">Mentions</th>
+<th style="text-align: center;">Dominant</th>
+<th style="text-align: center;">Δ vs E18</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pricing / Cost</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑ (Fable credits reaction)</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: center;">SN</td>
+<td style="text-align: center;">↑↑</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: center;">CN</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Tool-Specific Issues</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">≈</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">↑ (CCTeam, leaked prompts, comprehension trap)</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑ (Microsoft study + Herald VP-eng + practitioner voice)</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">CN</td>
+<td style="text-align: center;">≈</td>
+</tr>
+<tr>
+<td>Team Dynamics</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">CN</td>
+<td style="text-align: center;">↑ (code-comprehension-trap addition)</td>
+</tr>
+<tr>
+<td>Learning / Deskilling</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑ (Radar V34 + practitioner takes)</td>
+</tr>
+<tr>
+<td>Hiring / Labor Market</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑ (swyx Europe addition)</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">SN</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">Nu</td>
+<td style="text-align: center;">↑ (Kimi K3 + feature-parity claims)</td>
+</tr>
+<tr>
+<td>Open-Weight Sovereignty</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">↑↑ (Kimi K3 resurrects arc)</td>
+</tr>
+<tr>
+<td>Regulation / Export Control</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">↓↓</td>
+</tr>
+</tbody>
+</table>
+<h3>Tools Mentioned (top negative-mixed-positive)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align: right;">Neg</th>
+<th style="text-align: right;">Mixed</th>
+<th style="text-align: right;">Pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP (as protocol / attack surface)</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Claude Fable 5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Amazon Q Developer</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Cursor / Composer 2.5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Kimi K3 (Moonshot)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>GPT-5.6 Sol / Codex</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Grok Build CLI</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Claude Sonnet 5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Haiku 4.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Grok 4.5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Copilot / Copilot CLI</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>General AI (Sonar/Faros/Larridin/HN references)</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="deep"><h2 data-section="03">Deep Analysis by Cluster</h2>
+<h3>Pricing / Cost (15 mentions, MA-dominant, ↑)</h3>
+<p>The largest cluster this cycle. Vendor-side: Anthropic closes the <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Fable 5 pricing sequence</a> into two tiers — <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">Max keeps permanent inclusion; Pro moves to credits-only $10/$50 per Mtok</a> starting July 20 per <a href="https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026" target="_blank" rel="noopener">Digital Applied's breakdown</a>. <a href="https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/" target="_blank" rel="noopener">Forbes frames the second extension as competitive response to OpenAI Sol release</a>. Practitioner-side reaction, now retrievable via cross-LLM escalation to r/ClaudeAI: <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/" target="_blank" rel="noopener">Fable staying on Max only at 50% limits raises "is this worth it"</a>; <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">$100 Pro credit fairness discussion</a>; <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">changing limits described as confusing and anxiety-inducing</a>; <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Claude Max no longer competes economically with OpenAI's lower-priced subscription</a>. Enterprise-side: <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev — VPs of Engineering can't say what they're getting from Claude/Cursor spend</a>. <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 30%-hit-limits figure</a> is the structural anchor. <a href="https://news.ycombinator.com/item?id=47817581" target="_blank" rel="noopener">HN capex-vs-revenue thread</a> provides the top-of-funnel skeptical framing.</p>
+<h3>Incidents / Failures (14 mentions, SN-dominant, ↑↑)</h3>
+<p>Three intersecting sub-clusters. <strong>MCP protocol vulnerabilities</strong>: <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat / Tenet agentjacking chain</a> with sister exposures at <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">Datadog, PagerDuty, Jira</a>; mid-tier developer press adoption via <a href="https://hackread.com/agentjacking-fake-bug-report-hijack-ai-coding-agents/" target="_blank" rel="noopener">Hackread</a> and <a href="https://byteiota.com/agentjacking-the-fake-bug-report-that-hijacks-your-ai-coding-agent/" target="_blank" rel="noopener">ByteIota</a> at 85% success rate. <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">Adversa 30+ CVE roll-up</a>; <a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard MSTI + ShareLock</a> with 10%+ MCP-server credential-leak statistic; <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP hardening guidance</a>. <strong>Cross-vendor consent bypass</strong>: <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Amazon Q CVE-2026-12957/58</a>, <a href="https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202" target="_blank" rel="noopener">The Register enterprise-side coverage</a>, Check Point CVE-2025-59536 + CVE-2026-21852 in Claude Code, OX CVE-2026-30615 in Windsurf. <strong>Autonomous-agent intrusions</strong>: <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face autonomous-AI-agent breach</a> with 17,000+ recorded attacker actions; <a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig JADEPUFFER first documented end-to-end LLM-driven ransomware</a> with unrecoverable AES key on 1,342 Nacos configs; <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop industry-benchmark framing</a>; <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">xAI Grok Build CLI vendor-side mass repository exfiltration</a>.</p>
+<h3>Trust / Verification (12 mentions, CN-dominant, ↑)</h3>
+<p><a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 96% don't fully trust / 48% verify</a> is the quantitative anchor. <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders postmortem</a> with <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly corroboration</a> is the sharpest single practitioner-voice on Claude Code consent-surface trust. <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Willison's public bug ping about Claude Code web repo-cloning regression</a> adds a second Claude Code regression in-window. <a href="https://x.com/shubhamtarade24/status/2078436193507889333" target="_blank" rel="noopener">@shubhamtarade24</a> frames "AI speeds up bad decisions too" as trust dimension.</p>
+<h3>Architectural Philosophy (10 mentions, Nu-dominant, ↑)</h3>
+<p>Anchored by <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders' "hard controls vs soft nudges" argument</a> — the core critique that vendors are optimizing for agent throughput and dropping human-in-the-loop friction without changelog notice. <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin's AI Slop Index diff-only + repo-aware-agent scorers</a> offer a positive counter — first operationalized measurement. <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Simon Willison's July archive</a> records the emergent Fable-5-as-judgment + Sonnet-in-subagents workflow. <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34</a> frames the industry response as feedforward + feedback. Practitioner tooling artifacts: <a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">firstintentdev CCTeam multi-vendor coding-agent orchestration</a>, <a href="https://x.com/srishticodes/status/2078842001697767897" target="_blank" rel="noopener">srishticodes leaked Fable 5 system prompt — "environment not personality"</a>, <a href="https://x.com/HeyAnjula/status/2077615621282599136" target="_blank" rel="noopener">HeyAnjula leaked Claude Code project template as AI engineering infrastructure</a>. <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap</a> — 6-month practitioner argues real cost is lost codebase comprehension, not tokens. <a href="https://x.com/code_n_curls/status/2076772739776454761" target="_blank" rel="noopener">@code_n_curls</a> — 100% AI stack = massive technical-debt trap.</p>
+<h3>Productivity Reality (9 mentions, MA-dominant, ↑)</h3>
+<p><a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros Acceleration Whiplash</a> — 154% PR-size, 5× review-time, 3× incident-to-PR ratio, 31% no-review merges — is the DPE anchor. <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar verification-gap</a> is the survey twin. Counter-signal: <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">MikelEcheve on X reporting Microsoft's internal study — Claude Code + Copilot CLI adopters merged 24% more PRs than a control cohort</a>. Practitioner voice: <a href="https://x.com/congxing/status/2076758851789918709" target="_blank" rel="noopener">@congxing (individual productivity clearly up)</a>, <a href="https://x.com/mitchellh/status/2078586110113181796" target="_blank" rel="noopener">@mitchellh (AI as background productivity multiplier for time-constrained parents)</a>, <a href="https://news.ycombinator.com/item?id=48168221" target="_blank" rel="noopener">HN "AI won't make your processes faster"</a>, <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io drowning in AI PRs</a>. <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx paradox 71% "middlemen"</a>, <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald_Dev VPs can't say what they're getting</a>.</p>
+<h3>Tool-Specific Issues (11 mentions, MA-dominant, ≈)</h3>
+<p>Claude Code takes the biggest hit this cycle: <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders 2.1.198 misfeature</a> + <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Willison web repo-cloning regression</a> + <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly aggregator</a>. Positive Claude Code coverage: <a href="https://x.com/simonw/status/2078692298301587758" target="_blank" rel="noopener">ships unreleased Rust-rewritten Bun (@simonw)</a>, <a href="https://x.com/frodothecat_/status/2078993101461266738" target="_blank" rel="noopener">best for design / vibe-coding front-end (@frodothecat)</a>, <a href="https://x.com/emadgnia/status/2078992897211310516" target="_blank" rel="noopener">best material from practitioners (@emadgnia)</a>, <a href="https://x.com/ThePrimeagen/status/2078780790532612528" target="_blank" rel="noopener">ThePrimeagen mention</a>. Cursor mixed: <a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener">Composer 2.5 launch at 62 CAI</a>, <a href="https://www.reddit.com/r/cursor/comments/1uxgte5/i_tested_grok_45_vs_composer_25/" target="_blank" rel="noopener">Composer 2.5 vs Grok 4.5 practitioner comparison</a>. Feature-delta shrinking: <a href="https://x.com/MAliyanIshfaq/status/2078691217555202377" target="_blank" rel="noopener">@MAliyanIshfaq</a>.</p>
+<h3>Enterprise / Policy (8 mentions, Nu-dominant, ↓)</h3>
+<p><a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP guidance</a> + <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">Adversa CVE roll-up</a>. Amazon's <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Q Developer 1.65.0</a> sets vendor-response precedent. <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">Fable 5 Max/Pro tier permanence</a> is the pricing-policy counterpart. <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev on VP-eng spending discipline</a> is the enterprise-side twin.</p>
+<h3>Code Quality (7 mentions, CN-dominant, ≈)</h3>
+<p><a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros 154%/5×/3×</a>, <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 96/48</a>, <a href="https://news.ycombinator.com/item?id=46312159" target="_blank" rel="noopener">HN 1.7×-bugs</a>, <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io</a>, <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin AI Slop Index</a>, <a href="https://x.com/shubhamtarade24/status/2078436193507889333" target="_blank" rel="noopener">@shubhamtarade24 "AI speeds up bad decisions too"</a>, <a href="https://x.com/code_n_curls/status/2076772739776454761" target="_blank" rel="noopener">@code_n_curls tech-debt trap</a>.</p>
+<h3>Burnout / Cognitive Load (6 mentions, CN-dominant, ↑)</h3>
+<p><a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians</a>, <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx</a>, <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks cognitive debt</a>, <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "unpaid prompt engineers"</a>, <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">r/ClaudeAI anxiety-inducing pricing changes</a>.</p>
+<h3>Learning / Deskilling (5 mentions, MA-dominant, ↑)</h3>
+<p><a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34 "cognitive debt"</a>, <a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians "meditative flow of authorship" loss</a>, <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx "middlemen"</a>, <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap</a>, <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux6wp1/examples_of_usefulresponsible_ai_usage/" target="_blank" rel="noopener">r/ExperiencedDevs responsible AI usage</a> — practitioner counter-frame requesting productive examples over anti-AI generalization.</p>
+<h3>Hiring / Labor Market (3 mentions, MA-dominant, ↑)</h3>
+<p><a href="https://news.ycombinator.com/item?id=48464333" target="_blank" rel="noopener">HN Where is the jobs crisis</a> — Stanford ADP 16-20% junior decline vs post-ZIRP correction. <a href="https://news.ycombinator.com/item?id=47722081" target="_blank" rel="noopener">HN Hiring in age of AI-assisted</a>. <a href="https://x.com/swyx/status/2078628617987518855" target="_blank" rel="noopener">swyx on Europe's AI engineering talent depth</a> — labor market fragmenting geographically.</p>
+<h3>Open-Weight Sovereignty / Chinese Open-Weight Parity (3 mentions, MA-dominant, ↑↑)</h3>
+<p>Resurrects retired arc via NEW <code>chinese-open-weight-parity</code> signal. <a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">ZTS Infotech YouTube — Moonshot Kimi K3 2.8T params, 1M context, autonomous debugging via visual loop inspection; claims Arena coding parity with Fable 5</a>. <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt YouTube — a free model just caught Claude</a>. Cross-referenced in <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">Reddit Fable-100-credit</a> and <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Reddit Clown Code</a> as economic hedge. All YouTube anchors Provisional pending independent-outlet verification.</p>
+<h3>Hype vs Reality (5 mentions, Nu-dominant, ↑)</h3>
+<p><a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">Kimi K3 launch coverage</a>, <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt anti-hype counter-narrative</a>, <a href="https://www.youtube.com/shorts/Ympl1NEnwcY" target="_blank" rel="noopener">AIForWork on Fable 5 extension as reactive pressure</a>, <a href="https://x.com/MAliyanIshfaq/status/2078691217555202377" target="_blank" rel="noopener">MAliyanIshfaq — feature-delta between top tools is small</a>, <a href="https://news.ycombinator.com/item?id=47817581" target="_blank" rel="noopener">HN state-of-AI 2026 graphs thread</a>.</p>
+
+</section><section id="patterns"><h2 data-section="04">Emerging Patterns &amp; Weak Signals</h2>
+<h3>Pattern 1 — <code>mcp-attack-surface</code> (PROMOTED, Strong)</h3>
+<p>MCP-mediated coding-agent RCE has crystallized as a distinct enterprise threat class. Nine independent sources cover three distinct incidents this cycle plus one government advisory. Signal reused from prior windows; observed severity increases meaningfully.</p>
+<p><strong>Evidence anchors:</strong>
+- <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat / Tenet Security agentjacking chain</a>
+- <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Research Amazon Q CVE-2026-12957/12958</a>, corroborated by <a href="https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202" target="_blank" rel="noopener">The Register</a>
+- <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">The Hacker News Hugging Face autonomous-agent breach</a>
+- <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">Adversa MCP CVE roll-up (30+ new CVEs)</a>
+- <a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard MSTI + ShareLock disclosures</a>
+- <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP hardening guidance</a>
+- <a href="https://hackread.com/agentjacking-fake-bug-report-hijack-ai-coding-agents/" target="_blank" rel="noopener">Hackread agentjacking expansion</a>, <a href="https://byteiota.com/agentjacking-the-fake-bug-report-that-hijacks-your-ai-coding-agent/" target="_blank" rel="noopener">ByteIota</a></p>
+<p><strong>Signal Strength:</strong> Strong (H). 9 sources, 3 distinct incidents, one government advisory. Vocabulary ("agentjacking", "MSTI", "ShareLock") entering mid-tier developer press.</p>
+<h3>Pattern 2 — <code>consent-surface-erosion</code> (NEW MINT, Tracking)</h3>
+<p>Three independent instances in a single week of vendors treating consent/permission surfaces as soft rather than hard controls. Cross-vendor pattern.</p>
+<p><strong>Evidence:</strong> <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders postmortem</a>, <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly corroboration</a>, <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Amazon Q consent-bypass CVE</a>, <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Willison public bug ping on Claude Code web regression</a>.</p>
+<p><strong>Signal Strength:</strong> Medium. Enters as Tracking. Watch E20 for fourth vendor or Anthropic vendor-side response.</p>
+<h3>Pattern 3 — <code>agentic-threat-actor</code> (NEW MINT, Tracking)</h3>
+<p>Autonomous AI agents have moved from research demos to production intrusion incidents at named foundational-infrastructure providers.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig JADEPUFFER</a>, <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop industry-benchmark framing</a>
+- <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face autonomous-agent breach</a>
+- <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">xAI Grok Build CLI repository-exfiltration</a></p>
+<p><strong>Signal Strength:</strong> Medium. Enters as Tracking. Distinct from <code>agent-production-destruction</code> (victim self-destruction) — this signal is attacker-controlled autonomous agents.</p>
+<h3>Pattern 4 — <code>chinese-open-weight-parity</code> (NEW MINT, Tracking L)</h3>
+<p>Kimi K3 (Moonshot, 2.8T params, 1M context, autonomous debugging via visual loop inspection) surfaces this cycle with an Arena-coding-parity claim vs Fable 5. Resurrects the retired <code>open-weight-china-advantage</code> arc under a fresher slug that specifies the technical claim.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">ZTS Infotech Kimi K3 launch (Provisional)</a>
+- <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt "caught Claude" (Provisional)</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">r/ClaudeAI Fable-100-credit thread — Kimi as economic hedge</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">r/ClaudeAI Clown Code thread</a></p>
+<p><strong>Signal Strength:</strong> Low. All YouTube anchors are from non-config-listed channels; Arena-coding-parity claim requires independent verification. Watch E20 for mainstream-outlet corroboration (Ars Technica, The Register, TheNewStack, HackerNews thread).</p>
+<h3>Pattern 5 — <code>cost-runaway</code> (PROMOTED, continues Strong this cycle)</h3>
+<p>Signal upgrades to two-sided coverage this cycle. Vendor-side fully documented; <strong>practitioner-side reaction cluster now retrievable</strong> via cross-LLM escalation to r/ClaudeAI. Also picks up an enterprise-side data point (<a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev VPs of Engineering can't say what they're getting</a>).</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Anthropic Redeploying Fable 5</a>
+- <a href="https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/" target="_blank" rel="noopener">Forbes second-extension July 13</a>
+- <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">TechTimes permanence-for-Max, credits-only-for-Pro</a>
+- <a href="https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026" target="_blank" rel="noopener">Digital Applied metered-pricing breakdown</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/" target="_blank" rel="noopener">r/ClaudeAI Fable staying on Max at 50%</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">r/ClaudeAI $100 credit for Pro adequacy</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">r/ClaudeAI another move to sweeten</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">r/ClaudeAI Clown Code — Max no longer competes</a>
+- <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev VP-eng spending discipline</a>
+- <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 30%-hit-limits</a>
+- <a href="https://www.youtube.com/shorts/Ympl1NEnwcY" target="_blank" rel="noopener">YouTube AIForWork on extension as reactive pressure</a></p>
+<p><strong>Signal Strength:</strong> Strong (H). Cross-platform + cross-author-type. Signal upgrades this cycle from Promoted-vendor-only to Promoted-with-practitioner-reaction.</p>
+<h3>Pattern 6 — <code>review-cost-inversion</code> (PROMOTED, Strong)</h3>
+<p>Quantitative consensus reached with mainstream + practitioner + counter-signal all present in one window. Three independent datasets converge; one mainstream vendor study offers positive counter-signal.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 96%/48% verification gap</a>
+- <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros 154%/5×/3× telemetry, 31% no-review merges</a>
+- <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "unpaid prompt engineers"</a>
+- <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin AI Slop Index (first vendor scoring tool)</a>
+- <a href="https://news.ycombinator.com/item?id=46312159" target="_blank" rel="noopener">HN "1.7× more bugs" stylized fact</a>
+- <strong>Counter-signal:</strong> <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">Microsoft internal 24% more PRs via @MikelEcheve</a></p>
+<p><strong>Signal Strength:</strong> Strong (H). Signal remains Promoted-with-quantitative-consensus. Microsoft counter-signal moderates but does not overturn.</p>
+<h3>Pattern 7 — <code>anthropic-trust-arc</code> (PROMOTED, continues at H)</h3>
+<p>Two Claude Code regressions from high-signal Practitioner voices in one week. Client-binary product-defect story compounds.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders "Anatomy of a Misfeature"</a>
+- <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly Alerts</a>
+- <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Willison public bug ping on Claude Code web repo-cloning regression</a></p>
+<p><strong>Signal Strength:</strong> Strong (H).</p>
+<h3>Pattern 8 — <code>subagent-delegation</code> (PROMOTED, continues at M-H)</h3>
+<p>Vendor-blessed template accrues practitioner-tooling corroboration this cycle: multi-vendor orchestration, leaked prompts, Claude Code project template as AI engineering infrastructure.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Willison July archive workflow</a>
+- <a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">firstintentdev CCTeam multi-vendor coding-agent orchestration</a>
+- <a href="https://x.com/srishticodes/status/2078842001697767897" target="_blank" rel="noopener">srishticodes leaked Fable 5 system prompt — "environment not personality"</a>
+- <a href="https://x.com/HeyAnjula/status/2077615621282599136" target="_blank" rel="noopener">HeyAnjula leaked Claude Code project template</a>
+- <a href="https://x.com/emadgnia/status/2078992897211310516" target="_blank" rel="noopener">emadgnia "best Claude Code material from practitioners"</a></p>
+<p><strong>Signal Strength:</strong> Strong (H).</p>
+<h3>Pattern 9 — <code>cognitive-debt-deskilling</code> + <code>ai-burnout-paradox</code> (PROMOTED, both at M-H this cycle)</h3>
+<p>Institutional acknowledgment + quantitative practitioner voice. Both signals gain evidence this cycle.</p>
+<p><strong>Evidence:</strong>
+- <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34</a>
+- <a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians burnout</a>
+- <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx 2,147-engineer survey (71% "middlemen")</a>
+- <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "unpaid prompt engineers"</a>
+- <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap</a></p>
+<p><strong>Signal Strength:</strong> Both Strong (H) this cycle.</p>
+<h3>Pattern 10 — <code>release-cadence-shock</code> (Tracking, weakening → retirement candidate)</h3>
+<p><a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener">Cursor Composer 2.5 launch coverage</a> and <a href="https://x.com/OpenAI/status/2078243667081617826" target="_blank" rel="noopener">OpenAI GPT-5.6 Sol Codex Security</a> launch continue in-window but do not constitute the "three-in-ten-days" cadence that anchored the E18 mint. Watch E20-E22 for signal retirement.</p>
+<p><strong>Signal Strength:</strong> Weakening. Currently Tracking; retirement watch begins E20.</p>
+
+</section><section id="incidents"><h2 data-section="08">Incidents Log</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Incident</th>
+<th style="text-align: center;">Severity</th>
+<th>Tools</th>
+<th>Anchor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-06-03 (in-window coverage)</td>
+<td>Agentjacking / Sentry MCP hijack — public Sentry DSN + injected instruction hijacks Claude Code, Cursor, Codex</td>
+<td style="text-align: center;">High</td>
+<td>Claude Code, Cursor, Codex, MCP</td>
+<td><a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat</a></td>
+</tr>
+<tr>
+<td>2026-06-26 (in-window coverage)</td>
+<td>Amazon Q MCP auto-execution CVE-2026-12957/12958 — workspace <code>.amazonq/mcp.json</code> auto-loaded with no consent; AWS credentials inherited</td>
+<td style="text-align: center;">High</td>
+<td>Amazon Q Developer, MCP</td>
+<td><a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Research</a>, <a href="https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202" target="_blank" rel="noopener">The Register</a></td>
+</tr>
+<tr>
+<td>2026-07-01 (in-window coverage)</td>
+<td>JADEPUFFER agentic ransomware — first documented end-to-end LLM-driven ransomware; 1,342 Nacos configs encrypted with unrecoverable AES key</td>
+<td style="text-align: center;">Critical</td>
+<td>General AI (autonomous agent)</td>
+<td><a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig</a>, <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop</a></td>
+</tr>
+<tr>
+<td>2026-07-01</td>
+<td>Claude Code 2.1.198 AskUserQuestion auto-continue misfeature — 60-second timer converted hard stop into soft nudge; undocumented; reverted in 2.1.200</td>
+<td style="text-align: center;">Medium</td>
+<td>Claude Code</td>
+<td><a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders</a>, <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly</a></td>
+</tr>
+<tr>
+<td>2026-07 (in-window)</td>
+<td>Claude Code web repo-cloning regression — Simon Willison public bug ping to @AnthropicAI</td>
+<td style="text-align: center;">Medium</td>
+<td>Claude Code</td>
+<td><a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">@simonw</a></td>
+</tr>
+<tr>
+<td>2026-07 (in-window)</td>
+<td>xAI Grok Build CLI 0.2.93 repository exfiltration — entire tracked repos + Git history uploaded; canary credentials appeared unredacted</td>
+<td style="text-align: center;">High</td>
+<td>Grok Build CLI</td>
+<td><a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">The Hacker News</a></td>
+</tr>
+<tr>
+<td>2026-07-16..20</td>
+<td>Hugging Face autonomous-AI-agent breach — 17,000+ recorded attacker actions; supply chain confirmed clean</td>
+<td style="text-align: center;">Critical</td>
+<td>AI infrastructure, MCP-adjacent</td>
+<td><a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">The Hacker News</a></td>
+</tr>
+<tr>
+<td>2026-07 (in-window)</td>
+<td>Security Boulevard discloses MSTI (Mid-Session Tool Injection) + ShareLock as new MCP attack primitives; 10%+ of scanned MCP servers leak credentials/PII</td>
+<td style="text-align: center;">High</td>
+<td>MCP</td>
+<td><a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="contradictions"><h2 data-section="05">Contradictions &amp; Contested Claims</h2>
+<h3>Claim: "The MCP protocol's security posture is being actively hardened and the current CVE cluster reflects normal maturation"</h3>
+<p><strong>Assessment:</strong> Newly Contested</p>
+<p><strong>Supporting:</strong>
+- <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Amazon shipped fix in language server 1.65.0</a>
+- <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">Adversa 30+ CVEs — active researcher engagement</a>
+- <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP hardening guidance</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">Sentry declined root-cause remediation as "technically not defensible"</a>
+- <a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard reports 10%+ of scanned MCP servers still leak credentials/PII</a>
+- <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face breach reached foundational-infrastructure provider status</a></p>
+<h3>Claim: "AI coding tools are producing net productivity gains"</h3>
+<p><strong>Assessment:</strong> Newly Contested (unresolved)</p>
+<p><strong>Supporting:</strong>
+- <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">Microsoft internal 24% more PRs merged (via @MikelEcheve)</a>
+- <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros task completion +34%, epics +66%</a>
+- <a href="https://x.com/congxing/status/2076758851789918709" target="_blank" rel="noopener">@congxing (individual productivity clearly up)</a>
+- <a href="https://x.com/mitchellh/status/2078586110113181796" target="_blank" rel="noopener">@mitchellh (background productivity multiplier)</a>
+- <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 95% weekly-plus AI use</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros bugs per developer +54%, incident-to-PR ratio tripled, 31% no-review merges</a>
+- <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 96% don't fully trust / only 48% verify</a>
+- <a href="https://news.ycombinator.com/item?id=46312159" target="_blank" rel="noopener">HN "1.7× more bugs" stylized fact</a>
+- <a href="https://news.ycombinator.com/item?id=48168221" target="_blank" rel="noopener">HN "AI won't make your processes go faster"</a>
+- <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "unpaid prompt engineers"</a>
+- <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx 71% "middlemen"</a>
+- <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev VPs can't say what they're getting</a></p>
+<h3>Claim: "Vendor-declared consent surfaces on AI coding agents are hard controls"</h3>
+<p><strong>Assessment:</strong> Tilting Contradicted</p>
+<p><strong>Supporting:</strong>
+- <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Anthropic reverted 60-second auto-continue in 2.1.200</a>
+- <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Amazon shipped explicit consent + env restriction in Q Developer 1.65.0</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Claude Code 2.1.198 silently converted AskUserQuestion to soft nudge</a>
+- <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly aggregator alert</a>
+- <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Amazon Q auto-loaded workspace MCP configs</a>
+- <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Willison Claude Code web regression</a></p>
+<h3>Claim: "Autonomous AI agents attacking production infrastructure are a research-demo concern"</h3>
+<p><strong>Assessment:</strong> Newly Contested (leans Contradicted)</p>
+<p><strong>Supporting (research/demo framing):</strong>
+- <a href="https://news.ycombinator.com/item?id=47817581" target="_blank" rel="noopener">HN "state of AI in 2026" thread ambivalence</a></p>
+<p><strong>Contradicting (production-incident framing):</strong>
+- <a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig JADEPUFFER end-to-end LLM-driven ransomware</a>
+- <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face 17,000+ recorded attacker actions</a>
+- <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop industry-benchmark framing</a>
+- <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">Grok Build CLI vendor-side autonomous mass-exfiltration</a></p>
+<h3>Claim: "There is a measurable AI-driven jobs crisis for developers"</h3>
+<p><strong>Assessment:</strong> Newly Contested (unresolved)</p>
+<p><strong>Supporting:</strong>
+- <a href="https://news.ycombinator.com/item?id=48464333" target="_blank" rel="noopener">Stanford ADP 16-20% junior decline cited in HN thread</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://news.ycombinator.com/item?id=48464333" target="_blank" rel="noopener">HN "normal post-ZIRP correction" reading</a>
+- <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer 95% weekly use — no depression</a>
+- <a href="https://x.com/swyx/status/2078628617987518855" target="_blank" rel="noopener">@swyx Europe talent depth</a></p>
+<h3>Claim: "Claude Max/Pro tier pricing remains competitive after the Fable 5 credits-only switch"</h3>
+<p><strong>Assessment:</strong> Newly Contested (leans Contradicted)</p>
+<p><strong>Supporting:</strong>
+- <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">Anthropic Fable 5 remains permanent in Max, credits-only for Pro at $10/$50 per Mtok</a>
+- <a href="https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/" target="_blank" rel="noopener">Forbes framing as competitive-pricing response to OpenAI Sol</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">r/ClaudeAI Clown Code — Max no longer competes economically with OpenAI</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/" target="_blank" rel="noopener">r/ClaudeAI Fable staying on Max at 50% "is that worth it"</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">r/ClaudeAI $100 Pro credit adequacy question</a>
+- <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">r/ClaudeAI another move to sweeten — anxiety-inducing changes</a>
+- <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev enterprise VP-eng spending discipline</a></p>
+<h3>Claim: "AI coding tools are being deployed with adequate governance"</h3>
+<p><strong>Assessment:</strong> Newly Contested</p>
+<p><strong>Supporting:</strong>
+- <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP guidance</a>
+- <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34 formalizes "return to fundamentals"</a>
+- <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin AI Slop Index operationalizes PR-level risk scoring</a></p>
+<p><strong>Contradicting:</strong>
+- <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros 31% no-review merges</a>
+- <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 48% verification against 96% "don't fully trust" posture</a>
+- <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io 30-PRs-per-day-per-6-reviewers</a>
+- <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev VP-eng governance gap</a>
+- <a href="https://x.com/code_n_curls/status/2076772739776454761" target="_blank" rel="noopener">@code_n_curls 100% AI stack = tech-debt trap</a></p>
+
+</section><section id="recommendations"><h2 data-section="07">Recommendations</h2>
+<p><strong>For enterprise procurement / CTO offices:</strong>
+1. Treat MCP-server deployment as a first-class attack-surface concern. Adopt the <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA guidance</a> as baseline. Audit for the workspace-boundary trust class-flaw seen across <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Amazon Q</a>, Claude Code (CVE-2026-21852), and <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Windsurf (CVE-2026-30615)</a>.
+2. Rotate credentials in any repository where Grok Build CLI ran before 2026-07-13 per <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">The Hacker News guidance</a>.
+3. Audit third-party integrations that pass vendor-received events through to AI coding agents (Sentry/Datadog/PagerDuty/Jira architectural pattern per <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat</a>).
+4. Read <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev on VP-eng spending</a> — establish operator-side ROI attribution for Claude/Cursor spend before the next budget cycle.</p>
+<p><strong>For engineering leaders / DPE teams:</strong>
+1. Instrument review-time and no-review-merge rate at the team level. <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros' 5× review-time and 31%-no-review-merge</a> suggest most teams have crossed into the review-bottleneck regime. Consider <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin's AI Slop Index</a> as a gate. Compare against <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">Microsoft's internal 24%-more-PRs</a> framing to understand the throughput-vs-quality trade at your team scale.
+2. Read <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Alders' misfeature postmortem</a> with team leads — "which of your consent surfaces are actually hard controls vs soft nudges?" audit is worth doing.
+3. <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34</a> is the analyst-tier institutional signal on cognitive debt; useful for skill-development-budget conversations.
+4. Review the <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap thread</a> with senior engineers — 6-month agentic-coding practitioner's core argument that lost codebase comprehension is the real hidden cost.</p>
+<p><strong>For practitioners:</strong>
+1. <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Simon Willison's cost-efficiency workflow</a> — main-model for judgment/audit, Sonnet in subagents for implementation, Haiku for mechanical edits — continues to accrue corroboration.
+2. If on Fable 5 Pro, <a href="https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026" target="_blank" rel="noopener">the July 20 credits-only switch at $10 input / $50 output per Mtok</a> has landed; the <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">r/ClaudeAI $100-credit adequacy debate</a> is the community-consensus snapshot; monitor spend actively for the first two billing cycles.
+3. Read <a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians on AI-assisted burnout</a> and <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx paradox</a> if reviewer fatigue feels unnamed.
+4. <a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">firstintentdev's CCTeam multi-vendor orchestration</a> and the <a href="https://x.com/HeyAnjula/status/2077615621282599136" target="_blank" rel="noopener">leaked Claude Code project template (@HeyAnjula)</a> are the practitioner-tooling artifacts to study for <code>subagent-delegation</code> implementation.</p>
+<p><strong>For monitoring / next-cycle prep (E20):</strong>
+1. Confirm cross-LLM escalation via Claude in Chrome is repeatable in the run environment — this cycle restored Reddit (ChatGPT), X (Grok), and YouTube (Gemini). Persist the retrieval-channel-authority audit into the config.
+2. Watch for <code>consent-surface-erosion</code> fourth-vendor corroboration.
+3. Watch for <code>agentic-threat-actor</code> fourth end-to-end incident.
+4. Watch for <code>chinese-open-weight-parity</code> mainstream-outlet corroboration of the Kimi K3 Arena-coding-parity claim (Ars Technica, The Register, TheNewStack, HN discussion).
+5. Bluesky and Mastodon retrieval still failing — even ChatGPT cross-LLM couldn't close Bluesky. Consider Tier-3-Manual promotion or wait for interactive Claude-in-Chrome session.</p>
+
+</section><section><h2>Vocabulary / New Terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>First Seen</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agentjacking</td>
+<td>2026-06 (Tenet); mainstream adoption in-window</td>
+<td><a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat</a></td>
+</tr>
+<tr>
+<td>MSTI (Mid-Session Tool Injection)</td>
+<td>2026-07 (in-window)</td>
+<td><a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard</a></td>
+</tr>
+<tr>
+<td>ShareLock (Shamir-secret-shared multi-tool poisoning)</td>
+<td>2026-07 (in-window)</td>
+<td><a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard</a></td>
+</tr>
+<tr>
+<td>JADEPUFFER (agentic-ransomware benchmark)</td>
+<td>2026-07-01</td>
+<td><a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig</a></td>
+</tr>
+<tr>
+<td>Agentic Threat Actor</td>
+<td>2026-07</td>
+<td><a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig</a></td>
+</tr>
+<tr>
+<td>Kimi K3 (Moonshot 2.8T-param open-weight coding model)</td>
+<td>2026-07 in-window (Provisional)</td>
+<td><a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">ZTS Infotech</a>, <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt</a></td>
+</tr>
+<tr>
+<td>AI Slop Index</td>
+<td>2026-06-28</td>
+<td><a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin</a></td>
+</tr>
+<tr>
+<td>Acceleration Whiplash</td>
+<td>2026</td>
+<td><a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros AI</a></td>
+</tr>
+<tr>
+<td>Verification Gap</td>
+<td>2026</td>
+<td><a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar</a></td>
+</tr>
+<tr>
+<td>Cognitive Debt</td>
+<td>2026-04 Radar Vol 34; in-window institutional adoption</td>
+<td><a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks</a></td>
+</tr>
+<tr>
+<td>Anatomy of a Misfeature</td>
+<td>2026-07-17</td>
+<td><a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Olaf Alders</a></td>
+</tr>
+<tr>
+<td>CLAUDE_AFK_TIMEOUT_MS (undocumented escape hatch)</td>
+<td>2026-07-17</td>
+<td><a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Olaf Alders</a></td>
+</tr>
+<tr>
+<td>Unpaid prompt engineers (reviewers as)</td>
+<td>2026-07-17</td>
+<td><a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io</a></td>
+</tr>
+<tr>
+<td>Middlemen (engineers feel like)</td>
+<td>2026-07</td>
+<td><a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx</a></td>
+</tr>
+<tr>
+<td>Inverted client-server pattern (MCP structural risk)</td>
+<td>2026-06-02</td>
+<td><a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA</a></td>
+</tr>
+<tr>
+<td>Clown Code (r/ClaudeAI Max pricing frustration)</td>
+<td>2026-07</td>
+<td><a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">r/ClaudeAI</a></td>
+</tr>
+<tr>
+<td>CCTeam (multi-vendor coding-agent orchestration)</td>
+<td>2026-07</td>
+<td><a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">@firstintentdev</a></td>
+</tr>
+<tr>
+<td>Environment not personality (Fable 5 system-prompt framing)</td>
+<td>2026-07</td>
+<td><a href="https://x.com/srishticodes/status/2078842001697767897" target="_blank" rel="noopener">@srishticodes</a></td>
+</tr>
+<tr>
+<td>Code comprehension trap</td>
+<td>2026-07</td>
+<td><a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs</a></td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="gaps"><h2 data-section="06">Data Quality / Gaps</h2>
+<p><strong>Retrieval channel status this cycle:</strong>
+- <strong>Reddit</strong> — closed via cross-LLM escalation to ChatGPT (7 items Provisional). Original Claude Primary WebSearch returned zero (same E1/E2 failure mode). Cross-LLM restoration validates the Chrome-based escalation pattern.
+- <strong>X/Twitter</strong> — closed via cross-LLM escalation to Grok (18 items Provisional). Per config v1.8, X/Twitter is Tier 1 only for Grok; Claude's Tier 2 assignment held. SuperGrok Fast mode.
+- <strong>YouTube</strong> — partially closed via cross-LLM escalation to Gemini (3 Shorts Provisional). Named-channels list from config returned zero; provisional coverage came from non-config-listed channels (AIForWork, ZTS Infotech, BlackBoxArt).
+- <strong>Bluesky</strong> — gap unresolved. Both Claude Primary WebSearch and ChatGPT cross-LLM escalation returned zero. Bluesky's search API is documented as unreliable for date-scoped queries.
+- <strong>Mastodon</strong> — gap unresolved. Federated instance search is a known-weak retrieval surface.
+- <strong>LinkedIn</strong> — Tier 3 Manual per config v1.6; no automated retrieval attempted.</p>
+<p><strong>Provisional-item implications:</strong>
+- All 28 cross-LLM items (7 Reddit + 18 X + 3 YouTube) are tagged Provisional pending manual channel-authority review. The Reddit and X items surface from named handles/subreddits and are relatively straightforward to spot-check; the YouTube channels are unfamiliar and require heavier verification of the Kimi K3 launch claim before promoting <code>chinese-open-weight-parity</code> beyond Tracking L.</p>
+<p><strong>Sentiment-composition confounds:</strong>
+- The CP-column collapse from 30% (E18) to 0% (E19) is partly structural — practitioner voice this cycle skews to Strongly Positive product-velocity items on X (Willison, Mitchell H, MikelEcheve, OpenAI, HeyAnjula, srishticodes) rather than Cautiously Positive cost-relief framing. This is likely a real regime shift given the pricing story: cost-relief framing dominated E17 (restoration) and E18 (extension); the E19 story is credits-only-Pro-frustration on the practitioner cost side and product-velocity celebration on the tool side.
+- The 40% SN+CN floor reflects both real incident volume (7 in-window incidents, all High/Critical severity) and the Fable-5 pricing frustration cluster; not amplified by retrieval failure this cycle since cross-LLM escalation restored Reddit and X practitioner voice.</p>
+<p><strong>Deferred to E20:</strong>
+- Bluesky retrieval — try Claude-in-Chrome logged-in session direct
+- Mastodon retrieval — evaluate demotion to Tier-3-Manual
+- Kimi K3 Arena-coding-parity claim — mainstream-outlet corroboration
+- YouTube named-channels retrieval — investigate why Theo/Primeagen/Fireship returned zero
+- IEEE/ACM/arXiv direct MSTI/ShareLock reference-paper harvest</p>
+<p><strong>Cross-window continuity:</strong>
+- <code>safety-classifier-friction</code> (E18 mint) — zero in-window evidence this cycle even with Reddit restored; watch E20 for continuation or retirement
+- <code>composer-25-quality-drift</code> (E17) — <a href="https://www.reddit.com/r/cursor/comments/1uxgte5/i_tested_grok_45_vs_composer_25/" target="_blank" rel="noopener">r/cursor Composer 2.5 vs Grok 4.5 practitioner comparison</a> is anti-drift evidence (OP reports Composer 2.5 outperforming); watch for direction
+- <code>tool-schema-drift</code> (E17) — zero in-window evidence
+- <code>open-weight-china-advantage</code> (E16-E18) — resurrects under <code>chinese-open-weight-parity</code> (Kimi K3 anchor)
+- <code>export-control-regime</code> (E16-E18) — zero in-window items; episode-closed</p>
+<p><strong>Vendor-affiliated bias note:</strong> Sonar, Faros, Larridin, Wiz, Microsoft (via MikelEcheve) are all vendor-affiliated researchers or vendor-authored studies. Directional alignment across independent datasets holds, but individual findings should be read with vendor-affiliation weighting per domain-config v1.2.</p>
+
+<p><em>Analysis prompt v1.17 | Domain config v1.2 | Bootloader v1.9 | Generated 2026-07-20</em></p></section>
+<footer>
+<p>AI Dev Sentiment Analysis &mdash; Extraction 19 &mdash; Generated 2026-07-20</p>
+<p>Analysis Engine v1.17 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.sentiment-fill').forEach(function(el) {
+    var w = el.style.getPropertyValue('--width');
+    el.style.width = w;
+});
+document.querySelectorAll('.collapsible').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content) content.classList.toggle('active');
+    });
+});
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

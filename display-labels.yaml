@@ -306,3 +306,23 @@ labels:
     sentiment_override: mx
     retired_alias: []
 
+
+  # === E19 mints ===
+
+  - signal_id: consent-surface-erosion
+    label: "AI tools swap hard stops for soft nudges"
+    one_line: "Vendors silently converting hard human-in-the-loop consent gates into auto-continue timers — Claude Code 2.1.198, Amazon Q, Claude Code web all in one week."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: agentic-threat-actor
+    label: "AI agents are now the attackers"
+    one_line: "Autonomous AI agents run end-to-end intrusions against production infrastructure — JADEPUFFER ransomware, Hugging Face breach, Grok Build CLI mass exfiltration."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: chinese-open-weight-parity
+    label: "Chinese open-weight model catches Fable 5"
+    one_line: "Moonshot Kimi K3 (2.8T params, 1M context) claims Arena coding parity with Anthropic's Fable 5 — surfaces via YouTube, cross-referenced on Reddit as economic hedge."
+    sentiment_override: mx
+    retired_alias: [open-weight-china-advantage]
