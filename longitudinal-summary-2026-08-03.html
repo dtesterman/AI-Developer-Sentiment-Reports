@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E19 (2026-03-20 to 2026-07-20). 18 weekly windows; ~908 tagged items; 18 tracked signals. E18 mints consent-surface-erosion and agentic-threat-actor; mcp-attack-surface crystallizes as enterprise threat class (8 sources across 3 incidents plus NSA advisory); review-cost-inversion reaches quantitative consensus (Sonar 96/48, Faros 5x review time, 31% no-review merges); cognitive-debt-deskilling gets Thoughtworks Radar V34 institutional acknowledgment.">
+<meta property="og:title" content="Longitudinal Trend Report — E1 - E19 (2026-03-20 to 2026-07-20)">
+<meta property="og:description" content="19 windows; MCP-mediated coding-agent RCE crystallizes as enterprise threat class; autonomous AI agents hit Hugging Face and Nacos in production; verification-gap becomes quantitatively undeniable; two NEW signals mint: consent-surface-erosion and agentic-threat-actor.">
+<title>Longitudinal Trend Report — E1 - E19 (2026-03-20 to 2026-07-20)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #c9d1d9;
+    font-family: 'Source Serif 4', serif; font-size: 16px; line-height: 1.6;
+    overflow-x: hidden; padding-top: 3rem;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 2px solid #5c9eed;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav .container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: flex-start; align-items: center;
+    gap: 1rem; padding: 0;
+}
+nav h1 {
+    font-family: 'DM Serif Display', serif; font-size: 1rem;
+    color: #5c9eed; font-weight: 400;
+    flex-shrink: 0; white-space: nowrap; margin: 0;
+}
+nav ul {
+    display: flex; list-style: none; gap: 0.25rem;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    margin: 0; padding: 0;
+    scrollbar-width: thin; scrollbar-color: #30363d transparent;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+nav li { margin: 0; flex-shrink: 0; }
+nav a {
+    color: #8b949e; text-decoration: none;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    white-space: nowrap; display: inline-block;
+}
+nav a:hover { color: #5c9eed; background-color: rgba(92, 158, 237, 0.1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 2px solid #5c9eed; }
+h1.title {
+    font-family: 'DM Serif Display', serif; font-size: 3rem;
+    color: #f0f6fc; line-height: 1.15; margin-bottom: 1rem;
+}
+.subtitle {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: #8b949e; margin-bottom: 1rem;
+}
+.masthead-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+}
+.stat-item {
+    background-color: #161b22; padding: 1rem; border-radius: 6px;
+    border-left: 3px solid #5c9eed;
+}
+.stat-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.6rem; color: #5c9eed; font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+    color: #f0f6fc; margin: 2.5rem 0 1.5rem 0;
+    padding-left: 2rem; position: relative;
+}
+h2::before {
+    content: attr(data-section); position: absolute; left: 0;
+    color: #5c9eed; font-size: 0.85rem; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; top: 0.6em;
+}
+h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: #c9d1d9; margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    color: #f0f6fc; margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; }
+a {
+    color: #5c9eed; text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+strong { color: #f0f6fc; font-weight: 600; }
+em { font-style: italic; color: #c9d1d9; }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #161b22; padding: 0.15em 0.4em;
+    border-radius: 3px; font-size: 0.9em; color: #79b8ff;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: #161b22; border: 1px solid #30363d;
+    border-radius: 6px; overflow: hidden; font-size: 0.92rem;
+}
+thead { background-color: #1c2330; }
+th {
+    padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+    color: #f0f6fc; border-bottom: 2px solid #30363d;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td {
+    padding: 0.6rem 1rem; border-bottom: 1px solid #30363d;
+    word-break: break-word; vertical-align: top;
+}
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: #1c2330; }
+ul, ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+.signal-card {
+    background-color: #161b22; border: 1px solid #30363d;
+    border-left: 3px solid #5c9eed;
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.signal-card h4 {
+    margin-top: 0; font-family: 'DM Serif Display', serif;
+    color: #f0f6fc; font-size: 1.1rem;
+}
+.signal-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.4rem; background-color: rgba(92, 158, 237, 0.15);
+    color: #5c9eed;
+}
+.badge.escalated {
+    background-color: rgba(224, 82, 82, 0.15); color: #e05252;
+}
+.badge.new { background-color: rgba(76, 175, 125, 0.15); color: #4caf7d; }
+.badge.continues { background-color: rgba(240, 168, 50, 0.15); color: #f0a832; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid #30363d; text-align: center;
+    color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    nav h1 { display: none; }
+    nav a { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+    .container { padding: 2rem 1rem; }
+    h1.title { font-size: 2rem; }
+    h2 { font-size: 1.5rem; padding-left: 1.5rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+}
+</style>
+</head>
+<body>
+<nav><h1>Longitudinal Trend Report</h1><ul><li><a href="#summary">01 Summary</a></li><li><a href="#composition">02 Composition</a></li><li><a href="#trajectory">03 Trajectory</a></li><li><a href="#momentum">04 Momentum</a></li><li><a href="#signals">05 Signals</a></li><li><a href="#contradictions">06 Contradictions</a></li><li><a href="#vocabulary">07 Vocabulary</a></li><li><a href="#gaps">08 Gaps</a></li><li><a href="#watch">09 Watch List</a></li><li><a href="#metadata">10 Metadata</a></li></ul></nav>
+<div class="container">
+<header>
+<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 19</h1>
+<div class="subtitle">2026-03-20 &ndash; 2026-07-20 &nbsp;&middot;&nbsp; 122 days &nbsp;&middot;&nbsp; 19 weekly windows<br>Generated 2026-07-20 from analysis-summary-{date}.md files (--from-summaries mode)</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">19</div></div>
+<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">~941</div></div>
+<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">19</div></div>
+<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">11</div></div>
+<div class="stat-item"><div class="stat-label">NEW E19</div><div class="stat-value">2</div></div>
+<div class="stat-item"><div class="stat-label">Confirmed Trends</div><div class="stat-value">5</div></div>
+</div>
+</header>
+
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p><em>Revised 2026-08-03 11:20 UTC after Grok cross-LLM X/Twitter follow-up added 15 items to E20; sentiment CP tier recovered 4% → 9%, X coverage regression was procedural not structural.</em></p>
+<p>Across twenty consecutive weekly extractions spanning 136 days (~1,069 sentiment-tagged items cumulative), the AI coding tools discourse has now executed a clear regime-shift sequence culminating in E20's <em>convergence week</em>: "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost?" (E12) → "is the infrastructure load-bearing AND who pays?" (E13) → "who do we trust, and what is the supply-chain cost?" (E14) → "MCP supply chain IS the incident class" (E15) → "who governs the model itself — and at whose request?" (E16) → "subagent-delegation is the workflow winner and Chinese open-weight ships" (E17) → "three frontier models GA in ten days" (E18) → "MCP-mediated RCE crystallizes + autonomous agents graduate to production intrusion" (E19) → and now in <strong>E20, the Chinese open-weight escalation triggers explicit US regulatory-alignment response (Nvidia's Open Weights letter), the Hugging Face autonomous-AI attack becomes the first publicly-documented event of its class, MCP 2026-07-28 matures the protocol at the same instant the enterprise agent-attack surface widens, and Anthropic's Opus 5 launches into a coherent early-adopter regression complaint</strong>.</p>
+<p>E20 (n=115, 114 unique URLs — largest extraction of the program after Grok X/Twitter follow-up pass) <strong>mints four NEW signals</strong> (<code>opus5-launch-regression</code> at H; <code>open-weights-us-alignment</code> at H; <code>mcp-protocol-maturation</code> at H; <code>agent-attack-surface</code> at H — the broader sibling of prior <code>mcp-attack-surface</code>; <code>opaque-metering-friction</code> at M; <code>junior-dev-collapse</code> at M), <strong>escalates <code>agentic-threat-actor</code> from Tracking-M to Tracking-H</strong> on the weight of the Hugging Face incident cluster, and <strong>re-confirms three prior signals at H</strong> (<code>cost-runaway</code>, <code>ai-burnout-paradox</code>, <code>agentic-threat-actor</code>). The multi-year story continues to be attack-surface maturation on one side and enterprise-vendor + labor-market absorption on the other; E20 adds an explicit US-regulatory-political dimension on top.</p>
+<p><strong>The macro arc across E17–E20 has consolidated three multi-week storylines</strong>:</p>
+<ol>
+<li><strong>Frontier-model geopolitical alignment</strong> — from Chinese open-weight sovereignty (E17 Kimi K3 rumor, E19 chinese-open-weight-parity mint via YouTube/Reddit anchors) to explicit US regulatory-political coalition (E20 Nvidia letter with 230+ signatories, OpenAI/Anthropic/Google absent, Anthropic's prior June 30 export-control lift as background). Anthropic's positioning increasingly reads as commercially-motivated rather than principled.</li>
+<li><strong>Agent attack surface as enterprise threat class</strong> — from generic vibe-coding CVE discourse (E11-E14) to MCP-specific supply-chain (E15-E18) to protocol-level RCE crystallization (E19 <code>mcp-attack-surface</code> promoted) to composite <code>agent-attack-surface</code> covering issue-injection + credential exfiltration + CVE-attributable vibe-coded app failures (E20 mint). Hugging Face becomes the "Colonial Pipeline moment" of the class.</li>
+<li><strong>Cognitive debt / burnout as enterprise vocabulary</strong> — from Twitter-community discourse (E10-E13) to institutional acknowledgment (E14-E17 Thoughtworks, Evil Martians) to enterprise-vendor content (E19 explainx, E20 Appian + O'Reilly) plus formal academic model (E20 arXiv "From Gains to Strains"). <code>ai-burnout-paradox</code> continues H.</li>
+</ol>
+<p><strong>E20 sentiment</strong>: SN 24%, CN 15%, MA 20%, CP 4%, SP 22%, Nu 15%. SN+CN 39% is elevated but tracks recent windows; SP 22% matches E19's product-velocity signal; CP recovers slightly to 4% (from E19's 0%) but remains near program-lows.</p>
+<p><strong>Highest-priority next-window watch</strong>: (1) Anthropic public response to Opus 5 launch-week regression complaints; (2) Anthropic public statement on opaque metering / usage transparency (matching OpenAI's Sol precedent); (3) OpenAI + Anthropic + Google positioning on the Open Weights letter (currently absent from 230+ signatories); (4) IssueTrojanBench extension to VS Code + JetBrains + Copilot in-editor agents; (5) Cursor MCP 2026-07-28 stateless-spec support upgrade path; (6) Chinese-lab commercial-tier pricing/perf response to OpenAI Luna 80% cut; (7) direct-URL re-verification of E20's 9 Provisional Reddit anchors (especially the <code>opaque-metering-friction</code> set); (8) X/Twitter recovery via Grok cross-LLM (E19 had 18 items, E20 has 0 — regression); (9) BLS Sept 2026 labor-market data + Anthropic Q3 2026 Economic Index refresh (<code>junior-dev-collapse</code> corroboration).</p>
+
+</section><section id="composition"><h2 data-section="02">Source Composition Audit</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>Window end</th>
+<th>Items</th>
+<th>Reddit</th>
+<th>Bluesky</th>
+<th>X</th>
+<th>Blogs+Trade</th>
+<th>HN</th>
+<th>YouTube</th>
+<th>Incidents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E15</td>
+<td>2026-06-22</td>
+<td>42</td>
+<td>8</td>
+<td>13</td>
+<td>10</td>
+<td>15</td>
+<td>2</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>2026-06-29</td>
+<td>65</td>
+<td>7</td>
+<td>23</td>
+<td>0</td>
+<td>15</td>
+<td>8</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>2026-07-06</td>
+<td>41</td>
+<td>11</td>
+<td>1</td>
+<td>3</td>
+<td>14</td>
+<td>6</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>2026-07-13</td>
+<td>72</td>
+<td>10</td>
+<td>16</td>
+<td>12</td>
+<td>24</td>
+<td>4</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>2026-07-20</td>
+<td>61</td>
+<td>7</td>
+<td>0</td>
+<td>18</td>
+<td>26</td>
+<td>5</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>E20</strong></td>
+<td><strong>2026-08-03</strong></td>
+<td><strong>115</strong></td>
+<td><strong>9</strong></td>
+<td><strong>23</strong></td>
+<td><strong>15</strong></td>
+<td><strong>57</strong></td>
+<td><strong>9</strong></td>
+<td><strong>1</strong></td>
+<td><strong>5</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composition anomalies (E20)</strong>: Bluesky logged-in recovery (23 items Trusted) plus Reddit cross-LLM via ChatGPT (9 items Provisional) drove the largest-ever weekly extraction. X/Twitter recovered to 15 via Grok cross-LLM follow-up pass on 2026-08-03 (initial pass regressed to 0); Mastodon remained thin (0 items); podcasts (Tier 2 manual) not exercised. Blog + trade press volume surged to 57 driven by two large clusters: Open Weights letter (8 items) + Hugging Face incident (6 items) + Kimi K3 launch (5 items) + Opus 5 launch reactions (5 blog items) + OpenAI price cuts (4 items) + cognitive-debt cluster (7 items) + FinOps/pricing (3 items).</p>
+<p><strong>Composition verdict</strong>: <strong>HEALTHY at record scale</strong>. Follow-up Grok pass restored X/Twitter to 15 items; combined with Bluesky (23) and Reddit (9), E20 has the strongest social-tier coverage of the program. The initial-pass X regression was procedural, not structural.</p>
+
+</section><section id="trajectory"><h2 data-section="03">Sentiment Trajectory</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>SN</th>
+<th>CN</th>
+<th>MA</th>
+<th>Nu</th>
+<th>CP</th>
+<th>SP</th>
+<th>SN+CN</th>
+<th>CP+SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E15</td>
+<td>14</td>
+<td>22</td>
+<td>14</td>
+<td>21</td>
+<td>22</td>
+<td>7</td>
+<td>36</td>
+<td>29</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>20</td>
+<td>28</td>
+<td>12</td>
+<td>22</td>
+<td>12</td>
+<td>6</td>
+<td>48</td>
+<td>18</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>5</td>
+<td>8</td>
+<td>12</td>
+<td>24</td>
+<td>34</td>
+<td>17</td>
+<td>13</td>
+<td>51</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>6</td>
+<td>15</td>
+<td>14</td>
+<td>23</td>
+<td>30</td>
+<td>12</td>
+<td>21</td>
+<td>42</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>21</td>
+<td>0</td>
+<td>21</td>
+<td>40</td>
+<td>21</td>
+</tr>
+<tr>
+<td><strong>E20</strong></td>
+<td><strong>21</strong></td>
+<td><strong>14</strong></td>
+<td><strong>19</strong></td>
+<td><strong>15</strong></td>
+<td><strong>9</strong></td>
+<td><strong>22</strong></td>
+<td><strong>35</strong></td>
+<td><strong>31</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Δ E19→E20</strong>: SN+CN −5 pts (40→35); CP+SP +10 pts (21→31); Nu −6 pts (21→15); SN +1 pt (24 in absolute count driven by Opus 5 + HF + IssueTrojanBench + CVE surge, then eased slightly as base grew to 115); CP recovers substantially from program-low as X-tier founder/executive/framework-vendor voice enters the record (bartosikdominik MRR, nuxt tied-with-Fable, dev_jodee Solana MCP, composio benchmarks, jnst3 Cursor tier, nicklafferty skills, nwbotha, tobific free credits). Nu drop reflects previously-analytical topics consolidating into explicit positions.</p>
+<p><strong>Composition-adjusted reading</strong>: The regime remains bimodal — incident-heavy SN cluster stacked on product-velocity SP cluster (with the Bluesky/X-tier practitioner voice partially bridging via CP at 9%, up from E19's 0% program-low). The Opus 5 launch is the acute driver of the SN peak; the CP recovery is driven substantially by the X-tier follow-up pass surfacing founder/executive voice (Cursor Composer 2.5 growth data, framework-vendor benchmarks, tokenmaxxing arbitrage). If Opus 5 launch-week regression resolves in E21, expect SN to soften while CN + Nu absorb the residual "wait and see."</p>
+
+</section><section id="momentum"><h2 data-section="04">Cluster Momentum</h2>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>E18</th>
+<th>E19</th>
+<th>E20</th>
+<th>Trajectory</th>
+<th>Signal strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Specific tools</td>
+<td>26</td>
+<td>11</td>
+<td>42</td>
+<td>▲▲▲ (Opus 5, MCP GA, Kimi K3, DeepSeek, Copilot)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Open-Weight Sovereignty</td>
+<td>4</td>
+<td>3</td>
+<td>22</td>
+<td>▲▲▲ (Kimi K3 + Nvidia letter + DeepSeek)</td>
+<td>Strong / Emerging</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td>14</td>
+<td>15</td>
+<td>18</td>
+<td>▲ (OpenAI cuts + Cursor tier friction)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td>6</td>
+<td>14</td>
+<td>17</td>
+<td>▲ (HF + IssueTrojanBench + CVE surge)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td>10</td>
+<td>12</td>
+<td>16</td>
+<td>▲ (Opus 5 quality, SO 3% trust)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Regulation / Export Control</td>
+<td>3</td>
+<td>0</td>
+<td>12</td>
+<td>▲▲ (Open Weights letter cluster)</td>
+<td>Emerging</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td>12</td>
+<td>8</td>
+<td>12</td>
+<td>≈</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td>9</td>
+<td>7</td>
+<td>11</td>
+<td>▲ (Opus 5 + CSA CVE surge)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td>8</td>
+<td>10</td>
+<td>9</td>
+<td>≈ (MCP stateless + Kimi sparsity)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td>6</td>
+<td>6</td>
+<td>8</td>
+<td>▲ (mainstreaming cluster)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Team &amp; Org Dynamics</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>≈</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Learning / Deskilling</td>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+<td>▲</td>
+<td>Growing</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td>7</td>
+<td>9</td>
+<td>5</td>
+<td>▼ (comp artifact — no direct successors)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>▼</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Job Security</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>≈</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Hiring / Labor Market</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>≈</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td>4</td>
+<td>3</td>
+<td>0</td>
+<td>▼▼ (comp artifact)</td>
+<td>Weak this cycle</td>
+</tr>
+<tr>
+<td>Review Burden</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>▼▼ (comp artifact — Sonar/Faros/Larridin cluster not renewed)</td>
+<td>Weak this cycle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Momentum highlights</strong>:</p>
+<ul>
+<li><strong>Fastest rising</strong>: Open-Weight Sovereignty (3 → 22 in one cycle, driven by Kimi K3 + Nvidia letter simultaneity), Regulation / Export Control (0 → 12, letter-driven), Specific Tools (11 → 42, Opus 5 launch cluster).</li>
+<li><strong>Sharpest decline (composition-flagged, not real trend reversal)</strong>: Review Burden (6 → 0 → 0 across last two cycles — the Faros/Sonar/Larridin verification-gap cluster from E18 had no natural E20 successor items; likely re-emerges in E21 with follow-up survey coverage).</li>
+<li><strong>Most contested this cycle</strong>: Specific Tools (Opus 5 negative vs Zvi/Karpathy/vscode positive), Open-Weight Sovereignty (Kimi K3 "most powerful" vs VentureBeat license caveats), MCP (protocol maturation positive vs attack-surface negative simultaneously).</li>
+</ul>
+
+</section><section id="signals"><h2 data-section="05">Signal Evolution</h2>
+<p>Tracked signals as of E20 (17 total: 10 Promoted, 5 Tracking-H, 2 Tracking-M):</p>
+<table>
+<thead>
+<tr>
+<th>signal_id</th>
+<th>first appeared</th>
+<th>last observed</th>
+<th>obs count</th>
+<th>status</th>
+<th>trajectory</th>
+<th>confidence</th>
+<th>recommended action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mcp-attack-surface</td>
+<td>E15</td>
+<td>E19</td>
+<td>6</td>
+<td>Promoted</td>
+<td>▼ (superseded by broader agent-attack-surface E20)</td>
+<td>H</td>
+<td>Retire in E22 if agent-attack-surface continues to absorb evidence</td>
+</tr>
+<tr>
+<td>agent-attack-surface</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>H</td>
+<td>Continue tracking; look for VS Code / JetBrains guardrail-benchmark follow-ups</td>
+</tr>
+<tr>
+<td>cost-runaway</td>
+<td>E12</td>
+<td>E20</td>
+<td>9</td>
+<td>Promoted</td>
+<td>≈</td>
+<td>H</td>
+<td>Continue; watch for Anthropic response to OpenAI Luna cut</td>
+</tr>
+<tr>
+<td>opaque-metering-friction</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>M</td>
+<td>Re-verify Reddit anchors direct-URL; look for Anthropic transparency statement</td>
+</tr>
+<tr>
+<td>agentic-threat-actor</td>
+<td>E19</td>
+<td>E20</td>
+<td>2</td>
+<td>Promoted</td>
+<td>▲▲ (M → H escalation)</td>
+<td>H</td>
+<td>Continue; extension to non-tech-vertical target would confirm class</td>
+</tr>
+<tr>
+<td>anthropic-trust-arc</td>
+<td>E9</td>
+<td>E19</td>
+<td>12</td>
+<td>Promoted</td>
+<td>▼ (no direct E20 anchor — dormant one cycle)</td>
+<td>M</td>
+<td>Watch for E21 Opus 5 post-mortem as re-anchor</td>
+</tr>
+<tr>
+<td>ai-burnout-paradox</td>
+<td>E10</td>
+<td>E20</td>
+<td>11</td>
+<td>Promoted</td>
+<td>≈</td>
+<td>H</td>
+<td>Continue; retype-ritual counter-move signal worth tracking</td>
+</tr>
+<tr>
+<td>cognitive-debt-deskilling</td>
+<td>E12</td>
+<td>E19</td>
+<td>8</td>
+<td>Promoted</td>
+<td>≈ (absorbed into ai-burnout-paradox this cycle)</td>
+<td>H</td>
+<td>Consider merging into ai-burnout-paradox in E22</td>
+</tr>
+<tr>
+<td>review-cost-inversion</td>
+<td>E11</td>
+<td>E19</td>
+<td>6</td>
+<td>Promoted</td>
+<td>▼ (no E20 anchor)</td>
+<td>H</td>
+<td>Watch for E21 return with next Faros/Sonar/Builder.io telemetry drop</td>
+</tr>
+<tr>
+<td>subagent-delegation</td>
+<td>E17</td>
+<td>E19</td>
+<td>4</td>
+<td>Promoted</td>
+<td>▼ (no E20 anchor)</td>
+<td>M</td>
+<td>Watch for CCTeam / Antigravity practitioner artifacts</td>
+</tr>
+<tr>
+<td>release-cadence-shock</td>
+<td>E18</td>
+<td>E19</td>
+<td>3</td>
+<td>Tracking</td>
+<td>▼ (weakening)</td>
+<td>L</td>
+<td>Retirement candidate as of E21</td>
+</tr>
+<tr>
+<td>consent-surface-erosion</td>
+<td>E19</td>
+<td>E19</td>
+<td>4</td>
+<td>Tracking</td>
+<td>≈ (no E20 anchor, insufficient for retirement)</td>
+<td>M</td>
+<td>Watch fifth-vendor corroboration; Opus 5 launch may surface new instances</td>
+</tr>
+<tr>
+<td>chinese-open-weight-parity</td>
+<td>E19</td>
+<td>E20</td>
+<td>6</td>
+<td>Promoted</td>
+<td>▲▲ (mainstreamed via Kimi K3 blog + Tom's + Forbes + BSK Mollick/Unsloth/Tim Kellogg)</td>
+<td>H</td>
+<td>Continue; distinct from open-weights-us-alignment</td>
+</tr>
+<tr>
+<td>open-weights-us-alignment</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>H</td>
+<td>Continue; Anthropic/OpenAI/Google positioning is next-cycle test</td>
+</tr>
+<tr>
+<td>mcp-protocol-maturation</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>H</td>
+<td>Continue; distinct from mcp-attack-surface / agent-attack-surface</td>
+</tr>
+<tr>
+<td>opus5-launch-regression</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>H</td>
+<td>Watch 30-day post-launch fix cadence</td>
+</tr>
+<tr>
+<td>junior-dev-collapse</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>M</td>
+<td>Watch BLS + Anthropic Economic Index refresh</td>
+</tr>
+</tbody>
+</table>
+<p>Slug-stability check (v1.17 mandate): all prior slugs preserved. <code>mcp-attack-surface</code> and <code>agent-attack-surface</code> are sibling signals (not renamed); <code>chinese-open-weight-parity</code> and <code>open-weights-us-alignment</code> are sibling signals covering distinct geopolitical layers (China-lab claim vs US-regulatory response). No slug rename events.</p>
+
+</section><section id="contradictions"><h2 data-section="06">Cross-Extraction Contradictions</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>First position (extraction)</th>
+<th>Current position (E20)</th>
+<th>Evolution</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Claude is the reliable frontier coding model"</td>
+<td>Confirmed (E1–E10)</td>
+<td>Contested — Opus 5 launch regression + prior anthropic-trust-arc concerns</td>
+<td>Downgrade</td>
+<td>Anthropic's frontier claim requires post-launch quality delivery to restabilize</td>
+</tr>
+<tr>
+<td>"MCP is a security-first agent protocol"</td>
+<td>Vendor claim (E15)</td>
+<td>Contested — attack-surface widened simultaneous with protocol maturation</td>
+<td>Persistent contradiction</td>
+<td>Both true; MCP maturity and agent-attack surface are separate axes</td>
+</tr>
+<tr>
+<td>"Open-weight models are catching up but not at parity for coding"</td>
+<td>Confirmed (E14–E17)</td>
+<td>Contested — Kimi K3 credible-parity claim on coding + Mollick's endorsement</td>
+<td>Escalation</td>
+<td>Coding parity plausible; commercial deployment blocked by license terms per VentureBeat</td>
+</tr>
+<tr>
+<td>"Anthropic is the principled AI-safety leader"</td>
+<td>Confirmed (E1–E12)</td>
+<td>Contested — export-control carve-out + Open Weights letter absence + Opus 5 safety fine print (Pignati)</td>
+<td>Downgrade</td>
+<td>Reads as commercially-motivated positioning; unresolved</td>
+</tr>
+<tr>
+<td>"AI coding tools produce net productivity gains"</td>
+<td>Contested (E10 onward)</td>
+<td>Persistent contradiction — hidden-productivity Reddit signal vs verification-gap surveys</td>
+<td>Bimodal</td>
+<td>Both true; productivity gains distributed unevenly; cognitive costs concentrated on reviewers</td>
+</tr>
+<tr>
+<td>"AI coding cost/pricing is predictable and transparent"</td>
+<td>Contested (E12 onward)</td>
+<td>Contested — Cursor tier friction + Anthropic opaque metering + OpenAI transparency-fix precedent</td>
+<td>Escalating</td>
+<td>Anthropic bearing worst rep on this axis after OpenAI acknowledged/fixed Sol issue</td>
+</tr>
+<tr>
+<td>"Autonomous AI agents attacking production infrastructure are theoretical"</td>
+<td>Confirmed (pre-E19)</td>
+<td>RESOLVED — Hugging Face July 2026 first publicly documented autonomous AI attack</td>
+<td>Position reversal</td>
+<td>Now Confirmed real; class-defining event</td>
+</tr>
+<tr>
+<td>"Guardrails on major coding-agent tools are effective against injection attacks"</td>
+<td>Contested (E15–E18)</td>
+<td>RESOLVED — IssueTrojanBench 66.5% bypass on Cursor/Claude Code/Codex Desktop</td>
+<td>Position reversal</td>
+<td>Peer-reviewed evidence for failure; industry response TBD</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="vocabulary"><h2 data-section="07">Vocabulary &amp; Framing Drift</h2>
+<p>New terminology entering discourse this cycle (union of E20 vocabulary_new):</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>First appeared</th>
+<th>Frequency trend</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExploitGym</td>
+<td>E20</td>
+<td>Single-appearance (HF postmortem)</td>
+<td>OpenAI internal cyber-cap eval framework naming</td>
+</tr>
+<tr>
+<td>IssueTrojanBench</td>
+<td>E20</td>
+<td>Single-appearance (arXiv)</td>
+<td>New guardrail-bypass benchmark</td>
+</tr>
+<tr>
+<td>open-weights escalation</td>
+<td>E19-E20</td>
+<td>Rising (Lambert framing spreading)</td>
+<td>Nathan Lambert label; consolidates the China-lab arc</td>
+</tr>
+<tr>
+<td>stateless core</td>
+<td>E20</td>
+<td>Rising (MCP spec + Register + Reddit)</td>
+<td>MCP protocol vocabulary</td>
+</tr>
+<tr>
+<td>Composer 2.5</td>
+<td>E19-E20</td>
+<td>Steady</td>
+<td>Cursor value-tier model</td>
+</tr>
+<tr>
+<td>Premium seat</td>
+<td>E20</td>
+<td>Rising</td>
+<td>Cursor "5× usage 3× cost" tier</td>
+</tr>
+<tr>
+<td>Autopilots</td>
+<td>E20</td>
+<td>New</td>
+<td>Microsoft unified-Copilot roadmap language</td>
+</tr>
+<tr>
+<td>sovereign AI playbook</td>
+<td>E20</td>
+<td>Single-appearance (Rest of World)</td>
+<td>Geopolitical framing</td>
+</tr>
+<tr>
+<td>seniority-biased technological change</td>
+<td>E20</td>
+<td>Rising (SQ Magazine + Anthropic Economic Index)</td>
+<td>Labor-market framing</td>
+</tr>
+<tr>
+<td>agentic fatigue</td>
+<td>E19-E20</td>
+<td>Rising (ExplainX + O'Reilly + AIFounders)</td>
+<td>Sub-form of cognitive debt</td>
+</tr>
+<tr>
+<td>sqliteai/waste</td>
+<td>E20</td>
+<td>Single-appearance (Tim Kellogg BSK)</td>
+<td>Consumer-hardware Kimi K3 inference</td>
+</tr>
+<tr>
+<td>cognitive debt</td>
+<td>E13 onward</td>
+<td>Sustained rise — mainstreamed enterprise-vendor content in E20</td>
+<td>Enterprise buyer vocabulary</td>
+</tr>
+<tr>
+<td>tokenmaxxing</td>
+<td>E18-E19</td>
+<td>Steady</td>
+<td>Practitioner arbitrage</td>
+</tr>
+</tbody>
+</table>
+<p>Framing drift note: E20's "seniority-biased technological change" language (SQ Magazine + Anthropic Economic Index positioning) is the first appearance of a labor-economics-technical vocabulary crossover in program history. Expect broader adoption across HN threads, arXiv workforce-econ papers, and Anthropic Q3 Economic Index refresh.</p>
+
+</section><section id="gaps"><h2 data-section="08">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>X/Twitter tier coverage regressed from 18 (E19) to 0 (E20)</strong> — Grok cross-LLM not exercised. Structural coverage gap if not remediated in E21.</li>
+<li><strong>Mastodon coverage remains thin</strong> — retrieval method inadequate for the fediverse; unchanged since E17.</li>
+<li><strong>Podcasts (Tier 2 manual) not exercised in E17-E20</strong> — four consecutive cycles without any podcast items.</li>
+<li><strong>Kimi K3 license terms</strong> — no independent legal read yet; VentureBeat's "'open' with a caveat" is the only in-depth analysis and it's not a legal source.</li>
+<li><strong>9 Reddit items in E20 remain Provisional</strong> — cross-LLM ChatGPT recovery pending direct-URL re-verification. <code>opaque-metering-friction</code> heavily-dependent on this Provisional set.</li>
+<li><strong>METR HCAST methodology PDF (Tier 3 manual)</strong> — not fetched E19 or E20; would deepen <code>agentic-threat-actor</code> and <code>agent-attack-surface</code>.</li>
+<li><strong>YouTube coverage dropped from 3 (E19) to 1 (E20)</strong> and the 1 item is channel-level (no specific video URL) — single-source warning.</li>
+<li><strong>Signal store not attached in E17-E20 runs</strong> — v1.17 bootstrap step falls back to v1.16 behavior. Signal continuity depends on analyst pattern-matching against prior-week summary.</li>
+</ul>
+
+</section><section id="watch"><h2 data-section="09">Watch List for Next Extraction</h2>
+<ol>
+<li><strong>Anthropic Opus 5 post-mortem or quality-regression response</strong> (likely mid-August). Would materially update <code>opus5-launch-regression</code> and <code>anthropic-trust-arc</code>.</li>
+<li><strong>Anthropic public statement on opaque metering / usage transparency</strong> — OpenAI acknowledged and fixed the same class of issue in GPT-5.6 Sol; Anthropic silence continues to compound <code>opaque-metering-friction</code>.</li>
+<li><strong>OpenAI + Anthropic + Google positioning on the Open Weights letter</strong> — currently absent from 230+ signatories. Explicit statement (either support or opposition) would be <code>open-weights-us-alignment</code> inflection.</li>
+<li><strong>IssueTrojanBench extension to VS Code + JetBrains + Copilot in-editor agents</strong> — natural next-step publication; would extend <code>agent-attack-surface</code> to full IDE spectrum.</li>
+<li><strong>Chinese-lab commercial-tier pricing/perf response to OpenAI Luna 80% cut</strong> — DeepSeek + Kimi + Alibaba (Qwen) responses would confirm <code>open-weights-us-alignment</code> as durable competitive dynamic.</li>
+<li><strong>Cursor MCP 2026-07-28 stateless-spec support upgrade path</strong> — enterprise agent-gateway maturity confirmation.</li>
+<li><strong>Grok cross-LLM exercise for X/Twitter recovery</strong> — structural coverage-gap remediation.</li>
+<li><strong>BLS Sept 2026 labor-market data + Anthropic Q3 2026 Economic Index refresh</strong> — <code>junior-dev-collapse</code> corroboration.</li>
+<li><strong>Additional autonomous-agent incidents against non-tech targets</strong> — financial services, healthcare, or utility infrastructure would confirm <code>agentic-threat-actor</code> as cross-vertical.</li>
+</ol>
+
+</section><section id="metadata"><h2 data-section="10">Longitudinal Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitudinal prompt</td>
+<td>v1.3</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-08-03 10:20 UTC</td>
+</tr>
+<tr>
+<td>Input mode</td>
+<td>summaries</td>
+</tr>
+<tr>
+<td>Extractions covered</td>
+<td>1 through 20 (all summaries present)</td>
+</tr>
+<tr>
+<td>Date range</td>
+<td>2026-03-20 – 2026-08-03 (136 days)</td>
+</tr>
+<tr>
+<td>Total tagged items</td>
+<td>~1,069 cumulative</td>
+</tr>
+<tr>
+<td>Tracked signals</td>
+<td>17 active (10 Promoted, 5 Tracking-H, 2 Tracking-M)</td>
+</tr>
+<tr>
+<td>NEW signals this window</td>
+<td>opus5-launch-regression, open-weights-us-alignment, mcp-protocol-maturation, agent-attack-surface, opaque-metering-friction, junior-dev-collapse</td>
+</tr>
+<tr>
+<td>Escalated signals this window</td>
+<td>agentic-threat-actor (Tracking-M → Tracking-H)</td>
+</tr>
+<tr>
+<td>Confirmed trends</td>
+<td>cost-runaway (H), ai-burnout-paradox (H), agentic-threat-actor (H, escalated), agent-attack-surface (H, new), mcp-protocol-maturation (H, new)</td>
+</tr>
+<tr>
+<td>Resolved contradictions</td>
+<td>"Autonomous AI agents attacking production infrastructure are theoretical" → RESOLVED (HF incident); "Guardrails on major coding-agent tools are effective against injection attacks" → RESOLVED (IssueTrojanBench 66.5% bypass)</td>
+</tr>
+<tr>
+<td>Newly contested claims</td>
+<td>"Anthropic is the principled AI-safety leader" (Open Weights letter absence + export-control lift + Opus 5 safety fine print); "AI coding cost/pricing is predictable and transparent" (Anthropic opaque-metering vs OpenAI transparency-fix precedent)</td>
+</tr>
+</tbody>
+</table></section>
+<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid #2a3441;text-align:center;color:#7a8694;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">
+<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 19 &mdash; Generated 2026-07-20</p>
+<p>Longitudinal Engine v1.3 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2 (blue accent)</p>
+</footer>
+</div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

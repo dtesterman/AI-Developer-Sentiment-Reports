@@ -326,3 +326,40 @@ labels:
     one_line: "Moonshot Kimi K3 (2.8T params, 1M context) claims Arena coding parity with Anthropic's Fable 5 — surfaces via YouTube, cross-referenced on Reddit as economic hedge."
     sentiment_override: mx
     retired_alias: [open-weight-china-advantage]
+
+  # === E20 new signals (2026-08-03) ===
+  - signal_id: opus5-launch-regression
+    label: "Opus 5 launch-week quality complaints"
+    one_line: "Within 72 hours of Anthropic's Opus 5 launch, HN and Reddit filled with 'really bad model' and 'stream-of-consciousness taxing' threads — vendor status page confirmed elevated errors."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: open-weights-us-alignment
+    label: "US regulatory-alignment on open weights"
+    one_line: "Nvidia + 230 signatories publish the Open Weights and American AI Leadership letter; OpenAI, Anthropic, and Google notably absent."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: mcp-protocol-maturation
+    label: "MCP stateless-core spec ships"
+    one_line: "The 2026-07-28 MCP spec removes stateful handshakes; AWS + GitHub ship same-day/next-day support — enterprise agent-gateways treat it as a hard milestone."
+    sentiment_override: sp
+    retired_alias: []
+
+  - signal_id: agent-attack-surface
+    label: "Agent attack surface widens beyond MCP"
+    one_line: "IssueTrojanBench, CSA's 74-CVE surge, and the Hugging Face incident converge — agent guardrails fail on 66.5% of malicious GitHub-issue prompts."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: opaque-metering-friction
+    label: "Opaque metering drives tool switching"
+    one_line: "Reddit reports of usage limits consumed without use and $60 Cursor plans burning out in 20 days — Anthropic silence tracks vs OpenAI's public metering fix."
+    sentiment_override: cn
+    retired_alias: []
+
+  - signal_id: junior-dev-collapse
+    label: "Junior-dev hiring collapse"
+    one_line: "Developers aged 22–25 employment down ~20% from 2022 peak; junior/graduate share of IT employment fell from 15% to 7% — 'seniority-biased technological change.'"
+    sentiment_override: sn
+    retired_alias: []
