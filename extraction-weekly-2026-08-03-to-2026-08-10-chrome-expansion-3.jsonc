@@ -1,0 +1,417 @@
+// AI Dev Sentiment Extraction — Chrome Expansion Supplement #3 (final gap fill)
+// Companion to:
+//   - extraction-weekly-2026-08-03-to-2026-08-10.jsonc (base run)
+//   - extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion.jsonc (supplement #1: Bluesky + Grok/X + ChatGPT/Reddit)
+//   - extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion-2.jsonc (supplement #2: YouTube + Mastodon Claude Code/vibe coding)
+// Generated: 2026-08-10
+// Purpose: Close remaining gaps — additional YouTube channels, additional Mastodon queries (Cursor, MCP, AI coding, Copilot),
+//          and the previously-unfilled MCP CVE search.
+{
+  "expansion_metadata": {
+    "companion_to": [
+      "extraction-weekly-2026-08-03-to-2026-08-10.jsonc",
+      "extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion.jsonc",
+      "extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion-2.jsonc"
+    ],
+    "engine_version": "v1.6",
+    "config_version": "v1.8",
+    "llm_target": "Claude",
+    "generated": "2026-08-10",
+    "channels_used": [
+      {
+        "channel": "Claude in Chrome — YouTube channel /videos DOM read (remaining channels)",
+        "channels_scanned": ["@HTMLAllTheThings", "@theseriouscto", "@BricksBytes"],
+        "verification_status": "Trusted — direct DOM read",
+        "items_recovered": 1,
+        "outcome_notes": "The Serious CTO in-window uploads (3) were all off-topic career/management content, not AI-coding-specific. Bricks & Bytes (former 'Bricks Bucks Bytes') is confirmed as AEC-technology-focused, not software-dev — deprecate from config Tier 1.5 YouTube list."
+      },
+      {
+        "channel": "Claude in Chrome — Mastodon logged-in full-text search (remaining queries)",
+        "queries_run": ["\"Cursor\" AI", "MCP coding", "\"AI coding\"", "Copilot developer"],
+        "verification_status": "Trusted — direct DOM read",
+        "items_recovered": 11
+      }
+    ]
+  },
+
+  "tier1_5_expansion_youtube_final": [
+    {
+      "platform": "YouTube",
+      "channel": "HTML All The Things (@HTMLAllTheThings)",
+      "url": "https://www.youtube.com/@HTMLAllTheThings/videos",
+      "title": "Can Anthropic Compete With Meta's $100M AI Job Offers?",
+      "author": "HTML All The Things (Matt Lawrence + Mike Karan)",
+      "author_type": "Practitioner",
+      "date": "2026-08-08",
+      "duration": "18:45",
+      "views": 41,
+      "batch": "A",
+      "topic": "Hiring",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Direct discussion of Meta's $100M AI-job offers and Anthropic's ability to compete for talent",
+        "Frames talent-war economics against the junior-employment-decline story"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @HTMLAllTheThings/videos"
+    }
+    // [NO RESULTS in window for @theseriouscto: 3 in-window uploads (Managing/Framework/Toxic Boss) are all career/management topics, not AI coding tools]
+    // [NO RESULTS in window for Bricks & Bytes: channel is AEC-technology focused, not software development — deprecate from config]
+  ],
+
+  "tier1_expansion_mastodon_final": [
+
+    // ===== "Cursor" AI query =====
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Cursor%22+AI",
+      "handle": "@mzunain",
+      "post_reference": "Muhammad Zulqarnain, 8h ago (retrieved 2026-08-10)",
+      "title": "Comparative verdict on 6 AI coding assistants — Cursor best overall, Claude best reasoning",
+      "author": "Muhammad Zulqarnain",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "E",
+      "topic": "Productivity",
+      "tool": "General AI",
+      "sentiment": "Positive",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Personal ranking of 6 assistants: Cursor (complex refactors) / GitHub Copilot (autocomplete, weak chat) / Claude-in-editor (reasoning + architecture) / Tabnine (privacy) / Codeium (free tier) / Supermaven (speed)",
+        "Daily stack: Cursor + Claude — self-reported 2-3x productivity multiplier"
+      ],
+      "quote": "I use Cursor + Claude daily. Productivity is 2-3x vs without.",
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Cursor\" AI')"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Cursor%22+AI",
+      "handle": "@reddxf",
+      "post_reference": "Redd XF, 8h ago (retrieved 2026-08-10)",
+      "title": "Security audit of AI-built apps (Bolt, Cursor, Lovable): hardcoded keys, disabled CSRF, no rate limits",
+      "author": "Redd XF",
+      "author_type": "Researcher",
+      "date": "2026-08-10",
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "General AI",
+      "sentiment": "Negative",
+      "evidence_type": "Study",
+      "key_points": [
+        "Audited apps built with Bolt, Cursor, and Lovable",
+        "Every one had hardcoded API keys, disabled CSRF, expensive queries, no rate limiting",
+        "Founders can't read their own code — literacy gap enables the failure",
+        "Built SecondRead as plain-English audit for non-technical founders"
+      ],
+      "quote": "I audited apps built with AI (Bolt, Cursor, Lovable). Every one had hardcoded API keys, disabled CSRF, expensive queries, no rate limiting. Founders can't read their own code.",
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Cursor\" AI')",
+      "external_link": "https://secondread.me"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Cursor%22+AI",
+      "handle": "@itskamrankhan@flipboard.social",
+      "post_reference": "Kamran Khan, 12h ago (retrieved 2026-08-10)",
+      "title": "Poll: 'If you had to build your next project without writing code manually, what would you use?'",
+      "author": "Kamran Khan",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "E",
+      "topic": "Productivity",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Poll with options: Cursor / Claude Code / Codex / Replit / Lovable",
+        "Signal that 'build without manually writing code' is a normalized decision frame"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Cursor\" AI')"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Cursor%22+AI",
+      "handle": "@sipirtu",
+      "post_reference": "Sipirtu, 13h ago (retrieved 2026-08-10)",
+      "title": "Cursor recruiting elite AI engineers with unconventional tactics",
+      "author": "Sipirtu",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "A",
+      "topic": "Hiring",
+      "tool": "Cursor",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Cursor head of talent: top candidates require more than high pay",
+        "Reinforces Meta $100M offers pattern from Anthropic-vs-Meta thread — talent war extends to Cursor"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Cursor\" AI')"
+    },
+
+    // ===== MCP coding query — including the MCP CVE we've been hunting =====
+    {
+      "platform": "Mastodon",
+      "url": "https://euvd.enisa.europa.eu/vulnerability/EUVD-2026-54852",
+      "handle": "@euvdbot (via Mastodon repost)",
+      "post_reference": "EUVD Bot alert (posted 2026-08-10)",
+      "title": "MCP CVE: EUVD-2026-54852 — roo-code-memory-bank-mcp-server (CVSS 4.8)",
+      "author": "ENISA EUVD (European Union Vulnerability Database)",
+      "author_type": "Vendor",
+      "date": "2026-08-09",
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "MCP",
+      "sentiment": "Negative",
+      "evidence_type": "Incident",
+      "key_points": [
+        "First in-window MCP-specific CVE surfaced this run",
+        "CVSS v3.1 score: 4.8/10 (Medium)",
+        "Product: roo-code-memory-bank-mcp-server (vendor: IncomeStreamSurfer)",
+        "Affected functions: readMemoryBankFile / appendMemoryBankEntry",
+        "Vulnerable commit: up to 9dcb2fb5e6b65a35ac1983885a6d4e5621a0081e",
+        "This directly closes the base-run gap 'MCP CVE / security vulnerabilities in-window'"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('MCP coding') surfaced EUVD Bot alert; verified against European Union Vulnerability Database URL"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=MCP+coding",
+      "handle": "@smeldr",
+      "post_reference": "Smeldr, 6h ago (retrieved 2026-08-10)",
+      "title": "Smeldr adds MCP Admin tools for database-backed per-path SEO override",
+      "author": "Smeldr",
+      "author_type": "Vendor",
+      "date": "2026-08-10",
+      "batch": "E",
+      "topic": "Architectural Philosophy",
+      "tool": "MCP",
+      "sentiment": "Positive",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Four MCP Admin tools expose new page-meta table to operators",
+        "MCP integration slotted into existing Head fallback chain without breaking existing code",
+        "Concrete example of MCP being adopted as vendor admin surface"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('MCP coding')",
+      "external_link": "https://smeldr.dev/devlog/page-meta-se"
+    },
+
+    // ===== "AI coding" query =====
+    {
+      "platform": "Mastodon",
+      "url": "https://calnewport.com/on-ai-coding-and-its-discontents/",
+      "handle": "@lkanies@hachyderm.io (Luke Kanies boosting Cal Newport)",
+      "post_reference": "Luke Kanies, 1h ago boosting Cal Newport 5h ago (retrieved 2026-08-10)",
+      "title": "On AI Coding and Its Discontents — Cal Newport",
+      "author": "Cal Newport",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "B",
+      "topic": "Hype vs Reality",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Cal Newport (Deep Work / A World Without Email author) enters AI-coding discourse",
+        "Opens with a January note from a senior Silicon Valley software engineer",
+        "Cognitive-load-focused framing — likely to become an anchor citation for the deskilling/cognitive-debt thread",
+        "Boosted into the developer Fediverse by Luke Kanies (founder of Puppet)"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"AI coding\"')"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22AI+coding%22",
+      "handle": "@undercodenews",
+      "post_reference": "Undercode News, 1h ago (retrieved 2026-08-10)",
+      "title": "AI Is Building Software at Machine Speed, But Security Is Still Moving at Human Speed",
+      "author": "Undercode News",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "General AI",
+      "sentiment": "Negative",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Frames innovation-vs-security asymmetry — AI generates functions/tests/refactors in minutes, security processes remain human-paced",
+        "Complements Redd XF's Bolt/Cursor/Lovable audit finding"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"AI coding\"')"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22AI+coding%22",
+      "handle": "@nndflip@flipboard.social",
+      "post_reference": "ND (Flipboard), 1h ago (retrieved 2026-08-10)",
+      "title": "DeepSeek Lowers AI Coding to $0.14 per Million Tokens",
+      "author": "ND (via Geeky Gadgets)",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "H",
+      "topic": "Pricing/Cost",
+      "tool": "General AI",
+      "sentiment": "Mixed",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "DeepSeek pricing drops to $0.14 per million tokens for AI coding",
+        "Article notes 'users face hidden ex...' — likely hidden costs / caveats",
+        "Sits directly in the FinOps cluster with Meta Muse Code 10x, r/ClaudeCode $90/day cap, Syntax FM black-market tokens"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"AI coding\"')",
+      "external_link": "https://geeky-gadgets.com/deepseek-ai"
+    },
+
+    // ===== Copilot developer query =====
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=Copilot+developer",
+      "handle": "@mastokukei@social.josko.org",
+      "post_reference": "Masto.kukei.eu mastobot summary, 6h ago (retrieved 2026-08-10)",
+      "title": "Mastobot #programmingAtKukei summary: Claude Code auto-mode, Copilot, Rust/Django LLM policies, OpenJDK bans",
+      "author": "Masto.kukei.eu (bot)",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "F",
+      "topic": "Team dynamics",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Bot-generated topical summary of Fediverse #programming category",
+        "Names 'Django LLM policies' — new lead not yet surfaced elsewhere in this run",
+        "Names 'AI-generated code bans (OpenJDK, Rust)' — extends the Rust LLM policy cluster to OpenJDK — new lead"
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('Copilot developer')",
+      "notes": "Bot summary — treat named policies (Django, OpenJDK) as leads-to-verify rather than confirmed facts."
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=Copilot+developer",
+      "handle": "@mastokukei@social.josko.org",
+      "post_reference": "Masto.kukei.eu mastobot summary #2, 6h ago (retrieved 2026-08-10)",
+      "title": "Mastobot #technologyAtKukei summary: AI agents escaping containment, code quality, industry adoption",
+      "author": "Masto.kukei.eu (bot)",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Bot-generated topical summary: 'AI agents and cybersecurity risks: AI agents escaping containment (OpenAI, Anthropic, Meta), hacking systems, and ethical concerns'",
+        "Independent corroboration of the accidental-cyberattacks cluster from a Fediverse-summarization perspective",
+        "'AI in software development: Claude Code auto mode, GitHub Copilot, AI-generated code quality, and industry adoption' — matches the two dominant story clusters of the week"
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('Copilot developer')"
+    }
+  ],
+
+  "updated_emerging_patterns_after_expansion_3": [
+    {
+      "pattern": "MCP CVE cluster is now on the board — first in-window MCP-specific CVE surfaced",
+      "sources_added": [
+        "https://euvd.enisa.europa.eu/vulnerability/EUVD-2026-54852 (roo-code-memory-bank-mcp-server, CVSS 4.8, disclosed 2026-08-09)"
+      ],
+      "signal_strength": "Weak (single CVE this week — but presence matters)",
+      "notes": "Closes a persistent gap across the base run and both prior expansions. Combined with Manifold Security's Cursor CLI sandbox bypass (X, Aug 10), Redd XF's Bolt/Cursor/Lovable audit (Mastodon, Aug 10), and steganography-attack finding (X, Aug 10), the security perimeter of the AI coding stack is under active concurrent probing. Watch EUVD, GitHub Security Advisories, and MITRE for follow-on MCP CVEs."
+    },
+    {
+      "pattern": "Vibe-coded app security failures are being systematically documented — reviewer/auditor tooling emerging",
+      "sources_added": [
+        "https://mastodon.social/@reddxf (Bolt/Cursor/Lovable audit — 'founders can't read their own code')",
+        "https://secondread.me (SecondRead — plain-English audit tool for non-technical founders)",
+        "@undercodenews 'security still moving at human speed' framing"
+      ],
+      "signal_strength": "Strong (upgraded from Weak)",
+      "notes": "Concrete auditor findings replace theoretical vibe-coding-security concerns: every app in one auditor's sample had hardcoded API keys, disabled CSRF, expensive queries, and no rate limiting. Reverse-tooling response is also emerging (SecondRead audit-for-founders, isitvibecoded.com detector). This is the second week where the vibe-coding-security narrative meaningfully shifts from prediction to documentation."
+    },
+    {
+      "pattern": "AI-coding pricing continues to drop — DeepSeek $0.14/1M tokens joins the FinOps thread",
+      "sources_added": [
+        "DeepSeek $0.14/M-tokens announcement (Mastodon Aug 10 via Geeky Gadgets)"
+      ],
+      "signal_strength": "Strong",
+      "notes": "FinOps cluster now has: (1) r/ClaudeCode enterprise $90/day per-dev cap; (2) Meta Muse Code 10x-cheaper contributor tier; (3) Cursor Router cost-adaptive routing; (4) Syntax FM black-market AI-token episode; (5) DeepSeek $0.14/M tokens pricing pressure. Five distinct facets of the FinOps story this week."
+    },
+    {
+      "pattern": "Talent-war economics: Anthropic-vs-Meta $100M offers → Cursor unconventional recruiting",
+      "sources_added": [
+        "HTML All The Things 'Can Anthropic Compete With Meta's $100M AI Job Offers?' (YouTube Aug 8)",
+        "Sipirtu 'Cursor uses unconventional tactics to recruit elite AI engineers' (Mastodon Aug 10)"
+      ],
+      "signal_strength": "Moderate",
+      "notes": "Parallel to the junior-decline story: at the top end, the AI-coding talent war is escalating. Two-tier labor market emerging where junior employment declines (Forbes Aug 9, r/ClaudeCode AI-cheating threads) while elite frontier-model engineers command $100M packages."
+    },
+    {
+      "pattern": "Cal Newport enters the AI-coding discourse — deskilling/cognitive-load framing about to gain mainstream anchor",
+      "sources_added": [
+        "https://calnewport.com/on-ai-coding-and-its-discontents/ (via Luke Kanies Mastodon boost, Aug 10)"
+      ],
+      "signal_strength": "Moderate (single source, but high-influence author)",
+      "notes": "Cal Newport (Georgetown CS + Deep Work / A World Without Email) writing 'On AI Coding and Its Discontents' is a mainstream-anchor moment for the cognitive-debt/deskilling thread that has been building all week through Reddit (r/cscareerquestions 'exhausting and soulless'), Bluesky (Levison automation-mistakes-faster), Mastodon (Fossheim reviewer-cost), and Cal-Newport-adjacent theorists. Boosted by Luke Kanies (Puppet founder) into the developer Fediverse — expect crossover into HN and dev-YouTube channels next week."
+    },
+    {
+      "pattern": "OpenJDK AI-generated-code ban may extend the Rust LLM policy cluster (lead-to-verify)",
+      "sources_added": [
+        "Masto.kukei.eu bot summary naming 'AI-generated code bans (OpenJDK, Rust)' (Mastodon Aug 10)"
+      ],
+      "signal_strength": "Weak — lead only (bot-generated, needs primary-source verification)",
+      "notes": "Flag for next extraction run: verify whether OpenJDK has formally adopted an AI-generated-code policy following Rust's Aug 5 announcement. Also flagged: 'Django LLM policies' from the same bot summary. If confirmed, upgrades the Rust ecosystem-governance pattern to a multi-project foundation-scale trend."
+    }
+  ],
+
+  "final_totals_after_all_three_expansions": {
+    "base_run_items": 27,
+    "chrome_expansion_1_items": 41,
+    "chrome_expansion_2_items": 18,
+    "chrome_expansion_3_items": 13,
+    "combined_total": 99,
+    "still_under_100_limit": true,
+    "items_by_platform_combined": {
+      "Blog": 19,
+      "Hacker News": 3,
+      "Bluesky": 8,
+      "X/Twitter": 20,
+      "Reddit": 10,
+      "YouTube": 11,
+      "Mastodon": 19
+    },
+    "items_by_batch_combined": {
+      "A_JobImpactHiring": 6,
+      "B_QualityProductivityTrust": 10,
+      "C_LearningSkills": 1,
+      "D_BurnoutCognitiveLoad": 3,
+      "E_SpecificTools": 24,
+      "F_EnterprisePolicy": 15,
+      "G_IncidentsPostmortems": 21,
+      "H_PricingCost": 12,
+      "I_ArchitecturalPhilosophy": 3,
+      "cross_batch": 4
+    }
+  },
+
+  "remaining_leads_for_next_run": [
+    "OpenJDK AI-generated-code policy (bot-mentioned, unverified)",
+    "Django LLM policy (bot-mentioned, unverified)",
+    "SecondRead audit tool for non-technical founders — track adoption",
+    "isitvibecoded.com reverse-detection tool — track adoption",
+    "Follow-on MCP CVEs — monitor EUVD, GitHub Security Advisories, MITRE",
+    "Cal Newport 'On AI Coding and Its Discontents' — track responses/citations in coming week",
+    "DeepSeek $0.14/M-token 'hidden ex...' article (truncated in search snippet — resolve for hidden-cost specifics)"
+  ]
+}

@@ -1,0 +1,532 @@
+// AI Dev Sentiment Extraction — Chrome Expansion Supplement #2 (YouTube + Mastodon)
+// Companion to:
+//   - extraction-weekly-2026-08-03-to-2026-08-10.jsonc (base run)
+//   - extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion.jsonc (supplement #1: Bluesky + Grok/X + ChatGPT/Reddit)
+// Generated: 2026-08-10
+// Purpose: Fill YouTube (Tier 1.5) and Mastodon (Tier 1) gaps.
+{
+  "expansion_metadata": {
+    "companion_to": [
+      "extraction-weekly-2026-08-03-to-2026-08-10.jsonc",
+      "extraction-weekly-2026-08-03-to-2026-08-10-chrome-expansion.jsonc"
+    ],
+    "engine_version": "v1.6",
+    "config_version": "v1.8",
+    "llm_target": "Claude",
+    "generated": "2026-08-10",
+    "channels_used": [
+      {
+        "channel": "Gemini (cross-LLM escalation attempt — YouTube native)",
+        "identity": "logged-in Gemini session (darrell.testerman@gmail.com)",
+        "outcome": "Gemini declined the direct search ('I do not have live access to YouTube's search API'), but its channel-discovery card display leaked ~20 candidate video titles from the target channels. Cross-verified each via direct YouTube DOM read.",
+        "items_recovered_via_gemini_alone": 0
+      },
+      {
+        "channel": "Claude in Chrome — direct navigation to YouTube channel /videos pages (fallback after Gemini refusal)",
+        "identity": "logged-in YouTube (Darrell Testerman)",
+        "verification_status": "Trusted — direct DOM read of channel Videos tab with 'N days ago' relative timestamps",
+        "channels_scanned": ["@Fireship", "@t3dotgg (Theo)", "@ThePrimeTimeagen", "@syntaxfm"],
+        "channels_not_scanned_this_pass": ["@HTMLAllTheThings", "Bricks Bucks Bytes", "The Serious CTO"],
+        "items_recovered": 10
+      },
+      {
+        "channel": "Claude in Chrome — Mastodon logged-in full-text search",
+        "identity": "logged-in mastodon.social (@jdt_tes)",
+        "verification_status": "Trusted — direct DOM read",
+        "queries_run": ["\"Claude Code\"", "\"vibe coding\""],
+        "queries_not_run_this_pass": ["MCP", "\"AI coding\"", "Cursor", "\"cognitive debt\""],
+        "items_recovered": 8
+      }
+    ]
+  },
+
+  "tier1_5_expansion_youtube": [
+
+    // ===== Theo / t3.gg =====
+    {
+      "platform": "YouTube",
+      "channel": "Theo - t3.gg (@t3dotgg)",
+      "url": "https://www.youtube.com/watch?v=gVfEtktkvnE",
+      "title": "Did Anthropic finally fix MCP?",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "date": "2026-08-09",
+      "duration": "18:17",
+      "views": 78000,
+      "batch": "E",
+      "topic": "Architectural Philosophy",
+      "tool": "MCP",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Extended analysis of Anthropic's latest MCP changes",
+        "Frames whether the previous MCP pain points have finally been addressed"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @t3dotgg/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "Theo - t3.gg (@t3dotgg)",
+      "url": "https://www.youtube.com/watch?v=-Gj0-EIyx6g",
+      "title": "Meta's Claude Code clone is INSANELY cheap",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "date": "2026-08-07",
+      "duration": "44:42",
+      "views": 131000,
+      "batch": "H",
+      "topic": "Pricing/Cost",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Practitioner review of Meta's Muse Code (Claude Code competitor)",
+        "Central framing: pricing is aggressive — corroborates X reports of 10x-cheaper contributor tier"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @t3dotgg/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "Theo - t3.gg (@t3dotgg)",
+      "url": "https://www.youtube.com/watch?v=zqOrriq20Tc",
+      "title": "Apple Changed...",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "date": "2026-08-06",
+      "duration": "58:40",
+      "views": 120000,
+      "batch": "F",
+      "topic": "Hype vs Reality",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — direct navigation to @t3dotgg/videos",
+      "notes": "Title is vague from Videos-tab metadata alone; AI-coding relevance not verifiable without opening video description"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "Theo - t3.gg (@t3dotgg)",
+      "url": "https://www.youtube.com/watch?v=TKlOCjLMNtw",
+      "title": "Fable Broke My App and Couldn't Fix It",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "date": "2026-08-05",
+      "duration": "27:32",
+      "views": 101000,
+      "batch": "B",
+      "topic": "Code quality",
+      "tool": "General AI",
+      "sentiment": "Negative",
+      "evidence_type": "Anecdote",
+      "key_points": ["Practitioner demo where Anthropic Fable 5 broke an app and could not fix its own regression"],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @t3dotgg/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "Theo - t3.gg (@t3dotgg)",
+      "url": "https://www.youtube.com/watch?v=XFSwfwiM8nk",
+      "title": "Linus Entered the AI Debate",
+      "author": "Theo Browne",
+      "author_type": "Practitioner",
+      "date": "2026-08-03",
+      "duration": "23:38",
+      "views": 92000,
+      "batch": "F",
+      "topic": "Team dynamics",
+      "tool": "General AI",
+      "sentiment": "Mixed",
+      "evidence_type": "Opinion",
+      "key_points": ["Coverage of Linus Torvalds entering the AI-in-open-source debate (adjacent to Rust LLM policy news cycle)"],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @t3dotgg/videos"
+    },
+
+    // ===== ThePrimeTime (ThePrimeagen) =====
+    {
+      "platform": "YouTube",
+      "channel": "The PrimeTime (@ThePrimeTimeagen)",
+      "url": "https://www.youtube.com/watch?v=bKOYgbgACVo",
+      "title": "\"We also got hacked\" - Dario",
+      "author": "ThePrimeagen (Michael Paulson)",
+      "author_type": "Practitioner",
+      "date": "2026-08-05",
+      "duration": "19:51",
+      "views": 257000,
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "Claude",
+      "sentiment": "Negative",
+      "evidence_type": "Incident",
+      "key_points": [
+        "Reaction to Anthropic's Dario Amodei disclosure that Claude models also had accidental attacks",
+        "Sits directly in the accidental-cyberattacks cluster",
+        "High engagement: 257K views"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @ThePrimeTimeagen/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "The PrimeTime (@ThePrimeTimeagen)",
+      "url": "https://www.youtube.com/watch?v=4nJ2tEPD4-k",
+      "title": "People Are Mad They're Told to Learn",
+      "author": "ThePrimeagen (Michael Paulson)",
+      "author_type": "Practitioner",
+      "date": "2026-08-03",
+      "duration": "11:32",
+      "views": 299000,
+      "batch": "C",
+      "topic": "Learning",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Reaction to Mitchell Hashimoto tweet about developers being told to learn AI tooling",
+        "Adjacent to deskilling / cognitive-debt discourse",
+        "High engagement: 299K views"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @ThePrimeTimeagen/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "The PrimeTime (@ThePrimeTimeagen)",
+      "url": "https://www.youtube.com/watch?v=xNcrfveKlDU",
+      "title": "10% of the world computers were hacked",
+      "author": "ThePrimeagen (Michael Paulson)",
+      "author_type": "Practitioner",
+      "date": "2026-08-07",
+      "duration": "17:15",
+      "views": 186000,
+      "batch": "G",
+      "topic": "Incidents",
+      "tool": "General AI",
+      "sentiment": "Negative",
+      "evidence_type": "Opinion",
+      "confidence": "Low",
+      "retrieved_via": "Claude in Chrome — direct navigation to @ThePrimeTimeagen/videos",
+      "notes": "Title suggests general hack coverage rather than AI-coding-specific; AI-relevance not verifiable from Videos-tab metadata. Included provisionally given high engagement."
+    },
+
+    // ===== Syntax FM =====
+    {
+      "platform": "YouTube",
+      "channel": "Syntax (@syntaxfm)",
+      "url": "https://www.youtube.com/watch?v=09UELaUhPEw",
+      "title": "I bought Black Market AI Tokens on Chinese Amazon",
+      "author": "Syntax (Wes Bos + Scott Tolinski)",
+      "author_type": "Practitioner",
+      "date": "2026-08-07",
+      "duration": "22:33",
+      "views": 89000,
+      "batch": "H",
+      "topic": "Pricing/Cost",
+      "tool": "General AI",
+      "sentiment": "Mixed",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Practitioner experiment purchasing informal/grey-market AI tokens",
+        "Highly relevant to FinOps / AI coding pricing theme"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — direct navigation to @syntaxfm/videos"
+    },
+    {
+      "platform": "YouTube",
+      "channel": "Syntax (@syntaxfm)",
+      "url": "https://www.youtube.com/watch?v=Bo5Gw23jcBU",
+      "title": "The Rise of the Design Engineer",
+      "author": "Syntax (Wes Bos + Scott Tolinski)",
+      "author_type": "Practitioner",
+      "date": "2026-08-05",
+      "duration": "1:03:21",
+      "views": 15000,
+      "batch": "A",
+      "topic": "Junior/Senior devs",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": ["Job-role evolution episode — design engineer as emergent hybrid role in AI-coding era"],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — direct navigation to @syntaxfm/videos"
+    },
+
+    // ===== Fireship =====
+    // Fireship had only one in-window upload (Aug 6 "The safest way to store Bitcoin was just hacked...")
+    // which reads as crypto/wallet-security rather than AI coding tools per se. Excluded from tier1.5.
+
+    // ===== NO RESULTS =====
+    // [NO RESULTS in window 2026-08-03 → 2026-08-10 for: @HTMLAllTheThings, Bricks Bucks Bytes, The Serious CTO — channels not scanned this pass]
+  ],
+
+  "tier1_expansion_mastodon": [
+
+    // ===== "Claude Code" query =====
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/@mlevison@hachyderm.io",
+      "handle": "@mlevison@hachyderm.io",
+      "post_reference": "Mark Levison, 55m ago (retrieved 2026-08-10)",
+      "title": "Automating course-prep emails with Claude Code — 'Making mistakes faster is not winning'",
+      "author": "Mark Levison (Agile Pain Relief)",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "B",
+      "topic": "Trust",
+      "tool": "Claude",
+      "sentiment": "Negative",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Automated course-prep emails with Claude Code, reviewed carefully, sent",
+        "Later realized emails went only to self, and one had wrong date",
+        "'Making mistakes faster is not winning' — the automation didn't remove the failure mode, just got there sooner",
+        "Highlights cognitive-load-on-reviewer as counter-intuitive AI coding cost"
+      ],
+      "quote": "Making mistakes faster is not winning. The automation didn't remove the failure mode, it just got me there sooner. The review step you're counting on is doing more work than you think.",
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Claude Code\"')",
+      "external_link": "https://agilepainrelief.com/newsletter-subscribe/"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Claude+Code%22",
+      "handle": "David P. Reichert (via Mastodon boost)",
+      "post_reference": "David P. Reichert original, 7d ago (retrieved 2026-08-10) — boosted by Wolf Witte 33m ago",
+      "title": "If you haven't recently used Claude Code*, you might not understand where AI is at",
+      "author": "David P. Reichert",
+      "author_type": "Practitioner",
+      "date": "2026-08-03",
+      "batch": "E",
+      "topic": "Productivity",
+      "tool": "Claude",
+      "sentiment": "Positive",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Argument that hands-on Claude Code experience is a prerequisite to accurately assessing current AI state",
+        "Cross-boost by Wolf Witte @wolfwitte@wolfwitte.de today ('So ist es:') suggests ongoing German-language engagement"
+      ],
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Claude Code\"')"
+    },
+
+    // ===== "vibe coding" query =====
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22vibe+coding%22",
+      "handle": "@alextecplayz@techhub.social",
+      "post_reference": "AlexTECPlayz, 2h ago (retrieved 2026-08-10)",
+      "title": "'my site is proudly human-made' — isitvibecoded.com verdict 'Probably Human-Made'",
+      "author": "AlexTECPlayz",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "B",
+      "topic": "Trust",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "New tool 'isitvibecoded.com' — reverse detector for vibe-coded sites",
+        "Practitioner uses it to certify site is human-authored",
+        "Signal that reverse-vibe-coding-detection is emerging as a category"
+      ],
+      "quote": "my site is proudly human-made, I should link it somewhere",
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"vibe coding\"')",
+      "external_link": "https://isitvibecoded.com/"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22vibe+coding%22",
+      "handle": "@henrik@ruby.social",
+      "post_reference": "Henrik Nyh, 4h ago (retrieved 2026-08-10)",
+      "title": "Proposing the term 'Omega Vibe' — bounded scope where vibe coding is acceptable",
+      "author": "Henrik Nyh",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "I",
+      "topic": "Architectural Philosophy",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Coins term 'Omega Vibe' (after Sandi Metz's 'Omega Mess')",
+        "Position: high level of vibe coding is acceptable IF the code is isolated from other code AND outer correctness can be verified to a satisfactory level",
+        "Architectural boundary condition — nuanced middle ground between the vibe-coding-apocalypse and vibe-coding-is-fine poles"
+      ],
+      "quote": "Applies to a piece of code where a high level of vibe coding is acceptable, as it's mostly isolated from other code and outer correctness can be verified to a satisfactory level.",
+      "confidence": "High",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"vibe coding\"')",
+      "external_link": "https://vinhnglx.github.io/2017/03/24/"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22vibe+coding%22",
+      "handle": "@m0y@social.pokrzywkowy (approximate)",
+      "post_reference": "Emelia, 6h ago (retrieved 2026-08-10)",
+      "title": "Vibe-coding out of necessity: 'need it to work before I can send any more invoices'",
+      "author": "Emelia",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "B",
+      "topic": "Productivity",
+      "tool": "General AI",
+      "sentiment": "Mixed",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "First-person account of pragmatic vibe-coding driven by business necessity (Harvest / invoice-sending workflow broke)",
+        "Vibe coding as fallback when SaaS breaks — parallels the r/ClaudeCode 'AI isn't taking your job, it's taking SaaS away' pattern"
+      ],
+      "quote": "I am pretty much vibe coding this, because I need it to work before I can send any more invoices",
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"vibe coding\"')"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22vibe+coding%22",
+      "handle": "@fossheim@front-end.social",
+      "post_reference": "Sarah L. Fossheim (recent — undated in retrieved snippet)",
+      "title": "Volunteer project reviewer: 'developer who has switched to vibe coding'",
+      "author": "Sarah L. Fossheim",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "B",
+      "topic": "Code quality",
+      "tool": "General AI",
+      "sentiment": "Negative",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "Reviewer's account of a volunteer project whose developer 'switched to vibe coding'",
+        "'Spent maybe twice as much time policing out VERY OBVIOUS issues (both with the code, design, and copy) than it would have taken to build correctly the first time' — cognitive-debt reviewer story"
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"vibe coding\"')",
+      "single_source_warning": true,
+      "date_note": "Date inferred from position in reverse-chronological search results; exact timestamp not visible in captured DOM. Flag for verification."
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22vibe+coding%22",
+      "handle": "کلادمانیا (@cloudmania — Farsi/Persian)",
+      "post_reference": "کلادمانیا (recent)",
+      "title": "Cloudflare open-sources 'vibe-coding' platform for non-experts (Persian coverage)",
+      "author": "Cloudmania",
+      "author_type": "Analyst",
+      "date": "2026-08-10",
+      "batch": "E",
+      "topic": "Productivity",
+      "tool": "General AI",
+      "sentiment": "Nuanced",
+      "evidence_type": "Opinion",
+      "key_points": [
+        "Persian-language coverage of Cloudflare open-sourcing internal 'Cloudflare OS' vibe-coding platform for non-programmers",
+        "Feature: users describe processes in natural language, isolated sandboxes reduce vulnerability/data-leak risk",
+        "Corroborates X post from @alsamahi and Theo's Cloudflare coverage",
+        "Non-English source — captures broader-than-Anglosphere audience"
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"vibe coding\"')",
+      "external_link": "https://cloudmania.ir/?p=1441"
+    },
+    {
+      "platform": "Mastodon",
+      "url": "https://mastodon.social/search?q=%22Claude+Code%22",
+      "handle": "Vorratsdatenspeicher (German-language)",
+      "post_reference": "Vorratsdatenspeicher (recent)",
+      "title": "AI-Native fully-local self-hosted expense-tracking app built with Claude Code",
+      "author": "Vorratsdatenspeicher (Martin)",
+      "author_type": "Practitioner",
+      "date": "2026-08-10",
+      "batch": "E",
+      "topic": "Productivity",
+      "tool": "Claude",
+      "sentiment": "Positive",
+      "evidence_type": "Anecdote",
+      "key_points": [
+        "German-language announcement: local-first AI-native app built with Claude Code",
+        "Docker / Windows / Mac versions; Tailscale for smartphone sync; Ollama-compatible plus Anthropic/OpenAI/DeepSeek support",
+        "Concrete example of Claude Code enabling individual full-stack solo projects"
+      ],
+      "confidence": "Medium",
+      "retrieved_via": "Claude in Chrome — mastodon.social logged-in full-text search ('\"Claude Code\"')",
+      "external_link": "https://www.vorratsdatenspeicher.com"
+    }
+  ],
+
+  "updated_emerging_patterns_after_expansion_2": [
+    {
+      "pattern": "Accidental-cyberattacks cluster now includes ThePrimeagen's high-engagement Dario Amodei reaction video (257K views)",
+      "sources_added": [
+        "https://www.youtube.com/watch?v=bKOYgbgACVo (ThePrimeagen Aug 5)"
+      ],
+      "signal_strength": "Strong (unchanged — now with mainstream dev-YouTube coverage)",
+      "notes": "Adds 257K-view YouTube reaction to the existing 5-incident + Bluesky + X cluster. Confirms this story reached the mainstream dev-YouTube audience."
+    },
+    {
+      "pattern": "Vibe coding: sentiment inversion is now clearly bidirectional",
+      "sources_added": [
+        "https://isitvibecoded.com/ (reverse-detection tool)",
+        "Henrik Nyh 'Omega Vibe' terminology proposal (@henrik@ruby.social)",
+        "Sarah L. Fossheim reviewer-cost anecdote (@fossheim@front-end.social)",
+        "Emelia necessity-driven vibe-coding story",
+        "Cloudflare Cloudflare-OS vibe-coding platform coverage (Persian source + X + Theo)",
+        "Theo 'Fable Broke My App' Aug 5 video"
+      ],
+      "signal_strength": "Strong (upgraded from Weak/contested)",
+      "notes": "Three distinct positions now documented in the same week: (1) vibe-coding-normalization (Cloudflare open-sourcing the platform; Vorratsdatenspeicher's solo app); (2) architecturally-bounded acceptance (Omega Vibe); (3) reviewer-cost reality check (Fossheim, Fable-Broke-My-App, Levison's automation failure). Plus a reverse-detection tool. The 'vibe coding' term is undergoing rapid semantic drift within the week."
+    },
+    {
+      "pattern": "MCP evolution watch — Anthropic iteration on the protocol continues",
+      "sources_added": [
+        "https://www.youtube.com/watch?v=gVfEtktkvnE (Theo 'Did Anthropic finally fix MCP?' Aug 9)"
+      ],
+      "signal_strength": "Moderate",
+      "notes": "Combined with the X thread analyzing 40+ MCP servers (@zooper_man Aug 10) and Simon Willison's 'stateless MCP has recaptured my interest' (Bluesky Jul 31 — outside window but adjacent), MCP is in a visible iteration cycle. Theo's title suggests reviewer sees this iteration as material."
+    },
+    {
+      "pattern": "AI-coding pricing / FinOps arriving at practitioner mainstream via Syntax FM 'Black Market AI Tokens'",
+      "sources_added": [
+        "https://www.youtube.com/watch?v=09UELaUhPEw (Syntax FM Aug 7)"
+      ],
+      "signal_strength": "Strong (upgraded from Moderate)",
+      "notes": "Enterprise per-dev cap (r/ClaudeCode $90/day story), Meta Muse Code 10x-cheaper pricing pitch, Cursor Router cost-adaptive routing, and now mainstream dev-podcast coverage of informal token markets. Four distinct facets of the FinOps story in one week."
+    },
+    {
+      "pattern": "Practitioner burnout and cognitive-debt: reviewer-cost is the recurring subplot",
+      "sources_added": [
+        "Mark Levison Mastodon post on automation-mistakes-faster",
+        "Sarah L. Fossheim reviewer-cost volunteer-project story",
+        "Theo 'Fable Broke My App and Couldn't Fix It'"
+      ],
+      "signal_strength": "Strong",
+      "notes": "Base run's r/cscareerquestions 'exhausting and soulless' + r/ExperiencedDevs 'competence-vs-appearance' + r/cscareerquestions 'AI has skyrocketed production incidents' + these three additions all converge on the same claim: the reviewer bears the real cost of AI-generated code, and 'the review step you're counting on is doing more work than you think.' This is the dominant practitioner-experience theme of the week."
+    }
+  ],
+
+  "still_unfilled_gaps": [
+    {"platform": "YouTube", "channels": ["@HTMLAllTheThings", "Bricks Bucks Bytes", "The Serious CTO"], "reason": "Not scanned this pass — lower-signal channels per config"},
+    {"platform": "Mastodon", "queries_not_run": ["MCP", "\"AI coding\"", "Cursor", "\"cognitive debt\"", "Copilot"], "reason": "Time-boxed; Mastodon logged-in search performed well and additional queries would likely surface more items"},
+    {"topic": "MCP CVE / security vulnerabilities in-window", "reason": "Still no in-window MCP-specific CVE surfaced across any channel"}
+  ],
+
+  "final_totals_after_both_expansions": {
+    "base_run_items": 27,
+    "chrome_expansion_1_items": 41,
+    "chrome_expansion_2_items": 18,
+    "combined_total": 86,
+    "still_under_100_limit": true,
+    "items_by_platform_combined": {
+      "Blog": 19,
+      "Hacker News": 3,
+      "Bluesky": 8,
+      "X/Twitter": 20,
+      "Reddit": 10,
+      "YouTube": 10,
+      "Mastodon": 8,
+      "Reddit_from_dedup": 0
+    }
+  }
+}

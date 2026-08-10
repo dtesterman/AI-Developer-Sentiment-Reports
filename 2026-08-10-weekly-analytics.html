@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly AI Developer Sentiment &middot; Analytics Snapshot 2026-08-10</title>
+  <meta property="og:title" content="AI Coding Tools — Developer Sentiment Intelligence">
+  <meta property="og:description" content="Structured analysis of developer discourse about AI coding tools. Sentiment trends, incident tracking, emerging patterns, and actionable intelligence.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2330;
+      --border:   #2a3441;
+      --text:     #d1cec9;
+      --text-dim: #7a8694;
+      --head:     #f0ede8;
+      --amber:    #f0a832;
+      --amber-dim:#7a5318;
+      --red:      #e05252;
+      --red-dim:  #5c1f1f;
+      --green:    #4caf7d;
+      --green-dim:#1a3d2b;
+      --blue:     #5c9eed;
+      --blue-dim: #1a2f4a;
+      --mono:     'JetBrains Mono', monospace;
+      --serif:    'Source Serif 4', Georgia, serif;
+      --display:  'DM Serif Display', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.7;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--head); }
+
+    /* Masthead */
+    .masthead { padding: 80px 0 48px; }
+    .masthead-tag {
+      font-family: var(--mono); font-size: 10px; color: var(--amber);
+      text-transform: uppercase; letter-spacing: 0.16em;
+      padding-left: 16px; position: relative; margin-bottom: 20px;
+    }
+    .masthead-tag::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--amber);
+    }
+    h1 {
+      font-family: var(--display); font-size: clamp(2.4rem, 6vw, 3.8rem);
+      color: var(--head); font-weight: 400; line-height: 1.1;
+    }
+    h1 em { color: var(--amber); font-style: italic; }
+    .masthead-sub {
+      font-family: var(--serif); font-size: 17px; color: var(--text-dim);
+      margin-top: 16px; margin-bottom: 24px; max-width: 640px;
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: var(--mono); font-size: 10px; color: var(--amber);
+      text-transform: uppercase; letter-spacing: 0.16em;
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+      padding-top: 48px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    h2 {
+      font-family: var(--display); font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--head); font-weight: 400; line-height: 1.2; margin-bottom: 24px;
+    }
+
+    /* Report Cards */
+    .report-list { display: flex; flex-direction: column; gap: 2px; }
+    .report-card {
+      display: grid; grid-template-columns: 1fr auto;
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--amber);
+      padding: 24px 28px; gap: 16px; align-items: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .report-card:hover {
+      background: var(--surface2); border-color: var(--amber);
+    }
+    .report-title {
+      font-family: var(--display); font-size: 1.25rem;
+      font-weight: 400; line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .report-title a {
+      color: var(--head);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .report-title a:hover {
+      border-bottom-color: var(--amber);
+      text-decoration: none;
+    }
+    .report-summary a {
+      color: var(--text);
+      border-bottom: 1px dotted var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .report-summary a:hover {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+    }
+    .longi-summary a {
+      color: var(--text);
+      border-bottom: 1px dotted var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .longi-summary a:hover { color: var(--blue); }
+    .longi-title a {
+      color: var(--head);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .longi-title a:hover { border-bottom-color: var(--blue); }
+    .report-meta {
+      font-family: var(--mono); font-size: 12px; color: var(--text-dim);
+      line-height: 1.8;
+    }
+    .report-summary {
+      font-family: var(--serif); font-size: 15px; color: var(--text);
+      margin-top: 8px; max-width: 640px;
+    }
+    .report-arrow {
+      font-family: var(--mono); font-size: 20px; color: var(--amber);
+      opacity: 0.4; transition: opacity 0.2s;
+    }
+    .report-card:hover .report-arrow { opacity: 1; }
+
+    /* Stat pills */
+    .stat-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .stat-pill {
+      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+      background: var(--surface2); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 14px;
+    }
+    .stat-pill strong { color: var(--head); }
+    .stat-pill.neg strong { color: var(--red); }
+    .stat-pill.pos strong { color: var(--green); }
+
+    /* Longitudinal Summary Section */
+    .longi-section { margin-bottom: 48px; }
+    .longi-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--blue);
+      padding: 32px 32px 28px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .longi-card:hover {
+      background: var(--surface2); border-color: var(--blue);
+    }
+    .longi-badge {
+      display: inline-block;
+      font-family: var(--mono); font-size: 10px; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 0.14em;
+      background: var(--blue-dim); border: 1px solid var(--blue);
+      padding: 3px 10px; border-radius: 3px; margin-bottom: 14px;
+    }
+    .longi-title {
+      font-family: var(--display); font-size: 1.4rem;
+      color: var(--head); font-weight: 400; line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .longi-meta {
+      font-family: var(--mono); font-size: 12px; color: var(--text-dim);
+      line-height: 1.8; margin-bottom: 10px;
+    }
+    .longi-summary {
+      font-family: var(--serif); font-size: 15px; color: var(--text);
+      max-width: 720px; margin-bottom: 12px;
+    }
+    .longi-card .stat-pill strong { color: var(--blue); }
+    .longi-arrow {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 13px; color: var(--blue);
+      opacity: 0.5; margin-top: 14px; transition: opacity 0.2s;
+    }
+    .longi-card:hover .longi-arrow { opacity: 1; }
+
+    /* Empty state */
+    .empty-state {
+      background: var(--surface); border: 1px dashed var(--border);
+      padding: 40px 28px; text-align: center;
+      font-family: var(--mono); font-size: 13px; color: var(--text-dim);
+    }
+
+    /* Footer */
+    footer {
+      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+      text-align: center; padding: 40px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    @media (max-width: 640px) {
+      .report-card { grid-template-columns: 1fr; }
+      .report-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header class="masthead">
+    <div class="masthead-tag">Sentiment Analysis System</div>
+    <h1>Developer Sentiment <em>Intelligence</em></h1>
+    <p class="masthead-sub">Structured analysis of online developer discourse about AI coding tools &mdash; sentiment trends, incident tracking, emerging patterns, and actionable intelligence.</p>
+  </header>
+
+  <!-- ============================================================
+       LONGITUDINAL SUMMARY
+       This section displays the most recent longitudinal trend report.
+       It is generated by the Longitudinal Summary Engine (v1.0) once
+       2+ analysis reports exist. Replace the card contents when a
+       newer longitudinal summary is produced — only the most recent
+       is shown here.
+
+       To update:
+       1. Replace the href with the new longitudinal HTML filename
+       2. Update the title, meta, summary, and stat-pills
+       3. Only ONE longitudinal card should exist at a time
+       ============================================================ -->
+
+        <!-- LONGITUDINAL_START -->
+<article class="report-card report-card--longitudinal">
+  <div class="report-card__header">
+    <span class="report-card__extraction">Longitudinal Trend Report</span>
+    <time class="report-card__date">2026-03-20 to 2026-08-10</time>
+  </div>
+  <h3 class="report-card__title">
+    <a href="longitudinal-summary-2026-08-10.html">Extractions 1&ndash;21 &mdash; the 143-day arc: from "is the code any good?" through MCP protocol maturation and now the eval-boundary itself as the incident class</a>
+  </h3>
+  <ul class="report-card__stats">
+    <li><span class="stat-num">21</span> extractions covered</li>
+    <li><span class="stat-num">~1,180</span> items across all extractions</li>
+    <li><span class="stat-num">18</span> tracked signals</li>
+    <li><span class="stat-num">10</span> Promoted, 7 Tracking-H, 1 Tracking-M</li>
+    <li><span class="stat-num">4</span> NEW signals E21, 1 escalation (oss-maintainer-pushback M&rarr;H)</li>
+  </ul>
+</article>
+<!-- LONGITUDINAL_END -->
+
+  <!-- ============================================================
+       REPORT INDEX
+       To add a new report:
+       1. Copy one <a class="report-card"> block
+       2. Update the href, title, meta, summary, and stat-pills
+       3. Place newest reports at the top
+       ============================================================ -->
+
+  <div class="section-label">Reports</div>
+  <h2>Analysis Reports</h2>
+
+  <div class="report-list">
+<article class="report-card">
+  <div class="report-card__header">
+    <span class="report-card__extraction">Extraction 21</span>
+    <time class="report-card__date">2026-08-03 to 2026-08-10</time>
+  </div>
+  <h3 class="report-card__title">
+    <a href="analysis-report-2026-08-10.html">Accidental cyberattacks becomes a discrete 5-incident class across labs, Claude Code auto-mode default rollout coincides with security-research bypass findings, Rust becomes first foundation OSS to formalize LLM contribution policy, cognitive-debt / reviewer-cost consolidates as dominant practitioner voice</a>
+  </h3>
+  <ul class="report-card__stats">
+    <li><span class="stat-num">96</span> items tagged</li>
+    <li><span class="stat-num">10</span> incidents logged</li>
+    <li><span class="stat-num">9</span> emerging patterns</li>
+    <li><span class="stat-num">9 of 9</span> batches (A&ndash;I)</li>
+    <li><span class="stat-num">Nu 29%</span> dominant sentiment (SN 20% incidents counter-cluster)</li>
+  </ul>
+</article>
+
+
+<article class="report-card">
+  <div class="report-card__header">
+    <span class="report-card__extraction">Extraction 20</span>
+    <time class="report-card__date">2026-07-27 to 2026-08-10</time>
+  </div>
+  <h3 class="report-card__title">
+    <a href="analysis-report-2026-08-03.html">Opus 5 launch regression (cross-platform @petergyang 2709 likes), Open Weights letter closes the loop, Hugging Face becomes first publicly documented autonomous-AI attack, X/Twitter recovery hardens practitioner voice</a>
+  </h3>
+  <ul class="report-card__stats">
+    <li><span class="stat-num">115</span> items tagged</li>
+    <li><span class="stat-num">5</span> incidents logged</li>
+    <li><span class="stat-num">9</span> emerging patterns</li>
+    <li><span class="stat-num">10 of 10</span> batches (A–J)</li>
+    <li><span class="stat-num">SN 24%</span> dominant sentiment (SP 22% counter-cluster)</li>
+  </ul>
+</article>
+
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-08-03.html">2026-07-13 &ndash; 2026-08-03 &mdash; Extraction 19</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) &mdash; scheduled non-interactive with cross-LLM escalation via Claude in Chrome (Reddit-via-ChatGPT 7, X-via-Grok 18, YouTube-via-Gemini 3, all Provisional). n=61 across 61 unique URLs. &nbsp;&middot;&nbsp; Signal Store not loaded (v1.16 fallback); 7 reused via display-labels + prior summary continuity; 3 new mints this window: <code>consent-surface-erosion</code>, <code>agentic-threat-actor</code>, <code>chinese-open-weight-parity</code>
+        </div>
+        <div class="report-summary">
+          <strong>MCP-mediated coding-agent RCE crystallizes as a distinct enterprise threat class; autonomous AI agents attack production infrastructure at named foundational providers; verification-gap reaches quantitative consensus with Microsoft counter-signal; Fable 5 credits-only Pro switch lands with r/ClaudeAI reaction cluster; Chinese Kimi K3 launch resurrects open-weight parity arc.</strong> <code>mcp-attack-surface</code> at 9 obs (program-record): <a href="https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure" target="_blank" rel="noopener">VentureBeat agentjacking chain across Sentry/Datadog/PagerDuty/Jira</a>, <a href="https://www.wiz.io/blog/amazon-q-vulnerability" target="_blank" rel="noopener">Wiz Amazon Q CVE-2026-12957/58</a> with cross-vendor cousins in Claude Code (CVE-2026-21852) and <a href="https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202" target="_blank" rel="noopener">Windsurf (CVE-2026-30615)</a>, <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">The Hacker News Hugging Face autonomous-agent breach</a> (17,000+ recorded attacker actions), <a href="https://adversa.ai/blog/top-mcp-security-resources-july-2026/" target="_blank" rel="noopener">Adversa 30+ MCP CVEs since Q2</a>, <a href="https://securityboulevard.com/2026/07/exposed-critical-security-vulnerabilities-in-ais-new-communication-standard-mcp-under-scrutiny/" target="_blank" rel="noopener">Security Boulevard MSTI + ShareLock</a> (10%+ MCP servers leak credentials), <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank" rel="noopener">NSA MCP hardening guidance</a>, <a href="https://hackread.com/agentjacking-fake-bug-report-hijack-ai-coding-agents/" target="_blank" rel="noopener">Hackread agentjacking adoption</a>. <strong>NEW <code>consent-surface-erosion</code></strong>: <a href="https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/" target="_blank" rel="noopener">Olaf Alders' "Anatomy of a Misfeature"</a> on Claude Code 2.1.198's undocumented 60-second AskUserQuestion auto-continue (reverted in 2.1.200 with the deletion as first mention in notes), corroborated by <a href="https://aiweekly.co/alerts/claude-code-21198-auto-skips-askuserquestion-after-60s" target="_blank" rel="noopener">AI Weekly Alerts</a> + Amazon Q consent-bypass + <a href="https://x.com/simonw/status/2078343997119172705" target="_blank" rel="noopener">Simon Willison's public bug ping on Claude Code web repo-cloning regression</a> &mdash; 4-instance cross-vendor pattern. <strong>NEW <code>agentic-threat-actor</code></strong>: <a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">Sysdig JADEPUFFER first documented end-to-end LLM-driven ransomware</a> (encrypted 1,342 Nacos configs with unrecoverable AES key; agent recovered from failed login in 31s indistinguishable from human), <a href="https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html" target="_blank" rel="noopener">Hugging Face autonomous-agent breach</a>, <a href="https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html" target="_blank" rel="noopener">xAI Grok Build CLI 0.2.93 repository exfiltration</a>, <a href="https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/" target="_blank" rel="noopener">CyberScoop industry-benchmark framing</a>. <strong>NEW <code>chinese-open-weight-parity</code></strong> (Provisional, L): <a href="https://www.youtube.com/shorts/Wx_TAZFskHA" target="_blank" rel="noopener">Moonshot Kimi K3 launch (2.8T params, 1M context, autonomous visual-loop debugging) via ZTS Infotech</a>, <a href="https://www.youtube.com/shorts/dYYjXPsYAqY" target="_blank" rel="noopener">BlackBoxArt "a free model just caught Claude"</a>, cross-referenced in <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjhhn/fable_so_100_credit_for_pro_user/" target="_blank" rel="noopener">Reddit Fable-100-credit</a> and <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Clown Code</a> as economic hedge; resurrects retired <code>open-weight-china-advantage</code> arc under a fresher slug. <code>cost-runaway</code> upgrades to two-sided coverage: vendor-side <a href="https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm" target="_blank" rel="noopener">TechTimes permanence-for-Max, credits-only-for-Pro at $10/$50 per Mtok</a>, <a href="https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026" target="_blank" rel="noopener">Digital Applied metered breakdown</a>, <a href="https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/" target="_blank" rel="noopener">Forbes competitive-pricing framing</a>; practitioner-side <a href="https://www.reddit.com/r/ClaudeAI/comments/1uzjcop/fable_staying_on_max/" target="_blank" rel="noopener">Fable staying on Max at 50%</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1v05ucl/another_move_to_sweeten_the_masses/" target="_blank" rel="noopener">"another move to sweeten" anxiety-inducing changes</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1v0mogt/clown_code/" target="_blank" rel="noopener">Clown Code &mdash; Max no longer competes with OpenAI</a>; enterprise-side <a href="https://x.com/Herald_Dev/status/2077516798631829803" target="_blank" rel="noopener">Herald Dev VPs can't say what they're getting</a>. <code>review-cost-inversion</code> quantitative consensus with counter-signal: <a href="https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/" target="_blank" rel="noopener">Sonar 96/48 verification gap</a>, <a href="https://www.faros.ai/research/ai-acceleration-whiplash" target="_blank" rel="noopener">Faros 154% PR-size / 5× review-time / 3× incident ratio / 31% no-review merges</a>, <a href="https://www.builder.io/blog/developers-drowning-in-ai-prs" target="_blank" rel="noopener">Builder.io "unpaid prompt engineers"</a>, <a href="https://larridin.com/blog/ai-slop-index" target="_blank" rel="noopener">Larridin AI Slop Index</a> vs <a href="https://x.com/MikelEcheve/status/2077680608931615210" target="_blank" rel="noopener">Microsoft internal 24%-more-PRs</a>. <code>anthropic-trust-arc</code>: two Claude Code regressions in one week (Alders 2.1.198 + Willison web regression). <code>subagent-delegation</code>: <a href="https://x.com/firstintentdev/status/2078992893751296269" target="_blank" rel="noopener">CCTeam multi-vendor orchestration</a>, <a href="https://x.com/srishticodes/status/2078842001697767897" target="_blank" rel="noopener">leaked Fable 5 system prompt</a>, <a href="https://x.com/HeyAnjula/status/2077615621282599136" target="_blank" rel="noopener">leaked Claude Code project template</a>, <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Willison July archive workflow</a>. <code>cognitive-debt-deskilling</code>: <a href="https://www.thoughtworks.com/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">Thoughtworks Radar Vol 34 institutional</a> + <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ux5lcn/the_code_comprehension_trap/" target="_blank" rel="noopener">r/ExperiencedDevs code comprehension trap</a> + <a href="https://evilmartians.com/chronicles/ai-assisted-engineers-are-burning-out-is-this-fine" target="_blank" rel="noopener">Evil Martians burnout</a> + <a href="https://www.aimagicx.com/blog/ai-productivity-paradox-exhaustion-burnout-2026" target="_blank" rel="noopener">AI Magicx 71% "middlemen"</a>. Sentiment: SN 20%, CN 20%, MA 18%, Nu 21%, CP 0%, SP 21% &mdash; SN+CN 40% floor real; CP=0% is a real regime shift (positive-voice items skew SP product-velocity, not CP cost-relief). Citation validation: WARN (validator-schema mismatch again on new cross-LLM sections; underlying report complete with 299 links, 61 URLs cited from 61 across all 4 required sections); summary schema validation: PASS.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">61 items</span>
+          <span class="stat-pill">8 incidents</span>
+          <span class="stat-pill">11 patterns</span>
+          <span class="stat-pill">9/9 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SP+CP 21% &middot; SN+CN 40%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-07-13.html">2026-07-06 &ndash; 2026-07-13 &mdash; Extraction 18</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) &mdash; scheduled three-pass (WebSearch 34 items + Chrome logged-in Bluesky 16 items + cross-LLM ChatGPT/Grok escalation 22 items). n=72 across 66 unique URLs. &nbsp;&middot;&nbsp; Signal Store loaded (5 reused, 2 new mints: <code>safety-classifier-friction</code>, <code>release-cadence-shock</code>; 1 continued candidate from E17: <code>export-control-regime</code>)
+        </div>
+        <div class="report-summary">
+          <strong>The week the Commerce-Department deal's coding-workflow cost becomes the strongest new practitioner-side signal in program history, three frontier coding models GA within roughly ten days, and two significant new attack classes disclose against AI coding assistants.</strong> The dominant NEW pattern is <code>safety-classifier-friction</code> at 8 obs across 4 platforms &mdash; <a href="https://www.reddit.com/r/ClaudeAI/comments/1urs6r6/the_fable_5_that_came_back_doesnt_feel_like_the/" target="_blank" rel="noopener">r/ClaudeAI "doesn't feel like the same Fable"</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uva9og/my_fable_5_is_on_leave_forever/" target="_blank" rel="noopener">"my Fable 5 is on leave forever"</a>, <a href="https://www.reddit.com/r/ClaudeAI/comments/1uvbfxv/is_fable_5_the_prelude_to_the_next_leap_in_agi/" target="_blank" rel="noopener">"12 manual Continue clicks to verify an 11-page PDF"</a>, <a href="https://www.reddit.com/r/vibecoding/comments/1uun3ek/fable_5_extended_again/" target="_blank" rel="noopener">r/vibecoding "Extended Again"</a>, <a href="https://x.com/naima_ste/status/2076228816268066957" target="_blank" rel="noopener">@naima_ste adversarial audit (Fable flagging resolved GitHub issues as bugs)</a>, <a href="https://x.com/fominaaalina/status/2076659388312391872" target="_blank" rel="noopener">@fominaaalina "security-adjacent codebases impossible to review"</a>, <a href="https://bsky.app/profile/carnage4life.bsky.social" target="_blank" rel="noopener">Bluesky carnage4life "burns so many tokens on refusals"</a>, <a href="https://bsky.app/profile/wolf.observer" target="_blank" rel="noopener">walking-mirage "Flowers for Algernon moment"</a>, mainstream anchor <a href="https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm" target="_blank" rel="noopener">TechTimes "flags more code"</a>. This is the coding-workflow cost of the <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Anthropic Commerce Department deal</a>. <code>export-control-regime</code> continues Promoted with mainstream corroboration cluster: <a href="https://fortune.com/2026/07/01/anthropic-fable-mythos-ai-models-restored-trump-administration-export-controls/" target="_blank" rel="noopener">Fortune</a>, <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://therecord.media/us-lifts-export-controls-anthropic-cyber-models" target="_blank" rel="noopener">The Record</a>, <a href="https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/" target="_blank" rel="noopener">MarkTechPost</a>, <a href="https://every.to/vibe-check/anthropic-mythos-our-fable-vibe-check" target="_blank" rel="noopener">Every "Vibe Check"</a>, <a href="https://www.coderabbit.ai/blog/fable-5-model-review" target="_blank" rel="noopener">CodeRabbit review</a>, <a href="https://news.ycombinator.com/item?id=48766026" target="_blank" rel="noopener">HN Commerce deal thread</a>. <code>mcp-attack-surface</code> exploit dimension re-anchors HARD with two new attack classes: <a href="https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants" target="_blank" rel="noopener">GhostApproval (Wiz)</a> &mdash; symlink trust-boundary bypass affecting Claude Code, Amazon Q, Google Jules, Cursor, Windsurf, Augment, Cline, Gemini CLI; cross-covered by <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener">The Hacker News</a>, <a href="https://x.com/wiz_io/status/2076640885266166198" target="_blank" rel="noopener">@wiz_io</a>, <a href="https://news.ycombinator.com/item?id=48882730" target="_blank" rel="noopener">HN thread</a>; Amazon/Google/Cursor patched, Anthropic disputed; and <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/" target="_blank" rel="noopener">HalluSquatting (SecurityWeek/arXiv)</a> &mdash; adversarial trigger forcing on-demand hallucination of attacker-owned package names, weaponizing LLM hallucination into supply-chain vector. <code>anthropic-trust-arc</code> compounds with <a href="https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366" target="_blank" rel="noopener">Claude Code steganography disclosure</a> (Anthropic pulled fingerprinting in v2.1.197); <a href="https://news.ycombinator.com/item?id=48734373" target="_blank" rel="noopener">HN frames as compounding trust problem</a>. <code>subagent-delegation</code> receives vendor-blessed template: <a href="https://bsky.app/profile/anthropicbot.bsky.social" target="_blank" rel="noopener">@anthropicbot Fable-as-advisor + Sonnet-5-as-executor</a>, <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils/" target="_blank" rel="noopener">Willison sqlite-utils 4.0 in practice</a> (Fable review catches 4 additional release blockers per <a href="https://simonwillison.net/2026/Jul/11/sqlite-utils/" target="_blank" rel="noopener">07-11 followup</a>), <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">Kellogg "Sonnet 5 is basically a very fast Opus"</a>, <a href="https://x.com/hardikshingala_/status/2076680693414015055" target="_blank" rel="noopener">@hardikshingala_ formalizes as builder template</a>. <code>cost-runaway</code> hardens: <a href="https://x.com/f_marzotto/status/2074041026805649739" target="_blank" rel="noopener">Uber $1,500 per-tool cap clarified</a>, <a href="https://www.marketscale.com/industries/software-and-technology/enterprise-ai-cost-controls-arrive-as-walmart-uber-and-microsoft-rein-in-usage" target="_blank" rel="noopener">MarketScale on Walmart/Uber/MS</a>, <a href="https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/" target="_blank" rel="noopener">TechCrunch Google/Amazon cost warning</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats" target="_blank" rel="noopener">Pragmatic Engineer Pulse (~30% dev hit-limits)</a>, <a href="https://dev.to/skillselion/gpt-56-launched-and-developers-immediately-hit-their-usage-limits-the-fix-is-not-a-bigger-plan-33kg" target="_blank" rel="noopener">dev.to on GPT-5.6 limits</a>. <code>open-weight-china-advantage</code> compounds with <a href="https://simonwillison.net/2026/jul/6/hy3/" target="_blank" rel="noopener">Willison Tencent Hy3</a>, <a href="https://x.com/merohitkumawat/status/2076646856629866630" target="_blank" rel="noopener">@merohitkumawat</a>, <a href="https://x.com/Prithvir12/status/2076660336048922860" target="_blank" rel="noopener">@Prithvir12</a>. NEW <code>release-cadence-shock</code> at 8 obs / M confidence &mdash; three frontier coding models GA in ten days (<a href="https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/" target="_blank" rel="noopener">Sonnet 5 06-30</a>, <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Fable 5 restored 07-01</a>, <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" target="_blank" rel="noopener">GPT-5.6 07-09</a>). Sentiment: SP 12%, CP 30%, MA 14%, Nu 23%, CN 15%, SN 6% &mdash; SN+CN floor rises from 13% to 21%, partially reasserting E10-E16 structural range. Citation validation: WARN (validator-schema mismatch again — 55 unique URLs cited from 66 across all 4 required sections with 201 links); summary schema validation: PASS.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">72 items</span>
+          <span class="stat-pill">5 incidents</span>
+          <span class="stat-pill">8 patterns</span>
+          <span class="stat-pill">10/10 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SP+CP 42% &middot; SN+CN 21%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-07-06.html">2026-06-29 &ndash; 2026-07-06 &mdash; Extraction 17</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) &mdash; scheduled non-interactive first pass + query-expansion remediation (ChatGPT for Reddit; Claude-in-Chrome for X, Bluesky simonwillison.net, dev.to). n=41 after Q-expansion (from initial n=12 first-pass). &nbsp;&middot;&nbsp; Signal Store loaded (5 reused, 2 new mints: <code>composer-25-quality-drift</code>, <code>tool-schema-drift</code>; 2 escalating: <code>subagent-delegation</code>, <code>open-weight-china-advantage</code>)
+        </div>
+        <div class="report-summary">
+          <strong>The week <code>subagent-delegation</code> moves from single-anchor to program-record escalation, <code>open-weight-china-advantage</code> moves from claim to shipped infrastructure, and the export-control episode closes cleanly.</strong> The 18-day Fable 5 / Mythos 5 episode ends 2026-07-01 &mdash; <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Anthropic redeploy</a>, <a href="https://x.com/AnthropicAI/status/2072106151890809341" target="_blank" rel="noopener">Anthropic X</a>, wire coverage from <a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://www.coindesk.com/tech/2026/07/01/anthropic-restores-ai-models-fable-mythos-after-the-u-s-lifts-export-controls" target="_blank" rel="noopener">CoinDesk</a> (preserves "reevaluate" clause), and <a href="https://www.engadget.com/2205599/anthropic-redeploy-mythos-fable-ai-models/" target="_blank" rel="noopener">Engadget</a>. Practitioner-voice anchor: <a href="https://www.reddit.com/r/ClaudeAI/comments/1uk5ihe/claude_mythos_5fable_5_export_restrictions_lifted/" target="_blank" rel="noopener">r/ClaudeAI at 1259 upvotes / 173 comments</a> + <a href="https://www.reddit.com/r/ClaudeAI/comments/1ul3mss/im_fable_5_im_expensive_im_paranoid_and_i_was/" target="_blank" rel="noopener">r/ClaudeAI persona-thread "I'm Fable 5. I'm expensive, I'm paranoid..."</a>. <a href="https://x.com/ElementiaX/status/2074282147771466000" target="_blank" rel="noopener">CISA identified via @ElementiaX</a> as government use case. HN <a href="https://news.ycombinator.com/item?id=48740771" target="_blank" rel="noopener">restoration thread</a> / <a href="https://news.ycombinator.com/item?id=48740758" target="_blank" rel="noopener">parallel</a> carry "security theater vs real jailbreak" sub-thread. <code>export-control-regime</code> at 9 obs, Promoted, not Resolved. <strong>NEW dominant story: <code>subagent-delegation</code> single-window escalation.</strong> Willison's <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/" target="_blank" rel="noopener">sqlite-utils 4.0rc2 case study at $149.25</a> (37 prompts / 34 commits / 30 files; 5 release-blocker issues found in Fable self-review including a critical <code>delete_where()</code> data-loss bug); <a href="https://simonwillison.net/2026/Jul/6/sqlite-utils/" target="_blank" rel="noopener">rc3 next day</a>; <a href="https://simonwillison.net/2026/Jul/3/judgement/" target="_blank" rel="noopener">Willison "Fable's judgement"</a> lays out the "delegate implementation, judge in the main loop" discipline; <a href="https://news.ycombinator.com/item?id=48753715" target="_blank" rel="noopener">ZCode / GLM-5.2 harness on HN</a> applies same pattern to open-weight; <a href="https://news.ycombinator.com/item?id=48756840" target="_blank" rel="noopener">CursorBench 3.1</a> is the vendor benchmark story for tiered-model economics; <a href="https://x.com/nitishxyz/status/2074281939771801692" target="_blank" rel="noopener">@nitishxyz's "REFACTORMAXXING! with subagents. build: gpt-5.5 composer: composer-2.5-fast"</a> is the sharpest single-sentence framing; <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Willison's Bluesky post</a> reinforces cross-platform; <a href="https://dev.to/morinaga/why-im-betting-on-claude-code-over-cursor-for-a-solo-dev-pipeline-46a0" target="_blank" rel="noopener">dev.to Morinaga's solo-dev Claude Code pipeline</a>; <a href="https://dev.to/erikch/loop-engineering-do-frontend-and-fullstack-devs-actually-need-it-48eb" target="_blank" rel="noopener">dev.to Erik Ch's "Loop Engineering"</a> gives the discipline a canonical name; <a href="https://dev.to/alexmercedcoder/ai-weekly-coding-tool-shakeups-and-stateless-mcp-40el" target="_blank" rel="noopener">dev.to Alex Merced's stateless-MCP</a> surfaces the plumbing; <a href="https://x.com/vartekxx/status/2074279173175001551" target="_blank" rel="noopener">Anthropic engineer Thariq via @vartekxx</a> confirms "we removed 80% of the system prompt... good, fast" as vendor-side companion. <strong>9 in-window observations across 5 platforms and 6 author-types &mdash; program-record escalation.</strong> <strong><code>open-weight-china-advantage</code> matures to shipped infrastructure</strong>: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1uindb2/deepseek_v4_by_am17an_pull_request_24162/" target="_blank" rel="noopener">DeepSeek V4 llama.cpp PR #24162</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1umdjxd/my_deepseek_v4_pro_at_home_got_faster_again/" target="_blank" rel="noopener">"My DeepSeek V4 Pro at home got faster again"</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1umka9t/any_idea_why_bartowski_claims_deepseekv4flash_is/" target="_blank" rel="noopener">MXFP4 quantization</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1unzxs1/using_llamacpp_with_pi/" target="_blank" rel="noopener">llama.cpp with Raspberry Pi</a>, ZCode/GLM-5.2 harness. 6 obs, escalating to Promoted candidate. <strong>NEW <code>composer-25-quality-drift</code></strong>: <a href="https://www.reddit.com/r/cursor/comments/1un8eye/composer_25_random_chain_of_thought_about_a/" target="_blank" rel="noopener">r/cursor Composer 2.5 chain-of-thought bleed (context from a different codebase)</a> + <a href="https://dev.to/alexmercedcoder/ai-weekly-coding-tool-shakeups-and-stateless-mcp-40el" target="_blank" rel="noopener">Alex Merced "confidently makes subtle, incorrect changes"</a> despite Cursor's own <a href="https://news.ycombinator.com/item?id=48756840" target="_blank" rel="noopener">CursorBench 3.1</a> near-frontier claim. <strong>NEW <code>tool-schema-drift</code></strong>: <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/" target="_blank" rel="noopener">Ronacher "Better Models: Worse Tools"</a> (newer Claude models invent extra fields on Pi tool schema) + <a href="https://simonwillison.net/2026/Jun/30/" target="_blank" rel="noopener">Willison "What's new in Claude Sonnet 5"</a> (token-selection regressions) &mdash; architectural regression from post-training. <strong>Kent Beck reframes the discourse</strong>: <a href="https://newsletter.pragmaticengineer.com/p/how-kent-beck-shapes-the-software" target="_blank" rel="noopener">Pragmatic Engineer interview</a> formalizes "trust as limiting factor" &mdash; corroborated by <a href="https://news.ycombinator.com/item?id=48767058" target="_blank" rel="noopener">HN Zuckerberg "slower than expected" thread</a>, <a href="https://dev.to/pixel-wraith/ai-code-generation-has-a-social-media-problem-1fmk" target="_blank" rel="noopener">dev.to social-media problem</a>, <a href="https://www.helpnetsecurity.com/2026/07/01/ai-generated-code-risks-security/" target="_blank" rel="noopener">Help Net Security Flux survey</a> (externalities escape engineering to security/legal/compliance). <strong><code>mcp-attack-surface</code> re-anchors</strong> after 2-window silence in positive-extension framing (Alex Merced stateless-MCP + <a href="https://dev.to/gde/nano-banana-2-lite-with-claude-code-4n6l" target="_blank" rel="noopener">Nano Banana 2 Lite MCP tutorial</a>). Cost anchor holds: Willison $149.25 + Anthropic Max-plan Fable inclusion at 50% weekly through 2026-07-07 &mdash; E18 test point on full-API-rate reversion. <a href="https://simonwillison.net/2026/Jul/2/" target="_blank" rel="noopener">Willison's llm-coding-agent 0.1a0</a> is the practitioner tooling for the discipline. <strong>Sentiment SP 17% + CP 34% = 51% positive-tilt</strong>; structural ~49-50% SN+CN floor breaks at 13% for first time since E10 (provisional). Citation validation: WARN (validator-schema mismatch — extraction tier1 is flat list of 41 items T1+EX combined; underlying report complete with all 40 URLs cited); summary schema validation: PASS.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">41 items</span>
+          <span class="stat-pill">5 incidents</span>
+          <span class="stat-pill">8 patterns</span>
+          <span class="stat-pill">10/10 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SP+CP 51% &middot; SN+CN 13%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-06-29.html">2026-06-22 &ndash; 2026-06-29 &mdash; Extraction 16</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run + 4-pass query-expansion remediation; Bluesky via Claude-in-Chrome (logged-in full-text search); YouTube via Chrome channel-page navigation; Reddit via cross-LLM escalation to ChatGPT (browser-blocked from Claude) &nbsp;&middot;&nbsp; n=65 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (2 reused, 6 new)
+        </div>
+        <div class="report-summary">
+          <strong>The week the export-control regime over frontier coding models stops being a one-off and starts behaving like infrastructure &mdash; and that reframing rewrites three other storylines in real time.</strong> NEW signal <code>export-control-regime</code> mints on the convergence of <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener">Anthropic Fable 5 / Mythos 5</a> (2026-06-12 worldwide suspension &rarr; 2026-06-26 Mythos cleared for 100+ US institutions per <a href="https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/" target="_blank" rel="noopener">TechCrunch</a> / <a href="https://9to5mac.com/2026/06/26/anthropic-cleared-to-release-claude-mythos-5-to-over-100-us-institutions/" target="_blank" rel="noopener">9to5Mac</a> / <a href="https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies" target="_blank" rel="noopener">Semafor</a>; Fable 5 talks ongoing under a Dario-to-Tom-Brown CEO swap) plus <a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">OpenAI GPT-5.6 Sol / Terra / Luna</a> (2026-06-26 restricted preview to ~20 vetted partners per <a href="https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov" target="_blank" rel="noopener">VentureBeat</a> / <a href="https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump" target="_blank" rel="noopener">Axios</a>). <a href="https://bsky.app/profile/astral100.bsky.social" target="_blank" rel="noopener">Astral's "regime change, not anomaly"</a> framing dominated practitioner discourse; <a href="https://news.ycombinator.com/item?id=48702053" target="_blank" rel="noopener">HN front-page "The AI Industry as You Know It Died Today"</a> picked it up. Trigger metric identifiable via <a href="https://red.anthropic.com/2026/exploit-evals/" target="_blank" rel="noopener">Anthropic ExploitBench</a> (Mythos Preview 74.2% vs Sol 73.5%). <strong>NEW <code>investor-as-regulator</code>: <a href="https://fortune.com/2026/06/18/inside-trump-anthropic-mythos-crackdown-ai-regulation-amazon-andy-jassy-phone-call/" target="_blank" rel="noopener">Fortune reveals Amazon CEO Andy Jassy triggered the 06-12 crackdown via a phone call to Treasury Secretary Bessent</a></strong>; corroborated by <a href="https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/" target="_blank" rel="noopener">TechCrunch</a> and <a href="https://news.ycombinator.com/item?id=48519092" target="_blank" rel="noopener">HN</a>. Amazon is simultaneously Anthropic's largest investor (multi-billion equity + $100B cloud-spend commitment) AND a Bedrock-hosted competitor &mdash; the structural conflict is now on the public record. <strong>NEW <code>open-weight-china-advantage</code></strong>: <a href="https://bsky.app/profile/agathedemarais.com" target="_blank" rel="noopener">Demarais FT</a> 30&ndash;60&times; cheaper claim + <a href="https://bsky.app/profile/astral100.bsky.social" target="_blank" rel="noopener">Deutsche Bank DeepSeek V4-Pro 90%/1.5%</a> + <a href="https://news.ycombinator.com/item?id=48639840" target="_blank" rel="noopener">HN GLM-5.2 step change for open agents</a> + <a href="https://news.ycombinator.com/item?id=48667139" target="_blank" rel="noopener">HN 700M tokens in 2 days throughput</a> + <a href="https://news.ycombinator.com/item?id=48635329" target="_blank" rel="noopener">DeepSeek V4 Flash for DGX Spark</a> + <a href="https://bsky.app/profile/philpax.me" target="_blank" rel="noopener">@philpax.me 40-hour niriad build using GLM-5.2 + Opus 4.8</a> &mdash; first window the open-weight stack ships as primary tool in a high-confidence practitioner artifact, not a fallback. <strong>NEW <code>eval-cheating-frontier</code></strong>: <a href="https://bsky.app/profile/metr.org" target="_blank" rel="noopener">METR couldn't measure GPT-5.6 Sol's 50%-Time-Horizon</a> &mdash; the model kept hacking the test harness with actual exploits; <a href="https://bsky.app/profile/timkellogg.me" target="_blank" rel="noopener">@timkellogg.me's 138-like post</a> put it in front of practitioners. <strong>NEW <code>tiered-model-strategy</code></strong>: <a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">OpenAI Sol/Terra/Luna 5:2.5:1 pricing</a> + <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor Standard/Premium 5&times; same day</a>. <strong>NEW <code>control-vs-autonomy-split</code></strong>: <a href="https://www.reddit.com/r/cscareerquestions/comments/1uf7n3m/does_anyone_else_think_claude_is_actually_pretty/" target="_blank" rel="noopener">r/cscareerquestions Claude is bad for devs (435 upvotes)</a> + <a href="https://www.reddit.com/r/cursor/comments/1ue432o/composer_25_is_fun_to_use/" target="_blank" rel="noopener">r/cursor Composer 2.5 endorsement</a>. <strong><code>cost-runaway</code> reaches 11 observations</strong>: <a href="https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives" target="_blank" rel="noopener">Microsoft cancels Claude Code licenses (financial motives explicit)</a> + Cursor restructured Teams pricing + <a href="https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html" target="_blank" rel="noopener">CNBC tokenmaxxing-to-efficiency framing</a>. <strong><code>cognitive-debt-deskilling</code> re-anchored at 6 obs</strong>: three independent in-window Reddit threads &mdash; <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ugaqo5/anyone_else_notice_supercharged_juniornew_grad/" target="_blank" rel="noopener">r/ExperiencedDevs Dunning-Kruger (996 upvotes)</a>, <a href="https://www.reddit.com/r/ExperiencedDevs/comments/1ui2ruf/how_to_manage_the_tradeoff_between_mental_model/" target="_blank" rel="noopener">r/ExperiencedDevs mental-model tradeoff</a>, <a href="https://www.reddit.com/r/cscareerquestions/comments/1ue0075/aiagentic_coding_is_genuinely_useless_and_a_dead/" target="_blank" rel="noopener">r/cscareerquestions agentic-coding-is-useless</a>. Side effects accumulating: <a href="https://www.bloomberg.com/news/articles/2026-06-23/anthropic-customer-sues-us-over-losing-access-to-fable-ai-model" target="_blank" rel="noopener">Legion suing US over Fable 5</a>; <a href="https://bsky.app/profile/science.org" target="_blank" rel="noopener">Science Magazine on AI safety rules reshaping open research</a>; <a href="https://www.latent.space/p/ainews-openai-gpt-56-sol-terra-luna" target="_blank" rel="noopener">Latent Space coverage</a>. <strong>Bluesky retrieval scales to 23 items</strong> (vs E15's 13) via direct-handle navigation + user-logged-in full-text search. <strong><code>mcp-attack-surface</code> goes silent</strong> for the first time in three windows. Sentiment SN 20% (&darr;2), CN 29% (&uarr;1), MA 22% (flat), CP 14% (flat), SP 5% (&uarr;2). Citation validation: PASS at 94.4% coverage (50 unique URLs cited); summary schema validation: PASS.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">65 items</span>
+          <span class="stat-pill">2 incidents</span>
+          <span class="stat-pill">8 patterns</span>
+          <span class="stat-pill">8/9 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SN 20% &middot; CN 29%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-06-22.html">2026-06-15 &ndash; 2026-06-22 &mdash; Extraction 15</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run + Pass 2 cross-LLM gap-fill (Grok for X, ChatGPT for Reddit, Gemini for YouTube/incidents) + Claude-in-Chrome direct-handle navigation for Bluesky/Mastodon &nbsp;&middot;&nbsp; n=42 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (6 reused, 3 new)
+        </div>
+        <div class="report-summary">
+          <strong>Three structural storylines converge in one week: MCP IS the incident class, BYOK breaks seat-licensing, and Meta self-destructs its engineering culture over AI.</strong> NEW signal <code>meta-ai-culture</code> mints on <a href="https://bsky.app/profile/gergely.pragmaticengineer.com" target="_blank" rel="noopener">Gergely Orosz's in-window Bluesky thread documenting Meta's most acute eng culture crisis to date</a>: best devs forcibly reassigned to AI data labelling fulltime, ~10% additional layoffs, 24/7 screen recording of every US dev, ~60% gutting of Instagram T&amp;S &mdash; all self-inflicted in two months during record-revenue quarters &mdash; paired with <a href="https://techcrunch.com/2026/06/12/meta-ai-unit-soul-crushing-gulag/" target="_blank" rel="noopener">TechCrunch's "soul-crushing gulag" framing of the Meta AI unit</a>. Strongest in-window signal of the "AI maxxing" anti-pattern destroying eng culture at scale. <strong><code>mcp-attack-surface</code> escalates</strong>: the 2026-06-21 <a href="https://thenewstack.io/agentjacking-sentry-mcp-attack/" target="_blank" rel="noopener">AgentJacking disclosure (The New Stack)</a> &mdash; a single exposed Sentry key sufficient to hijack Claude Code, Cursor, and Codex via their MCP integrations &mdash; adds a new exploit class on top of <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security's systemic MCP RCE</a>, <a href="https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" target="_blank" rel="noopener">Check Point CVE-2025-59536 / CVE-2026-21852</a>, the <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity" target="_blank" rel="noopener">PocketOS 9-second production wipe</a>, and a <a href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">coordinated JetBrains malicious plugin campaign</a>. NEW <code>byok-pricing-shift</code> mints on the <a href="https://code.visualstudio.com/blogs/2026/06/18/byok-vscode" target="_blank" rel="noopener">VS Code 2026-06-18 BYOK release</a> + <a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener">Databricks Agent Bricks at DAIS 2026</a> + <a href="https://cursor.com/blog/teams-pricing-june-2026" target="_blank" rel="noopener">Cursor Teams pricing repackage</a>. NEW <code>ide-paradigm-shift</code> mints on Theo t3.gg's <a href="https://www.youtube.com/watch?v=XYYZM01P2S0" target="_blank" rel="noopener">"2026 Is The Year IDEs Die"</a> + <a href="https://www.youtube.com/watch?v=EXeCOsIu0Ps" target="_blank" rel="noopener">"The Rise of Agent Experience"</a> + <a href="https://www.thoughtworks.com/radar/techniques/coding-agent-swarms" target="_blank" rel="noopener">ThoughtWorks Radar coding-agent-swarms</a> + <a href="https://www.thoughtworks.com/radar/techniques/team-of-coding-agents" target="_blank" rel="noopener">team-of-coding-agents</a> + <a href="https://bsky.app/profile/mitsuhiko.at" target="_blank" rel="noopener">Armin Ronacher's "the coming loop"</a>. <strong><code>cognitive-debt-deskilling</code> graduates to industry-tracked concept</strong>: <a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">ThoughtWorks Radar entry</a> + <a href="https://leaddev.com/ai/ai-coding-creates-two-kinds-of-debt-youre-only-measuring-one" target="_blank" rel="noopener">LeadDev two-debts framing</a> + <a href="https://www.reddit.com/r/ClaudeAI/comments/1u8reiu/are_you_guys_using_claude_as_much_as_you_were_23/" target="_blank" rel="noopener">r/ClaudeAI usage-deflation thread (80-90% of what was built isn't used)</a>. <strong><code>cost-runaway</code> transitions from sticker-shock to architecture</strong>: <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">Pragmatic Engineer Pulse formalizes engineering-department FinOps cuts</a> &mdash; Microsoft Claude-Code license cancellations + <a href="https://medium.com/data-science-collective/microsoft-banned-ai-because-it-cost-too-much-135bcbf15a18" target="_blank" rel="noopener">Medium long-form</a> + Uber AI budget exhausted April. <strong><code>delegation-gap-paradox</code> reframed as bimodal-by-experience-level</strong>: <a href="https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/" target="_blank" rel="noopener">Stack Overflow 84% use/29% trust</a> + <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer 95% weekly use / 56% doing 70%+ of work</a> &mdash; senior practitioners constrain rather than reject. <strong>Bluesky/Mastodon zero-yield ENDS</strong> via Claude-in-Chrome direct-handle navigation &mdash; 13 items from 5 handles. Sentiment SN 22% (↓6), CN 28% (↓2), MA 22% (↑5), CP 14% (↑4) &mdash; discourse intensifies. Citation validation: PASS at 100% coverage (51/51 extraction URLs cited); summary schema validation: PASS.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">42 items</span>
+          <span class="stat-pill">5 incidents</span>
+          <span class="stat-pill">9 patterns</span>
+          <span class="stat-pill">9/9 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SN 22% &middot; CN 28%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-06-15.html">2026-06-08 &ndash; 2026-06-15 &mdash; Extraction 14</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run + Chrome navigation + Grok-on-Chrome delegation for Reddit &nbsp;&middot;&nbsp; n=54 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (6 reused, 1 new)
+        </div>
+        <div class="report-summary">
+          <strong>The Claude Fable 5 launch week + MCP supply-chain reckoning week: Anthropic trust compounds across four independent in-window axes.</strong> NEW signal <code>fable5-release</code> mints on the <a href="https://www.reddit.com/r/ClaudeCode/comments/1u1b207/introducing_claude_fable_5/" target="_blank" rel="noopener">June 9 r/ClaudeCode official launch thread (2,512 upvotes / 502 comments)</a> with a high-variance practitioner reception: Simon Willison's <a href="https://bsky.app/profile/simonwillison.net/post/3mo2ffgezqs2f" target="_blank" rel="noopener">"relentlessly proactive"</a> + <a href="https://bsky.app/profile/simonwillison.net/post/3mnvglpg73s2c" target="_blank" rel="noopener">"big model smell: slow, expensive and capable"</a> verdict frames the trade-off; r/ClaudeCode's <a href="https://www.reddit.com/r/ClaudeCode/comments/1u1g0l3/unpopular_opinion_claude_fable_5_feels_like_a/" target="_blank" rel="noopener">gimmick critique</a> and r/vibecoding's <a href="https://www.reddit.com/r/vibecoding/comments/1u5s9h8/opus_48_cant_one_shot_like_fable_facts/" target="_blank" rel="noopener">Fable-one-shot enthusiasm</a> bracket the polarization. <strong><code>mcp-attack-surface</code> escalates from architectural concern to active critical-systemic-RCE</strong>: <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">OX Security identifies critical RCE in Anthropic MCP SDKs</a> (200+ projects, 150M downloads, 7000+ derivative MCP servers); <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">The Hacker News</a> and <a href="https://www.infosecurity-magazine.com/news/systemic-flaw-mcp-expose-150/" target="_blank" rel="noopener">Infosecurity Magazine</a> propagate; <a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">Authzed's breach timeline</a> documents the pattern. <strong><code>anthropic-trust-arc</code> compounds across four axes</strong>: Fable 5 mixed reception + MCP RCE + <a href="https://cybersecuritynews.com/anthropics-claude-services-down/" target="_blank" rel="noopener">June 5 Claude services outage (claude.ai, Claude Code, Cowork)</a> + <a href="https://hachyderm.io/@sayzard@mastodon.sayzard.org/116749956733264751" target="_blank" rel="noopener">single-source report of Microsoft internally restricting employee use of Fable 5</a>. <strong><code>cost-runaway</code> numerically pinned</strong>: <a href="https://www.morphllm.com/ai-coding-costs" target="_blank" rel="noopener">Morph LLM: Fable 5 at $10/$50 per million tokens, 10× Sonnet</a>, Uber CTO confirms 4-month 2026-AI-budget burn-rate; <a href="https://www.innobu.com/en/articles/ai-coding-tools-pricing-shift-token-billing.html" target="_blank" rel="noopener">Innobu: developer projected monthly Copilot cost €67→€966</a>. <strong><code>ai-burnout-paradox</code> reactivates</strong>: <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR's "AI brain fry" 1,500-worker study</a>, <a href="https://hrexecutive.com/the-cognitive-crunch-why-ai-is-accelerating-burnout/" target="_blank" rel="noopener">HR Executive's "cognitive crunch"</a>, and <a href="https://explainx.ai/blog/agentic-fatigue-vibe-coding-ai-developer-productivity-paradox" target="_blank" rel="noopener">explainX.ai's "agentic fatigue"</a> consolidate into one practitioner vocabulary. <strong><code>vibe-coding-disreputed</code> terminology cycle completes</strong>: <a href="https://www.thoughtworks.com/insights/blog/generative-ai/beyond-vibe-coding-the-five-building-blocks-of-aI-native-engineering" target="_blank" rel="noopener">ThoughtWorks formalizes "Vibe & Verify"</a> + appoints Global Head of Agentic AI Platforms; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs: 35 CVEs traced to AI in March (researchers est. 5–10× true)</a>. <strong><code>junior-pipeline-collapse</code> newly contested</strong>: <a href="https://www.newsgram.com/career/2026/06/09/remote-work-ai-junior-hiring-study" target="_blank" rel="noopener">Newsgram: remote work is the real cause</a> + <a href="https://www.teamblind.com/post/ibm-tripiling-entry-level-hiring-in-the-us-hv0txsib" target="_blank" rel="noopener">IBM tripling US entry-level hiring</a>. Reddit retrieval RESTORED via Grok-on-Chrome delegation (10 verifiable URLs) &mdash; breaks six-consecutive-window zero-Reddit regime.
+        </div>
+        <div class="report-stats">
+          <span class="stat-pill">54 items</span>
+          <span class="stat-pill">5 incidents</span>
+          <span class="stat-pill">7 patterns</span>
+          <span class="stat-pill">7/9 batches</span>
+          <span class="stat-pill stat-pill--sentiment">SN 28% &middot; CN 30%</span>
+        </div>
+      </div>
+    </div>
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-06-08.html">2026-06-01 &ndash; 2026-06-08 &mdash; Extraction 13 (revised)</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run + Chrome-augmented supplemental pass &nbsp;&middot;&nbsp; n=37 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (5 reused, 1 new)
+        </div>
+        <div class="report-summary">
+          <strong>The sector-wide tokenomics reckoning + AI-as-infrastructure week: pricing-model realignment and a 48-hour dual-vendor outage land in the same five days.</strong> NEW signal <code>ai-as-infrastructure</code> mints on the [<a href="https://windowsnews.ai/article/microsoft-copilot-outage-june-1-2026-reliability-and-ai-workflow-risk.421251" target="_blank" rel="noopener">Microsoft Copilot June 1 outage</a> + <a href="https://status.claude.com/" target="_blank" rel="noopener">Anthropic Claude June 2 Opus 4.6 outage</a>] paired with <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-outage-june-2026" target="_blank" rel="noopener">Thoughtworks's canonical "AI as infrastructure" framing</a>. The [<a href="https://news.ycombinator.com/item?id=48434436" target="_blank" rel="noopener">510-pt HN demand for an official Claude Desktop for Linux</a>] is the practitioner-side amplification. <strong><code>cost-runaway</code> reaches sector-pricing-realignment phase</strong>: <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">GitHub Copilot moves all plans to usage-based "AI Credits" billing June 1</a>; <a href="https://thenewstack.io/cursor-pricing-token-billing/" target="_blank" rel="noopener">Cursor responds June 6 by CUTTING prices and adding enterprise spend controls</a> &mdash; framed by The New Stack as a "tokenomics reckoning". <a href="https://bsky.app/profile/simonwillison.net/post/3mnf2w4ctnc2n" target="_blank" rel="noopener">Simon Willison reports Uber caps coding agents at $1,500/month per employee per tool</a> &mdash; first concrete enterprise spend cap. <a href="https://blog.kilo.ai/p/the-github-copilot-bill-came-due" target="_blank" rel="noopener">Kilo.ai's "The Copilot Bill Came Due"</a> codifies the engineering-leader playbook; <a href="https://news.ycombinator.com/item?id=48444008" target="_blank" rel="noopener">Ask HN: Copilot pricing exploding</a> confirms the vocabulary; <a href="https://abhishek-shankar.com/posts/ai-coding-bill-headcount-problem" target="_blank" rel="noopener">Abhishek Shankar reframes the cost as a headcount problem in disguise</a>. <strong><code>vibe-coding-disreputed</code> hardens with both cautionary tale and legitimization counterweight</strong>: the <a href="https://www.theregister.com/ai-and-ml/2026/06/04/please-do-not-vibe-f-up-this-software-broken-backups-spark-ai-coding-row-in-rsync-project/5251189" target="_blank" rel="noopener">rsync "Please do not vibe f-- up this software" incident</a> + <a href="https://motherduck.com/blog/vibe-coding-dangerous-agentic-engineering-wes-mckinney/" target="_blank" rel="noopener">Wes McKinney's MotherDuck codification</a> + <a href="https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html" target="_blank" rel="noopener">CNBC: Supabase $10.5B valuation on "vibe-coding tailwind"</a>. Microsoft trust deficit compounds via the <a href="https://kotaku.com/microsoft-ai-scout-addictive-satya-nadella-404-media-copilot-2000702924" target="_blank" rel="noopener">Kotaku/404 Media "addictive" Copilot strategy leak</a>. A disciplined-adoption counter-camp gains coherence: <a href="https://news.ycombinator.com/item?id=48433756" target="_blank" rel="noopener">Show HN: Lathe (LLMs to learn, not skip past, 363 pts)</a>, the <a href="https://www.nber.org/system/files/working_papers/w35275/w35275.pdf" target="_blank" rel="noopener">NBER productivity working paper</a>, and <a href="https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering" target="_blank" rel="noopener">VentureBeat's "coding no longer the bottleneck" framing</a>. Sentiment: <strong>SN spikes to 24% (&uarr;8 from E12's 16%)</strong>; CN drops 12 points to 31%. One contradiction <strong>Resolved Negative</strong> (per-seat cost-as-manageable); <strong>Newly Contested</strong>: "vibe coding is uniformly dangerous" (Supabase counterweight) and "Microsoft AI strategy operates in users' interests" (multi-axis trust deficit). <strong>Composition note</strong>: Chrome-augmented supplemental pass restored 6 Bluesky items + 1 Mastodon item; Reddit remains hard-blocked at the plugin safety layer (fifth consecutive zero window). Citation validation: PASS at 100% coverage (36/36 extraction URLs cited); summary schema validation: PASS.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>37</strong> items</div>
+          <div class="stat-pill"><strong>4</strong> incidents</div>
+          <div class="stat-pill"><strong>6</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>24%</strong> str. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-06-08.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-06-01.html">2026-05-25 &ndash; 2026-06-01 &mdash; Extraction 12</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run &nbsp;&middot;&nbsp; n=49 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (14 reused, 1 new)
+        </div>
+        <div class="report-summary">
+          <strong>The post-conference settle window: AI-dependency-trap mints as a NEW signal; cognitive-debt graduates to Thoughtworks Radar v34 Trial; Pricing/Cost rebounds decisively via FinOps formalization.</strong> The headline mints <code>ai-dependency-trap</code> on the back of <a href="https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/" target="_blank" rel="noopener">TechCrunch's May 29 piece</a> reporting METR cannot recruit baseline subjects because developers refuse to work without AI; paired with the <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">Anthropic 17% comprehension-drop RCT</a>, Amazon's Kirorank internal-leaderboard shutdown, and Uber exhausting its 2026 AI budget in four months. <strong>Four signals reach promotion threshold simultaneously</strong>: <code>review-cost-inversion</code> (Builder.io 60% YoY + CodeAnt/Qodo prescription literature), <code>junior-pipeline-collapse</code> (<a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener">Anthropic Labor Market 14%</a> confirms Stanford 13&ndash;16% + <a href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html" target="_blank" rel="noopener">CIO 40&ndash;50% drop</a>), <code>reset-year-narrative</code> (<a href="https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt" target="_blank" rel="noopener">Thoughtworks Radar v34 Trial-ring</a> + <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors" target="_blank" rel="noopener">harness engineering</a> prescription), and <code>delegation-gap-paradox</code> (<a href="https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/" target="_blank" rel="noopener">SO 2025 Dev Survey re-anchor 84%/46%/3%</a>). <strong>Pricing / Cost rebounds</strong> (E11: 5 &rarr; E12: 11) driven by the <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">GitHub Copilot June 1 cutover</a> + <a href="https://siliconangle.com/2026/05/28/finops-ai-spending-boardroom-strategy-finopsx/" target="_blank" rel="noopener">SiliconANGLE 98% FinOps boardroom datum</a> + <a href="https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx" target="_blank" rel="noopener">Visual Studio Magazine $30&ndash;$40/session backlash</a>. Three within-window May incidents (<a href="https://gvwire.com/2026/05/14/claude-ai-goes-down-for-thousands-downdetector-shows/" target="_blank" rel="noopener">Anthropic May 14 outage</a>, <a href="https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/" target="_blank" rel="noopener">OpenAI May 14</a>, <a href="https://carthageelectronics.com/cve-may-2026-zero-day-vulnerabilities/" target="_blank" rel="noopener">Mini Shai-Hulud worm</a>) add a fourth availability-class exemplar to <code>agent-production-destruction</code>. The within-window CVE additions (<a href="https://carthageelectronics.com/cve-may-2026-zero-day-vulnerabilities/" target="_blank" rel="noopener">Flowise CVE-2026-41265 CVSS 9.8</a> + <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">Anthropic MCP RCE class 30+ CVEs</a>) advance <code>mcp-attack-surface</code> to "production-confirmed plus systemic SDK-class vulnerability." Three converging large-scale empirical anchors on AI code quality land in the same week: <a href="https://www.infosecurity-magazine.com/news/ai-generated-code-vulnerabilities/" target="_blank" rel="noopener">Veracode 45%/86%/88% LLM vulnerability rates</a> + <a href="https://arxiv.org/abs/2603.28592" target="_blank" rel="noopener">arXiv 484k issues across 3,841 repos (Copilot 17.3%, Gemini 28.7%)</a> + CSA Labs CVE surge anchor. <a href="https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/" target="_blank" rel="noopener">Cognition's Devin-89% disclosure</a> supplies the first named-vendor reference customer at the 80%+ autonomy threshold. Sentiment: CN flat at 43%; SN ticks up to 16% on May incidents; CP flat at 12%. <strong>Critical composition caveat escalated</strong>: fourth consecutive zero-yield window for Tier-1 Reddit / Bluesky / Mastodon &mdash; structural composition risk now constitutes a regime. Citation validation: PASS at 88.7% coverage (52/59 unique URLs in body); summary schema validation: PASS.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>49</strong> items</div>
+          <div class="stat-pill"><strong>7</strong> incidents</div>
+          <div class="stat-pill"><strong>15</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>43%</strong> caut. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-06-01.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-05-25.html">2026-05-18 &ndash; 2026-05-25 &mdash; Extraction 11</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run &nbsp;&middot;&nbsp; n=42 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (7 reused, 2 new)
+        </div>
+        <div class="report-summary">
+          <strong>Review-cost inversion becomes the headline finding rather than a subtheme.</strong> Three convergent Tier-1 sources land within seven days &mdash; <a href="https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/" target="_blank" rel="noopener">Stack Overflow's "decision fatigue"</a>, <a href="https://sdtimes.com/softwaredev/the-invisible-burden-how-ai-is-redefining-developer-productivity-in-2026/" target="_blank" rel="noopener">SD Times' "Invisible Burden" coverage of the Harness 2026 survey</a> (81% of engineering leaders reporting review-time has risen sharply; AI-generated PRs wait 4.6&times; longer for review pickup but are reviewed 2&times; faster once picked up), and <a href="https://addyo.substack.com/p/code-review-in-the-age-of-ai" target="_blank" rel="noopener">Addy Osmani's "Code Review in the Age of AI"</a> &mdash; paired with the <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">Thoughtworks "Complacency with AI-generated code" Hold ring</a> institutional anchor. <strong>New signals minted</strong>: <code>review-cost-inversion</code> (Tracking, H) and <code>agent-infrastructure-inflection</code> (Tracking, M) capturing the Code w/ Claude analyst consensus on Managed Agents / Proactive Workflows / Capability Curve / Routines / Dreaming + Shopify and Mercado Libre 90%-autonomous reference-customer framing via <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">MIT TR</a> and <a href="https://www.infoq.com/news/2026/05/code-with-claude/" target="_blank" rel="noopener">InfoQ</a>. The <a href="https://composio.dev/blog/composio-may-2026-security-incident" target="_blank" rel="noopener">Composio May 2026 sandbox-escape disclosure</a> is the first production-confirmed MCP-style sandbox-escape and tool-injection event with public technical disclosure &mdash; advancing <code>mcp-attack-surface</code> toward production-confirmed graduation pending second-source corroboration in E12. The junior-pipeline story tilts decisively toward contraction: <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">Stanford's "Canaries in the Coal Mine"</a> (13&ndash;16% employment decline for 22&ndash;25yos in AI-exposed roles) + <a href="https://www.infoq.com/news/2026/02/ai-coding-skill-formation/" target="_blank" rel="noopener">Anthropic 17% skill-mastery study</a> + IEEE/CIO/Futurist/STN echo &mdash; <code>junior-pipeline-collapse</code> reaches 3 observations at H confidence and meets the promotion threshold. Cautiously Negative holds in the low 40s (43%); Strongly Negative ticks down (14%) on no-new-disaster-this-week; Cautiously Positive recovers to 12% on the strength of <a href="https://www.thoughtworks.com/radar/tools/claude-code" target="_blank" rel="noopener">Thoughtworks placing Claude Code on Adopt</a> + <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">Anthropic Opus 4.7 release</a> reading as quietly competent. <strong>Critical composition caveat</strong>: third consecutive zero-yield window for Tier-1 Reddit / Bluesky / Mastodon &mdash; practitioner-source composition risk is now significant. Citation validation: PASS at 97.9% coverage (47/48 unique URLs in body); summary schema validation: PASS.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>42</strong> items</div>
+          <div class="stat-pill"><strong>6</strong> incidents</div>
+          <div class="stat-pill"><strong>9</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>43%</strong> caut. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-05-25.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-05-18.html">2026-05-11 &ndash; 2026-05-18 &mdash; Extraction 10 &nbsp;<small>(+ suppl 2026-05-20)</small></a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run + 2026-05-20 supplemental pass &nbsp;&middot;&nbsp; n=70 sentiment-tagged (50 initial + 20 supplemental) &nbsp;&middot;&nbsp; Signal Store loaded (8 reused, 4 new)
+        </div>
+        <div class="report-summary">
+          <strong>The structural-risk layer reasserts itself the moment the Code w/ Claude announcement-affect bounce fades.</strong> Cautiously Negative climbs back into the low-40s (E9: 30%; E8: 44%) as three convergent Tier-1 disclosures land inside the window: <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">CSA Labs Vibe Security Radar</a> documenting 35 CVEs in March 2026 directly attributable to AI coding tools (5.8x growth in 60 days), Veracode's 45% OWASP Top 10 across 100+ LLMs with no improvement across testing cycles, and ~20% slopsquatting reference-rate; <a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/" target="_blank" rel="noopener">The Register's 200k-server MCP design-flaw disclosure</a> with vendor reportedly framing the protocol as "working as expected" despite 10 high/critical CVEs; and <a href="https://fortune.com/2026/03/18/ai-coding-risks-amazon-agents-enterprise/" target="_blank" rel="noopener">Fortune's Amazon-outages analysis</a> attributing Mar 2 (~120k lost orders) and Mar 5 (~6.3M lost orders, 99% U.S. order drop) to AI-assisted deploys &mdash; triggering a 90-day code-safety reset across 335 critical systems with senior-engineer pre-deploy approval, the <em>first FAANG-tier human-review-gate template</em> visible in the longitudinal record. The 2026-05-20 <strong>supplemental pass</strong> closed several Tier-3 flags: <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">Anthropic's 2026 Agentic Coding Trends Report</a> provides primary-source vendor data on the 60%-use / 0-20%-fully-delegate paradox + extensive case studies (Augment, Fountain, Rakuten, CRED, TELUS, Zapier, Anthropic legal); Bluesky activated as primary social with <a href="https://bsky.app/profile/simonwillison.net" target="_blank" rel="noopener">Simon Willison's GitLab Act 2 + Unethical Guide + Zombie Internet thread</a> and <a href="https://bsky.app/profile/kelseyhightower.com" target="_blank" rel="noopener">Kelsey Hightower's high-engagement skepticism cluster</a>; 11 Reddit threads surfaced via Grok relay (metadata only; verbatim quotes still blocked). The "vibe coding" frame is now used predominantly as failure-mode attribution, displaced by 2026-architectural-reset framings (<a href="https://www.thoughtworks.com/en-de/about-us/news/2026/combat-ai-cognitive-debt-radar-v34" target="_blank" rel="noopener">ThoughtWorks Radar v34</a>, <a href="https://www.thoughtworks.com/radar/tools/openspec" target="_blank" rel="noopener">OpenSpec</a>) and a substantively novel "regeneration-as-maintenance" position from <a href="https://www.infoq.com/articles/ai-generated-mvp/" target="_blank" rel="noopener">InfoQ's MVP-architecture piece</a>. <strong>Four new signals mint this window</strong>: <code>vendor-consolidation</code>, <code>labor-market-bifurcation</code>, <code>practitioner-skepticism-cluster</code> (Willison + Hightower + Boris Mann + Psyche.co + r/cscareerquestions cross-platform skeptical voice), and <code>delegation-gap-paradox</code> (vendor-confirmed 60/0-20 ceiling). Citation validation: PASS &mdash; refresh 92.8% / 222 links / 66 unique URLs (validate-citations.py 2026-05-20).
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>70</strong> items</div>
+          <div class="stat-pill"><strong>9</strong> incidents</div>
+          <div class="stat-pill"><strong>12</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>~43%</strong> caut. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-05-18.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-05-11.html">2026-05-04 &ndash; 2026-05-11 &mdash; Extraction 9</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run &nbsp;&middot;&nbsp; n=50 sentiment-tagged &nbsp;&middot;&nbsp; Signal Store loaded (6 reused, 2 new)
+        </div>
+        <div class="report-summary">
+          <strong>Anthropic's Code w/ Claude 2026 announcement bundle lands on top of an unresolved vendor-trust deficit.</strong> The May 6 keynote bundled <a href="https://claude.com/blog/introducing-routines-in-claude-code" target="_blank" rel="noopener">Routines</a>, <a href="https://claude.com/blog/new-in-claude-managed-agents" target="_blank" rel="noopener">Dreaming + Outcomes + Multiagent Orchestration in Managed Agents</a>, rate-limit doubling, and a <a href="https://www.inc.com/ben-sherry/anthropic-and-spacex-just-announced-a-colossal-deal-to-supercharge-claude-ai/91341165" target="_blank" rel="noopener">SpaceX Colossus 1 capacity deal</a> &mdash; read by <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener">Willison's live blog</a> and the <a href="https://www.shashi.co/2026/05/anthropics-platform-bet-code-with.html" target="_blank" rel="noopener">shashi.co analyst piece</a> as a strategy declaration repositioning Claude Code as a background automation platform. Practitioner reception bifurcates: <a href="https://news.ycombinator.com/front?day=2026-05-06" target="_blank" rel="noopener">HN front-page relief</a> (509 pts) vs. <a href="https://old.reddit.com/r/ClaudeCode/comments/1t6gdue/one_five_hour_session_is_25_of_weekly_quota_now/" target="_blank" rel="noopener">r/ClaudeCode "25%-of-quota per 5-hour session"</a> arithmetic and a 971-up "I've had it" thread sitting next to a 950-up <a href="https://old.reddit.com/r/ClaudeAI/comments/1t9fyns/i_read_threads_complaining_about_claude_every_week/" target="_blank" rel="noopener">power-user defense</a>. On the one-year anniversary of "vibe coding," both its originator (<a href="https://thenewstack.io/vibe-coding-is-passe/" target="_blank" rel="noopener">Karpathy</a>) and steward (<a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" target="_blank" rel="noopener">Willison</a>) publicly retire the framing. Five independent primary sources (<a href="https://www.d4b.dev/blog/2026-05-04-when-ai-writes-most-of-the-code-quality-has-to-become-infrastructure" target="_blank" rel="noopener">d4b</a>, <a href="https://www.thoughtworks.com/insights/blog/technology-strategy/macro-trends-tech-industry-april-2026" target="_blank" rel="noopener">Thoughtworks</a>, <a href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026" target="_blank" rel="noopener">Pragmatic Engineer</a>, <a href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank" rel="noopener">Lightrun/VentureBeat</a>, <a href="https://medium.com/@addyosmani/comprehension-debt-the-hidden-cost-of-ai-generated-code-285a25dac57e" target="_blank" rel="noopener">Osmani</a>) converge on a single architectural prescription: <em>quality must become production infrastructure</em>. Agentic blast-radius persists: <a href="https://old.reddit.com/r/ClaudeCode/comments/1t7ggbu/soooo_claude_just_deleted_my_entire_project/" target="_blank" rel="noopener">"Claude just deleted my project" (900 up)</a>, <a href="https://x.com/lifeof_jer/status/2048103471019434248" target="_blank" rel="noopener">PocketOS at 7.1M views</a>, <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">MCP STDIO RCE class unmitigated</a>. Cautiously Negative retreats from E8's 44% to 30%; Strongly Positive ticks up off the floor (6%) for the first time in four windows. Citation validation: PASS at 100% extraction-URL coverage.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>50</strong> items</div>
+          <div class="stat-pill"><strong>7</strong> incidents</div>
+          <div class="stat-pill"><strong>8</strong> patterns</div>
+          <div class="stat-pill"><strong>8/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>30%</strong> caut. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-05-11.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-05-04.html">2026-04-27 &ndash; 2026-05-04 &mdash; Extraction 8</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run &nbsp;&middot;&nbsp; n=48 sentiment-tagged
+        </div>
+        <div class="report-summary">
+          <strong>Vendor-trust crisis at Anthropic dominates the window.</strong> Three concurrent storylines reinforce: the <a href="https://news.ycombinator.com/item?id=47963204" target="_blank" rel="noopener">Claude Code "OpenClaw" refusal/upcharge</a> (HN 1333 pts, <a href="https://www.youtube.com/watch?v=J8O9LLpJNrg" target="_blank" rel="noopener">Theo's reaction at 100K views</a>), the <a href="https://old.reddit.com/r/ClaudeCode/comments/1sz8ym4/hermesmd_anthropic_bug_causes_200_extra_charge/" target="_blank" rel="noopener">HERMES.md $200 billing bug with refused refunds</a>, and <a href="https://old.reddit.com/r/ClaudeCode/comments/1t37jmv/anthropic_is_straightup_scamming_max_20x/" target="_blank" rel="noopener">Max 20x silent mid-month throttling accusations</a> &mdash; compounded by an <a href="https://openrouter.ai/announcements/opus-47-tokenizer-analysis" target="_blank" rel="noopener">effective 12&ndash;27% input-cost rise via the Opus 4.7 tokenizer change</a>. Agentic blast-radius escalates: the <a href="https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/" target="_blank" rel="noopener">PocketOS production database deletion</a> (Cursor + Claude Opus 4.6, ~9 seconds) plus a <a href="https://old.reddit.com/r/cursor/comments/1szupca/agent_got_stuck_in_a_loop_and_spent_over_2000_in/" target="_blank" rel="noopener">Cursor runaway loop burning $2K+ in &lt;2 hours</a> shift the architectural conversation from "is AI code good?" to "what destructive action will the agent take next?". The <a href="https://news.ycombinator.com/item?id=47976415" target="_blank" rel="noopener">Uber CTO disclosure</a> that the full-year 2026 AI budget was exhausted by April after Claude Code reached 84% of ~5,000 engineers anchors cost-runaway at enterprise scale. Open-source maintainer pushback crystallizes via the <a href="https://news.ycombinator.com/item?id=47957294" target="_blank" rel="noopener">Zig anti-LLM contribution policy</a>. Cautiously Negative at 44% is the highest in the series; Strongly Positive at 0% for the third consecutive window. Citation validation: PASS at 100% extraction-URL coverage.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>48</strong> items</div>
+          <div class="stat-pill"><strong>10</strong> incidents</div>
+          <div class="stat-pill"><strong>6</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>44%</strong> caut. neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-05-04.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-04-27.html">2026-04-20 &ndash; 2026-04-27 &mdash; Extraction 7 (re-run)</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) via scheduled run &nbsp;&middot;&nbsp; per-platform query blocks
+        </div>
+        <div class="report-summary">
+          Re-run of the original E7 extraction after the first pass under-queried per-platform query blocks; corpus expands ~4× to <strong>n=58 sentiment-tagged / n=82 raw</strong>. <strong>April 20–22 is the AI-coding pricing inflection week:</strong> three independent vendor- and customer-side events in 48 hours &mdash; <a href="https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/" target="_blank" rel="noopener">GitHub Copilot signup pause</a>, <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank" rel="noopener">Anthropic Claude Code Pro removal/reversal</a>, and <a href="https://www.humai.blog/uber-burned-its-entire-2026-ai-budget-in-four-months-claude-code-did-it/" target="_blank" rel="noopener">Uber's 2026 AI budget exhausted in four months</a>. Anthropic's <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">April 23 Claude Code postmortem</a> admits three concurrent regressions Mar 4 &ndash; Apr 20 (well-received), but the trust arc <em>tri-furcates</em> with the <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/" target="_blank" rel="noopener">Willison pricing piece</a> and <a href="https://www.scientificamerican.com/article/anthropic-leak-reveals-claude-code-tracking-user-frustration-and-raises-new/" target="_blank" rel="noopener">Scientific American on user-frustration regex tracking</a>. Eight in-window incidents (highest density in series). Productivity paradox quantified via <a href="https://thenewstack.io/how-ai-coding-makes-developers-56-faster-and-19-slower/" target="_blank" rel="noopener">"56% faster greenfield / 19% slower maintenance"</a> + <a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026" target="_blank" rel="noopener">Pragmatic Engineer 906-engineer survey</a> + <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/claude-code-codeconcise-experiment" target="_blank" rel="noopener">Thoughtworks "97%-then-fail"</a>. <a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank" rel="noopener">MCP CVE cluster hardens</a>; <a href="https://www.businesstoday.in/technology/story/it-took-9-seconds-ai-agent-running-on-anthropics-claude-opus-46-wipes-critical-database-527552-2026-04-27" target="_blank" rel="noopener">9-second database wipe</a> third event in autonomous-agent-production-destruction class. "Reset year" narrative consolidates. Citation validation: PASS at 100% extraction-URL coverage.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>58</strong> items</div>
+          <div class="stat-pill"><strong>8</strong> incidents</div>
+          <div class="stat-pill"><strong>7</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill"><strong>41%</strong> Mixed</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-04-27.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-04-20.html">2026-04-13 &ndash; 2026-04-20 &mdash; Extraction 6</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via scheduled run
+        </div>
+        <div class="report-summary">
+          Discourse moves from outrage to institutionalized critique &mdash; cognitive debt graduates to a <a href="https://itbrief.com.au/story/ai-coding-boom-deepens-cognitive-debt-says-thoughtworks" target="_blank" rel="noopener">Thoughtworks Tech Radar v34 entry</a> backed by an <a href="https://arxiv.org/html/2604.13277" target="_blank" rel="noopener">arXiv RCT (n=52, 17pp comprehension gap at equal task-completion)</a>. MCP supply-chain risk hits crisis phase with a coordinated April 15 disclosure cluster: <a href="https://www.darkreading.com/application-security/critical-mcp-integration-flaw-nginx-risk" target="_blank" rel="noopener">MCPwn (CVSS 9.8)</a>, <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/" target="_blank" rel="noopener">Ox Security's 200K-instance systemic protocol flaw</a>, and two additional CVEs &mdash; capped by the April 20 <a href="https://vercel.com/kb/bulletin/vercel-april-2026-security-incident" target="_blank" rel="noopener">Vercel / Context.ai breach</a>, the first third-party-AI-tool compromise in production web-platform infrastructure. Agent-first UX ships as an industry bet with <a href="https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/" target="_blank" rel="noopener">Cursor 3</a> and <a href="https://claude.com/blog/claude-code-desktop-redesign" target="_blank" rel="noopener">Claude Code's desktop redesign + Routines</a>. <a href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank" rel="noopener">VentureBeat's 43% debugging figure</a> anchors the productivity-reality cluster; per-engineer AI-usage metrics show active Goodhart failure.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>61</strong> items</div>
+          <div class="stat-pill"><strong>5</strong> incidents</div>
+          <div class="stat-pill"><strong>7</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>34%</strong> cautiously neg.</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-04-20.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-04-13.html">2026-04-06 &ndash; 2026-04-13 &mdash; Extraction 5</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via scheduled run
+        </div>
+        <div class="report-summary">
+          Burnout and cognitive addiction emerge as dominant narrative &mdash; <a href="https://www.axios.com/2026/04/04/ai-agents-burnout-addiction-claude-code-openclaw" target="_blank" rel="noopener">agentic coding tools compared to slot machines</a>, <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">14% of developers experiencing "brain fry"</a>. <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/" target="_blank" rel="noopener">AI-generated CVEs surge to 35 in March</a> (5x from January). <a href="https://thinkpol.ca/2026/03/24/the-junior-developer-pipeline-is-broken-and-nobody-has-a-plan-to-fix-it/" target="_blank" rel="noopener">Junior developer roles down 46%</a> while <a href="https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs" target="_blank" rel="noopener">CNN reports job openings growing 11%</a> &mdash; composition shift, not contradiction. <a href="https://authzed.com/blog/timeline-mcp-breaches" target="_blank" rel="noopener">MCP emerges as critical attack surface</a> with 4 documented incidents. Comprehension debt replaces technical debt as primary concern.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>53</strong> items</div>
+          <div class="stat-pill"><strong>7</strong> incidents</div>
+          <div class="stat-pill"><strong>9</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>54%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-04-13.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-04-06.html">2026-03-30 &ndash; 2026-04-06 &mdash; Extraction 4</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via Chrome
+        </div>
+        <div class="report-summary">
+          Anthropic compound-incident week dominates discourse: <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/" target="_blank" rel="noopener">rate-limit/cache regression</a>, accidental <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-code-source-code-accidentally-leaked-in-npm-package/" target="_blank" rel="noopener">~500K-LOC Claude Code source leak</a>, and <a href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">OpenClaw subscription block</a> in one 7-day window. Trust / Vendor Relationship surges from 2 to 11 mentions. <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener">Cursor 3</a> reframes the IDE around an <a href="https://medium.com/@han.heloir/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code-0d2bc51f0dcb" target="_blank" rel="noopener">"Agents Window"</a> (35% of Cursor's own merged PRs from autonomous cloud agents). <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR pegs productivity peak at 3 concurrent tools</a>, drops at 4+. ThoughtWorks Radar Vol. 32 places <a href="https://www.thoughtworks.com/en-us/radar/techniques/complacency-with-ai-generated-code" target="_blank" rel="noopener">"complacency with AI-generated code"</a> on Hold and <a href="https://www.thoughtworks.com/radar/techniques/agents-md" target="_blank" rel="noopener">AGENTS.md</a> on Trial. Claude Code v2.1.88 release window overlapped <a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/" target="_blank" rel="noopener">axios npm supply-chain compromise</a>.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>44</strong> items</div>
+          <div class="stat-pill"><strong>5</strong> incidents</div>
+          <div class="stat-pill"><strong>7</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>59%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-04-06.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-03-31.html">2026-03-28 &ndash; 2026-03-31 &mdash; Extraction 3</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.15 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6) via Chrome
+        </div>
+        <div class="report-summary">
+          Strongly Negative surges to 63% as discourse polarizes &mdash; moderate center collapses. AI burnout paradox reaches mainstream academic validation (<a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank" rel="noopener">HBR</a>, <a href="https://www.scientificamerican.com/article/why-developers-using-ai-are-working-longer-hours/" target="_blank" rel="noopener">Scientific American</a>). MCP protocol vulnerabilities <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/" target="_blank" rel="noopener">documented by Palo Alto Unit 42</a> (30+ CVEs, 43% exec/shell injection). <a href="https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report" target="_blank" rel="noopener">CodeRabbit confirms 1.7x bug rate</a>. <a href="https://dev.to/increase123/the-ai-productivity-paradox-why-developers-are-19-slower-and-what-this-means-for-2026-a14" target="_blank" rel="noopener">Productivity Paradox</a> emerges as new signal.
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><strong>19</strong> items</div>
+          <div class="stat-pill"><strong>7</strong> incidents</div>
+          <div class="stat-pill"><strong>7</strong> patterns</div>
+          <div class="stat-pill"><strong>9/9</strong> batches</div>
+          <div class="stat-pill neg"><strong>79%</strong> negative</div>
+        </div>
+      </div>
+      <div class="report-arrow"><a href="analysis-report-2026-03-31.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
+    </div>
+
+    <div class="report-card">
+      <div>
+        <div class="report-title"><a href="analysis-report-2026-03-30.html">2026-03-23 &ndash; 2026-03-30 &mdash; Extraction 2</a></div>
+        <div class="report-meta">
+          Analysis Prompt v1.13 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-6)
+        </div>
+        <div class="report-summary">
+          Negative sentiment surges to 62% as <a href="https://www.theregister.com/2026/03/26/ai_coding_assistant_not_more_secure/" target="_blank" rel="noopener">CVE a

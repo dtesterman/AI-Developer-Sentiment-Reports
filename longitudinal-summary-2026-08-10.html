@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Longitudinal Trend Report — AI Coding Tools E1 - E21 v2 (2026-03-20 to 2026-08-10). 21 weekly windows; ~1,180 tagged items; 18 tracked signals. E21 mints accidental-cyberattacks (Willison enumerates five cross-lab eval-infrastructure containment failures), auto-mode-default (Anthropic Aug 14 rollout contested by steganography 10/12 bypass + Cursor CLI pre-trust exec), vibe-coding-semantic-drift (M→H in v2 via Redd XF vibe-coded-app audit), meta-muse-code-launch. oss-maintainer-pushback escalates M→H via Rust LLM-policy crystallization. First in-window MCP CVE (EUVD-2026-54852) closes program-long gap. Cognitive-debt / reviewer-cost extends vendor-side via DNyuz DeepMind report; Cal Newport mainstream anchor.">
+<meta property="og:title" content="Longitudinal Trend Report — E1 - E21 (2026-03-20 to 2026-08-10)">
+<meta property="og:description" content="21 windows; Willison mints accidental-cyberattacks as cross-lab class (OpenAI/HF, Anthropic me-too, UK AISI, Irregular, Meta); Anthropic auto-mode-default Aug 14 rollout is contested-safety; Rust ships first major OSS-foundation LLM contribution policy; reviewer-cost consolidates as dominant burnout evidence class.">
+<title>Longitudinal Trend Report — E1 - E21 (2026-03-20 to 2026-08-10)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #c9d1d9;
+    font-family: 'Source Serif 4', serif; font-size: 16px; line-height: 1.6;
+    overflow-x: hidden; padding-top: 3rem;
+}
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 2px solid #5c9eed;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+nav.nav-hidden { transform: translateY(-110%); }
+nav .container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: flex-start; align-items: center;
+    gap: 1rem; padding: 0;
+}
+nav h1 {
+    font-family: 'DM Serif Display', serif; font-size: 1rem;
+    color: #5c9eed; font-weight: 400;
+    flex-shrink: 0; white-space: nowrap; margin: 0;
+}
+nav ul {
+    display: flex; list-style: none; gap: 0.25rem;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    margin: 0; padding: 0;
+    scrollbar-width: thin; scrollbar-color: #30363d transparent;
+}
+nav ul::-webkit-scrollbar { height: 4px; }
+nav ul::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+nav li { margin: 0; flex-shrink: 0; }
+nav a {
+    color: #8b949e; text-decoration: none;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    white-space: nowrap; display: inline-block;
+}
+nav a:hover { color: #5c9eed; background-color: rgba(92, 158, 237, 0.1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 2px solid #5c9eed; }
+h1.title {
+    font-family: 'DM Serif Display', serif; font-size: 3rem;
+    color: #f0f6fc; line-height: 1.15; margin-bottom: 1rem;
+}
+.subtitle {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+    color: #8b949e; margin-bottom: 1rem;
+}
+.masthead-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+}
+.stat-item {
+    background-color: #161b22; padding: 1rem; border-radius: 6px;
+    border-left: 3px solid #5c9eed;
+}
+.stat-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+.stat-value { font-size: 1.6rem; color: #5c9eed; font-weight: 600; }
+section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+h2 {
+    font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+    color: #f0f6fc; margin: 2.5rem 0 1.5rem 0;
+    padding-left: 2rem; position: relative;
+}
+h2::before {
+    content: attr(data-section); position: absolute; left: 0;
+    color: #5c9eed; font-size: 0.85rem; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; top: 0.6em;
+}
+h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: #c9d1d9; margin: 2rem 0 1rem 0;
+}
+h4 {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    color: #f0f6fc; margin: 1.5rem 0 0.5rem 0;
+}
+p { margin-bottom: 1.2rem; }
+a {
+    color: #5c9eed; text-decoration: none;
+    border-bottom: 1px solid rgba(92, 158, 237, 0.3); transition: all 0.2s;
+}
+a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+strong { color: #f0f6fc; font-weight: 600; }
+em { font-style: italic; color: #c9d1d9; }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #161b22; padding: 0.15em 0.4em;
+    border-radius: 3px; font-size: 0.9em; color: #79b8ff;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    background-color: #161b22; border: 1px solid #30363d;
+    border-radius: 6px; overflow: hidden; font-size: 0.92rem;
+}
+thead { background-color: #1c2330; }
+th {
+    padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+    color: #f0f6fc; border-bottom: 2px solid #30363d;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+}
+td {
+    padding: 0.6rem 1rem; border-bottom: 1px solid #30363d;
+    word-break: break-word; vertical-align: top;
+}
+tbody tr:nth-child(even) { background-color: rgba(28, 35, 48, 0.5); }
+tbody tr:hover { background-color: #1c2330; }
+ul, ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+.signal-card {
+    background-color: #161b22; border: 1px solid #30363d;
+    border-left: 3px solid #5c9eed;
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.signal-card h4 {
+    margin-top: 0; font-family: 'DM Serif Display', serif;
+    color: #f0f6fc; font-size: 1.1rem;
+}
+.signal-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-right: 0.4rem; background-color: rgba(92, 158, 237, 0.15);
+    color: #5c9eed;
+}
+.badge.escalated {
+    background-color: rgba(224, 82, 82, 0.15); color: #e05252;
+}
+.badge.new { background-color: rgba(76, 175, 125, 0.15); color: #4caf7d; }
+.badge.continues { background-color: rgba(240, 168, 50, 0.15); color: #f0a832; }
+footer {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 2px solid #30363d; text-align: center;
+    color: #8b949e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    nav h1 { display: none; }
+    nav a { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+    .container { padding: 2rem 1rem; }
+    h1.title { font-size: 2rem; }
+    h2 { font-size: 1.5rem; padding-left: 1.5rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+}
+</style>
+</head>
+<body>
+<nav><h1>Longitudinal Trend Report</h1><ul><li><a href="#summary">01 Summary</a></li><li><a href="#composition">02 Composition</a></li><li><a href="#trajectory">03 Trajectory</a></li><li><a href="#momentum">04 Momentum</a></li><li><a href="#signals">05 Signals</a></li><li><a href="#contradictions">06 Contradictions</a></li><li><a href="#vocabulary">07 Vocabulary</a></li><li><a href="#gaps">08 Gaps</a></li><li><a href="#watch">09 Watch List</a></li><li><a href="#metadata">10 Metadata</a></li></ul></nav>
+<div class="container">
+<header>
+<h1 class="title">Longitudinal Trend Report<br>AI Coding Tools &mdash; Extractions 1 &ndash; 21</h1>
+<div class="subtitle">2026-03-20 &ndash; 2026-08-10 &nbsp;&middot;&nbsp; ~143 days &nbsp;&middot;&nbsp; 21 weekly windows &nbsp;&middot;&nbsp; Revision v2 (post chrome-expansion-3)<br>Generated 2026-08-10 from analysis-summary-{date}.md files (--from-summaries mode)</div>
+<div class="masthead-stats">
+<div class="stat-item"><div class="stat-label">Extractions</div><div class="stat-value">21</div></div>
+<div class="stat-item"><div class="stat-label">Items Tagged</div><div class="stat-value">~1,180</div></div>
+<div class="stat-item"><div class="stat-label">Tracked Signals</div><div class="stat-value">18</div></div>
+<div class="stat-item"><div class="stat-label">Promoted Signals</div><div class="stat-value">10</div></div>
+<div class="stat-item"><div class="stat-label">NEW E21</div><div class="stat-value">4</div></div>
+<div class="stat-item"><div class="stat-label">Confirmed Trends</div><div class="stat-value">5</div></div>
+</div>
+</header>
+
+<section id="summary"><h2 data-section="01">Executive Summary</h2>
+<p><em>Revised 2026-08-10 after chrome-expansion-3 added 13 items to E21 (n 83 → 96); vibe-coding-semantic-drift upgraded M→H; first in-window MCP CVE closes a program-long gap.</em></p>
+<p>Across twenty-one consecutive weekly extractions spanning ~143 days (~1,180 sentiment-tagged items cumulative), the AI coding tools discourse advanced from E20's <em>convergence week</em> into a new inflection: <strong>E21 is the week the AI-lab eval-boundary itself became the incident class.</strong> Continuing the multi-arc framing established in E20: "is the code any good?" (E1–E3) → "is the agent safe?" (E4–E7) → "is the harness right?" (E8–E9) → "who governs the gate?" (E10) → "who pays the review cost?" (E11) → "who pays the cognitive cost?" (E12) → "is the infrastructure load-bearing AND who pays?" (E13) → "who do we trust, and what is the supply-chain cost?" (E14) → "MCP supply chain IS the incident class" (E15) → "who governs the model itself — and at whose request?" (E16) → "subagent-delegation is the workflow winner and Chinese open-weight ships" (E17) → "three frontier models GA in ten days" (E18) → "MCP-mediated RCE crystallizes + autonomous agents graduate to production intrusion" (E19) → "convergence week — Opus 5 regression + HF autonomous-attack + MCP protocol maturity + Open Weights letter" (E20) → and now in <strong>E21, Simon Willison mints <code>accidental-cyberattacks</code> as a discrete class enumerating five cross-lab eval-infrastructure containment failures (OpenAI/HF, Anthropic me-too, UK AISI, Irregular, Meta), coincident with Anthropic's Aug 14 Claude Code auto-mode default rollout, adjacent security research documenting steganography (10/12 bypass) and Cursor CLI pre-trust execution, Rust becoming the first major foundation OSS project to formalize an LLM contribution policy, and cognitive-debt / reviewer-cost consolidating as the dominant practitioner-voice frame (extended to vendor-side via DNyuz's DeepMind unraveling report).</strong></p>
+<p>E21 (n=96, 90 unique URLs — v2 after chrome-expansion-3) <strong>mints four NEW signals</strong> (<code>accidental-cyberattacks</code> at H — the first cross-lab pattern in the program; <code>auto-mode-default</code> at H — carrying both the safety-upgrade claim and its bypass counter-evidence; <code>vibe-coding-semantic-drift</code> minted at M and <strong>upgraded to H in v2</strong> on the Redd XF Bolt/Cursor/Lovable audit + SecondRead audit tool + "machine speed vs human speed" framing — contested-inversion sibling of <code>vibe-coding-disreputed</code>; <code>meta-muse-code-launch</code> at M — Meta enters the coding-agent market), <strong>escalates <code>oss-maintainer-pushback</code> from Tracking-M to Tracking-H</strong> on the weight of the Rust LLM-policy crystallization (v2 adds OpenJDK + Django bot-sourced policy leads-to-verify), and <strong>re-confirms four prior signals at H</strong> (<code>cost-runaway</code> — v2 adds DeepSeek $0.14/M-tokens as a fifth FinOps facet; <code>ai-burnout-paradox</code> — v2 adds Cal Newport's "On AI Coding and Its Discontents" as mainstream anchor; <code>mcp-protocol-maturation</code> — v2 lands the <strong>first in-window MCP-specific CVE</strong> (EUVD-2026-54852, roo-code-memory-bank-mcp-server, CVSS 4.8), closing the program-long MCP-CVE gap; <code>junior-dev-collapse</code> continues at M with hardening plus a v2 two-tier labor-market angle — Meta $100M offers / Cursor elite recruiting against the junior decline). The <code>accidental-cyberattacks</code> mint is architecturally distinct from <code>agentic-threat-actor</code> (adversarial deployment) — attacker/target relationship is reversed, and the pattern is unified by containment-boundary failure rather than intent. This is the first program-history week where the eval infrastructure itself becomes a documented failure class.</p>
+<p><strong>The macro arc across E17–E21 has extended three multi-week storylines and opened a fourth</strong>:</p>
+<ol>
+<li><strong>Frontier-model geopolitical alignment</strong> — Chinese open-weight sovereignty (E17-E19) → explicit US regulatory-political coalition (E20 Nvidia letter) → E21 tapered (Regulation cluster 12 → 9; Kimi/Qwen coverage narrowed; still no Anthropic/OpenAI/Google positioning on the letter). Now a dormant-but-active axis.</li>
+<li><strong>Agent attack surface + eval-infrastructure containment</strong> — from <code>mcp-attack-surface</code> (E15-E19) to <code>agent-attack-surface</code> (E20) to E21's <code>accidental-cyberattacks</code> — a <em>cross-lab</em> pattern indicating the failure class extends beyond any single vendor's guardrails. Five incidents documented in a single Willison tag; Black Hat USA 2026 presentation is the formal timeline anchor.</li>
+<li><strong>Cognitive debt / burnout as enterprise vocabulary</strong> — E20 (Appian + O'Reilly + arXiv) → E21 extends to vendor-side (DNyuz DeepMind "unraveling" report, Mark Levison's "mistakes faster is not winning" Mastodon post, Fossheim reviewer-cost thread, r/cscareerquestions "exhausting-soulless" 850/230, r/ExperiencedDevs "competence-vs-appearance" 320/267). Review-cost is now the load-bearing evidence class within <code>ai-burnout-paradox</code>.</li>
+<li><strong>NEW: OSS-foundation policy formalization</strong> — <code>oss-maintainer-pushback</code> (E8, E10 in early skeleton form) hardens in E21 via Rust's LLM contribution policy (blog.rust-lang.org Aug 5 primary + 6 secondaries + HN thread + r/programming 604 upvotes). The next-cycle test is whether Kubernetes / Python / LLVM / CNCF follow.</li>
+</ol>
+<p><strong>E21 sentiment (v2)</strong>: SN 20%, CN 15%, MA 20%, CP 8%, SP 8%, Nu 29%. SN+CN 35% is stable versus E20 (35%); CP+SP compresses to 16% (from E20's 31%) — the Opus 5 launch-week SP surge has retracted as post-launch quality complaints continue and no new frontier launch fills the vacuum. Nu 29% is elevated (from E20's 15%) as the <code>accidental-cyberattacks</code> class and the auto-mode-default rollout consolidate as "under analysis" positions rather than firm supporters or critics — the expansion-3 Mastodon/YouTube items skew analytical, pushing Nu slightly higher than v1's read. This is a <em>deliberation-heavy</em> week rather than a polarized one.</p>
+<p><strong>Highest-priority next-window watches</strong>: (1) Anthropic patch cadence on the Claude Code steganography vector before Aug 14 auto-mode default; (2) sixth <code>accidental-cyberattacks</code> incident arrival (would confirm class as recurring rather than eval-boundary artifact); (3) Kubernetes/Python/LLVM/CNCF follow-on LLM contribution policies; (4) Anthropic response to DNyuz DeepMind burnout report — vendor-side wellbeing posture is now competitive information; (5) Meta Muse Code adoption signals in enterprise share; (6) Cursor CLI pre-trust remediation + Manifold Security follow-up publications.</p>
+
+</section><section id="composition"><h2 data-section="02">Source Composition Audit</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>Window end</th>
+<th>Items</th>
+<th>Reddit</th>
+<th>Bluesky</th>
+<th>X</th>
+<th>Blogs+Trade</th>
+<th>HN</th>
+<th>YouTube</th>
+<th>Mastodon</th>
+<th>Incidents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E16</td>
+<td>2026-06-29</td>
+<td>65</td>
+<td>7</td>
+<td>23</td>
+<td>0</td>
+<td>15</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>2026-07-06</td>
+<td>41</td>
+<td>11</td>
+<td>1</td>
+<td>3</td>
+<td>14</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>2026-07-13</td>
+<td>72</td>
+<td>10</td>
+<td>16</td>
+<td>12</td>
+<td>24</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>2026-07-20</td>
+<td>61</td>
+<td>7</td>
+<td>0</td>
+<td>18</td>
+<td>26</td>
+<td>5</td>
+<td>3</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>E20</td>
+<td>2026-08-03</td>
+<td>115</td>
+<td>9</td>
+<td>23</td>
+<td>15</td>
+<td>57</td>
+<td>9</td>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>E21 (v2)</strong></td>
+<td><strong>2026-08-10</strong></td>
+<td><strong>96</strong></td>
+<td><strong>10</strong></td>
+<td><strong>8</strong></td>
+<td><strong>20</strong></td>
+<td><strong>~19</strong></td>
+<td><strong>3</strong></td>
+<td><strong>11</strong></td>
+<td><strong>19</strong></td>
+<td><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: E21 v2 per-platform counts sum to 90 (the unique-URL basis); the 96-item total includes 6 additional items extracted from already-counted Mastodon search-URL surfaces (multiple items per surface). Incidents 8 → 10 in v2 (adds mcp-cve-euvd-2026-54852, vibe-coded-app-audit).</em></p>
+<p><strong>Composition anomalies (E21, v2)</strong>:
+- <strong>Mastodon first-ever substantial window in the program</strong> — 19 items via logged-in full-text search (Chrome supplements #2 and #3: "vibe coding", Cursor, MCP, AI-coding, Copilot queries) + one direct-handle URL (Mark Levison hachyderm.io). The fediverse retrieval gap called out in E17-E20 gaps sections is now substantially closed, though items sit behind 6 search-URL surfaces rather than per-post permalinks.
+- <strong>YouTube recovers to 11 items</strong> (up from E20's 1) driven by Gemini candidate-discovery + Claude-in-Chrome DOM verify pass, completed by expansion-3's remaining-channel sweep — includes ThePrimeagen 299K "People Are Mad They're Told to Learn" + 257K accidental-cyberattacks amplifier + Theo 131K Muse Code + Theo 101K Fable-broke-my-app + 89K Syntax FM Black Market AI Tokens + 78K "Did Anthropic finally fix MCP?" + 18K Cursor Router + Anthropic auto-mode explainer + @HTMLAllTheThings Meta-$100M-offers segment.
+- <strong>Blogs + trade press retracts to ~19</strong> (from E20's 57) — Open Weights letter cluster (E20's 8 items) has no natural E21 successor; frontier-launch coverage is post-crest.
+- <strong>X/Twitter at 20 items</strong> (up from E20's 15) via continued Grok cross-LLM — includes accidental-cyberattacks cluster (@AppgateSecurity, @voxnewton, @christinayiotis, @airesearchtools, @AnnieCushing), auto-mode reactions (@A_Intimidating, @gentschev, @thenewstack, @vennelacheekati, @uwillc, @ctsmithiii), international coverage (@MezhaMedia Ukrainian).
+- <strong>Reddit at 10 items, still Provisional</strong> (ChatGPT cross-LLM; direct-URL verification pending) — key threads: r/ClaudeCode $90/day cap (180/302), same-model-different-prices (799/150), rejected-3-junior-devs (450/253); r/ExperiencedDevs interview-format-failed (62/68), AI-produced-code (320/267); r/cscareerquestions exhausting-soulless (850/230), AI-skyrocketed-incidents; r/programming Rust LLM policy (604); r/ClaudeAI elevated-errors discussion hub.
+- <strong>Zero podcast items</strong> (fifth consecutive cycle without Tier-2 manual podcast extraction; Syntax FM captured via YouTube surface only).</p>
+<p><strong>Composition verdict</strong>: <strong>HEALTHY at moderate scale with structural improvement</strong>. E21 closes two long-running structural gaps (Mastodon zero-coverage; YouTube thin-coverage) — and v2's expansion-3 makes the Mastodon closure substantial (19 items) rather than token. Overall item count (96) is lower than E20's program-max (115) but coverage breadth is broader — 7 non-zero platforms this cycle vs 6 last cycle. Reddit + X Provisional-tier items (30 combined) represent the largest verification-debt cohort in the program.</p>
+
+</section><section id="trajectory"><h2 data-section="03">Sentiment Trajectory</h2>
+<table>
+<thead>
+<tr>
+<th>Extraction</th>
+<th>SN</th>
+<th>CN</th>
+<th>MA</th>
+<th>Nu</th>
+<th>CP</th>
+<th>SP</th>
+<th>SN+CN</th>
+<th>CP+SP</th>
+<th>Δ SN+CN</th>
+<th>Δ CP+SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E16</td>
+<td>20</td>
+<td>28</td>
+<td>12</td>
+<td>22</td>
+<td>12</td>
+<td>6</td>
+<td>48</td>
+<td>18</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>5</td>
+<td>8</td>
+<td>12</td>
+<td>24</td>
+<td>34</td>
+<td>17</td>
+<td>13</td>
+<td>51</td>
+<td>▼▼ −35</td>
+<td>▲▲ +33</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>6</td>
+<td>15</td>
+<td>14</td>
+<td>23</td>
+<td>30</td>
+<td>12</td>
+<td>21</td>
+<td>42</td>
+<td>▲ +8</td>
+<td>▼ −9</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>21</td>
+<td>0</td>
+<td>21</td>
+<td>40</td>
+<td>21</td>
+<td>▲▲ +19</td>
+<td>▼▼ −21</td>
+</tr>
+<tr>
+<td>E20</td>
+<td>21</td>
+<td>14</td>
+<td>19</td>
+<td>15</td>
+<td>9</td>
+<td>22</td>
+<td>35</td>
+<td>31</td>
+<td>▼ −5</td>
+<td>▲ +10</td>
+</tr>
+<tr>
+<td><strong>E21 (v2)</strong></td>
+<td><strong>20</strong></td>
+<td><strong>15</strong></td>
+<td><strong>20</strong></td>
+<td><strong>29</strong></td>
+<td><strong>8</strong></td>
+<td><strong>8</strong></td>
+<td><strong>35</strong></td>
+<td><strong>16</strong></td>
+<td><strong>≈ 0</strong></td>
+<td><strong>▼▼ −15</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Δ E20→E21 (v2)</strong>: SN+CN steady at 35 (Opus 5 quality debate absorbed into <code>auto-mode-default</code> contested-safety, cross-lab incident coverage, and cognitive-debt cluster); CP+SP compresses 15 pts (31→16) as the Opus 5 launch-week product-velocity SP surge retracts and no compensating positive-launch event fills; Nu jumps 14 pts (15→29) reflecting the <em>deliberation-heavy</em> character of the week — <code>accidental-cyberattacks</code> class and auto-mode default are new topics still being framed rather than firmly supported or opposed, and expansion-3's analytical Mastodon/YouTube items reinforce the deliberative skew; MA holds at 20 reflecting stable "conditions/caveats" framing across most tool discussion.</p>
+<p><strong>Composition-adjusted reading</strong>: The regime shifts from E20's bimodal (incident-heavy SN + product-velocity SP) to E21's <strong>deliberative + reviewer-cost</strong> dominant. The Nu surge is not analytical vacuum — it is topic-newness. Expect E22 SN to widen if the accidental-cyberattacks incident count grows past five, and CP+SP to remain compressed unless Anthropic ships a public post-mortem or Meta Muse Code gets a positive independent third-party endorsement. The elevated Nu 29% is the largest in program history (previous peak E17's 24%) and matches the earlier "regulation-driven analytical" character.</p>
+
+</section><section id="momentum"><h2 data-section="04">Cluster Momentum</h2>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>E19</th>
+<th>E20</th>
+<th>E21 (v2)</th>
+<th>Trajectory</th>
+<th>Signal strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Specific tools</td>
+<td>11</td>
+<td>42</td>
+<td>37</td>
+<td>▼ (compositionally lower post-Opus 5 launch, but still #1)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Incidents / Failures</td>
+<td>14</td>
+<td>17</td>
+<td>26</td>
+<td>▲▲ (accidental-cyberattacks cluster + Cursor CLI + steganography + $90/day cap; v2 adds MCP CVE + vibe-coded-app audit)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Trust / Verification</td>
+<td>12</td>
+<td>16</td>
+<td>21</td>
+<td>▲ (auto-mode red-team-vs-bypass + Opus 5 residual + Rust policy)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Enterprise / Policy</td>
+<td>8</td>
+<td>12</td>
+<td>18</td>
+<td>▲▲ (Rust LLM policy + $90/day cap + auto-mode default enterprise implications)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Pricing / Cost</td>
+<td>15</td>
+<td>18</td>
+<td>18</td>
+<td>≈ (Cursor Router + Muse Code cheap + $90/day cap + Black Market Tokens; v2 adds DeepSeek $0.14/M)</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td>7</td>
+<td>11</td>
+<td>15</td>
+<td>▲ (Fable-broke-my-app + Opus 5 residual + steganography output correctness)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Burnout / Cognitive Load</td>
+<td>6</td>
+<td>8</td>
+<td>13</td>
+<td>▲ (DNyuz DeepMind + cscareerquestions + Fossheim + ExperiencedDevs + Levison; v2 adds Cal Newport)</td>
+<td>Growing/Strong</td>
+</tr>
+<tr>
+<td>Regulation / Export Control</td>
+<td>0</td>
+<td>12</td>
+<td>9</td>
+<td>▼ (Open Weights letter post-crest; no new legislative action)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Architectural Philosophy</td>
+<td>10</td>
+<td>9</td>
+<td>9</td>
+<td>≈ (MCP stateless + vibe-coding semantic drift)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Team &amp; Org Dynamics</td>
+<td>6</td>
+<td>6</td>
+<td>9</td>
+<td>▲ (DeepMind unraveling + interview-format-failed + $90/day scope)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Hiring / Labor Market</td>
+<td>3</td>
+<td>3</td>
+<td>9</td>
+<td>▲▲ (rejected-3-junior-devs + Forbes 33rd-month + interview format; v2 adds Meta $100M / Cursor elite-recruiting two-tier angle)</td>
+<td>Growing</td>
+</tr>
+<tr>
+<td>Review Burden</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>▲▲ (returns via ExperiencedDevs + Fossheim reviewer-cost; predicted last cycle)</td>
+<td>Growing</td>
+</tr>
+<tr>
+<td>Learning / Deskilling</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+<td>≈ (ThePrimeagen "told-to-learn" 299K anchor)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Productivity Reality</td>
+<td>9</td>
+<td>5</td>
+<td>7</td>
+<td>≈/▲ (mild v2 recovery via expansion-3 items)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Open-Weight Sovereignty</td>
+<td>3</td>
+<td>22</td>
+<td>4</td>
+<td>▼▼ (post-Kimi/Nvidia-letter crest — comp artifact, not reversal)</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Hype vs Reality</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>≈/▼</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Job Security</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>≈</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Dependency / Resilience</td>
+<td>3</td>
+<td>0</td>
+<td>2</td>
+<td>▲ (mild recovery — Fable-broke-my-app + Cloudflare-OS supply chain)</td>
+<td>Weak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Momentum highlights</strong>:</p>
+<ul>
+<li><strong>Fastest rising</strong>: Incidents / Failures (17 → 26 — v2's MCP CVE + vibe-coded-app audit push it to the largest absolute gain); Review Burden (0 → 6 in one cycle — exactly the E20 prediction of "re-emerges in E21 with follow-up survey coverage" hit); Hiring / Labor Market (3 → 9 via three concrete interview/hiring anchor threads plus the v2 two-tier talent-war angle); Burnout / Cognitive Load (6 → 8 → 13 sustained rise now with vendor-side extension and Cal Newport mainstream anchor); Enterprise / Policy (12 → 18 via Rust + $90/day cap).</li>
+<li><strong>Sharpest decline (composition-flagged, not real trend reversal)</strong>: Open-Weight Sovereignty (22 → 4 as the Kimi K3 + Nvidia letter simultaneity cluster runs its course; underlying signals remain active); Specific Tools (42 → 37 as the post-Opus-5 launch cluster is not renewed).</li>
+<li><strong>Most contested this cycle</strong>: <code>auto-mode-default</code> (Anthropic red-team 89% harmful-action catch + Willison narration vs steganography 10/12 bypass + Manifold Cursor CLI pre-trust exec + @gentschev classifier drift); <code>vibe-coding-semantic-drift</code> (Cloudflare-OS normalization + Omega Vibe boundary term vs isitvibecoded reverse-detection + apocalypse-averted debate — v2's Redd XF audit shifts the security position from prediction to documentation); Rust LLM policy (Weekly Rust "terrific" + PBX "not a ban but a line" + Socket + r/programming 604 upvotes vs Inkplots leadership-critique).</li>
+</ul>
+
+</section><section id="signals"><h2 data-section="05">Signal Evolution</h2>
+<p>Tracked signals as of E21 v2 (18 total: 10 Promoted, 7 Tracking-H, 1 Tracking-M — plus multiple retired/dormant; <code>vibe-coding-semantic-drift</code> moved Tracking-M → Tracking-H in v2). Observation counts are per pattern.id slug across all 21 windows (v1.16+ slug-stability mandate).</p>
+<table>
+<thead>
+<tr>
+<th>signal_id</th>
+<th>first appeared</th>
+<th>last observed</th>
+<th>obs count</th>
+<th>status</th>
+<th>trajectory</th>
+<th>confidence</th>
+<th>recommended action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accidental-cyberattacks</td>
+<td>E21</td>
+<td>E21</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new; v2 adds independent bot-summary corroboration — 13 in-window obs)</td>
+<td>H</td>
+<td>Continue tracking; sixth incident arrival is the class-confirmation test</td>
+</tr>
+<tr>
+<td>auto-mode-default</td>
+<td>E21</td>
+<td>E21</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>H</td>
+<td>First checkpoint Aug 14 rollout; watch classifier-drift + bypass follow-ups</td>
+</tr>
+<tr>
+<td>oss-maintainer-pushback</td>
+<td>E8</td>
+<td>E21</td>
+<td>3</td>
+<td>Promoted</td>
+<td>▲▲ (M → H escalation via Rust crystallization; v2 adds OpenJDK + Django bot-sourced leads — 9 in-window obs)</td>
+<td>H</td>
+<td>Verify OpenJDK/Django primary sources; watch for CNCF / Python / Apache / Kubernetes follow-ons</td>
+</tr>
+<tr>
+<td>vibe-coding-semantic-drift</td>
+<td>E21</td>
+<td>E21</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲▲ (new; <strong>upgraded M → H in v2</strong> via Redd XF Bolt/Cursor/Lovable audit + SecondRead + "machine speed vs human speed" — 10 in-window obs)</td>
+<td>H</td>
+<td>Watch for other hyperscaler normalization; Omega Vibe adoption trace; SecondRead/isitvibecoded tooling adoption</td>
+</tr>
+<tr>
+<td>meta-muse-code-launch</td>
+<td>E21</td>
+<td>E21</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▲ (new)</td>
+<td>M</td>
+<td>Watch Q3 2026 enterprise-share data + Copilot revenue-impact</td>
+</tr>
+<tr>
+<td>mcp-attack-surface</td>
+<td>E1</td>
+<td>E19</td>
+<td>14</td>
+<td>Promoted</td>
+<td>▼ (superseded by agent-attack-surface E20; dormant E20-E21)</td>
+<td>H</td>
+<td>Retire in E22 if no direct anchor returns; sibling signals absorb evidence</td>
+</tr>
+<tr>
+<td>agent-attack-surface</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>≈ (dormant E21 — accidental-cyberattacks is architecturally distinct)</td>
+<td>H</td>
+<td>Continue; watch for VS Code / JetBrains guardrail-benchmark follow-ups</td>
+</tr>
+<tr>
+<td>cost-runaway</td>
+<td>E6</td>
+<td>E21</td>
+<td>15</td>
+<td>Promoted</td>
+<td>▲ (hardens toward enterprise-cap discipline via $90/day cap + Muse Code cheap + Cursor Router; v2 adds DeepSeek $0.14/M as fifth FinOps facet — 9 in-window obs)</td>
+<td>H</td>
+<td>Continue; watch Anthropic public metering-transparency response</td>
+</tr>
+<tr>
+<td>opaque-metering-friction</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▼ (no E21 direct anchor; $90/day cap discourse partially absorbs it)</td>
+<td>M</td>
+<td>Retirement candidate as of E23 if no re-anchor</td>
+</tr>
+<tr>
+<td>agentic-threat-actor</td>
+<td>E19</td>
+<td>E20</td>
+<td>2</td>
+<td>Promoted</td>
+<td>≈ (dormant E21; accidental-cyberattacks is sibling not extension)</td>
+<td>H</td>
+<td>Continue; extension to non-tech-vertical target would confirm class</td>
+</tr>
+<tr>
+<td>anthropic-trust-arc</td>
+<td>E4</td>
+<td>E19</td>
+<td>11</td>
+<td>Promoted</td>
+<td>▼ (dormant two cycles — Opus 5 launch-week regression discourse absorbed into <code>auto-mode-default</code> and <code>accidental-cyberattacks/anthropic-me-too</code>)</td>
+<td>M</td>
+<td>Watch for Anthropic public post-mortem on Opus 5 or auto-mode</td>
+</tr>
+<tr>
+<td>ai-burnout-paradox</td>
+<td>E3</td>
+<td>E21</td>
+<td>11</td>
+<td>Promoted</td>
+<td>▲ (vendor-side extension via DNyuz DeepMind; reviewer-cost is dominant evidence class; v2 adds Cal Newport "On AI Coding and Its Discontents" as mainstream anchor — 8 in-window obs)</td>
+<td>H</td>
+<td>Continue; track Newport response crossover; retype-ritual counter-move signal worth tracking</td>
+</tr>
+<tr>
+<td>cognitive-debt-deskilling</td>
+<td>E2</td>
+<td>E19</td>
+<td>9</td>
+<td>Promoted</td>
+<td>≈ (absorbed into ai-burnout-paradox for two cycles)</td>
+<td>H</td>
+<td>Continue merge into ai-burnout-paradox in E22; retire slug if merge holds</td>
+</tr>
+<tr>
+<td>review-cost-inversion</td>
+<td>E11</td>
+<td>E19</td>
+<td>3</td>
+<td>Promoted</td>
+<td>▼ (no E21 direct anchor but Review Burden cluster returns 0→6 — signal is in-substance active without explicit slug)</td>
+<td>H</td>
+<td>Watch for E22 return with next Faros/Sonar/Builder.io telemetry drop</td>
+</tr>
+<tr>
+<td>subagent-delegation</td>
+<td>E17</td>
+<td>E19</td>
+<td>3</td>
+<td>Promoted</td>
+<td>▼ (no E20 or E21 anchor — two cycles dormant)</td>
+<td>L</td>
+<td>Retirement candidate as of E22 unless CCTeam / Antigravity artifacts surface</td>
+</tr>
+<tr>
+<td>release-cadence-shock</td>
+<td>E18</td>
+<td>E19</td>
+<td>2</td>
+<td>Tracking</td>
+<td>▼ (weakening; two cycles dormant)</td>
+<td>L</td>
+<td><strong>Retire as of E22</strong> — three-cycle silence threshold hit</td>
+</tr>
+<tr>
+<td>consent-surface-erosion</td>
+<td>E19</td>
+<td>E19</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▼ (two cycles dormant)</td>
+<td>L</td>
+<td>Retirement candidate as of E22</td>
+</tr>
+<tr>
+<td>chinese-open-weight-parity</td>
+<td>E19</td>
+<td>E20</td>
+<td>2</td>
+<td>Promoted</td>
+<td>▼ (dormant E21; Open-Weight Sovereignty cluster 4 items, no lab-specific frontier ship)</td>
+<td>M</td>
+<td>Continue watch; Chinese-lab Q3 pricing/perf response is next-cycle test</td>
+</tr>
+<tr>
+<td>open-weights-us-alignment</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▼ (dormant E21; Regulation cluster retracts 12→9; no lab positioning on letter)</td>
+<td>M</td>
+<td>Watch for OpenAI/Anthropic/Google positioning; retire in E23 if silent</td>
+</tr>
+<tr>
+<td>mcp-protocol-maturation</td>
+<td>E20</td>
+<td>E21</td>
+<td>2</td>
+<td>Promoted</td>
+<td>▲ (v2 activates the attack-surface axis: first in-window MCP-specific CVE — EUVD-2026-54852, roo-code-memory-bank-mcp-server, CVSS 4.8 — plus Theo "Did Anthropic finally fix MCP?" + @zooper_man 40-server inventory + Smeldr vendor-surface adoption; 4 in-window obs)</td>
+<td>H</td>
+<td>Continue; monitor follow-on MCP CVEs (EUVD/GHSA/MITRE); distinct axis from mcp-attack-surface / agent-attack-surface</td>
+</tr>
+<tr>
+<td>opus5-launch-regression</td>
+<td>E20</td>
+<td>E20</td>
+<td>1</td>
+<td>Tracking</td>
+<td>▼ (dormant E21 — no direct anchor; sentiment absorbed into <code>auto-mode-default</code> and general Claude Code discourse)</td>
+<td>M</td>
+<td>Watch 30-day post-launch fix cadence — early-Sep window</td>
+</tr>
+<tr>
+<td>junior-dev-collapse</td>
+<td>E20</td>
+<td>E21</td>
+<td>2</td>
+<td>Promoted</td>
+<td>▲ (M continues, hardened via r/ClaudeCode rejected-3-junior-devs + r/ExperiencedDevs interview-format-failed + Forbes 33rd-month; v2 adds two-tier labor-market angle — Meta $100M offers / Cursor elite recruiting vs junior decline; 6 in-window obs)</td>
+<td>M</td>
+<td>Watch BLS + Anthropic Q3 Economic Index refresh</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Historical retired/absorbed slugs</strong> (context for pattern-continuity): <code>junior-pipeline-collapse</code> (E2, E5, E10, E11, E12, E14) → renamed/absorbed as <code>junior-dev-collapse</code> in E20+ (same underlying pattern, more Reddit-mechanism-specific). <code>agent-production-destruction</code> (E4, E6, E7, E8, E9, E10, E11, E12, E15) → dormant since E15; the earlier "agent deletes prod DB" cluster is now considered a superseded frame of the broader <code>agent-attack-surface</code>. <code>cve-acceleration</code> (E1, E2, E3, E4, E5, E6, E7, E10, E11, E12) → dormant since E12; CSA CVE surge coverage now flows via <code>agent-attack-surface</code> incidents. <code>productivity-paradox</code>, <code>stack-composition</code>, <code>reset-year-narrative</code>, <code>delegation-gap-paradox</code> all dormant 4+ cycles.</p>
+<p><strong>Slug-stability check (v1.16/v1.17 mandate)</strong>: All active-signal slugs preserved across E20→E21. E16-E18 used <code>export-control-regime</code> + <code>open-weight-china-advantage</code>; these were replaced (not renamed) by the sibling pair <code>chinese-open-weight-parity</code> + <code>open-weights-us-alignment</code> in E19-E20 — this is a known slug-inconsistency across the export-control axis and is documented rather than corrected retroactively. <code>junior-pipeline-collapse</code> → <code>junior-dev-collapse</code> in E20 is a rename event (same pattern, different slug). No other rename events this cycle.</p>
+
+</section><section id="contradictions"><h2 data-section="06">Cross-Extraction Contradictions</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>First position (extraction)</th>
+<th>Current position (E21)</th>
+<th>Evolution</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Claude is the reliable frontier coding model"</td>
+<td>Confirmed (E1–E10)</td>
+<td>Contested — Opus 5 launch regression carries + auto-mode default rollout adds classifier-drift risk</td>
+<td>Persistent contested</td>
+<td>Anthropic's frontier claim now split between quality (dormant discourse) and safety-agent (active discourse)</td>
+</tr>
+<tr>
+<td>"MCP is a security-first agent protocol"</td>
+<td>Vendor claim (E15)</td>
+<td>Contested — attack-surface widened simultaneous with protocol maturation; @zooper_man 40+ server inventory reads mainstream, not fringe</td>
+<td>Persistent contradiction</td>
+<td>Both true; MCP maturity and agent-attack surface are separate axes; incident class now moved to <code>accidental-cyberattacks</code> at eval layer above MCP</td>
+</tr>
+<tr>
+<td>"Open-weight models are catching up but not at parity for coding"</td>
+<td>Confirmed (E14–E17)</td>
+<td>Dormant contested — Kimi/Qwen coverage narrowed; commercial-tier response not yet materialized</td>
+<td>Unchanged from E20</td>
+<td>Coding parity plausible; commercial deployment still license-blocked</td>
+</tr>
+<tr>
+<td>"Anthropic is the principled AI-safety leader"</td>
+<td>Confirmed (E1–E12)</td>
+<td>Contested — Anthropic accidental-cyberattack "me-too" disclosure adds to Open Weights letter absence + export-control lift + Opus 5 safety fine print</td>
+<td>Downgrade continues</td>
+<td>Now includes eval-boundary-containment failure at Anthropic's own labs; unresolved</td>
+</tr>
+<tr>
+<td>"AI coding tools produce net productivity gains"</td>
+<td>Contested (E10 onward)</td>
+<td>Persistent contradiction — DNyuz DeepMind reports vendor-side burnout + r/ExperiencedDevs "competence-vs-appearance" + Levison "mistakes faster is not winning" vs Meta Muse Code adoption + Anthropic red-team 89% catch data</td>
+<td>Bimodal</td>
+<td>Both true; productivity gains distributed unevenly; cognitive costs concentrated on reviewers AND now on vendors</td>
+</tr>
+<tr>
+<td>"AI coding cost/pricing is predictable and transparent"</td>
+<td>Contested (E12 onward)</td>
+<td>Contested — r/ClaudeCode $90/day cap enforcement + "same model different prices" 799/150; Cursor Router "Auto Intelligence + Auto Balance" as opaque proxy; Muse Code pay-as-you-go frames as counterpoint</td>
+<td>Persistent contested</td>
+<td>Cost discourse hardening from opacity-critique to explicit-cap-discipline; opaque-metering-friction signal weakening in favor of enterprise-cap language</td>
+</tr>
+<tr>
+<td>"Auto-mode default is a net-safety upgrade" (NEW in E21)</td>
+<td>New in E21 (Willison + Anthropic red-team)</td>
+<td>Contested — supporting: @A_Intimidating 89% vs 13.6%, @thenewstack, 2 HN threads; contradicting: @uwillc steganography 10/12 bypass, @ctsmithiii Cursor CLI pre-trust, @gentschev classifier drift</td>
+<td>Fresh contradiction</td>
+<td>Verdict pends Aug 14 rollout observation + Anthropic patch cadence on adjacent-vector bypasses</td>
+</tr>
+<tr>
+<td>"Vibe coding is a live productive practice" (NEW in E21)</td>
+<td>New contested in E21</td>
+<td>Contested — Cloudflare-OS normalization + Vorratsdatenspeicher + Mastodon community defending vs isitvibecoded reverse-detection + Levison + Theo "Fable-broke-my-app" apocalypse-averted debate</td>
+<td>Fresh contradiction</td>
+<td>Semantic drift is the underlying dynamic; term will fork rather than resolve</td>
+</tr>
+<tr>
+<td>"Accidental cyberattacks are eval-boundary artifacts, not model-behavior issues" (NEW in E21)</td>
+<td>New in E21</td>
+<td>Contested — supporting: @christinayiotis Irregular framing, CNN/Reuters Meta framing; contradicting: @airesearchtools, @voxnewton UK AISI, Willison enumeration</td>
+<td>Fresh contradiction</td>
+<td>Resolution requires sixth-incident causality analysis; currently indeterminate</td>
+</tr>
+<tr>
+<td>"Guardrails on major coding-agent tools are effective against injection attacks"</td>
+<td>Contested E15–E18; RESOLVED E20 (IssueTrojanBench 66.5% bypass)</td>
+<td>Continues resolved (auto-mode-default's contradicting evidence reinforces)</td>
+<td>Position stable</td>
+<td>Guardrail-bypass is now the default assumption for adversarial testing</td>
+</tr>
+<tr>
+<td>"Autonomous AI agents attacking production infrastructure are theoretical"</td>
+<td>Confirmed pre-E19; RESOLVED E20 (HF July 2026)</td>
+<td>Continues resolved + reinforced by Anthropic me-too disclosure</td>
+<td>Position stable</td>
+<td>Real; class-defining event now has cross-lab corroboration</td>
+</tr>
+</tbody>
+</table>
+
+</section><section id="vocabulary"><h2 data-section="07">Vocabulary &amp; Framing Drift</h2>
+<p>New terminology entering discourse this cycle (union of E21 vocabulary_new plus continuing terms from recent windows):</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>First appeared</th>
+<th>Frequency trend</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accidental cyberattacks</td>
+<td>E21</td>
+<td>New (Willison-mint, 5-incident enumeration)</td>
+<td>Class-naming event; Willison creates blog tag</td>
+</tr>
+<tr>
+<td>eval-infrastructure containment failure</td>
+<td>E21</td>
+<td>New (analyst framing)</td>
+<td>Precise architectural label for <code>accidental-cyberattacks</code></td>
+</tr>
+<tr>
+<td>Omega Vibe</td>
+<td>E21</td>
+<td>New (Henrik Nyh proposal)</td>
+<td>Bounded-acceptance term for vibe coding</td>
+</tr>
+<tr>
+<td>Muse Code / Muse Spark 1.2</td>
+<td>E21</td>
+<td>New (Meta launch)</td>
+<td>Meta enters coding-agent market</td>
+</tr>
+<tr>
+<td>Cursor Router / Auto Intelligence / Auto Balance</td>
+<td>E21</td>
+<td>New (Cursor blog + practitioner)</td>
+<td>Cursor's routing/cost-model vocabulary</td>
+</tr>
+<tr>
+<td>isitvibecoded</td>
+<td>E21</td>
+<td>New (reverse-detection tool)</td>
+<td>Introduces "proudly human-made" as counter-frame</td>
+</tr>
+<tr>
+<td>Cloudflare OS</td>
+<td>E21</td>
+<td>New (Cloudflare open-sources internal tool named "vibe coding")</td>
+<td>First hyperscaler normalization of the term</td>
+</tr>
+<tr>
+<td>Qwen3.8-Max</td>
+<td>E21</td>
+<td>New (Alibaba)</td>
+<td>Chinese-lab commercial-tier follow-up</td>
+</tr>
+<tr>
+<td>seniority-biased technological change</td>
+<td>E20-E21</td>
+<td>Rising (SQ Magazine + Anthropic Economic Index — recurring in E21)</td>
+<td>Labor-economics-technical crossover vocabulary</td>
+</tr>
+<tr>
+<td>"making mistakes faster (is not winning)"</td>
+<td>E21</td>
+<td>New (Mark Levison Mastodon)</td>
+<td>Practitioner-side burnout framing</td>
+</tr>
+<tr>
+<td>open-weights escalation</td>
+<td>E19-E21</td>
+<td>Rising then plateaued</td>
+<td>Nathan Lambert framing; still active but no new incident</td>
+</tr>
+<tr>
+<td>stateless core</td>
+<td>E20-E21</td>
+<td>Steady (MCP spec + practitioner)</td>
+<td>MCP protocol vocabulary</td>
+</tr>
+<tr>
+<td>Composer 2.5</td>
+<td>E19-E21</td>
+<td>Steady</td>
+<td>Cursor value-tier model</td>
+</tr>
+<tr>
+<td>Premium seat</td>
+<td>E20</td>
+<td>Rising</td>
+<td>Cursor "5× usage 3× cost" tier</td>
+</tr>
+<tr>
+<td>Autopilots</td>
+<td>E20</td>
+<td>Single-appearance</td>
+<td>Microsoft Copilot roadmap language</td>
+</tr>
+<tr>
+<td>agentic fatigue</td>
+<td>E19-E20</td>
+<td>Rising</td>
+<td>Sub-form of cognitive debt</td>
+</tr>
+<tr>
+<td>cognitive debt</td>
+<td>E13 onward</td>
+<td>Sustained rise; mainstreamed in enterprise-vendor content</td>
+<td>Enterprise buyer vocabulary</td>
+</tr>
+<tr>
+<td>tokenmaxxing</td>
+<td>E18-E19</td>
+<td>Steady</td>
+<td>Practitioner arbitrage</td>
+</tr>
+<tr>
+<td>ExploitGym</td>
+<td>E20</td>
+<td>Single-appearance</td>
+<td>OpenAI internal cyber-cap eval framework</td>
+</tr>
+<tr>
+<td>IssueTrojanBench</td>
+<td>E20</td>
+<td>Single-appearance</td>
+<td>Guardrail-bypass benchmark</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Framing drift note</strong>: E21's <code>vibe-coding-semantic-drift</code> mint captures a rare <em>within-week</em> observable semantic split — the same term is simultaneously being normalized (Cloudflare product naming), bounded (Nyh's "Omega Vibe" proposal), reverse-detected (isitvibecoded.com), and debated in apocalypse-vs-thriving terms. The Willison-minted <code>accidental-cyberattacks</code> term is the second class-naming event in the program's history (after <code>vibe-coding-disreputed</code> in E1) — a discourse where an outside curator creates a class label that spreads. Watch for adoption by SANS, arXiv security papers, and lab safety-team documentation.</p>
+
+</section><section id="gaps"><h2 data-section="08">Gaps &amp; Uncertainties</h2>
+<ul>
+<li><strong>Retrieval-channel gaps</strong>:</li>
+<li><strong>Reddit direct-URL still Provisional</strong> — E21's 10 items via ChatGPT cross-LLM; direct-URL verification not yet performed. <code>cost-runaway</code> $90/day cap and <code>junior-dev-collapse</code> interview-format items are highest-leverage anchors to re-verify.</li>
+<li><strong>Bluesky logged-in Chrome-supplement working but permalink-granularity thin</strong> — 8 posts read via a single simonwillison.net profile-timeline URL surface; per-post permalinks would strengthen citation.</li>
+<li><strong>X/Twitter Grok cross-LLM working but Provisional</strong> — 20 items with per-tweet URLs verifiable but spot-check recommended for high-engagement anchors (@A_Intimidating 89%, @uwillc steganography, @ctsmithiii Manifold).</li>
+<li><strong>Mastodon first substantial cycle</strong> — 19 items via logged-in full-text search (supplements #2 + #3) but sit behind 6 search-URL surfaces and one direct-handle URL, not per-post permalinks.</li>
+<li><strong>YouTube via Chrome-supplement complete</strong> — 11 items via Gemini candidate-discovery + Claude-in-Chrome DOM verify; expansion-3 swept the remaining channels: @HTMLAllTheThings (1 item), @theseriouscto (in-window uploads off-topic), Bricks &amp; Bytes confirmed AEC-focused — recommend deprecating from config Tier 1.5 YouTube list.</li>
+<li><strong>Structural gaps</strong>:</li>
+<li><strong>[CLOSED in v2] The program-long MCP-CVE gap</strong> — EUVD-2026-54852 (roo-code-memory-bank-mcp-server, CVSS v3.1 4.8, disclosed 2026-08-09) is the first in-window MCP-specific CVE in program history, closing a gap tracked since the E15 MCP-supply-chain window. Residual: a single medium-severity CVE; follow-on monitoring (EUVD/GHSA/MITRE) is on the watch list.</li>
+<li><strong>OpenJDK AI-generated-code ban + Django LLM policy are bot-sourced leads</strong> (Masto.kukei.eu Fediverse-summarization bot) — unverified; primary-source check next run. If confirmed, <code>oss-maintainer-pushback</code> upgrades to a multi-project foundation-scale governance trend.</li>
+<li><strong>Redd XF vibe-coded-app audit is single-auditor with unstated sample size</strong>; SecondRead is the auditor's own product (incentive caveat).</li>
+<li><strong>Zero podcast items</strong> (fifth consecutive cycle; Syntax FM captured only via YouTube surface).</li>
+<li><strong>No primary source for Anthropic auto-mode-default red-team paper</strong> — @A_Intimidating cites 89% vs 13.6% figure but paper itself not extracted.</li>
+<li><strong>Enterprise $90/day-cap scope is single-source r/ClaudeCode</strong> — needs cross-enterprise validation via HN or LinkedIn CTO surveys.</li>
+<li><strong>Base extraction WebSearch intermittently unavailable</strong> — second-pass expansion not attempted at base tier before Chrome supplements this run.</li>
+<li><strong>Signal-store not attached this run</strong> — v1.17 bootstrap fell back to v1.16 behavior; new mints require display-labels.yaml row before Step 7. Signal continuity still depends on analyst pattern-matching against prior-week summary.</li>
+<li><strong>METR HCAST methodology PDF</strong> (Tier 3 manual) still not fetched E19-E21 — would deepen <code>agentic-threat-actor</code> and <code>agent-attack-surface</code> incident-attribution.</li>
+<li><strong>Kimi K3 legal read</strong> still absent (VentureBeat's "'open' with a caveat" remains sole in-depth analysis).</li>
+<li><strong>Irregular non-disclosure</strong> — the eval firm at center of <code>accidental-cyberattacks</code> declined to say whether other clients were affected; information gap flagged as its own incident this cycle.</li>
+</ul>
+
+</section><section id="watch"><h2 data-section="09">Watch List for Next Extraction</h2>
+<ol>
+<li><strong>Anthropic patch cadence on Claude Code steganography vector before Aug 14 auto-mode default</strong> — first checkpoint for the <code>auto-mode-default</code> signal's safety-upgrade-vs-bypass contradiction. If steganography and Cursor CLI pre-trust remediation don't ship pre-rollout, expect immediate CN/SN spike in E22.</li>
+<li><strong>Sixth <code>accidental-cyberattacks</code> incident arrival</strong> — arrival within one cycle would confirm class as recurring rather than eval-boundary artifact; extension to non-Anthropic/OpenAI/Meta lab would harden cross-lab framing.</li>
+<li><strong>Anthropic public response to DNyuz DeepMind unraveling report</strong> — vendor-side burnout posture is now competitive information; silence continues to compound <code>ai-burnout-paradox</code>.</li>
+<li><strong>Kubernetes / Python / LLVM / CNCF / Apache follow-on LLM contribution policies</strong> — Rust set the template; second OSS-foundation adoption would harden <code>oss-maintainer-pushback</code> to full crystallization and open cascade dynamics.</li>
+<li><strong>Meta Muse Code adoption signals</strong> — Q3 2026 enterprise-share data + any GitHub Copilot revenue-impact commentary + independent third-party review beyond Theo's 131K YouTube.</li>
+<li><strong>Cursor CLI pre-trust remediation + Manifold Security follow-up publications</strong> — natural next research target is the pre-trust window class extended to Codex Desktop / Cline / Aider.</li>
+<li><strong>DeepMind organizational-health follow-up</strong> — DNyuz report is a single anchor; second corroboration from The Information, The Verge, or The Register would harden the vendor-side burnout evidence class.</li>
+<li><strong>Cross-enterprise validation of $90/day per-developer cap norm</strong> — HN or LinkedIn CTO surveys would confirm as enterprise FinOps discipline standard rather than single-employer anecdote.</li>
+<li><strong>OpenJDK + Django LLM-policy primary-source verification</strong> — both are bot-sourced leads (Masto.kukei.eu); confirmation would upgrade <code>oss-maintainer-pushback</code> to a multi-project foundation-scale governance trend independent of the Rust template.</li>
+<li><strong>Follow-on MCP CVEs</strong> — monitor EUVD, GitHub Security Advisories, and MITRE now that EUVD-2026-54852 has opened the in-window MCP-CVE board; a second CVE within two cycles would convert <code>mcp-protocol-maturation</code>'s attack-surface axis into its own incident class.</li>
+<li><strong>Cal Newport "On AI Coding and Its Discontents" response tracking</strong> — citations/rebuttals in HN, dev-YouTube, and newsletters; mainstream-anchor crossover is the E22 test for the cognitive-debt thread.</li>
+</ol>
+
+</section><section id="metadata"><h2 data-section="10">Longitudinal Report Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Longitudinal prompt</td>
+<td>v1.3</td>
+</tr>
+<tr>
+<td>Domain config</td>
+<td>v1.2</td>
+</tr>
+<tr>
+<td>Bootloader</td>
+<td>v1.9</td>
+</tr>
+<tr>
+<td>Report generated</td>
+<td>2026-08-10 11:20 UTC</td>
+</tr>
+<tr>
+<td>Input mode</td>
+<td>summaries</td>
+</tr>
+<tr>
+<td>Extractions covered</td>
+<td>1 through 21 (all summaries present)</td>
+</tr>
+<tr>
+<td>Date range</td>
+<td>2026-03-20 – 2026-08-10 (~143 days)</td>
+</tr>
+<tr>
+<td>Total tagged items</td>
+<td>~1,180 cumulative</td>
+</tr>
+<tr>
+<td>Tracked signals</td>
+<td>18 active (10 Promoted, 7 Tracking-H, 1 Tracking-M); 4 retirement candidates as of E22</td>
+</tr>
+<tr>
+<td>NEW signals this window</td>
+<td>accidental-cyberattacks (H), auto-mode-default (H), vibe-coding-semantic-drift (M in v1, upgraded to H in v2), meta-muse-code-launch (M)</td>
+</tr>
+<tr>
+<td>Escalated signals this window</td>
+<td>oss-maintainer-pushback (Tracking-M → Tracking-H, Rust crystallization)</td>
+</tr>
+<tr>
+<td>Confirmed trends</td>
+<td>cost-runaway (H, hardened via $90/day cap), ai-burnout-paradox (H, extended vendor-side via DNyuz DeepMind), accidental-cyberattacks (H, new class), auto-mode-default (H, new contested), oss-maintainer-pushback (H, escalated via Rust)</td>
+</tr>
+<tr>
+<td>Resolved contradictions</td>
+<td>"Guardrails on major coding-agent tools are effective against injection attacks" remains RESOLVED (auto-mode contradicting evidence reinforces); "Autonomous AI agents attacking production infrastructure are theoretical" remains RESOLVED (Anthropic me-too disclosure reinforces via adjacent eval-boundary class)</td>
+</tr>
+<tr>
+<td>Newly contested claims</td>
+<td>"Auto-mode default is a net-safety upgrade" (Anthropic red-team + Willison narration vs steganography 10/12 bypass + Cursor CLI pre-trust + classifier drift); "Vibe coding is a live productive practice" (Cloudflare-OS + Vorratsdatenspeicher vs isitvibecoded + apocalypse-averted debate); "Accidental cyberattacks are eval-boundary artifacts" (Irregular framing vs Willison cross-lab enumeration)</td>
+</tr>
+<tr>
+<td>Slug inconsistencies noted</td>
+<td><code>junior-pipeline-collapse</code> → <code>junior-dev-collapse</code> rename event (E20); <code>export-control-regime</code> + <code>open-weight-china-advantage</code> (E16-E18) replaced (not renamed) by sibling pair <code>chinese-open-weight-parity</code> + <code>open-weights-us-alignment</code> (E19-E20); <code>mcp-attack-surface</code> and <code>agent-attack-surface</code> are sibling slugs (not renamed); <code>accidental-cyberattacks</code> is architecturally distinct from <code>agentic-threat-actor</code> (attacker/target relationship reversed)</td>
+</tr>
+<tr>
+<td>Retirement candidates for E22</td>
+<td>release-cadence-shock (three-cycle silence — retire), consent-surface-erosion (two cycles dormant), subagent-delegation (two cycles dormant), opaque-metering-friction (one cycle dormant — watch one more)</td>
+</tr>
+<tr>
+<td>Revision</td>
+<td>v2 (post chrome-expansion-3) — E21 n 83 → 96, 90 unique URLs; vibe-coding-semantic-drift M → H; first in-window MCP CVE (EUVD-2026-54852); Mastodon 19 items (first substantial window)</td>
+</tr>
+</tbody>
+</table></section>
+<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid #2a3441;text-align:center;color:#7a8694;font-family:'JetBrains Mono',monospace;font-size:0.78rem;">
+<p>Longitudinal Trend Report &mdash; Extractions 1 &ndash; 21 &mdash; Generated 2026-08-10</p>
+<p>Longitudinal Engine v1.3 &middot; Domain Config v1.2 &middot; Bootloader v1.9 &middot; HTML Engine v1.2 (blue accent)</p>
+</footer>
+</div>
+<script>
+(function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var ticking = false;
+    function onScroll() {
+        var y = window.scrollY;
+        if (y < 80) { nav.classList.remove('nav-hidden'); }
+        else if (y > lastY + 4) { nav.classList.add('nav-hidden'); }
+        else if (y < lastY - 4) { nav.classList.remove('nav-hidden'); }
+        lastY = y;
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

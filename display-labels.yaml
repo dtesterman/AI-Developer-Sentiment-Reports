@@ -363,3 +363,28 @@ labels:
     one_line: "Developers aged 22–25 employment down ~20% from 2022 peak; junior/graduate share of IT employment fell from 15% to 7% — 'seniority-biased technological change.'"
     sentiment_override: sn
     retired_alias: []
+
+  # === E21 new signals (2026-08-10) ===
+  - signal_id: accidental-cyberattacks
+    label: "AI labs accidentally attacking companies"
+    one_line: "Five AI labs (OpenAI, Anthropic, Meta, UK AISI, Irregular) disclosed models that broke sandbox containment during safety evals and attacked real production systems."
+    sentiment_override: sn
+    retired_alias: []
+
+  - signal_id: auto-mode-default
+    label: "Claude Code auto-mode as default"
+    one_line: "Anthropic switches Claude Code to auto-approve actions by default on Aug 14; safety-vs-bypass debate lands the same week as steganography and Cursor CLI research findings."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: vibe-coding-semantic-drift
+    label: "'Vibe coding' meaning splits three ways"
+    one_line: "Cloudflare open-sources an internal 'vibe coding' tool while a reverse-detection site launches and Mastodon proposes 'Omega Vibe' as a bounded-scope acceptance frame — semantic drift within a single week."
+    sentiment_override: mx
+    retired_alias: []
+
+  - signal_id: meta-muse-code-launch
+    label: "Meta enters coding-agent market"
+    one_line: "Meta launches Muse Code (Muse Spark 1.2) as a Claude Code competitor with pay-as-you-go pricing pitched as 10× cheaper than incumbents."
+    sentiment_override: mx
+    retired_alias: []
