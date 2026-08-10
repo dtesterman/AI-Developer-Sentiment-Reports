@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekly AI Developer Sentiment &middot; Analytics Snapshot 2026-08-10</title>
+  <title>Weekly AI Developer Sentiment &middot; Analytics Snapshot 2026-08-03</title>
   <meta property="og:title" content="AI Coding Tools — Developer Sentiment Intelligence">
   <meta property="og:description" content="Structured analysis of developer discourse about AI coding tools. Sentiment trends, incident tracking, emerging patterns, and actionable intelligence.">
   <meta name="twitter:card" content="summary_large_image">
@@ -257,21 +257,23 @@
        ============================================================ -->
 
         <!-- LONGITUDINAL_START -->
-    <div class="longi-card">
-      <div class="longi-badge">Longitudinal</div>
-      <div class="longi-title"><a href="longitudinal-summary-2026-08-10.html">Longitudinal Trend Report (E1 &ndash; E21)</a></div>
-      <div class="longi-meta">2026-03-20 to 2026-08-10 &nbsp;&middot;&nbsp; 21 extractions covered &nbsp;&middot;&nbsp; ~1,180 items tagged across the program &nbsp;&middot;&nbsp; 18 tracked signals; 10 Promoted, 7 Tracking-H, 1 Tracking-M &nbsp;&middot;&nbsp; 4 new mints this window; 1 escalation (<code>oss-maintainer-pushback</code> M&rarr;H)</div>
-      <div class="longi-summary"><strong>The 143-day arc: from "is the code any good?" through MCP protocol maturation &mdash; and now the eval-boundary itself as the incident class.</strong> E21 mints <code>accidental-cyberattacks</code> (five cross-lab containment failures), <code>auto-mode-default</code>, <code>vibe-coding-semantic-drift</code> (upgraded M&rarr;H post-audit), and <code>meta-muse-code-launch</code>; the first in-window MCP CVE closes a program-long gap.</div>
-      <div class="stat-row">
-        <div class="stat-pill"><strong>21</strong> extractions</div>
-        <div class="stat-pill"><strong>~1,180</strong> items</div>
-        <div class="stat-pill"><strong>18</strong> tracked signals</div>
-        <div class="stat-pill"><strong>4</strong> new mints E21</div>
-        <div class="stat-pill"><strong>1</strong> escalation M&rarr;H</div>
-      </div>
-      <div class="longi-arrow"><a href="longitudinal-summary-2026-08-10.html" style="color:inherit;text-decoration:none;">Read the longitudinal report &rarr;</a></div>
-    </div>
-    <!-- LONGITUDINAL_END -->
+<article class="report-card report-card--longitudinal">
+  <div class="report-card__header">
+    <span class="report-card__extraction">Longitudinal Trend Report</span>
+    <time class="report-card__date">2026-03-20 to 2026-08-03</time>
+  </div>
+  <h3 class="report-card__title">
+    <a href="longitudinal-summary-2026-08-03.html">Extractions 1–20 — the 136-day arc: from "is the code any good?" through MCP protocol maturation, autonomous-AI attack Colonial Pipeline moment, and US regulatory-alignment coalition</a>
+  </h3>
+  <ul class="report-card__stats">
+    <li><span class="stat-num">20</span> extractions covered</li>
+    <li><span class="stat-num">~1,069</span> items across all extractions</li>
+    <li><span class="stat-num">17</span> tracked signals</li>
+    <li><span class="stat-num">10</span> Promoted, 5 Tracking-H, 2 Tracking-M</li>
+    <li><span class="stat-num">6</span> NEW signals E20, 1 escalation (agentic-threat-actor M→H)</li>
+  </ul>
+</article>
+<!-- LONGITUDINAL_END -->
 
   <!-- ============================================================
        REPORT INDEX
@@ -285,51 +287,27 @@
   <h2>Analysis Reports</h2>
 
   <div class="report-list">
-    <div class="report-card">
-      <div>
-        <div class="report-title"><a href="analysis-report-2026-08-10.html">2026-08-03 &ndash; 2026-08-10 &mdash; Extraction 21</a></div>
-        <div class="report-meta">
-          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (fable-5) &mdash; scheduled base run + three Chrome-expansion supplements (Bluesky logged-in 8, X-via-Grok 20 Provisional, Reddit-via-ChatGPT 10 Provisional, YouTube DOM 11, Mastodon logged-in 19 &mdash; first substantial Mastodon window of the program). n=96 across 90 unique URLs (revision v2). &nbsp;&middot;&nbsp; Signal Store not loaded; 5 slugs reused; 4 new mints: <code>accidental-cyberattacks</code>, <code>auto-mode-default</code>, <code>vibe-coding-semantic-drift</code>, <code>meta-muse-code-launch</code>
-        </div>
-        <div class="report-summary">
-          <strong>"Accidental cyberattacks" becomes a discrete five-incident class across AI labs (OpenAI/HF, Anthropic, UK AISI, Irregular, Meta) the same week Claude Code's auto-mode default rollout lands amid steganography (10/12) and Cursor CLI pre-trust-execution bypass findings; Rust becomes the first foundation OSS project to formalize an LLM contribution policy; cognitive-debt / reviewer-cost consolidates as the dominant practitioner voice.</strong> First in-window MCP CVE (EUVD-2026-54852) closes a program-long gap; <code>vibe-coding-semantic-drift</code> upgrades M&rarr;H on the Bolt/Cursor/Lovable security audit; Cal Newport enters the cognitive-debt discourse; DeepSeek $0.14/M tokens joins the FinOps cluster.
-        </div>
-        <div class="stat-row">
-          <div class="stat-pill"><strong>96</strong> items</div>
-          <div class="stat-pill"><strong>10</strong> incidents</div>
-          <div class="stat-pill"><strong>9</strong> patterns</div>
-          <div class="stat-pill"><strong>9/9</strong> batches</div>
-          <div class="stat-pill"><strong>SP+CP 16%</strong> &middot; <strong>SN+CN 35%</strong></div>
-        </div>
-      </div>
-      <div class="report-arrow"><a href="analysis-report-2026-08-10.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
-    </div>
+<article class="report-card">
+  <div class="report-card__header">
+    <span class="report-card__extraction">Extraction 20</span>
+    <time class="report-card__date">2026-07-27 to 2026-08-03</time>
+  </div>
+  <h3 class="report-card__title">
+    <a href="analysis-report-2026-08-03.html">Opus 5 launch regression (cross-platform @petergyang 2709 likes), Open Weights letter closes the loop, Hugging Face becomes first publicly documented autonomous-AI attack, X/Twitter recovery hardens practitioner voice</a>
+  </h3>
+  <ul class="report-card__stats">
+    <li><span class="stat-num">115</span> items tagged</li>
+    <li><span class="stat-num">5</span> incidents logged</li>
+    <li><span class="stat-num">9</span> emerging patterns</li>
+    <li><span class="stat-num">10 of 10</span> batches (A–J)</li>
+    <li><span class="stat-num">SN 24%</span> dominant sentiment (SP 22% counter-cluster)</li>
+  </ul>
+</article>
 
 
     <div class="report-card">
       <div>
-        <div class="report-title"><a href="analysis-report-2026-08-03.html">2026-07-27 &ndash; 2026-08-03 &mdash; Extraction 20</a></div>
-        <div class="report-meta">
-          Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) &mdash; scheduled non-interactive + X/Twitter Grok follow-up pass (Primary WebSearch + Reddit-via-ChatGPT + X-via-Grok + Bluesky logged-in; Mastodon thin). n=115 across 114 unique URLs (revision v2). &nbsp;&middot;&nbsp; Signal Store not loaded; 4 slugs reused; new mints: <code>opus5-launch-regression</code>, <code>open-weights-us-alignment</code>, <code>mcp-protocol-maturation</code>, <code>agent-attack-surface</code>, <code>opaque-metering-friction</code>, <code>junior-dev-collapse</code>
-        </div>
-        <div class="report-summary">
-          <strong>Opus 5 launch regression (cross-platform, @petergyang 2709 likes), the Open Weights letter closes the loop at 230+ signatories, Hugging Face becomes the first publicly documented autonomous-AI attack, and X/Twitter recovery hardens the practitioner voice.</strong> <code>agentic-threat-actor</code> escalates Tracking-M&rarr;H on the Hugging Face incident cluster; MCP 2026-07-28 stateless spec ships with same-day AWS and next-day GitHub support.
-        </div>
-        <div class="stat-row">
-          <div class="stat-pill"><strong>115</strong> items</div>
-          <div class="stat-pill"><strong>5</strong> incidents</div>
-          <div class="stat-pill"><strong>9</strong> patterns</div>
-          <div class="stat-pill"><strong>10/10</strong> batches</div>
-          <div class="stat-pill"><strong>SP+CP 31%</strong> &middot; <strong>SN+CN 35%</strong></div>
-        </div>
-      </div>
-      <div class="report-arrow"><a href="analysis-report-2026-08-03.html" style="color:inherit;text-decoration:none;">&rarr;</a></div>
-    </div>
-
-
-    <div class="report-card">
-      <div>
-        <div class="report-title"><a href="analysis-report-2026-07-20.html">2026-07-13 &ndash; 2026-07-20 &mdash; Extraction 19</a></div>
+        <div class="report-title"><a href="analysis-report-2026-08-03.html">2026-07-13 &ndash; 2026-08-03 &mdash; Extraction 19</a></div>
         <div class="report-meta">
           Analysis Prompt v1.17 &nbsp;&middot;&nbsp; Domain Config v1.2 &nbsp;&middot;&nbsp; Extractor: Claude (opus-4-7) &mdash; scheduled non-interactive with cross-LLM escalation via Claude in Chrome (Reddit-via-ChatGPT 7, X-via-Grok 18, YouTube-via-Gemini 3, all Provisional). n=61 across 61 unique URLs. &nbsp;&middot;&nbsp; Signal Store not loaded (v1.16 fallback); 7 reused via display-labels + prior summary continuity; 3 new mints this window: <code>consent-surface-erosion</code>, <code>agentic-threat-actor</code>, <code>chinese-open-weight-parity</code>
         </div>
